@@ -37,7 +37,6 @@ config/icon="res://icon.svg"
 EventBus="*res://global/event_bus.gd"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 Logger="*res://addons/godot-logger/logger.gd"
-Audio="*res://modules/audio/audio.gd"
 
 [debug_draw_3d]
 
