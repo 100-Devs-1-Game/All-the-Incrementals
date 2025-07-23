@@ -20,8 +20,8 @@ on:
       - '.hooks/**'
       - '.pre-commit-config.yaml'
       - 'export_presets.cfg'
-      - 'project.godot'      
-    
+      - 'project.godot'
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   pre-commit:
@@ -31,7 +31,7 @@ jobs:
     - uses: actions/setup-python@v3
     - uses: Scony/godot-gdscript-toolkit@master
     - uses: pre-commit/action@v3.0.1
-  
+
   build-game:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Checkout LFS objects
         run: git lfs pull
- 
+
       - name: unit tests with godot gut
         if: ${{ !env.is_release }}
         uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
@@ -89,7 +89,7 @@ jobs:
           else
             ls -R .
           fi
-          
+
       - name: create release
         if: startsWith(github.ref, 'refs/tags/')
         uses: ncipollo/release-action@v1

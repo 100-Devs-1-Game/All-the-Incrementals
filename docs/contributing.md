@@ -25,7 +25,7 @@ A great way to contribute to the project is to send a detailed issue when you en
 
 In short, since you are most likely a developer, **provide a ticket that you would like to receive**.
 
-- **Do not open a duplicate issue!** Search through existing issues to see if your issue has previously been reported. If your issue exists, comment with any additional information you have. You may simply note "I have this problem too", which helps prioritize the most common problems and requests. 
+- **Do not open a duplicate issue!** Search through existing issues to see if your issue has previously been reported. If your issue exists, comment with any additional information you have. You may simply note "I have this problem too", which helps prioritize the most common problems and requests.
 
 - **Prefer using [reactions](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/)**, not comments, if you simply want to "+1" an existing issue.
 
@@ -45,7 +45,7 @@ For most contributions, after your first pull request is accepted and merged, yo
 
 *Note: All contributions will be licensed under the project's license.*
 
-- **Smaller is better.** Submit **one** pull request per bug fix or feature. A pull request should contain isolated changes pertaining to a single bug fix or feature implementation. **Do not** refactor or reformat code that is unrelated to your change. It is better to **submit many small pull requests** rather than a single large one. Enormous pull requests will take enormous amounts of time to review, or may be rejected altogether. 
+- **Smaller is better.** Submit **one** pull request per bug fix or feature. A pull request should contain isolated changes pertaining to a single bug fix or feature implementation. **Do not** refactor or reformat code that is unrelated to your change. It is better to **submit many small pull requests** rather than a single large one. Enormous pull requests will take enormous amounts of time to review, or may be rejected altogether.
 
 - **Coordinate bigger changes.** For large and non-trivial changes, open an issue to discuss a strategy with the maintainers. Otherwise, you risk doing a lot of work for nothing!
 
@@ -63,7 +63,7 @@ For most contributions, after your first pull request is accepted and merged, yo
 
 - **[Resolve any merge conflicts](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-on-github)** that occur.
 
-- **Promptly address any CI failures**. If your pull request fails to build or pass tests, please push another commit to fix it. 
+- **Promptly address any CI failures**. If your pull request fails to build or pass tests, please push another commit to fix it.
 
 - When writing comments, use properly constructed sentences, including punctuation.
 
@@ -84,21 +84,21 @@ Please [write a great commit message](https://chris.beams.io/posts/git-commit/).
 ```
 Short summary of changes in 50 chars or less
 
-Add a more detailed explanation here, if necessary. Possibly give 
-some background about the issue being fixed, etc. The body of the 
-commit message can be several paragraphs. Further paragraphs come 
+Add a more detailed explanation here, if necessary. Possibly give
+some background about the issue being fixed, etc. The body of the
+commit message can be several paragraphs. Further paragraphs come
 after blank lines and please do proper word-wrap.
 
-Wrap it to about 72 characters or so. In some contexts, 
-the first line is treated as the subject of the commit and the 
-rest of the text as the body. The blank line separating the summary 
-from the body is critical (unless you omit the body entirely); 
-various tools like `log`, `shortlog` and `rebase` can get confused 
+Wrap it to about 72 characters or so. In some contexts,
+the first line is treated as the subject of the commit and the
+rest of the text as the body. The blank line separating the summary
+from the body is critical (unless you omit the body entirely);
+various tools like `log`, `shortlog` and `rebase` can get confused
 if you run the two together.
 
 Explain the problem that this commit is solving. Focus on why you
-are making this change as opposed to how or what. The code explains 
-how or what. Reviewers and your future self can read the patch, 
+are making this change as opposed to how or what. The code explains
+how or what. Reviewers and your future self can read the patch,
 but might not understand why a particular solution was implemented.
 Are there side effects or other unintuitive consequences of this
 change? Here's the place to explain them.
@@ -122,7 +122,7 @@ See also: #456, #789
 
 - **Always do your best.** No one writes bugs on purpose. Do your best, and learn from your mistakes.
 
-- Kindly note any violations to the guidelines specified in this document. 
+- Kindly note any violations to the guidelines specified in this document.
 
 ## :nail_care: Coding Style
 
