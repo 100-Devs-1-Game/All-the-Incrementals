@@ -5,4 +5,14 @@ repos:
     hooks:
       - id: gdlint
       - id: gdformat
+
+  # Local repo
+  - repo: local
+    hooks:
+      - id: check-dir-names
+        name: Check snake_case directory names
+        entry: ./.hooks/check_dir_names.py
+        language: python
+        exclude: ^src/addons
+
 exclude: ^src/addons
