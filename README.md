@@ -62,12 +62,7 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
 1. [Request and gain access](#access-requests-for-contributors) (google drive).
 1. Read the theme, art and sound guidelines in the GDD.
 1. Assign tasks on the art or sound kanban board to yourself. 
-1. Upload the asset to the Google drive. 
-1. Optional: 
-    1. If you're familiar with git, request access to lfs.
-    1. Add your assets directly to the src/assets folder. 
-    1. Commit and push your changes and follow the same steps as for coding.
-    1. If you're not familiar with git, ignore this and let a coder move the assets into the game for you.
+1. Upload the asset to the Google drive.
 1. Mark task as done (submitted).
 1. Rinse and repeat! 
 
@@ -92,8 +87,9 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
 
 ### Google Drive for Assets, Game Design Doc, etc. - For Everyone
 
-An access request window should appear automatically when accessing this link:
-https://drive.google.com/drive/folders/1353xIfE3CcAIMlAdU_h2BfoSROC3lfDF
+To gain access to the Google Drive where we have assets, game design docs, and other project files, follow the google drive link on the `#links` channel on discord.
+
+An access request window should appear automatically when accessing the link.
 
 If your Google account ID/email doesn't match your discord username, then please send a message to `@niconorsk` with your information so it can be correlated.
 
