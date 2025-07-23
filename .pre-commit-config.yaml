@@ -1,0 +1,8 @@
+repos:
+  # GDScript Toolkit
+  - repo: https://github.com/Scony/godot-gdscript-toolkit
+    rev: 4.3.4
+    hooks:
+      - id: gdlint
+      - id: gdformat
+exclude: ^src/addons

@@ -1,0 +1,4 @@
+excluded_directories: !!set
+  .git: null
+  addons: null
+use_spaces: 4
