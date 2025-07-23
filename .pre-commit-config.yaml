@@ -5,5 +5,5 @@ repos:
     hooks:
       - id: gdlint
       - id: gdformat
-        args: [--check]
+        args: [--check, --diff]
 exclude: ^src/addons
