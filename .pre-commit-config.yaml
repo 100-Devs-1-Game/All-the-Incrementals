@@ -1,9 +1,18 @@
 repos:
+  # Pre-commit built ins
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-merge-conflict
+      args: [--assume-in-merge]
+    - id: check-added-large-files
+        
   # GDScript Toolkit
   - repo: https://github.com/Scony/godot-gdscript-toolkit
     rev: 4.3.4
     hooks:
-      - id: gdlint
       - id: gdformat
 
   # Local repo
@@ -13,5 +22,6 @@ repos:
         name: Check snake_case directory and file names
         entry: ./.hooks/check_dir_names.py
         language: python
+        exclude: '^src/addons/|^README\.md$|^LICENSE$|^.pre-commit-config.yaml$'
 
-exclude: '^src/addons/|^README\.md$|^LICENSE$|^.pre-commit-config.yaml$'
+exclude: '^src/addons/'
