@@ -10,9 +10,8 @@ repos:
   - repo: local
     hooks:
       - id: check-dir-names
-        name: Check snake_case directory names
+        name: Check snake_case directory and file names
         entry: ./.hooks/check_dir_names.py
         language: python
-        exclude: ^src/addons
 
-exclude: ^src/addons
+exclude: '^src/addons/|^README\.md$|^LICENSE$|^.pre-commit-config.yaml$'
