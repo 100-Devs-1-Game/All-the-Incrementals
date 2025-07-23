@@ -1,4 +1,4 @@
-# 100 Devs - 1 Game - Pong Test Run
+# 100 Devs - 1 Game - All The Incrementals
 
 Make sure to read the contributors guide before contributing.
 
@@ -6,15 +6,18 @@ Required Software:
 [Godot v4.4.1](https://godotengine.org/download/)
 [Github Desktop](https://desktop.github.com/download/)
 
-## For Programmers
+## Development Setup
 
-- Set up your environment: After cloning the repo, run the command:
+After cloning, enter the project folder and set up requirements and environment:
+
+Linux:
 
 ```
-setup.sh
+./setup.sh
 ```
 
-Or, if you're not on Linux, you can just manually run:
+Windows:
+
 
 ```
 pip install -r requirements.txt
