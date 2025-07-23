@@ -31,4 +31,4 @@ block
 ## :nail_care: Coding Style
 
 - Follow the [official GDScript styleguide](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html)
-- Use spaces for indentation, not tabs.
+- Use tabs for indentation, not spaces.
