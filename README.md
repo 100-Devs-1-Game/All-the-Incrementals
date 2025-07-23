@@ -95,6 +95,8 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
 An access request window should appear automatically when accessing this link:
 https://drive.google.com/drive/folders/1353xIfE3CcAIMlAdU_h2BfoSROC3lfDF
 
+If your Google account ID/email doesn't match your discord username, then please send a message to `@niconorsk` with your information so it can be correlated.
+
 ### GitHub Repo Access - For Coders
 
 To gain access to GitHub, request access in the `#up-the-chain` channel on discord.
