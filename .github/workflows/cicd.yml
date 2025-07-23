@@ -45,7 +45,6 @@ jobs:
         run: git lfs pull
 
       - name: unit tests with godot gut
-        if: ${{ !env.is_release }}
         uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
         with:
           godot_version: ${{ env.GODOT_VERSION }}
