@@ -1,20 +1,25 @@
-# 100 Devs - 1 Game - Pong Test Run
+# 100 Devs - 1 Game - All The Incrementals
 
 Make sure to read the contributors guide before contributing.
+
+Join us on [Discord](https://discord.gg/UHN4AjMw4d)
 
 Required Software:
 [Godot v4.4.1](https://godotengine.org/download/)
 [Github Desktop](https://desktop.github.com/download/)
 
-## For Programmers
+## Development Setup
 
-- Set up your environment: After cloning the repo, run the command:
+After cloning, enter the project folder and set up requirements and environment:
+
+Linux:
 
 ```
-setup.sh
+./setup.sh
 ```
 
-Or, if you're not on Linux, you can just manually run:
+Windows:
+
 
 ```
 pip install -r requirements.txt
@@ -27,7 +32,7 @@ Recommended software:
   - With the [GDScript Formatter and Linter Extension](https://marketplace.visualstudio.com/items?itemName=EddieDover.gdscript-formatter-linter)
 
 
-## Our new backend
+## Large files backend
 
 The file server may prompt you to provide credentials now, if you upload anything to this Repository.
 
