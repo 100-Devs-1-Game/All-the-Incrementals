@@ -6,12 +6,12 @@ A collaborative game jam project. A game of ever-expanding minigames.
 
 ## Getting Started
 
-Play the game! You can download the Windows, Mac, iOS, Android, or Linux binaries on the [releases page](https://github.com/100-Devs-1-Game/All-the-Incrementals/releases) or play the game on [itch.io](https://itch.io).
+Play the game! You can download the Windows, Mac, iOS, Android, or Linux binaries on the [releases page](https://github.com/100-Devs-1-Game/All-the-Incrementals/releases) or play the game on your browser at [itch.io](https://itch.io/jam/100-devs-1-game-collaborative-godot-game-jam).
 
 If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) and check out one of the following sections:
 
 - [How to contribute code](#how-to-contribute-code)
-- [How to contribute art, sound, and music](#how-to-contribute-art-and-sound-music)
+- [How to contribute art, sound, and music](#how-to-contribute-art-and-soundmusic)
 - [How to contribute game ideas](#how-to-contribute-game-ideas)
 - [How to contribute testing and bug reports](#how-to-contribute-qa-testing-and-bug-reports)
 
@@ -83,7 +83,7 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
 
 ## How to contribute QA testing and bug reports:
 
-1. Play the game ([downloads](https://github.com/100-Devs-1-Game/All-the-Incrementals/releases), [itch.io](https://itch.io/)).
+1. Play the game ([downloads](https://github.com/100-Devs-1-Game/All-the-Incrementals/releases) or in your browser at [itch.io](https://itch.io/jam/100-devs-1-game-collaborative-godot-game-jam)).
 1. Find bugs and [create a bug report ticket here](https://github.com/100-Devs-1-Game/All-the-Incrementals/issues/new).
 1. Describe the issue as best as possible.
 1. Rinse and repeat!
