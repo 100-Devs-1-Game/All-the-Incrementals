@@ -1,0 +1,15 @@
+name: Discord review
+on:
+  pull_request:
+    types: [review_requested]
+
+jobs:
+  notify-reviewers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_REVIEW_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'Review requested for PR: ${{ github.event.pull_request.html_url }}'
