@@ -35,7 +35,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*res://global/event_bus.gd"
-FmodManager="*res://addons/fmod/FmodManager.gd"
+FmodManager="res://addons/fmod/FmodManager.gd"
 Logger="*res://addons/godot-logger/logger.gd"
 
 [debug_draw_3d]
@@ -44,4 +44,4 @@ settings/addon_root_folder="res://addons/debug_draw_3d"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/format_on_save/plugin.cfg")
+enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/gut/plugin.cfg")
