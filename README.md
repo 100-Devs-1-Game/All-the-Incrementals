@@ -60,7 +60,7 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
 - [DebugDraw3d](https://github.com/DmitriySalnikov/godot_debug_draw_3d): It's good
 - [Format-On-Save](https://github.com/ryan-haskell/gdformat-on-save): Auto-formatting
 - [Godot-Logger](https://github.com/KOBUGE-Games/godot-logger): Logs
-- [FMod-extension](https://github.com/utopia-rise/fmod-gdextension): Audio extension
+- ~~[FMod-extension](https://github.com/utopia-rise/fmod-gdextension): Audio extension~~ | removed for now, doesn't allow web builds
 
 ## How to contribute art and sound/music:
 
