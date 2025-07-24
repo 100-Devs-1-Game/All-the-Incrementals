@@ -44,10 +44,15 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
 
 ### Project-specific Guidelines
 
-- We are using a global Autoload Event/Signal Bus where all `signals` that aren't purely for intra-module communication will reside. If possible try to design your modules in away that they only communicate through those global signals with the outside.
+- We are using a global Autoload Event/Signal Bus where all `signals` that aren't purely for intra-module communication will reside. If possible try to design your modules in away that they only communicate through those global signals with the outside
 - We are using Formatter and Linter plugins that will automatically re-format your code or point out potential Errors when you save your Scripts. This may cause some confusion and also trigger the "Newer Files on Disk" Dialog in the Godot Editor, where you can choose "Reload from Disk"
 - It's against convention to use `_variable` for variables that *are not* unused. Use `p_variable` instead if you run into issues, eg. in `_init()`
-- We discourage the use of `await`, `set_deferred()` and `call_deferred()` unless you know exactly what you are doing and what the implications are. Best to leave a comment above that line to inform Code Reviewers why you think it's safe to use in your case.
+- We discourage the use of `await`, `set_deferred()` and `call_deferred()` unless you know exactly what you are doing and what the implications are. Best to leave a comment above that line to inform Code Reviewers why you think it's safe to use in your case
+- Make sure to prefix private variables/functions with an "_" so there's no confusion when interfacing with other Modules which properties should and shouldn't be accessed directly
+- We will use Tabs for indentation ( it's being enforced by our Formatter )
+- We will store all assets in `src/assets/` and all autoloads/singletons in `src/global/`
+- Everybody can merge PRs when they have been approved, not just the author
+- Code reviewers will prioritize speed over depth, unless the PR is labeled "critical review" or it modifies the code of multiple, independent Modules
 
 ### Core Addons
 
