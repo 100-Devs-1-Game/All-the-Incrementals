@@ -1,8 +1,8 @@
 # 100 Devs - 1 Game - All The Incrementals
 
-A collaborative game jam project. A game of ever-expanding minigames. 
+A collaborative game jam project. A game of ever-expanding minigames.
 
-**What happens when 100 devs come together to make 1 game in a game jam?** Join us on [discord](https://discord.gg/UHN4AjMw4d) to find out! 
+**What happens when 100 devs come together to make 1 game in a game jam?** Join us on [discord](https://discord.gg/UHN4AjMw4d) to find out!
 
 ## Getting Started
 
@@ -15,7 +15,7 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
 - [How to contribute game ideas](#how-to-contribute-game-ideas)
 - [How to contribute testing and bug reports](#how-to-contribute-qa-testing-and-bug-reports)
 
-## How to contribute code: 
+## How to contribute code:
 
 1. Read the contributors guides and review [project-specific guidelines](#project-specific-guidelines).
     - :closed_book: [Beginner Guide to Godot and Git](https://blog.paulhartman.dev/100-dev-setup)
@@ -36,7 +36,7 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
 4. Optional recommended software:
     - Editor: [VSCode](https://code.visualstudio.com/) full IDE with advanced functionality compared to the Godot Editor, but needs to be configured properly with the [GDScript Formatter and Linter Extension](https://marketplace.visualstudio.com/items?itemName=EddieDover.gdscript-formatter-linter)
 5. Review GDD.
-6. Assign tasks on coding kanban board to yourself. 
+6. Assign tasks on coding kanban board to yourself.
 7. Implement and push a branch, create a PR.
 8. Get it reviewed, revise if necessary.
 9. Get it merged.
@@ -61,19 +61,19 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
 
 1. [Request and gain access](#access-requests-for-contributors) (google drive).
 1. Read the theme, art and sound guidelines in the GDD.
-1. Assign tasks on the art or sound kanban board to yourself. 
+1. Assign tasks on the art or sound kanban board to yourself.
 1. Upload the asset to the Google drive.
 1. Mark task as done (submitted).
-1. Rinse and repeat! 
+1. Rinse and repeat!
 
-## How to contribute game ideas: 
+## How to contribute game ideas:
 
 1. [Request and gain access](#access-requests-for-contributors) (google drive).
 1. Read the GDD.
-1. Join the [discord](https://discord.gg/UHN4AjMw4d) and talk about what you want to see. 
+1. Join the [discord](https://discord.gg/UHN4AjMw4d) and talk about what you want to see.
 1. Get consensus.
 1. Update the GDD.
-1. Work with a coder to break up the idea into tasks onto the project board to be picked up by the art, sound, and coding teams. 
+1. Work with a coder to break up the idea into tasks onto the project board to be picked up by the art, sound, and coding teams.
 1. Rinse and repeat!
 
 ## How to contribute QA testing and bug reports:
