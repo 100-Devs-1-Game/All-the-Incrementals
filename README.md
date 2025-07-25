@@ -121,38 +121,44 @@ To gain access (LFS credentials), check the `#links` channel on discord. *This i
 
 Thanks goes to all these wonderful people :heart:
 
-### Art
+### Art (in alphabetical order)
 
 * Axureé
-* KLIPNITY
-* Kevin
+* Fae
+* Frog
 * JMC-87
+* Kevin
+* KLIPNITY
+* Noxalas
 * Skin
-* Noxalas
-* Frog
-* Fae
 
-### Sound
+### Code (in alphabetical order)
 
-* Noxalas
-* Frog
-* Fae
-
-### Code
-
-* Codimon
-* microlancer
-* Thaeta-Of-Diamonds
-* Rokle
 * Cdw849
+* Codimon
 * ErnestasK760
+* microlancer
+* Rokle
+* Thaeta-Of-Diamonds
+* [Zephilinox](https://zephilinox.com/)
 
-### Operations
+
+### Operations (in alphabetical order)
 
 * Codimon
-* niconorsk
-* microlancer
-* Zeph
 * krova
+* microlancer
+* niconorsk
+* [Zephilinox](https://zephilinox.com/)
+
+### Sound (in alphabetical order)
+
+* Fae
+* Frog
+* Noxalas
+
+### Story and Character (in alphabetical order)
+
+* Noxalas
 
 If anyone is missing from the list, let us know in Discord right away!
