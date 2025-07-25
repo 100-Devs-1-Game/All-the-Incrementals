@@ -121,6 +121,10 @@ To gain access (LFS credentials), check the `#links` channel on discord. *This i
 
 Thanks goes to all these wonderful people :heart:
 
+### Lead Game Designer
+
+* Noxalas
+
 ### Art (in alphabetical order)
 
 * Axureé
@@ -141,7 +145,7 @@ Thanks goes to all these wonderful people :heart:
 * Rokle
 * Thaeta-Of-Diamonds
 * [Zephilinox](https://zephilinox.com/)
-
+* Noxalas
 
 ### Operations (in alphabetical order)
 
@@ -153,12 +157,8 @@ Thanks goes to all these wonderful people :heart:
 
 ### Sound (in alphabetical order)
 
+* 4tenmu
 * Fae
 * Frog
-* Noxalas
-
-### Story and Character (in alphabetical order)
-
-* Noxalas
 
 If anyone is missing from the list, let us know in Discord right away!
