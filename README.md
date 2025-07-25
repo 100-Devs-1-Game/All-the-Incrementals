@@ -116,3 +116,43 @@ This is only required if you're working directly with git and the repo.
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/0949377f-4feb-4d35-a3ed-942a1954d103" />
 
 To gain access (LFS credentials), check the `#links` channel on discord. *This is not your github login!*
+
+## Contributors ✨
+
+Thanks goes to all these wonderful people :heart:
+
+### Art
+
+* Axureé
+* KLIPNITY
+* Kevin
+* JMC-87
+* Skin
+* Noxalas
+* Frog
+* Fae
+
+### Sound
+
+* Noxalas
+* Frog
+* Fae
+
+### Code
+
+* Codimon
+* microlancer
+* Thaeta-Of-Diamonds
+* Rokle
+* Cdw849
+* ErnestasK760
+
+### Operations
+
+* Codimon
+* niconorsk
+* microlancer
+* Zeph
+* krova
+
+If anyone is missing from the list, let us know in Discord right away!
