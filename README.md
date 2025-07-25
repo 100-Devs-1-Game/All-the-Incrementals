@@ -131,7 +131,6 @@ Thanks goes to all these wonderful people :heart:
 * Fae
 * Frog
 * JMC-87
-* Kevin
 * KLIPNITY
 * Noxalas
 * Skin
@@ -139,6 +138,7 @@ Thanks goes to all these wonderful people :heart:
 ### Code (in alphabetical order)
 
 * Cdw849
+* [CodeLitschi](https://github.com/CodeLitschi) (Kevin)
 * Codimon
 * ErnestasK760
 * microlancer
