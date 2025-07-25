@@ -23,6 +23,6 @@ repos:
         name: Check snake_case directory and file names
         entry: ./.hooks/check_snake_paths.py
         language: python
-        exclude: '^\.github/|src/addons/|README\.md$|LICENSE$|^.pre-commit-config.yaml$'
+        exclude: '^\.github/|src/addons/|README\.md$|LICENSE$|^.pre-commit-config.yaml$|Dockerfile$'
 
 exclude: '^src/addons/'
