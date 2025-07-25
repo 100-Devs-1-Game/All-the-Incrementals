@@ -4,6 +4,9 @@ builds/
 # Temp files
 ~*
 
+# Github actions
+dist/self_hosted_runner/runner
+
 # Godot 4+ specific ignores
 .godot/
 .nomedia
