@@ -1,0 +1,37 @@
+# Tests of the project
+name: CI / CD
+
+env:
+  GODOT_VERSION: 4.4.1
+# Whenever a tag push matching pattern "v*" then run the job
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+    - uses: Scony/godot-gdscript-toolkit@master
+    - uses: pre-commit/action@v3.0.1
+
+  tests:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Checkout LFS objects
+        run: git lfs pull
+
+      - name: unit tests with godot gut
+        uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
+        with:
+          godot_version: ${{ env.GODOT_VERSION }}
+          gut_params: -gdir=res://tests/unit
+          project_path: src
