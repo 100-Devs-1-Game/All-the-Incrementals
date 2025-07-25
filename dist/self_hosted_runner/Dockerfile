@@ -25,6 +25,9 @@ ARG RUNNER_VERSION=2.315.0
 RUN curl -Ls https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
     | tar xz
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    docker
+
 # Give runner user ownership
 RUN chown -R runner:runner /home/runner
 
