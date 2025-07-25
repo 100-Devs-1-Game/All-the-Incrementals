@@ -44,6 +44,12 @@ jobs:
       - name: Checkout LFS objects
         run: git lfs pull
 
+      - name: debug working directory
+        run: |
+          echo "PWD: $PWD"
+          ls -ld "$PWD"
+          touch testfile && echo "can write" || echo "cannot write"
+
       - name: unit tests with godot gut
         uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
         with:
