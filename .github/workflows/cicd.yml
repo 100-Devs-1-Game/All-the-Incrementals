@@ -22,16 +22,10 @@ on:
       - 'export_presets.cfg'
       - 'project.godot'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build-game:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:4.4.1
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
         uses: actions/checkout@v4
       - name: Checkout LFS objects
@@ -84,4 +78,5 @@ jobs:
       - name: Deploy to itch.io
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} butler push ./build/web_release ${{secrets.ITCHIO_USERNAME}}/${{secrets.ITCHIO_GAME}}:web_release
+          ./get_butler.sh
+          BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} ./butler push ./build/web_release ${{secrets.ITCHIO_USERNAME}}/${{secrets.ITCHIO_GAME}}:web_release
