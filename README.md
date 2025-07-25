@@ -100,7 +100,7 @@ If your Google account ID/email doesn't match your discord username, then please
 
 ### GitHub Repo Access - For Coders
 
-To gain access to GitHub, request access in the `#devops` channel on discord.
+To gain access to GitHub, request access in the `#request-github-access` channel on discord.
 
 ### Git LFS - For Coders
 
