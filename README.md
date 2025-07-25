@@ -4,6 +4,12 @@ A collaborative game jam project. A game of ever-expanding minigames.
 
 **What happens when 100 devs come together to make 1 game in a game jam?** Join us on [discord](https://discord.gg/UHN4AjMw4d) to find out!
 
+## License
+
+This project is dual-licensed:
+- `CC BY-NC-SA 4.0` for all assets
+- `MIT` for everything else
+
 ## Getting Started
 
 Play the game! You can download the Windows, Mac, iOS, Android, or Linux binaries on the [releases page](https://github.com/100-Devs-1-Game/All-the-Incrementals/releases) or play the game on your browser at [itch.io](https://itch.io/jam/100-devs-1-game-collaborative-godot-game-jam).
