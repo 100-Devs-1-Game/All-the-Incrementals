@@ -121,13 +121,16 @@ To gain access (LFS credentials), check the `#links` channel on discord. *This i
 
 Thanks goes to all these wonderful people :heart:
 
+### Lead Game Designer
+
+* Noxalas
+
 ### Art (in alphabetical order)
 
 * Axureé
 * Fae
 * Frog
 * JMC-87
-* Kevin
 * KLIPNITY
 * Noxalas
 * Skin
@@ -135,13 +138,14 @@ Thanks goes to all these wonderful people :heart:
 ### Code (in alphabetical order)
 
 * Cdw849
+* [CodeLitschi](https://github.com/CodeLitschi) (Kevin)
 * Codimon
 * ErnestasK760
 * microlancer
 * Rokle
 * Thaeta-Of-Diamonds
 * [Zephilinox](https://zephilinox.com/)
-
+* Noxalas
 
 ### Operations (in alphabetical order)
 
@@ -153,12 +157,8 @@ Thanks goes to all these wonderful people :heart:
 
 ### Sound (in alphabetical order)
 
+* 4tenmu
 * Fae
 * Frog
-* Noxalas
-
-### Story and Character (in alphabetical order)
-
-* Noxalas
 
 If anyone is missing from the list, let us know in Discord right away!

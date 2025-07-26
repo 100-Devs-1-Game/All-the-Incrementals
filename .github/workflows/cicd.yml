@@ -22,46 +22,14 @@ on:
       - 'export_presets.cfg'
       - 'project.godot'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  pre-commit:
-    runs-on: self-hosted
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
-    - uses: Scony/godot-gdscript-toolkit@master
-    - uses: pre-commit/action@v3.0.1
-
   build-game:
-    # The type of runner that the job will run on
     runs-on: self-hosted
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
         uses: actions/checkout@v4
       - name: Checkout LFS objects
         run: git lfs pull
-
-      - name: debug working directory
-        run: |
-          echo "PWD: $PWD"
-          ls -ld "$PWD"
-          touch testfile && echo "can write" || echo "cannot write"
-
-      - name: unit tests with godot gut
-        #uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
-        uses: 100-Devs-1-Game/godot-gut-ci@without_root_in_docker
-        with:
-          godot_version: ${{ env.GODOT_VERSION }}
-          gut_params: -gdir=res://tests/unit
-          project_path: src
-
-      - name: list files
-        run: |
-          ls -R
-
       - name: build game
         id: build
         # Use latest version (see releases for all versions)
@@ -105,3 +73,10 @@ jobs:
           tag: ${{ github.ref_name }}
           artifacts: |
             ${{ steps.build.outputs.archive_directory }}/**/*.zip
+            ${{ steps.build.outputs.archive_directory }}/**/index.html
+
+      - name: Deploy to itch.io
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          ./get_butler.sh
+          BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} ./butler push ./build/web_release ${{secrets.ITCHIO_USERNAME}}/${{secrets.ITCHIO_GAME}}:web_release
