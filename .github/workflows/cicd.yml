@@ -78,9 +78,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           ./get_butler.sh
-          ls ${{ steps.build.outputs.build_directory }}/build/web_release
-          echo BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} ./butler push ${{ steps.build.outputs.build_directory }}/build/web_release ${{secrets.ITCHIO_USERNAME}}/${{secrets.ITCHIO_GAME}}:web
-          BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} ./butler --verbose push ${{ steps.build.outputs.build_directory }}/build/web_release ${{secrets.ITCHIO_USERNAME}}/${{secrets.ITCHIO_GAME}}:web
+          BUTLER_API_KEY=${{secrets.BUTLER_API_KEY}} ./butler --verbose push ${{ steps.build.outputs.build_directory }}/builds/web_release ${{secrets.ITCHIO_USERNAME}}/${{secrets.ITCHIO_GAME}}:web
 
       - name: Send Discord notification
         if: startsWith(github.ref, 'refs/tags/')
