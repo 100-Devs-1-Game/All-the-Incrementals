@@ -24,5 +24,9 @@ repos:
         entry: ./.hooks/check_snake_paths.py
         language: python
         exclude: '^\.github/|src/addons/|README\.md$|LICENSE$|^.pre-commit-config.yaml$'
+      - id: check-locked-project-settings
+        name: Check that locked project settings were not modified
+        entry: ./.hooks/check_locked_project_settings.py
+        language: python
 
 exclude: '^src/addons/'

@@ -31,7 +31,7 @@ def main():
                 invalid_dirs.add(part)
 
     if invalid_dirs:
-        print("❌ These directory or file names are NOT snake_case:")
+        print("Error: These directory or file names are NOT snake_case:")
         for d in sorted(invalid_dirs):
             print(f"  - {d}")
         return 1
