@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://oud0vpq34sev"]
+
+[ext_resource type="Script" uid="uid://cp64vpgj3o28o" path="res://addons/table_container/table_container.gd" id="1_gvaln"]
+[ext_resource type="Script" uid="uid://beh2sx17yfvq7" path="res://addons/upgrade_tree/upgrade_editor.gd" id="1_npwrp"]
+
+[node name="UpgradeEditor" type="GraphNode"]
+offset_top = 2.0
+offset_right = 494.0
+offset_bottom = 607.0
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_npwrp")
+
+[node name="TableContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("1_gvaln")
+separation_horizontal = null
+separation_vertical = 10
+metadata/_custom_type_script = "uid://cp64vpgj3o28o"
+
+[node name="Name" type="HBoxContainer" parent="TableContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TableContainer/Name"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="TableContainer/Name"]
+custom_minimum_size = Vector2(144, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="HBoxContainer" parent="TableContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TableContainer/Description"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Description"
+
+[node name="LineEdit" type="LineEdit" parent="TableContainer/Description"]
+custom_minimum_size = Vector2(144, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="HBoxContainer" parent="TableContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TableContainer/Icon"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Icon"
+
+[node name="UpgradeLogic" type="HBoxContainer" parent="TableContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TableContainer/UpgradeLogic"]
+layout_mode = 2
+text = "Upgrade Logic"

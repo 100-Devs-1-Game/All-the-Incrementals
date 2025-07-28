@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct2dlcs1jd412"]
+
+[ext_resource type="Script" uid="uid://8htgkjtoflnd" path="res://modules/upgrade_tree/upgrade_tree.gd" id="1_rm7v7"]
+
+[node name="UpgradeTree" type="Node2D"]
+script = ExtResource("1_rm7v7")
