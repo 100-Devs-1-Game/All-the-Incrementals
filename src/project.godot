@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="All the Incrementals"
+run/main_scene="uid://cjfskhoh04d0n"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://ceibd1me13fb2"
 
 [audio]
 
@@ -29,6 +30,18 @@ Panku="*res://addons/panku_console/console.tscn"
 
 settings/addon_root_folder="res://addons/debug_draw_3d"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/panku_console/plugin.cfg")
+
+[gui]
+
+theme/custom="uid://sbbn1spr2jvx"
