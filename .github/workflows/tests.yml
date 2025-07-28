@@ -30,7 +30,7 @@ jobs:
         run: git lfs pull
 
       - name: unit tests with godot gut
-        uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
+        uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut-panku-patch
         with:
           godot_version: ${{ env.GODOT_VERSION }}
           gut_params: -gdir=res://tests/unit
