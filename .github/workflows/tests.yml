@@ -29,6 +29,10 @@ jobs:
       - name: Checkout LFS objects
         run: git lfs pull
 
+
+      - name: Initialize Godot project (fixes PankuModuleDataController not declared issue in 4.4)
+        run: godot --headless --editor --quit
+
       - name: unit tests with godot gut
         uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
         with:
