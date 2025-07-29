@@ -42,7 +42,8 @@ jobs:
 
           curl -X POST "$DISCORD_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
-            -d "$(jq -n --arg content "$MSG" '{content: $content}')"
+            -d "$(jq -n --arg content "$MSG" '{content: $content}')" \
+            -v
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_TASKS_WEBHOOK }}
 
