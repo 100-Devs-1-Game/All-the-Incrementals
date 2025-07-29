@@ -19,7 +19,7 @@ export_credentials.cfg
 
 # Mono-specific ignores
 .mono/
-data_*/
+/data_*/
 mono_crash.*.json
 
 # Python ignores
