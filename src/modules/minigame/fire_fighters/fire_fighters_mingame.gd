@@ -1,0 +1,2 @@
+class_name FireFightersMinigame
+#extends BaseMinigame
