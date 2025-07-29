@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://1m18lfvfkax2"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_mpnl8"]
+
+[node name="Settings" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_mpnl8")]
