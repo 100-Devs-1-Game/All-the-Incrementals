@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv213uo7d1pfj"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_6q817"]
+
+[node name="WaterAltar" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_6q817")]
+for_text = "Water Altar"

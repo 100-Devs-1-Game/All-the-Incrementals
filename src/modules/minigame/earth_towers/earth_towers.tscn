@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://351eaqu7t6ig"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_wj0ah"]
+[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_oq8cc"]
+
+[sub_resource type="Resource" id="Resource_kyijx"]
+script = ExtResource("2_oq8cc")
+label = "Return to Clayport"
+scene_path = "res://modules/settlement/clayport/clayport.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[node name="EarthTowers" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_wj0ah")]
+for_text = "Earth Towers Minigame"
+buttons = Array[ExtResource("2_oq8cc")]([SubResource("Resource_kyijx")])

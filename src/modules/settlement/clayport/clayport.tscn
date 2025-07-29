@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1ucpnb2u1isc"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_xi846"]
+[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_v23ca"]
+
+[sub_resource type="Resource" id="Resource_1ftrw"]
+script = ExtResource("2_v23ca")
+label = "Return to overworld"
+scene_path = "res://modules/overworld/overworld.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_xi846"]
+script = ExtResource("2_v23ca")
+label = "Play Earth Potato Herding Minigame"
+scene_path = "res://modules/minigame/earth_potato_herding/earth_potato_herding.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_v23ca"]
+script = ExtResource("2_v23ca")
+label = "Play Earth Towers Minigame"
+scene_path = "res://modules/minigame/earth_towers/earth_towers.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_i3tw0"]
+script = ExtResource("2_v23ca")
+label = "Play Water Diving Minigame"
+scene_path = "res://modules/minigame/water_diving/water_diving.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_t7eue"]
+script = ExtResource("2_v23ca")
+label = "Play Water Fishing Minigame"
+scene_path = "res://modules/minigame/water_fishing/water_fishing.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[node name="Clayport" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_xi846")]
+for_text = "Clayport"
+buttons = Array[ExtResource("2_v23ca")]([SubResource("Resource_1ftrw"), SubResource("Resource_xi846"), SubResource("Resource_v23ca"), SubResource("Resource_i3tw0"), SubResource("Resource_t7eue")])

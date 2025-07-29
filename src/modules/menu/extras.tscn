@@ -1,7 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://4sdp3vpsbo5v"]
+[gd_scene load_steps=6 format=3 uid="uid://4sdp3vpsbo5v"]
 
 [ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_lo5bt"]
+[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_03ewq"]
+
+[sub_resource type="Resource" id="Resource_snq8b"]
+script = ExtResource("2_03ewq")
+label = "Return to main menu"
+scene_path = "res://modules/menu/main_menu.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_03ewq"]
+script = ExtResource("2_03ewq")
+label = "Art book"
+scene_path = "res://modules/gallery/gallery.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_5tr2e"]
+script = ExtResource("2_03ewq")
+label = "Credits"
+scene_path = "res://modules/credits/credits.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 
 [node name="Extras" type="Node2D"]
 
 [node name="Placeholder" parent="." instance=ExtResource("1_lo5bt")]
+for_text = "Extras Screen"
+buttons = Array[ExtResource("2_03ewq")]([SubResource("Resource_snq8b"), SubResource("Resource_03ewq"), SubResource("Resource_5tr2e")])

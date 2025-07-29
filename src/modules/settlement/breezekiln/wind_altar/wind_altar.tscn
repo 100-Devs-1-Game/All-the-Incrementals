@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1c1gi530gyf6"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_rnkt5"]
+
+[node name="WindAltar" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_rnkt5")]
+for_text = "Wind Altar"
