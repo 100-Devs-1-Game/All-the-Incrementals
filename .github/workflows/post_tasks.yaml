@@ -1,0 +1,66 @@
+name: Post New Unassigned Tasks to Discord
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # every hour
+  workflow_dispatch:
+
+jobs:
+  post-tasks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Find unassigned Task issues not labeled Posted to Discord
+        id: find_issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              labels: "Task",
+              per_page: 100
+            });
+
+            const unposted = issues.filter(issue => {
+              return !issue.assignee && !issue.labels.some(l => l.name === "Posted to Discord");
+            });
+
+            core.setOutput('issues', JSON.stringify(unposted.map(i => ({
+              number: i.number,
+              title: i.title,
+              url: i.html_url
+            }))));
+
+      - name: Post new tasks to Discord
+        if: steps.find_issues.outputs.issues != '[]'
+        run: |
+          ISSUES=$(echo '${{ steps.find_issues.outputs.issues }}' | jq -c '.[]')
+          for issue in $ISSUES; do
+            TITLE=$(echo "$issue" | jq -r '.title')
+            URL=$(echo "$issue" | jq -r '.url')
+            MSG="**$TITLE**\n$URL"
+
+            curl -X POST "$DISCORD_WEBHOOK_URL" \
+              -H "Content-Type: application/json" \
+              -d "$(jq -n --arg content "$MSG" '{content: $content}')"
+          done
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Add "Posted to Discord" label to posted issues
+        if: steps.find_issues.outputs.issues != '[]'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = JSON.parse('${{ steps.find_issues.outputs.issues }}');
+
+            for (const issue of issues) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: ["posted to discord"]
+              });
+            }
