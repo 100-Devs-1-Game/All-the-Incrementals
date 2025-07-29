@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="1_50p5d"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_50p5d"]
-frequency = 0.0912
+frequency = 0.1452
 
 [resource]
 script = ExtResource("1_50p5d")
 atlas_coords = Vector2i(0, 0)
 flammability = 10
 spawn_noise = SubResource("FastNoiseLite_50p5d")
-spawn_noise_threshold = 0.0
+spawn_noise_threshold = 0.45
 density = 1.0
 metadata/_custom_type_script = "uid://dgat565dvnvch"
