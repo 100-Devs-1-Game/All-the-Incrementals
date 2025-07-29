@@ -2,7 +2,7 @@ name: Post One Unassigned Task to Discord
 
 on:
   schedule:
-    - cron: "* * * * *"  # every minute
+    #- cron: "* * * * *"  # every minute
   workflow_dispatch:
 
 jobs:
