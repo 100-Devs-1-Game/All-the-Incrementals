@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmbhboa0omojg"]
+
+[ext_resource type="Script" uid="uid://d3gde2qbcgqdg" path="res://modules/minigame/fire_fighters/fire_fighter_player.gd" id="1_kwj77"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_kwj77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pbvvr")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.851769, 0.851769, 0.851769, 1)
+polygon = PackedVector2Array(4, 8, 0, 4, -4, 8, -4, 4, 0, 0, 4, 4)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(0.851769, 0.851769, 0.851769, 1)
+polygon = PackedVector2Array(0, 0, -8, 0, -8, -4)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+color = Color(0.851769, 0.851769, 0.851769, 1)
+polygon = PackedVector2Array(0, 0, 8, 0, 8, -4)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+color = Color(0.851769, 0.851769, 0.851769, 1)
+polygon = PackedVector2Array(0, 0, -4, -8, 4, -8)
