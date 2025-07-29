@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://cdssaq4iic0q6"
 EventBus="*res://global/event_bus.gd"
 Logger="*res://addons/godot-logger/logger.gd"
 Audio="*res://modules/audio/audio.gd"
+Panku="*res://addons/panku_console/console.tscn"
 
 [debug_draw_3d]
 
@@ -39,7 +40,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/panku_console/plugin.cfg")
 
 [gui]
 
