@@ -24,7 +24,7 @@ jobs:
             });
 
             const unposted = issues.filter(issue => {
-              return !issue.assignee && !issue.labels.some(l => l.name === "Posted to Discord");
+              return !issue.assignee && !issue.labels.some(l => l.name === "posted to discord");
             });
 
             core.setOutput('issues', JSON.stringify(unposted.map(i => ({
@@ -47,7 +47,7 @@ jobs:
               -d "$(jq -n --arg content "$MSG" '{content: $content}')"
           done
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_TASKS_WEBHOOK }}
 
       - name: Add "Posted to Discord" label to posted issues
         if: steps.find_issues.outputs.issues != '[]'
