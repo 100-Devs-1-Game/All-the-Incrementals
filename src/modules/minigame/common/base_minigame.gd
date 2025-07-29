@@ -1,7 +1,8 @@
 class_name BaseMinigame
 extends Node
 
-var data: MinigameData
+# TODO un-comment after MinigameData has been pushed
+#var data: MinigameData
 var score: int
 
 
