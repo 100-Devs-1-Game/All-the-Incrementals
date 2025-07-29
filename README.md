@@ -1,4 +1,6 @@
-# 100 Devs - 1 Game - All The Incrementals
+# Spiritkeeper
+
+## A game by 100 Devs - 1 Game
 
 A collaborative game jam project. A game of ever-expanding minigames.
 
