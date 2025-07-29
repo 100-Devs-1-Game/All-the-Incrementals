@@ -1,0 +1,2 @@
+class_name FireFighterMinigamePlayer
+extends CharacterBody2D
