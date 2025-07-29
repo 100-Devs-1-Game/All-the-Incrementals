@@ -1,0 +1,59 @@
+name: Post One Unassigned Task to Discord
+
+on:
+  schedule:
+    #- cron: "* * * * *"  # every minute
+  workflow_dispatch:
+
+jobs:
+  post-one-task:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Find first unassigned Task not labeled Posted to Discord
+        id: find_issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              labels: "Task",
+              per_page: 100
+            });
+
+            const target = issues.find(issue => {
+              return !issue.assignee && !issue.labels.some(l => l.name === "posted to discord");
+            });
+
+            if (target) {
+              core.setOutput('number', target.number);
+              core.setOutput('title', target.title);
+              core.setOutput('url', target.html_url);
+            }
+
+      - name: Post task to Discord
+        if: steps.find_issue.outputs.number
+        run: |
+          TITLE="${{ steps.find_issue.outputs.title }}"
+          URL="${{ steps.find_issue.outputs.url }}"
+          MSG="**$TITLE**\n$URL"
+
+          curl -X POST "$DISCORD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n --arg content "$MSG" '{content: $content}')"
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_TASKS_WEBHOOK }}
+
+      - name: Add "posted to discord" label
+        if: steps.find_issue.outputs.number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number('${{ steps.find_issue.outputs.number }}'),
+              labels: ["posted to discord"]
+            });
