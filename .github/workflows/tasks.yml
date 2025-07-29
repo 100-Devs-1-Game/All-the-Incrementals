@@ -1,8 +1,6 @@
 name: Post One Unassigned Task to Discord
 
 on:
-  #schedule:
-    #- cron: "* * * * *"  # every minute
   workflow_dispatch:
 
 jobs:
@@ -23,26 +21,56 @@ jobs:
               per_page: 100
             });
 
+            console.log(`Found ${issues.length} issues with 'Task' label`);
+            
+            // Debug: log all issues
+            issues.forEach(issue => {
+              console.log(`Issue: ${issue.title}`);
+              console.log(`  Assignee: ${issue.assignee ? issue.assignee.login : 'none'}`);
+              console.log(`  Labels: ${issue.labels.map(l => l.name).join(', ')}`);
+            });
+
             const target = issues.find(issue => {
               return !issue.assignee && !issue.labels.some(l => l.name === "posted to discord");
             });
 
             if (target) {
+              console.log(`Selected issue #${target.number}: ${target.title}`);
               core.setOutput('number', target.number);
               core.setOutput('title', target.title);
               core.setOutput('url', target.html_url);
+            } else {
+              console.log('No matching unassigned issues found');
             }
+
+      - name: Debug outputs
+        run: |
+          echo "Issue number: ${{ steps.find_issue.outputs.number }}"
+          echo "Issue title: ${{ steps.find_issue.outputs.title }}"
+          echo "Issue URL: ${{ steps.find_issue.outputs.url }}"
+          echo "Webhook URL present: ${{ secrets.DISCORD_TASKS_WEBHOOK != '' }}"
 
       - name: Post task to Discord
         if: steps.find_issue.outputs.number
         run: |
+          echo "Posting to Discord..."
           TITLE="${{ steps.find_issue.outputs.title }}"
           URL="${{ steps.find_issue.outputs.url }}"
           MSG="**$TITLE**\n$URL"
 
+          echo "Title: $TITLE"
+          echo "URL: $URL"
+          echo "Message: $MSG"
+
+          # Test if jq is available
+          echo '{"test": "value"}' | jq .
+
+          # Try the Discord post
           curl -X POST "$DISCORD_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
-            -d "$(jq -n --arg content "$MSG" '{content: $content}')"
+            -d "$(jq -n --arg content "$MSG" '{content: $content}')" \
+            -w "HTTP Status: %{http_code}\n" \
+            -s
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_TASKS_WEBHOOK }}
 
