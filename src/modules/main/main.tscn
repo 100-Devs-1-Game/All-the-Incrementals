@@ -4,6 +4,7 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_374gq")
+_splash_screens = ["res://modules/main/splash_one.tscn", "res://modules/main/splash_two.tscn"]
 
 [node name="BlackColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)

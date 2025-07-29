@@ -1,8 +1,9 @@
 extends Node2D
 
+@export var _splash_duration: float = 1.8  # seconds
+@export var _splash_screens: Array[String] = []
+
 var _splash_utils: SplashUtils = preload("res://modules/main/splash_utils.gd").new()
-var _splash_duration: float = 2.0  # seconds
-var _splash_screens = ["res://modules/main/splash_one.tscn", "res://modules/main/splash_two.tscn"]
 
 
 func _ready():
@@ -27,7 +28,7 @@ func _start_splash_screens() -> void:
 		get_tree().root.add_child(splash)
 
 		await _splash_utils.fade_in_scene(splash, _splash_duration)
-		await _splash_utils.fade_out_scene(splash, _splash_duration)
+		await _splash_utils.fade_out_scene(splash, _splash_duration / 2)
 		splash.queue_free()
 
 	get_tree().change_scene_to_file("res://modules/menu/main_menu.tscn")

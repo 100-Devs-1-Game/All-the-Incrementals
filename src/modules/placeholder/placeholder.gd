@@ -5,7 +5,11 @@ extends Control
 
 
 func _ready() -> void:
-	$PlaceholderFor.text = for_text + "\ngoes here"
+	if for_text != "":
+		$PlaceholderFor.text = for_text + "\ngoes here"
+	else:
+		$PlaceholderFor.text = ""
+
 	for button in buttons:
 		var new_button: Button = Button.new()
 		new_button.text = button.label
