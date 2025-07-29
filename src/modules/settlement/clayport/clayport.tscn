@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=10 format=3 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_xi846"]
 [ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_v23ca"]
@@ -7,6 +7,18 @@
 script = ExtResource("2_v23ca")
 label = "Return to overworld"
 scene_path = "res://modules/overworld/overworld.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_k84e6"]
+script = ExtResource("2_v23ca")
+label = "Visit the Earth Altar"
+scene_path = "res://modules/settlement/clayport/earth_altar/earth_altar.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_g3aps"]
+script = ExtResource("2_v23ca")
+label = "Visit the Water Altar"
+scene_path = "res://modules/settlement/clayport/water_altar/water_altar.tscn"
 metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 
 [sub_resource type="Resource" id="Resource_xi846"]
@@ -37,4 +49,4 @@ metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 
 [node name="Placeholder" parent="." instance=ExtResource("1_xi846")]
 for_text = "Clayport"
-buttons = Array[ExtResource("2_v23ca")]([SubResource("Resource_1ftrw"), SubResource("Resource_xi846"), SubResource("Resource_v23ca"), SubResource("Resource_i3tw0"), SubResource("Resource_t7eue")])
+buttons = Array[ExtResource("2_v23ca")]([SubResource("Resource_1ftrw"), SubResource("Resource_k84e6"), SubResource("Resource_g3aps"), SubResource("Resource_xi846"), SubResource("Resource_v23ca"), SubResource("Resource_i3tw0"), SubResource("Resource_t7eue")])
