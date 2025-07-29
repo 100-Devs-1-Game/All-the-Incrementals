@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Essence" load_steps=2 format=3 uid="uid://df7knsfckprdd"]
+
+[ext_resource type="Script" uid="uid://b2401p3ugnfm0" path="res://modules/essence/essence.gd" id="1_wa0yb"]
+
+[resource]
+script = ExtResource("1_wa0yb")
+name = "Wind"
+metadata/_custom_type_script = "uid://b2401p3ugnfm0"

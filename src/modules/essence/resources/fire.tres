@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Essence" load_steps=2 format=3 uid="uid://kwd3sg27pka7"]
+
+[ext_resource type="Script" uid="uid://b2401p3ugnfm0" path="res://modules/essence/essence.gd" id="1_fkwgn"]
+
+[resource]
+script = ExtResource("1_fkwgn")
+name = "Fire"
+metadata/_custom_type_script = "uid://b2401p3ugnfm0"
