@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv213uo7d1pfj"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_6q817"]
+[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_lfypi"]
+
+[sub_resource type="Resource" id="Resource_kbp25"]
+script = ExtResource("2_lfypi")
+label = "Return to Clayport"
+scene_path = "res://modules/settlement/clayport/clayport.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[node name="WaterAltar" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_6q817")]
+for_text = "Water Altar"
+buttons = Array[ExtResource("2_lfypi")]([SubResource("Resource_kbp25")])

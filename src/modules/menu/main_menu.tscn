@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://khnsbhc4bqj8"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_sqara"]
+[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_6s0ul"]
+
+[sub_resource type="Resource" id="Resource_cvkr5"]
+script = ExtResource("2_6s0ul")
+label = "Start game"
+scene_path = "res://modules/overworld/overworld.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_e5aks"]
+script = ExtResource("2_6s0ul")
+label = "Settings"
+scene_path = "res://modules/menu/settings.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_gl3cg"]
+script = ExtResource("2_6s0ul")
+label = "Extras"
+scene_path = "res://modules/menu/extras.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_a0d1e"]
+script = ExtResource("2_6s0ul")
+label = "Quit game"
+scene_path = ""
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_sqara")]
+for_text = "Main Menu Screen"
+buttons = Array[ExtResource("2_6s0ul")]([SubResource("Resource_cvkr5"), SubResource("Resource_e5aks"), SubResource("Resource_gl3cg"), SubResource("Resource_a0d1e")])

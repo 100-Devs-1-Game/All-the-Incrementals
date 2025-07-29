@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://by18kqakehrup"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_7nipq"]
+[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_kigv3"]
+
+[sub_resource type="Resource" id="Resource_xo3kj"]
+script = ExtResource("2_kigv3")
+label = "Return to Clayport"
+scene_path = "res://modules/settlement/clayport/clayport.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[node name="EarthPotatoHerding" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_7nipq")]
+for_text = "Earth Potato Herding Minigame"
+buttons = Array[ExtResource("2_kigv3")]([SubResource("Resource_xo3kj")])

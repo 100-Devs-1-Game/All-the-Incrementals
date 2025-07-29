@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc7t45674qntp"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_op8fl"]
+[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_ehp35"]
+
+[sub_resource type="Resource" id="Resource_lvc8e"]
+script = ExtResource("2_ehp35")
+label = "Return to Extras"
+scene_path = "res://modules/menu/extras.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[node name="Gallery" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_op8fl")]
+for_text = "Gallery Screen"
+buttons = Array[ExtResource("2_ehp35")]([SubResource("Resource_lvc8e")])

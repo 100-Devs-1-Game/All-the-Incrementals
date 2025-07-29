@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://bl4s8xuvuf3xb"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_572gp"]
+[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_ydiv2"]
+
+[sub_resource type="Resource" id="Resource_82p5n"]
+script = ExtResource("2_ydiv2")
+label = "Return to overworld"
+scene_path = "res://modules/overworld/overworld.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_pesk8"]
+script = ExtResource("2_ydiv2")
+label = "Visit the Fire Altar"
+scene_path = "res://modules/settlement/breezekiln/fire_altar/fire_altar.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_8cjfn"]
+script = ExtResource("2_ydiv2")
+label = "Visit the Wind Altar"
+scene_path = "res://modules/settlement/breezekiln/wind_altar/wind_altar.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_572gp"]
+script = ExtResource("2_ydiv2")
+label = "Play Fire Fighters Minigame"
+scene_path = "res://modules/minigame/fire_fighters/fire_fighters.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_ydiv2"]
+script = ExtResource("2_ydiv2")
+label = "Play Fire Cooking Minigame"
+scene_path = "res://modules/minigame/fire_cooking/fire_cooking.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_32tle"]
+script = ExtResource("2_ydiv2")
+label = "Play Wind Platformer Minigame"
+scene_path = "res://modules/minigame/wind_platformer/wind_platformer.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[sub_resource type="Resource" id="Resource_giawj"]
+script = ExtResource("2_ydiv2")
+label = "Play Wind Rhythm Minigame"
+scene_path = "res://modules/minigame/wind_rhythm/wind_rhythm.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[node name="Breezekiln" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_572gp")]
+for_text = "Breezekiln"
+buttons = Array[ExtResource("2_ydiv2")]([SubResource("Resource_82p5n"), SubResource("Resource_pesk8"), SubResource("Resource_8cjfn"), SubResource("Resource_572gp"), SubResource("Resource_ydiv2"), SubResource("Resource_32tle"), SubResource("Resource_giawj")])

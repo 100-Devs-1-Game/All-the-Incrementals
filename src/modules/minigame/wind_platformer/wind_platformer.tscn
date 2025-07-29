@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bytqv7h0iow3u"]
+
+[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_x5t1i"]
+[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_aewbm"]
+
+[sub_resource type="Resource" id="Resource_4orxu"]
+script = ExtResource("2_aewbm")
+label = "Return to Breezekiln"
+scene_path = "res://modules/settlement/breezekiln/breezekiln.tscn"
+metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+
+[node name="WindPlatformer" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_x5t1i")]
+for_text = "Wind Platformer Minigame"
+buttons = Array[ExtResource("2_aewbm")]([SubResource("Resource_4orxu")])

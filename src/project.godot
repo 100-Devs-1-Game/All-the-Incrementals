@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="All the Incrementals"
+config/name="Spritkeeper"
 run/main_scene="uid://cjfskhoh04d0n"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="uid://ceibd1me13fb2"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="uid://cgp7j8ngwsnht"
 
 [audio]
 
