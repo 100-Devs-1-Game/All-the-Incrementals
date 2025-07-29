@@ -11,7 +11,7 @@ func _ready():
 	_start_splash_screens()
 
 
-# This helps will making transitions between scenes not flicker as much
+# This makes transitions between scenes not flicker as much
 func _set_black_clear_color() -> void:
 	print("Setting clear color to black")
 	RenderingServer.set_default_clear_color(Color.BLACK)
