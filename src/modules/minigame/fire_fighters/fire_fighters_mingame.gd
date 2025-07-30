@@ -8,6 +8,7 @@ extends BaseMinigame
 
 var map_feature_lookup: Dictionary
 var fires: Dictionary
+var player: FireFighterMinigamePlayer
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
@@ -49,6 +50,12 @@ func add_fire(tile: Vector2i, size: float = 0.0):
 	fire.position = tile_map_terrain.map_to_local(tile)
 	fire.size = randf_range(0.2, 0.8)
 	add_child(fire)
+	fire.died.connect(remove_fire.bind(fire))
+
+
+func remove_fire(fire: FireFightersMinigameFire):
+	fires.erase(fires.find_key(fire))
+	fire.queue_free()
 
 
 func tick_fires():
@@ -57,21 +64,32 @@ func tick_fires():
 		var feature: FireFightersMapFeature = get_map_feature(tile)
 		if not feature:
 			fire.size -= 0.01
-			if fire.size < 0:
-				fire.queue_free()
-				fires.erase(tile)
 		else:
 			fire.size += feature.flammability * 0.1
 			if FireFightersMinigameUtils.chancef(fire.size - 1.0):
 				var dir: Vector2i = Vector2.from_angle(randf() * 2 * PI).round()
 				assert(abs(dir.x) == 1 or abs(dir.y) == 1)
 				var neighbor_feature: FireFightersMapFeature = get_map_feature(tile + dir)
-				if neighbor_feature:
+				if (
+					neighbor_feature
+					and neighbor_feature.flammability > 0
+					and not fires.has(tile + dir)
+				):
 					add_fire(tile + dir)
 
 
 func spawn_player():
-	pass
+	player = player_scene.instantiate()
+	player.position = DisplayServer.window_get_size() / 2
+	add_child(player)
+	player.extinguish_spot.connect(on_extinguish_at)
+
+
+func on_extinguish_at(pos: Vector2):
+	var tile: Vector2i = tile_map_terrain.local_to_map(pos)
+	if fires.has(tile):
+		var fire: FireFightersMinigameFire = fires[tile]
+		fire.size -= 0.1
 
 
 func get_map_feature(tile: Vector2i) -> FireFightersMapFeature:
