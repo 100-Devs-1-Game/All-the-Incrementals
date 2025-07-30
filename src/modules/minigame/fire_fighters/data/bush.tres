@@ -8,8 +8,8 @@ frequency = 0.1452
 [resource]
 script = ExtResource("1_50p5d")
 atlas_coords = Vector2i(0, 0)
-flammability = 10
+flammability = 1.0
 spawn_noise = SubResource("FastNoiseLite_50p5d")
-spawn_noise_threshold = 0.45
-density = 1.0
+spawn_noise_threshold = 0.25
+density = 0.8
 metadata/_custom_type_script = "uid://dgat565dvnvch"

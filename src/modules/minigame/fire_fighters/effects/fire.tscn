@@ -44,5 +44,6 @@ script = ExtResource("1_yis8u")
 offset = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.827451, 0.482353, 0.207843, 0.52549)
 sprite_frames = SubResource("SpriteFrames_12iut")
 frame = 3
