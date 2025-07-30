@@ -186,7 +186,7 @@ func _on_upgrade_selected(graph_node: GraphNode) -> void:
 	EditorInterface.edit_resource(graph_node.upgrade)
 
 
-func _on_dragged(old_position: Vector2, new_position: Vector2, graph_node: GraphNode) -> void:
+func _on_dragged(_old_position: Vector2, new_position: Vector2, graph_node: GraphNode) -> void:
 	graph_node.upgrade.position = new_position
 	_save_upgrade(graph_node.upgrade)
 
