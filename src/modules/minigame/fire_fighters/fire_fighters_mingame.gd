@@ -46,6 +46,7 @@ func run():
 func _physics_process(_delta: float) -> void:
 	if Engine.get_physics_frames() % 10 == 0:
 		tick_fires()
+	tick_water()
 
 
 func add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
@@ -81,6 +82,17 @@ func tick_fires():
 				try_to_spread_fire(tile)
 
 
+func tick_water():
+	for water: FireFightersMinigameWater in water_node.get_children():
+		var tile: Vector2i = get_tile_at(water.position)
+		var fire: FireFightersMinigameFire = get_fire_at(tile)
+		if fire:
+			var max_water: float = min(0.1, water.density + 0.001)
+			var final_water: float = min(max_water, fire.size + 0.001)
+			fire.size -= final_water
+			water.density -= final_water
+
+
 func try_to_spread_fire(tile: Vector2i):
 	var dir: Vector2i = Vector2.from_angle(randf() * 2 * PI).round()
 	var neighbor_pos := Vector2i(tile + dir)
@@ -105,6 +117,10 @@ func on_extinguish_at(pos: Vector2):
 		fire.size -= 0.1
 
 
+func get_tile_at(pos: Vector2) -> Vector2i:
+	return tile_map_terrain.local_to_map(pos)
+
+
 func get_map_feature(tile: Vector2i) -> FireFightersMapFeature:
 	var atlas_coords: Vector2i = tile_map_objects.get_cell_atlas_coords(tile)
 	return get_map_feature_from_atlas_coords(atlas_coords)
@@ -115,6 +131,12 @@ func get_map_feature_from_atlas_coords(coords: Vector2i) -> FireFightersMapFeatu
 		return null
 	assert(map_feature_lookup.has(coords))
 	return map_feature_lookup[coords]
+
+
+func get_fire_at(tile: Vector2i) -> FireFightersMinigameFire:
+	if not is_tile_burning(tile):
+		return null
+	return fires[tile]
 
 
 func is_tile_burning(tile: Vector2i) -> bool:
