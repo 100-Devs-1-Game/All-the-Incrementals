@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3bpdr1s1dmo6"]
+
+[ext_resource type="Script" uid="uid://jd1utp40bi6c" path="res://modules/minigame/example/overworld.gd" id="1_1kdnu"]
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="2_jwuq6"]
+[ext_resource type="Resource" uid="uid://dym4je2njvl28" path="res://modules/minigame/example/minigame_data.tres" id="3_v35sj"]
+
+[node name="Overworld" type="CanvasLayer"]
+script = ExtResource("1_1kdnu")
+minigames = Array[ExtResource("2_jwuq6")]([ExtResource("3_v35sj")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
