@@ -11,7 +11,8 @@ static func generate_map(
 		for y in range(rect.position.y, rect.position.y + rect.size.y):
 			var tile := Vector2i(x, y)
 
-			tile_map_terrain.set_cell(tile, 0, Vector2i.ZERO)
+			if randf() < 0.2:
+				tile_map_terrain.set_cell(tile, 0, Vector2i([0, 1].pick_random(), 0))
 
 			var feature: FireFightersMinigameMapFeature = get_feature_at(tile, map_features)
 			if feature:
