@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gsrqk8rkaavn"]
+
+[ext_resource type="Script" uid="uid://bby70ukaa0ijx" path="res://modules/minigame/common/floating_text/floating_text_util.gd" id="1_hk8vb"]
+
+[node name="FloatingTextSystem" type="Node"]
+script = ExtResource("1_hk8vb")
