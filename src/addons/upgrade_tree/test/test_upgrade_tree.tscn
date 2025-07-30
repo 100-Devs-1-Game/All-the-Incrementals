@@ -1,9 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cigg0g2isg60t"]
+[gd_scene load_steps=2 format=3 uid="uid://cigg0g2isg60t"]
 
 [ext_resource type="Script" uid="uid://bd0f10tpe7i37" path="res://addons/upgrade_tree/test/test_upgrade_tree.gd" id="1_6fl7u"]
-[ext_resource type="Resource" uid="uid://bv140j1ojjq00" path="res://addons/upgrade_tree/test/test_upgrade_tree_minigame_data.res" id="2_4pk2h"]
 
 [node name="TestUpgradeTree" type="Node"]
 script = ExtResource("1_6fl7u")
-data = ExtResource("2_4pk2h")
 metadata/_custom_type_script = "uid://bjheb3vnm5yb5"

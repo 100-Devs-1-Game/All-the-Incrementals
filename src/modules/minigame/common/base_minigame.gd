@@ -1,7 +1,7 @@
 class_name BaseMinigame
 extends Node
 
-@export var data: MinigameData
+var data: MinigameData
 
 var score: int
 
