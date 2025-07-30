@@ -25,6 +25,7 @@ repos:
         language: python
         language_version: python3
         pass_filenames: false
+        verbose: true
       - id: check-snake-paths
         name: Check snake_case directory and file names
         entry: ./.hooks/check_snake_paths.py
