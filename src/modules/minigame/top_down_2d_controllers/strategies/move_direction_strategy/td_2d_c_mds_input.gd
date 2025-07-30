@@ -1,5 +1,5 @@
-class_name TD_2D_C_MDS_Input
-extends TD_2D_C_MDS_Base
+class_name TD2DCMDSInput
+extends TD2DCMDSBase
 
 #region ======================== PUBLIC METHODS ================================
 

@@ -1,5 +1,5 @@
-class_name TD_2D_C_MDS_GoToPoint
-extends TD_2D_C_MDS_Base
+class_name TD2DCMDSGoToPoint
+extends TD2DCMDSBase
 
 #region ------------------------ PRIVATE VARS ----------------------------------
 
@@ -13,13 +13,13 @@ var _update_point_on_every_call: bool = false
 #region ======================== PUBLIC METHODS ================================
 
 
-func set_point_generator(new_point_generator: PointGenerator) -> TD_2D_C_MDS_GoToPoint:
+func set_point_generator(new_point_generator: PointGenerator) -> TD2DCMDSGoToPoint:
 	_point_generator = new_point_generator
 	select_new_point()
 	return self
 
 
-func update_point_on_every_call() -> TD_2D_C_MDS_GoToPoint:
+func update_point_on_every_call() -> TD2DCMDSGoToPoint:
 	_update_point_on_every_call = true
 	return self
 

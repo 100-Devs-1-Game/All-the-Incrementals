@@ -1,6 +1,8 @@
 class_name State
 extends Node
 
+@export var state_name: String
+
 #region ------------------------ PRIVATE VARS ----------------------------------
 
 var _state_machine: StateMachine:
@@ -9,12 +11,6 @@ var _state_machine_owner: Node:
 	set = set_state_machine_owner
 
 var _time_in_state: float = 0
-
-#endregion
-
-#region ------------------------ PUBLIC VARS -----------------------------------
-
-@export var state_name: String
 
 #endregion
 

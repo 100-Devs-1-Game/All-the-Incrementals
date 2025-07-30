@@ -11,7 +11,7 @@ var _node_2d: Node2D
 #region ======================== SET UP METHODS ================================
 
 
-func _init(new_parent_node: Node2D, new_node_2d) -> void:
+func _init(new_parent_node: Node2D, new_node_2d: Node2D) -> void:
 	_parent_node = new_parent_node
 	_node_2d = new_node_2d
 

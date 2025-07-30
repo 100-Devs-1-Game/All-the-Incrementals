@@ -18,7 +18,7 @@ func get_generic_spawnable_node() -> Node:
 
 	node.add_state_move_direction_strategy(
 		"free_roam",
-		TD_2D_C_MDS_GoToPoint.new().set_point_generator(
+		TD2DCMDSGoToPoint.new().set_point_generator(
 			RandomPointGenerator.new(
 				_free_roam_area.get_polygon(), _free_roam_bounding_box.get_global_rect()
 			)
@@ -28,7 +28,7 @@ func get_generic_spawnable_node() -> Node:
 	node.add_state_move_direction_strategy(
 		"herd_by_player",
 		(
-			TD_2D_C_MDS_GoToPoint
+			TD2DCMDSGoToPoint
 			. new()
 			. set_point_generator(GoAwayFromNode2D.new(node, _player))
 			. update_point_on_every_call()

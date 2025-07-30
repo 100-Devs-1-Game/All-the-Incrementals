@@ -1,4 +1,4 @@
-extends Spawner
+extends RandomPositionSpawner
 
 #region ------------------------ PRIVATE VARS ----------------------------------
 
@@ -15,7 +15,7 @@ func get_generic_spawnable_node() -> Node:
 	node.add_state_move_direction_strategy(
 		"go_to_nearest_youngling",
 		(
-			TD_2D_C_MDS_GoToPoint
+			TD2DCMDSGoToPoint
 			. new()
 			. set_point_generator(
 				GoToNearestNode2dChildPositionGenerator.new(node, _youngling_swawn_zone)

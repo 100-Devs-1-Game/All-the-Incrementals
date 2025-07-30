@@ -16,7 +16,7 @@ func get_generic_spawnable_node() -> Node:
 
 	node.add_state_move_direction_strategy(
 		"go_to_bucket",
-		TD_2D_C_MDS_GoToPoint.new().set_point_generator(Node2DPositionGenerator.new(_busket_node))
+		TD2DCMDSGoToPoint.new().set_point_generator(Node2DPositionGenerator.new(_busket_node))
 	)
 
 	return node

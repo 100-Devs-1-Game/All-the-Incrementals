@@ -5,10 +5,10 @@ extends CharacterBody2D
 
 @export var _base_speed: Vector2 = Vector2.ONE * 200.0
 @export var _use_physics_process_to_move: bool = true
-@export var _move_direction_strategy: TD_2D_C_MDS_Base:
+@export var _move_direction_strategy: TD2DCMDSBase:
 	set = set_move_direction_strategy
 
-var _state_move_direction_strategy_map: Dictionary[String, TD_2D_C_MDS_Base]
+var _state_move_direction_strategy_map: Dictionary[String, TD2DCMDSBase]
 
 #endregion
 
@@ -30,7 +30,7 @@ func _set_up() -> void:
 
 
 func add_state_move_direction_strategy(
-	state_name: String, new_move_direction_strategy: TD_2D_C_MDS_Base
+	state_name: String, new_move_direction_strategy: TD2DCMDSBase
 ) -> void:
 	_state_move_direction_strategy_map[state_name] = new_move_direction_strategy
 
@@ -40,7 +40,7 @@ func change_move_direction_stategy_according_to_state(state_name: String) -> voi
 	set_move_direction_strategy(_state_move_direction_strategy_map[state_name])
 
 
-func set_move_direction_strategy(new_move_direction_strategy: TD_2D_C_MDS_Base) -> void:
+func set_move_direction_strategy(new_move_direction_strategy: TD2DCMDSBase) -> void:
 	_move_direction_strategy = new_move_direction_strategy
 
 

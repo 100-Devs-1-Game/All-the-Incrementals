@@ -1,6 +1,9 @@
 class_name EphYoungling
 extends TopDown2DCharacterController
 
+@export var _time_to_grow: float = 10
+@export var _state_machine: StateMachine
+
 #region ------------------------ PUBLIC VARS -----------------------------------
 
 var eph_adult_spawner: Spawner
@@ -9,8 +12,6 @@ var eph_adult_spawner: Spawner
 
 #region ------------------------ PRIVATE VARS ----------------------------------
 
-@export var _time_to_grow: float = 10
-@export var _state_machine: StateMachine
 var _time_young: float = 0
 
 #endregion
@@ -36,11 +37,11 @@ func _physics_process(delta: float) -> void:
 		_state_machine.change_state("grow_up")
 
 
-func _on_youndling_saw_player_area_area_entered(area: Area2D) -> void:
+func _on_youndling_saw_player_area_area_entered(_area: Area2D) -> void:
 	_state_machine.change_state("herd_by_player")
 
 
-func _on_youndling_saw_player_area_area_exited(area: Area2D) -> void:
+func _on_youndling_saw_player_area_area_exited(_area: Area2D) -> void:
 	_state_machine.change_state("free_roam")
 
 

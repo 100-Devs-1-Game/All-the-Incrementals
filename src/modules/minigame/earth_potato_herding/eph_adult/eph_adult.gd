@@ -1,15 +1,11 @@
 class_name EphAdult
 extends TopDown2DCharacterController
 
+@export var _close_to_bucket_margin: float = 10
+
 #region ------------------------ PUBLIC VARS -----------------------------------
 
 var bucket_node: Node2D
-
-#endregion
-
-#region ------------------------ PRIVATE VARS ----------------------------------
-
-@export var _close_to_bucket_margin: float = 10
 
 #endregion
 
