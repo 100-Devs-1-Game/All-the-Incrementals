@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cib0ln0mwn2a3"]
+[gd_scene load_steps=0 format=3 uid="uid://cib0ln0mwn2a3"]
 
 [node name="UpgradeTreeEditor" type="Control"]
 layout_mode = 3

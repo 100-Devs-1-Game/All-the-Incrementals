@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=5 format=3 uid="uid://cb8jw3hov4rgw"]
+
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="1_pddb2"]
+[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="1_ugdv5"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="1_wak6f"]
+[ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="4_ae8pw"]
+
+[resource]
+script = ExtResource("1_wak6f")
+unlocks_feature = ""
+name = "Test Two"
+flavor = ""
+icon = ExtResource("1_ugdv5")
+position = Vector2(500, 500)
+cost_arr = Array[ExtResource("1_pddb2")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 0
+base_cost = 0
+base_cost_multiplier = 0.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlock_level = 0
+unlocks = Array[ExtResource("4_ae8pw")]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+current_level = 0
