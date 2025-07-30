@@ -42,7 +42,7 @@ metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 [sub_resource type="Resource" id="Resource_t7eue"]
 script = ExtResource("2_v23ca")
 label = "Play Water Fishing Minigame"
-scene_path = "res://modules/minigame/water_fishing/water_fishing.tscn"
+scene_path = "res://modules/minigame/water_target_fishing/water_target_fishing.tscn"
 metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 
 [node name="Clayport" type="Node2D"]
