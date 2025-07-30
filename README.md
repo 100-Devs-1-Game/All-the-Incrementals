@@ -37,9 +37,11 @@ If you want to get involved, join the [discord](https://discord.gg/UHN4AjMw4d) a
     ```
     1. Windows:
     ```
+    git lfs install
+    git lfs pull
     pip install -r requirements.txt
     pre-commit install
-    git lfs install
+    pre-commit run --all-files
     ```
 4. Optional recommended software:
     - Editor: [VSCode](https://code.visualstudio.com/) full IDE with advanced functionality compared to the Godot Editor, but needs to be configured properly with the [GDScript Formatter and Linter Extension](https://marketplace.visualstudio.com/items?itemName=EddieDover.gdscript-formatter-linter)
