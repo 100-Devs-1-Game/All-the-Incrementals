@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d08u2lgfvmeo7"]
+
+[ext_resource type="Script" uid="uid://3v6gl213hsvr" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.gd" id="1_mrrvv"]
+[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_c8i4m"]
+[ext_resource type="Script" uid="uid://b88vj4b1yjkab" path="res://modules/minigame/top_down_2d_controllers/state_machine/state_machine.gd" id="2_lvo8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd8ox"]
+size = Vector2(78, 75)
+
+[node name="TopDown2dCharacterController" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_mrrvv")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_lvo8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wd8ox")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.195833, 0.195833)
+texture = ExtResource("2_c8i4m")
