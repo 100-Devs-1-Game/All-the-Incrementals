@@ -1,15 +1,3 @@
-# How to use the DebugPopup
-#
-# Step 1. Add the DebugPopup to your scene.
-# Step 2. Go to the Inspector for DebugPopup and add elements to the
-#         Debug Functions array. Each element is a string that will be used
-#         to call a debug function in the parent scene.
-# Step 3. Define a function debug_<name> where <name> is what you specified.
-# Step 4. Run your scene.
-# Step 5. Press the hotkey (default X) to load the DebugPopup.
-# Step 6. Click your debug button and ensure that it executes the function
-#         you defined in the parent scene.
-
 class_name DebugPopup
 
 extends Control
