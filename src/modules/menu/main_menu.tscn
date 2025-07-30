@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://khnsbhc4bqj8"]
+[gd_scene load_steps=9 format=3 uid="uid://khnsbhc4bqj8"]
 
 [ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_sqara"]
+[ext_resource type="Script" uid="uid://br6m2cbo4864k" path="res://modules/menu/main_menu.gd" id="1_tsonj"]
 [ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_6s0ul"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_cvkr5"]
 
 [sub_resource type="Resource" id="Resource_cvkr5"]
 script = ExtResource("2_6s0ul")
@@ -28,7 +30,18 @@ scene_path = ""
 metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_tsonj")
 
 [node name="Placeholder" parent="." instance=ExtResource("1_sqara")]
 for_text = "Main Menu Screen"
 buttons = Array[ExtResource("2_6s0ul")]([SubResource("Resource_cvkr5"), SubResource("Resource_e5aks"), SubResource("Resource_gl3cg"), SubResource("Resource_a0d1e")])
+
+[node name="DebugPopup" parent="." instance=ExtResource("3_cvkr5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 1
+grow_vertical = 1
+debug_functions = Array[String](["hello_world"])
