@@ -32,13 +32,13 @@ static func get_auto_display_scale() -> float:
 			flag = true
 	if flag:
 		return DisplayServer.screen_get_max_scale()
-		
+
 	var screen := DisplayServer.window_get_current_screen()
-	
+
 	if (DisplayServer.screen_get_size(screen) == Vector2i()):
 		# Invalid screen size, skip.
 		return 1.0
-	
+
 	# Use the smallest dimension to use a correct display scale on portrait displays.
 	var smallest_dimension = min(DisplayServer.screen_get_size().x, DisplayServer.screen_get_size().y)
 	if DisplayServer.screen_get_dpi(screen) >= 192 and smallest_dimension >= 1400:

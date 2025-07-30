@@ -15,7 +15,6 @@ func _ready() -> void:
 		new_button.text = button.label
 		new_button.connect("pressed", Callable(self, "_change_scene").bind(button.scene_path))
 		$VBoxContainer.add_child(new_button)
-		var name = button.label
 
 
 func _change_scene(scene_path: String) -> void:
