@@ -8,10 +8,10 @@
 [resource]
 script = ExtResource("1_wak6f")
 unlocks_feature = ""
-name = "Test Two"
+name = "Test twoasdasd"
 flavor = ""
 icon = ExtResource("1_ugdv5")
-position = Vector2(500, 500)
+position = Vector2(680, 100)
 cost_arr = Array[ExtResource("1_pddb2")]([])
 effect_modifier_arr = Array[float]([])
 max_level = 0

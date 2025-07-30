@@ -54,6 +54,9 @@ func _enter_tree() -> void:
 	upgrade_tree_editor_instance.get_node("DeleteUpgrade").pressed.connect(
 		_on_delete_upgrade_pressed
 	)
+	upgrade_tree_editor_instance.get_node("ReloadResources").pressed.connect(
+		_on_reload_resources_pressed
+	)
 	graph_edit.connection_request.connect(_on_connection_request)
 	graph_edit.disconnection_request.connect(_on_disconnection_request)
 
@@ -128,6 +131,10 @@ func _on_save_upgrade_pressed() -> void:
 
 func _on_delete_upgrade_pressed() -> void:
 	pass
+
+
+func _on_reload_resources_pressed() -> void:
+	_draw_upgrade_tree(current_scene)
 
 
 # Signal Handlers
