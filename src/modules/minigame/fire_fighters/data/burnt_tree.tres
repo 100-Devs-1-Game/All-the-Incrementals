@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FireFightersMinigameMapFeature" load_steps=2 format=3 uid="uid://dwfqr24woq5ie"]
+
+[ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="1_k0hnq"]
+
+[resource]
+script = ExtResource("1_k0hnq")
+atlas_coords = Vector2i(3, 0)
+flammability = 0.0
+burn_duration = 10.0
+spawn_manually = true
+spawn_noise_threshold = 0.0
+density = 1.0
+metadata/_custom_type_script = "uid://dgat565dvnvch"

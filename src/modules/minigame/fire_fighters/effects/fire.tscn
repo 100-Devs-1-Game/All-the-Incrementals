@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwrb3svm6p8o7"]
+
+[ext_resource type="Texture2D" uid="uid://dte4yb53pkgrb" path="res://assets/minigames/fire_fighters/placeholder_assets/fire_animation.png" id="1_bouqu"]
+[ext_resource type="Script" uid="uid://vjrxcjxxc86q" path="res://modules/minigame/fire_fighters/effects/fire.gd" id="1_yis8u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yis8u"]
+atlas = ExtResource("1_bouqu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu2sk"]
+atlas = ExtResource("1_bouqu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aarp"]
+atlas = ExtResource("1_bouqu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3gnf"]
+atlas = ExtResource("1_bouqu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12iut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yis8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu2sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aarp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3gnf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fire" type="Node2D"]
+script = ExtResource("1_yis8u")
+offset = 2.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.827451, 0.482353, 0.207843, 0.52549)
+sprite_frames = SubResource("SpriteFrames_12iut")
+frame = 3
