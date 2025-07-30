@@ -25,7 +25,7 @@ func _enter_tree() -> void:
 
 
 func _on_scene_changed(scene: Node) -> void:
-	if scene is UpgradeTree:
+	if scene is BaseMinigame:
 		current_scene = scene
 		_make_visible(true)
 	else:
@@ -35,7 +35,7 @@ func _on_scene_changed(scene: Node) -> void:
 
 func _on_add_upgrade_pressed() -> void:
 	print("Add Upgrade button pressed")
-	if current_scene is UpgradeTree:
+	if current_scene is BaseMinigame:
 		var graph_node: UpgradeEditor = UpgradeEditorScene.instantiate()
 		var upgrade = MinigameUpgrade.new()
 		upgrade.name = "New Upgrade"
@@ -49,7 +49,7 @@ func _on_add_upgrade_pressed() -> void:
 		graph_node.node_selected.connect(_on_upgrade_selected.bind(graph_node))
 		upgrade_tree_editor_instance.get_node("GraphEdit").add_child(graph_node)
 	else:
-		push_error("No UpgradeTree scene selected.")
+		push_error("No BaseMinigame scene selected.")
 
 
 func _on_upgrade_selected(graph_node: GraphNode) -> void:
@@ -76,7 +76,7 @@ func _exit_tree() -> void:
 
 
 func _handles(object: Object) -> bool:
-	return object is UpgradeTree
+	return object is BaseMinigame
 
 
 func _has_main_screen() -> bool:
