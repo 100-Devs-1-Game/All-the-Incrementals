@@ -22,3 +22,4 @@ layout_mode = 2
 
 [node name="Icon" type="Sprite2D" parent="Control"]
 position = Vector2(160, 151)
+scale = Vector2(0.5, 0.5)
