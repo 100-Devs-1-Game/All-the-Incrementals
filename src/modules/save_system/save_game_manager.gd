@@ -1,6 +1,9 @@
 extends Node
+#
+# TODO needs testing ( unit test too? )
+#
+#
 
-# TODO needs testing ( GuT too? )
 var world_state: WorldState
 
 
