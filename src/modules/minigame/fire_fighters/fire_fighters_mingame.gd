@@ -37,7 +37,7 @@ func init():
 
 
 func run():
-	for i in 50:
+	for i in 80:
 		var tile := Vector2i(
 			randi_range(map_rect.position.x, map_rect.position.x + map_rect.size.x),
 			randi_range(map_rect.position.y, map_rect.position.y + map_rect.size.y)
