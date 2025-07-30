@@ -37,3 +37,11 @@ offset_top = 9.0
 offset_right = 887.0
 offset_bottom = 67.0
 text = "Save Upgrade"
+
+[node name="ReloadResources" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1203.0
+offset_top = 9.0
+offset_right = 1510.0
+offset_bottom = 67.0
+text = "Reload resources"
