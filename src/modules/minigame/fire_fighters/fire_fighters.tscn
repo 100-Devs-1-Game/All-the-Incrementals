@@ -40,6 +40,17 @@ water_scene = ExtResource("4_n1sel")
 map_rect = Rect2i(0, 0, 70, 50)
 map_features = Array[ExtResource("2_bivsc")]([ExtResource("3_bkat1"), ExtResource("4_o8gxd")])
 
+[node name="CanvasLayer Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.356631, 0.732725, 0.357728, 1)
+
 [node name="TileMapLayer Terrain" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_o8gxd")
 
