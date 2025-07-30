@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://hiyoidfmvcyt"]
+
+[node name="UpgradeTreeEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 1919.0
+offset_bottom = 1073.0
+scroll_offset = Vector2(-765, -427)
+right_disconnects = true
+
+[node name="AddUpgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 11.0
+offset_right = 621.0
+offset_bottom = 69.0
+text = "Add upgrade
+"
+
+[node name="DeleteUpgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 9.0
+offset_right = 1193.0
+offset_bottom = 67.0
+text = "Delete Upgrade"
+
+[node name="SaveUpgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 9.0
+offset_right = 887.0
+offset_bottom = 67.0
+text = "Save Upgrade"
+
+[node name="ReloadResources" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1203.0
+offset_top = 9.0
+offset_right = 1510.0
+offset_bottom = 67.0
+text = "Reload resources"

@@ -10,6 +10,7 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 @export var flavor: String
 
 @export var icon: Texture2D
+@export var position: Vector2
 
 # ------ cost and effects -------
 
