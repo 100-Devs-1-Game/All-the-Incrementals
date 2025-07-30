@@ -16,6 +16,8 @@ var size: float = 0.0:
 		elif size > 1.5:
 			size = 1.5
 
+var total_burn: float = 0.0
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var orig_pos: Vector2 = position
 
