@@ -78,15 +78,17 @@ func tick_fires():
 		else:
 			fire.size += feature.flammability * 0.1
 			if FireFightersMinigameUtils.chancef(fire.size - 1.0):
-				var dir: Vector2i = Vector2.from_angle(randf() * 2 * PI).round()
-				assert(abs(dir.x) == 1 or abs(dir.y) == 1)
-				var neighbor_feature: FireFightersMapFeature = get_map_feature(tile + dir)
-				if not neighbor_feature:
-					continue
-				if fires.has(tile + dir):
-					continue
-				if neighbor_feature.flammability > 0:
-					add_fire(tile + dir)
+				try_to_spread_fire(tile)
+
+
+func try_to_spread_fire(tile: Vector2i):
+	var dir: Vector2i = Vector2.from_angle(randf() * 2 * PI).round()
+	var neighbor_pos := Vector2i(tile + dir)
+	assert(abs(dir.x) == 1 or abs(dir.y) == 1)
+	var neighbor_feature: FireFightersMapFeature = get_map_feature(tile + dir)
+	if neighbor_feature and not is_tile_burning(neighbor_pos):
+		if FireFightersMinigameUtils.chancef(neighbor_feature.flammability):
+			add_fire(neighbor_pos)
 
 
 func spawn_player():
@@ -113,3 +115,7 @@ func get_map_feature_from_atlas_coords(coords: Vector2i) -> FireFightersMapFeatu
 		return null
 	assert(map_feature_lookup.has(coords))
 	return map_feature_lookup[coords]
+
+
+func is_tile_burning(tile: Vector2i) -> bool:
+	return fires.has(tile)
