@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=5 format=3 uid="uid://blgvydgjtbdvl"]
+
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="1_e6qai"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_dlxb0"]
+[ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="3_6ssjv"]
+[ext_resource type="Resource" uid="uid://brrqiv6apsu8a" path="res://modules/minigame/example/upgrades/upgrade_2b.tres" id="4_l07a8"]
+
+[resource]
+script = ExtResource("2_dlxb0")
+unlocks_feature = ""
+name = "Upgrade 1b"
+flavor = ""
+cost_arr = Array[ExtResource("1_e6qai")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 0
+base_cost = 0
+base_cost_multiplier = 0.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlock_level = 0
+unlocks = Array[ExtResource("3_6ssjv")]([ExtResource("4_l07a8")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+current_level = -1
+metadata/_custom_type_script = "uid://co4s3tttdeie1"

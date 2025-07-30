@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=6 format=3 uid="uid://bevll40cmuqf0"]
+
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="1_2crgw"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_p88n3"]
+[ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="3_qcx66"]
+[ext_resource type="Resource" uid="uid://tgtqkq53ahrd" path="res://modules/minigame/example/upgrades/upgrade_2a.tres" id="4_qcx66"]
+[ext_resource type="Resource" uid="uid://y7xe4x0g74nl" path="res://modules/minigame/example/upgrades/upgrade_2ab.tres" id="5_ynic3"]
+
+[resource]
+script = ExtResource("2_p88n3")
+unlocks_feature = ""
+name = "Upgrade 1a"
+flavor = ""
+cost_arr = Array[ExtResource("1_2crgw")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 0
+base_cost = 0
+base_cost_multiplier = 0.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlock_level = 0
+unlocks = Array[ExtResource("3_qcx66")]([ExtResource("4_qcx66"), ExtResource("5_ynic3")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+current_level = -1
+metadata/_custom_type_script = "uid://co4s3tttdeie1"
