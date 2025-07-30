@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://by18kqakehrup"]
+[gd_scene load_steps=10 format=3 uid="uid://by18kqakehrup"]
 
 [ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_7nipq"]
+[ext_resource type="PackedScene" uid="uid://bx2ptflde5hu" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/spawner/eph_evil_spirit_spawner.tscn" id="2_ag328"]
 [ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_kigv3"]
+[ext_resource type="PackedScene" uid="uid://vesybpnx50sy" path="res://modules/minigame/earth_potato_herding/eph_adult/eph_adult.tscn" id="3_q4gnq"]
+[ext_resource type="PackedScene" uid="uid://cqhdv2mg3cv3t" path="res://modules/minigame/earth_potato_herding/eph_youngling/spawner/eph_youngling_spawner.tscn" id="3_xo3kj"]
+[ext_resource type="PackedScene" uid="uid://c1o4hv5ignom3" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.tscn" id="4_ipuhe"]
+[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="5_ojsc6"]
+[ext_resource type="PackedScene" uid="uid://bu668uskhmtud" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.tscn" id="7_00m8t"]
 
 [sub_resource type="Resource" id="Resource_xo3kj"]
 script = ExtResource("2_kigv3")
@@ -11,6 +17,77 @@ metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 
 [node name="EarthPotatoHerding" type="Node2D"]
 
+[node name="EphYounglingSpawner" parent="." node_paths=PackedStringArray("_free_roam_area", "_free_roam_bounding_box", "_adult_spawner", "_player", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("3_xo3kj")]
+_free_roam_area = NodePath("spawn_zone")
+_free_roam_bounding_box = NodePath("spawn_bounding_box")
+_adult_spawner = NodePath("../EphAdultSpawner")
+_player = NodePath("../EPHPlayer")
+_spawnable_area = NodePath("spawn_zone")
+_spawnable_area_bounding_box = NodePath("spawn_bounding_box")
+_add_child_to = NodePath("../YounglingSpawnZone")
+_max_spawned_at_once = 6
+_spawn_cooldown = 5.0
+
+[node name="spawn_zone" type="CollisionPolygon2D" parent="EphYounglingSpawner"]
+polygon = PackedVector2Array(67, 1041, 1833, 1052, 1826, 31, 102, 24)
+metadata/_edit_lock_ = true
+
+[node name="spawn_bounding_box" type="Control" parent="EphYounglingSpawner"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 54.0
+offset_top = 14.0
+offset_right = 1851.0
+offset_bottom = 1068.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="YounglingSpawnZone" type="Node2D" parent="."]
+
+[node name="EphAdultSpawner" parent="." node_paths=PackedStringArray("_add_child_to") instance=ExtResource("2_ag328")]
+_spawnable_node_scene = ExtResource("3_q4gnq")
+_add_child_to = NodePath("../AdultSpawnZone")
+_use_physics_process_to_spawn = false
+_spawn_cooldown = -1.0
+
+[node name="AdultSpawnZone" type="Node2D" parent="."]
+
+[node name="EphEvilSpiritSpawner" parent="." node_paths=PackedStringArray("_youngling_swawn_zone", "_add_child_to") instance=ExtResource("2_ag328")]
+_youngling_swawn_zone = NodePath("../YounglingSpawnZone")
+_spawnable_node_scene = ExtResource("4_ipuhe")
+_add_child_to = NodePath("../EvilSpiritSpawnZone")
+_max_spawned_at_once = 2
+_spawn_cooldown = 5.0
+
+[node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilSpiritSpawner"]
+polygon = PackedVector2Array(67, 1041, 1833, 1052, 1826, 31, 102, 24)
+metadata/_edit_lock_ = true
+
+[node name="spawn_bounding_box" type="Control" parent="EphEvilSpiritSpawner"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 54.0
+offset_top = 14.0
+offset_right = 1851.0
+offset_bottom = 1068.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="EvilSpiritSpawnZone" type="Node2D" parent="."]
+
 [node name="Placeholder" parent="." instance=ExtResource("1_7nipq")]
+offset_right = 1920.0
+offset_bottom = 1080.0
 for_text = "Earth Potato Herding Minigame"
 buttons = Array[ExtResource("2_kigv3")]([SubResource("Resource_xo3kj")])
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(960, 578)
+
+[node name="bucket" type="Sprite2D" parent="Marker2D"]
+self_modulate = Color(0.25, 0.25, 0.25, 1)
+scale = Vector2(0.130208, 0.130208)
+texture = ExtResource("5_ojsc6")
+
+[node name="EPHPlayer" parent="." instance=ExtResource("7_00m8t")]
+position = Vector2(571, 596)

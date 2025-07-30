@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqhdv2mg3cv3t"]
+
+[ext_resource type="Script" uid="uid://ckt4n5gsi8ywh" path="res://modules/minigame/earth_potato_herding/eph_youngling/spawner/eph_youngling_spawner.gd" id="1_bgu2c"]
+[ext_resource type="PackedScene" uid="uid://cqkes8pccdkns" path="res://modules/minigame/earth_potato_herding/eph_youngling/eph_youngling.tscn" id="2_fsx7q"]
+
+[node name="EphYounglingSpawner" type="Node2D" node_paths=PackedStringArray("_add_child_to")]
+script = ExtResource("1_bgu2c")
+_spawnable_node_scene = ExtResource("2_fsx7q")
+_add_child_to = NodePath(".")

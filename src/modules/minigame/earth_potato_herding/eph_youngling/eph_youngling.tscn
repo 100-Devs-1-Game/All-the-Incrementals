@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqkes8pccdkns"]
+
+[ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_t88fu"]
+[ext_resource type="Script" uid="uid://5sducby6jjy2" path="res://modules/minigame/earth_potato_herding/eph_youngling/eph_youngling.gd" id="2_jfyq0"]
+[ext_resource type="Script" uid="uid://yvbn3tb5btx4" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/free_roam.gd" id="3_er4gq"]
+[ext_resource type="Script" uid="uid://bbm78i0skoycb" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/grow_up.gd" id="4_0tlpl"]
+[ext_resource type="Script" uid="uid://rjac1382vllh" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/herd_by_player.gd" id="4_d7cqi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0tlpl"]
+radius = 66.0076
+
+[node name="EPHYoungling" node_paths=PackedStringArray("_state_machine") instance=ExtResource("1_t88fu")]
+collision_layer = 2
+script = ExtResource("2_jfyq0")
+_time_to_grow = 10.0
+_state_machine = NodePath("StateMachine")
+
+[node name="StateMachine" parent="." index="0" node_paths=PackedStringArray("_states", "_start_state")]
+_states = [NodePath("FreeRoam"), NodePath("HerdByPlayer"), NodePath("GrowUp")]
+_start_state = NodePath("FreeRoam")
+
+[node name="FreeRoam" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("3_er4gq")
+state_name = "free_roam"
+
+[node name="HerdByPlayer" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("4_d7cqi")
+state_name = "herd_by_player"
+
+[node name="GrowUp" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("4_0tlpl")
+state_name = "grow_up"
+
+[node name="Sprite" parent="." index="2"]
+self_modulate = Color(0.231373, 1, 0.2, 1)
+
+[node name="YoundlingSawPlayerArea" type="Area2D" parent="." index="3"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YoundlingSawPlayerArea" index="0"]
+shape = SubResource("CircleShape2D_0tlpl")
+
+[node name="YoundlingSawSpirit" type="Area2D" parent="." index="4"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YoundlingSawSpirit" index="0"]
+shape = SubResource("CircleShape2D_0tlpl")
+
+[connection signal="area_entered" from="YoundlingSawPlayerArea" to="." method="_on_youndling_saw_player_area_area_entered"]
+[connection signal="area_exited" from="YoundlingSawPlayerArea" to="." method="_on_youndling_saw_player_area_area_exited"]
+[connection signal="body_entered" from="YoundlingSawSpirit" to="." method="_on_youndling_saw_spirit_body_entered"]

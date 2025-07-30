@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1o4hv5ignom3"]
+
+[ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_6k1f6"]
+[ext_resource type="Script" uid="uid://dihq371tmli6h" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.gd" id="2_6k1f6"]
+[ext_resource type="Script" uid="uid://dh176qnc18vir" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/states/go_to_nearest_youngling.gd" id="3_jinnf"]
+
+[node name="EPHEvilSpirit" instance=ExtResource("1_6k1f6")]
+collision_layer = 4
+script = ExtResource("2_6k1f6")
+
+[node name="StateMachine" parent="." index="0" node_paths=PackedStringArray("_states", "_start_state")]
+_states = [NodePath("GoToNearestYongling")]
+_start_state = NodePath("GoToNearestYongling")
+
+[node name="GoToNearestYongling" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("3_jinnf")
+state_name = "go_to_nearest_youngling"
+
+[node name="Sprite" parent="." index="2"]
+self_modulate = Color(1, 0.2, 0.2, 1)

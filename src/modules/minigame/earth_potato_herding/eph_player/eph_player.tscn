@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu668uskhmtud"]
+
+[ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_y7bht"]
+[ext_resource type="Script" uid="uid://d221xrf858pj6" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.gd" id="2_42r0g"]
+[ext_resource type="Script" uid="uid://crcm3yjgpr1fo" path="res://modules/minigame/top_down_2d_controllers/strategies/move_direction_strategy/td_2d_c_mds_input.gd" id="3_xdom8"]
+[ext_resource type="Script" uid="uid://dgxvmcif1cdcd" path="res://modules/minigame/earth_potato_herding/eph_player/states/walk.gd" id="4_kub1s"]
+
+[sub_resource type="Resource" id="Resource_kub1s"]
+script = ExtResource("3_xdom8")
+metadata/_custom_type_script = "uid://crcm3yjgpr1fo"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kub1s"]
+radius = 147.014
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hpfm4"]
+radius = 404.005
+
+[node name="EPHPlayer" instance=ExtResource("1_y7bht")]
+script = ExtResource("2_42r0g")
+_base_speed = Vector2(300, 300)
+_move_direction_strategy = SubResource("Resource_kub1s")
+
+[node name="StateMachine" parent="." index="0" node_paths=PackedStringArray("_states", "_start_state")]
+_states = [NodePath("Walk")]
+_start_state = NodePath("Walk")
+
+[node name="Walk" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("4_kub1s")
+state_name = "walk"
+
+[node name="YounglingHerdArea" type="Area2D" parent="." index="3"]
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YounglingHerdArea" index="0"]
+shape = SubResource("CircleShape2D_kub1s")
+metadata/_edit_lock_ = true
+
+[node name="EvilSpiritRepelArea" type="Area2D" parent="." index="4"]
+collision_layer = 0
+collision_mask = 4
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EvilSpiritRepelArea" index="0"]
+shape = SubResource("CircleShape2D_hpfm4")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="EvilSpiritRepelArea" to="." method="_on_evil_spirit_repel_area_body_entered"]
