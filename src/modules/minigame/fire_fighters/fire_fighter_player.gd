@@ -32,6 +32,11 @@ func extinguish(flag: bool):
 	if not extinguisher_cooldown.is_stopped():
 		return
 
-	game.add_water(position, extinguisher.global_transform.x * water_speed)
+	var dir: Vector2 = extinguisher.global_transform.x
+	var spread: float = 0.2
+	dir += dir.rotated(PI / 2) * randf_range(-spread, spread)
+	dir = dir.normalized()
+
+	game.add_water(position, velocity + dir * water_speed)
 
 	extinguisher_cooldown.start()
