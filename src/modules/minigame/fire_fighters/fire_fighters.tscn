@@ -47,3 +47,5 @@ tile_set = SubResource("TileSet_o8gxd")
 tile_set = SubResource("TileSet_prm31")
 
 [node name="Water" type="Node" parent="."]
+
+[node name="Fires" type="Node" parent="."]

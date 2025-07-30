@@ -15,6 +15,7 @@ var player: FireFighterMinigamePlayer
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
 @onready var water_node: Node = $Water
+@onready var fire_node: Node = $Fires
 
 
 func _ready() -> void:
@@ -47,12 +48,12 @@ func _physics_process(_delta: float) -> void:
 		tick_fires()
 
 
-func add_fire(tile: Vector2i, size: float = 0.0):
+func add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 	var fire: FireFightersMinigameFire = fire_scene.instantiate()
 	fires[tile] = fire
 	fire.position = tile_map_terrain.map_to_local(tile)
-	fire.size = randf_range(0.2, 0.8)
-	add_child(fire)
+	fire.size = randf_range(min_size, max_size)
+	fire_node.add_child(fire)
 	fire.died.connect(remove_fire.bind(fire))
 
 
@@ -80,11 +81,11 @@ func tick_fires():
 				var dir: Vector2i = Vector2.from_angle(randf() * 2 * PI).round()
 				assert(abs(dir.x) == 1 or abs(dir.y) == 1)
 				var neighbor_feature: FireFightersMapFeature = get_map_feature(tile + dir)
-				if (
-					neighbor_feature
-					and neighbor_feature.flammability > 0
-					and not fires.has(tile + dir)
-				):
+				if not neighbor_feature:
+					continue
+				if fires.has(tile + dir):
+					continue
+				if neighbor_feature.flammability > 0:
 					add_fire(tile + dir)
 
 
