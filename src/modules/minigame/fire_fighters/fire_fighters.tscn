@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=17 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_mingame.gd" id="1_k4ysf"]
 [ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://modules/minigame/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/fire_fighter_player.tscn" id="8_o8gxd"]
 [ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/burnt_bush.tres" id="8_ppwky"]
 [ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/burnt_tree.tres" id="9_o1kr5"]
+[ext_resource type="Resource" uid="uid://bhtwwe0fgwlob" path="res://modules/minigame/fire_fighters/data/boulder.tres" id="10_o1kr5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
 texture = ExtResource("2_4r4fr")
@@ -29,9 +30,12 @@ texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSet" id="TileSet_prm31"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_n1sel")
 
 [node name="FireFighters" type="Node2D"]
@@ -40,7 +44,7 @@ player_scene = ExtResource("8_o8gxd")
 fire_scene = ExtResource("7_bkat1")
 water_scene = ExtResource("4_n1sel")
 map_rect = Rect2i(0, 0, 70, 50)
-map_features = Array[ExtResource("2_bivsc")]([ExtResource("3_bkat1"), ExtResource("4_o8gxd"), ExtResource("8_ppwky"), ExtResource("9_o1kr5")])
+map_features = Array[ExtResource("2_bivsc")]([ExtResource("3_bkat1"), ExtResource("4_o8gxd"), ExtResource("8_ppwky"), ExtResource("9_o1kr5"), ExtResource("10_o1kr5")])
 
 [node name="CanvasLayer Background" type="CanvasLayer" parent="."]
 layer = -1

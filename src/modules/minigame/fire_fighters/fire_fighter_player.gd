@@ -13,9 +13,10 @@ var last_dir: Vector2
 @onready var extinguisher_cooldown: Timer = %Cooldown
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var move_dir: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	position += move_dir * move_speed * delta
+	velocity = move_dir * move_speed
+	move_and_slide()
 
 	if move_dir:
 		last_dir = move_dir

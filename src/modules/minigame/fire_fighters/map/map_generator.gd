@@ -25,6 +25,8 @@ static func get_feature_at(
 		if feature.spawn_manually:
 			continue
 		if feature.density > randf():
+			if not feature.spawn_noise:
+				return feature
 			if feature.spawn_noise.get_noise_2dv(tile) > feature.spawn_noise_threshold:
 				return feature
 	return null
