@@ -25,7 +25,7 @@ extends ModuleOptions
 		_module.core.windows_manager.set_os_window_bg_color(v)
 	get:
 		return _module.core.windows_manager.os_window_bg_color
-		
+
 @export var global_font_size:int:
 	set(v):
 		Panku.windows_manager.theme.default_font_size = v
