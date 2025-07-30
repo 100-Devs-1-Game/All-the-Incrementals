@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwrb3svm6p8o7"]
 
-[ext_resource type="Texture2D" uid="uid://dte4yb53pkgrb" path="res://modules/minigame/fire_fighters/placeholder_assets/fire_animation.png" id="1_bouqu"]
+[ext_resource type="Texture2D" uid="uid://dte4yb53pkgrb" path="res://assets/minigames/fire_fighters/placeholder_assets/fire_animation.png" id="1_bouqu"]
 [ext_resource type="Script" uid="uid://vjrxcjxxc86q" path="res://modules/minigame/fire_fighters/effects/fire.gd" id="1_yis8u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yis8u"]

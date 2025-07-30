@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_mingame.gd" id="1_k4ysf"]
-[ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://modules/minigame/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
+[ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
 [ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="2_bivsc"]
 [ext_resource type="Resource" uid="uid://bsovy80upwnb4" path="res://modules/minigame/fire_fighters/data/bush.tres" id="3_bkat1"]
-[ext_resource type="Texture2D" uid="uid://c7nq5cvot6nf5" path="res://modules/minigame/fire_fighters/placeholder_assets/objects_tile_set.png" id="3_etg5r"]
+[ext_resource type="Texture2D" uid="uid://c7nq5cvot6nf5" path="res://assets/minigames/fire_fighters/placeholder_assets/objects_tile_set.png" id="3_etg5r"]
 [ext_resource type="PackedScene" uid="uid://bs75gbk0ui0bp" path="res://modules/minigame/fire_fighters/effects/water.tscn" id="4_n1sel"]
 [ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/tree.tres" id="4_o8gxd"]
 [ext_resource type="PackedScene" uid="uid://cwrb3svm6p8o7" path="res://modules/minigame/fire_fighters/effects/fire.tscn" id="7_bkat1"]
