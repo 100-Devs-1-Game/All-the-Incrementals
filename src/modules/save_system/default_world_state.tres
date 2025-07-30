@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WorldState" load_steps=3 format=3 uid="uid://dcao50tagyira"]
+
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_ghqhr"]
+[ext_resource type="Script" uid="uid://d23i4ukvgjxej" path="res://modules/save_system/world_state.gd" id="2_4m006"]
+
+[resource]
+script = ExtResource("2_4m006")
+minigames = Array[ExtResource("1_ghqhr")]([])
+metadata/_custom_type_script = "uid://d23i4ukvgjxej"
