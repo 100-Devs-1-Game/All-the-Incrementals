@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs75gbk0ui0bp"]
+
+[ext_resource type="Script" uid="uid://ci0no7j6rbi3m" path="res://modules/minigame/fire_fighters/effects/water.gd" id="1_hvubx"]
+[ext_resource type="Texture2D" uid="uid://b87y3ig7i37yg" path="res://modules/minigame/fire_fighters/placeholder_assets/water.png" id="2_nrnui"]
+
+[node name="Water" type="Node2D"]
+script = ExtResource("1_hvubx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nrnui")

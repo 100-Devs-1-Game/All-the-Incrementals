@@ -3,6 +3,8 @@ extends BaseMinigame
 
 @export var player_scene: PackedScene
 @export var fire_scene: PackedScene
+@export var water_scene: PackedScene
+
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMapFeature]
 
@@ -12,6 +14,7 @@ var player: FireFighterMinigamePlayer
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
+@onready var water_node: Node = $Water
 
 
 func _ready() -> void:
@@ -56,6 +59,13 @@ func add_fire(tile: Vector2i, size: float = 0.0):
 func remove_fire(fire: FireFightersMinigameFire):
 	fires.erase(fires.find_key(fire))
 	fire.queue_free()
+
+
+func add_water(pos: Vector2, vel: Vector2):
+	var water: FireFightersMinigameWater = water_scene.instantiate()
+	water.position = pos
+	water.velocity = vel
+	water_node.add_child(water)
 
 
 func tick_fires():

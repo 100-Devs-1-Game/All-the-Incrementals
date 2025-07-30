@@ -4,12 +4,13 @@ extends CharacterBody2D
 signal extinguish_spot(pos: Vector2)
 
 @export var move_speed: float = 100.0
+@export var water_speed: float = 300.0
 
 var last_dir: Vector2
 
-@onready var extinguisher_particles: CPUParticles2D = %CPUParticles2D
+@onready var game: FireFightersMinigame = get_parent()
 @onready var extinguisher: Node2D = $Extinguisher
-@onready var extinguisher_target: Node2D = %"Extinguisher Target"
+@onready var extinguisher_cooldown: Timer = %Cooldown
 
 
 func _physics_process(delta: float) -> void:
@@ -24,7 +25,12 @@ func _physics_process(delta: float) -> void:
 
 
 func extinguish(flag: bool):
-	extinguisher_particles.emitting = flag
-	if flag:
-		var rnd := Vector2(randf_range(-20, 20), randf_range(-20, 20))
-		extinguish_spot.emit(extinguisher_target.global_position + rnd)
+	if not flag:
+		return
+
+	if not extinguisher_cooldown.is_stopped():
+		return
+
+	game.add_water(position, extinguisher.global_transform.x * water_speed)
+
+	extinguisher_cooldown.start()

@@ -1,19 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmbhboa0omojg"]
+[gd_scene load_steps=3 format=3 uid="uid://bmbhboa0omojg"]
 
 [ext_resource type="Script" uid="uid://d3gde2qbcgqdg" path="res://modules/minigame/fire_fighters/fire_fighter_player.gd" id="1_kwj77"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
-
-[sub_resource type="Gradient" id="Gradient_kwj77"]
-colors = PackedColorArray(0, 0, 0.960784, 1, 1, 1, 1, 0)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_kptfa"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ifhqp"]
-width = 12
-height = 12
-color_ramp = SubResource("Gradient_kwj77")
-noise = SubResource("FastNoiseLite_kptfa")
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -44,18 +33,7 @@ polygon = PackedVector2Array(0, 0, -4, -8, 4, -8)
 [node name="Extinguisher" type="Node2D" parent="."]
 rotation = -0.0586266
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Extinguisher"]
+[node name="Cooldown" type="Timer" parent="Extinguisher"]
 unique_name_in_owner = true
-position = Vector2(17, 1)
-amount = 25
-texture = SubResource("NoiseTexture2D_ifhqp")
-spread = 10.05
-gravity = Vector2(0, 0)
-initial_velocity_min = 109.59
-initial_velocity_max = 109.59
-damping_min = 13.699
-damping_max = 20.548
-
-[node name="Extinguisher Target" type="Node2D" parent="Extinguisher"]
-unique_name_in_owner = true
-position = Vector2(70.878, 4.1601)
+wait_time = 0.1
+one_shot = true
