@@ -8,6 +8,8 @@ extends BaseMinigame
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMapFeature]
 
+@export var max_water_per_fire: float = 0.1
+
 var map_feature_lookup: Dictionary
 var fires: Dictionary
 var player: FireFighterMinigamePlayer
@@ -87,8 +89,9 @@ func tick_water():
 		var tile: Vector2i = get_tile_at(water.position)
 		var fire: FireFightersMinigameFire = get_fire_at(tile)
 		if fire:
-			var max_water: float = min(0.1, water.density + 0.001)
-			var final_water: float = min(max_water, fire.size + 0.001)
+			var epsilon := 0.001
+			var max_water: float = min(max_water_per_fire, water.density + epsilon)
+			var final_water: float = min(max_water, fire.size + epsilon)
 			fire.size -= final_water
 			water.density -= final_water
 
