@@ -130,12 +130,10 @@ Thanks goes to all these wonderful people :heart:
 ### Art (in alphabetical order)
 
 * Axureé
-* Fae
-* Frog
 * JMC-87
 * KLIPNITY
-* Noxalas
 * Skin
+* Turtle
 
 ### Code (in alphabetical order)
 
@@ -144,10 +142,10 @@ Thanks goes to all these wonderful people :heart:
 * Codimon
 * ErnestasK760
 * microlancer
+* Noxalas
 * Rokle
 * Thaeta-Of-Diamonds
 * [Zephilinox](https://zephilinox.com/)
-* Noxalas
 
 ### Operations (in alphabetical order)
 
