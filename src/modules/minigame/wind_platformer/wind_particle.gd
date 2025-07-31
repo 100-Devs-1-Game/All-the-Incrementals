@@ -3,7 +3,7 @@ class_name WindPlatformerMinigameParticle
 signal destroyed
 
 var damping: float = 1.0
-var life_time_range := Vector2(2.0, 7.0)
+var life_time_range := Vector2(1.0, 3.0)
 
 var velocity: Vector2
 var position: Vector2
