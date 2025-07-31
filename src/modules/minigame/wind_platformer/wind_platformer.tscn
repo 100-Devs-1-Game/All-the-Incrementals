@@ -43,31 +43,88 @@ color = Color(0.32549, 0.32549, 0.905882, 1)
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Cloud Platform" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(174, 180)
+position = Vector2(254, 131)
 
 [node name="Cloud Platform2" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(391, 397)
+position = Vector2(471, 348)
 
 [node name="Cloud Platform3" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(662, 765)
+position = Vector2(896, 705)
 
 [node name="Cloud Platform4" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(31, 354)
+position = Vector2(111, 305)
 
 [node name="Cloud Platform5" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(248, 571)
+position = Vector2(482, 511)
 
 [node name="Cloud Platform6" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(519, 939)
+position = Vector2(753, 879)
 
 [node name="Cloud Platform7" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(619, 354)
+position = Vector2(699, 305)
 
 [node name="Cloud Platform8" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(836, 571)
+position = Vector2(1070, 511)
 
 [node name="Cloud Platform9" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(1107, 939)
+position = Vector2(1341, 879)
+
+[node name="Cloud Platform10" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(431, 234)
+
+[node name="Cloud Platform11" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(648, 451)
+
+[node name="Cloud Platform12" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(1073, 808)
+
+[node name="Cloud Platform13" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(288, 408)
+
+[node name="Cloud Platform14" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(659, 614)
+
+[node name="Cloud Platform15" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(930, 982)
+
+[node name="Cloud Platform16" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(876, 408)
+
+[node name="Cloud Platform17" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(1247, 614)
+
+[node name="Cloud Platform18" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(1518, 982)
+
+[node name="Cloud Platform19" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(71, 751)
+
+[node name="Cloud Platform20" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(-1, 554)
+
+[node name="Cloud Platform21" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(-72, 925)
+
+[node name="Cloud Platform22" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(245, 557)
+
+[node name="Cloud Platform23" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(516, 925)
+
+[node name="Cloud Platform24" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(248, 854)
+
+[node name="Cloud Platform25" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(176, 657)
+
+[node name="Cloud Platform26" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(105, 1028)
+
+[node name="Cloud Platform27" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(422, 660)
+
+[node name="Cloud Platform28" parent="Platforms" instance=ExtResource("4_cj4w2")]
+position = Vector2(693, 1028)
 
 [node name="Player" parent="." instance=ExtResource("5_3m7tm")]
 position = Vector2(365, 97)
