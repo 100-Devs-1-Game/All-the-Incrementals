@@ -1,4 +1,4 @@
-class_name CallableStateMachine extends RefCounted
+class_name NoxCallableStateMachine extends RefCounted
 
 signal state_changed(from: Callable, to: Callable)
 
