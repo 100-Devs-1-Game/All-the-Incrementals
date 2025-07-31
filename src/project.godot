@@ -29,6 +29,7 @@ Logger="*res://addons/godot-logger/logger.gd"
 Audio="*res://modules/audio/audio.gd"
 SaveGameManager="*res://modules/save_system/save_game_manager.gd"
 Panku="*res://addons/panku_console/console.tscn"
+SceneLoader="*res://global/scene_loader.gd"
 
 [debug_draw_3d]
 
