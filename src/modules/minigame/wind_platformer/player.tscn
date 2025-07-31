@@ -11,6 +11,8 @@ collision_mask = 3
 script = ExtResource("1_hjopy")
 acceleration = 1000.0
 jump_speed = -200.0
+wind_impact = 2.0
+damping = 0.25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dkh7d")
@@ -32,4 +34,5 @@ polygon = PackedVector2Array(4, -8, -4, -8, -4, -16, 4, -16)
 
 [node name="Hat" type="Polygon2D" parent="Model"]
 unique_name_in_owner = true
+visible = false
 polygon = PackedVector2Array(4, -16, -4, -16, 0, -24)
