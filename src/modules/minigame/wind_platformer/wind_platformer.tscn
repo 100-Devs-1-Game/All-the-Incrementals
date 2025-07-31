@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=9 format=3 uid="uid://bytqv7h0iow3u"]
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_x5t1i"]
 [ext_resource type="PackedScene" uid="uid://bpbxl634kt5sd" path="res://modules/minigame/wind_platformer/cloud_platform.tscn" id="4_cj4w2"]
@@ -11,19 +11,25 @@ domain_warp_enabled = true
 domain_warp_frequency = 0.205
 domain_warp_fractal_octaves = 3
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4orxu"]
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_4orxu"]
-material = SubResource("StandardMaterial3D_4orxu")
+size = Vector2(15, 2)
 orientation = 2
 
 [sub_resource type="MultiMesh" id="MultiMesh_cj4w2"]
 mesh = SubResource("PlaneMesh_4orxu")
 
+[sub_resource type="Gradient" id="Gradient_4orxu"]
+offsets = PackedFloat32Array(0, 0.307018, 1)
+colors = PackedColorArray(0, 0, 0.996078, 0.172549, 0.607843, 0.67451, 1, 0.784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cj4w2"]
+gradient = SubResource("Gradient_4orxu")
+width = 64
+
 [node name="Wind Platformer" type="Node2D"]
 script = ExtResource("1_x5t1i")
 wind_noise = SubResource("FastNoiseLite_4orxu")
-num_particles = 1000
+num_particles = 1200
 
 [node name="DebugPopup" parent="." instance=ExtResource("3_cj4w2")]
 visible = false
@@ -130,4 +136,6 @@ position = Vector2(693, 1028)
 position = Vector2(365, 97)
 
 [node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
+modulate = Color(1, 1, 1, 0.541176)
 multimesh = SubResource("MultiMesh_cj4w2")
+texture = SubResource("GradientTexture1D_cj4w2")
