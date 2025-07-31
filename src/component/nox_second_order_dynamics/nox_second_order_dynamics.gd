@@ -31,7 +31,7 @@ class_name NoxSecondOrderDynamics extends RefCounted
 ## - >1: Overshoots (snappy/anticipating response) [br]
 ## - <1: Undershoots (sluggish response) [br]
 
-const SUPPORTED_TYPES := [TYPE_FLOAT, TYPE_INT, TYPE_VECTOR2]
+const SUPPORTED_TYPES := [TYPE_FLOAT, TYPE_INT, TYPE_VECTOR2, TYPE_VECTOR3]
 
 var _xp: Variant
 var _y: Variant
@@ -74,6 +74,8 @@ func calculate(f: float, z: float, r: float, x0: Variant) -> void:
 			_yd = 0
 		TYPE_VECTOR2:
 			_yd = Vector2.ZERO
+		TYPE_VECTOR3:
+			_yd = Vector3.ZERO
 
 
 ## Updates the state based on elapsed time and a target value.
@@ -82,9 +84,7 @@ func update(t: float, x, xd = null) -> Variant:
 	var estimate_xd := func():
 		_xp = x
 		match _type:
-			TYPE_FLOAT, TYPE_INT:
-				return (x - _xp) / t
-			TYPE_VECTOR2:
+			TYPE_FLOAT, TYPE_INT, TYPE_VECTOR2, TYPE_VECTOR3:
 				return (x - _xp) / t
 			_:
 				return null
