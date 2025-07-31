@@ -1,0 +1,557 @@
+[gd_scene load_steps=6 format=3 uid="uid://1m18lfvfkax2"]
+
+[ext_resource type="Script" uid="uid://d4jpioyg02kt4" path="res://modules/settings/settings.gd" id="1_mpnl8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpnl8"]
+bg_color = Color(0.169245, 0.169245, 0.169245, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn8de"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyeiu"]
+bg_color = Color(0.743438, 0.557813, 0.386592, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_u1xnr"]
+color = Color(0.745098, 0.556863, 0.384314, 1)
+thickness = 36
+
+[node name="Settings" type="Node2D"]
+
+[node name="Settings" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mpnl8")
+
+[node name="Panel" type="Panel" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -564.0
+offset_top = -440.0
+offset_right = 564.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mpnl8")
+
+[node name="SettingsContainer" type="VBoxContainer" parent="Settings/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="GraphicsLabel" type="Label" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+text = "Graphics"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/GraphicsLabel"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dn8de")
+
+[node name="ScreenButton" type="Button" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Fullscreen: OFF"
+
+[node name="QualityContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="QualityLabel" type="Label" parent="Settings/Panel/SettingsContainer/QualityContainer"]
+layout_mode = 2
+text = "Game Quality (3D):"
+
+[node name="LowQualityButton" type="Button" parent="Settings/Panel/SettingsContainer/QualityContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Low"
+
+[node name="MedQualityButton" type="Button" parent="Settings/Panel/SettingsContainer/QualityContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Medium"
+
+[node name="HighQualityButton" type="Button" parent="Settings/Panel/SettingsContainer/QualityContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "High"
+
+[node name="BestQualityButton" type="Button" parent="Settings/Panel/SettingsContainer/QualityContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Best"
+
+[node name="AudioLabel" type="Label" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+text = "Audio"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/AudioLabel"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dn8de")
+
+[node name="MasterContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="MasterLabel" type="Label" parent="Settings/Panel/SettingsContainer/MasterContainer"]
+layout_mode = 2
+text = "Master Volume:"
+
+[node name="MasterSlider" type="HSlider" parent="Settings/Panel/SettingsContainer/MasterContainer"]
+custom_minimum_size = Vector2(343.82, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxLine_u1xnr")
+value = 100.0
+rounded = true
+
+[node name="ValueLabel" type="Label" parent="Settings/Panel/SettingsContainer/MasterContainer/MasterSlider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.18
+offset_top = -25.0
+offset_right = 108.18
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+
+[node name="SFXContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 136
+
+[node name="MasterLabel" type="Label" parent="Settings/Panel/SettingsContainer/SFXContainer"]
+layout_mode = 2
+text = "SFX Volume:"
+
+[node name="SFXSlider" type="HSlider" parent="Settings/Panel/SettingsContainer/SFXContainer"]
+custom_minimum_size = Vector2(343.82, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxLine_u1xnr")
+value = 100.0
+rounded = true
+
+[node name="ValueLabel" type="Label" parent="Settings/Panel/SettingsContainer/SFXContainer/SFXSlider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.18
+offset_top = -25.0
+offset_right = 108.18
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+
+[node name="MusicContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 96
+
+[node name="MasterLabel" type="Label" parent="Settings/Panel/SettingsContainer/MusicContainer"]
+layout_mode = 2
+text = "Music Volume:"
+
+[node name="MusicSlider" type="HSlider" parent="Settings/Panel/SettingsContainer/MusicContainer"]
+custom_minimum_size = Vector2(343.82, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxLine_u1xnr")
+value = 100.0
+rounded = true
+
+[node name="ValueLabel" type="Label" parent="Settings/Panel/SettingsContainer/MusicContainer/MusicSlider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.18
+offset_top = -25.0
+offset_right = 108.18
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+
+[node name="ControlsLabel" type="Label" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/ControlsLabel"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dn8de")
+
+[node name="PrimaryContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 63
+
+[node name="PrimaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/PrimaryContainer"]
+layout_mode = 2
+text = "Primary Action / Accept:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/PrimaryContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="ButtonBG" type="ColorRect" parent="Settings/Panel/SettingsContainer/PrimaryContainer/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/PrimaryContainer/HBoxContainer/ButtonBG" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "SPACE"
+
+[node name="ButtonBG2" type="ColorRect" parent="Settings/Panel/SettingsContainer/PrimaryContainer/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="AltKeybind" type="Button" parent="Settings/Panel/SettingsContainer/PrimaryContainer/HBoxContainer/ButtonBG2" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Z"
+
+[node name="SecondaryContainer2" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 43
+
+[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/SecondaryContainer2"]
+layout_mode = 2
+text = "Secondary Action / Back:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/SecondaryContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 46
+
+[node name="ButtonBG" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer2/HBoxContainer/ButtonBG" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "E"
+
+[node name="ButtonBG2" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="AltKeybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer2/HBoxContainer/ButtonBG2" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "X"
+
+[node name="SecondaryContainer3" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 46
+
+[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/SecondaryContainer3"]
+layout_mode = 2
+text = "Move Right:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/SecondaryContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 110
+
+[node name="ButtonBG" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer3/HBoxContainer/ButtonBG" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "D"
+
+[node name="ButtonBG2" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="AltKeybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer3/HBoxContainer/ButtonBG2" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Right Arrow"
+
+[node name="SecondaryContainer4" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/SecondaryContainer4"]
+layout_mode = 2
+text = "Move Down:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/SecondaryContainer4"]
+layout_mode = 2
+theme_override_constants/separation = 115
+
+[node name="ButtonBG" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer4/HBoxContainer/ButtonBG" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "S"
+
+[node name="ButtonBG2" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="AltKeybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer4/HBoxContainer/ButtonBG2" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Down Arrow"
+
+[node name="SecondaryContainer5" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 68
+
+[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/SecondaryContainer5"]
+layout_mode = 2
+text = "Move Left:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/SecondaryContainer5"]
+layout_mode = 2
+theme_override_constants/separation = 98
+
+[node name="ButtonBG" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer5/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer5/HBoxContainer/ButtonBG" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "A"
+
+[node name="ButtonBG2" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer5/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="AltKeybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer5/HBoxContainer/ButtonBG2" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Left Arrow"
+
+[node name="SecondaryContainer6" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 87
+
+[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/SecondaryContainer6"]
+layout_mode = 2
+text = "Move Up:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/SecondaryContainer6"]
+layout_mode = 2
+theme_override_constants/separation = 89
+
+[node name="ButtonBG" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer6/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer6/HBoxContainer/ButtonBG" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "W"
+
+[node name="ButtonBG2" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer6/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="AltKeybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer6/HBoxContainer/ButtonBG2" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Up Arrow"
+
+[node name="SecondaryContainer7" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 68
+
+[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/SecondaryContainer7"]
+layout_mode = 2
+text = "Exit Menu:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/SecondaryContainer7"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="ButtonBG" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer7/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer7/HBoxContainer/ButtonBG" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "Esc"
+
+[node name="ButtonBG2" type="ColorRect" parent="Settings/Panel/SettingsContainer/SecondaryContainer7/HBoxContainer"]
+custom_minimum_size = Vector2(84.105, 0)
+layout_mode = 2
+color = Color(0.745098, 0.556863, 0.384314, 1)
+
+[node name="AltKeybind" type="Button" parent="Settings/Panel/SettingsContainer/SecondaryContainer7/HBoxContainer/ButtonBG2" groups=["keybind"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyeiu")
+text = "C"
+
+[node name="SettingsLabel" type="Label" parent="Settings"]
+custom_minimum_size = Vector2(1024, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -519.0
+offset_right = 512.0
+offset_bottom = -469.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Settings"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -81.0
+offset_right = 93.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"

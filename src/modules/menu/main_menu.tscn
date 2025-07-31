@@ -14,7 +14,7 @@ metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 [sub_resource type="Resource" id="Resource_e5aks"]
 script = ExtResource("2_6s0ul")
 label = "Settings"
-scene_path = "res://modules/menu/settings.tscn"
+scene_path = "res://modules/settings/settings.tscn"
 metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 
 [sub_resource type="Resource" id="Resource_gl3cg"]
