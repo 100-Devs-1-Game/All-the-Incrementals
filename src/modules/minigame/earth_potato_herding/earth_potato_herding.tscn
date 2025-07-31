@@ -30,23 +30,22 @@ _max_spawned_at_once = 6
 _spawn_cooldown = 5.0
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphYounglingSpawner"]
-polygon = PackedVector2Array(67, 1041, 1833, 1052, 1826, 31, 102, 24)
+polygon = PackedVector2Array(504, 1028, 1476, 1019, 1475, 578, 475, 574)
 metadata/_edit_lock_ = true
 
 [node name="spawn_bounding_box" type="Control" parent="EphYounglingSpawner"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 54.0
-offset_top = 14.0
-offset_right = 1851.0
+offset_left = 464.0
+offset_top = 537.0
+offset_right = 1505.0
 offset_bottom = 1068.0
 mouse_filter = 2
-metadata/_edit_lock_ = true
 
 [node name="YounglingSpawnZone" type="Node2D" parent="."]
 
-[node name="EphAdultSpawner" parent="." node_paths=PackedStringArray("_busket_node", "_add_child_to") instance=ExtResource("2_tk8ls")]
-_busket_node = NodePath("../Marker2D")
+[node name="EphAdultSpawner" parent="." node_paths=PackedStringArray("_bucket_node", "_add_child_to") instance=ExtResource("2_tk8ls")]
+_bucket_node = NodePath("../Marker2D")
 _spawnable_node_scene = ExtResource("3_tk8ls")
 _add_child_to = NodePath("../AdultSpawnZone")
 _use_physics_process_to_spawn = false
@@ -66,18 +65,16 @@ _use_physics_process_to_spawn = true
 _spawn_cooldown = 1.0
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilSpiritSpawner"]
-polygon = PackedVector2Array(22, 23, 1908, 15, 1904, 1054, 6, 1058, 18, 21, 133, 90, 135, 963, 1805, 1003, 1783, 85, 166, 86)
+polygon = PackedVector2Array(22, 23, 1858, 28, 1870, 732, 1751, 732, 1738, 135, 142, 125, 133, 735, 18, 735, 18, 21)
 metadata/_edit_lock_ = true
 
 [node name="spawn_bounding_box" type="Control" parent="EphEvilSpiritSpawner"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -1.0
-offset_top = 2.0
-offset_right = 1925.0
-offset_bottom = 1078.0
+offset_top = 1.0
+offset_right = 1919.0
+offset_bottom = 1081.0
 mouse_filter = 2
-metadata/_edit_lock_ = true
 
 [node name="EvilSpiritSpawnZone" type="Node2D" parent="."]
 
@@ -89,11 +86,12 @@ buttons = Array[ExtResource("2_kigv3")]([SubResource("Resource_xo3kj")])
 metadata/_edit_lock_ = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(960, 578)
+position = Vector2(925, 203)
 
 [node name="bucket" type="Sprite2D" parent="Marker2D"]
 self_modulate = Color(0.25, 0.25, 0.25, 1)
-scale = Vector2(0.130208, 0.130208)
+position = Vector2(1, -1)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_ojsc6")
 
 [node name="EPHPlayer" parent="." instance=ExtResource("7_00m8t")]

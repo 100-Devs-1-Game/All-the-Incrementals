@@ -2,7 +2,7 @@ extends Spawner
 
 #region ------------------------ PRIVATE VARS ----------------------------------
 
-@export var _busket_node: Node2D
+@export var _bucket_node: Node2D
 
 #endregion
 
@@ -12,11 +12,11 @@ extends Spawner
 func get_generic_spawnable_node() -> Node:
 	var node = _spawnable_node_scene.instantiate() as EphAdult
 
-	node.bucket_node = _busket_node
+	node.bucket_node = _bucket_node
 
 	node.add_state_move_direction_strategy(
 		"go_to_bucket",
-		TD2DCMDSGoToPoint.new().set_point_generator(Node2DPositionGenerator.new(_busket_node))
+		TD2DCMDSGoToPoint.new().set_point_generator(Node2DPositionGenerator.new(_bucket_node))
 	)
 
 	return node
