@@ -31,9 +31,10 @@ func draw_particles(delta: float):
 	var i := 0
 	for particle: WindPlatformerMinigameParticle in particles:
 		particle.tick(delta)
-		multi_mesh_instance.multimesh.set_instance_transform_2d(
-			i, Transform2D(0, particle.position)
-		)
+		if not particle.velocity.is_equal_approx(Vector2.ZERO):
+			multi_mesh_instance.multimesh.set_instance_transform_2d(
+				i, Transform2D(particle.velocity.angle(), particle.position)
+			)
 		i += 1
 
 
