@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 		velocity += game.get_force_at(position)
 
-		hor_input *= air_control
+		velocity.x += hor_input * air_control * delta
 	else:
 		if velocity.y > 0:
 			velocity.y = 0
@@ -36,6 +36,6 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("ui_up") and velocity.y >= 0:
 			velocity.y = jump_speed
 
-	velocity.x = move_toward(velocity.x, hor_input * move_speed, acceleration * delta)
+		velocity.x = move_toward(velocity.x, hor_input * move_speed, acceleration * delta)
 
 	move_and_slide()
