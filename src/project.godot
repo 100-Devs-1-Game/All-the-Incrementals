@@ -87,6 +87,10 @@ down={
 disable_on_release=true
 custom_default_config="res://default_panku_config.cfg"
 
+[physics]
+
+common/physics_interpolation=true
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
