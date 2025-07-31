@@ -7,11 +7,11 @@ var life_time_range := Vector2(2.0, 7.0)
 
 var velocity: Vector2
 var position: Vector2
-var life_time: int
+var life_time: float
 
 
 func _init() -> void:
-	life_time = randf_range(life_time_range.x, life_time_range.y) * 60
+	life_time = randf_range(life_time_range.x, life_time_range.y)
 
 
 func add_force(force: Vector2):
@@ -19,7 +19,7 @@ func add_force(force: Vector2):
 
 
 func tick(delta: float):
-	life_time -= 1
+	life_time -= delta
 	if life_time < 0:
 		destroyed.emit()
 		return

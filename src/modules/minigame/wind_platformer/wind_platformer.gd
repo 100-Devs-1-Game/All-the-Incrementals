@@ -17,20 +17,29 @@ func _ready() -> void:
 		spawn_random_particle()
 
 
+func _process(delta: float) -> void:
+	draw_particles(delta)
+
+
 func _physics_process(delta: float) -> void:
-	tick_particles(delta)
+	if Engine.get_physics_frames() % 2 == 0:
+		tick_particles(delta * 2)
 
 
-func tick_particles(delta: float):
+func draw_particles(delta: float):
 	multi_mesh_instance.multimesh.instance_count = particles.size()
 	var i := 0
 	for particle: WindPlatformerMinigameParticle in particles:
-		particle.add_force(get_force_at(particle.position))
 		particle.tick(delta)
 		multi_mesh_instance.multimesh.set_instance_transform_2d(
 			i, Transform2D(0, particle.position)
 		)
 		i += 1
+
+
+func tick_particles(delta: float):
+	for particle: WindPlatformerMinigameParticle in particles:
+		particle.add_force(get_force_at(particle.position) * delta * 60)
 
 
 func add_particle(pos: Vector2):
