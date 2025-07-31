@@ -17,7 +17,6 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://b0578meoknrrg"
 config/icon="uid://b0578meoknrrg"
-boot_splash/minimum_display_time=500
 
 [audio]
 
