@@ -83,7 +83,7 @@ func get_description() -> String:
 	return ""
 
 
-func get_cost(level: int) -> Array[EssenceInventory]:
+func get_cost(level: int) -> EssenceInventory:
 	assert(cost_arr.size() > level)
 	return cost_arr[level]
 
