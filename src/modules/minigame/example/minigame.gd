@@ -5,11 +5,7 @@ const BRANCH_COLORS = [Color.GREEN, Color.ORANGE]
 @onready var hbox: HBoxContainer = %HBoxContainer
 
 
-func _ready() -> void:
-	# retrieve MinigameData from our temporary SceneLoader
-	var loader: ExampleSceneLoader = get_tree().root.get_node("Scene Loader")
-	data = loader.data
-
+func _start() -> void:
 	# start recursive display of upgrade layers
 	add_upgrade_layer(data.upgrade_tree_root_nodes, 1, Color.BLACK)
 
