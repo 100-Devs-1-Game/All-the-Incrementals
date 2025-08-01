@@ -32,8 +32,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Engine.get_physics_frames() % 2 == 0:
-		tick_particles(delta * 2)
 		PerformanceUtils.TrackAverage.start_tracking("tick particles")
+		tick_particles(delta * 2)
 		PerformanceUtils.TrackAverage.stop_tracking("tick particles")
 
 
