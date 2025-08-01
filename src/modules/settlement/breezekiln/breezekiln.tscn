@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bl4s8xuvuf3xb"]
 
-[ext_resource type="Script" uid="uid://ou1teugr01v8" path="res://modules/settlement/breezekiln/breezekiln.gd" id="1_82p5n"]
+[ext_resource type="Script" path="res://modules/settlement/breezekiln/breezekiln.gd" id="1_82p5n"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="4_32tle"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="5_32tle"]
 
