@@ -7,7 +7,7 @@ var score: int
 
 
 func _ready() -> void:
-	if SceneLoader.has_current_minigame():
+	if not SceneLoader.has_current_minigame():
 		push_warning("Detected direct Minigame start")
 		if data == null:
 			push_error("No MinigameData set")
