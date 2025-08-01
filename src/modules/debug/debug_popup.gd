@@ -27,6 +27,8 @@ func _input(event: InputEvent) -> void:
 		print("Toggling the DebugPopup")
 		visible = !visible
 	elif event is InputEventKey and event.is_pressed():
+		if visible:
+			print(event)
 		for debug_button in debug_buttons:
 			if debug_button.hotkey.to_lower() == event.as_text_keycode().to_lower():
 				_button_pressed(debug_button.function_name)

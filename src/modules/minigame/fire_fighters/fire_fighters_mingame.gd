@@ -87,7 +87,7 @@ func tick_fires():
 				replace_feature(tile, feature.turns_into)
 
 			fire.size += feature.flammability * 0.1
-			if FireFightersMinigameUtils.chancef(fire.size - 1.0):
+			if RngUtils.chancef(fire.size - 1.0):
 				try_to_spread_fire(tile)
 
 
@@ -109,7 +109,7 @@ func try_to_spread_fire(tile: Vector2i):
 	assert(abs(dir.x) == 1 or abs(dir.y) == 1)
 	var neighbor_feature: FireFightersMinigameMapFeature = get_map_feature(tile + dir)
 	if neighbor_feature and not is_tile_burning(neighbor_pos):
-		if FireFightersMinigameUtils.chancef(neighbor_feature.flammability):
+		if RngUtils.chancef(neighbor_feature.flammability):
 			add_fire(neighbor_pos)
 
 
@@ -155,3 +155,7 @@ func get_fire_at(tile: Vector2i) -> FireFightersMinigameFire:
 
 func is_tile_burning(tile: Vector2i) -> bool:
 	return fires.has(tile)
+
+
+func return_to_overworld() -> void:
+	get_tree().change_scene_to_file("res://modules/settlement/breezekiln/breezekiln.tscn")
