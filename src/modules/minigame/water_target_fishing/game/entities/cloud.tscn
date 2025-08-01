@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://0xvvfgkrdmro"]
+
+[ext_resource type="PackedScene" uid="uid://di5qytko63bu3" path="res://modules/minigame/water_target_fishing/game/entities/background_sprite.tscn" id="1_tm6xv"]
+[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_bjjxq"]
+
+[node name="Cloud" type="Node2D"]
+
+[node name="BackgroundSprite" parent="." instance=ExtResource("1_tm6xv")]
+texture = ExtResource("2_bjjxq")

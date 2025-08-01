@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxwmelnhcy88u"]
+
+[ext_resource type="Script" uid="uid://ir6o4o6gbht3" path="res://modules/minigame/water_target_fishing/game/components/offscreen_deleter.gd" id="1_r1so3"]
+
+[node name="WtfOffscreenDeleterComponent" type="Node2D"]
+script = ExtResource("1_r1so3")
