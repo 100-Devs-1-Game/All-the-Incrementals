@@ -12,13 +12,13 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_2v8gc"]
 script = ExtResource("5_32tle")
-func_or_path = "res://modules/settlement/breezekiln/fire_altar/fire_altar.tscn"
+func_or_path = "res://modules/overworld_locations/breezekiln/fire_altar/fire_altar.tscn"
 hotkey = "f"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_srqx1"]
 script = ExtResource("5_32tle")
-func_or_path = "res://modules/settlement/breezekiln/wind_altar/wind_altar.tscn"
+func_or_path = "res://modules/overworld_locations/breezekiln/wind_altar/wind_altar.tscn"
 hotkey = "w"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
