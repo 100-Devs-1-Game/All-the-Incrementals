@@ -11,11 +11,9 @@ extends Resource
 
 # This will automatically store all the levels in all Minigames upgrade trees
 # through recursion in those nested Resources
-@export_storage var minigames: Array[MinigameData]
+@export var minigames: Array[MinigameData]
 
+@export_storage var player_state: PlayerState
 #
 # whatever else need to saved, can either be added directly as variable
 # or wrapped into another Resource
-
-#@export_storage var reputation : float
-#@export_storage var inventory: Array[EssenceStack]
