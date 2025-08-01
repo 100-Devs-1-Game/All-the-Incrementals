@@ -30,6 +30,7 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="Minigame" type="Node"]
 script = ExtResource("1_d7uj7")
+data_uid = "uid://dym4je2njvl28"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
