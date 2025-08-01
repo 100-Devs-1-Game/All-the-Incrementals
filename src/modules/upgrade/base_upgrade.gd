@@ -25,7 +25,7 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 	set = set_max_level
 
 # cost for level 1
-@export var base_cost: int:
+@export var base_cost: EssenceInventory:
 	set = set_base_cost
 # cost multiplier per level
 @export var base_cost_multiplier: float:
@@ -98,7 +98,7 @@ func set_max_level(level: int):
 	# TODO
 
 
-func set_base_cost(cost: int):
+func set_base_cost(cost: EssenceInventory):
 	base_cost = cost
 	# TODO
 
