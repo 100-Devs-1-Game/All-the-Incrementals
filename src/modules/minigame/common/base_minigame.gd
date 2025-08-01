@@ -46,3 +46,8 @@ func add_score(n: int = 1):
 func game_over():
 	#TODO
 	pass
+
+
+func exit() -> void:
+	print("Emitting exit_minigame signal")
+	EventBus.emit_signal(EventBus.exit_minigame.get_name())

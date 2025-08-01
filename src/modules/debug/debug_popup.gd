@@ -2,13 +2,16 @@ class_name DebugPopup
 
 extends Control
 
+# Show the debug panel on start
+@export var visible_on_start: bool = false
+
 # Define debug buttons by providing the names of functions to call on press.
 @export var debug_buttons: Array[DebugButton] = []
 
 
 func _ready() -> void:
 	# By default, the debug popup is not visible. Press 'X' to bring it up.
-	visible = false
+	visible = visible_on_start
 
 	for debug_button in debug_buttons:
 		var new_button = Button.new()
@@ -27,6 +30,8 @@ func _input(event: InputEvent) -> void:
 		print("Toggling the DebugPopup")
 		visible = !visible
 	elif event is InputEventKey and event.is_pressed():
+		if visible:
+			print(event)
 		for debug_button in debug_buttons:
 			if debug_button.hotkey.to_lower() == event.as_text_keycode().to_lower():
 				_button_pressed(debug_button.function_name)

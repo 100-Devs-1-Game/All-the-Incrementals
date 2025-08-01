@@ -22,7 +22,7 @@ var player: FireFighterMinigamePlayer
 @onready var fire_node: Node = $Fires
 
 
-func _ready() -> void:
+func _start() -> void:
 	init()
 	run()
 
@@ -87,7 +87,7 @@ func tick_fires():
 				replace_feature(tile, feature.turns_into)
 
 			fire.size += feature.flammability * 0.1
-			if FireFightersMinigameUtils.chancef(fire.size - 1.0):
+			if RngUtils.chancef(fire.size - 1.0):
 				try_to_spread_fire(tile)
 
 
@@ -109,7 +109,7 @@ func try_to_spread_fire(tile: Vector2i):
 	assert(abs(dir.x) == 1 or abs(dir.y) == 1)
 	var neighbor_feature: FireFightersMinigameMapFeature = get_map_feature(tile + dir)
 	if neighbor_feature and not is_tile_burning(neighbor_pos):
-		if FireFightersMinigameUtils.chancef(neighbor_feature.flammability):
+		if RngUtils.chancef(neighbor_feature.flammability):
 			add_fire(neighbor_pos)
 
 
