@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_q3mbh"]
 script = ExtResource("4_cr62s")
-func_or_path = "res://modules/settlement/breezekiln/breezekiln.tscn"
+func_or_path = "res://modules/overworld_locations/breezekiln/breezekiln.tscn"
 hotkey = "escape"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 

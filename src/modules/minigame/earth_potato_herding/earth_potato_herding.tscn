@@ -12,7 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_7gu6e"]
 script = ExtResource("11_eeopq")
-func_or_path = "res://modules/settlement/clayport/clayport.tscn"
+func_or_path = "res://modules/overworld_locations/clayport/clayport.tscn"
 hotkey = "escape"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
