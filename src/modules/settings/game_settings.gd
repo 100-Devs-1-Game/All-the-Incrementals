@@ -41,10 +41,8 @@ var action_names := {
 
 var save_path = "user://settings.cfg"
 
-
 func _ready() -> void:
 	load_settings()
-
 
 func set_audio(bus: int, volume: float):
 	match bus:
@@ -138,8 +136,7 @@ func restore_defaults():
 
 ## Requests a keybind change from an old key to a new one
 func rebind_request(
-	action: String, old_key: InputEventKey, new_key: InputEventKey, action_id
-) -> bool:
+	action: String, old_key: InputEventKey, new_key: InputEventKey, action_id) -> bool:
 	var success := true
 	var old_keycode = old_key.keycode
 	var new_keycode = new_key.keycode

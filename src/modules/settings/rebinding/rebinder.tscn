@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://y3qdot2pnghb"]
 
-[ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://modules/blur.gdshader" id="1_bovhm"]
+[ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="1_bovhm"]
 [ext_resource type="Script" uid="uid://c2evftqhfy1fl" path="res://modules/settings/rebinding/rebinder.gd" id="1_wvaor"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wvaor"]

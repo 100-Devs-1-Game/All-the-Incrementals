@@ -1,6 +1,6 @@
 extends Control
 
-@onready var InputLabel = $Panel/Panel/NewKeyLabel
+@onready var input_label = $Panel/Panel/NewKeyLabel
 var action_id := 0
 var caller: Button
 var listening := true
@@ -15,7 +15,7 @@ func _input(event: InputEvent) -> void:
 		var action_text = GameSettings.action_names.get(action_id)["name"]
 		var old_event = InputMap.action_get_events(action_text)
 		var old_key = old_event.get(GameSettings.action_names.get(action_id)["index"])
-		InputLabel.text = event.as_text()
+		input_label.text = event.as_text()
 		listening = false
 		if GameSettings.rebind_request(action_text, old_key, event, action_id):
 			print("That'll do donkeh, that'll do.")
