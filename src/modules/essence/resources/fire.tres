@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Essence" load_steps=2 format=3 uid="uid://kwd3sg27pka7"]
+[gd_resource type="Resource" script_class="Essence" load_steps=3 format=3 uid="uid://kwd3sg27pka7"]
 
 [ext_resource type="Script" uid="uid://b2401p3ugnfm0" path="res://modules/essence/essence.gd" id="1_fkwgn"]
+[ext_resource type="Texture2D" uid="uid://cef6u7a7us8ic" path="res://assets/icons/glowing_fire_skn.png" id="1_w6r7h"]
 
 [resource]
 script = ExtResource("1_fkwgn")
 name = "Fire"
+icon = ExtResource("1_w6r7h")
 metadata/_custom_type_script = "uid://b2401p3ugnfm0"
