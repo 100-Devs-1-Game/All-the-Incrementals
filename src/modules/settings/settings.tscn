@@ -85,7 +85,7 @@ theme_override_constants/separation = 75
 
 [node name="QualityLabel" type="Label" parent="Settings/Panel/SettingsContainer/QualityContainer"]
 layout_mode = 2
-text = "Game Quality (3D):"
+text = "3D Quality: Best"
 
 [node name="LowQualityButton" type="Button" parent="Settings/Panel/SettingsContainer/QualityContainer"]
 layout_mode = 2
@@ -153,37 +153,6 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "100"
 
-[node name="SFXContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
-layout_mode = 2
-theme_override_constants/separation = 136
-
-[node name="MasterLabel" type="Label" parent="Settings/Panel/SettingsContainer/SFXContainer"]
-layout_mode = 2
-text = "SFX Volume:"
-
-[node name="SFXSlider" type="HSlider" parent="Settings/Panel/SettingsContainer/SFXContainer"]
-custom_minimum_size = Vector2(343.82, 0)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxLine_u1xnr")
-value = 100.0
-rounded = true
-
-[node name="ValueLabel" type="Label" parent="Settings/Panel/SettingsContainer/SFXContainer/SFXSlider"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 15.18
-offset_top = -25.0
-offset_right = 108.18
-offset_bottom = 25.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "100"
-
 [node name="MusicContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 96
@@ -201,6 +170,37 @@ value = 100.0
 rounded = true
 
 [node name="ValueLabel" type="Label" parent="Settings/Panel/SettingsContainer/MusicContainer/MusicSlider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.18
+offset_top = -25.0
+offset_right = 108.18
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+
+[node name="SFXContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 136
+
+[node name="MasterLabel" type="Label" parent="Settings/Panel/SettingsContainer/SFXContainer"]
+layout_mode = 2
+text = "SFX Volume:"
+
+[node name="SFXSlider" type="HSlider" parent="Settings/Panel/SettingsContainer/SFXContainer"]
+custom_minimum_size = Vector2(343.82, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxLine_u1xnr")
+value = 100.0
+rounded = true
+
+[node name="ValueLabel" type="Label" parent="Settings/Panel/SettingsContainer/SFXContainer/SFXSlider"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -548,10 +548,25 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -93.0
+offset_left = -497.0
 offset_top = -81.0
-offset_right = 93.0
+offset_right = -311.0
 offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Back"
+text = "Apply and Exit"
+
+[node name="RestoreButton" type="Button" parent="Settings"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 194.0
+offset_top = -81.0
+offset_right = 491.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Restore Defaults"

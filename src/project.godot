@@ -29,7 +29,7 @@ EventBus="*res://global/event_bus.gd"
 Logger="*res://addons/godot-logger/logger.gd"
 Audio="*res://modules/audio/audio.gd"
 Panku="*res://addons/panku_console/console.tscn"
-SettingsRetainer="*res://modules/settings/settings_retainer.gd"
+GameSettings="*res://modules/settings/game_settings.gd"
 
 [debug_draw_3d]
 
