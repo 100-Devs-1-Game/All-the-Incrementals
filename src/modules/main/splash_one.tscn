@@ -1,23 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctqwwvmxwjwu0"]
-
-[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_n5c0n"]
+[gd_scene format=3 uid="uid://ctqwwvmxwjwu0"]
 
 [node name="SplashOne" type="Node2D"]
 
-[node name="Placeholder" parent="." instance=ExtResource("1_n5c0n")]
-
-[node name="Title" type="Label" parent="Placeholder"]
+[node name="Title" type="Label" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.5
-offset_top = -25.0
-offset_right = 164.5
-offset_bottom = 25.0
+offset_left = 795.5
+offset_top = 515.0
+offset_right = 1124.5
+offset_bottom = 565.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "made in Godot 4"
