@@ -157,5 +157,6 @@ func is_tile_burning(tile: Vector2i) -> bool:
 	return fires.has(tile)
 
 
-func return_to_overworld() -> void:
-	get_tree().change_scene_to_file("res://modules/settlement/breezekiln/breezekiln.tscn")
+func exit_minigame() -> void:
+	print("Emitting exit_minigame signal")
+	EventBus.emit_signal(EventBus.exit_minigame.get_name())
