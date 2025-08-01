@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_pb683"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_76jug"]
-[ext_resource type="Script" uid="uid://cmnrnh0whsxb0" path="res://modules/minigame/example/upgrade_logic/upgrade_logic.gd" id="2_j8l3d"]
+[ext_resource type="Script" uid="uid://cmnrnh0whsxb0" path="res://modules/minigame/example_minigame/upgrade_logic/upgrade_logic.gd" id="2_j8l3d"]
 [ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="3_j8l3d"]
 
 [sub_resource type="Resource" id="Resource_3dynj"]

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="MinigameData" load_steps=6 format=3 uid="uid://dym4je2njvl28"]
 
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_4qrl4"]
-[ext_resource type="PackedScene" uid="uid://dh5qvg687mtli" path="res://modules/minigame/example/minigame.tscn" id="1_pups6"]
+[ext_resource type="PackedScene" uid="uid://dh5qvg687mtli" path="res://modules/minigame/example_minigame/minigame.tscn" id="1_pups6"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_pups6"]
-[ext_resource type="Resource" uid="uid://bevll40cmuqf0" path="res://modules/minigame/example/upgrades/upgrade_1a.tres" id="4_q5cc8"]
-[ext_resource type="Resource" uid="uid://blgvydgjtbdvl" path="res://modules/minigame/example/upgrades/upgrade_speed.tres" id="5_i5wny"]
+[ext_resource type="Resource" uid="uid://bevll40cmuqf0" path="res://modules/minigame/example_minigame/upgrades/upgrade_1a.tres" id="4_q5cc8"]
+[ext_resource type="Resource" uid="uid://blgvydgjtbdvl" path="res://modules/minigame/example_minigame/upgrades/upgrade_speed.tres" id="5_i5wny"]
 
 [resource]
 script = ExtResource("1_4qrl4")

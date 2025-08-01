@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_bae6h"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_bae6h"]
-[ext_resource type="Script" uid="uid://cmnrnh0whsxb0" path="res://modules/minigame/example/upgrade_logic/upgrade_logic.gd" id="2_d7fem"]
+[ext_resource type="Script" uid="uid://cmnrnh0whsxb0" path="res://modules/minigame/example_minigame/upgrade_logic/upgrade_logic.gd" id="2_d7fem"]
 [ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="3_d7fem"]
-[ext_resource type="Resource" uid="uid://brrqiv6apsu8a" path="res://modules/minigame/example/upgrades/upgrade_size.tres" id="4_ml3xo"]
+[ext_resource type="Resource" uid="uid://brrqiv6apsu8a" path="res://modules/minigame/example_minigame/upgrades/upgrade_size.tres" id="4_ml3xo"]
 
 [sub_resource type="Resource" id="Resource_ml3xo"]
 script = ExtResource("2_d7fem")
