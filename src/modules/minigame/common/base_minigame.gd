@@ -1,6 +1,12 @@
+## Abstract class for Minigame root Node Scripts to inherit. Inherited Scripts
+## should override `_start()` instead of `_ready()` to start Minigames, so the
+## start procedure can be controlled from here.
 class_name BaseMinigame
 extends Node
 
+## Stores a uid reference to the MinigameData Resource.
+## This can be assigned manually so the Minigame scene is able to start
+## directly from the Editor, even when using `_start()` as entry point.
 @export var data_uid: String
 
 var data: MinigameData
@@ -21,12 +27,15 @@ func _ready() -> void:
 	open_menu()
 
 
-# virtual function for initializing the Minigame
+## Virtual function for initializing the Minigame. Inherited Scripts should
+## use this instead of `_init()` or `_ready()`, for any initialization logic
+## that can be run before the Minigame starts.
 func _initialize():
 	pass
 
 
-# virtual function for starting the Minigame
+## Virtual function for starting the Minigame. Inherited Scripts should
+## use this instead of `_ready()`.
 func _start():
 	pass
 
