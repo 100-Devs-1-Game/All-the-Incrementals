@@ -17,3 +17,21 @@ extends Resource
 
 # stores the top n highscores
 @export_storage var high_scores: Array[int]
+
+
+## Returns all upgrades in the tree via recursion
+func get_all_upgrades(branch: BaseUpgrade = null) -> Array[BaseUpgrade]:
+	var result: Array[BaseUpgrade]
+	var root_nodes: Array[BaseUpgrade]
+
+	if branch:
+		root_nodes = branch.unlocks
+	else:
+		# Array type conversion BaseUpgrade <- upgrade_tree_root_nodes
+		root_nodes.assign(upgrade_tree_root_nodes)
+
+	for upgrade in root_nodes:
+		result.append(upgrade)
+		result.append_array(get_all_upgrades(upgrade))
+
+	return result
