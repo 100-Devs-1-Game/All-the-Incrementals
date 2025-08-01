@@ -1,25 +1,37 @@
+## Random number generator utility class.
 class_name RngUtils
 
 
-# chance 0.0 .. 1.0 ( 0 - 100% )
+## Returns bool [code]true[/code] if [param c] is greater than a random value
+## between 0.0 and 1.0, bool [code]false[/code] otherwise.
 static func chancef(c: float) -> bool:
 	return c > randf()
 
 
-# chance 0.0 .. 100.0 ( 0 - 100% )
+## Returns [code]true[/code] if [param c] divided by 100 is greater than a
+## random value between 0.0 and 1.0, [code]false[/code] otherwise.[br]
+## For example:[br]
+## [codeblock]
+## if chance100(25):
+##     print("25% chance to hit")
+## [/codeblock]
 static func chance100(c: float) -> bool:
 	return chancef(c / 100.0)
 
 
-# chance 0 - 100, exectued n-times, returns true if any hit
+## Returns [code]true[/code] if [param c] divided by 100 is greater than a
+## random value between 0.0 and 1.0 at least once within [param n] number of
+## tries, [code]false[/code] otherwise.
 static func chance100_or(c: float, n: int) -> bool:
 	for i in n:
-		if chancef(c / 100.0):
+		if chance100(c):
 			return true
 	return false
 
 
-# chance 0 - 100, returns how many time it hit in a row
+## Returns the number of consecutive times [param c] divided by 100 is
+## greater than a new random value between 0.0 and 1.0 each time. The value of
+## [param c] must be less than 100.
 static func chance100_seq(c: float) -> int:
 	assert(c < 100)
 	var ctr: int = 0
@@ -28,17 +40,27 @@ static func chance100_seq(c: float) -> int:
 	return ctr
 
 
-# chance 0.0 .. 1.0 ( 0 - 100% ), for RNG
+## Returns [code]true[/code] if [param c] is greater than a random value
+## between 0.0 and 1.0 using the [RandomNumberGenerator] [param rng],
+## [code]false[/code] otherwise.
 static func chancef_rng(c: float, rng: RandomNumberGenerator) -> bool:
 	return c > rng.randf()
 
 
-# chance 0.0 .. 100.0 ( 0 - 100% ), for RNG
+## Returns [code]true[/code] if [param c] divided by 100 is greater than a
+## random value between 0.0 and 1.0, [code]false[/code] otherwise.[br]
+## For example:[br]
+## [codeblock]
+## if chance100_rng(25, rng):
+##     print("25% chance to hit")
+## [/codeblock]
 static func chance100_rng(c: float, rng: RandomNumberGenerator) -> bool:
 	return chancef_rng(c / 100.0, rng)
 
 
-# chance 0 - x, for meaningful chances > 100%
+## Returns the number of consecutive times [param c] is greater than a new random
+## value between 0.0 and 100.0 when reducing [param c] by that random value
+## upon each iteration. Also known as [i]meaningful chances > 100%[/i].
 static func multi_chance100(c: float) -> int:
 	var ctr := 0
 	var total_chance: float = c
@@ -53,7 +75,10 @@ static func multi_chance100(c: float) -> int:
 	return ctr
 
 
-# chance 0 - x, for meaningful chances > 100%, for RNG
+## Returns the number of consecutive times [param c] is greater than a new random
+## value between 0.0 and 100.0 when reducing [param c] by that random value
+## upon each iteration, using the [RandomNumberGenerator] [param rng]. Also known
+## as [i]meaningful chances > 100%[/i].
 static func multi_chance100_rng(c: float, rng: RandomNumberGenerator) -> int:
 	var ctr := 0
 	var total_chance: float = c
@@ -68,12 +93,12 @@ static func multi_chance100_rng(c: float, rng: RandomNumberGenerator) -> int:
 	return ctr
 
 
-# same as pick_random() but with RNG
+## Same as [method Array.pick_random] method but using the [RandomNumberGenerator] [param rng].
 static func pick_random_rng(arr: Array, rng: RandomNumberGenerator):
 	return arr[rng.randi() % arr.size()]
 
 
-# same as shuffle() but with RNG
+## Same as [method Array.shuffle] but using the [RandomNumberGenerator] [param rng].
 static func shuffle_rng(arr: Array, rng: RandomNumberGenerator) -> Array:
 	var source_arr = arr.duplicate()
 	var result := []
