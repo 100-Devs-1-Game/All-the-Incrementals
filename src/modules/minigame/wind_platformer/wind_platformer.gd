@@ -10,9 +10,11 @@ var wind_arr: Dictionary
 var particles: Array[WindPlatformerMinigameParticle]
 
 @onready var multi_mesh_instance: MultiMeshInstance2D = $MultiMeshInstance2D
+@onready var cloud_spawner: WindPlatformerMinigameCloudSpawner = $"Cloud Spawner"
 
 
 func _ready() -> void:
+	cloud_spawner.start()
 	for i in num_particles:
 		spawn_random_particle()
 

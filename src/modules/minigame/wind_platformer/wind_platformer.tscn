@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=10 format=3 uid="uid://bytqv7h0iow3u"]
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_x5t1i"]
+[ext_resource type="Script" uid="uid://cisfp72boumnu" path="res://modules/minigame/wind_platformer/cloud_spawner.gd" id="4_3m7tm"]
 [ext_resource type="PackedScene" uid="uid://bpbxl634kt5sd" path="res://modules/minigame/wind_platformer/cloud_platform.tscn" id="4_cj4w2"]
 [ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/player.tscn" id="5_3m7tm"]
 
@@ -48,90 +49,6 @@ color = Color(0.32549, 0.32549, 0.905882, 1)
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Cloud Platform" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(254, 131)
-
-[node name="Cloud Platform2" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(471, 348)
-
-[node name="Cloud Platform3" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(896, 705)
-
-[node name="Cloud Platform4" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(111, 305)
-
-[node name="Cloud Platform5" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(482, 511)
-
-[node name="Cloud Platform6" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(753, 879)
-
-[node name="Cloud Platform7" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(699, 305)
-
-[node name="Cloud Platform8" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(1070, 511)
-
-[node name="Cloud Platform9" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(1341, 879)
-
-[node name="Cloud Platform10" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(431, 234)
-
-[node name="Cloud Platform11" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(648, 451)
-
-[node name="Cloud Platform12" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(1073, 808)
-
-[node name="Cloud Platform13" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(288, 408)
-
-[node name="Cloud Platform14" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(659, 614)
-
-[node name="Cloud Platform15" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(930, 982)
-
-[node name="Cloud Platform16" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(876, 408)
-
-[node name="Cloud Platform17" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(1247, 614)
-
-[node name="Cloud Platform18" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(1518, 982)
-
-[node name="Cloud Platform19" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(71, 751)
-
-[node name="Cloud Platform20" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(-1, 554)
-
-[node name="Cloud Platform21" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(-72, 925)
-
-[node name="Cloud Platform22" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(245, 557)
-
-[node name="Cloud Platform23" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(516, 925)
-
-[node name="Cloud Platform24" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(248, 854)
-
-[node name="Cloud Platform25" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(176, 657)
-
-[node name="Cloud Platform26" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(105, 1028)
-
-[node name="Cloud Platform27" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(422, 660)
-
-[node name="Cloud Platform28" parent="Platforms" instance=ExtResource("4_cj4w2")]
-position = Vector2(693, 1028)
-
 [node name="Player" parent="." instance=ExtResource("5_3m7tm")]
 position = Vector2(365, 97)
 
@@ -139,3 +56,13 @@ position = Vector2(365, 97)
 modulate = Color(1, 1, 1, 0.541176)
 multimesh = SubResource("MultiMesh_cj4w2")
 texture = SubResource("GradientTexture1D_cj4w2")
+
+[node name="Cloud Spawner" type="Node" parent="." node_paths=PackedStringArray("clouds_node")]
+script = ExtResource("4_3m7tm")
+cloud_scene = ExtResource("4_cj4w2")
+clouds_node = NodePath("../Platforms")
+initial_clouds = 100
+cloud_velocity_range = Vector2(10, 50)
+initial_rect = Rect2(0, 200, 1920, 1080)
+left_rect = Rect2(-150, 150, -140, 1080)
+right_rect = Rect2(2000, 150, 2010, 1080)
