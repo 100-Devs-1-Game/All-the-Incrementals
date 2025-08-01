@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3djvftk8ecjn"]
+[gd_scene load_steps=4 format=3 uid="uid://c3djvftk8ecjn"]
 
 [ext_resource type="Texture2D" uid="uid://wc7clqsjuvp0" path="res://assets/minigames/wind_platformer/cloud_part.png" id="1_3eogx"]
 [ext_resource type="Script" uid="uid://bqhq8nhdypt23" path="res://modules/minigame/wind_platformer/cloud_part.gd" id="1_jhbv2"]
@@ -7,14 +7,7 @@
 radius = 13.35
 height = 42.9
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2w2da"]
-radius = 11.15
-height = 29.2
-
-[node name="CloudPart" type="Area2D"]
-collision_layer = 0
-monitoring = false
-monitorable = false
+[node name="CloudPart" type="Node2D"]
 script = ExtResource("1_jhbv2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -23,6 +16,3 @@ texture = ExtResource("1_3eogx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jhbv2")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_2w2da")
