@@ -44,6 +44,9 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
 # ------
 
+# has it been unlocked by a previous upgrade
+@export_storage var unlocked: bool = false
+
 # level required to unlock all further upgrades of this branch
 @export var unlock_level: int
 
@@ -74,8 +77,13 @@ func level_up() -> void:
 
 
 # 0 = level 1, ...
+func get_level() -> int:
+	return current_level
+
+
+# 0 = level 1, ...
 func get_max_level() -> int:
-	return cost_arr.size()
+	return cost_arr.size() - 1
 
 
 func get_description() -> String:
@@ -83,14 +91,40 @@ func get_description() -> String:
 	return ""
 
 
+# 0 = level 1, ...
 func get_cost(level: int) -> EssenceInventory:
 	assert(cost_arr.size() > level)
 	return cost_arr[level]
 
 
+# 0 = level 1, ...
 func get_effect_modifier(level: int) -> float:
 	assert(effect_modifier_arr.size() > level)
 	return effect_modifier_arr[level]
+
+
+func get_current_effect_modifier() -> float:
+	return get_effect_modifier(current_level)
+
+
+func is_unlocked() -> bool:
+	return unlocked
+
+
+func is_maxed_out() -> bool:
+	return current_level == get_max_level()
+
+
+func get_next_level_cost() -> EssenceInventory:
+	if is_maxed_out():
+		return null
+	return cost_arr[current_level + 1]
+
+
+func can_afford_next_level() -> bool:
+	if is_maxed_out():
+		return false
+	return Player.can_afford(get_next_level_cost())
 
 
 func set_max_level(level: int):
