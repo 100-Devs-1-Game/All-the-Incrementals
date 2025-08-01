@@ -32,14 +32,10 @@ script = ExtResource("1_x5t1i")
 wind_noise = SubResource("FastNoiseLite_4orxu")
 num_particles = 0
 
-[node name="DebugPopup" parent="." instance=ExtResource("3_cj4w2")]
-visible = false
-visible_on_start = true
-debug_buttons = Array[ExtResource("4_3m7tm")]([SubResource("Resource_k4m21")])
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="Background" type="ColorRect" parent="CanvasLayer"]
+[node name="CanvasLayer Background" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
