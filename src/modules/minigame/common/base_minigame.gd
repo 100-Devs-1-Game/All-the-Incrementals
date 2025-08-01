@@ -1,7 +1,9 @@
 class_name BaseMinigame
 extends Node
 
-@export var data: MinigameData
+@export var data_uid: String
+
+var data: MinigameData
 
 var score: int
 
@@ -9,8 +11,10 @@ var score: int
 func _ready() -> void:
 	if not SceneLoader.has_current_minigame():
 		push_warning("Detected direct Minigame start")
-		if data == null:
-			push_error("No MinigameData set")
+		if data_uid.is_empty():
+			push_error("No data_uid set in the Minigame scene")
+		else:
+			data = load(data_uid)
 	else:
 		data = SceneLoader.get_current_minigame()
 
