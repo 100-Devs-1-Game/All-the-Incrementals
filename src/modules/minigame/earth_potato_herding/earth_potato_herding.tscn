@@ -1,5 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://by18kqakehrup"]
 
+[ext_resource type="Script" uid="uid://cbtiegkndpc6f" path="res://modules/minigame/earth_potato_herding/earth_potato_herding.gd" id="1_kkhpg"]
 [ext_resource type="PackedScene" uid="uid://bx2ptflde5hu" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/spawner/eph_evil_spirit_spawner.tscn" id="2_ag328"]
 [ext_resource type="PackedScene" uid="uid://mqbrbbxraysb" path="res://modules/minigame/earth_potato_herding/eph_adult/spawner/eph_adult_spawner.tscn" id="2_tk8ls"]
 [ext_resource type="PackedScene" uid="uid://vesybpnx50sy" path="res://modules/minigame/earth_potato_herding/eph_adult/eph_adult.tscn" id="3_tk8ls"]
@@ -23,17 +24,19 @@ hotkey = "q"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="EarthPotatoHerding" type="Node2D"]
+script = ExtResource("1_kkhpg")
 
 [node name="EphYounglingSpawner" parent="." node_paths=PackedStringArray("_free_roam_area", "_free_roam_bounding_box", "_adult_spawner", "_player", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("3_xo3kj")]
 _free_roam_area = NodePath("spawn_zone")
 _free_roam_bounding_box = NodePath("spawn_bounding_box")
 _adult_spawner = NodePath("../EphAdultSpawner")
 _player = NodePath("../EPHPlayer")
+_initial_spawned_total = 20
 _spawnable_area = NodePath("spawn_zone")
 _spawnable_area_bounding_box = NodePath("spawn_bounding_box")
-_add_child_to = NodePath("../YounglingSpawnZone")
-_max_spawned_at_once = 6
-_spawn_cooldown = 5.0
+_add_child_to = NodePath("../PotatoSpawnZone")
+_max_spawned_at_once = 20
+_use_physics_process_to_spawn = false
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphYounglingSpawner"]
 polygon = PackedVector2Array(504, 1028, 1476, 1019, 1475, 578, 475, 574)
@@ -42,25 +45,23 @@ metadata/_edit_lock_ = true
 [node name="spawn_bounding_box" type="Control" parent="EphYounglingSpawner"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 464.0
-offset_top = 537.0
-offset_right = 1505.0
-offset_bottom = 1068.0
+offset_left = 298.0
+offset_top = 419.0
+offset_right = 1648.0
+offset_bottom = 1082.0
 mouse_filter = 2
 
-[node name="YounglingSpawnZone" type="Node2D" parent="."]
+[node name="PotatoSpawnZone" type="Node2D" parent="."]
 
 [node name="EphAdultSpawner" parent="." node_paths=PackedStringArray("_bucket_node", "_add_child_to") instance=ExtResource("2_tk8ls")]
 _bucket_node = NodePath("../Marker2D")
 _spawnable_node_scene = ExtResource("3_tk8ls")
-_add_child_to = NodePath("../AdultSpawnZone")
+_add_child_to = NodePath("../PotatoSpawnZone")
 _use_physics_process_to_spawn = false
 _spawn_cooldown = -1.0
 
-[node name="AdultSpawnZone" type="Node2D" parent="."]
-
 [node name="EphEvilSpiritSpawner" parent="." node_paths=PackedStringArray("_youngling_swawn_zone", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("2_ag328")]
-_youngling_swawn_zone = NodePath("../YounglingSpawnZone")
+_youngling_swawn_zone = NodePath("../PotatoSpawnZone")
 _spawnable_area = NodePath("spawn_zone")
 _spawnable_area_bounding_box = NodePath("spawn_bounding_box")
 _spawnable_node_scene = ExtResource("5_tk8ls")
