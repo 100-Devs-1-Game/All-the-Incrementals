@@ -37,6 +37,6 @@ func extinguish(flag: bool):
 	dir += dir.rotated(PI / 2) * randf_range(-spread, spread)
 	dir = dir.normalized()
 
-	game.add_water(position, velocity + dir * water_speed)
+	game.add_water(position, velocity + dir * water_speed, extinguisher.global_transform.x)
 
 	extinguisher_cooldown.start()
