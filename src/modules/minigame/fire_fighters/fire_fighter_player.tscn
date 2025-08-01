@@ -37,5 +37,5 @@ rotation = -0.0586266
 
 [node name="Cooldown" type="Timer" parent="Extinguisher"]
 unique_name_in_owner = true
-wait_time = 0.1
+wait_time = 0.05
 one_shot = true
