@@ -34,7 +34,10 @@ func _physics_process(delta: float) -> void:
 			current_cloud.fade()
 			current_cloud = platform
 
-		assert(current_cloud != null)
+		# means current cloud faded while standing on it?
+		if current_cloud == null:
+			is_on_ground = false
+
 	elif current_cloud != null:
 		current_cloud.fade()
 		current_cloud = null
