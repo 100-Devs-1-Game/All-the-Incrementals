@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dwdhfnts10fd0"]
 
-[ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_mingame.gd" id="1_k4ysf"]
+[ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_k4ysf"]
 [ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
 [ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="2_bivsc"]
 [ext_resource type="Resource" uid="uid://bsovy80upwnb4" path="res://modules/minigame/fire_fighters/data/bush.tres" id="3_bkat1"]
