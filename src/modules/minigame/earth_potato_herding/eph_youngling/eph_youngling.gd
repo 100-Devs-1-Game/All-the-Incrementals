@@ -37,15 +37,15 @@ func _physics_process(delta: float) -> void:
 		_state_machine.change_state("grow_up")
 
 
-func _on_youndling_saw_player_area_area_entered(_area: Area2D) -> void:
+func _on_youngling_saw_player_area_area_entered(_area: Area2D) -> void:
 	_state_machine.change_state("herd_by_player")
 
 
-func _on_youndling_saw_player_area_area_exited(_area: Area2D) -> void:
+func _on_youngling_saw_player_area_area_exited(_area: Area2D) -> void:
 	_state_machine.change_state("free_roam")
 
 
-func _on_youndling_saw_spirit_body_entered(body: Node2D) -> void:
+func _on_youngling_saw_spirit_body_entered(body: Node2D) -> void:
 	body.queue_free()
 	self.queue_free()
 
