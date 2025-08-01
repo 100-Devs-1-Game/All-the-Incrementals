@@ -42,7 +42,7 @@ sources/0 = SubResource("TileSetAtlasSource_n1sel")
 
 [sub_resource type="Resource" id="Resource_3xfq4"]
 script = ExtResource("14_ymaye")
-function_name = "exit"
+func_or_path = "exit"
 hotkey = "escape"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 

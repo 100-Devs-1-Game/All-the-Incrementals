@@ -32,7 +32,7 @@ metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
 
 [sub_resource type="Resource" id="Resource_dysxh"]
 script = ExtResource("5_e5aks")
-function_name = "debug_hello_world"
+func_or_path = "debug_hello_world"
 hotkey = "h"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
