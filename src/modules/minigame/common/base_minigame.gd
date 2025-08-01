@@ -16,11 +16,15 @@ var score: int
 
 func _ready() -> void:
 	if not SceneLoader.has_current_minigame():
+		# Assumes this Minigame scene was started directly from the Editor
+		# Use workaround to set references as they would have been
+		# if the SceneLoader had been used
 		push_warning("Detected direct Minigame start")
 		if data_uid.is_empty():
 			push_error("No data_uid set in the Minigame scene")
 		else:
 			data = load(data_uid)
+			SceneLoader._current_minigame = data
 	else:
 		data = SceneLoader.get_current_minigame()
 
