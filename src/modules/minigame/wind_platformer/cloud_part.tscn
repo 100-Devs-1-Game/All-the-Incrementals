@@ -13,6 +13,7 @@ height = 29.2
 
 [node name="CloudPart" type="Area2D"]
 collision_layer = 0
+monitoring = false
 monitorable = false
 script = ExtResource("1_jhbv2")
 

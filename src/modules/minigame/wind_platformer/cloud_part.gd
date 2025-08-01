@@ -1,7 +1,10 @@
 class_name WindPlatformerMinigameCloudPart
 extends Area2D
 
-var active: bool = false
+var active: bool = false:
+	set(b):
+		active = b
+		monitoring = active
 
 @onready var orig_pos: Vector2 = position
 
