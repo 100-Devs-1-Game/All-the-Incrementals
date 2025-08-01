@@ -1,28 +1,31 @@
 [gd_scene load_steps=6 format=3 uid="uid://d1s2rtgxlns3v"]
 
-[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_04u4n"]
-[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_bdc71"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_2wcmw"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_mxing"]
 
-[sub_resource type="Resource" id="Resource_e45hq"]
-script = ExtResource("2_bdc71")
-label = "Main Menu"
-scene_path = "res://modules/menu/main_menu.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_sx55g"]
+script = ExtResource("4_mxing")
+func_or_path = "res://modules/menu/main_menu.tscn"
+hotkey = "escape"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_2wcmw"]
-script = ExtResource("2_bdc71")
-label = "Visit Breezekiln"
-scene_path = "res://modules/settlement/breezekiln/breezekiln.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_bwyud"]
+script = ExtResource("4_mxing")
+func_or_path = "res://modules/settlement/breezekiln/breezekiln.tscn"
+hotkey = "b"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_bdc71"]
-script = ExtResource("2_bdc71")
-label = "Visit Clayport"
-scene_path = "res://modules/settlement/clayport/clayport.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_5v5ja"]
+script = ExtResource("4_mxing")
+func_or_path = "res://modules/settlement/clayport/clayport.tscn"
+hotkey = "c"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="Overworld" type="Node2D"]
 
-[node name="Placeholder" parent="." instance=ExtResource("1_04u4n")]
-for_text = "Overworld"
-buttons = Array[ExtResource("2_bdc71")]([SubResource("Resource_e45hq"), SubResource("Resource_2wcmw"), SubResource("Resource_bdc71")])
+[node name="DebugPopup" parent="." instance=ExtResource("3_2wcmw")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+visible_on_start = true
+debug_buttons = Array[ExtResource("4_mxing")]([SubResource("Resource_sx55g"), SubResource("Resource_bwyud"), SubResource("Resource_5v5ja")])

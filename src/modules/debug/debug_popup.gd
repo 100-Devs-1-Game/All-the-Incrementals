@@ -8,10 +8,20 @@ extends Control
 # Define debug buttons by providing the names of functions to call on press.
 @export var debug_buttons: Array[DebugButton] = []
 
+# Set this to `false` if we want DebugPopup to work on release (non-debug) builds.
+# Recommended to leave this `true` so players can't cheat the final game.
+var _disable_on_release: bool = true
+
 
 func _ready() -> void:
+	# Don't allow the DebugPopup to work on release builds.
+	if _disable_on_release and not OS.is_debug_build():
+		visible = false
+		return
+
 	# By default, the debug popup is not visible. Press 'X' to bring it up.
 	visible = visible_on_start
+	position = Vector2.ZERO
 	_setup_debug_buttons()
 
 
@@ -73,7 +83,7 @@ func _call_function(function_name: String) -> void:
 		push_error("Missing parent node - cannot call function " + function_name + "()")
 		return
 
-	print("Calling " + function_name + "() of the parent node.")
+	print("Calling " + parent.name + "." + function_name + "()")
 	parent.call(function_name)
 
 

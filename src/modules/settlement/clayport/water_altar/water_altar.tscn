@@ -1,16 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dv213uo7d1pfj"]
 
-[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_6q817"]
-[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_lfypi"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_548ka"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_wfwb6"]
 
-[sub_resource type="Resource" id="Resource_kbp25"]
-script = ExtResource("2_lfypi")
-label = "Return to Clayport"
-scene_path = "res://modules/settlement/clayport/clayport.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_2gise"]
+script = ExtResource("4_wfwb6")
+func_or_path = "res://modules/settlement/clayport/clayport.tscn"
+hotkey = "escape"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="WaterAltar" type="Node2D"]
 
-[node name="Placeholder" parent="." instance=ExtResource("1_6q817")]
-for_text = "Water Altar"
-buttons = Array[ExtResource("2_lfypi")]([SubResource("Resource_kbp25")])
+[node name="DebugPopup" parent="." instance=ExtResource("3_548ka")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+visible_on_start = true
+debug_buttons = Array[ExtResource("4_wfwb6")]([SubResource("Resource_2gise")])
