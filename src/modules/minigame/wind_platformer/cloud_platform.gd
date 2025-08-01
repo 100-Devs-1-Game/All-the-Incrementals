@@ -1,3 +1,4 @@
+class_name WindPlatformerMinigameCloudPlatform
 extends AnimatableBody2D
 
 var speed := randf_range(-50, 50)
