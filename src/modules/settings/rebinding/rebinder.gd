@@ -1,10 +1,11 @@
 extends Control
 
-@onready var input_label = $Panel/Panel/NewKeyLabel
-@onready var error_label = $Panel/Error
 var action_id := 0
 var caller: Button
 var listening := true
+
+@onready var input_label = $Panel/Panel/NewKeyLabel
+@onready var error_label = $Panel/Error
 
 
 func _input(event: InputEvent) -> void:

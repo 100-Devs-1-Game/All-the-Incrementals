@@ -1,20 +1,6 @@
 extends Control
 
-@onready var setting_buttons := {
-	$Panel/SettingsContainer/QualityContainer/LowQualityButton: "Low",
-	$Panel/SettingsContainer/QualityContainer/MedQualityButton: "Medium",
-	$Panel/SettingsContainer/QualityContainer/HighQualityButton: "High",
-	$Panel/SettingsContainer/QualityContainer/BestQualityButton: "Best",
-	$Panel/SettingsContainer/ScreenButton: "Fullscreen",
-	$BackButton: "Exit",
-	$RestoreButton: "Restore"
-}
-
-@onready var audio_sliders := {
-	$Panel/SettingsContainer/MasterContainer/MasterSlider: "Master",
-	$Panel/SettingsContainer/MusicContainer/MusicSlider: "Music",
-	$Panel/SettingsContainer/SFXContainer/SFXSlider: "SFX"
-}
+const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 
 var ordered_actions := [
 	"primary_action",
@@ -33,7 +19,22 @@ var ordered_actions := [
 	"exit_menu"
 ]
 
-const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
+@onready var setting_buttons := {
+	$Panel/SettingsContainer/QualityContainer/LowQualityButton: "Low",
+	$Panel/SettingsContainer/QualityContainer/MedQualityButton: "Medium",
+	$Panel/SettingsContainer/QualityContainer/HighQualityButton: "High",
+	$Panel/SettingsContainer/QualityContainer/BestQualityButton: "Best",
+	$Panel/SettingsContainer/ScreenButton: "Fullscreen",
+	$BackButton: "Exit",
+	$RestoreButton: "Restore"
+}
+
+@onready var audio_sliders := {
+	$Panel/SettingsContainer/MasterContainer/MasterSlider: "Master",
+	$Panel/SettingsContainer/MusicContainer/MusicSlider: "Music",
+	$Panel/SettingsContainer/SFXContainer/SFXSlider: "SFX"
+}
+
 var fullscreen := false
 
 
