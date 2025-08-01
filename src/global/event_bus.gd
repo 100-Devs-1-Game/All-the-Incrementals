@@ -11,6 +11,7 @@ signal game_loaded(world_state: WorldState)
 #region UI
 signal ui_credits_done
 signal ui_credits_start
+signal ui_upgrade_bought(upgrade: BaseUpgrade)
 #endregion
 
 signal exit_minigame
