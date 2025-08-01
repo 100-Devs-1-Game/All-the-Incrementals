@@ -14,7 +14,7 @@ func add_stack_to_inventory(stack: EssenceStack):
 	data.inventory.add_stack(stack)
 
 
-func can_afford(_cost: EssenceStack) -> bool:
+func can_afford(_cost: EssenceInventory) -> bool:
 	if not data:
 		push_error("Player data not set")
 		# assuming this is a test session
