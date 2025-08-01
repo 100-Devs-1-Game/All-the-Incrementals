@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://1m18lfvfkax2"]
+
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="1_qyeiu"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="2_dn8de"]
+
+[sub_resource type="Resource" id="Resource_u1xnr"]
+script = ExtResource("2_dn8de")
+func_or_path = "res://modules/menu/main_menu.tscn"
+hotkey = "escape"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+
+[node name="Settings" type="Node2D"]
+
+[node name="DebugPopup" parent="." instance=ExtResource("1_qyeiu")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+visible_on_start = true
+debug_buttons = Array[ExtResource("2_dn8de")]([SubResource("Resource_u1xnr")])

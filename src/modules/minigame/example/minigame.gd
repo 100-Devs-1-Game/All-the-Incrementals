@@ -1,19 +1,34 @@
+class_name ExampleMinigame
 extends BaseMinigame
 
 const BRANCH_COLORS = [Color.GREEN, Color.ORANGE]
 
+var rotation_speed: float = 1.0
+
 @onready var hbox: HBoxContainer = %HBoxContainer
+@onready var circle_center: Node2D = $"Circle Center"
 
 
-func _ready() -> void:
-	# retrieve MinigameData from our temporary SceneLoader
-	var loader: ExampleSceneLoader = get_tree().root.get_node("Scene Loader")
-	data = loader.data
+func _init() -> void:
+	set_process(false)
 
+
+func _start() -> void:
 	# start recursive display of upgrade layers
 	add_upgrade_layer(data.upgrade_tree_root_nodes, 1, Color.BLACK)
+	set_process(true)
 
 
+func _process(delta: float) -> void:
+	circle_center.rotate(rotation_speed * delta)
+
+
+func on_upgrade_button_pressed(upgrade: MinigameUpgrade):
+	upgrade.level_up()
+	upgrade.logic._apply_effect(self, upgrade)
+
+
+# build dynamic upgrade UI with buttons
 func add_upgrade_layer(upgrades: Array[MinigameUpgrade], depth: int, color: Color):
 	# determine how deep we are in the tree and choose/create VBox Container
 	var vbox: VBoxContainer
@@ -27,6 +42,7 @@ func add_upgrade_layer(upgrades: Array[MinigameUpgrade], depth: int, color: Colo
 	for upgrade in upgrades:
 		var button := Button.new()
 		button.text = upgrade.name
+		button.pressed.connect(on_upgrade_button_pressed.bind(upgrade))
 
 		# pick a color to differentiate branches
 		var branch_color: Color

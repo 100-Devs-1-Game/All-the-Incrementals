@@ -10,10 +10,10 @@ script = ExtResource("3_xdom8")
 metadata/_custom_type_script = "uid://crcm3yjgpr1fo"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kub1s"]
-radius = 147.014
+radius = 128.062
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hpfm4"]
-radius = 404.005
+radius = 125.897
 
 [node name="EPHPlayer" instance=ExtResource("1_y7bht")]
 script = ExtResource("2_42r0g")

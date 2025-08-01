@@ -9,7 +9,9 @@ signal ui_credits_done
 signal ui_credits_start
 #endregion
 
+signal exit_minigame
+
 
 # For debugging
 func _print_all() -> void:
-	print([ui_credits_start, ui_credits_done])
+	print([ui_credits_start, ui_credits_done, exit_minigame])

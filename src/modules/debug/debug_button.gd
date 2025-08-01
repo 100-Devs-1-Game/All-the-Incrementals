@@ -1,6 +1,6 @@
 class_name DebugButton
 
-extends Node
+extends Resource
 
-var label: String = ""
-var method: String = ""
+@export var func_or_path: String = ""
+@export var hotkey: String = ""  # example: G, F1, Shift-S

@@ -1,5 +1,5 @@
 extends Node2D
 
 
-func debug_hello_world() -> void:
-	print("hello: executing code in parent")
+func quit_game() -> void:
+	get_tree().quit()

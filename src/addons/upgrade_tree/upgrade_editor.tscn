@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://oud0vpq34sev"]
+
+[ext_resource type="Script" uid="uid://beh2sx17yfvq7" path="res://addons/upgrade_tree/upgrade_editor.gd" id="1_npwrp"]
+
+[node name="UpgradeEditor" type="GraphNode"]
+offset_top = 1.0
+offset_right = 378.0
+offset_bottom = 401.0
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_npwrp")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="Sprite2D" parent="Control"]
+position = Vector2(160, 151)
+scale = Vector2(0.5, 0.5)
