@@ -30,7 +30,7 @@ width = 64
 [node name="Wind Platformer" type="Node2D"]
 script = ExtResource("1_x5t1i")
 wind_noise = SubResource("FastNoiseLite_4orxu")
-num_particles = 1200
+num_particles = 0
 
 [node name="DebugPopup" parent="." instance=ExtResource("3_cj4w2")]
 visible = false
