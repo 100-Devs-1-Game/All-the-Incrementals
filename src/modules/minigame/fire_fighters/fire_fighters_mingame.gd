@@ -155,8 +155,3 @@ func get_fire_at(tile: Vector2i) -> FireFightersMinigameFire:
 
 func is_tile_burning(tile: Vector2i) -> bool:
 	return fires.has(tile)
-
-
-func exit_minigame() -> void:
-	print("Emitting exit_minigame signal")
-	EventBus.emit_signal(EventBus.exit_minigame.get_name())
