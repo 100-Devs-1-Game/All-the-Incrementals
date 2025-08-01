@@ -1,17 +1,80 @@
-[gd_scene load_steps=4 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=14 format=3 uid="uid://bytqv7h0iow3u"]
 
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_cj4w2"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_3m7tm"]
+[ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_x5t1i"]
+[ext_resource type="Script" uid="uid://cisfp72boumnu" path="res://modules/minigame/wind_platformer/cloud_spawner.gd" id="4_3m7tm"]
+[ext_resource type="PackedScene" uid="uid://bpbxl634kt5sd" path="res://modules/minigame/wind_platformer/cloud_platform.tscn" id="4_cj4w2"]
+[ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/player.tscn" id="5_3m7tm"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="5_k4m21"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="6_k4m21"]
 
-[sub_resource type="Resource" id="Resource_k4m21"]
-script = ExtResource("4_3m7tm")
-func_or_path = "res://modules/overworld_locations/breezekiln/breezekiln.tscn"
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4orxu"]
+frequency = 0.002
+fractal_octaves = 2
+domain_warp_enabled = true
+domain_warp_frequency = 0.205
+domain_warp_fractal_octaves = 3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4orxu"]
+size = Vector2(15, 2)
+orientation = 2
+
+[sub_resource type="MultiMesh" id="MultiMesh_cj4w2"]
+mesh = SubResource("PlaneMesh_4orxu")
+
+[sub_resource type="Gradient" id="Gradient_4orxu"]
+offsets = PackedFloat32Array(0, 0.307018, 1)
+colors = PackedColorArray(0, 0, 0.996078, 0.172549, 0.607843, 0.67451, 1, 0.784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cj4w2"]
+gradient = SubResource("Gradient_4orxu")
+width = 64
+
+[sub_resource type="Resource" id="Resource_xtfgy"]
+script = ExtResource("6_k4m21")
+func_or_path = "exit"
 hotkey = "escape"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[node name="WindPlatformer" type="Node2D"]
+[sub_resource type="Resource" id="Resource_wn57o"]
+script = ExtResource("6_k4m21")
+func_or_path = "quit_game"
+hotkey = "q"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[node name="DebugPopup" parent="." instance=ExtResource("3_cj4w2")]
-visible = false
-visible_on_start = true
-debug_buttons = Array[ExtResource("4_3m7tm")]([SubResource("Resource_k4m21")])
+[node name="Wind Platformer" type="Node2D"]
+script = ExtResource("1_x5t1i")
+wind_noise = SubResource("FastNoiseLite_4orxu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="CanvasLayer Background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.32549, 0.32549, 0.905882, 1)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("5_3m7tm")]
+position = Vector2(365, 97)
+
+[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
+modulate = Color(1, 1, 1, 0.541176)
+multimesh = SubResource("MultiMesh_cj4w2")
+texture = SubResource("GradientTexture1D_cj4w2")
+
+[node name="Cloud Spawner" type="Node" parent="." node_paths=PackedStringArray("clouds_node")]
+script = ExtResource("4_3m7tm")
+cloud_scene = ExtResource("4_cj4w2")
+clouds_node = NodePath("../Platforms")
+initial_clouds = 100
+cloud_velocity_range = Vector2(10, 50)
+initial_rect = Rect2(0, 200, 1920, 1080)
+left_rect = Rect2(-150, 150, -140, 1080)
+right_rect = Rect2(2000, 150, 2010, 1080)
+
+[node name="DebugPopup" parent="." instance=ExtResource("5_k4m21")]
+debug_buttons = Array[ExtResource("6_k4m21")]([SubResource("Resource_xtfgy"), SubResource("Resource_wn57o")])

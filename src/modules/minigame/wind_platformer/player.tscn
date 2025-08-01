@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5gx7hrc8phfj"]
+
+[ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/player.gd" id="1_hjopy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkh7d"]
+size = Vector2(20, 32)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 10
+collision_mask = 3
+script = ExtResource("1_hjopy")
+acceleration = 1000.0
+jump_speed = -200.0
+wind_impact = 2.0
+damping = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dkh7d")
+
+[node name="Model" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Model"]
+color = Color(1, 0.396078, 0.270588, 1)
+polygon = PackedVector2Array(8, 16, 8, 4, -8, 4, -8, 16, -4, 16, -4, 8, 4, 8, 4, 16)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Model"]
+color = Color(1, 0.396078, 0.270588, 1)
+polygon = PackedVector2Array(-8, 4, -8, -4, -16, -4, -16, -8, 16, -8, 16, -4, 8, -4, 8, 4)
+
+[node name="Head" type="Polygon2D" parent="Model"]
+unique_name_in_owner = true
+color = Color(0.936948, 0.711761, 0.677438, 1)
+polygon = PackedVector2Array(4, -8, -4, -8, -4, -16, 4, -16)
+
+[node name="Hat" type="Polygon2D" parent="Model"]
+unique_name_in_owner = true
+visible = false
+polygon = PackedVector2Array(4, -16, -4, -16, 0, -24)
