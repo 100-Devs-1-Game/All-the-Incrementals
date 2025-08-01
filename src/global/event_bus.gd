@@ -4,6 +4,10 @@ extends Node
 # the place for all global signals
 # add individual regions for modules
 
+#region Game
+signal game_loaded(world_state: WorldState)
+#endregion
+
 #region UI
 signal ui_credits_done
 signal ui_credits_start
