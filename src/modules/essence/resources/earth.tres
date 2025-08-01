@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Essence" load_steps=2 format=3 uid="uid://j13h5v6bwmxe"]
+[gd_resource type="Resource" script_class="Essence" load_steps=3 format=3 uid="uid://j13h5v6bwmxe"]
 
+[ext_resource type="Texture2D" uid="uid://kn8v1at0k6t" path="res://assets/icons/glowing_earth_skn.png" id="1_3d7oe"]
 [ext_resource type="Script" uid="uid://b2401p3ugnfm0" path="res://modules/essence/essence.gd" id="1_ioctq"]
 
 [resource]
 script = ExtResource("1_ioctq")
 name = "Earth"
+icon = ExtResource("1_3d7oe")
 metadata/_custom_type_script = "uid://b2401p3ugnfm0"
