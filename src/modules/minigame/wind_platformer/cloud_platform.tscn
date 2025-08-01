@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpbxl634kt5sd"]
+[gd_scene load_steps=5 format=3 uid="uid://bpbxl634kt5sd"]
 
 [ext_resource type="Script" uid="uid://bxir423lfn0b" path="res://modules/minigame/wind_platformer/cloud_platform.gd" id="1_f4ja7"]
 [ext_resource type="PackedScene" uid="uid://c3djvftk8ecjn" path="res://modules/minigame/wind_platformer/cloud_part.tscn" id="3_k72l2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4ja7"]
 size = Vector2(140, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k72l2"]
+size = Vector2(300, 150)
 
 [node name="Cloud Platform" type="AnimatableBody2D"]
 collision_layer = 2
@@ -58,3 +61,11 @@ position = Vector2(17, 14)
 
 [node name="CloudPart14" parent="Parts" instance=ExtResource("3_k72l2")]
 position = Vector2(54, 0)
+
+[node name="Player Detection Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection Area"]
+shape = SubResource("RectangleShape2D_k72l2")
+
+[connection signal="body_entered" from="Player Detection Area" to="." method="_on_player_detection_area_body_entered"]
+[connection signal="body_exited" from="Player Detection Area" to="." method="_on_player_detection_area_body_exited"]

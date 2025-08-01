@@ -1,9 +1,15 @@
+class_name WindPlatformerMinigameCloudPart
 extends Area2D
+
+var active: bool = false
 
 @onready var orig_pos: Vector2 = position
 
 
 func _physics_process(delta: float) -> void:
+	if not active:
+		return
+
 	if has_overlapping_bodies():
 		var player: Node2D
 		player = get_overlapping_bodies()[0]
