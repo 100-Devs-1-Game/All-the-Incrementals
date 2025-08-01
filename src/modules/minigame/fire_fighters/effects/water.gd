@@ -11,11 +11,15 @@ var damping: float = 2.0
 var density: float = 1.0
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var particles: CPUParticles2D = $CPUParticles2D
 
 
 func _process(delta: float) -> void:
 	position += velocity * delta
-	sprite.modulate.a = min(1, velocity.length() * 1.0 / fade_speed_threshold)
+	var transparency: float = min(1, velocity.length() * 1.0 / fade_speed_threshold)
+	if transparency < 1 and particles.emitting:
+		particles.emitting = false
+	sprite.modulate.a = transparency
 	sprite.scale = Vector2.ONE * density
 
 
