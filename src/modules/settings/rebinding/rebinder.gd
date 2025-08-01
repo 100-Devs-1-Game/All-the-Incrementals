@@ -2,8 +2,9 @@ extends Control
 
 @onready var InputLabel = $Panel/Panel/NewKeyLabel
 var action_id := 0
-var caller : Button
+var caller: Button
 var listening := true
+
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("exit_menu"):
@@ -27,4 +28,3 @@ func _input(event: InputEvent) -> void:
 				await get_tree().create_timer(1.0).timeout
 				$Panel/Error.hide()
 				listening = true
-		

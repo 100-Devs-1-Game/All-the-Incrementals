@@ -17,24 +17,34 @@ extends Control
 }
 
 var ordered_actions := [
-		"primary_action", "primary_action",
-		"secondary_action", "secondary_action",
-		"right", "right",
-		"down", "down",
-		"left", "left",
-		"up", "up",
-		"exit_menu", "exit_menu"
-	]
+	"primary_action",
+	"primary_action",
+	"secondary_action",
+	"secondary_action",
+	"right",
+	"right",
+	"down",
+	"down",
+	"left",
+	"left",
+	"up",
+	"up",
+	"exit_menu",
+	"exit_menu"
+]
 
 const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 var fullscreen := false
 
+
 func _ready() -> void:
 	setup()
+
 
 func setup():
 	connect_signals()
 	update_ui()
+
 
 func connect_signals():
 	var keybinders = get_tree().get_nodes_in_group("keybind")
@@ -68,6 +78,7 @@ func _on_button_pressed(action: String) -> void:
 			_on_button_pressed("Exit")
 	update_ui()
 
+
 func _on_volume_changed(value: float, type: String) -> void:
 	var balanced = clamp(value / 100.0, 0.001, 1.0)
 	match type:
@@ -77,8 +88,9 @@ func _on_volume_changed(value: float, type: String) -> void:
 			GameSettings.set_audio(1, balanced)
 		"SFX":
 			GameSettings.set_audio(2, balanced)
-	
+
 	update_ui()
+
 
 func call_rebinder(key_id: int, button):
 	print("Calling rebinder")
@@ -87,9 +99,11 @@ func call_rebinder(key_id: int, button):
 	rebinder.caller = button
 	add_child(rebinder)
 
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left"):
 		print("Left key pressed")
+
 
 func update_ui():
 	print(GameSettings.keybinds)
@@ -97,11 +111,19 @@ func update_ui():
 		$Panel/SettingsContainer/ScreenButton.text = "Fullscreen: " + "ON"
 	else:
 		$Panel/SettingsContainer/ScreenButton.text = "Fullscreen: " + "OFF"
-	
-	$Panel/SettingsContainer/QualityContainer/QualityLabel.text = "3D Quality: " + str(GameSettings.quality)
+
+	$Panel/SettingsContainer/QualityContainer/QualityLabel.text = (
+		"3D Quality: " + str(GameSettings.quality)
+	)
 	$Panel/SettingsContainer/MasterContainer/MasterSlider.value = GameSettings.master_volume
 	$Panel/SettingsContainer/MusicContainer/MusicSlider.value = GameSettings.music_volume
 	$Panel/SettingsContainer/SFXContainer/SFXSlider.value = GameSettings.sfx_volume
-	$Panel/SettingsContainer/MasterContainer/MasterSlider/ValueLabel.text = str(roundi(GameSettings.master_volume))
-	$Panel/SettingsContainer/MusicContainer/MusicSlider/ValueLabel.text = str(roundi(GameSettings.music_volume))
-	$Panel/SettingsContainer/SFXContainer/SFXSlider/ValueLabel.text = str(roundi(GameSettings.sfx_volume))
+	$Panel/SettingsContainer/MasterContainer/MasterSlider/ValueLabel.text = str(
+		roundi(GameSettings.master_volume)
+	)
+	$Panel/SettingsContainer/MusicContainer/MusicSlider/ValueLabel.text = str(
+		roundi(GameSettings.music_volume)
+	)
+	$Panel/SettingsContainer/SFXContainer/SFXSlider/ValueLabel.text = str(
+		roundi(GameSettings.sfx_volume)
+	)
