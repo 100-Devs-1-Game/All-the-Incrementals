@@ -53,6 +53,7 @@ columns = 3
 
 [node name="UpgradeButtons" type="GridContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(1000, 800)
 layout_mode = 1
 anchors_preset = 8
