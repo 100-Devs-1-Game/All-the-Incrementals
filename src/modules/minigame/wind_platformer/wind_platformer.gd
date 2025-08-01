@@ -17,6 +17,15 @@ func _ready() -> void:
 		spawn_random_particle()
 
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.is_pressed():
+		match event.keycode:
+			KEY_F1:
+				PerformanceUtils.TrackAverage.dump("draw particles")
+				PerformanceUtils.TrackAverage.dump("tick particles")
+				get_tree().quit()
+
+
 func _process(delta: float) -> void:
 	draw_particles(delta)
 
@@ -24,9 +33,12 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if Engine.get_physics_frames() % 2 == 0:
 		tick_particles(delta * 2)
+		PerformanceUtils.TrackAverage.start_tracking("tick particles")
+		PerformanceUtils.TrackAverage.stop_tracking("tick particles")
 
 
 func draw_particles(delta: float):
+	PerformanceUtils.TrackAverage.start_tracking("draw particles")
 	multi_mesh_instance.multimesh.instance_count = particles.size()
 	var i := 0
 	for particle: WindPlatformerMinigameParticle in particles:
@@ -36,6 +48,7 @@ func draw_particles(delta: float):
 				i, Transform2D(particle.velocity.angle(), particle.position)
 			)
 		i += 1
+	PerformanceUtils.TrackAverage.stop_tracking("draw particles")
 
 
 func tick_particles(delta: float):
