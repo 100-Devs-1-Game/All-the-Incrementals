@@ -1,14 +1,18 @@
 class_name BaseMinigame
 extends Node
 
-var data: MinigameData
+@export var data: MinigameData
 
 var score: int
 
 
 func _ready() -> void:
-	assert(SceneLoader.current_minigame != null)
-	data = SceneLoader.current_minigame
+	if not SceneLoader.current_minigame:
+		push_warning("Detected direct Minigame start")
+		if data == null:
+			push_error("No MinigameData set")
+	else:
+		data = SceneLoader.current_minigame
 
 	open_menu()
 
