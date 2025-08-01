@@ -15,7 +15,7 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 # ------ cost and effects -------
 
 # cost for each individual level
-@export var cost_arr: Array[EssenceStack]
+@export var cost_arr: Array[EssenceInventory]
 
 # can be a multiplier, additive, percentage, etc for each level up
 @export var effect_modifier_arr: Array[float]
@@ -69,16 +69,28 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
 
 func level_up() -> void:
+	assert(current_level < get_max_level())
 	current_level += 1
 
 
+# 0 = level 1, ...
 func get_max_level() -> int:
-	return cost_arr.size() + 1
+	return cost_arr.size()
 
 
 func get_description() -> String:
 	# TODO
 	return ""
+
+
+func get_cost(level: int) -> EssenceInventory:
+	assert(cost_arr.size() > level)
+	return cost_arr[level]
+
+
+func get_effect_modifier(level: int) -> float:
+	assert(effect_modifier_arr.size() > level)
+	return effect_modifier_arr[level]
 
 
 func set_max_level(level: int):
