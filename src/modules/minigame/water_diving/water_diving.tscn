@@ -1,16 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp2g6h4spc2y3"]
 
-[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_jr25g"]
-[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_7tndl"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_ipd88"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_puu2k"]
 
-[sub_resource type="Resource" id="Resource_jjxx3"]
-script = ExtResource("2_7tndl")
-label = "Return to Clayport"
-scene_path = "res://modules/settlement/clayport/clayport.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_mr4y7"]
+script = ExtResource("4_puu2k")
+func_or_path = "res://modules/settlement/clayport/clayport.tscn"
+hotkey = "escape"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="WaterDiving" type="Node2D"]
 
-[node name="Placeholder" parent="." instance=ExtResource("1_jr25g")]
-for_text = "Water Diving Minigame"
-buttons = Array[ExtResource("2_7tndl")]([SubResource("Resource_jjxx3")])
+[node name="DebugPopup" parent="." instance=ExtResource("3_ipd88")]
+visible = false
+visible_on_start = true
+debug_buttons = Array[ExtResource("4_puu2k")]([SubResource("Resource_mr4y7")])
