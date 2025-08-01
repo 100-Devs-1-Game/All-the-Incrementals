@@ -11,13 +11,13 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_bwyud"]
 script = ExtResource("4_mxing")
-func_or_path = "res://modules/settlement/breezekiln/breezekiln.tscn"
+func_or_path = "res://modules/overworld_locations/breezekiln/breezekiln.tscn"
 hotkey = "b"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_5v5ja"]
 script = ExtResource("4_mxing")
-func_or_path = "res://modules/settlement/clayport/clayport.tscn"
+func_or_path = "res://modules/overworld_locations/clayport/clayport.tscn"
 hotkey = "c"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 

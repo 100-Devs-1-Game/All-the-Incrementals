@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_hbps8"]
 script = ExtResource("2_kyijx")
-func_or_path = "res://modules/settlement/clayport/clayport.tscn"
+func_or_path = "res://modules/overworld_locations/clayport/clayport.tscn"
 hotkey = "escape"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 

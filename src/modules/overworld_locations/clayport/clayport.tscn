@@ -11,13 +11,13 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_tb6dg"]
 script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/settlement/clayport/earth_altar/earth_altar.tscn"
+func_or_path = "res://modules/overworld_locations/clayport/earth_altar/earth_altar.tscn"
 hotkey = "e"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_w0tdx"]
 script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/settlement/clayport/water_altar/water_altar.tscn"
+func_or_path = "res://modules/overworld_locations/clayport/water_altar/water_altar.tscn"
 hotkey = "w"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
