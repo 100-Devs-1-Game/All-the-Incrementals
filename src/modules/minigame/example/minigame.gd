@@ -58,6 +58,13 @@ func add_upgrade_layer(upgrades: Array[MinigameUpgrade], depth: int, color: Colo
 		if not upgrade.unlocks.is_empty():
 			var unlocks: Array[MinigameUpgrade]
 			# convert Array type from BaseUpgrade to MinigameUpgrade
-			unlocks.assign(upgrade.unlocks)
+			#
+			# this line was causing an error message
+			#unlocks.assign(upgrade.unlocks)
+			#
+			# so doing it manually below
+
+			for unlock in upgrade.unlocks:
+				unlocks.append(unlock)
 
 			add_upgrade_layer(unlocks, depth + 1, branch_color)
