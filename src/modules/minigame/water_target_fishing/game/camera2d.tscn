@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://brvr7tulxw60v"]
+
+[ext_resource type="Script" uid="uid://b1fpagrjaync" path="res://modules/minigame/water_target_fishing/game/camera2d.gd" id="1_wer28"]
+
+[node name="WtfCamera2D" type="Camera2D" groups=["wtf_camera"]]
+physics_interpolation_mode = 2
+anchor_mode = 0
+script = ExtResource("1_wer28")
+metadata/_custom_type_script = "uid://b1fpagrjaync"

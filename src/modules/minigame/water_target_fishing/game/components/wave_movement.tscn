@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0rds620qhx3g"]
+
+[ext_resource type="Script" uid="uid://dffxbypyuaj03" path="res://modules/minigame/water_target_fishing/game/components/wave_movement.gd" id="1_8nr5w"]
+
+[node name="WtfWaveMovementComponent" type="Node2D"]
+script = ExtResource("1_8nr5w")

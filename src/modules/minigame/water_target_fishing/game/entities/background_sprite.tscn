@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://di5qytko63bu3"]
+
+[ext_resource type="PackedScene" uid="uid://dxwmelnhcy88u" path="res://modules/minigame/water_target_fishing/game/components/offscreen_deleter.tscn" id="2_3ayi5"]
+[ext_resource type="PackedScene" uid="uid://cdhf8qfjh31pi" path="res://modules/minigame/water_target_fishing/game/components/parallax_component.tscn" id="2_kuuq1"]
+
+[node name="BackgroundSprite" type="Sprite2D"]
+
+[node name="WtfParallaxComponent" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_kuuq1")]
+target = NodePath("..")
+min_movement_multiplier = 0.8
+max_movement_multiplier = 1.2
+
+[node name="WtfOffscreenDeleterComponent" parent="." instance=ExtResource("2_3ayi5")]
