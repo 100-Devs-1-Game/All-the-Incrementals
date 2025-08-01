@@ -22,7 +22,7 @@ var player: FireFighterMinigamePlayer
 @onready var fire_node: Node = $Fires
 
 
-func _ready() -> void:
+func _start() -> void:
 	init()
 	run()
 
