@@ -4,6 +4,7 @@ extends Node2D
 @export var _splash_screens: Array[String] = []
 
 var _splash_utils: SplashUtils = preload("res://modules/main/splash_utils.gd").new()
+var _show_splash_screens = true
 
 
 func _ready():
@@ -18,17 +19,37 @@ func _set_black_clear_color() -> void:
 	RenderingServer.set_default_clear_color(Color.BLACK)
 
 
+func _input(event: InputEvent) -> void:
+	if !is_inside_tree():
+		return
+
+	if (
+		event is InputEventKey
+		or event is InputEventMouseButton
+		or event is InputEventJoypadButton
+		or event is InputEventJoypadMotion
+	):
+		print("Skipping splash screens")
+		_show_splash_screens = false
+		_load_main_menu()
+
+
 func _start_splash_screens() -> void:
-	# only add child after current node tree is ready
-	await get_tree().process_frame
+	if !is_inside_tree() or !_show_splash_screens:
+		return
 
 	for file in _splash_screens:
 		var splash: Node = load(file).instantiate()
 		splash.modulate.a = 0.0  # invisible at start
-		get_tree().root.add_child(splash)
-
+		add_child(splash)
 		await _splash_utils.fade_in_scene(splash, _splash_duration)
 		await _splash_utils.fade_out_scene(splash, _splash_duration / 2)
 		splash.queue_free()
 
+	_load_main_menu()
+
+
+func _load_main_menu() -> void:
+	if !is_inside_tree():
+		return
 	get_tree().change_scene_to_file("res://modules/menu/main_menu.tscn")
