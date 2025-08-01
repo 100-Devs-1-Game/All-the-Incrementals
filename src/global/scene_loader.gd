@@ -13,6 +13,14 @@ func start_minigame(data: MinigameData):
 	get_tree().change_scene_to_packed(data.minigame_scene)
 
 
+func has_current_minigame() -> bool:
+	return _current_minigame != null
+
+
+func get_current_minigame() -> MinigameData:
+	return _current_minigame
+
+
 func enter_settlement(data: SettlementData):
 	_current_settlement = data
 	get_tree().change_scene_to_packed(data.settlement_scene)
