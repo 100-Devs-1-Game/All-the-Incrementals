@@ -51,3 +51,7 @@ func game_over():
 func exit() -> void:
 	print("Emitting exit_minigame signal")
 	EventBus.emit_signal(EventBus.exit_minigame.get_name())
+
+
+func quit_game() -> void:
+	get_tree().quit()
