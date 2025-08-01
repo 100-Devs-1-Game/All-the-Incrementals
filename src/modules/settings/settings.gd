@@ -2,6 +2,7 @@ extends Control
 
 const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 
+var fullscreen := false
 var ordered_actions := [
 	"primary_action",
 	"primary_action",
@@ -34,8 +35,6 @@ var ordered_actions := [
 	$Panel/SettingsContainer/MusicContainer/MusicSlider: "Music",
 	$Panel/SettingsContainer/SFXContainer/SFXSlider: "SFX"
 }
-
-var fullscreen := false
 
 
 func _ready() -> void:

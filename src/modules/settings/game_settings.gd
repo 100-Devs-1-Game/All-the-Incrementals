@@ -2,15 +2,6 @@ extends Node
 
 #Setting data for saving,loading and resetting settings to default. Stores data.
 
-# Video Settings
-var fullscreen: bool = false
-var quality: String = "Best"  #Low, Medium, High, Best
-
-# Audio Settings
-var master_volume: float = 50.0
-var music_volume: float = 50.0
-var sfx_volume: float = 50.0
-
 # Buttons for rebinding
 var keybinds := {
 	"primary_action": [KEY_SPACE, KEY_Z],
@@ -39,6 +30,14 @@ var action_names := {
 	14: {"name": "exit_menu", "index": 1}
 }
 
+# Video Settings
+var fullscreen: bool = false
+var quality: String = "Best"  #Low, Medium, High, Best
+
+# Audio Settings
+var master_volume: float = 50.0
+var music_volume: float = 50.0
+var sfx_volume: float = 50.0
 var save_path = "user://settings.cfg"
 
 
