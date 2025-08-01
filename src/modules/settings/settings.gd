@@ -36,12 +36,15 @@ var ordered_actions := [
 const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 var fullscreen := false
 
+
 func _ready() -> void:
 	setup()
+
 
 func setup():
 	connect_signals()
 	update_ui()
+
 
 func connect_signals():
 	var keybinders = get_tree().get_nodes_in_group("keybind")
@@ -59,6 +62,7 @@ func connect_signals():
 		var keycode = GameSettings.keybinds[action][index]
 		key.text = OS.get_keycode_string(keycode)
 
+
 func _on_button_pressed(action: String) -> void:
 	match action:
 		"Low", "Medium", "High", "Best":
@@ -74,6 +78,7 @@ func _on_button_pressed(action: String) -> void:
 			_on_button_pressed("Exit")
 	update_ui()
 
+
 func _on_volume_changed(value: float, type: String) -> void:
 	var balanced = clamp(value / 100.0, 0.001, 1.0)
 	match type:
@@ -86,6 +91,7 @@ func _on_volume_changed(value: float, type: String) -> void:
 
 	update_ui()
 
+
 func call_rebinder(key_id: int, button):
 	print("Calling rebinder")
 	var rebinder = REBINDER.instantiate()
@@ -93,9 +99,11 @@ func call_rebinder(key_id: int, button):
 	rebinder.caller = button
 	add_child(rebinder)
 
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left"):
 		print("Left key pressed")
+
 
 func update_ui():
 	print(GameSettings.keybinds)

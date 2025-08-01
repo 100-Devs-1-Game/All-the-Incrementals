@@ -1,6 +1,7 @@
 extends Control
 
 @onready var input_label = $Panel/Panel/NewKeyLabel
+@onready var error_label = $Panel/Error
 var action_id := 0
 var caller: Button
 var listening := true
@@ -23,8 +24,8 @@ func _input(event: InputEvent) -> void:
 			await get_tree().create_timer(0.3).timeout
 			queue_free()
 		else:
-			if $Panel/Error:
-				$Panel/Error.show()
+			if error_label:
+				error_label.show()
 				await get_tree().create_timer(1.0).timeout
-				$Panel/Error.hide()
+				error_label.hide()
 				listening = true
