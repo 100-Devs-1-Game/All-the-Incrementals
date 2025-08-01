@@ -22,4 +22,14 @@ func is_close_to_bucket() -> bool:
 func add_self_to_bucket() -> void:
 	queue_free()
 
+
+#endregion
+
+#region ======================== PRIVATE METHODS ================================
+
+
+func _on_adult_saw_spirit_body_entered(body: Node2D) -> void:
+	body.queue_free()
+	self.queue_free()
+
 #endregion

@@ -1,4 +1,4 @@
-extends RandomPositionSpawner
+extends InitialRandomSpawner
 
 #region ------------------------ PRIVATE VARS ----------------------------------
 
@@ -9,7 +9,7 @@ extends RandomPositionSpawner
 
 #endregion
 
-#region ======================== PUBLIC METHODS ================================
+#region ======================== PUBLIC METHODS ================================0
 
 
 func get_generic_spawnable_node() -> Node:
