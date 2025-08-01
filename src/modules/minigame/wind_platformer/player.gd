@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var gravity: float = 100.0
 @export var damping: float = 0.5
 
+var current_cloud: WindPlatformerMinigameCloudPlatform
+
 @onready var head: Polygon2D = %Head
 @onready var hat: Polygon2D = %Hat
 
@@ -21,7 +23,21 @@ func _physics_process(delta: float) -> void:
 	var is_on_ground: bool = false
 
 	is_on_ground = is_on_floor()
-	#hat.visible = not is_on_ground
+
+	if is_on_ground:
+		var platform: WindPlatformerMinigameCloudPlatform = (
+			get_last_slide_collision().get_collider()
+		)
+		if not current_cloud:
+			current_cloud = platform
+		elif current_cloud != platform:
+			current_cloud.fade()
+			current_cloud = platform
+
+		assert(current_cloud != null)
+	elif current_cloud != null:
+		current_cloud.fade()
+		current_cloud = null
 
 	var hor_input = Input.get_axis("ui_left", "ui_right")
 
