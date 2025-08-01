@@ -4,7 +4,7 @@ extends BaseMinigame
 @export var wind_noise: FastNoiseLite
 @export var size: Vector2i = Vector2i(2000, 1100)
 
-@export var num_particles: int = 500
+@export var num_particles: int = 1200
 
 var wind_arr: Dictionary
 var particles: Array[WindPlatformerMinigameParticle]
