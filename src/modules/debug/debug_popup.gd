@@ -12,6 +12,9 @@ extends Control
 # Recommended to leave this `true` so players can't cheat the final game.
 var _disable_on_release: bool = true
 
+@onready var shortcut_buttons_container: GridContainer = %ShortcutButtons
+@onready var upgrade_buttons_container: GridContainer = %UpgradeButtons
+
 
 func _ready() -> void:
 	# Don't allow the DebugPopup to work on release builds.
@@ -29,7 +32,7 @@ func _setup_debug_buttons() -> void:
 	for debug_button in debug_buttons:
 		var new_button = Button.new()
 		_add_button(debug_button, new_button)
-		$ShortcutButtons.add_child(new_button)
+		shortcut_buttons_container.add_child(new_button)
 
 
 func _add_button(debug_button: DebugButton, new_button: Button) -> void:
@@ -94,3 +97,46 @@ func _change_scene(scene_path: String) -> void:
 
 	print("Changing scene to: " + scene_path)
 	get_tree().change_scene_to_packed(load(scene_path))
+
+
+func _update_upgrade_buttons():
+	for child in upgrade_buttons_container.get_children():
+		upgrade_buttons_container.remove_child(child)
+		child.queue_free()
+
+	if not SceneLoader.has_current_minigame():
+		push_error("No MinigameData in SceneLoader")
+		return
+
+	var data: MinigameData = SceneLoader.get_current_minigame()
+
+	for upgrade in data.get_all_upgrades():
+		var button := Button.new()
+		_set_upgrade_button_text(button, upgrade)
+		button.pressed.connect(_on_upgrade_button_pressed.bind(button, upgrade))
+		upgrade_buttons_container.add_child(button)
+
+
+func _set_upgrade_button_text(button: Button, upgrade: BaseUpgrade):
+	button.text = "%s Lvl %d" % [upgrade.name, upgrade.current_level + 1]
+
+
+func _on_upgrade_button_pressed(button: Button, upgrade: BaseUpgrade):
+	upgrade.level_up()
+	if upgrade is MinigameUpgrade:
+		if upgrade.logic:
+			upgrade.logic._apply_effect(get_tree().current_scene, upgrade)
+	else:
+		assert(false, "Not implemented yet")
+
+	_set_upgrade_button_text(button, upgrade)
+
+
+func _on_upgrades_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		shortcut_buttons_container.hide()
+		_update_upgrade_buttons()
+		upgrade_buttons_container.show()
+	else:
+		upgrade_buttons_container.hide()
+		shortcut_buttons_container.show()
