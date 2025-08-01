@@ -50,6 +50,7 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 script = ExtResource("1_82p5n")
 
 [node name="DebugPopup" parent="." instance=ExtResource("4_32tle")]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 visible_on_start = true

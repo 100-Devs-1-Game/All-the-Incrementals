@@ -1,52 +1,55 @@
 [gd_scene load_steps=10 format=3 uid="uid://b1ucpnb2u1isc"]
 
-[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_xi846"]
-[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_v23ca"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_1ftrw"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_i3tw0"]
 
-[sub_resource type="Resource" id="Resource_1ftrw"]
-script = ExtResource("2_v23ca")
-label = "Return to overworld"
-scene_path = "res://modules/overworld/overworld.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_rkb86"]
+script = ExtResource("4_i3tw0")
+func_or_path = "res://modules/overworld/overworld.tscn"
+hotkey = "escape"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_k84e6"]
-script = ExtResource("2_v23ca")
-label = "Visit the Earth Altar"
-scene_path = "res://modules/settlement/clayport/earth_altar/earth_altar.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_tb6dg"]
+script = ExtResource("4_i3tw0")
+func_or_path = "res://modules/settlement/clayport/earth_altar/earth_altar.tscn"
+hotkey = "e"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_g3aps"]
-script = ExtResource("2_v23ca")
-label = "Visit the Water Altar"
-scene_path = "res://modules/settlement/clayport/water_altar/water_altar.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_w0tdx"]
+script = ExtResource("4_i3tw0")
+func_or_path = "res://modules/settlement/clayport/water_altar/water_altar.tscn"
+hotkey = "w"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_xi846"]
-script = ExtResource("2_v23ca")
-label = "Play Earth Potato Herding Minigame"
-scene_path = "res://modules/minigame/earth_potato_herding/earth_potato_herding.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_rnohj"]
+script = ExtResource("4_i3tw0")
+func_or_path = "res://modules/minigame/earth_potato_herding/earth_potato_herding.tscn"
+hotkey = "p"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_v23ca"]
-script = ExtResource("2_v23ca")
-label = "Play Earth Towers Minigame"
-scene_path = "res://modules/minigame/earth_towers/earth_towers.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_sgyk0"]
+script = ExtResource("4_i3tw0")
+func_or_path = "res://modules/minigame/earth_towers/earth_towers.tscn"
+hotkey = "t"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_i3tw0"]
-script = ExtResource("2_v23ca")
-label = "Play Water Diving Minigame"
-scene_path = "res://modules/minigame/water_diving/water_diving.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_1p75w"]
+script = ExtResource("4_i3tw0")
+func_or_path = "res://modules/minigame/water_diving/water_diving.tscn"
+hotkey = "d"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_t7eue"]
-script = ExtResource("2_v23ca")
-label = "Play Water Fishing Minigame"
-scene_path = "res://modules/minigame/water_target_fishing/water_target_fishing.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_oayoy"]
+script = ExtResource("4_i3tw0")
+func_or_path = "res://modules/minigame/water_target_fishing/water_target_fishing.tscn"
+hotkey = "f"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="Clayport" type="Node2D"]
 
-[node name="Placeholder" parent="." instance=ExtResource("1_xi846")]
-for_text = "Clayport"
-buttons = Array[ExtResource("2_v23ca")]([SubResource("Resource_1ftrw"), SubResource("Resource_k84e6"), SubResource("Resource_g3aps"), SubResource("Resource_xi846"), SubResource("Resource_v23ca"), SubResource("Resource_i3tw0"), SubResource("Resource_t7eue")])
+[node name="DebugPopup" parent="." instance=ExtResource("3_1ftrw")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+visible_on_start = true
+debug_buttons = Array[ExtResource("4_i3tw0")]([SubResource("Resource_rkb86"), SubResource("Resource_tb6dg"), SubResource("Resource_w0tdx"), SubResource("Resource_rnohj"), SubResource("Resource_sgyk0"), SubResource("Resource_1p75w"), SubResource("Resource_oayoy")])

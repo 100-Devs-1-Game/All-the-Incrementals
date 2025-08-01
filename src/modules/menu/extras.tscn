@@ -1,28 +1,31 @@
 [gd_scene load_steps=6 format=3 uid="uid://4sdp3vpsbo5v"]
 
-[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_lo5bt"]
-[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_03ewq"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_5tr2e"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_cues5"]
 
-[sub_resource type="Resource" id="Resource_snq8b"]
-script = ExtResource("2_03ewq")
-label = "Return to main menu"
-scene_path = "res://modules/menu/main_menu.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_5y15t"]
+script = ExtResource("4_cues5")
+func_or_path = "res://modules/menu/main_menu.tscn"
+hotkey = "escape"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_03ewq"]
-script = ExtResource("2_03ewq")
-label = "Art book"
-scene_path = "res://modules/gallery/gallery.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_brgc7"]
+script = ExtResource("4_cues5")
+func_or_path = "res://modules/gallery/gallery.tscn"
+hotkey = "g"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_5tr2e"]
-script = ExtResource("2_03ewq")
-label = "Credits"
-scene_path = "res://modules/credits/credits.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_ss1js"]
+script = ExtResource("4_cues5")
+func_or_path = "res://modules/credits/credits.tscn"
+hotkey = "c"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="Extras" type="Node2D"]
 
-[node name="Placeholder" parent="." instance=ExtResource("1_lo5bt")]
-for_text = "Extras Screen"
-buttons = Array[ExtResource("2_03ewq")]([SubResource("Resource_snq8b"), SubResource("Resource_03ewq"), SubResource("Resource_5tr2e")])
+[node name="DebugPopup" parent="." instance=ExtResource("3_5tr2e")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+visible_on_start = true
+debug_buttons = Array[ExtResource("4_cues5")]([SubResource("Resource_5y15t"), SubResource("Resource_brgc7"), SubResource("Resource_ss1js")])

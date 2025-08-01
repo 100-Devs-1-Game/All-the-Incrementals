@@ -1,16 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1c1gi530gyf6"]
 
-[ext_resource type="PackedScene" uid="uid://b1htr4csi273e" path="res://modules/placeholder/placeholder.tscn" id="1_rnkt5"]
-[ext_resource type="Script" uid="uid://dx8li0wjwcoe3" path="res://modules/placeholder/placeholder_button.gd" id="2_8hn72"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_5l1wd"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_cr62s"]
 
-[sub_resource type="Resource" id="Resource_01r8v"]
-script = ExtResource("2_8hn72")
-label = "Return to Breezekiln"
-scene_path = "res://modules/settlement/breezekiln/breezekiln.tscn"
-metadata/_custom_type_script = "uid://dx8li0wjwcoe3"
+[sub_resource type="Resource" id="Resource_q3mbh"]
+script = ExtResource("4_cr62s")
+func_or_path = "res://modules/settlement/breezekiln/breezekiln.tscn"
+hotkey = "escape"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="WindAltar" type="Node2D"]
 
-[node name="Placeholder" parent="." instance=ExtResource("1_rnkt5")]
-for_text = "Wind Altar"
-buttons = Array[ExtResource("2_8hn72")]([SubResource("Resource_01r8v")])
+[node name="DebugPopup" parent="." instance=ExtResource("3_5l1wd")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+visible_on_start = true
+debug_buttons = Array[ExtResource("4_cr62s")]([SubResource("Resource_q3mbh")])
