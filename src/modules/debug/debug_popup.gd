@@ -83,7 +83,7 @@ func _call_function(function_name: String) -> void:
 		push_error("Missing parent node - cannot call function " + function_name + "()")
 		return
 
-	print("Calling " + function_name + "() of the parent node.")
+	print("Calling " + parent.name + "." + function_name + "()")
 	parent.call(function_name)
 
 
