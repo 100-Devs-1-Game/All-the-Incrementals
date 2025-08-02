@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=10 format=3 uid="uid://bon5kervat4ob"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_6o57w"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_h31ue"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_8ewms"]
+[ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="4_xdh21"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_egs40"]
+[ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="6_twosh"]
+
+[sub_resource type="Resource" id="Resource_d762y"]
+script = ExtResource("2_h31ue")
+essence = ExtResource("3_8ewms")
+amount = 10
+metadata/_custom_type_script = "uid://b0xhkjselbga"
+
+[sub_resource type="Resource" id="Resource_5i63j"]
+script = ExtResource("1_6o57w")
+slots = Array[ExtResource("2_h31ue")]([SubResource("Resource_d762y")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_rxndh"]
+script = ExtResource("4_xdh21")
+upgrade_type = 1
+metadata/_custom_type_script = "uid://r3iai3luuocl"
+
+[resource]
+script = ExtResource("5_egs40")
+logic = SubResource("Resource_rxndh")
+unlocks_feature = ""
+name = "Brighter Spirit Keeper"
+flavor = ""
+position = Vector2(100, -320)
+cost_arr = Array[ExtResource("1_6o57w")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 5
+base_cost = SubResource("Resource_5i63j")
+base_cost_multiplier = 1.1
+base_effect_modifier = 10.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level = 3
+unlocks = Array[ExtResource("6_twosh")]([])
+description_prefix = "Increase ligh around spirit keeper by"
+description_suffix = ""
+description_modifier_format = 0
+current_level = -1
