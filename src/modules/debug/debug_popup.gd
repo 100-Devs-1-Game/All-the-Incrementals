@@ -67,6 +67,7 @@ func _on_item_selected():
 	var selected: TreeItem = $Tree.get_selected()
 	if _tree_callables.has(selected.get_instance_id()):
 		$Tree.deselect_all()
+		$Tree.release_focus()
 		var callable: Callable = _tree_callables[selected.get_instance_id()]
 		# Why deferred?
 		# As a rule of thumb, never call change_scene* during the same frame
