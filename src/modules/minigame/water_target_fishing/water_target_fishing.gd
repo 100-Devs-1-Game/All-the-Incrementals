@@ -1,5 +1,5 @@
 class_name WTFMinigame
-extends Node2D
+extends BaseMinigame
 
 const SECONDS_BEFORE_ENDING_RUN: float = 1
 const SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED: float = 300
@@ -10,7 +10,6 @@ const SPAWN_STARTING_FISH: float = 3
 var current_velocity: Vector2 = Vector2(-200, 0)
 var base_slow: float = 100
 
-var score: int = 0
 var distance_travelled = 0
 var distance_travelled_left_to_spawn = SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED * SPAWN_STARTING_FISH
 var score_weight_modifier = 3
@@ -35,10 +34,6 @@ func _enter_tree() -> void:
 
 func _exit_tree() -> void:
 	WTFGlobals.minigame = null
-
-
-func _ready() -> void:
-	pass
 
 
 func _process(_delta: float) -> void:
