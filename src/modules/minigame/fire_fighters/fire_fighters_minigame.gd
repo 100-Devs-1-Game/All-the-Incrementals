@@ -86,17 +86,23 @@ func tick_fires():
 		if not feature or not feature.can_burn():
 			fire.size -= 0.01
 		else:
-			fire.total_burn += fire.size / (60.0 / BURN_TICK_INTERVAL)
-			if fire.total_burn > feature.burn_duration:
-				assert(feature.turns_into != null)
-				replace_feature(tile, feature.turns_into)
-				burn_vegetation(tile)
-				if enable_burn_spots:
-					add_burn_spot(tile)
+			fire_burn_tick(fire, tile, feature)
 
-			fire.size += feature.flammability * 0.1
-			if RngUtils.chancef(fire.size - 1.0):
-				try_to_spread_fire(tile)
+
+func fire_burn_tick(
+	fire: FireFightersMinigameFire, tile: Vector2i, feature: FireFightersMinigameMapFeature
+):
+	fire.total_burn += fire.size / (60.0 / BURN_TICK_INTERVAL)
+	if fire.total_burn > feature.burn_duration:
+		assert(feature.turns_into != null)
+		replace_feature(tile, feature.turns_into)
+		burn_vegetation(tile)
+		if enable_burn_spots:
+			add_burn_spot(tile)
+
+	fire.size += feature.flammability * 0.1
+	if RngUtils.chancef(fire.size - 1.0):
+		try_to_spread_fire(tile)
 
 
 func tick_water():
