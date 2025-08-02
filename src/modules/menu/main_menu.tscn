@@ -32,7 +32,6 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 script = ExtResource("1_tsonj")
 
 [node name="DebugPopup" parent="." instance=ExtResource("3_cvkr5")]
-visible = false
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

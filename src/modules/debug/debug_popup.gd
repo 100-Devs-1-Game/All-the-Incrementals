@@ -3,7 +3,7 @@ class_name DebugPopup
 extends Control
 
 # Title for the popup
-@export var title: String = "Debug"
+@export var title: String = "DebugPopup"
 
 # Show the debug panel on start
 @export var visible_on_start: bool = false
@@ -49,7 +49,7 @@ func _ready() -> void:
 
 func _setup_shortcuts_tree() -> void:
 	_tree_root = $Tree.create_item()
-	_tree_root.set_text(0, title)
+	_tree_root.set_text(0, title + " (" + get_parent().name + ")")
 	_tree_shortcuts = _tree_root.create_child()
 	_tree_shortcuts.set_text(0, "Navigation and functions")
 	$Tree.connect("item_selected", _on_item_selected)
