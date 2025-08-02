@@ -1,3 +1,4 @@
+@tool
 class_name BaseUpgrade
 extends Resource
 
@@ -19,6 +20,8 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
 # can be a multiplier, additive, percentage, etc for each level up
 @export var effect_modifier_arr: Array[float]
+
+@export_category("Algorithmic")
 
 # optional: setting cost and effect algorithmically ( arrays will be updated in the setter )
 @export var max_level: int:
@@ -42,7 +45,7 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 @export var cost_curve: Curve:
 	set = set_cost_curve
 
-# ------
+@export_category("Unlocking")
 
 # has it been unlocked by a previous upgrade
 @export_storage var unlocked: bool = false
@@ -52,6 +55,8 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
 # Upgrades that can get unlocked by this one
 @export var unlocks: Array[BaseUpgrade]
+
+@export_category("Description")
 
 # dynamic description for get_description()
 # format: prefix + " " + formatted modifier + " " + suffix
@@ -72,6 +77,9 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
 
 func _construct_cost_and_modifier_arrays():
+	if not Engine.is_editor_hint():
+		return
+
 	if (
 		not max_level
 		or not base_cost
@@ -87,10 +95,8 @@ func _construct_cost_and_modifier_arrays():
 	for i in range(max_level):
 		var new_cost: EssenceInventory = EssenceInventory.new()
 		for stack: EssenceStack in base_cost.slots:
-			var new_stack = EssenceStack.new()
-			new_stack.essence = stack.essence
-			new_stack.amount = stack.amount * base_cost_multiplier * (i + 1)
-			new_cost.slots.append(new_stack)
+			var cost_calc: int = stack.amount * base_cost_multiplier * (i + 1)
+			new_cost.add_stack(EssenceStack.new(stack.essence, cost_calc))
 		cost_arr.append(new_cost)
 		effect_modifier_arr.append(base_effect_modifier * effect_modifier_multiplier * (i + 1))
 
