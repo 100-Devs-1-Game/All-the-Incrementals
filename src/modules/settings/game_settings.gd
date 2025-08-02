@@ -140,7 +140,6 @@ func rebind_request(
 	action: String, old_key: InputEventKey, new_key: InputEventKey, action_id
 ) -> bool:
 	var success := true
-	var old_keycode = old_key.keycode
 	var new_keycode = new_key.keycode
 	print(
 		"Request recieved: ", action, " to remove ", old_key.as_text(), " for ", new_key.as_text()
