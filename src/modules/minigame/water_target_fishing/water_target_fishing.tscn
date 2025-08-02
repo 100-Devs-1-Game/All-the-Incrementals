@@ -828,6 +828,27 @@ text = "0
 "
 fit_content = true
 
+[node name="UIDistance" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UIDistanceLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UIDistance"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Travelled"
+fit_content = true
+
+[node name="UIDistanceValue" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UIDistance"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0
+"
+fit_content = true
+
 [editable path="Clouds/BackgroundSprite"]
 [editable path="Clouds/BackgroundSprite2"]
 [editable path="Clouds/BackgroundSprite3"]

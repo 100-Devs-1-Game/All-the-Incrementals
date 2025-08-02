@@ -50,6 +50,7 @@ func _process(_delta: float) -> void:
 	(%UIWeightValue as RichTextLabel).text = str(
 		floori(base_slow + (score * score_weight_modifier))
 	)
+	(%UIDistanceValue as RichTextLabel).text = str(floori(distance_travelled))
 
 
 func _physics_process(delta: float) -> void:
