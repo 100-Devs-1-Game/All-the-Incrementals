@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=15 format=3 uid="uid://bytqv7h0iow3u"]
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_x5t1i"]
 [ext_resource type="Script" uid="uid://cisfp72boumnu" path="res://modules/minigame/wind_platformer/cloud_spawner.gd" id="4_3m7tm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/player.tscn" id="5_3m7tm"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="5_k4m21"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="6_k4m21"]
+[ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="7_xtfgy"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4orxu"]
 frequency = 0.002
@@ -44,6 +45,7 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 [node name="Wind Platformer" type="Node2D"]
 script = ExtResource("1_x5t1i")
 wind_noise = SubResource("FastNoiseLite_4orxu")
+data_uid = "uid://dym4je2njvl28"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -77,4 +79,9 @@ left_rect = Rect2(-150, 150, -140, 1080)
 right_rect = Rect2(2000, 150, 2010, 1080)
 
 [node name="DebugPopup" parent="." instance=ExtResource("5_k4m21")]
+visible = false
 debug_buttons = Array[ExtResource("6_k4m21")]([SubResource("Resource_xtfgy"), SubResource("Resource_wn57o")])
+
+[node name="DebugMinigameUpgrades" parent="DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("7_xtfgy")]
+visible = false
+debug_popup = NodePath("..")
