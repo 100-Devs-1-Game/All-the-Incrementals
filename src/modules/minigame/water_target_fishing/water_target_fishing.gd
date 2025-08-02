@@ -3,9 +3,6 @@ extends Node2D
 
 @export var fish: PackedScene
 
-var camera: WTFCamera2D
-var player: WTFPlayer
-
 var current_velocity: Vector2 = Vector2(-200, 0)
 var base_slow: float = 100
 
@@ -15,12 +12,16 @@ var distance_travelled_left_to_spawn = 0
 var score_weight_modifier = 3
 
 
-func _ready() -> void:
-	player = get_tree().get_first_node_in_group("wtf_player")
-	assert(player)
+func _enter_tree() -> void:
+	WTFGlobals.minigame = self
 
-	camera = get_tree().get_first_node_in_group("wtf_camera")
-	assert(camera)
+
+func _exit_tree() -> void:
+	WTFGlobals.minigame = null
+
+
+func _ready() -> void:
+	pass
 
 
 func _physics_process(delta: float) -> void:
@@ -30,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	if current_velocity.x >= 0:
 		current_velocity.x = 0
 		# hack that acts as a one second timer before the run ends
-		if player.oxygen_remaining_seconds <= -1:
+		if WTFGlobals.player.oxygen_remaining_seconds <= -1:
 			#todo end the run and show summary or ui to restart or buy upgrades
 			get_tree().reload_current_scene()
 
@@ -42,13 +43,16 @@ func _physics_process(delta: float) -> void:
 		var f: WTFFish = fish.instantiate()
 		f.position.x = (
 			distance_travelled
-			+ camera.get_visible_rect().position.x
-			+ camera.get_visible_rect().size.x
+			+ WTFGlobals.camera.get_visible_rect().position.x
+			+ WTFGlobals.camera.get_visible_rect().size.x
 			+ randf_range(-current_velocity.x, -current_velocity.x * 4)
 		)
 		f.position.y = randf_range(
-			min(0, camera.get_visible_rect().position.y),
-			min(0, camera.get_visible_rect().position.y) + camera.get_visible_rect().size.y
+			min(0, WTFGlobals.camera.get_visible_rect().position.y),
+			(
+				min(0, WTFGlobals.camera.get_visible_rect().position.y)
+				+ WTFGlobals.camera.get_visible_rect().size.y
+			)
 		)
 		%Entities.add_child(f)
 		distance_travelled_left_to_spawn -= 100
