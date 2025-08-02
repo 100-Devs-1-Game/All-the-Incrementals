@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_vsi1s"]
 script = ExtResource("3_vsi1s")
-func_or_path = "res://modules/menu/settings.tscn"
+func_or_path = "res://modules/settings/settings.tscn"
 hotkey = "s"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
@@ -60,5 +60,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DebugPopup" parent="." instance=ExtResource("2_ecuoj")]
-visible = false
+title = "Minigame Example"
+has_minigame_upgrades = true
 debug_buttons = Array[ExtResource("3_vsi1s")]([SubResource("Resource_5jsx0"), SubResource("Resource_ecuoj"), SubResource("Resource_vsi1s"), SubResource("Resource_be3yb")])

@@ -2,8 +2,14 @@ class_name DebugPopup
 
 extends Control
 
+# Title for the popup
+@export var title: String = "DebugPopup"
+
 # Show the debug panel on start
 @export var visible_on_start: bool = false
+
+# Enable if this debug popup has minigame upgrades
+@export var has_minigame_upgrades: bool = false
 
 # Define debug buttons by providing the names of functions to call on press.
 @export var debug_buttons: Array[DebugButton] = []
@@ -12,8 +18,16 @@ extends Control
 # Recommended to leave this `true` so players can't cheat the final game.
 var _disable_on_release: bool = false
 
-@onready var shortcut_buttons_container: GridContainer = %ShortcutButtons
-@onready var upgrade_buttons_container: GridContainer = %UpgradeButtons
+# An array of dictionary objects with text_keycode and button properties.
+var _hotkeys: Array = []
+
+var _tree_root: TreeItem
+var _tree_shortcuts: TreeItem
+var _tree_callables: Dictionary = {}
+
+var _debug_minigame_upgrades: DebugMinigameUpgrades = (
+	preload("res://modules/debug/debug_minigame_upgrades.gd").new()
+)
 
 
 func _ready() -> void:
@@ -25,40 +39,83 @@ func _ready() -> void:
 	# By default, the debug popup is not visible. Press 'X' to bring it up.
 	visible = visible_on_start
 	position = Vector2.ZERO
+
+	_setup_shortcuts_tree()
 	_setup_debug_buttons()
+
+	if has_minigame_upgrades:
+		_setup_minigame_upgrades_buttons()
+
+
+func _setup_shortcuts_tree() -> void:
+	_tree_root = $Tree.create_item()
+	_tree_root.set_text(0, title + " (" + get_parent().name + ")")
+	_tree_shortcuts = _tree_root.create_child()
+	_tree_shortcuts.set_text(0, "Navigation and functions")
+	$Tree.connect("item_selected", _on_item_selected)
+
+
+func _setup_minigame_upgrades_buttons() -> void:
+	# Must have a minigame parent if enabling minigame upgrades
+	assert(get_parent() is BaseMinigame)
+	# Wait until the game scene is fully ready
+	get_parent().connect("game_scene_ready", _on_game_scene_ready)
+
+
+func _on_game_scene_ready() -> void:
+	add_child(_debug_minigame_upgrades)
+	_debug_minigame_upgrades.set_tree(_tree_callables, _tree_root)
+	_debug_minigame_upgrades.setup_upgrade_items()
 
 
 func _setup_debug_buttons() -> void:
 	for debug_button in debug_buttons:
-		var new_button = Button.new()
-		_add_button(debug_button, new_button)
-		shortcut_buttons_container.add_child(new_button)
+		var new_item = _tree_shortcuts.create_child()
+		_setup_item(debug_button, new_item)
 
 
-func _add_button(debug_button: DebugButton, new_button: Button) -> void:
+func _on_item_selected():
+	var selected: TreeItem = $Tree.get_selected()
+	if _tree_callables.has(selected.get_instance_id()):
+		$Tree.deselect_all()
+		var callable: Callable = _tree_callables[selected.get_instance_id()]
+		# Why deferred?
+		# As a rule of thumb, never call change_scene* during the same frame
+		#  as GUI event handlers (e.g., _on_item_selected, _pressed,
+		# _input_event, etc.). Always defer or delay it.
+		callable.call_deferred()
+
+
+func _setup_item(debug_button: DebugButton, new_item: TreeItem) -> void:
 	if debug_button.func_or_path.begins_with("res://"):
-		_add_change_scene_button(debug_button, new_button)
+		_add_change_scene_item(debug_button, new_item)
 	else:
-		_add_function_call_button(debug_button, new_button)
+		_add_function_call_item(debug_button, new_item)
 
 
-func _add_change_scene_button(debug_button: DebugButton, new_button: Button) -> void:
+func _add_change_scene_item(debug_button: DebugButton, new_item: TreeItem) -> void:
 	var scene_path = debug_button.func_or_path
 	var scene_filename = scene_path.get_file()
-	new_button.connect("pressed", Callable(self, "_change_scene").bind(scene_path))
+
+	var item_pressed = Callable(self, "_change_scene").bind(scene_path)
+	_tree_callables[new_item.get_instance_id()] = item_pressed
+
 	if debug_button.hotkey != "":
-		new_button.text = "[" + debug_button.hotkey + "] go to " + scene_filename
+		_hotkeys.append({"text_keycode": debug_button.hotkey, "callable": item_pressed})
+		new_item.set_text(0, "[" + debug_button.hotkey + "] go to " + scene_filename)
 	else:
-		new_button.text = "go to " + scene_filename
+		new_item.set_text(0, "go to " + scene_filename)
 
 
-func _add_function_call_button(debug_button: DebugButton, new_button: Button) -> void:
+func _add_function_call_item(debug_button: DebugButton, new_item: TreeItem) -> void:
 	var function_name = debug_button.func_or_path
-	new_button.connect("pressed", Callable(self, "_call_function").bind(function_name))
+	var item_pressed = Callable(self, "_call_function").bind(function_name)
+	_tree_callables[new_item.get_instance_id()] = item_pressed
 	if debug_button.hotkey != "":
-		new_button.text = "[" + debug_button.hotkey + "] " + function_name + "()"
+		_hotkeys.append({"text_keycode": debug_button.hotkey, "callable": item_pressed})
+		new_item.set_text(0, "[" + debug_button.hotkey + "] " + function_name + "()")
 	else:
-		new_button.text = function_name + "()"
+		new_item.set_text(0, function_name + "()")
 
 
 func _input(event: InputEvent) -> void:
@@ -68,12 +125,10 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventKey and event.is_pressed():
 		if visible:
 			print(event)
-		for debug_button in debug_buttons:
-			if debug_button.hotkey.to_lower() == event.as_text_keycode().to_lower():
-				if debug_button.func_or_path.begins_with("res://"):
-					_change_scene(debug_button.func_or_path)
-				else:
-					_call_function(debug_button.func_or_path)
+
+		for hotkey in _hotkeys:
+			if event.as_text_keycode().to_lower() == hotkey.text_keycode.to_lower():
+				hotkey.callable.call()
 
 
 func _call_function(function_name: String) -> void:
@@ -97,46 +152,3 @@ func _change_scene(scene_path: String) -> void:
 
 	print("Changing scene to: " + scene_path)
 	get_tree().change_scene_to_packed(load(scene_path))
-
-
-func _update_upgrade_buttons():
-	for child in upgrade_buttons_container.get_children():
-		upgrade_buttons_container.remove_child(child)
-		child.queue_free()
-
-	if not SceneLoader.has_current_minigame():
-		push_error("No MinigameData in SceneLoader")
-		return
-
-	var data: MinigameData = SceneLoader.get_current_minigame()
-
-	for upgrade in data.get_all_upgrades():
-		var button := Button.new()
-		_set_upgrade_button_text(button, upgrade)
-		button.pressed.connect(_on_upgrade_button_pressed.bind(button, upgrade))
-		upgrade_buttons_container.add_child(button)
-
-
-func _set_upgrade_button_text(button: Button, upgrade: BaseUpgrade):
-	button.text = "%s Lvl %d" % [upgrade.name, upgrade.current_level + 1]
-
-
-func _on_upgrade_button_pressed(button: Button, upgrade: BaseUpgrade):
-	upgrade.level_up()
-	if upgrade is MinigameUpgrade:
-		if upgrade.logic:
-			upgrade.logic._apply_effect(get_tree().current_scene, upgrade)
-	else:
-		assert(false, "Not implemented yet")
-
-	_set_upgrade_button_text(button, upgrade)
-
-
-func _on_upgrades_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		shortcut_buttons_container.hide()
-		_update_upgrade_buttons()
-		upgrade_buttons_container.show()
-	else:
-		upgrade_buttons_container.hide()
-		shortcut_buttons_container.show()
