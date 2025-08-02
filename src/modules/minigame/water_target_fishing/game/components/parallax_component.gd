@@ -23,5 +23,5 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	target.position.x += (
-		(base_speed + WTFGlobals.minigame.current_velocity.x) * delta * movement_multiplier
+		(base_speed + WTFGlobals.minigame.stats.scrollspeed.x) * delta * movement_multiplier
 	)
