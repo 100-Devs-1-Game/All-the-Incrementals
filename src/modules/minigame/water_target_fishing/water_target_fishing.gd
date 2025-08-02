@@ -11,6 +11,12 @@ var distance_travelled = 0
 var distance_travelled_left_to_spawn = 0
 var score_weight_modifier = 3
 
+var _pixels_per_second: float = 0
+
+
+func get_pixels_per_second() -> int:
+	return floor(_pixels_per_second)
+
 
 func _enter_tree() -> void:
 	WTFGlobals.minigame = self
@@ -35,11 +41,13 @@ func _physics_process(delta: float) -> void:
 			#todo end the run and show summary or ui to restart or buy upgrades
 			get_tree().reload_current_scene()
 
-	distance_travelled += -current_velocity.x
-	distance_travelled_left_to_spawn += -current_velocity.x
+	_pixels_per_second = -current_velocity.x * delta
+
+	distance_travelled += _pixels_per_second
+	distance_travelled_left_to_spawn += _pixels_per_second
 
 	#todo replace with good spawning
-	while distance_travelled_left_to_spawn > 1000:
+	while distance_travelled_left_to_spawn > 300:
 		#don't spawn when flying, but still consume
 		if WTFGlobals.camera.get_bottom() > 0:
 			var f: WTFFish = fish.instantiate()
@@ -52,4 +60,4 @@ func _physics_process(delta: float) -> void:
 				min(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom()
 			)
 			%Entities.add_child(f)
-		distance_travelled_left_to_spawn -= 100
+		distance_travelled_left_to_spawn -= 300
