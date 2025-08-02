@@ -24,6 +24,7 @@ var player: FireFighterMinigamePlayer
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
 @onready var tile_map_water: TileMapLayer = $"TileMapLayer Water"
+@onready var tile_map_oil: TileMapLayer = $"TileMapLayer Oil"
 
 @onready var water_node: Node = $Water
 @onready var fire_node: Node = $Fires
@@ -91,6 +92,10 @@ func _tick_fires():
 	for tile: Vector2i in fires.keys():
 		var fire: FireFightersMinigameFire = fires[tile]
 		var feature: FireFightersMinigameMapFeature = get_map_feature(tile)
+
+		if has_oil(tile):
+			fire.size = 10
+
 		if not feature or not feature.can_burn():
 			fire.size -= 0.01
 		else:
@@ -210,3 +215,7 @@ func get_fire_at(tile: Vector2i) -> FireFightersMinigameFire:
 
 func is_tile_burning(tile: Vector2i) -> bool:
 	return fires.has(tile)
+
+
+func has_oil(tile: Vector2i) -> bool:
+	return tile in tile_map_oil.get_used_cells()

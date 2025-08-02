@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=22 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_k4ysf"]
 [ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/burnt_bush.tres" id="8_ppwky"]
 [ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/burnt_tree.tres" id="9_o1kr5"]
 [ext_resource type="Resource" uid="uid://bhtwwe0fgwlob" path="res://modules/minigame/fire_fighters/data/boulder.tres" id="10_o1kr5"]
+[ext_resource type="Texture2D" uid="uid://bhnbqskay45rg" path="res://assets/minigames/fire_fighters/placeholder_assets/oil.png" id="13_eaqpl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
 texture = ExtResource("2_4r4fr")
@@ -23,6 +24,15 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_o8gxd"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_bkat1")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymaye"]
+texture = ExtResource("13_eaqpl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_a330y"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_ymaye")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1sel"]
 texture = ExtResource("3_etg5r")
@@ -66,6 +76,9 @@ color = Color(0.356631, 0.732725, 0.357728, 1)
 
 [node name="TileMapLayer Terrain" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_o8gxd")
+
+[node name="TileMapLayer Oil" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_a330y")
 
 [node name="TileMapLayer Objects" type="TileMapLayer" parent="."]
 z_index = 2
