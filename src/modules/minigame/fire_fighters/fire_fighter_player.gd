@@ -4,6 +4,7 @@ extends CharacterBody2D
 signal extinguish_spot(pos: Vector2)
 
 @export var move_speed: float = 100.0
+@export var acceleration: float = 1000.0
 @export var water_speed: float = 300.0
 
 var last_dir: Vector2
@@ -19,9 +20,9 @@ var last_dir: Vector2
 @onready var diagonal_cooldown: Timer = $"Diagonal Cooldown"
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var move_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
-	velocity = move_dir * move_speed
+	velocity = velocity.move_toward(move_dir * move_speed, acceleration * delta)
 	move_and_slide()
 
 	if move_dir:
