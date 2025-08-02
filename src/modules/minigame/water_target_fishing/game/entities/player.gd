@@ -34,19 +34,20 @@ func _ready() -> void:
 
 func _on_area_entered(other_area: Area2D) -> void:
 	if !is_instance_valid(other_area):
-		print("!")
+		push_error(get_path())
 		return
 
 	var maybe_fish := other_area.get_parent() as WTFFish
 	if is_instance_valid(maybe_fish):
-		WTFGlobals.minigame.score += 10
-		WTFGlobals.minigame.current_velocity += Vector2(-300, 0)
+		WTFGlobals.minigame.score += maybe_fish.data.pickup.score
+		WTFGlobals.minigame.current_velocity += maybe_fish.data.pickup.get_velocity_change()
 		maybe_fish.queue_free()
 		return
 
 	var maybe_cannon = other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
-		WTFGlobals.minigame.current_velocity += Vector2(-900, 0)
+		WTFGlobals.minigame.current_velocity += maybe_cannon.pickup.get_velocity_change()
+		return
 
 
 func _physics_process(delta: float) -> void:

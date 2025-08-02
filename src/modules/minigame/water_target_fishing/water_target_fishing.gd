@@ -70,6 +70,7 @@ func _spawn_fish() -> void:
 	var rand_offset := randf_range(-current_velocity.x, -current_velocity.x * 4)
 	f.position.x = (distance_travelled + WTFGlobals.camera.get_right() + rand_offset)  #avoid clump
 	f.position.y = randf_range(min(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom())
+	f.data = load("res://modules/minigame/water_target_fishing/game/data/fish/grey.tres")
 	%Entities.add_child(f)
 
 

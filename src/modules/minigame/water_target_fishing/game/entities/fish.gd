@@ -1,6 +1,7 @@
 class_name WTFFish
 extends Node2D
 
+@export var data: WTFFishData
 @export var should_debug_print: bool = false
 @export var min_move_after_seconds: float = 1.5
 @export var max_move_after_seconds: float = 5
@@ -17,6 +18,8 @@ var _next_move_time: float
 
 
 func _ready() -> void:
+	assert(data)
+
 	# the first time is offset so it can start "instantly"
 	# rather than having all fish doing nothing for min_secs
 	_next_move_time = randf_range(0.0, max_move_after_seconds - min_move_after_seconds)
