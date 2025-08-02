@@ -39,7 +39,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 		print("!")
 		return
 
-	var maybe_fish := other_area.get_parent().get_parent() as WTFFish
+	var maybe_fish := other_area.get_parent() as WTFFish
 	if is_instance_valid(maybe_fish):
 		minigame.score += 10
 		minigame.current_velocity += Vector2(-300, 0)
