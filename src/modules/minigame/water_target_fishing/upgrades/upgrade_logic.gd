@@ -1,9 +1,9 @@
 class_name WTFMinigameUpgradeLogic
 extends BaseMinigameUpgradeLogic
 
-enum UpgradeType { SPEED, SIZE }
+enum UpgradeType { INVALID, TODO }
 
-@export var type: UpgradeType
+@export var type: UpgradeType = UpgradeType.INVALID
 
 
 func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
@@ -12,5 +12,9 @@ func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
 		assert(false)
 		return
 
-	push_error("WTF - upgrade %s is unknown (%s)" % [_upgrade.name, _upgrade.resource_path])
-	assert(false)
+	match type:
+		UpgradeType.TODO:
+			print("todo")
+		_:
+			push_error("WTF - upgrade %s is unknown (%s)" % [_upgrade.name, _upgrade.resource_path])
+			assert(false)
