@@ -15,7 +15,7 @@ var disabled_input := false
 
 
 func underwater() -> bool:
-	return position.y < WTFConstants.SEALEVEL
+	return position.y >= WTFConstants.SEALEVEL
 
 
 func _enter_tree() -> void:
