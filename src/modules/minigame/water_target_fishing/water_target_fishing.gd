@@ -25,7 +25,6 @@ func get_pixels_per_second() -> int:
 
 func _enter_tree() -> void:
 	WTFGlobals.minigame = self
-	WTFGlobals.floating_text = %FloatingTextSystem
 	stats = WTFStats.new()
 
 	## yyyy does it stutter thoooo
