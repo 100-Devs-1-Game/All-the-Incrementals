@@ -56,7 +56,7 @@ burn_spot_scene = ExtResource("5_ymaye")
 enable_burn_spots = false
 map_rect = Rect2i(0, 0, 70, 50)
 map_features = Array[ExtResource("2_bivsc")]([ExtResource("3_bkat1"), ExtResource("4_o8gxd"), ExtResource("8_ppwky"), ExtResource("9_o1kr5"), ExtResource("10_o1kr5")])
-data_uid = "uid://bqod1tv5hmpgo"
+data_uid = "uid://kt1wsi0p5wkb"
 
 [node name="CanvasLayer Background" type="CanvasLayer" parent="."]
 layer = -1
