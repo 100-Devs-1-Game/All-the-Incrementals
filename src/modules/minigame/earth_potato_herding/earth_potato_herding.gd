@@ -11,9 +11,9 @@ signal game_started
 
 
 func _initialize() -> void:
-	nutritious_potato.emit(1.0)
-	spirit_keeper_brightness.emit(1.0)
-	spirit_keeper_speed.emit(1.0)
+	nutritious_potato.emit(0.0)
+	spirit_keeper_brightness.emit(0.0)
+	spirit_keeper_speed.emit(0.0)
 	data.apply_all_upgrades(self)
 
 
