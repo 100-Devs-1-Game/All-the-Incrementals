@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=7 format=3 uid="uid://blgvydgjtbdvl"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=8 format=3 uid="uid://blgvydgjtbdvl"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_bae6h"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_bae6h"]
 [ext_resource type="Script" uid="uid://cmnrnh0whsxb0" path="res://modules/minigame/example/upgrade_logic/upgrade_logic.gd" id="2_d7fem"]
 [ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="3_d7fem"]
 [ext_resource type="Resource" uid="uid://brrqiv6apsu8a" path="res://modules/minigame/example/upgrades/upgrade_size.tres" id="4_ml3xo"]
+[ext_resource type="Resource" path="C:/src/All-the-Incrementals/src/modules/minigame/example/upgrades/upgrade_speed_algorithmic.tres" id="6_d7fem"]
 
 [sub_resource type="Resource" id="Resource_ml3xo"]
 script = ExtResource("2_d7fem")
@@ -26,7 +27,7 @@ base_effect_modifier = 0.0
 effect_modifier_multiplier = 0.0
 unlocked = false
 unlock_level = 0
-unlocks = Array[ExtResource("3_d7fem")]([ExtResource("4_ml3xo")])
+unlocks = Array[ExtResource("3_d7fem")]([ExtResource("4_ml3xo"), ExtResource("6_d7fem")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0

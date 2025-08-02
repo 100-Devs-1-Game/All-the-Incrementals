@@ -72,6 +72,16 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
 
 func _construct_cost_and_modifier_arrays():
+	if (
+		not max_level
+		or not base_cost
+		or not base_cost.slots
+		or not base_cost_multiplier
+		or not base_effect_modifier
+		or not effect_modifier_multiplier
+	):
+		print("Some algorithmic upgrade settings have been set in %s but not all" % name)
+		return
 	cost_arr = []
 	effect_modifier_arr = []
 	for i in range(max_level):
@@ -79,10 +89,10 @@ func _construct_cost_and_modifier_arrays():
 		for stack: EssenceStack in base_cost.slots:
 			var new_stack = EssenceStack.new()
 			new_stack.essence = stack.essence
-			new_stack.amount = stack.amount * base_cost_multiplier * i
+			new_stack.amount = stack.amount * base_cost_multiplier * (i + 1)
 			new_cost.slots.append(new_stack)
 		cost_arr.append(new_cost)
-		effect_modifier_arr.append(base_effect_modifier * effect_modifier_multiplier)
+		effect_modifier_arr.append(base_effect_modifier * effect_modifier_multiplier * (i + 1))
 
 
 func level_up() -> void:
@@ -143,29 +153,35 @@ func can_afford_next_level() -> bool:
 
 func set_max_level(level: int):
 	max_level = level
-	_construct_cost_and_modifier_arrays()
+	if max_level:
+		_construct_cost_and_modifier_arrays()
 
 
 func set_base_cost(cost: EssenceInventory):
 	base_cost = cost
-	_construct_cost_and_modifier_arrays()
+	if base_cost:
+		_construct_cost_and_modifier_arrays()
 
 
 func set_base_cost_multiplier(multiplier: float):
 	base_cost_multiplier = multiplier
-	_construct_cost_and_modifier_arrays()
+	if base_cost_multiplier:
+		_construct_cost_and_modifier_arrays()
 
 
 func set_base_effect_modifier(modifier: float):
 	base_effect_modifier = modifier
-	_construct_cost_and_modifier_arrays()
+	if base_effect_modifier:
+		_construct_cost_and_modifier_arrays()
 
 
 func set_effect_modifier_multiplier(multiplier: float):
 	effect_modifier_multiplier = multiplier
-	_construct_cost_and_modifier_arrays()
+	if effect_modifier_multiplier:
+		_construct_cost_and_modifier_arrays()
 
 
 func set_cost_curve(curve: Curve):
 	cost_curve = curve
-	# TODO
+	if cost_curve:
+		pass
