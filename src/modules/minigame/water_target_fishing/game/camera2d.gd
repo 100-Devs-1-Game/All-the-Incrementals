@@ -10,6 +10,8 @@ var _visible_rect: Rect2
 
 func _enter_tree() -> void:
 	WTFGlobals.camera = self
+	process_priority = 99999
+	process_physics_priority = 99999
 
 
 func _exit_tree() -> void:

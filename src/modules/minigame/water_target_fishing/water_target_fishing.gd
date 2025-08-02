@@ -1,6 +1,9 @@
 class_name WTFMinigame
 extends Node2D
 
+const SECONDS_BEFORE_ENDING_RUN: float = 1
+const SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED: float = 300
+
 @export var fish: PackedScene
 
 var current_velocity: Vector2 = Vector2(-200, 0)
@@ -20,6 +23,10 @@ func get_pixels_per_second() -> int:
 
 func _enter_tree() -> void:
 	WTFGlobals.minigame = self
+	## yyyy does it stutter thoooo
+	# I can't find any magic number that solves it :(
+	process_priority = 55555
+	process_physics_priority = 55555
 
 
 func _exit_tree() -> void:
@@ -60,7 +67,10 @@ func _physics_process(delta: float) -> void:
 	if current_velocity.x >= 0:
 		current_velocity.x = 0
 		# hack that acts as a one second timer before the run ends
-		if WTFGlobals.player.oxygen_remaining_seconds <= -1:
+		if (
+			WTFGlobals.player.oxygen_remaining_seconds <= -SECONDS_BEFORE_ENDING_RUN
+			&& WTFGlobals.player.position.y < WTFConstants.SEALEVEL
+		):
 			#todo end the run and show summary or ui to restart or buy upgrades
 			get_tree().reload_current_scene()
 
@@ -70,9 +80,9 @@ func _physics_process(delta: float) -> void:
 	distance_travelled_left_to_spawn += _pixels_per_second
 
 	#todo replace with good spawning
-	while distance_travelled_left_to_spawn > 300:
+	while distance_travelled_left_to_spawn > SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED:
 		#don't spawn when flying, but still consume
-		if WTFGlobals.camera.get_bottom() > 0:
+		if WTFGlobals.camera.get_bottom() > WTFConstants.SEALEVEL:
 			var f: WTFFish = fish.instantiate()
 			f.position.x = (
 				distance_travelled
@@ -83,4 +93,4 @@ func _physics_process(delta: float) -> void:
 				min(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom()
 			)
 			%Entities.add_child(f)
-		distance_travelled_left_to_spawn -= 300
+		distance_travelled_left_to_spawn -= SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED

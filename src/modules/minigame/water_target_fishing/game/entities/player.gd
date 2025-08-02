@@ -18,6 +18,8 @@ var disabled_input := false
 
 func _enter_tree() -> void:
 	WTFGlobals.player = self
+	process_priority = 666666
+	process_physics_priority = 66666
 
 
 func _exit_tree() -> void:
