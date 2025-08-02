@@ -40,19 +40,16 @@ func _physics_process(delta: float) -> void:
 
 	#todo replace with good spawning
 	while distance_travelled_left_to_spawn > 1000:
-		var f: WTFFish = fish.instantiate()
-		f.position.x = (
-			distance_travelled
-			+ WTFGlobals.camera.get_visible_rect().position.x
-			+ WTFGlobals.camera.get_visible_rect().size.x
-			+ randf_range(-current_velocity.x, -current_velocity.x * 4)
-		)
-		f.position.y = randf_range(
-			min(0, WTFGlobals.camera.get_visible_rect().position.y),
-			(
-				min(0, WTFGlobals.camera.get_visible_rect().position.y)
-				+ WTFGlobals.camera.get_visible_rect().size.y
+		#don't spawn when flying, but still consume
+		if WTFGlobals.camera.get_bottom() > 0:
+			var f: WTFFish = fish.instantiate()
+			f.position.x = (
+				distance_travelled
+				+ WTFGlobals.camera.get_right()
+				+ randf_range(-current_velocity.x, -current_velocity.x * 4)
+			)  #avoid clump
+			f.position.y = randf_range(
+				min(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom()
 			)
-		)
-		%Entities.add_child(f)
+			%Entities.add_child(f)
 		distance_travelled_left_to_spawn -= 100
