@@ -87,10 +87,10 @@ func _physics_process(delta: float) -> void:
 		if !WTFGlobals.player.underwater() && player_done:
 			get_tree().reload_current_scene()
 
-	_pixels_per_second = -current_velocity.x * delta
+	_pixels_per_second = -current_velocity.x
 
-	distance_travelled += _pixels_per_second
-	distance_travelled_left_to_spawn += _pixels_per_second
+	distance_travelled += _pixels_per_second * delta
+	distance_travelled_left_to_spawn += _pixels_per_second * delta
 
 	#todo replace with good spawning
 	while distance_travelled_left_to_spawn > SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED:
