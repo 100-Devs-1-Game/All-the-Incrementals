@@ -66,5 +66,3 @@ debug_buttons = Array[ExtResource("3_vsi1s")]([SubResource("Resource_5jsx0"), Su
 
 [node name="DebugMinigameUpgrades" parent="DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("4_vsi1s")]
 debug_popup = NodePath("..")
-
-[connection signal="game_scene_ready" from="." to="." method="_on_game_scene_ready"]
