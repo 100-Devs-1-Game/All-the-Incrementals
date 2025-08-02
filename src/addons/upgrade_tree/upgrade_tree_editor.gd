@@ -57,6 +57,7 @@ func _enter_tree() -> void:
 	file_dialog = FileDialog.new()
 	file_dialog.access = FileDialog.ACCESS_FILESYSTEM
 	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+	file_dialog.access = FileDialog.ACCESS_RESOURCES
 	file_dialog.filters = PackedStringArray(["*.res", "*.tres", "*.*"])
 	file_dialog.file_selected.connect(_on_file_selected)
 	file_dialog.name = "SaveResource"
@@ -160,7 +161,7 @@ func _on_reload_resources_pressed() -> void:
 
 
 func _on_file_selected(path: String) -> void:
-	current_selected_node.upgrade.resource_path = path
+	current_selected_node.upgrade.resource_path = ProjectSettings.localize_path(path)
 	ResourceSaver.save(current_selected_node.upgrade)
 
 
