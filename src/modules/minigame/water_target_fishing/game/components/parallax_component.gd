@@ -11,14 +11,10 @@ extends Node2D
 @export var max_movement_multiplier: float = 1
 @export var base_speed: float = 0
 
-var minigame: WTFMinigame
 var movement_multiplier: float = 0
 
 
 func _ready() -> void:
-	minigame = get_tree().get_first_node_in_group("minigame_water_target_fishing")
-	assert(is_instance_valid(minigame))
-
 	movement_multiplier = randf_range(min_movement_multiplier, max_movement_multiplier)
 
 	if !target:
@@ -26,4 +22,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	target.position.x += (base_speed + minigame.current_velocity.x) * delta * movement_multiplier
+	target.position.x += (
+		(base_speed + WTFGlobals.minigame.current_velocity.x) * delta * movement_multiplier
+	)
