@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FireFightersMinigameItem" load_steps=3 format=3 uid="uid://cg3lw4fm84srm"]
+
+[ext_resource type="Script" uid="uid://ctpski5ja4jdm" path="res://modules/minigame/fire_fighters/fire_fighters_item.gd" id="1_1l65h"]
+[ext_resource type="Texture2D" uid="uid://b66085pq2o3yx" path="res://assets/minigames/fire_fighters/placeholder_assets/items/gas_can.png" id="1_ufq23"]
+
+[resource]
+script = ExtResource("1_1l65h")
+name = "Gas Can"
+icon = ExtResource("1_ufq23")
+metadata/_custom_type_script = "uid://ctpski5ja4jdm"
