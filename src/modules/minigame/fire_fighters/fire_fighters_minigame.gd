@@ -21,17 +21,18 @@ var player: FireFighterMinigamePlayer
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
+@onready var tile_map_water: TileMapLayer = $"TileMapLayer Water"
+
 @onready var water_node: Node = $Water
 @onready var fire_node: Node = $Fires
 @onready var decal_node: Node = $Decals
 
 
 func _start() -> void:
-	init()
-	run()
+	_run()
 
 
-func init():
+func _initialize():
 	for feature in map_features:
 		map_feature_lookup[feature.atlas_coords] = feature
 
@@ -40,38 +41,38 @@ func init():
 	)
 
 
-func run():
+func _run():
 	for i in 80:
 		var tile := Vector2i(
 			randi_range(map_rect.position.x, map_rect.position.x + map_rect.size.x),
 			randi_range(map_rect.position.y, map_rect.position.y + map_rect.size.y)
 		)
-		add_fire(tile, randf_range(0.2, 0.8))
+		_add_fire(tile, randf_range(0.2, 0.8))
 
-	spawn_player()
+	_spawn_player()
 
 
 func _physics_process(_delta: float) -> void:
 	if Engine.get_physics_frames() % BURN_TICK_INTERVAL == 0:
-		tick_fires()
-	tick_water()
+		_tick_fires()
+	_tick_water()
 
 
-func add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
+func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 	var fire: FireFightersMinigameFire = fire_scene.instantiate()
 	fires[tile] = fire
 	fire.position = tile_map_terrain.map_to_local(tile)
 	fire.size = randf_range(min_size, max_size)
 	fire_node.add_child(fire)
-	fire.died.connect(remove_fire.bind(fire))
+	fire.died.connect(_remove_fire.bind(fire))
 
 
-func remove_fire(fire: FireFightersMinigameFire):
+func _remove_fire(fire: FireFightersMinigameFire):
 	fires.erase(fires.find_key(fire))
 	fire.queue_free()
 
 
-func add_water(pos: Vector2, vel: Vector2, dir: Vector2):
+func _add_water(pos: Vector2, vel: Vector2, dir: Vector2):
 	var water: FireFightersMinigameWater = water_scene.instantiate()
 	water.position = pos
 	water.velocity = vel
@@ -79,33 +80,44 @@ func add_water(pos: Vector2, vel: Vector2, dir: Vector2):
 	water.look_at(water.position + dir)
 
 
-func tick_fires():
+func _tick_fires():
 	for tile: Vector2i in fires.keys():
 		var fire: FireFightersMinigameFire = fires[tile]
 		var feature: FireFightersMinigameMapFeature = get_map_feature(tile)
 		if not feature or not feature.can_burn():
 			fire.size -= 0.01
 		else:
-			fire_burn_tick(fire, tile, feature)
+			_fire_burn_tick(fire, tile, feature)
 
 
-func fire_burn_tick(
+func _fire_burn_tick(
 	fire: FireFightersMinigameFire, tile: Vector2i, feature: FireFightersMinigameMapFeature
 ):
 	fire.total_burn += fire.size / (60.0 / BURN_TICK_INTERVAL)
 	if fire.total_burn > feature.burn_duration:
 		assert(feature.turns_into != null)
 		replace_feature(tile, feature.turns_into)
-		burn_vegetation(tile)
+		_burn_vegetation(tile)
 		if enable_burn_spots:
-			add_burn_spot(tile)
+			_add_burn_spot(tile)
 
 	fire.size += feature.flammability * 0.1
 	if RngUtils.chancef(fire.size - 1.0):
-		try_to_spread_fire(tile)
+		_try_to_spread_fire(tile)
 
 
-func tick_water():
+func _try_to_spread_fire(tile: Vector2i):
+	var dir: Vector2i = Vector2.from_angle(randf() * 2 * PI).round()
+	var neighbor_pos := Vector2i(tile + dir)
+	assert(abs(dir.x) == 1 or abs(dir.y) == 1)
+	var neighbor_feature: FireFightersMinigameMapFeature = get_map_feature(tile + dir)
+	if neighbor_feature and not is_tile_burning(neighbor_pos):
+		if RngUtils.chancef(neighbor_feature.flammability):
+			if not RngUtils.chance100(tile_map_water.get_cell_source_id(tile)):
+				_add_fire(neighbor_pos)
+
+
+func _tick_water():
 	for water: FireFightersMinigameWater in water_node.get_children():
 		var tile: Vector2i = get_tile_at(water.position)
 		var fire: FireFightersMinigameFire = get_fire_at(tile)
@@ -115,41 +127,44 @@ func tick_water():
 			var final_water: float = min(max_water, fire.size + epsilon)
 			fire.size -= final_water
 			water.density -= final_water
+		else:
+			if has_map_feature(tile):
+				_soak_tile(tile)
+
+	for tile in tile_map_water.get_used_cells():
+		if RngUtils.chance100(10):
+			tile_map_water.set_cell(tile, tile_map_water.get_cell_source_id(tile) - 1)
 
 
-func try_to_spread_fire(tile: Vector2i):
-	var dir: Vector2i = Vector2.from_angle(randf() * 2 * PI).round()
-	var neighbor_pos := Vector2i(tile + dir)
-	assert(abs(dir.x) == 1 or abs(dir.y) == 1)
-	var neighbor_feature: FireFightersMinigameMapFeature = get_map_feature(tile + dir)
-	if neighbor_feature and not is_tile_burning(neighbor_pos):
-		if RngUtils.chancef(neighbor_feature.flammability):
-			add_fire(neighbor_pos)
+func _soak_tile(tile: Vector2i):
+	var water_level: int = tile_map_water.get_cell_source_id(tile)
+	if not RngUtils.chance100(water_level):
+		tile_map_water.set_cell(tile, water_level + 1, Vector2.ZERO)
 
 
-func spawn_player():
+func _spawn_player():
 	player = player_scene.instantiate()
 	player.position = DisplayServer.window_get_size() / 2
 	add_child(player)
-	player.extinguish_spot.connect(on_extinguish_at)
+	player.extinguish_spot.connect(_on_extinguish_at)
 
 
 func replace_feature(tile: Vector2i, new_feature: FireFightersMinigameMapFeature):
 	tile_map_objects.set_cell(tile, 0, new_feature.atlas_coords)
 
 
-func burn_vegetation(tile: Vector2i):
+func _burn_vegetation(tile: Vector2i):
 	tile_map_terrain.set_cell(tile, -1)
 
 
-func add_burn_spot(tile: Vector2i):
+func _add_burn_spot(tile: Vector2i):
 	var spot: Sprite2D = burn_spot_scene.instantiate()
 	spot.position = get_tile_position(tile)
 	spot.flip_h = RngUtils.chance100(50)
 	decal_node.add_child(spot)
 
 
-func on_extinguish_at(pos: Vector2):
+func _on_extinguish_at(pos: Vector2):
 	var tile: Vector2i = tile_map_terrain.local_to_map(pos)
 	if fires.has(tile):
 		var fire: FireFightersMinigameFire = fires[tile]
@@ -167,6 +182,10 @@ func get_tile_position(tile: Vector2i) -> Vector2:
 func get_map_feature(tile: Vector2i) -> FireFightersMinigameMapFeature:
 	var atlas_coords: Vector2i = tile_map_objects.get_cell_atlas_coords(tile)
 	return get_map_feature_from_atlas_coords(atlas_coords)
+
+
+func has_map_feature(tile: Vector2i) -> bool:
+	return tile in tile_map_objects.get_used_cells()
 
 
 func get_map_feature_from_atlas_coords(coords: Vector2i) -> FireFightersMinigameMapFeature:
