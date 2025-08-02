@@ -7,15 +7,18 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="4_ex1b1"]
 [ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="5_qpmn4"]
 
-[sub_resource type="Resource" id="Resource_tjlpa"]
+[sub_resource type="Resource" id="Resource_emyof"]
 script = ExtResource("2_cgvsa")
 essence = ExtResource("3_e72gr")
 amount = 10
-metadata/_custom_type_script = "uid://b0xhkjselbga"
 
 [sub_resource type="Resource" id="Resource_sy70c"]
 script = ExtResource("1_p4u37")
-slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_tjlpa")])
+earth = 10
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_emyof")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
 [sub_resource type="Resource" id="Resource_ru56q"]
@@ -35,7 +38,7 @@ effect_modifier_arr = Array[float]([])
 max_level = 5
 base_cost = SubResource("Resource_sy70c")
 base_cost_multiplier = 1.1
-base_effect_modifier = 10.0
+base_effect_modifier = 11.0
 effect_modifier_multiplier = 1.1
 unlocked = false
 unlock_level = 3
