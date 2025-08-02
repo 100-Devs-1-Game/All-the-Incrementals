@@ -13,6 +13,11 @@ var last_dir: Vector2
 @onready var extinguisher_cooldown: Timer = %Cooldown
 @onready var extinguisher_offset: Node2D = %"Extinguisher Offset"
 
+# helps to keep the extinguisher shooting diagonally after the player has
+# stopped moving ( releasing both keys will let the player face in the direction
+# of the last release key otherwise - if they aren't released perfectly simultaneous )
+@onready var diagonal_cooldown: Timer = $"Diagonal Cooldown"
+
 
 func _physics_process(_delta: float) -> void:
 	var move_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
@@ -20,7 +25,14 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	if move_dir:
-		last_dir = move_dir
+		if is_diagonal(last_dir) and not is_diagonal(move_dir):
+			if diagonal_cooldown.is_stopped():
+				last_dir = move_dir
+		else:
+			last_dir = move_dir
+
+		if is_diagonal(move_dir):
+			diagonal_cooldown.start()
 
 	extinguisher.look_at(position + last_dir)
 	extinguish(Input.is_action_pressed("ui_select"))
@@ -45,3 +57,7 @@ func extinguish(flag: bool):
 	)
 
 	extinguisher_cooldown.start()
+
+
+func is_diagonal(vec: Vector2) -> bool:
+	return abs(vec.x) + abs(vec.y) > 1

@@ -43,3 +43,7 @@ one_shot = true
 [node name="Extinguisher Offset" type="Node2D" parent="Extinguisher"]
 unique_name_in_owner = true
 position = Vector2(35, 0)
+
+[node name="Diagonal Cooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
