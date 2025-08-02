@@ -15,6 +15,8 @@ const BURN_TICK_INTERVAL = 10
 
 @export var max_water_per_fire: float = 0.1
 
+@export var rng_seed: int = -1
+
 var map_feature_lookup: Dictionary
 var fires: Dictionary
 var player: FireFighterMinigamePlayer
@@ -33,8 +35,13 @@ func _start() -> void:
 
 
 func _initialize():
+	if rng_seed == -1:
+		rng_seed = randi()
+
 	for feature in map_features:
 		map_feature_lookup[feature.atlas_coords] = feature
+		if feature.spawn_noise:
+			feature.spawn_noise.seed = rng_seed
 
 	FireFightersMinigameMapGenerator.generate_map(
 		map_rect, tile_map_terrain, tile_map_objects, map_features
