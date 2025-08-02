@@ -34,6 +34,10 @@ GameSettings="*res://modules/settings/game_settings.gd"
 SceneLoader="*res://global/scene_loader.gd"
 Player="*res://global/player.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [debug_draw_3d]
 
 settings/addon_root_folder="res://addons/debug_draw_3d"
