@@ -11,6 +11,7 @@ var last_dir: Vector2
 @onready var game: FireFightersMinigame = get_parent()
 @onready var extinguisher: Node2D = $Extinguisher
 @onready var extinguisher_cooldown: Timer = %Cooldown
+@onready var extinguisher_offset: Node2D = %"Extinguisher Offset"
 
 
 func _physics_process(_delta: float) -> void:
@@ -37,6 +38,10 @@ func extinguish(flag: bool):
 	dir += dir.rotated(PI / 2) * randf_range(-spread, spread)
 	dir = dir.normalized()
 
-	game.add_water(position, velocity + dir * water_speed, extinguisher.global_transform.x)
+	game.add_water(
+		extinguisher_offset.global_position,
+		velocity + dir * water_speed,
+		extinguisher.global_transform.x
+	)
 
 	extinguisher_cooldown.start()

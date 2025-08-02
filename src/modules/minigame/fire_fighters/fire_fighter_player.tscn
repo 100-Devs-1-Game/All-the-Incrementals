@@ -39,3 +39,7 @@ rotation = -0.0586266
 unique_name_in_owner = true
 wait_time = 0.05
 one_shot = true
+
+[node name="Extinguisher Offset" type="Node2D" parent="Extinguisher"]
+unique_name_in_owner = true
+position = Vector2(35, 0)
