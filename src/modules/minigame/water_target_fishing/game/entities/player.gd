@@ -5,8 +5,6 @@ extends Node2D
 @export var acceleration: float = 2000.0
 @export var friction: float = 600.0
 
-var oxygen_capacity_seconds: float = 3
-var oxygen_remaining_seconds: float = oxygen_capacity_seconds
 var velocity: Vector2 = Vector2.ZERO
 var disabled_input := false
 
@@ -40,13 +38,16 @@ func _on_area_entered(other_area: Area2D) -> void:
 	var maybe_fish := other_area.get_parent() as WTFFish
 	if is_instance_valid(maybe_fish):
 		WTFGlobals.minigame.score += maybe_fish.data.pickup.score
-		WTFGlobals.minigame.current_velocity += maybe_fish.data.pickup.get_velocity_change()
+		WTFGlobals.minigame.stats.weight += maybe_fish.data.pickup.weight
+		WTFGlobals.minigame.stats.scroll_faster(maybe_fish.data.pickup.pixels_per_second)
 		maybe_fish.queue_free()
 		return
 
 	var maybe_cannon = other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
-		WTFGlobals.minigame.current_velocity += maybe_cannon.pickup.get_velocity_change()
+		WTFGlobals.minigame.score += maybe_cannon.pickup.score
+		WTFGlobals.minigame.stats.weight += maybe_cannon.pickup.weight
+		WTFGlobals.minigame.stats.scroll_faster(maybe_cannon.pickup.pixels_per_second)
 		return
 
 
@@ -76,34 +77,32 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 
 	# this stops the player from moving backwards too much when we slow down
-	velocity.x = max(WTFGlobals.minigame.current_velocity.x / 2, velocity.x)
+	velocity.x = max(WTFGlobals.minigame.stats.scrollspeed.x / 2, velocity.x)
 
 	# let the player move a tiny bit to the right when we slow down
 	# but otherwise, cap it
-	if velocity.x > -WTFGlobals.minigame.current_velocity.x:
-		velocity.x = -WTFGlobals.minigame.current_velocity.x
+	if velocity.x > -WTFGlobals.minigame.stats.scrollspeed.x:
+		velocity.x = -WTFGlobals.minigame.stats.scrollspeed.x
 
 	#todo this is a bit of a mess... need to clean it up
 	# also not sure if/how the disabled input thing should work during gameplay
 	# basically trying to force the end to run because of a fail state (no oxy)
 	# but giving them time to collect some final points etc. and let their speed drop
-	if position.y > 0:
-		oxygen_remaining_seconds -= delta
+	if underwater():
+		WTFGlobals.minigame.stats.consume_oxygen(delta)
 		#print("underwater, oxy ", oxygen_remaining_seconds)
 
-		if oxygen_remaining_seconds <= 0:
+		if WTFGlobals.minigame.stats.no_oxygen():
 			disabled_input = true
 
-		if oxygen_remaining_seconds <= 0 || disabled_input:
+		if WTFGlobals.minigame.stats.no_oxygen() || disabled_input:
 			velocity.y += -0.4 * acceleration * delta
 	else:
-		if WTFGlobals.minigame.current_velocity.x >= 0:
+		if !WTFGlobals.minigame.stats.scrolling():
 			disabled_input = true
 			print("NO OXYGEN AND NO SPEED")
 		elif disabled_input == false:
-			oxygen_remaining_seconds += oxygen_capacity_seconds * delta
-			oxygen_remaining_seconds = min(oxygen_remaining_seconds, oxygen_capacity_seconds)
-			#print("sky, oxy ", oxygen_remaining_seconds)
+			WTFGlobals.minigame.stats.refill_oxygen(delta)
 
 		#todo this magic 0.4 really needs to be tweaked a lot, it feels so strange
 		velocity.y += 0.4 * acceleration * delta
