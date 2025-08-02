@@ -71,6 +71,20 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 @export_storage var current_level: int = -1
 
 
+func _construct_cost_and_modifier_arrays():
+	cost_arr = []
+	effect_modifier_arr = []
+	for i in range(max_level):
+		var new_cost: EssenceInventory = EssenceInventory.new()
+		for stack: EssenceStack in base_cost.slots:
+			var new_stack = EssenceStack.new()
+			new_stack.essence = stack.essence
+			new_stack.amount = stack.amount * base_cost_multiplier * i
+			new_cost.slots.append(new_stack)
+		cost_arr.append(new_cost)
+		effect_modifier_arr.append(base_effect_modifier * effect_modifier_multiplier)
+
+
 func level_up() -> void:
 	assert(current_level < get_max_level())
 	current_level += 1
@@ -129,27 +143,27 @@ func can_afford_next_level() -> bool:
 
 func set_max_level(level: int):
 	max_level = level
-	# TODO
+	_construct_cost_and_modifier_arrays()
 
 
 func set_base_cost(cost: EssenceInventory):
 	base_cost = cost
-	# TODO
+	_construct_cost_and_modifier_arrays()
 
 
 func set_base_cost_multiplier(multiplier: float):
 	base_cost_multiplier = multiplier
-	# TODO
+	_construct_cost_and_modifier_arrays()
 
 
 func set_base_effect_modifier(modifier: float):
 	base_effect_modifier = modifier
-	# TODO
+	_construct_cost_and_modifier_arrays()
 
 
 func set_effect_modifier_multiplier(multiplier: float):
 	effect_modifier_multiplier = multiplier
-	# TODO
+	_construct_cost_and_modifier_arrays()
 
 
 func set_cost_curve(curve: Curve):
