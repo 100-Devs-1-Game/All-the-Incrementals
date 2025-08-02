@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=14 format=3 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="Script" uid="uid://eiutp4wmfx4t" path="res://modules/overworld_locations/clayport/clayport.gd" id="1_q21dp"]
+[ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_2ieeh"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_1ftrw"]
+[ext_resource type="Resource" uid="uid://s7k08dgu5hxn" path="res://modules/minigame/earth_towers/data/earth_towers_data.tres" id="3_wnqv0"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_i3tw0"]
+[ext_resource type="Resource" uid="uid://ciyrdxjs03cvb" path="res://modules/minigame/water_diving/data/water_diving_data.tres" id="4_ue7jc"]
 
 [sub_resource type="Resource" id="Resource_rkb86"]
 script = ExtResource("4_i3tw0")
@@ -48,6 +51,10 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="Clayport" type="Node2D"]
 script = ExtResource("1_q21dp")
+earth_potato_herding_data = ExtResource("2_2ieeh")
+earth_towers_data = ExtResource("3_wnqv0")
+water_diving_data = ExtResource("4_ue7jc")
+water_target_fishing_data = ExtResource("4_ue7jc")
 
 [node name="DebugPopup" parent="." instance=ExtResource("3_1ftrw")]
 visible = false
