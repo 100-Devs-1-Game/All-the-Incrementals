@@ -18,6 +18,7 @@ earth = 0
 fire = 0
 water = 0
 wind = 1
+
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_2mb8s")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 

@@ -16,7 +16,7 @@
 
 [node name="EarthPotatoHerding" type="Node2D"]
 script = ExtResource("1_kkhpg")
-data_uid = "uid://dybkcw3j6rv8w"
+data_uid = "uid://cbu6b1qnaw05f"
 
 [node name="EphYounglingSpawner" parent="." node_paths=PackedStringArray("_free_roam_area", "_free_roam_bounding_box", "_adult_spawner", "_player", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("3_xo3kj")]
 _free_roam_area = NodePath("spawn_zone")

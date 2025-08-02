@@ -1,8 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bl4s8xuvuf3xb"]
+[gd_scene load_steps=15 format=3 uid="uid://bl4s8xuvuf3xb"]
 
 [ext_resource type="Script" uid="uid://ou1teugr01v8" path="res://modules/overworld_locations/breezekiln/breezekiln.gd" id="1_82p5n"]
+[ext_resource type="Resource" uid="uid://bseyt0iuwnq5m" path="res://modules/minigame/fire_cooking/data/fire_cooking_data.tres" id="3_2i5xv"]
+[ext_resource type="Resource" uid="uid://bqod1tv5hmpgo" path="res://modules/minigame/fire_fighters/data/fire_fighters_data.tres" id="4_4lo53"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="4_32tle"]
+[ext_resource type="Resource" uid="uid://cxrnthj4sdjv4" path="res://modules/minigame/wind_rhythm/data/wind_rhythm_data.tres" id="5_0bjiu"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="5_32tle"]
+[ext_resource type="Resource" uid="uid://dh1qjmvspv4uh" path="res://modules/minigame/wind_platformer/data/wind_platformer_data.tres" id="5_oivh7"]
 
 [sub_resource type="Resource" id="Resource_x55j6"]
 script = ExtResource("5_32tle")
@@ -24,30 +28,34 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_2eo4h"]
 script = ExtResource("5_32tle")
-func_or_path = "res://modules/minigame/fire_cooking/fire_cooking.tscn"
+func_or_path = "debug_start_fire_cooking"
 hotkey = "c"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_4t088"]
 script = ExtResource("5_32tle")
-func_or_path = "start_fire_fighters"
+func_or_path = "debug_start_fire_fighters"
 hotkey = "g"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_tobfv"]
 script = ExtResource("5_32tle")
-func_or_path = "res://modules/minigame/wind_platformer/wind_platformer.tscn"
+func_or_path = "debug_start_wind_platformer"
 hotkey = "p"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_w4mnl"]
 script = ExtResource("5_32tle")
-func_or_path = "res://modules/minigame/wind_rhythm/wind_rhythm.tscn"
+func_or_path = "debug_start_wind_rhythm"
 hotkey = "r"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="Breezekiln" type="Node2D"]
 script = ExtResource("1_82p5n")
+fire_cooking_data = ExtResource("3_2i5xv")
+fire_fighters_data = ExtResource("4_4lo53")
+wind_platformer_data = ExtResource("5_oivh7")
+wind_rhythm_data = ExtResource("5_0bjiu")
 
 [node name="DebugPopup" parent="." instance=ExtResource("4_32tle")]
 visible = false

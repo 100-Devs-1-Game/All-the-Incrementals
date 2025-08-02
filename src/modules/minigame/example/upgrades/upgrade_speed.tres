@@ -20,6 +20,7 @@ earth = 0
 fire = 1
 water = 0
 wind = 0
+
 slots = Array[ExtResource("2_8swqc")]([SubResource("Resource_fy8y2")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
@@ -34,6 +35,7 @@ earth = 0
 fire = 2
 water = 0
 wind = 0
+
 slots = Array[ExtResource("2_8swqc")]([SubResource("Resource_je3wm")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
@@ -48,6 +50,7 @@ earth = 0
 fire = 3
 water = 0
 wind = 0
+
 slots = Array[ExtResource("2_8swqc")]([SubResource("Resource_crwdc")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
@@ -62,6 +65,7 @@ earth = 0
 fire = 4
 water = 0
 wind = 0
+
 slots = Array[ExtResource("2_8swqc")]([SubResource("Resource_0asgm")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
@@ -76,6 +80,7 @@ earth = 0
 fire = 4
 water = 0
 wind = 0
+
 slots = Array[ExtResource("2_8swqc")]([SubResource("Resource_b8n8d")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
