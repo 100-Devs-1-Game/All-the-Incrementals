@@ -9,20 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://c1o4hv5ignom3" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.tscn" id="5_tk8ls"]
 [ext_resource type="PackedScene" uid="uid://bu668uskhmtud" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.tscn" id="7_00m8t"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="10_o8bin"]
+[ext_resource type="Resource" uid="uid://b4sluedhgvlgp" path="res://modules/minigame/common/debug/exit_minigame.tres" id="11_7gu6e"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="11_eeopq"]
-[ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug_minigame_upgrades.tscn" id="11_o8bin"]
-
-[sub_resource type="Resource" id="Resource_7gu6e"]
-script = ExtResource("11_eeopq")
-func_or_path = "res://modules/overworld_locations/clayport/clayport.tscn"
-hotkey = "escape"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
-
-[sub_resource type="Resource" id="Resource_2q4j3"]
-script = ExtResource("11_eeopq")
-func_or_path = "quit_game"
-hotkey = "q"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="11_o8bin"]
+[ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="12_2q4j3"]
 
 [node name="EarthPotatoHerding" type="Node2D"]
 script = ExtResource("1_kkhpg")
@@ -103,7 +93,7 @@ position = Vector2(571, 596)
 visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
-debug_buttons = Array[ExtResource("11_eeopq")]([SubResource("Resource_7gu6e"), SubResource("Resource_2q4j3")])
+debug_buttons = Array[ExtResource("11_eeopq")]([ExtResource("11_7gu6e"), ExtResource("12_2q4j3")])
 
 [node name="DebugMinigameUpgrades" parent="DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("11_o8bin")]
 debug_popup = NodePath("..")

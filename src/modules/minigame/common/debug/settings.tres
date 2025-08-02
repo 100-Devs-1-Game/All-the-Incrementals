@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DebugButton" load_steps=2 format=3 uid="uid://btgr85ek8vof0"]
+
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="1_7toet"]
+
+[resource]
+script = ExtResource("1_7toet")
+func_or_path = "res://modules/settings/settings.tscn"
+hotkey = "t"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"

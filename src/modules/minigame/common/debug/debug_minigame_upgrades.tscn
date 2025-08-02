@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://qofcdmvxcelc"]
 
-[ext_resource type="Script" uid="uid://8v2uyqjfeelx" path="res://modules/minigame/common/debug_minigame_upgrades.gd" id="1_vt7fv"]
+[ext_resource type="Script" uid="uid://8v2uyqjfeelx" path="res://modules/minigame/common/debug/debug_minigame_upgrades.gd" id="1_vt7fv"]
 
 [node name="DebugMinigameUpgrades" type="Node2D"]
 script = ExtResource("1_vt7fv")
