@@ -30,13 +30,13 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_4t088"]
 script = ExtResource("5_32tle")
-func_or_path = "start_fire_fighters"
+func_or_path = "debug_start_fire_fighters"
 hotkey = "g"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_tobfv"]
 script = ExtResource("5_32tle")
-func_or_path = "res://modules/minigame/wind_platformer/wind_platformer.tscn"
+func_or_path = "debug_start_wind_platformer"
 hotkey = "p"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
