@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpiu2qu2fagua"]
+[gd_scene load_steps=2 format=3 uid="uid://qofcdmvxcelc"]
 
 [ext_resource type="Script" uid="uid://8v2uyqjfeelx" path="res://modules/minigame/common/debug_minigame_upgrades.gd" id="1_vt7fv"]
 
