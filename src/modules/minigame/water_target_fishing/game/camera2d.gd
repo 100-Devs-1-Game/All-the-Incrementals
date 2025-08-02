@@ -8,6 +8,14 @@ var _updated: bool = false
 var _visible_rect: Rect2
 
 
+func _enter_tree() -> void:
+	WTFGlobals.camera = self
+
+
+func _exit_tree() -> void:
+	WTFGlobals.camera = null
+
+
 func _update() -> void:
 	if _updated:
 		return
