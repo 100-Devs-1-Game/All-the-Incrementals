@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=22 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_k4ysf"]
 [ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7nq5cvot6nf5" path="res://assets/minigames/fire_fighters/placeholder_assets/objects_tile_set.png" id="3_etg5r"]
 [ext_resource type="PackedScene" uid="uid://bs75gbk0ui0bp" path="res://modules/minigame/fire_fighters/effects/water.tscn" id="4_n1sel"]
 [ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/tree.tres" id="4_o8gxd"]
+[ext_resource type="PackedScene" uid="uid://b6evijo5uuuwh" path="res://modules/minigame/fire_fighters/effects/burn_spot.tscn" id="5_ymaye"]
 [ext_resource type="PackedScene" uid="uid://cwrb3svm6p8o7" path="res://modules/minigame/fire_fighters/effects/fire.tscn" id="7_bkat1"]
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/fire_fighter_player.tscn" id="8_o8gxd"]
 [ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/burnt_bush.tres" id="8_ppwky"]
@@ -51,6 +52,8 @@ script = ExtResource("1_k4ysf")
 player_scene = ExtResource("8_o8gxd")
 fire_scene = ExtResource("7_bkat1")
 water_scene = ExtResource("4_n1sel")
+burn_spot_scene = ExtResource("5_ymaye")
+enable_burn_spots = false
 map_rect = Rect2i(0, 0, 70, 50)
 map_features = Array[ExtResource("2_bivsc")]([ExtResource("3_bkat1"), ExtResource("4_o8gxd"), ExtResource("8_ppwky"), ExtResource("9_o1kr5"), ExtResource("10_o1kr5")])
 data_uid = "uid://bqod1tv5hmpgo"
@@ -70,16 +73,17 @@ color = Color(0.356631, 0.732725, 0.357728, 1)
 tile_set = SubResource("TileSet_o8gxd")
 
 [node name="TileMapLayer Objects" type="TileMapLayer" parent="."]
+z_index = 2
 tile_set = SubResource("TileSet_prm31")
 
 [node name="Water" type="Node" parent="."]
 
 [node name="Fires" type="Node" parent="."]
 
-[node name="MinigameSharedComponents" parent="." instance=ExtResource("13_a330y")]
+[node name="Decals" type="Node" parent="."]
 
-[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1"]
-custom_debug_buttons = Array[ExtResource("14_eaqpl")]([SubResource("Resource_ymaye")])
-
-[editable path="MinigameSharedComponents"]
-[editable path="MinigameSharedComponents/SharedBaseComponents"]
+[node name="DebugPopup" parent="." instance=ExtResource("13_eaqpl")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+debug_buttons = Array[ExtResource("14_ymaye")]([SubResource("Resource_3xfq4"), SubResource("Resource_eaqpl")])

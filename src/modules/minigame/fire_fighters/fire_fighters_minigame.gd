@@ -6,6 +6,9 @@ const BURN_TICK_INTERVAL = 10
 @export var player_scene: PackedScene
 @export var fire_scene: PackedScene
 @export var water_scene: PackedScene
+@export var burn_spot_scene: PackedScene
+
+@export var enable_burn_spots: bool = true
 
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
@@ -20,6 +23,7 @@ var player: FireFighterMinigamePlayer
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
 @onready var water_node: Node = $Water
 @onready var fire_node: Node = $Fires
+@onready var decal_node: Node = $Decals
 
 
 func _start() -> void:
@@ -86,6 +90,8 @@ func tick_fires():
 			if fire.total_burn > feature.burn_duration:
 				assert(feature.turns_into != null)
 				replace_feature(tile, feature.turns_into)
+				if enable_burn_spots:
+					add_burn_spot(tile)
 
 			fire.size += feature.flammability * 0.1
 			if RngUtils.chancef(fire.size - 1.0):
@@ -125,6 +131,13 @@ func replace_feature(tile: Vector2i, new_feature: FireFightersMinigameMapFeature
 	tile_map_objects.set_cell(tile, 0, new_feature.atlas_coords)
 
 
+func add_burn_spot(tile: Vector2i):
+	var spot: Sprite2D = burn_spot_scene.instantiate()
+	spot.position = get_tile_position(tile)
+	spot.flip_h = RngUtils.chance100(50)
+	decal_node.add_child(spot)
+
+
 func on_extinguish_at(pos: Vector2):
 	var tile: Vector2i = tile_map_terrain.local_to_map(pos)
 	if fires.has(tile):
@@ -134,6 +147,10 @@ func on_extinguish_at(pos: Vector2):
 
 func get_tile_at(pos: Vector2) -> Vector2i:
 	return tile_map_terrain.local_to_map(pos)
+
+
+func get_tile_position(tile: Vector2i) -> Vector2:
+	return tile_map_terrain.map_to_local(tile)
 
 
 func get_map_feature(tile: Vector2i) -> FireFightersMinigameMapFeature:
