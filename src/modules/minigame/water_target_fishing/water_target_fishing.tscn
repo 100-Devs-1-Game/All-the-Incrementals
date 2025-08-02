@@ -655,67 +655,6 @@ max_movement_multiplier = 1.2
 [node name="Entities" type="Node2D" parent="World"]
 unique_name_in_owner = true
 
-[node name="WtfFish" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1572, 393)
-should_debug_print = true
-
-[node name="WtfFish2" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1520, 292)
-
-[node name="WtfFish3" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1541, 546)
-
-[node name="WtfFish4" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1572, 715)
-
-[node name="WtfFish5" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1471, 837)
-
-[node name="WtfFish6" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1611, 930)
-
-[node name="WtfFish7" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1735, 694)
-
-[node name="WtfFish8" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1709, 489)
-
-[node name="WtfFish9" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1665, 307)
-
-[node name="WtfFish10" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1525, 79)
-
-[node name="WtfFish11" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1678, 84)
-
-[node name="WtfFish12" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1740, 221)
-
-[node name="WtfFish13" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1867, 428)
-
-[node name="WtfFish14" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1835, 747)
-
-[node name="WtfFish15" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1708, 1017)
-
-[node name="WtfFish16" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1488, 1123)
-
-[node name="WtfFish17" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1506, 947)
-
-[node name="WtfFish18" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1599, 187)
-
-[node name="WtfFish19" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1679, 908)
-
-[node name="WtfFish20" parent="World/Entities" instance=ExtResource("4_8oyae")]
-position = Vector2(1679, 908)
-
 [node name="JetCannon" parent="World/Entities" instance=ExtResource("6_0rl8x")]
 position = Vector2(929, 374)
 

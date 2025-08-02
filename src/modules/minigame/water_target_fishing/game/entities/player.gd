@@ -16,6 +16,10 @@ var disabled_input := false
 @onready var sprite2d: Sprite2D = %Sprite2D
 
 
+func underwater() -> bool:
+	return position.y < WTFConstants.SEALEVEL
+
+
 func _enter_tree() -> void:
 	WTFGlobals.player = self
 	process_priority = 666666

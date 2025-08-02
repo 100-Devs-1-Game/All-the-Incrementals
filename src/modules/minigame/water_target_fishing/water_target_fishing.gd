@@ -3,6 +3,7 @@ extends Node2D
 
 const SECONDS_BEFORE_ENDING_RUN: float = 1
 const SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED: float = 300
+const SPAWN_STARTING_FISH: float = 3
 
 @export var fish: PackedScene
 
@@ -11,7 +12,7 @@ var base_slow: float = 100
 
 var score: int = 0
 var distance_travelled = 0
-var distance_travelled_left_to_spawn = 0
+var distance_travelled_left_to_spawn = SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED * SPAWN_STARTING_FISH
 var score_weight_modifier = 3
 
 var _pixels_per_second: float = 0
@@ -60,18 +61,29 @@ func _process(_delta: float) -> void:
 	(%UIDistanceValue as RichTextLabel).text = str(floori(distance_travelled))
 
 
+func _spawn_fish() -> void:
+	#don't spawn when flying
+	if WTFGlobals.camera.get_bottom() <= WTFConstants.SEALEVEL:
+		return
+
+	var f: WTFFish = fish.instantiate()
+	var rand_offset := randf_range(-current_velocity.x, -current_velocity.x * 4)
+	f.position.x = (distance_travelled + WTFGlobals.camera.get_right() + rand_offset)  #avoid clump
+	f.position.y = randf_range(min(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom())
+	%Entities.add_child(f)
+
+
 func _physics_process(delta: float) -> void:
 	current_velocity.x += (base_slow + (score * score_weight_modifier)) * delta
 
 	# effectively stopped
 	if current_velocity.x >= 0:
 		current_velocity.x = 0
+
+		#todo end the run and show summary or ui to restart or buy upgrades
 		# hack that acts as a one second timer before the run ends
-		if (
-			WTFGlobals.player.oxygen_remaining_seconds <= -SECONDS_BEFORE_ENDING_RUN
-			&& WTFGlobals.player.position.y < WTFConstants.SEALEVEL
-		):
-			#todo end the run and show summary or ui to restart or buy upgrades
+		var player_done := WTFGlobals.player.oxygen_remaining_seconds <= -SECONDS_BEFORE_ENDING_RUN
+		if !WTFGlobals.player.underwater() && player_done:
 			get_tree().reload_current_scene()
 
 	_pixels_per_second = -current_velocity.x * delta
@@ -81,16 +93,5 @@ func _physics_process(delta: float) -> void:
 
 	#todo replace with good spawning
 	while distance_travelled_left_to_spawn > SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED:
-		#don't spawn when flying, but still consume
-		if WTFGlobals.camera.get_bottom() > WTFConstants.SEALEVEL:
-			var f: WTFFish = fish.instantiate()
-			f.position.x = (
-				distance_travelled
-				+ WTFGlobals.camera.get_right()
-				+ randf_range(-current_velocity.x, -current_velocity.x * 4)
-			)  #avoid clump
-			f.position.y = randf_range(
-				min(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom()
-			)
-			%Entities.add_child(f)
+		_spawn_fish()
 		distance_travelled_left_to_spawn -= SPAWN_FISH_EVERY_X_PIXELS_TRAVELLED
