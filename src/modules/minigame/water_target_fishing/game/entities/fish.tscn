@@ -38,5 +38,5 @@ collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-6, 0)
+position = Vector2(6, 0)
 shape = SubResource("CircleShape2D_7m00e")
