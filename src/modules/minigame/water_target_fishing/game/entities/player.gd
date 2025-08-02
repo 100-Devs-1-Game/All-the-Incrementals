@@ -16,6 +16,14 @@ var disabled_input := false
 @onready var sprite2d: Sprite2D = %Sprite2D
 
 
+func _enter_tree() -> void:
+	WTFGlobals.player = self
+
+
+func _exit_tree() -> void:
+	WTFGlobals.player = null
+
+
 func _ready() -> void:
 	minigame = get_tree().get_first_node_in_group("minigame_water_target_fishing")
 	assert(minigame)
