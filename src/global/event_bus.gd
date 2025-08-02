@@ -19,4 +19,4 @@ signal exit_minigame
 
 # For debugging
 func _print_all() -> void:
-	print([ui_credits_start, ui_credits_done, exit_minigame])
+	print([game_loaded, ui_credits_start, ui_credits_done, ui_upgrade_bought, exit_minigame])
