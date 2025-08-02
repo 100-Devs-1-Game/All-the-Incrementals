@@ -59,6 +59,7 @@ fire_scene = ExtResource("7_bkat1")
 water_scene = ExtResource("4_n1sel")
 map_rect = Rect2i(0, 0, 70, 50)
 map_features = Array[ExtResource("2_bivsc")]([ExtResource("3_bkat1"), ExtResource("4_o8gxd"), ExtResource("8_ppwky"), ExtResource("9_o1kr5"), ExtResource("10_o1kr5")])
+data_uid = "uid://dym4je2njvl28"
 
 [node name="CanvasLayer Background" type="CanvasLayer" parent="."]
 layer = -1
