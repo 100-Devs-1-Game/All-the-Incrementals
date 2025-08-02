@@ -42,7 +42,6 @@ func _on_area_entered(other_area: Area2D) -> void:
 	var maybe_cannon = other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
 		minigame.current_velocity += Vector2(-900, 0)
-		other_area.monitorable = false
 
 
 func _physics_process(delta: float) -> void:
