@@ -90,6 +90,7 @@ func tick_fires():
 			if fire.total_burn > feature.burn_duration:
 				assert(feature.turns_into != null)
 				replace_feature(tile, feature.turns_into)
+				burn_vegetation(tile)
 				if enable_burn_spots:
 					add_burn_spot(tile)
 
@@ -129,6 +130,10 @@ func spawn_player():
 
 func replace_feature(tile: Vector2i, new_feature: FireFightersMinigameMapFeature):
 	tile_map_objects.set_cell(tile, 0, new_feature.atlas_coords)
+
+
+func burn_vegetation(tile: Vector2i):
+	tile_map_terrain.set_cell(tile, -1)
 
 
 func add_burn_spot(tile: Vector2i):
