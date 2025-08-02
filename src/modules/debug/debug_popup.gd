@@ -10,7 +10,7 @@ extends Control
 
 # Set this to `false` if we want DebugPopup to work on release (non-debug) builds.
 # Recommended to leave this `true` so players can't cheat the final game.
-var _disable_on_release: bool = true
+var _disable_on_release: bool = false
 
 @onready var shortcut_buttons_container: GridContainer = %ShortcutButtons
 @onready var upgrade_buttons_container: GridContainer = %UpgradeButtons
