@@ -35,7 +35,7 @@ width = 64
 [node name="Wind Platformer" type="Node2D"]
 script = ExtResource("1_x5t1i")
 wind_noise = SubResource("FastNoiseLite_4orxu")
-data_uid = "uid://dym4je2njvl28"
+data_uid = "uid://dh1qjmvspv4uh"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1

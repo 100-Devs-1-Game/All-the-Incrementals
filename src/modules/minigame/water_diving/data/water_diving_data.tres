@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MinigameData" load_steps=4 format=3 uid="uid://ciyrdxjs03cvb"]
+
+[ext_resource type="PackedScene" uid="uid://dp2g6h4spc2y3" path="res://modules/minigame/water_diving/water_diving.tscn" id="1_5pmc8"]
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_mcvia"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_5pmc8"]
+
+[resource]
+script = ExtResource("1_mcvia")
+display_name = "water_diving"
+minigame_scene = ExtResource("1_5pmc8")
+upgrade_tree_root_nodes = Array[ExtResource("2_5pmc8")]([])
+currency_conversion_factor = 0.0
+high_scores = Array[int]([])
+metadata/_custom_type_script = "uid://mwcjys5dkgf4"

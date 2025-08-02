@@ -30,19 +30,19 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_sgyk0"]
 script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/minigame/earth_towers/earth_towers.tscn"
+func_or_path = "debug_start_earth_towers"
 hotkey = "t"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_1p75w"]
 script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/minigame/water_diving/water_diving.tscn"
+func_or_path = "debug_start_water_diving"
 hotkey = "d"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_oayoy"]
 script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/minigame/water_target_fishing/water_target_fishing.tscn"
+func_or_path = "debug_start_water_target_fishing"
 hotkey = "f"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 

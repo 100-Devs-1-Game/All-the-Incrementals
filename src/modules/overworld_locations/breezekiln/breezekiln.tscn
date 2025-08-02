@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_2eo4h"]
 script = ExtResource("5_32tle")
-func_or_path = "res://modules/minigame/fire_cooking/fire_cooking.tscn"
+func_or_path = "debug_start_fire_cooking"
 hotkey = "c"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
@@ -42,7 +42,7 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_w4mnl"]
 script = ExtResource("5_32tle")
-func_or_path = "res://modules/minigame/wind_rhythm/wind_rhythm.tscn"
+func_or_path = "debug_start_wind_rhythm"
 hotkey = "r"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
