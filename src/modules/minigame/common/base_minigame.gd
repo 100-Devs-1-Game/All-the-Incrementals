@@ -4,13 +4,14 @@
 class_name BaseMinigame
 extends Node
 
+signal game_scene_ready
+
 ## Stores a uid reference to the MinigameData Resource.
 ## This can be assigned manually so the Minigame scene is able to start
 ## directly from the Editor, even when using `_start()` as entry point.
 @export var data_uid: String
 
 var data: MinigameData
-
 var score: int
 
 
@@ -29,6 +30,8 @@ func _ready() -> void:
 		data = SceneLoader.get_current_minigame()
 
 	open_menu()
+
+	emit_signal("game_scene_ready")
 
 
 ## Virtual function for initializing the Minigame. Inherited Scripts should
