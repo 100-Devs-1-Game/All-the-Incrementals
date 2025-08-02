@@ -4,7 +4,6 @@ extends Node
 @export var debug_popup: DebugPopup
 
 var _tree_upgrades: TreeItem
-var _tree_callables: Dictionary
 
 
 func init():
