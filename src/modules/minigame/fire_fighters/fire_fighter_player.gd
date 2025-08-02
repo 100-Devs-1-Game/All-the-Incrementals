@@ -62,3 +62,7 @@ func extinguish(flag: bool):
 
 func is_diagonal(vec: Vector2) -> bool:
 	return abs(vec.x) + abs(vec.y) > 1
+
+
+func get_tile() -> Vector2i:
+	return game.get_tile_at(position)
