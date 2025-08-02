@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbvdwycj4dcgw"]
+[gd_scene load_steps=14 format=3 uid="uid://dbvdwycj4dcgw"]
 
 [ext_resource type="Script" uid="uid://bn8ub2x73bjo5" path="res://modules/minigame/water_target_fishing/water_target_fishing.gd" id="1_8oyae"]
 [ext_resource type="PackedScene" uid="uid://di5qytko63bu3" path="res://modules/minigame/water_target_fishing/game/entities/background_sprite.tscn" id="2_o5mdu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="5_duxhx"]
 [ext_resource type="PackedScene" uid="uid://nq42u721e3vl" path="res://modules/minigame/water_target_fishing/game/entities/jet_cannon.tscn" id="6_0rl8x"]
 [ext_resource type="PackedScene" uid="uid://brvr7tulxw60v" path="res://modules/minigame/water_target_fishing/game/camera2d.tscn" id="7_o5mdu"]
+[ext_resource type="PackedScene" uid="uid://dj70751qtb0ff" path="res://modules/minigame/water_target_fishing/game/components/generic/clear_colour.tscn" id="9_qq2lg"]
 
 [sub_resource type="Gradient" id="Gradient_duxhx"]
 
@@ -27,8 +28,10 @@ fill_from = Vector2(1, 0)
 
 [node name="WaterFishing" type="Node2D" groups=["minigame_water_target_fishing"]]
 script = ExtResource("1_8oyae")
-clear_colour = Color(0.767776, 0.880112, 0.949835, 1)
 fish = ExtResource("4_8oyae")
+
+[node name="ClearColour" parent="." instance=ExtResource("9_qq2lg")]
+clear_colour = Color(0.768627, 0.878431, 0.94902, 1)
 
 [node name="Clouds" type="Node2D" parent="."]
 

@@ -1,7 +1,6 @@
 class_name WTFMinigame
 extends Node2D
 
-@export var clear_colour: Color
 @export var fish: PackedScene
 
 var camera: WTFCamera2D
@@ -15,13 +14,6 @@ var distance_travelled = 0
 var distance_travelled_left_to_spawn = 0
 var score_weight_modifier = 3
 
-var _cached_clear_colour: Color
-
-
-func _enter_tree() -> void:
-	_cached_clear_colour = RenderingServer.get_default_clear_color()
-	RenderingServer.set_default_clear_color(clear_colour)
-
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("wtf_player")
@@ -29,11 +21,6 @@ func _ready() -> void:
 
 	camera = get_tree().get_first_node_in_group("wtf_camera")
 	assert(camera)
-
-
-func _exit_tree() -> void:
-	#change it back so our sky colour doesn't affect everyone else
-	RenderingServer.set_default_clear_color(_cached_clear_colour)
 
 
 func _physics_process(delta: float) -> void:

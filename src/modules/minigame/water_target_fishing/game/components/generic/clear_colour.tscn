@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj70751qtb0ff"]
+
+[ext_resource type="Script" uid="uid://csd0ihgymq3a7" path="res://modules/minigame/water_target_fishing/game/components/generic/clear_colour.gd" id="1_gro4o"]
+
+[node name="ClearColour" type="Node2D"]
+script = ExtResource("1_gro4o")
