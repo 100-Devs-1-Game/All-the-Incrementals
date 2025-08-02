@@ -3,17 +3,9 @@ extends Node2D
 var _settlement_data: SettlementData
 
 
-func debug_start_fire_fighters() -> void:
+func debug_start_earth_potato_herding() -> void:
 	var data: MinigameData = load(
-		"res://modules/minigame/fire_fighters/data/fire_fighters_data.tres"
-	)
-	_debug_force_settlement_data()
-	SceneLoader.start_minigame(data)
-
-
-func debug_start_wind_platformer() -> void:
-	var data: MinigameData = load(
-		"res://modules/minigame/wind_platformer/wind_platformer_data.tres"
+		"res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres"
 	)
 	_debug_force_settlement_data()
 	SceneLoader.start_minigame(data)
@@ -23,8 +15,8 @@ func debug_start_wind_platformer() -> void:
 # we have the overworld code working, we'll be setting the settlement naturally.
 func _debug_force_settlement_data() -> void:
 	_settlement_data = SettlementData.new()
-	_settlement_data.display_name = "breezekiln"
+	_settlement_data.display_name = "clayport"
 	_settlement_data.settlement_scene = load(
-		"res://modules/overworld_locations/breezekiln/breezekiln.tscn"
+		"res://modules/overworld_locations/clayport/clayport.tscn"
 	)
 	SceneLoader._current_settlement = _settlement_data

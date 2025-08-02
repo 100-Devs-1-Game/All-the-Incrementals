@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MinigameData" load_steps=5 format=3 uid="uid://cbu6b1qnaw05f"]
+
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_hhm2j"]
+[ext_resource type="PackedScene" uid="uid://by18kqakehrup" path="res://modules/minigame/earth_potato_herding/earth_potato_herding.tscn" id="1_vneja"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_kp5bk"]
+[ext_resource type="Resource" uid="uid://brrqiv6apsu8a" path="res://modules/minigame/example/upgrades/upgrade_size.tres" id="4_hl2gj"]
+
+[resource]
+script = ExtResource("1_hhm2j")
+display_name = "earth_potato_herding"
+minigame_scene = ExtResource("1_vneja")
+upgrade_tree_root_nodes = Array[ExtResource("2_kp5bk")]([ExtResource("4_hl2gj")])
+currency_conversion_factor = 0.0
+high_scores = Array[int]([])
+metadata/_custom_type_script = "uid://mwcjys5dkgf4"

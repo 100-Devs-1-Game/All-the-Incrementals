@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MinigameData" load_steps=6 format=3 uid="uid://bqod1tv5hmpgo"]
+
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_568i5"]
+[ext_resource type="PackedScene" uid="uid://dwdhfnts10fd0" path="res://modules/minigame/fire_fighters/fire_fighters.tscn" id="1_wo48d"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_wo48d"]
+[ext_resource type="Resource" uid="uid://brrqiv6apsu8a" path="res://modules/minigame/example/upgrades/upgrade_size.tres" id="4_7fcw6"]
+[ext_resource type="Resource" uid="uid://blgvydgjtbdvl" path="res://modules/minigame/example/upgrades/upgrade_speed.tres" id="5_0d4mj"]
+
+[resource]
+script = ExtResource("1_568i5")
+display_name = "fire_fighters"
+minigame_scene = ExtResource("1_wo48d")
+upgrade_tree_root_nodes = Array[ExtResource("2_wo48d")]([ExtResource("4_7fcw6"), ExtResource("5_0d4mj")])
+currency_conversion_factor = 0.0
+high_scores = Array[int]([])
+metadata/_custom_type_script = "uid://mwcjys5dkgf4"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MinigameData" load_steps=5 format=3 uid="uid://dh1qjmvspv4uh"]
+
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_f8nur"]
+[ext_resource type="PackedScene" uid="uid://bytqv7h0iow3u" path="res://modules/minigame/wind_platformer/wind_platformer.tscn" id="1_iy32p"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_iy32p"]
+[ext_resource type="Resource" uid="uid://brrqiv6apsu8a" path="res://modules/minigame/example/upgrades/upgrade_size.tres" id="4_fip1x"]
+
+[resource]
+script = ExtResource("1_f8nur")
+display_name = "wind_platformer"
+minigame_scene = ExtResource("1_iy32p")
+upgrade_tree_root_nodes = Array[ExtResource("2_iy32p")]([ExtResource("4_fip1x")])
+currency_conversion_factor = 0.0
+high_scores = Array[int]([])
+metadata/_custom_type_script = "uid://mwcjys5dkgf4"
