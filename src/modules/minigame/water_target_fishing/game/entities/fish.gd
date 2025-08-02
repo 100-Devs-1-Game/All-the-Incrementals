@@ -15,10 +15,13 @@ var _next_move_time: float
 @onready var wave_movement_component: WTFWaveMovementComponent = %WtfWaveMovementComponent
 @onready var velocity_component: WTFVelocityComponent = %WtfVelocityComponent
 @onready var visuals: Node2D = %Visuals
+@onready var sprite2d: Sprite2D = %Sprite2D
 
 
 func _ready() -> void:
 	assert(data)
+
+	sprite2d.texture = data.texture
 
 	# the first time is offset so it can start "instantly"
 	# rather than having all fish doing nothing for min_secs
