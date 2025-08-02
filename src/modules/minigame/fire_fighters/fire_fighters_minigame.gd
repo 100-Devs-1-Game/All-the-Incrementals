@@ -96,7 +96,7 @@ func _tick_fires():
 		if has_oil(tile):
 			fire.size = 10
 
-		if not feature or not feature.can_burn():
+		if (not feature or not feature.can_burn()) and not has_oil(tile):
 			fire.size -= 0.01
 		else:
 			_fire_burn_tick(fire, tile, feature)
@@ -106,24 +106,36 @@ func _fire_burn_tick(
 	fire: FireFightersMinigameFire, tile: Vector2i, feature: FireFightersMinigameMapFeature
 ):
 	fire.total_burn += fire.size / (60.0 / BURN_TICK_INTERVAL)
-	if fire.total_burn > feature.burn_duration:
-		assert(feature.turns_into != null)
+	if has_oil(tile):
+		_burn_vegetation(tile)
+
+	if feature and fire.total_burn > feature.burn_duration and feature.turns_into != null:
 		replace_feature(tile, feature.turns_into)
 		_burn_vegetation(tile)
 		if enable_burn_spots:
 			_add_burn_spot(tile)
 
-	fire.size += feature.flammability * 0.1
+	if feature:
+		fire.size += feature.flammability * 0.1
+
 	if RngUtils.chancef(fire.size - 1.0):
 		_try_to_spread_fire(tile)
 
 
 func _try_to_spread_fire(tile: Vector2i):
 	var dir: Vector2i = Vector2.from_angle(randf() * 2 * PI).round()
-	var neighbor_pos := Vector2i(tile + dir)
 	assert(abs(dir.x) == 1 or abs(dir.y) == 1)
+
+	var neighbor_pos := Vector2i(tile + dir)
+	if is_tile_burning(neighbor_pos):
+		return
+
+	if has_oil(neighbor_pos):
+		_add_fire(neighbor_pos)
+		return
+
 	var neighbor_feature: FireFightersMinigameMapFeature = get_map_feature(tile + dir)
-	if neighbor_feature and not is_tile_burning(neighbor_pos):
+	if neighbor_feature:
 		if RngUtils.chancef(neighbor_feature.flammability):
 			if not RngUtils.chance100(tile_map_water.get_cell_source_id(tile)):
 				_add_fire(neighbor_pos)
@@ -152,6 +164,10 @@ func _soak_tile(tile: Vector2i):
 	var water_level: int = tile_map_water.get_cell_source_id(tile)
 	if not RngUtils.chance100(water_level):
 		tile_map_water.set_cell(tile, water_level + 1, Vector2.ZERO)
+
+
+func add_oil(tile: Vector2i):
+	tile_map_oil.set_cell(tile, 0, Vector2.ZERO)
 
 
 func _spawn_player():
