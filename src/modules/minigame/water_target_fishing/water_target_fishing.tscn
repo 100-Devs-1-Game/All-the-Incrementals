@@ -740,8 +740,10 @@ player = NodePath("../Player")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 32.0
+offset_top = 29.0
+offset_right = 436.0
+offset_bottom = 295.0
 
 [node name="UISpeed" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -752,6 +754,8 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "Speed"
 fit_content = true
 
@@ -760,6 +764,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "0
 "
 fit_content = true
@@ -773,6 +779,8 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "Score
 "
 fit_content = true
@@ -782,6 +790,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "0
 "
 fit_content = true
@@ -795,6 +805,8 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "Oxygen"
 fit_content = true
 
@@ -803,6 +815,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "0
 "
 fit_content = true
@@ -816,6 +830,8 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "Weight"
 fit_content = true
 
@@ -824,6 +840,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "0
 "
 fit_content = true
@@ -837,6 +855,8 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "Travelled"
 fit_content = true
 
@@ -845,6 +865,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
 text = "0
 "
 fit_content = true
