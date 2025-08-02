@@ -16,8 +16,6 @@ func _update() -> void:
 	_visible_rect.position = get_screen_center_position() - viewport_size * 0.5 * zoom
 	_visible_rect.size = viewport_size * zoom
 
-	_bounds_rect.position = _visible_rect.position
-
 	_updated = true
 	return
 
