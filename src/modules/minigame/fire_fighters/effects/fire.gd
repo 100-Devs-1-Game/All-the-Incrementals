@@ -13,8 +13,8 @@ var size: float = 0.0:
 		size = s
 		if size < 0.0:
 			died.emit()
-		elif size > 1.5:
-			size = 1.5
+		elif size > 2.0:
+			size = 2.0
 
 var total_burn: float = 0.0
 
