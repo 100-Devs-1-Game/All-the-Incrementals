@@ -7,8 +7,6 @@ extends Node2D
 
 var oxygen_capacity_seconds: float = 3
 var oxygen_remaining_seconds: float = oxygen_capacity_seconds
-var minigame: WTFMinigame
-var camera: WTFCamera2D
 var velocity: Vector2 = Vector2.ZERO
 var disabled_input := false
 
@@ -31,12 +29,6 @@ func _exit_tree() -> void:
 
 
 func _ready() -> void:
-	minigame = get_tree().get_first_node_in_group("minigame_water_target_fishing")
-	assert(minigame)
-
-	camera = get_tree().get_first_node_in_group("wtf_camera")
-	assert(camera)
-
 	area2d.area_entered.connect(_on_area_entered)
 
 
@@ -47,15 +39,14 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_fish := other_area.get_parent() as WTFFish
 	if is_instance_valid(maybe_fish):
-		minigame.score += 10
-		minigame.current_velocity += Vector2(-300, 0)
-		print(minigame.score)
+		WTFGlobals.minigame.score += 10
+		WTFGlobals.minigame.current_velocity += Vector2(-300, 0)
 		maybe_fish.queue_free()
 		return
 
 	var maybe_cannon = other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
-		minigame.current_velocity += Vector2(-900, 0)
+		WTFGlobals.minigame.current_velocity += Vector2(-900, 0)
 
 
 func _physics_process(delta: float) -> void:
@@ -84,12 +75,12 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 
 	# this stops the player from moving backwards too much when we slow down
-	velocity.x = max(minigame.current_velocity.x / 2, velocity.x)
+	velocity.x = max(WTFGlobals.minigame.current_velocity.x / 2, velocity.x)
 
 	# let the player move a tiny bit to the right when we slow down
 	# but otherwise, cap it
-	if velocity.x > -minigame.current_velocity.x:
-		velocity.x = -minigame.current_velocity.x
+	if velocity.x > -WTFGlobals.minigame.current_velocity.x:
+		velocity.x = -WTFGlobals.minigame.current_velocity.x
 
 	#todo this is a bit of a mess... need to clean it up
 	# also not sure if/how the disabled input thing should work during gameplay
@@ -105,11 +96,10 @@ func _physics_process(delta: float) -> void:
 		if oxygen_remaining_seconds <= 0 || disabled_input:
 			velocity.y += -0.4 * acceleration * delta
 	else:
-		if minigame.current_velocity.x >= 0:
+		if WTFGlobals.minigame.current_velocity.x >= 0:
 			disabled_input = true
 			print("NO OXYGEN AND NO SPEED")
 		elif disabled_input == false:
-			print(minigame.current_velocity.x)
 			oxygen_remaining_seconds += oxygen_capacity_seconds * delta
 			oxygen_remaining_seconds = min(oxygen_remaining_seconds, oxygen_capacity_seconds)
 			#print("sky, oxy ", oxygen_remaining_seconds)
