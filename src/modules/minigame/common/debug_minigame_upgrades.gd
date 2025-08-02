@@ -1,22 +1,19 @@
 class_name DebugMinigameUpgrades
 extends Node
 
+@export var debug_popup: DebugPopup
+
 var _tree_upgrades: TreeItem
 var _tree_callables: Dictionary
-var _tree_root: TreeItem
 
 
-func set_tree(tree_callables: Dictionary, tree_root: TreeItem) -> void:
-	_tree_callables = tree_callables
-	_tree_root = tree_root
-
-
-func setup_upgrade_items():
+func init():
 	assert(SceneLoader.has_current_minigame())
 
 	var data: MinigameData = SceneLoader.get_current_minigame()
 
-	_tree_upgrades = _tree_root.create_child()
+	var tree_root = debug_popup.get_tree_root()
+	_tree_upgrades = tree_root.create_child()
 	_tree_upgrades.set_text(0, "Minigame upgrades")
 
 	for upgrade in data.get_all_upgrades():
@@ -28,10 +25,11 @@ func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
 	var label = _get_upgrade_button_text(upgrade)
 	new_item.set_text(0, label)
 	var item_pressed = Callable(self, "_on_upgrade_item_pressed").bind(new_item, upgrade)
-	_tree_callables[new_item.get_instance_id()] = item_pressed
-	var hotkey = ""
+	debug_popup.link_callable(new_item, item_pressed)
 	# We can implement hotkeys for upgrade buttons, we just nxeed a place to
 	# define the key associated with a specific upgrade in BaseUpgrade.
+	var hotkey = ""
+	debug_popup.register_hotkey(hotkey, item_pressed)
 	if hotkey != "":
 		label = "[" + hotkey + "] " + label
 	else:

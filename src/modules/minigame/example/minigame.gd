@@ -24,3 +24,7 @@ func _process(delta: float) -> void:
 func on_upgrade_button_pressed(upgrade: MinigameUpgrade):
 	upgrade.level_up()
 	upgrade.logic._apply_effect(self, upgrade)
+
+
+func _on_game_scene_ready() -> void:
+	$DebugPopup/DebugMinigameUpgrades.init()

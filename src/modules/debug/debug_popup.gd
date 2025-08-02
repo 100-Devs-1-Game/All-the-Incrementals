@@ -8,9 +8,6 @@ extends Control
 # Show the debug panel on start
 @export var visible_on_start: bool = false
 
-# Enable if this debug popup has minigame upgrades
-@export var has_minigame_upgrades: bool = false
-
 # Define debug buttons by providing the names of functions to call on press.
 @export var debug_buttons: Array[DebugButton] = []
 
@@ -25,10 +22,6 @@ var _tree_root: TreeItem
 var _tree_shortcuts: TreeItem
 var _tree_callables: Dictionary = {}
 
-var _debug_minigame_upgrades: DebugMinigameUpgrades = (
-	preload("res://modules/debug/debug_minigame_upgrades.gd").new()
-)
-
 
 func _ready() -> void:
 	# Don't allow the DebugPopup to work on release builds.
@@ -39,12 +32,22 @@ func _ready() -> void:
 	# By default, the debug popup is not visible. Press 'X' to bring it up.
 	visible = visible_on_start
 	position = Vector2.ZERO
+	$Tree.connect("item_selected", _on_item_selected)
 
 	_setup_shortcuts_tree()
 	_setup_debug_buttons()
 
-	if has_minigame_upgrades:
-		_setup_minigame_upgrades_buttons()
+
+func get_tree_root() -> TreeItem:
+	return _tree_root
+
+
+func register_hotkey(text_keycode: String, callable: Callable) -> void:
+	_hotkeys.append({"text_keycode": text_keycode, "callable": callable})
+
+
+func link_callable(tree_item: TreeItem, callable: Callable) -> void:
+	_tree_callables[tree_item.get_instance_id()] = callable
 
 
 func _setup_shortcuts_tree() -> void:
@@ -52,20 +55,6 @@ func _setup_shortcuts_tree() -> void:
 	_tree_root.set_text(0, title + " (" + get_parent().name + ")")
 	_tree_shortcuts = _tree_root.create_child()
 	_tree_shortcuts.set_text(0, "Navigation and functions")
-	$Tree.connect("item_selected", _on_item_selected)
-
-
-func _setup_minigame_upgrades_buttons() -> void:
-	# Must have a minigame parent if enabling minigame upgrades
-	assert(get_parent() is BaseMinigame)
-	# Wait until the game scene is fully ready
-	get_parent().connect("game_scene_ready", _on_game_scene_ready)
-
-
-func _on_game_scene_ready() -> void:
-	add_child(_debug_minigame_upgrades)
-	_debug_minigame_upgrades.set_tree(_tree_callables, _tree_root)
-	_debug_minigame_upgrades.setup_upgrade_items()
 
 
 func _setup_debug_buttons() -> void:
@@ -98,10 +87,10 @@ func _add_change_scene_item(debug_button: DebugButton, new_item: TreeItem) -> vo
 	var scene_filename = scene_path.get_file()
 
 	var item_pressed = Callable(self, "_change_scene").bind(scene_path)
-	_tree_callables[new_item.get_instance_id()] = item_pressed
+	link_callable(new_item, item_pressed)
 
 	if debug_button.hotkey != "":
-		_hotkeys.append({"text_keycode": debug_button.hotkey, "callable": item_pressed})
+		register_hotkey(debug_button.hotkey, item_pressed)
 		new_item.set_text(0, "[" + debug_button.hotkey + "] go to " + scene_filename)
 	else:
 		new_item.set_text(0, "go to " + scene_filename)
@@ -110,9 +99,9 @@ func _add_change_scene_item(debug_button: DebugButton, new_item: TreeItem) -> vo
 func _add_function_call_item(debug_button: DebugButton, new_item: TreeItem) -> void:
 	var function_name = debug_button.func_or_path
 	var item_pressed = Callable(self, "_call_function").bind(function_name)
-	_tree_callables[new_item.get_instance_id()] = item_pressed
+	link_callable(new_item, item_pressed)
 	if debug_button.hotkey != "":
-		_hotkeys.append({"text_keycode": debug_button.hotkey, "callable": item_pressed})
+		register_hotkey(debug_button.hotkey, item_pressed)
 		new_item.set_text(0, "[" + debug_button.hotkey + "] " + function_name + "()")
 	else:
 		new_item.set_text(0, function_name + "()")
