@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbvdwycj4dcgw"]
+[gd_scene load_steps=15 format=3 uid="uid://dbvdwycj4dcgw"]
 
 [ext_resource type="Script" uid="uid://bn8ub2x73bjo5" path="res://modules/minigame/water_target_fishing/water_target_fishing.gd" id="1_8oyae"]
 [ext_resource type="PackedScene" uid="uid://di5qytko63bu3" path="res://modules/minigame/water_target_fishing/game/entities/background_sprite.tscn" id="2_o5mdu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://nq42u721e3vl" path="res://modules/minigame/water_target_fishing/game/entities/jet_cannon.tscn" id="6_0rl8x"]
 [ext_resource type="PackedScene" uid="uid://brvr7tulxw60v" path="res://modules/minigame/water_target_fishing/game/camera2d.tscn" id="7_o5mdu"]
 [ext_resource type="PackedScene" uid="uid://dj70751qtb0ff" path="res://modules/minigame/water_target_fishing/game/components/generic/clear_colour.tscn" id="9_qq2lg"]
+[ext_resource type="Script" uid="uid://bpkdtrhrdt0xr" path="res://modules/minigame/water_target_fishing/game/fish_db.gd" id="10_c8m36"]
 
 [sub_resource type="Gradient" id="Gradient_duxhx"]
 
@@ -809,6 +810,12 @@ theme_override_constants/outline_size = 8
 text = "0
 "
 fit_content = true
+
+[node name="WTFFishDB" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("10_c8m36")
+directory_path = "res://modules/minigame/water_target_fishing/game/data/fish"
+metadata/_custom_type_script = "uid://bpkdtrhrdt0xr"
 
 [editable path="Clouds/BackgroundSprite"]
 [editable path="Clouds/BackgroundSprite2"]

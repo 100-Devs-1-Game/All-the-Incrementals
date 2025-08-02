@@ -17,6 +17,8 @@ var score_weight_modifier = 3
 
 var _pixels_per_second: float = 0
 
+@onready var fish_db: WTFFishDB = %WTFFishDB
+
 
 func get_pixels_per_second() -> int:
 	return floor(_pixels_per_second)
@@ -24,6 +26,7 @@ func get_pixels_per_second() -> int:
 
 func _enter_tree() -> void:
 	WTFGlobals.minigame = self
+
 	## yyyy does it stutter thoooo
 	# I can't find any magic number that solves it :(
 	process_priority = 55555
@@ -70,7 +73,7 @@ func _spawn_fish() -> void:
 	var rand_offset := randf_range(-current_velocity.x, -current_velocity.x * 4)
 	f.position.x = (distance_travelled + WTFGlobals.camera.get_right() + rand_offset)  #avoid clump
 	f.position.y = randf_range(min(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom())
-	f.data = load("res://modules/minigame/water_target_fishing/game/data/fish/grey.tres")
+	f.data = fish_db.random()
 	%Entities.add_child(f)
 
 
