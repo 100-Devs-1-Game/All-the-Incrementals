@@ -1,7 +1,5 @@
 extends Node2D
 
-var _settlement_data: SettlementData
-
 
 func debug_start_fire_fighters() -> void:
 	var data: MinigameData = load(
@@ -22,9 +20,7 @@ func debug_start_wind_platformer() -> void:
 # For temporary debugging purposes, directly set the current settlement. Once
 # we have the overworld code working, we'll be setting the settlement naturally.
 func _debug_force_settlement_data() -> void:
-	_settlement_data = SettlementData.new()
-	_settlement_data.display_name = "breezekiln"
-	_settlement_data.settlement_scene = load(
-		"res://modules/overworld_locations/breezekiln/breezekiln.tscn"
+	var data: SettlementData = load(
+		"res://modules/overworld_locations/breezekiln/breezekiln_data.tres"
 	)
-	SceneLoader._current_settlement = _settlement_data
+	SceneLoader._current_settlement = data

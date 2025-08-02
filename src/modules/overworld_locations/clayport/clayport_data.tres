@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SettlementData" load_steps=3 format=3 uid="uid://boki4akt4m08e"]
+
+[ext_resource type="Script" uid="uid://cbvt5rfiyp1m7" path="res://modules/minigame/common/settlement_data.gd" id="1_cmryc"]
+[ext_resource type="PackedScene" uid="uid://b1ucpnb2u1isc" path="res://modules/overworld_locations/clayport/clayport.tscn" id="2_6yfuv"]
+
+[resource]
+script = ExtResource("1_cmryc")
+display_name = ""
+settlement_scene = ExtResource("2_6yfuv")
+metadata/_custom_type_script = "uid://cbvt5rfiyp1m7"
