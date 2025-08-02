@@ -58,7 +58,7 @@ func _spawn_fish() -> void:
 	var f: WTFFish = fish.instantiate()
 	var rand_offset := randf_range(-stats.scrollspeed.x, -stats.scrollspeed.x * 4)
 	f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + rand_offset)  #avoid clump
-	f.position.y = randf_range(min(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom())
+	f.position.y = randf_range(max(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom())
 	f.data = fish_db.random()
 	%Entities.add_child(f)
 
