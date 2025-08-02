@@ -8,8 +8,11 @@ extends Control
 # Show the debug panel on start
 @export var visible_on_start: bool = false
 
+# Define a collection of default debug buttons
+@export var default_debug_buttons: DebugButtonCollection
+
 # Define debug buttons by providing the names of functions to call on press.
-@export var debug_buttons: Array[DebugButton] = []
+@export var custom_debug_buttons: Array[DebugButton]
 
 # Set this to `false` if we want DebugPopup to work on release (non-debug) builds.
 # Recommended to leave this `true` so players can't cheat the final game.
@@ -57,8 +60,12 @@ func _setup_shortcuts_tree() -> void:
 	_tree_shortcuts.set_text(0, "Navigation and functions")
 
 
+func _get_debug_buttons() -> Array[DebugButton]:
+	return default_debug_buttons.collection + custom_debug_buttons
+
+
 func _setup_debug_buttons() -> void:
-	for debug_button in debug_buttons:
+	for debug_button in _get_debug_buttons():
 		var new_item = _tree_shortcuts.create_child()
 		_setup_item(debug_button, new_item)
 

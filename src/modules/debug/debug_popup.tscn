@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://oatd3ruxn0qu"]
+[gd_scene load_steps=3 format=3 uid="uid://oatd3ruxn0qu"]
 
 [ext_resource type="Script" uid="uid://bu3iegvrpg3ve" path="res://modules/debug/debug_popup.gd" id="1_gwiye"]
+[ext_resource type="Resource" uid="uid://1777v8ptcqi4" path="res://modules/minigame/common/debug/presets_collection.tres" id="2_sw710"]
 
 [node name="DebugPopup" type="Control"]
 z_index = 999
@@ -12,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gwiye")
+default_debug_buttons = ExtResource("2_sw710")
 
 [node name="Tree" type="Tree" parent="."]
 custom_minimum_size = Vector2(500, 500)
