@@ -110,23 +110,17 @@ func _physics_process(delta: float) -> void:
 	position += velocity * delta
 
 	# don't let them fall behind out of view
-	if position.x < camera.get_visible_rect().position.x + sprite2d.texture.get_width() + 16:
-		position.x = camera.get_visible_rect().position.x + sprite2d.texture.get_width() + 16
+	var min_x := WTFGlobals.camera.get_left() + sprite2d.texture.get_width() + 16
+	if position.x < min_x:
+		position.x = min_x
 
 
 func get_input_direction() -> Vector2:
 	var dir := Vector2.ZERO
 
-	if Input.is_action_pressed("right"):
-		dir.x += 1
-
-	if Input.is_action_pressed("left"):
-		dir.x -= 1
-
-	if Input.is_action_pressed("down"):
-		dir.y += 1
-
-	if Input.is_action_pressed("up"):
-		dir.y -= 1
+	dir.x += int(Input.is_action_pressed("right"))
+	dir.x -= int(Input.is_action_pressed("left"))
+	dir.y += int(Input.is_action_pressed("down"))
+	dir.y -= int(Input.is_action_pressed("up"))
 
 	return dir.normalized()
