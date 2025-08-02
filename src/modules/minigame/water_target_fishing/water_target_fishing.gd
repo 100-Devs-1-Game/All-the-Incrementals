@@ -30,6 +30,28 @@ func _ready() -> void:
 	pass
 
 
+func _process(_delta: float) -> void:
+	(%UISpeedValue as RichTextLabel).text = str(get_pixels_per_second())
+	(%UIScoreValue as RichTextLabel).text = str(score)
+	(%UIOxygenValue as RichTextLabel).text = (
+		str(
+			floori(
+				(
+					(
+						max(0, WTFGlobals.player.oxygen_remaining_seconds)
+						/ WTFGlobals.player.oxygen_capacity_seconds
+					)
+					* 100.0
+				)
+			)
+		)
+		+ "%"
+	)
+	(%UIWeightValue as RichTextLabel).text = str(
+		floori(base_slow + (score * score_weight_modifier))
+	)
+
+
 func _physics_process(delta: float) -> void:
 	current_velocity.x += (base_slow + (score * score_weight_modifier)) * delta
 

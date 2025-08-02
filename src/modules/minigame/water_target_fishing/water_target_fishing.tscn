@@ -737,6 +737,97 @@ position = Vector2(0, -300)
 position_smoothing_enabled = true
 player = NodePath("../Player")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UISpeed" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UISpeedLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UISpeed"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed"
+fit_content = true
+
+[node name="UISpeedValue" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UISpeed"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0
+"
+fit_content = true
+
+[node name="UIScore" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UIScoreLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UIScore"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score
+"
+fit_content = true
+
+[node name="UIScoreValue" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UIScore"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0
+"
+fit_content = true
+
+[node name="UIOxygen" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UIOxygenLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UIOxygen"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Oxygen"
+fit_content = true
+
+[node name="UIOxygenValue" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UIOxygen"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0
+"
+fit_content = true
+
+[node name="UIWeight" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UIWeightLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UIWeight"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Weight"
+fit_content = true
+
+[node name="UIWeightValue" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UIWeight"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0
+"
+fit_content = true
+
 [editable path="Clouds/BackgroundSprite"]
 [editable path="Clouds/BackgroundSprite2"]
 [editable path="Clouds/BackgroundSprite3"]
