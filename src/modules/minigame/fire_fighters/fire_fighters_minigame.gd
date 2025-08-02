@@ -72,7 +72,7 @@ func _remove_fire(fire: FireFightersMinigameFire):
 	fire.queue_free()
 
 
-func _add_water(pos: Vector2, vel: Vector2, dir: Vector2):
+func add_water(pos: Vector2, vel: Vector2, dir: Vector2):
 	var water: FireFightersMinigameWater = water_scene.instantiate()
 	water.position = pos
 	water.velocity = vel
