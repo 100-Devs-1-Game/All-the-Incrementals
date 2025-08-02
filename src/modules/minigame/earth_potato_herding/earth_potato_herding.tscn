@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://by18kqakehrup"]
+[gd_scene load_steps=13 format=3 uid="uid://by18kqakehrup"]
 
+[ext_resource type="Script" uid="uid://cbtiegkndpc6f" path="res://modules/minigame/earth_potato_herding/earth_potato_herding.gd" id="1_kkhpg"]
 [ext_resource type="PackedScene" uid="uid://bx2ptflde5hu" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/spawner/eph_evil_spirit_spawner.tscn" id="2_ag328"]
 [ext_resource type="PackedScene" uid="uid://mqbrbbxraysb" path="res://modules/minigame/earth_potato_herding/eph_adult/spawner/eph_adult_spawner.tscn" id="2_tk8ls"]
 [ext_resource type="PackedScene" uid="uid://vesybpnx50sy" path="res://modules/minigame/earth_potato_herding/eph_adult/eph_adult.tscn" id="3_tk8ls"]
@@ -23,6 +24,7 @@ hotkey = "q"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="EarthPotatoHerding" type="Node2D"]
+script = ExtResource("1_kkhpg")
 
 [node name="EphYounglingSpawner" parent="." node_paths=PackedStringArray("_free_roam_area", "_free_roam_bounding_box", "_adult_spawner", "_player", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("3_xo3kj")]
 _free_roam_area = NodePath("spawn_zone")
@@ -94,6 +96,7 @@ texture = ExtResource("5_ojsc6")
 
 [node name="EPHPlayer" parent="." instance=ExtResource("7_00m8t")]
 position = Vector2(571, 596)
+_use_physics_process_to_move = true
 
 [node name="DebugPopup" parent="." instance=ExtResource("10_o8bin")]
 visible = false
