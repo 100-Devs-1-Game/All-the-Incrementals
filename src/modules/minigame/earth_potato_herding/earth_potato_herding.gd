@@ -18,4 +18,5 @@ func _initialize() -> void:
 
 
 func _start() -> void:
+	$DebugPopup/DebugMinigameUpgrades.init()
 	game_started.emit()
