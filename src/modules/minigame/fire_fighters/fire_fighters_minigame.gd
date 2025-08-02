@@ -30,6 +30,8 @@ var player: FireFighterMinigamePlayer
 @onready var fire_node: Node = $Fires
 @onready var decal_node: Node = $Decals
 
+@onready var item_spawner: FireFightersMinigameItemSpawner = $FireFightersMinigameItemSpawner
+
 
 func _start() -> void:
 	_run()
@@ -58,6 +60,7 @@ func _run():
 		_add_fire(tile, randf_range(0.2, 0.8))
 
 	_spawn_player()
+	item_spawner.activate()
 
 
 func _physics_process(_delta: float) -> void:

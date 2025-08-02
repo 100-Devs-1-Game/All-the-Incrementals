@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=23 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_k4ysf"]
 [ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/burnt_tree.tres" id="9_o1kr5"]
 [ext_resource type="Resource" uid="uid://bhtwwe0fgwlob" path="res://modules/minigame/fire_fighters/data/boulder.tres" id="10_o1kr5"]
 [ext_resource type="Texture2D" uid="uid://bhnbqskay45rg" path="res://assets/minigames/fire_fighters/placeholder_assets/oil.png" id="13_eaqpl"]
+[ext_resource type="Script" uid="uid://bk20clpaekonn" path="res://modules/minigame/fire_fighters/fire_fighters_item_spawner.gd" id="15_ymaye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
 texture = ExtResource("2_4r4fr")
@@ -87,6 +88,12 @@ tile_set = SubResource("TileSet_prm31")
 [node name="TileMapLayer Water" type="TileMapLayer" parent="."]
 enabled = false
 tile_set = SubResource("TileSet_ymaye")
+
+[node name="FireFightersMinigameItemSpawner" type="Node" parent="."]
+script = ExtResource("15_ymaye")
+metadata/_custom_type_script = "uid://bk20clpaekonn"
+
+[node name="Timer" type="Timer" parent="FireFightersMinigameItemSpawner"]
 
 [node name="Water" type="Node" parent="."]
 
