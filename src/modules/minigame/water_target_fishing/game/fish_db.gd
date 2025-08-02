@@ -18,12 +18,12 @@ func load_fish():
 	_load_fish(directory_path)
 
 
-func _load_fish(directory_path: StringName) -> void:
+func _load_fish(path: StringName) -> void:
 	_data.clear()
 
-	var dir = DirAccess.open(directory_path)
+	var dir = DirAccess.open(path)
 	if dir == null:
-		push_error("Failed to open data directory: " + directory_path)
+		push_error("Failed to open data directory: " + path)
 		return
 
 	dir.list_dir_begin()
@@ -31,7 +31,7 @@ func _load_fish(directory_path: StringName) -> void:
 
 	while file_name != "":
 		if file_name.ends_with(".tres"):
-			var file_path = directory_path.path_join(file_name)
+			var file_path = path.path_join(file_name)
 			var data = load(file_path) as WTFFishData
 
 			if data != null && _data.get(data.resource_path) == null:
