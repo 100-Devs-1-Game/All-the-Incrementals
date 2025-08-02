@@ -14,6 +14,7 @@ var particles: Array[WindPlatformerMinigameParticle]
 
 
 func _ready() -> void:
+	super._ready()
 	cloud_spawner.start()
 	for i in num_particles:
 		spawn_random_particle()
