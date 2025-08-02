@@ -11,7 +11,7 @@ func debug_start_fire_fighters() -> void:
 
 func debug_start_wind_platformer() -> void:
 	var data: MinigameData = load(
-		"res://modules/minigame/wind_platformer/wind_platformer_data.tres"
+		"res://modules/minigame/wind_platformer/data/wind_platformer_data.tres"
 	)
 	_debug_force_settlement_data()
 	SceneLoader.start_minigame(data)
