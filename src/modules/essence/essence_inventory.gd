@@ -14,22 +14,26 @@ const WIND_ESSENCE = preload("res://modules/essence/resources/wind.tres")
 @export var earth: int:
 	set(n):
 		earth = n
-		_remove_and_add_essence(EARTH_ESSENCE, n)
+		if Engine.is_editor_hint():
+			_remove_and_add_essence(EARTH_ESSENCE, n)
 
 @export var fire: int:
 	set(n):
 		fire = n
-		_remove_and_add_essence(FIRE_ESSENCE, n)
+		if Engine.is_editor_hint():
+			_remove_and_add_essence(FIRE_ESSENCE, n)
 
 @export var water: int:
 	set(n):
 		water = n
-		_remove_and_add_essence(WATER_ESSENCE, n)
+		if Engine.is_editor_hint():
+			_remove_and_add_essence(WATER_ESSENCE, n)
 
 @export var wind: int:
 	set(n):
 		wind = n
-		_remove_and_add_essence(WIND_ESSENCE, n)
+		if Engine.is_editor_hint():
+			_remove_and_add_essence(WIND_ESSENCE, n)
 
 @export var slots: Array[EssenceStack]
 
