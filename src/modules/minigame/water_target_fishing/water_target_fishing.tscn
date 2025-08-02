@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbvdwycj4dcgw"]
+[gd_scene load_steps=16 format=3 uid="uid://dbvdwycj4dcgw"]
 
 [ext_resource type="Script" uid="uid://bn8ub2x73bjo5" path="res://modules/minigame/water_target_fishing/water_target_fishing.gd" id="1_8oyae"]
 [ext_resource type="PackedScene" uid="uid://di5qytko63bu3" path="res://modules/minigame/water_target_fishing/game/entities/background_sprite.tscn" id="2_o5mdu"]
 [ext_resource type="PackedScene" uid="uid://1v03jevu1t0e" path="res://modules/minigame/water_target_fishing/game/entities/player.tscn" id="3_8gbkq"]
+[ext_resource type="PackedScene" uid="uid://gsrqk8rkaavn" path="res://modules/minigame/common/floating_text/floating_text_system.tscn" id="3_56cph"]
 [ext_resource type="PackedScene" uid="uid://l2ulaahw6l1c" path="res://modules/minigame/water_target_fishing/game/entities/fish.tscn" id="4_8oyae"]
 [ext_resource type="PackedScene" uid="uid://cdhf8qfjh31pi" path="res://modules/minigame/water_target_fishing/game/components/parallax_component.tscn" id="4_duxhx"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="5_duxhx"]
@@ -31,6 +32,9 @@ fill_from = Vector2(1, 0)
 script = ExtResource("1_8oyae")
 fish = ExtResource("4_8oyae")
 data_uid = "uid://jbisb8cm1037"
+
+[node name="FloatingTextSystem" parent="." instance=ExtResource("3_56cph")]
+unique_name_in_owner = true
 
 [node name="ClearColour" parent="." instance=ExtResource("9_qq2lg")]
 clear_colour = Color(0.768627, 0.878431, 0.94902, 1)
