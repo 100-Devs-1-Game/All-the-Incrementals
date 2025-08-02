@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_cmryc")
-display_name = ""
+display_name = "clayport"
 settlement_scene = ExtResource("2_6yfuv")
 metadata/_custom_type_script = "uid://cbvt5rfiyp1m7"
