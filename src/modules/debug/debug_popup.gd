@@ -119,12 +119,17 @@ func _add_function_call_item(debug_button: DebugButton, new_item: TreeItem) -> v
 
 
 func _input(event: InputEvent) -> void:
+	# Ignore DebugPopup if the Panku shell is visible since the hotkeys
+	# will conflict with typing into the shell.
+	if Panku.get_shell_visibility():
+		return
+
 	if event.is_action_pressed("toggle_debug_popup"):
 		print("Toggling the DebugPopup")
 		visible = !visible
 	elif event is InputEventKey and event.is_pressed():
 		if visible:
-			print(event)
+			print("Pressed " + event.as_text_keycode())
 
 		for hotkey in _hotkeys:
 			if event.as_text_keycode().to_lower() == hotkey.text_keycode.to_lower():

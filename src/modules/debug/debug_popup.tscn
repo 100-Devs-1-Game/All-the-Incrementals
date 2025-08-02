@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bu3iegvrpg3ve" path="res://modules/debug/debug_popup.gd" id="1_gwiye"]
 
 [node name="DebugPopup" type="Control"]
+z_index = 999
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 15
