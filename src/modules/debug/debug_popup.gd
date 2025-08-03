@@ -6,7 +6,8 @@ extends Control
 @export var title: String = "DebugPopup"
 
 # Optional functions node where the callable functions live
-@export var functions_node: Node
+@export var functions_node: Node:
+	set = set_functions_node
 
 # Show the debug panel on start
 @export var visible_on_start: bool = false
@@ -35,10 +36,6 @@ func _ready() -> void:
 		visible = false
 		return
 
-	# By default, the functions_node is just the parent of this popup.
-	if !functions_node:
-		functions_node = get_parent()
-
 	# By default, the debug popup is not visible. Press 'X' to bring it up.
 	visible = visible_on_start
 	position = Vector2.ZERO
@@ -46,6 +43,16 @@ func _ready() -> void:
 
 	_setup_shortcuts_tree()
 	_setup_debug_buttons()
+
+	# By default, the functions_node is just the parent of this popup.
+	if !functions_node:
+		functions_node = get_parent()
+
+
+func set_functions_node(node: Node) -> void:
+	functions_node = node
+	if functions_node:
+		_tree_root.set_text(0, title + " (" + functions_node.name + ")")
 
 
 func get_tree_root() -> TreeItem:
@@ -62,7 +69,6 @@ func link_callable(tree_item: TreeItem, callable: Callable) -> void:
 
 func _setup_shortcuts_tree() -> void:
 	_tree_root = $Tree.create_item()
-	_tree_root.set_text(0, title + " (" + functions_node.name + ")")
 	_tree_shortcuts = _tree_root.create_child()
 	_tree_shortcuts.set_text(0, "Navigation and functions")
 

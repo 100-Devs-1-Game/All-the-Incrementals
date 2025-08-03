@@ -3,6 +3,12 @@ extends Node
 
 const NODE_NAME = "SharedComponents"
 
+@export var minigame_node: BaseMinigame
+
+
+func _ready():
+	$CanvasLayer/DebugPopup.functions_node = minigame_node
+
 
 func open_upgrade_menu():
 	#TODO ...

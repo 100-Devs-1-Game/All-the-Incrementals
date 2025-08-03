@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=18 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_k4ysf"]
 [ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
@@ -12,8 +12,7 @@
 [ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/burnt_bush.tres" id="8_ppwky"]
 [ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/burnt_tree.tres" id="9_o1kr5"]
 [ext_resource type="Resource" uid="uid://bhtwwe0fgwlob" path="res://modules/minigame/fire_fighters/data/boulder.tres" id="10_o1kr5"]
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="13_eaqpl"]
-[ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="15_ymaye"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="13_a330y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
 texture = ExtResource("2_4r4fr")
@@ -70,10 +69,7 @@ tile_set = SubResource("TileSet_prm31")
 
 [node name="Fires" type="Node" parent="."]
 
-[node name="DebugPopup" parent="." instance=ExtResource("13_eaqpl")]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("13_a330y")]
+minigame_node = NodePath("..")
 
-[node name="DebugMinigameUpgrades" parent="DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("15_ymaye")]
-debug_popup = NodePath("..")
+[editable path="SharedComponents"]

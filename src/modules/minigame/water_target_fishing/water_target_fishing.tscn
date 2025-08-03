@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbvdwycj4dcgw"]
+[gd_scene load_steps=16 format=3 uid="uid://dbvdwycj4dcgw"]
 
 [ext_resource type="Script" uid="uid://bn8ub2x73bjo5" path="res://modules/minigame/water_target_fishing/water_target_fishing.gd" id="1_8oyae"]
 [ext_resource type="PackedScene" uid="uid://di5qytko63bu3" path="res://modules/minigame/water_target_fishing/game/entities/background_sprite.tscn" id="2_o5mdu"]
@@ -10,8 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brvr7tulxw60v" path="res://modules/minigame/water_target_fishing/game/camera2d.tscn" id="7_o5mdu"]
 [ext_resource type="PackedScene" uid="uid://dj70751qtb0ff" path="res://modules/minigame/water_target_fishing/game/components/generic/clear_colour.tscn" id="9_qq2lg"]
 [ext_resource type="Script" uid="uid://bpkdtrhrdt0xr" path="res://modules/minigame/water_target_fishing/game/fish_db.gd" id="10_c8m36"]
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="11_n7mqc"]
-[ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="12_m3rs1"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="11_56cph"]
 
 [sub_resource type="Gradient" id="Gradient_duxhx"]
 
@@ -32,7 +31,7 @@ fill_from = Vector2(1, 0)
 [node name="WaterFishing" type="Node2D" groups=["minigame_water_target_fishing"]]
 script = ExtResource("1_8oyae")
 fish = ExtResource("4_8oyae")
-data_uid = "uid://jbisb8cm1037"
+data_uid = "uid://c7vragnlq8udw"
 
 [node name="ClearColour" parent="." instance=ExtResource("9_qq2lg")]
 clear_colour = Color(0.768627, 0.878431, 0.94902, 1)
@@ -814,22 +813,14 @@ text = "0
 "
 fit_content = true
 
-[node name="DebugPopup" parent="CanvasLayer" node_paths=PackedStringArray("functions_node") instance=ExtResource("11_n7mqc")]
-visible = false
-top_level = true
-offset_right = 1920.0
-offset_bottom = 1080.0
-functions_node = NodePath("../..")
-
-[node name="DebugMinigameUpgrades" parent="CanvasLayer/DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("12_m3rs1")]
-visible = false
-debug_popup = NodePath("..")
-
 [node name="WTFFishDB" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("10_c8m36")
 directory_path = "res://modules/minigame/water_target_fishing/game/data/fish"
 metadata/_custom_type_script = "uid://bpkdtrhrdt0xr"
+
+[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("11_56cph")]
+minigame_node = NodePath("..")
 
 [editable path="Clouds/BackgroundSprite"]
 [editable path="Clouds/BackgroundSprite2"]
@@ -839,3 +830,4 @@ metadata/_custom_type_script = "uid://bpkdtrhrdt0xr"
 [editable path="Clouds/BackgroundSprite6"]
 [editable path="Clouds/BackgroundSprite7"]
 [editable path="Clouds/BackgroundSprite8"]
+[editable path="SharedComponents"]

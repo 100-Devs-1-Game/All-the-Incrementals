@@ -34,4 +34,10 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SharedComponents" parent="." instance=ExtResource("2_0gqa2")]
+[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_0gqa2")]
+minigame_node = NodePath("..")
+
+[node name="DebugPopup" parent="SharedComponents/CanvasLayer" index="0"]
+visible_on_start = true
+
+[editable path="SharedComponents"]
