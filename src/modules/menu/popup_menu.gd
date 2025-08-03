@@ -4,7 +4,6 @@ extends Control
 @export var main_menu_scene: PackedScene
 
 @onready var settings: Settings = $Settings
-#var _settings: Settings
 
 
 func _ready() -> void:
@@ -16,8 +15,11 @@ func _on_settings_pressed() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if settings.visible and event.is_action_pressed("toggle_popup_menu"):
+	if settings.visible and event.is_action_pressed("exit_menu"):
 		settings.visible = !settings.visible
+		# set_input_as_handled() will prevent the popup menu underneath
+		# from getting closed simultaneously
+		get_viewport().set_input_as_handled()
 
 
 func _on_quit_game_pressed() -> void:

@@ -1,13 +1,14 @@
 class_name MinigameSharedComponents
 extends Node
 
-const NODE_NAME = "SharedComponents"
-
 @export var minigame_node: BaseMinigame
+@onready var debug_popup: DebugPopup = $SharedBaseComponents/CanvasLayer/DebugPopup
+@onready var game_popup_menu: GamePopupMenu = $SharedBaseComponents/CanvasLayer/PopupMenu
 
 
 func _ready():
-	$CanvasLayer/DebugPopup.functions_node = minigame_node
+	debug_popup.functions_node = minigame_node
+	game_popup_menu.visible = false
 
 
 func open_upgrade_menu():

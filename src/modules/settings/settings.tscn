@@ -1,9 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://1m18lfvfkax2"]
+[gd_scene load_steps=6 format=3 uid="uid://1m18lfvfkax2"]
 
 [ext_resource type="Script" uid="uid://d4jpioyg02kt4" path="res://modules/settings/settings.gd" id="1_mpnl8"]
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="2_yv8js"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_1ylkm"]
-[ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="4_k2ij0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpnl8"]
 bg_color = Color(0.169245, 0.169245, 0.169245, 1)
@@ -25,17 +22,6 @@ bg_color = Color(0.743438, 0.557813, 0.386592, 1)
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_u1xnr"]
 color = Color(0.745098, 0.556863, 0.384314, 1)
 thickness = 36
-
-[sub_resource type="Resource" id="Resource_8f0vb"]
-script = ExtResource("4_k2ij0")
-collection = Array[ExtResource("3_1ylkm")]([])
-metadata/_custom_type_script = "uid://dv7wg0eoca0sr"
-
-[sub_resource type="Resource" id="Resource_x2f43"]
-script = ExtResource("3_1ylkm")
-func_or_path = "close"
-hotkey = ""
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="Settings" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -580,14 +566,3 @@ offset_bottom = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Restore Defaults"
-
-[node name="DebugPopup" parent="." node_paths=PackedStringArray("functions_node") instance=ExtResource("2_yv8js")]
-visible = false
-layout_mode = 1
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
-functions_node = NodePath("..")
-default_debug_buttons = SubResource("Resource_8f0vb")
-custom_debug_buttons = Array[ExtResource("3_1ylkm")]([SubResource("Resource_x2f43")])
