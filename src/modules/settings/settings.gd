@@ -3,7 +3,7 @@ extends Control
 
 const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 
-var action_menu := false  #Enable to change Apply&Exit behaviour to queue_free instead of scene change
+var action_menu := false  #Changes menu for ingame
 var fullscreen := false
 var ordered_actions := [
 	"primary_action",
