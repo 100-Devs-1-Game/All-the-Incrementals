@@ -962,7 +962,7 @@ theme_override_constants/outline_size = 5
 theme_override_styles/hover = SubResource("StyleBoxFlat_ph4q5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ph4q5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ph4q5")
-text = "Apply and Exit"
+text = "Save & Exit"
 
 [node name="RestoreButton" type="Button" parent="Settings"]
 layout_mode = 1

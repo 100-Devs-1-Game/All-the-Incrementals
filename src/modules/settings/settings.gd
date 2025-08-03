@@ -44,6 +44,8 @@ func _ready() -> void:
 
 
 func setup():
+	if action_menu:
+		$CoverBG.queue_free()
 	connect_signals()
 	update_ui()
 
