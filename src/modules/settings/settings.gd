@@ -106,6 +106,7 @@ func call_rebinder(key_id: int, button):
 	rebinder.caller = button
 	add_child(rebinder)
 
+
 func update_ui():
 	print(GameSettings.keybinds)
 	if GameSettings.fullscreen:
