@@ -1,14 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=11 format=3 uid="uid://bytqv7h0iow3u"]
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_x5t1i"]
 [ext_resource type="Script" uid="uid://cisfp72boumnu" path="res://modules/minigame/wind_platformer/cloud_spawner.gd" id="4_3m7tm"]
 [ext_resource type="PackedScene" uid="uid://bpbxl634kt5sd" path="res://modules/minigame/wind_platformer/cloud_platform.tscn" id="4_cj4w2"]
 [ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/player.tscn" id="5_3m7tm"]
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="5_k4m21"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="6_k4m21"]
-[ext_resource type="Resource" uid="uid://b4sluedhgvlgp" path="res://modules/minigame/common/debug/exit_minigame.tres" id="7_wi1yr"]
-[ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="7_xtfgy"]
-[ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="8_b1yvs"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="5_k4m21"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4orxu"]
 frequency = 0.002
@@ -68,10 +64,7 @@ initial_rect = Rect2(0, 200, 1920, 1080)
 left_rect = Rect2(-150, 150, -140, 1080)
 right_rect = Rect2(2000, 150, 2010, 1080)
 
-[node name="DebugPopup" parent="." instance=ExtResource("5_k4m21")]
-visible = false
-debug_buttons = Array[ExtResource("6_k4m21")]([ExtResource("7_wi1yr"), ExtResource("8_b1yvs")])
+[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("5_k4m21")]
+minigame_node = NodePath("..")
 
-[node name="DebugMinigameUpgrades" parent="DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("7_xtfgy")]
-visible = false
-debug_popup = NodePath("..")
+[editable path="SharedComponents"]

@@ -1,20 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp2g6h4spc2y3"]
+[gd_scene load_steps=3 format=3 uid="uid://dp2g6h4spc2y3"]
 
 [ext_resource type="Script" uid="uid://dl8b5dvlqrwqj" path="res://modules/minigame/water_diving/water_diving.gd" id="1_jjxx3"]
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_ipd88"]
-[ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="4_ipd88"]
-[ext_resource type="Resource" uid="uid://b4sluedhgvlgp" path="res://modules/minigame/common/debug/exit_minigame.tres" id="4_mr4y7"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_puu2k"]
-[ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="5_evjne"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_7tndl"]
 
 [node name="WaterDiving" type="Node2D"]
 script = ExtResource("1_jjxx3")
 data_uid = "uid://ciyrdxjs03cvb"
 
-[node name="DebugPopup" parent="." instance=ExtResource("3_ipd88")]
-visible = false
-visible_on_start = true
-debug_buttons = Array[ExtResource("4_puu2k")]([ExtResource("4_mr4y7"), ExtResource("5_evjne")])
+[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_7tndl")]
+minigame_node = NodePath("..")
 
-[node name="DebugMinigameUpgrades" parent="DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("4_ipd88")]
-debug_popup = NodePath("..")
+[node name="DebugPopup" parent="SharedComponents/CanvasLayer" index="0"]
+visible_on_start = true
+
+[editable path="SharedComponents"]

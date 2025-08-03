@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://by18kqakehrup"]
+[gd_scene load_steps=12 format=3 uid="uid://by18kqakehrup"]
 
 [ext_resource type="Script" uid="uid://cbtiegkndpc6f" path="res://modules/minigame/earth_potato_herding/earth_potato_herding.gd" id="1_kkhpg"]
 [ext_resource type="PackedScene" uid="uid://bx2ptflde5hu" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/spawner/eph_evil_spirit_spawner.tscn" id="2_ag328"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c1o4hv5ignom3" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.tscn" id="5_tk8ls"]
 [ext_resource type="PackedScene" uid="uid://bu668uskhmtud" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.tscn" id="7_00m8t"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="10_o8bin"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="11_eeopq"]
 [ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="11_o8bin"]
 
 [node name="EarthPotatoHerding" type="Node2D"]
@@ -93,3 +94,6 @@ offset_bottom = 1080.0
 
 [node name="DebugMinigameUpgrades" parent="DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("11_o8bin")]
 debug_popup = NodePath("..")
+
+[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("11_eeopq")]
+minigame_node = NodePath("..")

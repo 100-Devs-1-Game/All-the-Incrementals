@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://4sywdwm7ofk2"]
+
+[ext_resource type="Script" uid="uid://5a31xjos7p8k" path="res://modules/minigame/common/shared/minigame_shared.gd" id="1_77b54"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="2_ulobd"]
+[ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="3_v3xib"]
+
+[node name="SharedComponents" type="Node"]
+script = ExtResource("1_77b54")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="DebugPopup" parent="CanvasLayer" instance=ExtResource("2_ulobd")]
+
+[node name="DebugMinigameUpgrades" parent="CanvasLayer/DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("3_v3xib")]
+debug_popup = NodePath("..")
