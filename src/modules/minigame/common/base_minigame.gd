@@ -62,7 +62,7 @@ func add_score(n: int = 1):
 
 func game_over():
 	#TODO
-	pass
+	EventBus.exit_minigame.emit()
 
 
 func exit() -> void:

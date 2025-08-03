@@ -7,6 +7,7 @@ extends TopDown2DCharacterController
 #region ------------------------ PUBLIC VARS -----------------------------------
 
 var eph_adult_spawner: Spawner
+var mini_game: EarthPotatoHerdingMinigame
 
 #endregion
 
@@ -29,6 +30,10 @@ func grow_up() -> void:
 #region ======================== PRIVATE METHODS ===============================
 
 
+func _ready() -> void:
+	mini_game = get_tree().root.get_node("EarthPotatoHerding")
+
+
 func _physics_process(delta: float) -> void:
 	super(delta)
 	_time_young += delta
@@ -46,6 +51,9 @@ func _on_youngling_saw_player_area_area_exited(_area: Area2D) -> void:
 
 
 func _on_youngling_saw_spirit_body_entered(body: Node2D) -> void:
+	if get_tree().get_nodes_in_group("potatoes").size() == 1:
+		# Last potato standing, it's game over
+		mini_game.trigger_game_over.emit()
 	body.queue_free()
 	self.queue_free()
 

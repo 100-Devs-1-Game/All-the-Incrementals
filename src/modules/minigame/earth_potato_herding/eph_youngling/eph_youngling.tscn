@@ -9,7 +9,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0tlpl"]
 radius = 66.0076
 
-[node name="EPHYoungling" node_paths=PackedStringArray("_state_machine") instance=ExtResource("1_t88fu")]
+[node name="EPHYoungling" node_paths=PackedStringArray("_state_machine") groups=["potatoes"] instance=ExtResource("1_t88fu")]
 collision_layer = 2
 script = ExtResource("2_jfyq0")
 _time_to_grow = 10.0
