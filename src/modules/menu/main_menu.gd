@@ -23,7 +23,7 @@ func _on_settings_pressed() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if settings.visible and event.is_action_pressed("toggle_popup_menu"):
+	if settings.visible and event.is_action_pressed("exit_menu"):
 		settings.visible = !settings.visible
 
 

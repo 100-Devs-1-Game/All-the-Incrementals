@@ -12,7 +12,7 @@ extends Node
 var data: MinigameData
 var score: int
 
-var shared_components: MinigameSharedComponents
+var _minigame_shared_components: MinigameSharedComponents
 
 
 func _ready() -> void:
@@ -30,14 +30,33 @@ func _ready() -> void:
 	else:
 		data = SceneLoader.get_current_minigame()
 
-	shared_components = get_node_or_null(MinigameSharedComponents.NODE_NAME)
 	#
 	# Make sure the Minigame scene has a instance of
 	# "res://modules/minigame/common/shared/minigame_shared_components.tscn"
 	#
-	assert(shared_components != null, "Couldn't find Shared Components in Minigame")
+	assert(
+		_has_child_minigame_shared_components(),
+		"Couldn't find child class of type MinigameSharedComponents in Minigame scene"
+	)
+
+	_minigame_shared_components = _get_child_minigame_shared_components()
 
 	open_menu()
+
+
+func _has_child_minigame_shared_components() -> bool:
+	for child in get_children():
+		if child is MinigameSharedComponents:
+			return true
+	return false
+
+
+func _get_child_minigame_shared_components() -> MinigameSharedComponents:
+	for child in get_children():
+		if child is MinigameSharedComponents:
+			return child
+	assert(false, "Unable to find MinigameSharedComponents")
+	return
 
 
 ## Virtual function for initializing the Minigame. Inherited Scripts should
@@ -54,7 +73,7 @@ func _start():
 
 
 func open_menu():
-	shared_components.open_main_menu()
+	_minigame_shared_components.open_main_menu()
 
 	# TODO remove bypass
 	# triggers start immediately for now while there's no menu implemented

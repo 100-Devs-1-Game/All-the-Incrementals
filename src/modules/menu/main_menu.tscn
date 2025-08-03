@@ -1,29 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://khnsbhc4bqj8"]
+[gd_scene load_steps=6 format=3 uid="uid://khnsbhc4bqj8"]
 
 [ext_resource type="Script" uid="uid://br6m2cbo4864k" path="res://modules/menu/main_menu.gd" id="1_tsonj"]
 [ext_resource type="PackedScene" uid="uid://d1s2rtgxlns3v" path="res://modules/overworld/overworld.tscn" id="2_yldjb"]
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_cvkr5"]
 [ext_resource type="PackedScene" uid="uid://4sdp3vpsbo5v" path="res://modules/menu/extras.tscn" id="3_pk52d"]
-[ext_resource type="Resource" uid="uid://b50tc478quiok" path="res://modules/minigame/common/debug/overworld.tres" id="4_a0d1e"]
-[ext_resource type="Resource" uid="uid://btgr85ek8vof0" path="res://modules/minigame/common/debug/settings.tres" id="4_e5aks"]
-[ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="4_tsonj"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="5_e5aks"]
-[ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="6_dysxh"]
 [ext_resource type="PackedScene" uid="uid://1m18lfvfkax2" path="res://modules/settings/settings.tscn" id="8_dysxh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0d1e"]
 bg_color = Color(0.633592, 0.790395, 0.940482, 1)
-
-[sub_resource type="Resource" id="Resource_a0d1e"]
-script = ExtResource("5_e5aks")
-func_or_path = "res://modules/menu/extras.tscn"
-hotkey = "e"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
-
-[sub_resource type="Resource" id="Resource_e5aks"]
-script = ExtResource("4_tsonj")
-collection = Array[ExtResource("5_e5aks")]([ExtResource("4_a0d1e"), ExtResource("4_e5aks"), ExtResource("6_dysxh"), SubResource("Resource_a0d1e")])
-metadata/_custom_type_script = "uid://dv7wg0eoca0sr"
 
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -81,7 +64,7 @@ text = "Settings & Controls"
 
 [node name="Extras" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Gallery & Credits"
+text = "Extras"
 
 [node name="QuitGame" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -103,18 +86,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.167942, 0.370395, 0.545509, 1)
 theme_override_font_sizes/font_size = 85
 text = "Main Menu"
-
-[node name="DebugPopup" parent="." instance=ExtResource("3_cvkr5")]
-visible = false
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-grow_horizontal = 1
-grow_vertical = 1
-visible_on_start = true
-default_debug_buttons = SubResource("Resource_e5aks")
 
 [node name="Settings" parent="." instance=ExtResource("8_dysxh")]
 
