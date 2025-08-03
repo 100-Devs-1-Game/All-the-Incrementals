@@ -163,15 +163,13 @@ border_color = Color(0.313726, 0.176471, 0.133333, 1)
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 
-[node name="Settings" type="Node2D"]
-
-[node name="Settings" type="Control" parent="."]
+[node name="Settings" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mpnl8")
 
-[node name="CoverBG" type="TextureRect" parent="Settings"]
+[node name="CoverBG" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -180,7 +178,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_8gkc8")
 
-[node name="CoverA" type="ColorRect" parent="Settings"]
+[node name="CoverA" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_1ylkm")
 layout_mode = 1
 anchors_preset = 15
@@ -189,7 +187,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel2" type="Panel" parent="Settings"]
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -204,7 +202,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mpnl8")
 
-[node name="Panel" type="Panel" parent="Settings"]
+[node name="Panel" type="Panel" parent="."]
 material = SubResource("ShaderMaterial_k2ij0")
 layout_mode = 1
 anchors_preset = 8
@@ -220,7 +218,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_k2ij0")
 
-[node name="SettingsContainer" type="HBoxContainer" parent="Settings/Panel"]
+[node name="SettingsContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -232,11 +230,11 @@ offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="KeybindContainer" type="VBoxContainer" parent="Settings/Panel/SettingsContainer"]
+[node name="KeybindContainer" type="VBoxContainer" parent="Panel/SettingsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="ControlsLabel" type="Label" parent="Settings/Panel/SettingsContainer/KeybindContainer"]
+[node name="ControlsLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer"]
 z_index = 2
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -245,7 +243,7 @@ theme_override_constants/outline_size = 7
 text = "Controls"
 horizontal_alignment = 1
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/ControlsLabel"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/ControlsLabel"]
 z_index = -2
 layout_mode = 1
 anchors_preset = 15
@@ -255,11 +253,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dn8de")
 
-[node name="PrimaryContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer"]
+[node name="PrimaryContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
 theme_override_constants/separation = 17
 
-[node name="PrimaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/KeybindContainer/PrimaryContainer"]
+[node name="PrimaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -267,20 +265,20 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
 text = "Primary Action / Accept:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer/PrimaryContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer"]
 layout_mode = 2
 theme_override_constants/separation = 35
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer/Panel" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -294,12 +292,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
 text = "SPACE"
 
-[node name="Panel2" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer/Panel2" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -313,11 +311,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
 text = "Z"
 
-[node name="SecondaryContainer2" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer"]
+[node name="SecondaryContainer2" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer2"]
+[node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -325,16 +323,16 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
 text = "Secondary Action / Back:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer/Panel" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -348,12 +346,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
 text = "E"
 
-[node name="Panel2" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer/Panel2" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -367,11 +365,11 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_cpxmn")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cpxmn")
 text = "X"
 
-[node name="SecondaryContainer3" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer"]
+[node name="SecondaryContainer3" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer3"]
+[node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -379,16 +377,16 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
 text = "Move Right:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer/Panel" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -402,12 +400,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
 text = "D"
 
-[node name="Panel2" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer/Panel2" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -421,11 +419,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
 text = "Right"
 
-[node name="SecondaryContainer4" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer"]
+[node name="SecondaryContainer4" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
 theme_override_constants/separation = 13
 
-[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer4"]
+[node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -433,16 +431,16 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
 text = "Move Down:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer/Panel" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -456,12 +454,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
 text = "S"
 
-[node name="Panel2" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer/Panel2" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -475,11 +473,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
 text = "Down"
 
-[node name="SecondaryContainer5" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer"]
+[node name="SecondaryContainer5" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
 theme_override_constants/separation = 46
 
-[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer5"]
+[node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -487,16 +485,16 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
 text = "Move Left:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer5"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer/Panel" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -510,12 +508,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
 text = "A"
 
-[node name="Panel2" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer/Panel2" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -529,11 +527,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
 text = "Left"
 
-[node name="SecondaryContainer6" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer"]
+[node name="SecondaryContainer6" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
 theme_override_constants/separation = 65
 
-[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer6"]
+[node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -541,16 +539,16 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
 text = "Move Up:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer6"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer/Panel" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -564,12 +562,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
 text = "W"
 
-[node name="Panel2" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer/Panel2" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -583,11 +581,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
 text = "Up"
 
-[node name="SecondaryContainer7" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer"]
+[node name="SecondaryContainer7" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
 theme_override_constants/separation = 45
 
-[node name="SecondaryBindLabel" type="Label" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer7"]
+[node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -595,16 +593,16 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
 text = "Exit Menu:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer7"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer/Panel" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -618,12 +616,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
 text = "Esc"
 
-[node name="Panel2" type="Panel" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
 
-[node name="Keybind" type="Button" parent="Settings/Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer/Panel2" groups=["keybind"]]
+[node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -637,12 +635,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
 text = "C"
 
-[node name="MultiContainer" type="VBoxContainer" parent="Settings/Panel/SettingsContainer"]
+[node name="MultiContainer" type="VBoxContainer" parent="Panel/SettingsContainer"]
 custom_minimum_size = Vector2(677.025, 0)
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="GraphicsLabel" type="Label" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="GraphicsLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer"]
 z_index = 2
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -651,7 +649,7 @@ theme_override_constants/outline_size = 7
 text = "Graphics"
 horizontal_alignment = 1
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/MultiContainer/GraphicsLabel"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/MultiContainer/GraphicsLabel"]
 z_index = -2
 layout_mode = 1
 anchors_preset = 15
@@ -661,7 +659,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8gkc8")
 
-[node name="QualityLabel" type="Label" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="QualityLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -671,12 +669,12 @@ text = "3D Quality: Best"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/MultiContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Low" type="Button" parent="Settings/Panel/SettingsContainer/MultiContainer/HBoxContainer"]
+[node name="Low" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
@@ -686,7 +684,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
 text = "Low"
 
-[node name="Medium" type="Button" parent="Settings/Panel/SettingsContainer/MultiContainer/HBoxContainer"]
+[node name="Medium" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
@@ -696,7 +694,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
 text = "Medium"
 
-[node name="High" type="Button" parent="Settings/Panel/SettingsContainer/MultiContainer/HBoxContainer"]
+[node name="High" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
@@ -706,7 +704,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
 text = "High"
 
-[node name="Best" type="Button" parent="Settings/Panel/SettingsContainer/MultiContainer/HBoxContainer"]
+[node name="Best" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
@@ -716,11 +714,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
 text = "Best"
 
-[node name="FullscreenContainer" type="HBoxContainer" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="FullscreenContainer" type="HBoxContainer" parent="Panel/SettingsContainer/MultiContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="ScreenButton" type="Button" parent="Settings/Panel/SettingsContainer/MultiContainer/FullscreenContainer"]
+[node name="ScreenButton" type="Button" parent="Panel/SettingsContainer/MultiContainer/FullscreenContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
@@ -730,7 +728,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
 text = "Fullscreen: Off"
 
-[node name="AudioLabel" type="Label" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="AudioLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer"]
 z_index = 2
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -739,7 +737,7 @@ theme_override_constants/outline_size = 7
 text = "Audio"
 horizontal_alignment = 1
 
-[node name="Panel" type="Panel" parent="Settings/Panel/SettingsContainer/MultiContainer/AudioLabel"]
+[node name="Panel" type="Panel" parent="Panel/SettingsContainer/MultiContainer/AudioLabel"]
 z_index = -2
 layout_mode = 1
 anchors_preset = 15
@@ -749,7 +747,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ylkm")
 
-[node name="Masterlbl" type="Label" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="Masterlbl" type="Label" parent="Panel/SettingsContainer/MultiContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.203922)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -759,7 +757,7 @@ text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MasterSlider" type="HSlider" parent="Settings/Panel/SettingsContainer/MultiContainer/Masterlbl"]
+[node name="MasterSlider" type="HSlider" parent="Panel/SettingsContainer/MultiContainer/Masterlbl"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -779,7 +777,7 @@ theme_override_styles/slider = SubResource("StyleBoxLine_k2ij0")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_8f0vb")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_8f0vb")
 
-[node name="ValueLabel" type="Label" parent="Settings/Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider"]
+[node name="ValueLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -795,12 +793,12 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 17
 text = "100%"
 
-[node name="space" type="Control" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="space" type="Control" parent="Panel/SettingsContainer/MultiContainer"]
 custom_minimum_size = Vector2(0, 38.42)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Musiclbl" type="Label" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="Musiclbl" type="Label" parent="Panel/SettingsContainer/MultiContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.203922)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -810,7 +808,7 @@ text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicSlider" type="HSlider" parent="Settings/Panel/SettingsContainer/MultiContainer/Musiclbl"]
+[node name="MusicSlider" type="HSlider" parent="Panel/SettingsContainer/MultiContainer/Musiclbl"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -830,7 +828,7 @@ theme_override_styles/slider = SubResource("StyleBoxLine_k2ij0")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_8f0vb")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_8f0vb")
 
-[node name="ValueLabel" type="Label" parent="Settings/Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider"]
+[node name="ValueLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -846,12 +844,12 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 17
 text = "100%"
 
-[node name="space2" type="Control" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="space2" type="Control" parent="Panel/SettingsContainer/MultiContainer"]
 custom_minimum_size = Vector2(0, 38.42)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="SFXlbl" type="Label" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="SFXlbl" type="Label" parent="Panel/SettingsContainer/MultiContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.203922)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
@@ -861,7 +859,7 @@ text = "SFX Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SFXSlider" type="HSlider" parent="Settings/Panel/SettingsContainer/MultiContainer/SFXlbl"]
+[node name="SFXSlider" type="HSlider" parent="Panel/SettingsContainer/MultiContainer/SFXlbl"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -881,7 +879,7 @@ theme_override_styles/slider = SubResource("StyleBoxLine_k2ij0")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_8f0vb")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_8f0vb")
 
-[node name="ValueLabel" type="Label" parent="Settings/Panel/SettingsContainer/MultiContainer/SFXlbl/SFXSlider"]
+[node name="ValueLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer/SFXlbl/SFXSlider"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -897,12 +895,12 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 17
 text = "100%"
 
-[node name="space3" type="Control" parent="Settings/Panel/SettingsContainer/MultiContainer"]
+[node name="space3" type="Control" parent="Panel/SettingsContainer/MultiContainer"]
 custom_minimum_size = Vector2(0, 38.42)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="SettingsLabel" type="Label" parent="Settings"]
+[node name="SettingsLabel" type="Label" parent="."]
 z_index = 2
 layout_mode = 1
 anchors_preset = 8
@@ -923,7 +921,7 @@ theme_override_font_sizes/font_size = 71
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="Backpnl" type="Panel" parent="Settings/SettingsLabel"]
+[node name="Backpnl" type="Panel" parent="SettingsLabel"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -933,7 +931,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8f0vb")
 
-[node name="Panel" type="Panel" parent="Settings/SettingsLabel"]
+[node name="Panel" type="Panel" parent="SettingsLabel"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -947,7 +945,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x2f43")
 
-[node name="BackButton" type="Button" parent="Settings"]
+[node name="BackButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -964,7 +962,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ph4q5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ph4q5")
 text = "Save & Exit"
 
-[node name="RestoreButton" type="Button" parent="Settings"]
+[node name="RestoreButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
