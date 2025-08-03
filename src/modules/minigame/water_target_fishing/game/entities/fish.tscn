@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://l2ulaahw6l1c"]
+[gd_scene load_steps=9 format=3 uid="uid://l2ulaahw6l1c"]
 
 [ext_resource type="Script" uid="uid://bq0siwm513xvg" path="res://modules/minigame/water_target_fishing/game/entities/fish.gd" id="1_c7cp5"]
 [ext_resource type="PackedScene" uid="uid://cy8vchw2afha" path="res://modules/minigame/water_target_fishing/game/components/ai_movement.tscn" id="2_hqo1h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0rds620qhx3g" path="res://modules/minigame/water_target_fishing/game/components/wave_movement.tscn" id="3_hqo1h"]
 [ext_resource type="PackedScene" uid="uid://cv07bohrg1jxl" path="res://modules/minigame/water_target_fishing/game/components/velocity.tscn" id="5_0j58w"]
 [ext_resource type="PackedScene" uid="uid://yvs3xuoebut" path="res://modules/minigame/water_target_fishing/game/components/flip.tscn" id="6_0e15p"]
+[ext_resource type="PackedScene" uid="uid://dxwmelnhcy88u" path="res://modules/minigame/water_target_fishing/game/components/offscreen_deleter.tscn" id="7_7m00e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7m00e"]
 radius = 15.0
@@ -45,3 +46,5 @@ shape = SubResource("CircleShape2D_7m00e")
 [node name="WtfFlipComponent" parent="." node_paths=PackedStringArray("target", "velocity_component") instance=ExtResource("6_0e15p")]
 target = NodePath("..")
 velocity_component = NodePath("../WtfVelocityComponent")
+
+[node name="WtfOffscreenDeleterComponent" parent="." instance=ExtResource("7_7m00e")]
