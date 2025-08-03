@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://ev2tmev7hfu1"]
+
+[node name="PanelContainer" type="PanelContainer"]
+offset_right = 1114.0
+offset_bottom = 261.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="RhythmBoard" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect6" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect7" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect8" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect3" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect4" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect9" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect10" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect11" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect12" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect13" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect5" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="ColorRect10" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.67451, 0.439216, 0.94902, 1)
+
+[node name="RhythmBoard2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 100.0
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect6" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect7" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect8" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect3" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect4" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect9" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect10" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect11" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect12" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ColorRect13" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+color = Color(1, 1, 1, 0.145098)
+
+[node name="ColorRect5" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0

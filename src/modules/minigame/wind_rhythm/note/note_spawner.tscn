@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://byhlr4ndp885i"]
+
+[ext_resource type="Script" uid="uid://crwjj2vk53hne" path="res://modules/minigame/wind_rhythm/note/note_spawner.gd" id="1_48yr5"]
+
+[node name="NoteSpawner" type="Node2D"]
+script = ExtResource("1_48yr5")

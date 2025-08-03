@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf2dwl6k8ly10"]
+
+[ext_resource type="Script" uid="uid://cl13wy1r0o822" path="res://modules/minigame/wind_rhythm/note/note.gd" id="1_db7ty"]
+[ext_resource type="Texture2D" uid="uid://cb0kxrw6inhx7" path="res://assets/minigames/wind_rhythm/placeholder_assets/arrow_up.png" id="2_qwma4"]
+
+[node name="Note2" type="Node2D"]
+script = ExtResource("1_db7ty")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_qwma4")
