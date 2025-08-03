@@ -10,11 +10,11 @@
 [sub_resource type="Resource" id="Resource_v65a5"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 5
+amount = 10
 
 [sub_resource type="Resource" id="Resource_ydyeb"]
 script = ExtResource("1_xifid")
-earth = 5
+earth = 10
 fire = 0
 water = 0
 wind = 0
@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 [sub_resource type="Resource" id="Resource_56pjp"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 5
+amount = 10
 
 [sub_resource type="Resource" id="Resource_l6v5y"]
 script = ExtResource("1_xifid")
@@ -37,7 +37,7 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_56pjp")])
 [sub_resource type="Resource" id="Resource_7mlmy"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 11
+amount = 20
 
 [sub_resource type="Resource" id="Resource_wnvnx"]
 script = ExtResource("1_xifid")
@@ -50,7 +50,7 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_7mlmy")])
 [sub_resource type="Resource" id="Resource_tr78e"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 16
+amount = 30
 
 [sub_resource type="Resource" id="Resource_acjq0"]
 script = ExtResource("1_xifid")
@@ -63,7 +63,7 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_tr78e")])
 [sub_resource type="Resource" id="Resource_oqr42"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 22
+amount = 40
 
 [sub_resource type="Resource" id="Resource_b4b16"]
 script = ExtResource("1_xifid")
@@ -76,7 +76,7 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_oqr42")])
 [sub_resource type="Resource" id="Resource_q3agd"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 27
+amount = 50
 
 [sub_resource type="Resource" id="Resource_r2jfd"]
 script = ExtResource("1_xifid")
@@ -99,11 +99,11 @@ name = "Nutritious potatoes"
 flavor = ""
 position = Vector2(100, 100)
 cost_arr = Array[ExtResource("1_xifid")]([SubResource("Resource_l6v5y"), SubResource("Resource_wnvnx"), SubResource("Resource_acjq0"), SubResource("Resource_b4b16"), SubResource("Resource_r2jfd")])
-effect_modifier_arr = Array[float]([10.0, 20.0, 30.0, 40.0, 50.0])
+effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0])
 max_level = 5
 base_cost = SubResource("Resource_ydyeb")
-base_cost_multiplier = 1.1
-base_effect_modifier = 10.0
+base_cost_multiplier = 1.0
+base_effect_modifier = 1.0
 effect_modifier_multiplier = 1.0
 unlocked = false
 unlock_level = 3

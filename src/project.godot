@@ -54,6 +54,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/table_container/plugin.cfg", "res://addons/upgrade_tree/plugin.cfg", "res://addons/version_check/plugin.cfg")
 
+[global_group]
+
+potatoes=""
+
 [gui]
 
 theme/custom="uid://sbbn1spr2jvx"
