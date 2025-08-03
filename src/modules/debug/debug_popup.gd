@@ -52,10 +52,12 @@ func _ready() -> void:
 func set_functions_node(node: Node) -> void:
 	functions_node = node
 	if functions_node:
-		_tree_root.set_text(0, title + " (" + functions_node.name + ")")
+		get_tree_root().set_text(0, title + " (" + functions_node.name + ")")
 
 
 func get_tree_root() -> TreeItem:
+	if !_tree_root:
+		_tree_root = $Tree.create_item()
 	return _tree_root
 
 
@@ -68,8 +70,7 @@ func link_callable(tree_item: TreeItem, callable: Callable) -> void:
 
 
 func _setup_shortcuts_tree() -> void:
-	_tree_root = $Tree.create_item()
-	_tree_shortcuts = _tree_root.create_child()
+	_tree_shortcuts = get_tree_root().create_child()
 	_tree_shortcuts.set_text(0, "Navigation and functions")
 
 
