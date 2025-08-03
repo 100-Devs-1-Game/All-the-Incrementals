@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjfskhoh04d0n"]
+[gd_scene load_steps=3 format=3 uid="uid://cjfskhoh04d0n"]
 
 [ext_resource type="Script" uid="uid://bw8dvte2xqrph" path="res://modules/main/main.gd" id="1_374gq"]
+[ext_resource type="PackedScene" uid="uid://khnsbhc4bqj8" path="res://modules/menu/main_menu.tscn" id="2_qtwxo"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_374gq")
 _splash_screens = Array[String](["res://modules/main/splash_one.tscn", "res://modules/main/splash_two.tscn"])
+main_menu = ExtResource("2_qtwxo")
 
 [node name="BlackColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
