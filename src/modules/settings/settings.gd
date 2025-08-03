@@ -68,7 +68,6 @@ func connect_signals():
 
 
 func _on_button_pressed(action: String) -> void:
-	update_ui()
 	match action:
 		"Low", "Medium", "High", "Best":
 			GameSettings.quality = action
@@ -84,6 +83,7 @@ func _on_button_pressed(action: String) -> void:
 		"Restore":
 			GameSettings.restore_defaults()
 			_on_button_pressed("Exit")
+	update_ui()
 
 
 func _on_volume_changed(value: float, type: String) -> void:
@@ -105,13 +105,6 @@ func call_rebinder(key_id: int, button):
 	rebinder.action_id = key_id
 	rebinder.caller = button
 	add_child(rebinder)
-
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("left"):
-		#print("Left key pressed")
-		pass
-
 
 func update_ui():
 	print(GameSettings.keybinds)

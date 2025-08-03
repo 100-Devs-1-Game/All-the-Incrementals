@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="1_bovhm"]
 [ext_resource type="Script" uid="uid://c2evftqhfy1fl" path="res://modules/settings/rebinding/rebinder.gd" id="1_wvaor"]
-[ext_resource type="Shader" uid="uid://cw2er8aje1t5g" path="res://global/shapes_ui.gdshader" id="3_7elne"]
+[ext_resource type="Shader" path="res://global/shapes_ui.gdshader" id="3_7elne"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wvaor"]
 shader = ExtResource("1_bovhm")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4jpioyg02kt4" path="res://modules/settings/settings.gd" id="1_mpnl8"]
 [ext_resource type="Texture2D" uid="uid://cgp7j8ngwsnht" path="res://assets/icons/basket_skn.png" id="2_8gkc8"]
 [ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="3_yv8js"]
-[ext_resource type="Shader" uid="uid://cw2er8aje1t5g" path="res://global/shapes_ui.gdshader" id="4_yv8js"]
+[ext_resource type="Shader" path="res://global/shapes_ui.gdshader" id="4_yv8js"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ylkm"]
 shader = ExtResource("3_yv8js")
