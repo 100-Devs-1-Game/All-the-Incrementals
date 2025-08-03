@@ -1,3 +1,4 @@
+class_name Settings
 extends Control
 
 const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
