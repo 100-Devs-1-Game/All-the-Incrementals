@@ -3,6 +3,8 @@ extends Node2D
 @export var _splash_duration: float = 1.8  # seconds
 @export var _splash_screens: Array[String] = []
 
+@export var main_menu: PackedScene
+
 var _splash_utils: SplashUtils = preload("res://modules/main/splash_utils.gd").new()
 var _show_splash_screens = true
 
@@ -52,4 +54,4 @@ func _start_splash_screens() -> void:
 func _load_main_menu() -> void:
 	if !is_inside_tree():
 		return
-	get_tree().change_scene_to_file("res://modules/menu/main_menu.tscn")
+	get_tree().change_scene_to_packed(main_menu)

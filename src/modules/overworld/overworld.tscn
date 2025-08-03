@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1s2rtgxlns3v"]
+[gd_scene load_steps=11 format=3 uid="uid://d1s2rtgxlns3v"]
 
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_2wcmw"]
 [ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="3_sx55g"]
@@ -9,9 +9,15 @@
 [ext_resource type="Resource" uid="uid://btgr85ek8vof0" path="res://modules/minigame/common/debug/settings.tres" id="6_5v5ja"]
 [ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="7_5asiu"]
 
+[sub_resource type="Resource" id="Resource_5v5ja"]
+script = ExtResource("4_mxing")
+func_or_path = "res://modules/overworld_locations/shrine/shrine.tscn"
+hotkey = "n"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+
 [sub_resource type="Resource" id="Resource_y7x50"]
 script = ExtResource("6_5asiu")
-collection = Array[ExtResource("4_mxing")]([ExtResource("3_sx55g"), ExtResource("4_bwyud"), ExtResource("5_5v5ja"), ExtResource("6_5v5ja"), ExtResource("7_5asiu")])
+collection = Array[ExtResource("4_mxing")]([ExtResource("3_sx55g"), ExtResource("4_bwyud"), ExtResource("5_5v5ja"), ExtResource("6_5v5ja"), ExtResource("7_5asiu"), SubResource("Resource_5v5ja")])
 metadata/_custom_type_script = "uid://dv7wg0eoca0sr"
 
 [node name="Overworld" type="Node2D"]
