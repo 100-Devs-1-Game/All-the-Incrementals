@@ -6,6 +6,9 @@ const FLOATING_TEXT_SCENE = preload("res://modules/minigame/common/floating_text
 
 ## Spawns a floating text instance at a given position with the specified value, then fades away.
 static func floating_text(position: Vector2, value: String, parent: Node) -> void:
+	if parent.get_tree().root == parent:
+		assert(false)  # don't add it to the root, causes lag & other problems
+
 	var instance = FLOATING_TEXT_SCENE.instantiate()
 	parent.add_child(instance)
 	instance.position = position

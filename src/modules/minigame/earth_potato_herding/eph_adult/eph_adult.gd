@@ -28,7 +28,7 @@ func is_close_to_bucket() -> bool:
 
 func add_self_to_bucket() -> void:
 	mini_game.add_score(score)
-	TextFloatSystem.floating_text(global_position, "+%d" % score, get_tree().root)
+	TextFloatSystem.floating_text(global_position, "+%d" % score, mini_game)
 	if get_tree().get_nodes_in_group("potatoes").size() == 1:
 		# Last potato standing, it's game over
 		mini_game.game_over()
