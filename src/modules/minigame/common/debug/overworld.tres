@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DebugButton" load_steps=2 format=3 uid="uid://b50tc478quiok"]
+
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="1_6m5x5"]
+
+[resource]
+script = ExtResource("1_6m5x5")
+func_or_path = "res://modules/overworld/overworld.tscn"
+hotkey = "o"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
