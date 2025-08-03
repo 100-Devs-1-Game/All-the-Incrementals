@@ -39,7 +39,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 	if is_instance_valid(maybe_fish):
 		WTFGlobals.minigame.score += maybe_fish.data.pickup.score
 		TextFloatSystem.floating_text(
-			maybe_fish.global_position, "+%d" % maybe_fish.data.pickup.score, get_tree().root
+			maybe_fish.global_position, "+%d" % maybe_fish.data.pickup.score, WTFGlobals.minigame
 		)
 
 		WTFGlobals.minigame.stats.weight += maybe_fish.data.pickup.weight
@@ -51,7 +51,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 	if is_instance_valid(maybe_cannon):
 		WTFGlobals.minigame.score += maybe_cannon.pickup.score
 		TextFloatSystem.floating_text(
-			maybe_cannon.global_position, "+%d" % maybe_cannon.pickup.score, get_tree().root
+			maybe_cannon.global_position, "+%d" % maybe_cannon.pickup.score, WTFGlobals.minigame
 		)
 
 		WTFGlobals.minigame.stats.weight += maybe_cannon.pickup.weight
