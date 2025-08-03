@@ -20,7 +20,7 @@ func get_spawn_height_range() -> Vector2:
 		SpawnType.SKY:
 			return Vector2(min(WTFConstants.SEALEVEL, _min_spawn_depth), _max_spawn_depth)
 		SpawnType.SEALEVEL:
-			return Vector2.ZERO
+			return Vector2(WTFConstants.SEALEVEL, WTFConstants.SEALEVEL)
 		SpawnType.OCEAN:
 			return Vector2(max(WTFConstants.SEALEVEL, _min_spawn_depth), _max_spawn_depth)
 	push_error("oops, unhandled spawn type")
