@@ -5,6 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 20
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_kwj77")

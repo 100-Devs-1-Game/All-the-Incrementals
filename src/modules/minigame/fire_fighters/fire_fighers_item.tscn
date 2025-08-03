@@ -6,6 +6,7 @@
 size = Vector2(32, 32)
 
 [node name="Fire Fighers Item" type="Area2D"]
+z_index = 15
 script = ExtResource("1_edlen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
