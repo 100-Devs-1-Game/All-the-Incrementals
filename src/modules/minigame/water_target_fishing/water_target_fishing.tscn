@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dbvdwycj4dcgw"]
 
-[ext_resource type="Script" uid="uid://bn8ub2x73bjo5" path="res://modules/minigame/water_target_fishing/water_target_fishing.gd" id="1_8oyae"]
+[ext_resource type="Script" uid="uid://blg15f2lyegrk" path="res://modules/minigame/water_target_fishing/water_target_fishing.gd" id="1_8oyae"]
 [ext_resource type="PackedScene" uid="uid://di5qytko63bu3" path="res://modules/minigame/water_target_fishing/game/entities/background_sprite.tscn" id="2_o5mdu"]
 [ext_resource type="PackedScene" uid="uid://1v03jevu1t0e" path="res://modules/minigame/water_target_fishing/game/entities/player.tscn" id="3_8gbkq"]
 [ext_resource type="PackedScene" uid="uid://l2ulaahw6l1c" path="res://modules/minigame/water_target_fishing/game/entities/fish.tscn" id="4_8oyae"]
