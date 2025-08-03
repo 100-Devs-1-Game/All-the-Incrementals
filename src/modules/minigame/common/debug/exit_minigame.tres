@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_m0km5")
 func_or_path = "exit"
-hotkey = "escape"
+hotkey = "r"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"

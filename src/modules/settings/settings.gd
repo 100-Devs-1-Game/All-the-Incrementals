@@ -103,7 +103,8 @@ func call_rebinder(key_id: int, button):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left"):
-		print("Left key pressed")
+		#print("Left key pressed")
+		pass
 
 
 func update_ui():
