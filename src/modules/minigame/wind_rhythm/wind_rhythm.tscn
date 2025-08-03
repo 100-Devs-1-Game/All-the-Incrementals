@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://s0oqlo6ix0fj"]
+[gd_scene load_steps=4 format=3 uid="uid://s0oqlo6ix0fj"]
 
 [ext_resource type="Script" uid="uid://cr1h1t1row22a" path="res://modules/minigame/wind_rhythm/wind_rhythm.gd" id="1_4gb8k"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0ggpn"]
+[ext_resource type="PackedScene" uid="uid://bwtnwarbhh0up" path="res://modules/minigame/wind_rhythm/rhythm_game.tscn" id="3_top3v"]
 
 [node name="WindRhythm" type="Node2D"]
 script = ExtResource("1_4gb8k")
@@ -12,6 +13,8 @@ minigame_node = NodePath("..")
 
 [node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
 visible_on_start = true
+
+[node name="RhythmGame" parent="." instance=ExtResource("3_top3v")]
 
 [editable path="SharedComponents"]
 [editable path="SharedComponents/SharedBaseComponents"]
