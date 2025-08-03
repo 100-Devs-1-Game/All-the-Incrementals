@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_6k1f6"]
 radius = 66.0076
 
-[node name="EPHAdult" instance=ExtResource("1_6k1f6")]
+[node name="EPHAdult" groups=["potatoes"] instance=ExtResource("1_6k1f6")]
 script = ExtResource("2_6k1f6")
 _close_to_bucket_margin = 10.0
 _base_speed = Vector2(100, 100)
