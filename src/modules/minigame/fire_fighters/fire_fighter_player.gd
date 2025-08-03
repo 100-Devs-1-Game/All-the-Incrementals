@@ -60,6 +60,10 @@ func extinguish(flag: bool):
 	extinguisher_cooldown.start()
 
 
+func pick_up_item(_type: FireFightersMinigameItem):
+	pass
+
+
 func is_diagonal(vec: Vector2) -> bool:
 	return abs(vec.x) + abs(vec.y) > 1
 

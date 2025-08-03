@@ -29,6 +29,7 @@ var player: FireFighterMinigamePlayer
 @onready var water_node: Node = $Water
 @onready var fire_node: Node = $Fires
 @onready var decal_node: Node = $Decals
+@onready var item_node: Node = $Items
 
 @onready var item_spawner: FireFightersMinigameItemSpawner = $FireFightersMinigameItemSpawner
 
@@ -238,3 +239,10 @@ func is_tile_burning(tile: Vector2i) -> bool:
 
 func has_oil(tile: Vector2i) -> bool:
 	return tile in tile_map_oil.get_used_cells()
+
+
+func get_random_tile() -> Vector2i:
+	return Vector2i(
+		randi_range(map_rect.position.x, map_rect.position.x + map_rect.size.x),
+		randi_range(map_rect.position.y, map_rect.position.y + map_rect.size.y)
+	)
