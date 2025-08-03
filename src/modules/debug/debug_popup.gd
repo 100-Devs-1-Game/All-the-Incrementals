@@ -125,8 +125,16 @@ func _add_function_call_item(debug_button: DebugButton, new_item: TreeItem) -> v
 func _input(event: InputEvent) -> void:
 	# Ignore DebugPopup if the Panku shell is visible since the hotkeys
 	# will conflict with typing into the shell.
-	if Panku.get_shell_visibility():
-		return
+	if ClassDB.class_exists("Panku"):
+		# DON'T DO THIS: `if Panku.get_shell_visibility():` because when the
+		# addon is disabled, the GDScript Parser does NOT know what `Panku` is
+		# and will result in the game crashing EVEN IF we are guarding against
+		# the class existing in class_exists(). The parser will immediately
+		# stop even before runtime if we use the name in our code. So, we must
+		# use a string-version of the class name to parse safely.
+		var panku = get_node_or_null("/root/Panku")
+		if panku and panku.get_shell_visibility():
+			return
 
 	if event.is_action_pressed("toggle_debug_popup"):
 		print("Toggling the DebugPopup")
