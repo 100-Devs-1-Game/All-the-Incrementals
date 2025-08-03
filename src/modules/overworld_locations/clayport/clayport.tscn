@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=16 format=3 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="Script" uid="uid://eiutp4wmfx4t" path="res://modules/overworld_locations/clayport/clayport.gd" id="1_q21dp"]
 [ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_2ieeh"]
@@ -6,48 +6,39 @@
 [ext_resource type="Resource" uid="uid://s7k08dgu5hxn" path="res://modules/minigame/earth_towers/data/earth_towers_data.tres" id="3_wnqv0"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_i3tw0"]
 [ext_resource type="Resource" uid="uid://ciyrdxjs03cvb" path="res://modules/minigame/water_diving/data/water_diving_data.tres" id="4_ue7jc"]
+[ext_resource type="Resource" uid="uid://b50tc478quiok" path="res://modules/minigame/common/debug/overworld.tres" id="7_2h4su"]
+[ext_resource type="Resource" uid="uid://btgr85ek8vof0" path="res://modules/minigame/common/debug/settings.tres" id="8_0icjx"]
+[ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="9_dt5ik"]
+[ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="10_i6g11"]
 
-[sub_resource type="Resource" id="Resource_rkb86"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/overworld/overworld.tscn"
-hotkey = "escape"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
-
-[sub_resource type="Resource" id="Resource_tb6dg"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/overworld_locations/clayport/earth_altar/earth_altar.tscn"
-hotkey = "e"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
-
-[sub_resource type="Resource" id="Resource_w0tdx"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/overworld_locations/clayport/water_altar/water_altar.tscn"
-hotkey = "w"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
-
-[sub_resource type="Resource" id="Resource_rnohj"]
+[sub_resource type="Resource" id="Resource_jn4u6"]
 script = ExtResource("4_i3tw0")
 func_or_path = "debug_start_earth_potato_herding"
 hotkey = "p"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_sgyk0"]
+[sub_resource type="Resource" id="Resource_ybwht"]
 script = ExtResource("4_i3tw0")
 func_or_path = "debug_start_earth_towers"
-hotkey = "t"
+hotkey = "e"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_1p75w"]
+[sub_resource type="Resource" id="Resource_squwu"]
 script = ExtResource("4_i3tw0")
 func_or_path = "debug_start_water_diving"
 hotkey = "d"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[sub_resource type="Resource" id="Resource_oayoy"]
+[sub_resource type="Resource" id="Resource_306we"]
 script = ExtResource("4_i3tw0")
 func_or_path = "debug_start_water_target_fishing"
 hotkey = "f"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+
+[sub_resource type="Resource" id="Resource_ojauw"]
+script = ExtResource("10_i6g11")
+collection = Array[ExtResource("4_i3tw0")]([ExtResource("7_2h4su"), ExtResource("8_0icjx"), ExtResource("9_dt5ik"), SubResource("Resource_jn4u6"), SubResource("Resource_ybwht"), SubResource("Resource_squwu"), SubResource("Resource_306we")])
+metadata/_custom_type_script = "uid://dv7wg0eoca0sr"
 
 [node name="Clayport" type="Node2D"]
 script = ExtResource("1_q21dp")
@@ -61,4 +52,4 @@ visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 visible_on_start = true
-debug_buttons = Array[ExtResource("4_i3tw0")]([SubResource("Resource_rkb86"), SubResource("Resource_tb6dg"), SubResource("Resource_w0tdx"), SubResource("Resource_rnohj"), SubResource("Resource_sgyk0"), SubResource("Resource_1p75w"), SubResource("Resource_oayoy")])
+default_debug_buttons = SubResource("Resource_ojauw")

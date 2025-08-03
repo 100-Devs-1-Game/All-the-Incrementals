@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DebugButton" load_steps=2 format=3 uid="uid://bn3py5bvf5ry5"]
+
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="1_kv45f"]
+
+[resource]
+script = ExtResource("1_kv45f")
+func_or_path = "res://modules/overworld_locations/breezekiln/breezekiln.tscn"
+hotkey = "b"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"

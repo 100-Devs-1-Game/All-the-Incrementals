@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=10 format=3 uid="uid://bon5kervat4ob"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://bon5kervat4ob"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_6o57w"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_h31ue"]
@@ -21,6 +21,71 @@ wind = 0
 slots = Array[ExtResource("2_h31ue")]([SubResource("Resource_d1or0")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
+[sub_resource type="Resource" id="Resource_ondsc"]
+script = ExtResource("2_h31ue")
+essence = ExtResource("3_8ewms")
+amount = 11
+
+[sub_resource type="Resource" id="Resource_kncxd"]
+script = ExtResource("1_6o57w")
+earth = 0
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_h31ue")]([SubResource("Resource_ondsc")])
+
+[sub_resource type="Resource" id="Resource_o2a8q"]
+script = ExtResource("2_h31ue")
+essence = ExtResource("3_8ewms")
+amount = 22
+
+[sub_resource type="Resource" id="Resource_euawg"]
+script = ExtResource("1_6o57w")
+earth = 0
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_h31ue")]([SubResource("Resource_o2a8q")])
+
+[sub_resource type="Resource" id="Resource_mvp3f"]
+script = ExtResource("2_h31ue")
+essence = ExtResource("3_8ewms")
+amount = 33
+
+[sub_resource type="Resource" id="Resource_vtxmy"]
+script = ExtResource("1_6o57w")
+earth = 0
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_h31ue")]([SubResource("Resource_mvp3f")])
+
+[sub_resource type="Resource" id="Resource_e0ec0"]
+script = ExtResource("2_h31ue")
+essence = ExtResource("3_8ewms")
+amount = 44
+
+[sub_resource type="Resource" id="Resource_wkvaq"]
+script = ExtResource("1_6o57w")
+earth = 0
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_h31ue")]([SubResource("Resource_e0ec0")])
+
+[sub_resource type="Resource" id="Resource_jk02u"]
+script = ExtResource("2_h31ue")
+essence = ExtResource("3_8ewms")
+amount = 55
+
+[sub_resource type="Resource" id="Resource_l01bs"]
+script = ExtResource("1_6o57w")
+earth = 0
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_h31ue")]([SubResource("Resource_jk02u")])
+
 [sub_resource type="Resource" id="Resource_rxndh"]
 script = ExtResource("4_xdh21")
 upgrade_type = 1
@@ -33,8 +98,8 @@ unlocks_feature = ""
 name = "Brighter Spirit Keeper"
 flavor = ""
 position = Vector2(100, -320)
-cost_arr = Array[ExtResource("1_6o57w")]([])
-effect_modifier_arr = Array[float]([])
+cost_arr = Array[ExtResource("1_6o57w")]([SubResource("Resource_kncxd"), SubResource("Resource_euawg"), SubResource("Resource_vtxmy"), SubResource("Resource_wkvaq"), SubResource("Resource_l01bs")])
+effect_modifier_arr = Array[float]([10.0, 20.0, 30.0, 40.0, 50.0])
 max_level = 5
 base_cost = SubResource("Resource_5i63j")
 base_cost_multiplier = 1.1
