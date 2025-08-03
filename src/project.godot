@@ -115,7 +115,6 @@ custom_default_config="res://default_panku_config.cfg"
 
 [physics]
 
-common/physics_ticks_per_second=10
 common/physics_interpolation=true
 
 [rendering]
