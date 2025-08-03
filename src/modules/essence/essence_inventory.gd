@@ -6,10 +6,10 @@ extends Resource
 # Introduce hard-coding of essences so this Resource is easier
 # to use in the Inspector, without having to edit nested Resources
 
-const EARTH_ESSENCE = preload("res://modules/essence/resources/earth.tres")
-const FIRE_ESSENCE = preload("res://modules/essence/resources/fire.tres")
-const WATER_ESSENCE = preload("res://modules/essence/resources/water.tres")
-const WIND_ESSENCE = preload("res://modules/essence/resources/wind.tres")
+const EARTH_ESSENCE = preload("uid://j13h5v6bwmxe")
+const FIRE_ESSENCE = preload("uid://kwd3sg27pka7")
+const WATER_ESSENCE = preload("uid://td664oe8wk42")
+const WIND_ESSENCE = preload("uid://df7knsfckprdd")
 
 @export var earth: int:
 	set(n):
