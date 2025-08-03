@@ -5,6 +5,9 @@ extends Control
 # Title for the popup
 @export var title: String = "DebugPopup"
 
+# Optional functions node where the callable functions live
+@export var functions_node: Node
+
 # Show the debug panel on start
 @export var visible_on_start: bool = false
 
@@ -32,6 +35,10 @@ func _ready() -> void:
 		visible = false
 		return
 
+	# By default, the functions_node is just the parent of this popup.
+	if !functions_node:
+		functions_node = get_parent()
+
 	# By default, the debug popup is not visible. Press 'X' to bring it up.
 	visible = visible_on_start
 	position = Vector2.ZERO
@@ -55,7 +62,7 @@ func link_callable(tree_item: TreeItem, callable: Callable) -> void:
 
 func _setup_shortcuts_tree() -> void:
 	_tree_root = $Tree.create_item()
-	_tree_root.set_text(0, title + " (" + get_parent().name + ")")
+	_tree_root.set_text(0, title + " (" + functions_node.name + ")")
 	_tree_shortcuts = _tree_root.create_child()
 	_tree_shortcuts.set_text(0, "Navigation and functions")
 
@@ -118,8 +125,16 @@ func _add_function_call_item(debug_button: DebugButton, new_item: TreeItem) -> v
 func _input(event: InputEvent) -> void:
 	# Ignore DebugPopup if the Panku shell is visible since the hotkeys
 	# will conflict with typing into the shell.
-	if Panku.get_shell_visibility():
-		return
+	if ClassDB.class_exists("Panku"):
+		# DON'T DO THIS: `if Panku.get_shell_visibility():` because when the
+		# addon is disabled, the GDScript Parser does NOT know what `Panku` is
+		# and will result in the game crashing EVEN IF we are guarding against
+		# the class existing in class_exists(). The parser will immediately
+		# stop even before runtime if we use the name in our code. So, we must
+		# use a string-version of the class name to parse safely.
+		var panku = get_node_or_null("/root/Panku")
+		if panku and panku.get_shell_visibility():
+			return
 
 	if event.is_action_pressed("toggle_debug_popup"):
 		print("Toggling the DebugPopup")
@@ -138,13 +153,12 @@ func _call_function(function_name: String) -> void:
 		push_error("No function name set for debug button.")
 		return
 
-	var parent = get_parent()
-	if parent == null:
+	if functions_node == null:
 		push_error("Missing parent node - cannot call function " + function_name + "()")
 		return
 
-	print("Calling " + parent.name + "." + function_name + "()")
-	parent.call(function_name)
+	print("Calling " + functions_node.name + "." + function_name + "()")
+	functions_node.call(function_name)
 
 
 func _change_scene(scene_path: String) -> void:

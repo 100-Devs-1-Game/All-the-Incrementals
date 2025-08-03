@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WTFPickupData" load_steps=2 format=3 uid="uid://bcokn3us8tr0e"]
+
+[ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_nu80b"]
+
+[resource]
+script = ExtResource("1_nu80b")
+pixels_per_second = 900.0
+weight = 0.0
+score = 0.0
+metadata/_custom_type_script = "uid://hrgdcmm0gruk"

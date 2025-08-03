@@ -23,6 +23,7 @@ func _ready() -> void:
 		push_warning("Detected direct Minigame start")
 		if data_uid.is_empty():
 			push_error("No data_uid set in the Minigame scene")
+			assert(false)
 		else:
 			data = load(data_uid)
 			SceneLoader._current_minigame = data
