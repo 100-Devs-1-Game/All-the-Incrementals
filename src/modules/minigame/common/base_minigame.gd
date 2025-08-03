@@ -41,7 +41,10 @@ func _ready() -> void:
 
 	_minigame_shared_components = _get_child_minigame_shared_components()
 
-	open_menu()
+	if SceneLoader._play_minigame_instantly:
+		on_start_button_pressed()
+	else:
+		open_menu()
 
 
 func _has_child_minigame_shared_components() -> bool:
@@ -75,10 +78,9 @@ func _start():
 func open_menu():
 	_minigame_shared_components.open_main_menu()
 
-	# TODO remove bypass
-	# triggers start immediately for now while there's no menu implemented
-	#
-	#
+	# TODO
+	# Replace with
+	# _minigame_shared_components.minigame_menu.play.pressed.connect(func(): on_start_button_pressed)
 	on_start_button_pressed()
 
 
@@ -92,8 +94,19 @@ func add_score(n: int = 1):
 
 
 func game_over():
+	get_tree().paused = true
+	# TODO make sure the Menus don't inherit pause mode but always run
+
+	# Minigame doesn't exit on game over anymore
+	#
 	#TODO
-	EventBus.exit_minigame.emit()
+	# _minigame_shared_components.minigame_menu.open()
+	#
+	# Trigger reload of the Minigame scene to reset everyting and the play instantly
+	# _minigame_shared_components.minigame_menu.play.pressed.connect
+	#		(SceneLoader.start_minigame.bind(data, true))
+	# _minigame_shared_components.minigame_menu.exit.pressed.connect
+	#		(EventBus.exit_minigame.emit)
 
 
 func exit() -> void:
