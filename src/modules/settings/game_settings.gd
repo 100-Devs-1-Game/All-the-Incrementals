@@ -46,6 +46,7 @@ var active_audio: bool = false
 func _ready() -> void:
 	load_settings()
 
+
 func set_audio(bus: int, volume: float):
 	match bus:
 		0:
@@ -57,8 +58,9 @@ func set_audio(bus: int, volume: float):
 	AudioServer.set_bus_volume_db(bus, volume)
 	print("Audio adjusted: ", bus, volume)
 
+
 ## Creates an audio node and plays the given audio globally
-func create_global_audio(audio: AudioStream, bus: String): #0 is master, 1 is Music, 2 is SFX
+func create_global_audio(audio: AudioStream, bus: String):  #0 is master, 1 is Music, 2 is SFX
 	var audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
 
@@ -67,14 +69,15 @@ func create_global_audio(audio: AudioStream, bus: String): #0 is master, 1 is Mu
 	audio_player.play()
 
 	audio_players.append(audio_player)
-	
+
 	if !active_audio:
 		active_audio = true
 		check_audio_players()
 
+
 func check_audio_players():
 	while active_audio:
-		for i in range(audio_players.size() -1, -1, -1):
+		for i in range(audio_players.size() - 1, -1, -1):
 			var a: AudioStreamPlayer = audio_players[i]
 			if !a.is_playing():
 				a.queue_free()
@@ -83,8 +86,9 @@ func check_audio_players():
 		if audio_players.is_empty():
 			active_audio = false
 			break
-	
+
 	await get_tree().create_timer(0.2).timeout
+
 
 func set_fullscreen(state: bool) -> void:
 	fullscreen = state

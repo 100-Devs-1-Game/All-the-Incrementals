@@ -3,7 +3,7 @@ extends Control
 
 const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 
-var action_menu := false #Enable to change Apply&Exit behaviour to queue_free instead of scene change
+var action_menu := false  #Enable to change Apply&Exit behaviour to queue_free instead of scene change
 var fullscreen := false
 var ordered_actions := [
 	"primary_action",
@@ -85,6 +85,7 @@ func _on_button_pressed(action: String) -> void:
 			GameSettings.restore_defaults()
 			_on_button_pressed("Exit")
 
+
 func _on_volume_changed(value: float, type: String) -> void:
 	var balanced = clamp(value / 100.0, 0.001, 1.0)
 	match type:
@@ -114,18 +115,24 @@ func _input(event: InputEvent) -> void:
 func update_ui():
 	print(GameSettings.keybinds)
 	if GameSettings.fullscreen:
-		$Panel/SettingsContainer/MultiContainer/FullscreenContainer/ScreenButton.text = "Fullscreen: " + "ON"
+		$Panel/SettingsContainer/MultiContainer/FullscreenContainer/ScreenButton.text = (
+			"Fullscreen: " + "ON"
+		)
 	else:
-		$Panel/SettingsContainer/MultiContainer/FullscreenContainer/ScreenButton.text = "Fullscreen: " + "OFF"
+		$Panel/SettingsContainer/MultiContainer/FullscreenContainer/ScreenButton.text = (
+			"Fullscreen: " + "OFF"
+		)
 
 	$Panel/SettingsContainer/MultiContainer/QualityLabel.text = (
 		"3D Quality: " + str(GameSettings.quality)
 	)
-	$Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider.value = GameSettings.master_volume
+	$Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider.value = (
+		GameSettings.master_volume
+	)
 	$Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider.value = GameSettings.music_volume
 	$Panel/SettingsContainer/MultiContainer/SFXlbl/SFXSlider.value = GameSettings.sfx_volume
 	$Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider/ValueLabel.text = str(
-		roundi(GameSettings.master_volume),  "%"
+		roundi(GameSettings.master_volume), "%"
 	)
 	$Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider/ValueLabel.text = str(
 		roundi(GameSettings.music_volume), "%"
