@@ -12,6 +12,8 @@ extends Node
 var data: MinigameData
 var score: int
 
+var shared_components: MinigameSharedComponents
+
 
 func _ready() -> void:
 	if not SceneLoader.has_current_minigame():
@@ -26,6 +28,13 @@ func _ready() -> void:
 			SceneLoader._current_minigame = data
 	else:
 		data = SceneLoader.get_current_minigame()
+
+	shared_components = get_node_or_null(MinigameSharedComponents.NODE_NAME)
+	#
+	# Make sure the Minigame scene has a instance of
+	# "res://modules/minigame/common/shared/minigame_shared_components.tscn"
+	#
+	assert(shared_components != null, "Couldn't find Shared Components in Minigame")
 
 	open_menu()
 
@@ -44,9 +53,12 @@ func _start():
 
 
 func open_menu():
-	# TODO
+	shared_components.open_main_menu()
+
+	# TODO remove bypass
+	# triggers start immediately for now while there's no menu implemented
 	#
-	# trigger start button manually while there's no menu implemented
+	#
 	on_start_button_pressed()
 
 

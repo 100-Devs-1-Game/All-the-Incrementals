@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh5qvg687mtli"]
+[gd_scene load_steps=3 format=3 uid="uid://dh5qvg687mtli"]
 
 [ext_resource type="Script" uid="uid://crk7sjbb6m1a1" path="res://modules/minigame/example/minigame.gd" id="1_d7uj7"]
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="2_ecuoj"]
-[ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="4_vsi1s"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0gqa2"]
 
 [node name="Minigame" type="Node"]
 script = ExtResource("1_d7uj7")
@@ -35,8 +34,4 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DebugPopup" parent="." instance=ExtResource("2_ecuoj")]
-title = "Minigame Example"
-
-[node name="DebugMinigameUpgrades" parent="DebugPopup" node_paths=PackedStringArray("debug_popup") instance=ExtResource("4_vsi1s")]
-debug_popup = NodePath("..")
+[node name="SharedComponents" parent="." instance=ExtResource("2_0gqa2")]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://4sywdwm7ofk2"]
+
+[ext_resource type="Script" uid="uid://5a31xjos7p8k" path="res://modules/minigame/common/shared/minigame_shared.gd" id="1_77b54"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="2_ulobd"]
+
+[node name="SharedComponents" type="Node"]
+script = ExtResource("1_77b54")
+
+[node name="DebugPopup" parent="." instance=ExtResource("2_ulobd")]
