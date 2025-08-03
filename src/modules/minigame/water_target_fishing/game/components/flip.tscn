@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://yvs3xuoebut"]
+
+[ext_resource type="Script" uid="uid://dmh8j5uk4egep" path="res://modules/minigame/water_target_fishing/game/components/flip.gd" id="1_dbbki"]
+
+[node name="WtfFlipComponent" type="Node2D"]
+script = ExtResource("1_dbbki")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://nq42u721e3vl"]
+
+[ext_resource type="Script" uid="uid://c61ct0nucn83o" path="res://modules/minigame/water_target_fishing/game/entities/jet_cannon.gd" id="1_m1qch"]
+[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_ptier"]
+[ext_resource type="PackedScene" uid="uid://dxwmelnhcy88u" path="res://modules/minigame/water_target_fishing/game/components/offscreen_deleter.tscn" id="3_ptier"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m1qch"]
+radius = 64.0
+
+[node name="JetCannon" type="Node2D"]
+script = ExtResource("1_m1qch")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ptier")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_m1qch")
+
+[node name="WtfOffscreenDeleterComponent" parent="." instance=ExtResource("3_ptier")]

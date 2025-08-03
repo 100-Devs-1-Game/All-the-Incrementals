@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WTFFishData" load_steps=5 format=3 uid="uid://knewdxdgnkud"]
+
+[ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_vph0v"]
+[ext_resource type="Script" uid="uid://dl0x10lns1e17" path="res://modules/minigame/water_target_fishing/game/fish_data.gd" id="2_i4wb7"]
+[ext_resource type="Texture2D" uid="uid://daotcw5wj8t8m" path="res://assets/minigames/water_target_fishing/banana_fish.png" id="3_vph0v"]
+
+[sub_resource type="Resource" id="Resource_k71g5"]
+script = ExtResource("1_vph0v")
+pixels_per_second = 900.0
+weight = 90.0
+score = 30.0
+metadata/_custom_type_script = "uid://hrgdcmm0gruk"
+
+[resource]
+script = ExtResource("2_i4wb7")
+texture = ExtResource("3_vph0v")
+pickup = SubResource("Resource_k71g5")
+metadata/_custom_type_script = "uid://dl0x10lns1e17"
