@@ -95,7 +95,7 @@ func _construct_cost_and_modifier_arrays():
 	for i in range(max_level):
 		var new_cost: EssenceInventory = EssenceInventory.new()
 		for stack: EssenceStack in base_cost.slots:
-			var cost_calc: int = stack.amount * base_cost_multiplier * (i + 1)
+			var cost_calc: int = int(stack.amount * base_cost_multiplier * (i + 1))
 			new_cost.add_stack(EssenceStack.new(stack.essence, cost_calc))
 		cost_arr.append(new_cost)
 		effect_modifier_arr.append(base_effect_modifier * effect_modifier_multiplier * (i + 1))
