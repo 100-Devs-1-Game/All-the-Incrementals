@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jd1utp40bi6c" path="res://modules/minigame/example/overworld.gd" id="1_1kdnu"]
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="2_jwuq6"]
-[ext_resource type="Resource" uid="uid://dym4je2njvl28" path="res://modules/minigame/example/minigame_data.tres" id="3_v35sj"]
+[ext_resource type="Resource" uid="uid://dym4je2njvl28" path="res://modules/minigame/example/data/minigame_data.tres" id="3_v35sj"]
 
 [node name="Overworld" type="CanvasLayer"]
 script = ExtResource("1_1kdnu")

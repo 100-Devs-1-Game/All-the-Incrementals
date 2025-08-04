@@ -15,4 +15,7 @@ func _ready() -> void:
 
 
 func start_minigame(data: MinigameData):
+	var settlement_data: SettlementData = SettlementData.new()
+	settlement_data.settlement_scene = load("res://modules/minigame/example/overworld.tscn")
+	SceneLoader._current_settlement = settlement_data
 	SceneLoader.start_minigame(data)
