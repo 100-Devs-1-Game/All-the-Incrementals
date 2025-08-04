@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmbhboa0omojg"]
 
-[ext_resource type="Script" uid="uid://d3gde2qbcgqdg" path="res://modules/minigame/fire_fighters/fire_fighter_player.gd" id="1_kwj77"]
+[ext_resource type="Script" uid="uid://d3gde2qbcgqdg" path="res://modules/minigame/fire_fighters/fire_fighters_player.gd" id="1_kwj77"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
 

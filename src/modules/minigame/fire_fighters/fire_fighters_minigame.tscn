@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/tree.tres" id="4_o8gxd"]
 [ext_resource type="PackedScene" uid="uid://b6evijo5uuuwh" path="res://modules/minigame/fire_fighters/effects/burn_spot.tscn" id="5_ymaye"]
 [ext_resource type="PackedScene" uid="uid://cwrb3svm6p8o7" path="res://modules/minigame/fire_fighters/effects/fire.tscn" id="7_bkat1"]
-[ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/fire_fighter_player.tscn" id="8_o8gxd"]
+[ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/fire_fighters_player.tscn" id="8_o8gxd"]
 [ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/burnt_bush.tres" id="8_ppwky"]
 [ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/burnt_tree.tres" id="9_o1kr5"]
 [ext_resource type="Resource" uid="uid://bhtwwe0fgwlob" path="res://modules/minigame/fire_fighters/data/boulder.tres" id="10_o1kr5"]
