@@ -8,6 +8,7 @@ extends Control
 
 func _ready() -> void:
 	settings.visible = false
+	get_tree().paused = false
 
 
 func quit_game() -> void:

@@ -3,13 +3,17 @@ extends Node
 var _current_settlement: SettlementData
 var _current_minigame: MinigameData
 
+# Set to true by default so F6 minigame starts don't open the menu
+var _play_minigame_instantly: bool = true
+
 
 func _ready() -> void:
-	EventBus.connect(EventBus.exit_minigame.get_name(), Callable(self, "_exit_minigame"))
+	EventBus.exit_minigame.connect(_exit_minigame)
 
 
-func start_minigame(data: MinigameData):
+func start_minigame(data: MinigameData, play_instantly: bool = false):
 	_current_minigame = data
+	_play_minigame_instantly = play_instantly
 	get_tree().change_scene_to_packed(data.minigame_scene)
 
 

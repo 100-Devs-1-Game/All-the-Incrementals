@@ -12,7 +12,11 @@ data_uid = "uid://s7k08dgu5hxn"
 [node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("4_e2atm")]
 minigame_node = NodePath("..")
 
-[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
+[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
+minigame = NodePath("../../../..")
+
+[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+functions_node = NodePath("../../../..")
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_hbps8")]([ExtResource("4_x8m8n")])
 

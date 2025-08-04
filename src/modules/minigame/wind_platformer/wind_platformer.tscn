@@ -67,4 +67,14 @@ right_rect = Rect2(2000, 150, 2010, 1080)
 [node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("5_k4m21")]
 minigame_node = NodePath("..")
 
+[node name="SharedBaseComponents" parent="SharedComponents" index="1"]
+allow_popup_menu = null
+
+[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
+minigame = NodePath("../../../..")
+
+[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+functions_node = NodePath("../../../..")
+
 [editable path="SharedComponents"]
+[editable path="SharedComponents/SharedBaseComponents"]

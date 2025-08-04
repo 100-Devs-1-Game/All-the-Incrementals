@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp1mdsjrd8326"]
+
+[ext_resource type="Script" uid="uid://byyp3wcd5klf2" path="res://component/shared/pause.gd" id="1_t2lh0"]
+
+[node name="Pause" type="Node2D"]
+visible = false
+script = ExtResource("1_t2lh0")

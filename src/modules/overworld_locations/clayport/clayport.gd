@@ -33,3 +33,7 @@ func _debug_force_settlement_data() -> void:
 		"res://modules/overworld_locations/clayport/clayport_data.tres"
 	)
 	SceneLoader._current_settlement = clayport_data
+
+
+func quit_game() -> void:
+	get_tree().quit()

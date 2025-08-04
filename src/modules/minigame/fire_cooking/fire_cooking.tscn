@@ -10,7 +10,11 @@ data_uid = "uid://bseyt0iuwnq5m"
 [node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("4_bvapi")]
 minigame_node = NodePath("..")
 
-[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
+[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
+minigame = NodePath("../../../..")
+
+[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+functions_node = NodePath("../../../..")
 visible_on_start = true
 
 [editable path="SharedComponents"]
