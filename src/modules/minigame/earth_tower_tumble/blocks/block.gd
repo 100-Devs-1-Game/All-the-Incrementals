@@ -10,6 +10,7 @@ var touch_delay := 0.2
 
 signal released
 
+
 func _ready():
 	contact_monitor = true
 	lock_rotation = true
@@ -22,8 +23,10 @@ func _ready():
 	target_x = global_position.x
 	_randomize_color()
 
+
 func _randomize_color():
 	$Polygon2D.color = Color(randf(), randf(), randf())
+
 
 func _physics_process(delta):
 	if is_held or last_delay:
@@ -38,9 +41,9 @@ func _physics_process(delta):
 
 		#linear_velocity += Vector2(0, 3.5)
 		global_position.x = lerp(global_position.x, target_x, move_speed * delta)
-	
 	if !is_held:
 		lock_rotation = false
+
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if is_held:
