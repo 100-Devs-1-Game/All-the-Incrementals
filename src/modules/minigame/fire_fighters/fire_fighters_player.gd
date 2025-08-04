@@ -2,6 +2,7 @@ class_name FireFightersMinigamePlayer
 extends CharacterBody2D
 
 signal extinguish_spot(pos: Vector2)
+signal changed_tile(tile: Vector2i)
 
 @export var move_speed: float = 100.0
 @export var acceleration: float = 1000.0
@@ -10,6 +11,7 @@ signal extinguish_spot(pos: Vector2)
 
 var last_dir: Vector2
 var _current_item: FireFightersMinigameItem
+var _current_tile: Vector2i
 
 @onready var game: FireFightersMinigame = get_parent()
 @onready var extinguisher: Node2D = $Extinguisher
@@ -20,6 +22,10 @@ var _current_item: FireFightersMinigameItem
 # stopped moving ( releasing both keys will let the player face in the direction
 # of the last release key otherwise - if they aren't released perfectly simultaneous )
 @onready var diagonal_cooldown: Timer = $"Diagonal Cooldown"
+
+
+func _ready() -> void:
+	_current_tile = game.get_tile_at(position)
 
 
 func _physics_process(delta: float) -> void:
@@ -43,6 +49,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("secondary_action"):
 		if has_item():
 			use_item()
+
+	_update_tile()
 
 
 func extinguish(flag: bool):
@@ -71,6 +79,13 @@ func extinguish(flag: bool):
 func pick_up_item(type: FireFightersMinigameItem):
 	_current_item = type
 	_current_item.on_pick_up(self)
+
+
+func _update_tile():
+	var new_tile: Vector2i = game.get_tile_at(position)
+	if _current_tile != new_tile:
+		_current_tile = new_tile
+		changed_tile.emit(_current_tile)
 
 
 func has_item() -> bool:
