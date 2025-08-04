@@ -662,7 +662,7 @@ unique_name_in_owner = true
 position = Vector2(929, 374)
 
 [node name="Player" parent="." instance=ExtResource("3_8gbkq")]
-position = Vector2(680, 376)
+position = Vector2(480, 390)
 
 [node name="WtfParallaxComponent" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_duxhx")]
 target = NodePath("../World")
@@ -831,3 +831,4 @@ minigame_node = NodePath("..")
 [editable path="Clouds/BackgroundSprite7"]
 [editable path="Clouds/BackgroundSprite8"]
 [editable path="SharedComponents"]
+[editable path="SharedComponents/SharedBaseComponents"]

@@ -1,6 +1,7 @@
 class_name WTFPickupData
 extends Resource
 
-@export var pixels_per_second: float
+# pixels per second
+@export var speedboost: float
 @export var weight: float
 @export var score: int
