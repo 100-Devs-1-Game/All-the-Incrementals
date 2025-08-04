@@ -12,6 +12,12 @@ func init(p_type: FireFightersMinigameItem):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	var player: FireFighterMinigamePlayer = body
-	player.pick_up_item(type)
-	queue_free()
+	if type.type == FireFightersMinigameItem.Type.PICKUP:
+		var player: FireFighterMinigamePlayer = body
+		player.pick_up_item(type)
+		queue_free()
+	else:
+		assert(body.has("collision_layer"))
+		if body.collision_layer == 2:
+			# TODO crap
+			type._on_destroy(get_tree().current_scene, self)
