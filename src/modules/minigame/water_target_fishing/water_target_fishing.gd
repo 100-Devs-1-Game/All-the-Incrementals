@@ -7,8 +7,8 @@ const SECONDS_BEFORE_ENDING_RUN: float = 1
 
 var stats: WTFStats
 
-var _distance_travelled = 0
-var _distance_since_spawned = 0
+var _distance_travelled := 0.0
+var _distance_since_spawned := 0.0
 
 @onready var fish_db: WTFFishDB = %WTFFishDB
 
@@ -46,7 +46,7 @@ func _process(_delta: float) -> void:
 	ui_speed_value.text = str(get_pixels_per_second())
 	ui_score_value.text = str(get_score())
 	ui_oxygen_value.text = str(WTFGlobals.minigame.stats.oxygen_percentage()) + "%"
-	ui_weight_value.text = str(floori(stats.total_weight()))
+	ui_weight_value.text = str(floori(stats.total_added_weight()))
 	ui_distance_value.text = str(floori(_distance_travelled))
 
 
