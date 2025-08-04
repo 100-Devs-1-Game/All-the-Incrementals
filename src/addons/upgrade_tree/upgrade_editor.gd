@@ -17,11 +17,17 @@ func _process(delta: float) -> void:
 
 
 func set_fields_from_upgrade() -> void:
-	assert(upgrade)
+	if upgrade == null:
+		push_error("upgrade should not be null at this point")
+		return
+
 	title = upgrade.name
 	$Control/Icon.texture = upgrade.icon
 
 	info.text = ""
+
+	if !upgrade.resource_path:
+		add_info_error("NOT SAVED TO FILE")
 
 	if !upgrade.logic:
 		add_info_error("MISSING LOGIC")
@@ -33,16 +39,18 @@ func set_fields_from_upgrade() -> void:
 		add_info_error("MISSING MAX LEVEL")
 
 	if !upgrade.effect_modifier_arr:
-		add_info_error("MISSING EFFECT MODIFIERS")
+		add_info_error("MISSING EFFECT MODS")
 
 	if upgrade.effect_modifier_arr.size() != upgrade.cost_arr.size():
-		add_info_error("MISMATCHED EFFECTS WITH COSTS")
+		add_info_error("MISMATCHED ARRAYS")
 
 	if upgrade.flavor == "":
 		add_info_warning("MISSING FLAVOR")
 
 	if upgrade.description_prefix == "" || upgrade.description_suffix:
 		add_info_warning("MISSING DESCRIPTION")
+
+	add_info("Max Level: %d" % upgrade.get_max_level())
 
 
 func add_info_error(msg: String) -> void:
