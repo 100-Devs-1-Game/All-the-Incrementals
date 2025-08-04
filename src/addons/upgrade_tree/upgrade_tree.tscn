@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://cib0ln0mwn2a3"]
+[gd_scene format=3 uid="uid://cib0ln0mwn2a3"]
 
 [node name="UpgradeTreeEditor" type="Control"]
 layout_mode = 3
@@ -11,3 +11,4 @@ offset_top = -1.0
 offset_right = 1154.0
 offset_bottom = 646.0
 scroll_offset = Vector2(-40, -40)
+snapping_distance = 64

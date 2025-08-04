@@ -49,3 +49,12 @@ offset_right = 1151.0
 offset_bottom = 65.0
 theme_override_font_sizes/font_size = 18
 text = "Reload resources"
+
+[node name="UpgradeTreeDropdown" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 96.0
+offset_right = 220.0
+offset_bottom = 147.0
+tooltip_text = "Select an upgrade tree"
+allow_reselect = true
