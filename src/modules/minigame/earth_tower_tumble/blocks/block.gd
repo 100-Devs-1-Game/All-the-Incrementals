@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const CELL_SIZE := 32
+var cell_size := 32
 var target_x: float
 var move_speed := 30.0
 var is_held := true
@@ -33,9 +33,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("secondary_action"):
 			global_rotation_degrees += 90.0
 		if Input.is_action_just_pressed("left"):
-			target_x -= CELL_SIZE
+			target_x -= cell_size
 		elif Input.is_action_just_pressed("right"):
-			target_x += CELL_SIZE
+			target_x += cell_size
 		if Input.is_action_just_pressed("primary_action"):
 			_drop_block()
 
