@@ -77,6 +77,7 @@ func _start():
 # It should run the minigame.
 func play():
 	_initialize()
+	data.apply_all_upgrades(self)
 	_start()
 
 
