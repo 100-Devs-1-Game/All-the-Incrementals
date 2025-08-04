@@ -40,6 +40,10 @@ func _physics_process(delta: float) -> void:
 	extinguisher.look_at(position + last_dir)
 	extinguish(Input.is_action_pressed("primary_action"))
 
+	if Input.is_action_just_pressed("secondary_action"):
+		if has_item():
+			use_item()
+
 
 func extinguish(flag: bool):
 	if not flag:
@@ -69,8 +73,17 @@ func pick_up_item(type: FireFightersMinigameItem):
 	_current_item.on_pick_up(self)
 
 
+func has_item() -> bool:
+	return _current_item != null
+
+
 func can_pick_up_item() -> bool:
-	return _current_item == null
+	return not has_item()
+
+
+func use_item():
+	assert(has_item())
+	_current_item._on_use(self)
 
 
 func is_diagonal(vec: Vector2) -> bool:
