@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgp7j8ngwsnht"
-path.s3tc="res://.godot/imported/basket_skn.png-b793c122c59a2cf9caaf35eb1baba624.s3tc.ctex"
+uid="uid://dql5euicffh5h"
+path="res://.godot/imported/art_014_kli.webp-d6a5639a6b1de2bd9a0472654eb02f77.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/basket_skn.png"
-dest_files=["res://.godot/imported/basket_skn.png-b793c122c59a2cf9caaf35eb1baba624.s3tc.ctex"]
+source_file="res://assets/gallery/art_014_kli.webp"
+dest_files=["res://.godot/imported/art_014_kli.webp-d6a5639a6b1de2bd9a0472654eb02f77.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
