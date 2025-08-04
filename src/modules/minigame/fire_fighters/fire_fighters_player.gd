@@ -9,6 +9,7 @@ signal extinguish_spot(pos: Vector2)
 @export var arc_factor: float = 0.1
 
 var last_dir: Vector2
+var _current_item: FireFightersMinigameItem
 
 @onready var game: FireFightersMinigame = get_parent()
 @onready var extinguisher: Node2D = $Extinguisher
@@ -63,8 +64,13 @@ func extinguish(flag: bool):
 	extinguisher_cooldown.start()
 
 
-func pick_up_item(_type: FireFightersMinigameItem):
-	pass
+func pick_up_item(type: FireFightersMinigameItem):
+	_current_item = type
+	_current_item.on_pick_up(self)
+
+
+func can_pick_up_item() -> bool:
+	return _current_item == null
 
 
 func is_diagonal(vec: Vector2) -> bool:

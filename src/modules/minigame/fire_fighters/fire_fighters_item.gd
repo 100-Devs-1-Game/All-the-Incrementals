@@ -24,3 +24,7 @@ func _on_new_tile(_player: FireFightersMinigamePlayer, _item: FireFightersMiniga
 
 func _on_destroy(_game: FireFightersMinigame, item: FireFightersMinigameItemInstance):
 	item.queue_free()
+
+
+func _on_pick_up(_player: FireFightersMinigamePlayer):
+	pass
