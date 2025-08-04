@@ -17,6 +17,7 @@ var _current_tile: Vector2i
 @onready var extinguisher: Node2D = $Extinguisher
 @onready var extinguisher_cooldown: Timer = %Cooldown
 @onready var extinguisher_offset: Node2D = %"Extinguisher Offset"
+@onready var oil_dropper: FireFightersMinigameOilDropComponent = $"Oil Dropper"
 
 # helps to keep the extinguisher shooting diagonally after the player has
 # stopped moving ( releasing both keys will let the player face in the direction
@@ -78,7 +79,7 @@ func extinguish(flag: bool):
 
 func pick_up_item(type: FireFightersMinigameItem):
 	_current_item = type
-	_current_item.on_pick_up(self)
+	_current_item._on_pick_up(self)
 
 
 func _update_tile():
@@ -88,10 +89,6 @@ func _update_tile():
 		changed_tile.emit(_current_tile)
 
 
-func has_item() -> bool:
-	return _current_item != null
-
-
 func can_pick_up_item() -> bool:
 	return not has_item()
 
@@ -99,6 +96,14 @@ func can_pick_up_item() -> bool:
 func use_item():
 	assert(has_item())
 	_current_item._on_use(self)
+
+
+func unequip_item():
+	_current_item = null
+
+
+func has_item() -> bool:
+	return _current_item != null
 
 
 func is_diagonal(vec: Vector2) -> bool:
