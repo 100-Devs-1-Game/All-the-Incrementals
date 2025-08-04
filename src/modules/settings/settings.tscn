@@ -154,11 +154,21 @@ border_color = Color(0.313726, 0.176471, 0.133333, 1)
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 
-[node name="Settings" type="Control"]
+[node name="Settings" type="Control" node_paths=PackedStringArray("low_button", "medium_button", "high_button", "best_button", "screen_button", "exit_button", "restore_button", "master_slider", "music_slider", "sfx_slider")]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mpnl8")
+low_button = NodePath("Panel/SettingsContainer/MultiContainer/HBoxContainer/Low")
+medium_button = NodePath("Panel/SettingsContainer/MultiContainer/HBoxContainer/Medium")
+high_button = NodePath("Panel/SettingsContainer/MultiContainer/HBoxContainer/High")
+best_button = NodePath("Panel/SettingsContainer/MultiContainer/HBoxContainer/Best")
+screen_button = NodePath("Panel/SettingsContainer/MultiContainer/FullscreenContainer/ScreenButton")
+exit_button = NodePath("BackButton")
+restore_button = NodePath("RestoreButton")
+master_slider = NodePath("Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider")
+music_slider = NodePath("Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider")
+sfx_slider = NodePath("Panel/SettingsContainer/MultiContainer/SFXlbl/SFXSlider")
 
 [node name="CoverBG" type="TextureRect" parent="."]
 layout_mode = 1

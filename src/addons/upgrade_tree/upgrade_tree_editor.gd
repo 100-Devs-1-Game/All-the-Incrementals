@@ -76,6 +76,18 @@ func _get_all_minigame_data(start_path:String) -> Array[String]:
 			if file_name.ends_with(".tres") or file_name.ends_with(".res"):
 				var file_path = start_path.path_join(file_name)
 				var res = ResourceLoader.load(file_path)
+
+				# sometimes there are strange errors caused by some resources
+				# not being resaved after their scripts change
+				# since this plugin has to load every resource to figure out
+				# which ones are of the type we need
+				# so when that happens, uncomment this and check to see what
+				# files are changed as a result
+
+				#var err := ResourceSaver.save(res, file_path)
+				#if err != OK:
+				#	push_error("%s failed to save?" % file_path)
+
 				if res and res is MinigameData:
 					found_resources.append(file_path)
 		file_name = dir.get_next()
@@ -118,6 +130,7 @@ func _enter_tree() -> void:
 	graph_edit.snapping_distance = 64
 	graph_edit.show_grid_buttons = false
 	graph_edit.right_disconnects = true
+	graph_edit.zoom = graph_edit.zoom_min
 	# Add the main panel to the editor's main viewport.
 	EditorInterface.get_editor_main_screen().add_child(upgrade_tree_editor_instance)
 
@@ -161,12 +174,14 @@ func _add_node(
 ) -> UpgradeEditor:
 	var graph_node: UpgradeEditor = UpgradeEditorScene.instantiate()
 	graph_node.upgrade = new_upgrade
-	graph_node.set_fields_from_upgrade()
 	graph_node.node_selected.connect(_on_upgrade_selected.bind(graph_node))
 	graph_node.dragged.connect(_on_dragged.bind(graph_node))
 	graph_edit.add_child(graph_node)
 	if current_node:
 		graph_edit.connect_node(current_node.name, 0, graph_node.name, 0)
+
+	# force all upgrades to save on load, causing their resource data to refresh
+	_save_upgrade(new_upgrade)
 	return graph_node
 
 
@@ -202,8 +217,6 @@ func _save_upgrade(upgrade: MinigameUpgrade):
 	if upgrade.resource_path:
 		upgrade.set_meta("tree_editor_version_saved", UpgradeTreeEditorVersion)
 		ResourceSaver.save(upgrade)
-	else:
-		print("Warning: resource path not set. Changes not being saved")
 
 
 # Button press handlers

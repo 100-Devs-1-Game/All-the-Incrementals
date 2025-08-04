@@ -12,6 +12,7 @@ func add_stack_to_inventory(stack: EssenceStack):
 		push_error("Player data not set")
 		return
 	data.inventory.add_stack(stack)
+	SaveGameManager.save()
 
 
 func can_afford(_cost: EssenceInventory) -> bool:

@@ -4,10 +4,10 @@ extends Resource
 
 enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
-# how this Upgrade is called in-game
+## how this Upgrade is called in-game
 @export var name: String
 
-# static flavor text
+## static flavor text
 @export var flavor: String
 
 @export var icon: Texture2D
@@ -15,65 +15,60 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
 # ------ cost and effects -------
 
-# cost for each individual level
+## cost for each individual level
 @export var cost_arr: Array[EssenceInventory]
 
-# can be a multiplier, additive, percentage, etc for each level up
+## can be a multiplier, additive, percentage, etc for each level up
 @export var effect_modifier_arr: Array[float]
 
 @export_category("Algorithmic")
 
-# optional: setting cost and effect algorithmically ( arrays will be updated in the setter )
+## optional: setting cost and effect algorithmically ( arrays will be updated in the setter )
 @export var max_level: int:
 	set = set_max_level
 
-# cost for level 1
+## cost for level 1
 @export var base_cost: EssenceInventory:
 	set = set_base_cost
-# cost multiplier per level
+## cost multiplier per level[br]
+## base cost + (base cost modifier * level)
 @export var base_cost_multiplier: float:
 	set = set_base_cost_multiplier
 
-# effect modifier for level 1
+## effect modifier for level 1
 @export var base_effect_modifier: float:
 	set = set_base_effect_modifier
-# modifer multiplier per level
+## modifer multiplier per level[br]
+## base modifier + (modifier multiplier * level)
 @export var effect_modifier_multiplier: float:
 	set = set_effect_modifier_multiplier
 
-# optional: setting cost via curve ( arrays will be updated in the setter  )
+## optional: setting cost via curve ( arrays will be updated in the setter  )
 @export var cost_curve: Curve:
 	set = set_cost_curve
 
 @export_category("Unlocking")
 
-# has it been unlocked by a previous upgrade
+## has it been unlocked by a previous upgrade
 @export_storage var unlocked: bool = false
 
-# level required to unlock all further upgrades of this branch
+## level required to unlock all further upgrades of this branch
 @export var unlock_level: int
 
-# Upgrades that can get unlocked by this one
+## Upgrades that can get unlocked by this one
 @export var unlocks: Array[BaseUpgrade]
 
 @export_category("Description")
 
-# dynamic description for get_description()
-# format: prefix + " " + formatted modifier + " " + suffix
+## dynamic description for get_description()
+## format: prefix + " " + formatted modifier + " " + suffix
 @export var description_prefix: String
 @export var description_suffix: String
 
-# PERCENTAGE: "[N*100]%" or "-[N*100]%"
-# ADDITIVE:   "+N" or "-N"
-# MULTIPLIER  "xN" or "/N" (?)
+## PERCENTAGE: "[N*100]%" or "-[N*100]%"
+## ADDITIVE:   "+N" or "-N"
+## MULTIPLIER  "xN" or "/N" (?)
 @export var description_modifier_format: ModifierFormat
-
-# TODO decimals
-
-# Will serialize the current level too.
-# -1 = not bought yet
-# 0 = level 1, ...
-@export_storage var current_level: int = -1
 
 
 func _construct_cost_and_modifier_arrays():
@@ -99,14 +94,22 @@ func _construct_cost_and_modifier_arrays():
 			effect_modifier_arr.append(base_effect_modifier + (effect_modifier_multiplier * i))
 
 
+func get_uid() -> int:
+	return ResourceLoader.get_resource_uid(resource_path)
+
+
 func level_up() -> void:
-	assert(current_level < get_max_level())
-	current_level += 1
+	var current_level = get_level()
+	if is_maxed_out():
+		push_error("Tried to level up past max level")
+		return
+	SaveGameManager.world_state.minigame_unlock_levels[get_uid()] = (current_level + 1)
+	SaveGameManager.save()
 
 
 # 0 = level 1, ...
 func get_level() -> int:
-	return current_level
+	return SaveGameManager.world_state.minigame_unlock_levels.get(get_uid(), -1)
 
 
 # 0 = level 1, ...
@@ -132,7 +135,7 @@ func get_effect_modifier(level: int) -> float:
 
 
 func get_current_effect_modifier() -> float:
-	return get_effect_modifier(current_level)
+	return get_effect_modifier(get_level())
 
 
 func is_unlocked() -> bool:
@@ -140,13 +143,13 @@ func is_unlocked() -> bool:
 
 
 func is_maxed_out() -> bool:
-	return current_level == get_max_level()
+	return get_level() == get_max_level()
 
 
 func get_next_level_cost() -> EssenceInventory:
 	if is_maxed_out():
 		return null
-	return cost_arr[current_level + 1]
+	return cost_arr[get_level() + 1]
 
 
 func can_afford_next_level() -> bool:
