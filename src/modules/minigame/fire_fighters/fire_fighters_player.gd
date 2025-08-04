@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 			diagonal_cooldown.start()
 
 	extinguisher.look_at(position + last_dir)
-	extinguish(Input.is_action_pressed("ui_select"))
+	extinguish(Input.is_action_pressed("primary_action"))
 
 
 func extinguish(flag: bool):
