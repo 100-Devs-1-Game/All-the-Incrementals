@@ -2,8 +2,9 @@ class_name MinigameSharedComponents
 extends Node
 
 @export var minigame_node: BaseMinigame
-@onready var debug_popup: DebugPopup = $SharedBaseComponents/CanvasLayer/DebugPopup
-@onready var game_popup_menu: GamePopupMenu = $SharedBaseComponents/CanvasLayer/PopupMenu
+@export var debug_popup: DebugPopup
+@export var game_popup_menu: GamePopupMenu
+@export var minigame_menu: MinigameMenu
 
 
 func _ready():
@@ -17,5 +18,4 @@ func open_upgrade_menu():
 
 
 func open_main_menu():
-	#TODO open minigame main menu ( upgrades, restart, exit )
-	pass
+	minigame_menu.open_menu()

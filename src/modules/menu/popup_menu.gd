@@ -2,6 +2,7 @@ class_name GamePopupMenu
 extends Control
 
 @export var main_menu_scene: PackedScene
+@export var pause: Pause
 
 @onready var settings: Settings = $Settings
 
@@ -20,6 +21,8 @@ func _input(event: InputEvent) -> void:
 		# set_input_as_handled() will prevent the popup menu underneath
 		# from getting closed simultaneously
 		get_viewport().set_input_as_handled()
+		# also note: not doing pause/unpause here because the settings
+		# popup only appears after the menu popup (game is already paused)
 
 
 func _on_quit_game_pressed() -> void:
@@ -27,4 +30,5 @@ func _on_quit_game_pressed() -> void:
 
 
 func _on_main_menu_pressed() -> void:
+	pause.try_unpause()
 	get_tree().change_scene_to_packed(main_menu_scene)

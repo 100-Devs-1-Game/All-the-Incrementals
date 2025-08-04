@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var allow_popup_menu: bool = true
+@export var pause: Pause
 
 @onready var _popup_menu: GamePopupMenu = $CanvasLayer/PopupMenu
 
@@ -14,3 +15,7 @@ func _ready() -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit_menu"):
 		_popup_menu.visible = !_popup_menu.visible
+		if _popup_menu.visible:
+			pause.pause()
+		else:
+			pause.try_unpause()
