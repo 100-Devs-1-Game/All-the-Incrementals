@@ -31,7 +31,7 @@ script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 0
+wind = 2
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_1ksxe")])
 
 [sub_resource type="Resource" id="Resource_6yy3f"]
@@ -44,7 +44,7 @@ script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 0
+wind = 4
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_6yy3f")])
 
 [sub_resource type="Resource" id="Resource_vjbn1"]
@@ -57,7 +57,7 @@ script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 0
+wind = 6
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_vjbn1")])
 
 [sub_resource type="Resource" id="Resource_pdnwu"]
@@ -70,7 +70,7 @@ script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 0
+wind = 8
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_pdnwu")])
 
 [sub_resource type="Resource" id="Resource_jc1qb"]
@@ -83,7 +83,7 @@ script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 0
+wind = 10
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_jc1qb")])
 
 [sub_resource type="Resource" id="Resource_amlar"]
@@ -111,4 +111,3 @@ unlocks = Array[ExtResource("4_mun1e")]([])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0
-current_level = -1

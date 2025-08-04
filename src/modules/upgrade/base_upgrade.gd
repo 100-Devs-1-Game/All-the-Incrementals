@@ -68,13 +68,6 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 # MULTIPLIER  "xN" or "/N" (?)
 @export var description_modifier_format: ModifierFormat
 
-# TODO decimals
-
-# Will serialize the current level too.
-# -1 = not bought yet
-# 0 = level 1, ...
-@export_storage var current_level: int = -1
-
 
 func _construct_cost_and_modifier_arrays():
 	if not Engine.is_editor_hint():
@@ -99,14 +92,22 @@ func _construct_cost_and_modifier_arrays():
 			effect_modifier_arr.append(base_effect_modifier + (effect_modifier_multiplier * i))
 
 
+func get_uid() -> int:
+	return ResourceLoader.get_resource_uid(resource_path)
+
+
 func level_up() -> void:
-	assert(current_level < get_max_level())
-	current_level += 1
+	var current_level = get_level()
+	if is_maxed_out():
+		push_error("Tried to level up past max level")
+		return
+	SaveGameManager.world_state.minigame_unlock_levels[get_uid()] = (current_level + 1)
+	SaveGameManager.save()
 
 
 # 0 = level 1, ...
 func get_level() -> int:
-	return current_level
+	return SaveGameManager.world_state.minigame_unlock_levels.get(get_uid(), -1)
 
 
 # 0 = level 1, ...
@@ -132,7 +133,7 @@ func get_effect_modifier(level: int) -> float:
 
 
 func get_current_effect_modifier() -> float:
-	return get_effect_modifier(current_level)
+	return get_effect_modifier(get_level())
 
 
 func is_unlocked() -> bool:
@@ -140,13 +141,13 @@ func is_unlocked() -> bool:
 
 
 func is_maxed_out() -> bool:
-	return current_level == get_max_level()
+	return get_level() == get_max_level()
 
 
 func get_next_level_cost() -> EssenceInventory:
 	if is_maxed_out():
 		return null
-	return cost_arr[current_level + 1]
+	return cost_arr[get_level() + 1]
 
 
 func can_afford_next_level() -> bool:
