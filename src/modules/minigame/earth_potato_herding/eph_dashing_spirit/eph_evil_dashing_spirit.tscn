@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgoxxbjngex2d"]
+
+[ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_hp0jy"]
+[ext_resource type="Script" uid="uid://cny8wlkj1ng54" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/eph_evil_dashing_spirit.gd" id="2_xvmqs"]
+
+[sub_resource type="GDScript" id="GDScript_b4o6r"]
+script/source = "extends State
+
+#region ======================== PUBLIC METHODS ================================
+
+
+func enter() -> void:
+	super()
+	_state_machine_owner = _state_machine_owner as EphEvilDashingSprit
+	_state_machine_owner.change_move_direction_stategy_according_to_state(state_name)
+
+#endregion
+"
+
+[node name="EPHEvilDashingSpirit" node_paths=PackedStringArray("_state_machine") instance=ExtResource("1_hp0jy")]
+collision_layer = 4
+script = ExtResource("2_xvmqs")
+_state_machine = NodePath("StateMachine")
+_base_acceleration = Vector2(200, 200)
+
+[node name="StateMachine" parent="." index="0" node_paths=PackedStringArray("_states", "_start_state")]
+_states = [NodePath("GoToNearestYongling")]
+_start_state = NodePath("GoToNearestYongling")
+
+[node name="GoToNearestYongling" type="Node" parent="StateMachine" index="0"]
+script = SubResource("GDScript_b4o6r")
+state_name = "go_to_nearest_youngling"
+
+[node name="Sprite" parent="." index="2"]
+self_modulate = Color(0.58, 0.116, 0.4408, 1)

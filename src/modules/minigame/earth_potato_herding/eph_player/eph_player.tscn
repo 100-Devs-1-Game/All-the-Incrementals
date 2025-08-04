@@ -29,7 +29,8 @@ script = ExtResource("4_kub1s")
 state_name = "walk"
 
 [node name="YounglingHerdArea" type="Area2D" parent="." index="3"]
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YounglingHerdArea" index="0"]
@@ -45,4 +46,7 @@ metadata/_edit_lock_ = true
 shape = SubResource("CircleShape2D_hpfm4")
 metadata/_edit_lock_ = true
 
+[connection signal="body_entered" from="YounglingHerdArea" to="." method="_on_youngling_herd_area_body_entered"]
+[connection signal="body_exited" from="YounglingHerdArea" to="." method="_on_youngling_herd_area_body_exited"]
 [connection signal="body_entered" from="EvilSpiritRepelArea" to="." method="_on_evil_spirit_repel_area_body_entered"]
+[connection signal="body_exited" from="EvilSpiritRepelArea" to="." method="_on_evil_spirit_repel_area_body_exited"]

@@ -1,5 +1,5 @@
 class_name EphAdult
-extends TopDown2DCharacterController
+extends Td2dCCWithAcceleration
 
 @export var _close_to_bucket_margin: float = 10
 

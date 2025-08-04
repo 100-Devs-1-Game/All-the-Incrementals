@@ -8,14 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="5_ojsc6"]
 [ext_resource type="PackedScene" uid="uid://c1o4hv5ignom3" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.tscn" id="5_tk8ls"]
 [ext_resource type="PackedScene" uid="uid://bu668uskhmtud" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.tscn" id="7_00m8t"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="10_kkhpg"]
+[ext_resource type="PackedScene" uid="uid://bwda8leqqfqki" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/spawner/eph_evil_dashing_spirit_spawner.tscn" id="7_o8bin"]
+[ext_resource type="PackedScene" uid="uid://cgoxxbjngex2d" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/eph_evil_dashing_spirit.tscn" id="8_eeopq"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="11_eeopq"]
-
-[sub_resource type="Resource" id="Resource_o8bin"]
-script = ExtResource("10_kkhpg")
-func_or_path = "game_over"
-hotkey = "v"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="EarthPotatoHerding" type="Node2D"]
 script = ExtResource("1_kkhpg")
@@ -55,8 +50,10 @@ _add_child_to = NodePath("../PotatoSpawnZone")
 _use_physics_process_to_spawn = false
 _spawn_cooldown = -1.0
 
-[node name="EphEvilSpiritSpawner" parent="." node_paths=PackedStringArray("_youngling_swawn_zone", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("2_ag328")]
-_youngling_swawn_zone = NodePath("../PotatoSpawnZone")
+[node name="EphEvilSpiritSpawner" parent="." node_paths=PackedStringArray("_potato_swawn_zone", "_player", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("2_ag328")]
+position = Vector2(1, 0)
+_potato_swawn_zone = NodePath("../PotatoSpawnZone")
+_player = NodePath("../EPHPlayer")
 _spawnable_area = NodePath("spawn_zone")
 _spawnable_area_bounding_box = NodePath("spawn_bounding_box")
 _spawnable_node_scene = ExtResource("5_tk8ls")
@@ -80,6 +77,28 @@ mouse_filter = 2
 
 [node name="EvilSpiritSpawnZone" type="Node2D" parent="."]
 
+[node name="EphEvilDashingSpiritSpawner" parent="." node_paths=PackedStringArray("_potato_swawn_zone", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("7_o8bin")]
+_potato_swawn_zone = NodePath("../PotatoSpawnZone")
+_overshoot_potato = 300.0
+_spawnable_area = NodePath("spawn_zone")
+_spawnable_area_bounding_box = NodePath("spawn_bounding_box")
+_spawnable_node_scene = ExtResource("8_eeopq")
+_add_child_to = NodePath("../EvilSpiritSpawnZone")
+_max_spawned_at_once = 5
+_spawn_cooldown = 1.0
+
+[node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilDashingSpiritSpawner"]
+polygon = PackedVector2Array(22, 23, 1858, 28, 1870, 732, 1751, 732, 1738, 135, 142, 125, 133, 735, 18, 735, 18, 21)
+metadata/_edit_lock_ = true
+
+[node name="spawn_bounding_box" type="Control" parent="EphEvilDashingSpiritSpawner"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 1919.0
+offset_bottom = 1081.0
+mouse_filter = 2
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(925, 203)
 
@@ -95,16 +114,11 @@ position = Vector2(571, 596)
 [node name="MinigameSharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("11_eeopq")]
 minigame_node = NodePath("..")
 
+[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
+visible = false
+
 [node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
 minigame = NodePath("../../../..")
-
-[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
-visible = false
-functions_node = NodePath("../../../..")
-custom_debug_buttons = Array[ExtResource("10_kkhpg")]([SubResource("Resource_o8bin")])
-
-[node name="PopupMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
-visible = false
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]

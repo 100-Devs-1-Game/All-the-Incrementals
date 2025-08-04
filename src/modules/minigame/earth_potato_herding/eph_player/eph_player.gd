@@ -10,7 +10,19 @@ func _ready() -> void:
 
 
 func _on_evil_spirit_repel_area_body_entered(body: Node2D) -> void:
-	body.queue_free()
+	body.start_repel_from_player()
+
+
+func _on_evil_spirit_repel_area_body_exited(body: Node2D) -> void:
+	body.stop_repel_from_player()
+
+
+func _on_youngling_herd_area_body_entered(body: Node2D) -> void:
+	body.start_herd_by_player()
+
+
+func _on_youngling_herd_area_body_exited(body: Node2D) -> void:
+	body.stop_herd_by_player()
 
 
 func _on_player_speed_changed(modifier: float) -> void:

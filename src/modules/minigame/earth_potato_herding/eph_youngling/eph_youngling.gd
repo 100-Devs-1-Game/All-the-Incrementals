@@ -1,5 +1,5 @@
 class_name EphYoungling
-extends TopDown2DCharacterController
+extends Td2dCCWithAcceleration
 
 @export var _time_to_grow: float = 10
 @export var _state_machine: StateMachine
@@ -25,6 +25,14 @@ func grow_up() -> void:
 	queue_free()
 
 
+func start_herd_by_player() -> void:
+	_state_machine.change_state("herd_by_player")
+
+
+func stop_herd_by_player() -> void:
+	_state_machine.change_state("free_roam")
+
+
 #endregion
 
 #region ======================== PRIVATE METHODS ===============================
@@ -40,14 +48,6 @@ func _physics_process(delta: float) -> void:
 
 	if _time_young >= _time_to_grow:
 		_state_machine.change_state("grow_up")
-
-
-func _on_youngling_saw_player_area_area_entered(_area: Area2D) -> void:
-	_state_machine.change_state("herd_by_player")
-
-
-func _on_youngling_saw_player_area_area_exited(_area: Area2D) -> void:
-	_state_machine.change_state("free_roam")
 
 
 func _on_youngling_saw_spirit_body_entered(body: Node2D) -> void:
