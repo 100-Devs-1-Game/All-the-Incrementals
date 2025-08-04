@@ -80,25 +80,23 @@ func _construct_cost_and_modifier_arrays():
 	if not Engine.is_editor_hint():
 		return
 
-	if (
-		not max_level
-		or not base_cost
-		or not base_cost.slots
-		or not base_cost_multiplier
-		or not base_effect_modifier
-		or not effect_modifier_multiplier
-	):
-		print("Some algorithmic upgrade settings have been set in %s but not all" % name)
+	if max_level <= 0:
+		push_error("failed to calculate costs/effect - max level is not set")
 		return
-	cost_arr = []
-	effect_modifier_arr = []
-	for i in range(max_level):
-		var new_cost: EssenceInventory = EssenceInventory.new()
-		for stack: EssenceStack in base_cost.slots:
-			var cost_calc: int = int(stack.amount * base_cost_multiplier * (i + 1))
-			new_cost.add_stack(EssenceStack.new(stack.essence, cost_calc))
-		cost_arr.append(new_cost)
-		effect_modifier_arr.append(base_effect_modifier * effect_modifier_multiplier * (i + 1))
+
+	if base_cost && base_cost.slots && base_cost_multiplier > 0:
+		cost_arr = []
+		for i in range(max_level):
+			var new_cost: EssenceInventory = EssenceInventory.new()
+			for stack: EssenceStack in base_cost.slots:
+				var cost_calc: int = stack.amount + int(base_cost_multiplier * i)
+				new_cost.add_stack(EssenceStack.new(stack.essence, cost_calc))
+			cost_arr.append(new_cost)
+
+	if base_effect_modifier > 0 && effect_modifier_multiplier > 0:
+		effect_modifier_arr = []
+		for i in range(max_level):
+			effect_modifier_arr.append(base_effect_modifier + (effect_modifier_multiplier * i))
 
 
 func level_up() -> void:

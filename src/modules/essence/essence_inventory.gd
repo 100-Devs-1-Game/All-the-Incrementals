@@ -16,24 +16,32 @@ const WIND_ESSENCE = preload("uid://df7knsfckprdd")
 		earth = n
 		if Engine.is_editor_hint():
 			_remove_and_add_essence(EARTH_ESSENCE, n)
+	get():
+		return get_essence(EARTH_ESSENCE)
 
 @export var fire: int:
 	set(n):
 		fire = n
 		if Engine.is_editor_hint():
 			_remove_and_add_essence(FIRE_ESSENCE, n)
+	get():
+		return get_essence(FIRE_ESSENCE)
 
 @export var water: int:
 	set(n):
 		water = n
 		if Engine.is_editor_hint():
 			_remove_and_add_essence(WATER_ESSENCE, n)
+	get():
+		return get_essence(WATER_ESSENCE)
 
 @export var wind: int:
 	set(n):
 		wind = n
 		if Engine.is_editor_hint():
 			_remove_and_add_essence(WIND_ESSENCE, n)
+	get():
+		return get_essence(WIND_ESSENCE)
 
 @export var slots: Array[EssenceStack]
 
@@ -64,5 +72,13 @@ func remove_essence(essence: Essence):
 		if slot.essence == essence:
 			slots.erase(slot)
 			return
+
+
+func get_essence(essence: Essence) -> int:
+	for slot in slots:
+		if slot.essence == essence:
+			return slot.amount
+
+	return 0
 
 # TODO sub_stack, has_essence, has_stack, merge, ...
