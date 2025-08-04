@@ -1,4 +1,4 @@
-class_name FireFighterMinigamePlayer
+class_name FireFightersMinigamePlayer
 extends CharacterBody2D
 
 signal extinguish_spot(pos: Vector2)

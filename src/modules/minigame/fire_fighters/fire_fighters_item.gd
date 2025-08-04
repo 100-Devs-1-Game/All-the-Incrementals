@@ -14,11 +14,11 @@ func _on_burn(_game: FireFightersMinigame, _item: FireFightersMinigameItemInstan
 	pass
 
 
-func _on_use(_player: FireFighterMinigamePlayer, _item: FireFightersMinigameItemInstance):
+func _on_use(_player: FireFightersMinigamePlayer, _item: FireFightersMinigameItemInstance):
 	pass
 
 
-func _on_new_tile(_player: FireFighterMinigamePlayer, _item: FireFightersMinigameItemInstance):
+func _on_new_tile(_player: FireFightersMinigamePlayer, _item: FireFightersMinigameItemInstance):
 	pass
 
 

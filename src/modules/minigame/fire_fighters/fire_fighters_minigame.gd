@@ -19,7 +19,7 @@ const BURN_TICK_INTERVAL = 10
 
 var map_feature_lookup: Dictionary
 var fires: Dictionary
-var player: FireFighterMinigamePlayer
+var player: FireFightersMinigamePlayer
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
