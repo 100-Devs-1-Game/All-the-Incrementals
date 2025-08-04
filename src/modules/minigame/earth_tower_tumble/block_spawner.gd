@@ -13,17 +13,20 @@ var blocks := [
 var current_block: PackedScene
 var next_block: PackedScene
 
+
 func start():
 	current_block = blocks.pick_random()
 	next_block = blocks.pick_random()
 	print(current_block)
 	spawn_block(current_block)
 
+
 func spawn_block(object):
 	var block = object.instantiate()
 	block.connect("released", spawn_next_block)
 	add_child(block)
 	block.global_position = global_position
+
 
 func spawn_next_block():
 	current_block = next_block
