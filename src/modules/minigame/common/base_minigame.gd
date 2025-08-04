@@ -77,11 +77,7 @@ func _start():
 
 func open_menu():
 	_minigame_shared_components.open_main_menu()
-
-	# TODO
-	# Replace with
-	# _minigame_shared_components.minigame_menu.play.pressed.connect(func(): on_start_button_pressed)
-	on_start_button_pressed()
+	_minigame_shared_components.minigame_menu.play.connect(on_start_button_pressed)
 
 
 func on_start_button_pressed():
@@ -94,19 +90,13 @@ func add_score(n: int = 1):
 
 
 func game_over():
-	get_tree().paused = true
-	# TODO make sure the Menus don't inherit pause mode but always run
-
-	# Minigame doesn't exit on game over anymore
-	#
-	#TODO
-	# _minigame_shared_components.minigame_menu.open()
+	_minigame_shared_components.minigame_menu.open_menu()
 	#
 	# Trigger reload of the Minigame scene to reset everyting and the play instantly
-	# _minigame_shared_components.minigame_menu.play.pressed.connect
-	#		(SceneLoader.start_minigame.bind(data, true))
-	# _minigame_shared_components.minigame_menu.exit.pressed.connect
-	#		(EventBus.exit_minigame.emit)
+	_minigame_shared_components.minigame_menu.play.connect(
+		SceneLoader.start_minigame.bind(data, true)
+	)
+	_minigame_shared_components.minigame_menu.exit.connect(EventBus.exit_minigame.emit)
 
 
 func exit() -> void:

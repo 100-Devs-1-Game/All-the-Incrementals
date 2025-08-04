@@ -11,6 +11,15 @@ signal exit
 
 
 func _ready() -> void:
+	assert(
+		minigame is BaseMinigame,
+		(
+			"Minigame property of the MinigameSharedComponents"
+			+ "/SharedBaseComponents/CanvasLayer/MinigameMenu must "
+			+ "be set to your minigame node in the inspector."
+		)
+	)
+
 	if visible_on_start:
 		pause.pause()
 		visible = true
