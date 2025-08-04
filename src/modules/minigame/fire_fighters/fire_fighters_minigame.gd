@@ -121,8 +121,6 @@ func _fire_burn_tick(
 	if feature:
 		fire.size = min(1.5, fire.size + feature.flammability * 0.1)
 
-	print(fire.size)
-
 	if RngUtils.chancef(fire.size - 1.0):
 		_try_to_spread_fire(tile)
 
