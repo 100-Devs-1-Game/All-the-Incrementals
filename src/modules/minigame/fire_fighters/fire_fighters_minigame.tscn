@@ -1,28 +1,28 @@
 [gd_scene load_steps=28 format=3 uid="uid://dwdhfnts10fd0"]
 
-[ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_k4ysf"]
-[ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
-[ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="2_bivsc"]
-[ext_resource type="Resource" uid="uid://bsovy80upwnb4" path="res://modules/minigame/fire_fighters/data/bush.tres" id="3_bkat1"]
-[ext_resource type="Texture2D" uid="uid://c7nq5cvot6nf5" path="res://assets/minigames/fire_fighters/placeholder_assets/objects_tile_set.png" id="3_etg5r"]
-[ext_resource type="PackedScene" uid="uid://bs75gbk0ui0bp" path="res://modules/minigame/fire_fighters/effects/water.tscn" id="4_n1sel"]
-[ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/tree.tres" id="4_o8gxd"]
-[ext_resource type="PackedScene" uid="uid://b6evijo5uuuwh" path="res://modules/minigame/fire_fighters/effects/burn_spot.tscn" id="5_ymaye"]
-[ext_resource type="PackedScene" uid="uid://cwrb3svm6p8o7" path="res://modules/minigame/fire_fighters/effects/fire.tscn" id="7_bkat1"]
-[ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/fire_fighters_player.tscn" id="8_o8gxd"]
-[ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/burnt_bush.tres" id="8_ppwky"]
-[ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/burnt_tree.tres" id="9_o1kr5"]
-[ext_resource type="Resource" uid="uid://bhtwwe0fgwlob" path="res://modules/minigame/fire_fighters/data/boulder.tres" id="10_o1kr5"]
-[ext_resource type="Texture2D" uid="uid://bhnbqskay45rg" path="res://assets/minigames/fire_fighters/placeholder_assets/oil.png" id="13_eaqpl"]
-[ext_resource type="Script" uid="uid://bk20clpaekonn" path="res://modules/minigame/fire_fighters/fire_fighters_item_spawner.gd" id="15_ymaye"]
-[ext_resource type="PackedScene" uid="uid://iiekj8nk2k2e" path="res://modules/minigame/fire_fighters/fire_fighers_item.tscn" id="16_s1p25"]
-[ext_resource type="Script" uid="uid://ctpski5ja4jdm" path="res://modules/minigame/fire_fighters/fire_fighters_item.gd" id="17_7ar71"]
-[ext_resource type="PackedScene" uid="uid://c06xs7256anxh" path="res://modules/minigame/fire_fighters/fire_fighters_object.tscn" id="17_40nd2"]
-[ext_resource type="Resource" uid="uid://cg3lw4fm84srm" path="res://modules/minigame/fire_fighters/data/gas_can.tres" id="18_40nd2"]
-[ext_resource type="Resource" uid="uid://ch44pnewmrvkb" path="res://modules/minigame/fire_fighters/data/oil_barrel.tres" id="20_nw0oh"]
+[ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_ewfdg"]
+[ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/fire_fighters_player.tscn" id="2_jiygg"]
+[ext_resource type="PackedScene" uid="uid://cwrb3svm6p8o7" path="res://modules/minigame/fire_fighters/effects/fire.tscn" id="3_jxvl4"]
+[ext_resource type="PackedScene" uid="uid://bs75gbk0ui0bp" path="res://modules/minigame/fire_fighters/effects/water.tscn" id="4_q2uva"]
+[ext_resource type="PackedScene" uid="uid://b6evijo5uuuwh" path="res://modules/minigame/fire_fighters/effects/burn_spot.tscn" id="5_mtp5r"]
+[ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="6_0qd66"]
+[ext_resource type="Resource" uid="uid://bsovy80upwnb4" path="res://modules/minigame/fire_fighters/data/bush.tres" id="7_67ens"]
+[ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/tree.tres" id="8_2aotl"]
+[ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/burnt_bush.tres" id="9_j5lxn"]
+[ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/burnt_tree.tres" id="10_8bvf2"]
+[ext_resource type="Resource" uid="uid://bhtwwe0fgwlob" path="res://modules/minigame/fire_fighters/data/boulder.tres" id="11_ftttk"]
+[ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="12_n2xsp"]
+[ext_resource type="Texture2D" uid="uid://bhnbqskay45rg" path="res://assets/minigames/fire_fighters/placeholder_assets/oil.png" id="13_k1siy"]
+[ext_resource type="Texture2D" uid="uid://c7nq5cvot6nf5" path="res://assets/minigames/fire_fighters/placeholder_assets/objects_tile_set.png" id="14_vetek"]
+[ext_resource type="Script" uid="uid://bk20clpaekonn" path="res://modules/minigame/fire_fighters/fire_fighters_item_spawner.gd" id="15_gckvd"]
+[ext_resource type="PackedScene" uid="uid://iiekj8nk2k2e" path="res://modules/minigame/fire_fighters/fire_fighers_item.tscn" id="16_na7l3"]
+[ext_resource type="PackedScene" uid="uid://c06xs7256anxh" path="res://modules/minigame/fire_fighters/fire_fighters_object.tscn" id="17_bwfd8"]
+[ext_resource type="Script" uid="uid://ctpski5ja4jdm" path="res://modules/minigame/fire_fighters/fire_fighters_item.gd" id="18_riun2"]
+[ext_resource type="Resource" uid="uid://cg3lw4fm84srm" path="res://modules/minigame/fire_fighters/data/gas_can.tres" id="19_kc2g4"]
+[ext_resource type="Resource" uid="uid://ch44pnewmrvkb" path="res://modules/minigame/fire_fighters/data/oil_barrel.tres" id="20_tmnm7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
-texture = ExtResource("2_4r4fr")
+texture = ExtResource("12_n2xsp")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -32,7 +32,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_bkat1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymaye"]
-texture = ExtResource("13_eaqpl")
+texture = ExtResource("13_k1siy")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -41,7 +41,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ymaye")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1sel"]
-texture = ExtResource("3_etg5r")
+texture = ExtResource("14_vetek")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -59,14 +59,14 @@ sources/0 = SubResource("TileSetAtlasSource_n1sel")
 tile_size = Vector2i(32, 32)
 
 [node name="FireFighters" type="Node2D"]
-script = ExtResource("1_k4ysf")
-player_scene = ExtResource("8_o8gxd")
-fire_scene = ExtResource("7_bkat1")
-water_scene = ExtResource("4_n1sel")
-burn_spot_scene = ExtResource("5_ymaye")
+script = ExtResource("1_ewfdg")
+player_scene = ExtResource("2_jiygg")
+fire_scene = ExtResource("3_jxvl4")
+water_scene = ExtResource("4_q2uva")
+burn_spot_scene = ExtResource("5_mtp5r")
 enable_burn_spots = false
 map_rect = Rect2i(0, 0, 70, 50)
-map_features = Array[ExtResource("2_bivsc")]([ExtResource("3_bkat1"), ExtResource("4_o8gxd"), ExtResource("8_ppwky"), ExtResource("9_o1kr5"), ExtResource("10_o1kr5")])
+map_features = Array[ExtResource("6_0qd66")]([ExtResource("7_67ens"), ExtResource("8_2aotl"), ExtResource("9_j5lxn"), ExtResource("10_8bvf2"), ExtResource("11_ftttk")])
 data_uid = "uid://kt1wsi0p5wkb"
 
 [node name="CanvasLayer Background" type="CanvasLayer" parent="."]
@@ -95,10 +95,10 @@ enabled = false
 tile_set = SubResource("TileSet_ymaye")
 
 [node name="FireFightersMinigameItemSpawner" type="Node" parent="."]
-script = ExtResource("15_ymaye")
-pickup_scene = ExtResource("16_s1p25")
-object_scene = ExtResource("17_40nd2")
-debug_items = Array[ExtResource("17_7ar71")]([ExtResource("18_40nd2"), ExtResource("20_nw0oh")])
+script = ExtResource("15_gckvd")
+pickup_scene = ExtResource("16_na7l3")
+object_scene = ExtResource("17_bwfd8")
+debug_items = Array[ExtResource("18_riun2")]([ExtResource("19_kc2g4"), ExtResource("20_tmnm7")])
 metadata/_custom_type_script = "uid://bk20clpaekonn"
 
 [node name="Timer" type="Timer" parent="FireFightersMinigameItemSpawner"]
