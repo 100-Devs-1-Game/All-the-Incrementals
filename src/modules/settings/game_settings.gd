@@ -56,7 +56,6 @@ func set_audio(bus: int, volume: float):
 		2:
 			sfx_volume = volume * 100.0
 	AudioServer.set_bus_volume_db(bus, volume)
-	print("Audio adjusted: ", bus, volume)
 
 
 ## Creates an audio node and plays the given audio globally
@@ -179,7 +178,7 @@ func rebind_request(
 	)
 	for bind_list in keybinds.values():
 		if new_keycode in bind_list:
-			print("This key is already in use by another action you peasant >:(")
+			print("This key is already in use by another action!")
 			return false
 
 	InputMap.action_erase_event(action, old_key)

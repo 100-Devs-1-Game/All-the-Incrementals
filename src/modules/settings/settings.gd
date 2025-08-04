@@ -100,7 +100,7 @@ func _on_volume_changed(value: float, type: String) -> void:
 
 
 func call_rebinder(key_id: int, button):
-	print("Calling rebinder")
+	print("Calling rebinder.")
 	var rebinder = REBINDER.instantiate()
 	rebinder.action_id = key_id
 	rebinder.caller = button
@@ -108,7 +108,6 @@ func call_rebinder(key_id: int, button):
 
 
 func update_ui():
-	print(GameSettings.keybinds)
 	if GameSettings.fullscreen:
 		$Panel/SettingsContainer/MultiContainer/FullscreenContainer/ScreenButton.text = (
 			"Fullscreen: " + "ON"
