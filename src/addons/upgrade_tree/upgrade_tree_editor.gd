@@ -179,6 +179,9 @@ func _add_node(
 	graph_edit.add_child(graph_node)
 	if current_node:
 		graph_edit.connect_node(current_node.name, 0, graph_node.name, 0)
+
+	# force all upgrades to save on load, causing their resource data to refresh
+	_save_upgrade(new_upgrade)
 	return graph_node
 
 
@@ -214,8 +217,6 @@ func _save_upgrade(upgrade: MinigameUpgrade):
 	if upgrade.resource_path:
 		upgrade.set_meta("tree_editor_version_saved", UpgradeTreeEditorVersion)
 		ResourceSaver.save(upgrade)
-	else:
-		print("Warning: resource path not set. Changes not being saved")
 
 
 # Button press handlers
