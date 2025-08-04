@@ -93,6 +93,9 @@ func open_upgrades():
 # Call this function when the game ends to re-open the minigame menu.
 func game_over():
 	_minigame_shared_components.minigame_menu.open_menu()
+	Player.add_stack_to_inventory(
+		EssenceStack.new(data.output_essence, score * data.currency_conversion_factor)
+	)
 	_is_game_over = true
 
 
@@ -112,3 +115,7 @@ func exit() -> void:
 # For debugging shortcuts, immediate quit.
 func quit_game() -> void:
 	get_tree().quit()
+
+
+func save_game() -> void:
+	SaveGameManager.save()

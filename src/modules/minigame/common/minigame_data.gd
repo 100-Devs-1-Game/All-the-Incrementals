@@ -33,7 +33,7 @@ func get_all_upgrades(
 		root_nodes.assign(upgrade_tree_root_nodes)
 
 	for upgrade in root_nodes:
-		if unlocked_only and upgrade.current_level <= -1:
+		if unlocked_only and upgrade.get_level() <= -1:
 			continue
 		result.append(upgrade)
 		result.append_array(get_all_upgrades(upgrade, unlocked_only))

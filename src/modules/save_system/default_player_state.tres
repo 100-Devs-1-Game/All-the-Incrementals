@@ -6,6 +6,10 @@
 
 [sub_resource type="Resource" id="Resource_ugayj"]
 script = ExtResource("1_4s2s2")
+earth = 0
+fire = 0
+water = 0
+wind = 0
 slots = Array[ExtResource("2_dfdge")]([])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
