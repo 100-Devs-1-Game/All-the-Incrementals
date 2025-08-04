@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://be3qx1qjfoh8d"]
+[gd_scene load_steps=7 format=3 uid="uid://be3qx1qjfoh8d"]
 
 [ext_resource type="Script" uid="uid://c3ehqo3raxj2p" path="res://component/shared/shared_base_components.gd" id="1_g8arh"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="2_puewj"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_fwwas"]
 [ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="4_8hb22"]
 [ext_resource type="PackedScene" uid="uid://bc8arfi4le746" path="res://modules/menu/popup_menu.tscn" id="5_gjehr"]
-[ext_resource type="PackedScene" uid="uid://dfgybu1xb5gr0" path="res://modules/menu/minigame_menu.tscn" id="6_puewj"]
 
 [sub_resource type="Resource" id="Resource_cdp2m"]
 script = ExtResource("4_8hb22")
@@ -22,5 +21,3 @@ layer = 99
 default_debug_buttons = SubResource("Resource_cdp2m")
 
 [node name="PopupMenu" parent="CanvasLayer" instance=ExtResource("5_gjehr")]
-
-[node name="MinigameMenu" parent="CanvasLayer" instance=ExtResource("6_puewj")]

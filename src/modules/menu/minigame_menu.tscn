@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfgybu1xb5gr0"]
 
 [ext_resource type="Script" uid="uid://c0138l55svl62" path="res://modules/menu/minigame_menu.gd" id="1_oo15i"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbbci"]
-bg_color = Color(0.592474, 0.85303, 0.592649, 1)
+[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/settings/off_white_styleboxflat.tres" id="2_j24fc"]
 
 [node name="MinigameMenu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -29,7 +27,7 @@ offset_right = 200.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qbbci")
+theme_override_styles/panel = ExtResource("2_j24fc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1

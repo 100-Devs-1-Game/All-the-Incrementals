@@ -88,5 +88,15 @@ position = Vector2(571, 596)
 [node name="MinigameSharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("11_eeopq")]
 minigame_node = NodePath("..")
 
+[node name="MinigameMenu2" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
+visible = false
+minigame = NodePath("../../../..")
+
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1"]
+visible = false
+
+[node name="PopupMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
+visible = false
+
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]
