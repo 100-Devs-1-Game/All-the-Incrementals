@@ -3,6 +3,20 @@ extends Control
 
 const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 
+@export_category("Assignments")
+@export_group("Buttons")
+@export var low_button: Button
+@export var medium_button: Button
+@export var high_button: Button
+@export var best_button: Button
+@export var screen_button: Button
+@export var exit_button: Button
+@export var restore_button: Button
+@export_group("Sliders")
+@export var master_slider: Slider
+@export var music_slider: Slider
+@export var sfx_slider: Slider
+
 var action_menu := false  #Changes menu for ingame
 var fullscreen := false
 var ordered_actions := [
@@ -22,24 +36,24 @@ var ordered_actions := [
 	"exit_menu"
 ]
 
-@onready var setting_buttons := {
-	$Panel/SettingsContainer/MultiContainer/HBoxContainer/Low: "Low",
-	$Panel/SettingsContainer/MultiContainer/HBoxContainer/Medium: "Medium",
-	$Panel/SettingsContainer/MultiContainer/HBoxContainer/High: "High",
-	$Panel/SettingsContainer/MultiContainer/HBoxContainer/Best: "Best",
-	$Panel/SettingsContainer/MultiContainer/FullscreenContainer/ScreenButton: "Fullscreen",
-	$BackButton: "Exit",
-	$RestoreButton: "Restore"
-}
+var setting_buttons := {}
+var audio_sliders := {}
 
-@onready var audio_sliders := {
-	$Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider: "Master",
-	$Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider: "Music",
-	$Panel/SettingsContainer/MultiContainer/SFXlbl/SFXSlider: "SFX"
-}
+@onready var quality_label = $Panel/SettingsContainer/MultiContainer/QualityLabel
 
 
 func _ready() -> void:
+	setting_buttons = {
+		low_button: "Low",
+		medium_button: "Medium",
+		high_button: "High",
+		best_button: "Best",
+		screen_button: "Fullscreen",
+		exit_button: "Exit",
+		restore_button: "Restore"
+	}
+
+	audio_sliders = {master_slider: "Master", music_slider: "Music", sfx_slider: "SFX"}
 	setup()
 
 
@@ -109,28 +123,14 @@ func call_rebinder(key_id: int, button):
 
 func update_ui():
 	if GameSettings.fullscreen:
-		$Panel/SettingsContainer/MultiContainer/FullscreenContainer/ScreenButton.text = (
-			"Fullscreen: " + "ON"
-		)
+		screen_button.text = ("Fullscreen: " + "ON")
 	else:
-		$Panel/SettingsContainer/MultiContainer/FullscreenContainer/ScreenButton.text = (
-			"Fullscreen: " + "OFF"
-		)
+		screen_button.text = ("Fullscreen: " + "OFF")
 
-	$Panel/SettingsContainer/MultiContainer/QualityLabel.text = (
-		"3D Quality: " + str(GameSettings.quality)
-	)
-	$Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider.value = (
-		GameSettings.master_volume
-	)
-	$Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider.value = GameSettings.music_volume
-	$Panel/SettingsContainer/MultiContainer/SFXlbl/SFXSlider.value = GameSettings.sfx_volume
-	$Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider/ValueLabel.text = str(
-		roundi(GameSettings.master_volume), "%"
-	)
-	$Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider/ValueLabel.text = str(
-		roundi(GameSettings.music_volume), "%"
-	)
-	$Panel/SettingsContainer/MultiContainer/SFXlbl/SFXSlider/ValueLabel.text = str(
-		roundi(GameSettings.sfx_volume), "%"
-	)
+	quality_label.text = ("3D Quality: " + str(GameSettings.quality))
+	master_slider.value = (GameSettings.master_volume)
+	music_slider.value = GameSettings.music_volume
+	sfx_slider.value = GameSettings.sfx_volume
+	master_slider.get_child(0).text = str(roundi(GameSettings.master_volume), "%")
+	music_slider.get_child(0).text = str(roundi(GameSettings.music_volume), "%")
+	sfx_slider.get_child(0).text = str(roundi(GameSettings.sfx_volume), "%")
