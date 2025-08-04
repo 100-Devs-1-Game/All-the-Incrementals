@@ -23,6 +23,10 @@ func init():
 	for upgrade in data.get_all_upgrades():
 		_add_upgrade_item(upgrade)
 
+	var reset_item = _tree_upgrades.create_child()
+	reset_item.set_text(0, "Reset all upgrades")
+	debug_popup.link_callable(reset_item, data.reset_all_upgrades)
+
 
 func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
 	var new_item = _tree_upgrades.create_child()
