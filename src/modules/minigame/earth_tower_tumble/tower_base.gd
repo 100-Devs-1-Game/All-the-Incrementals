@@ -1,10 +1,11 @@
 extends Node2D
 
+var base_width = 220.0
+var base_upgrade_increment = 60.0
+
 @onready var col_shape: CollisionShape2D = $StaticBody2D/CollisionShape2D
 @onready var polygon: Polygon2D = $Polygon2D
 
-var base_width = 220.0
-var base_upgrade_increment = 60.0
 
 
 func _process(_delta):
