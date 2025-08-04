@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal released
+
 var cell_size := 32
 var target_x: float
 var move_speed := 30.0
@@ -7,8 +9,6 @@ var is_held := true
 
 var last_delay = false
 var touch_delay := 0.2
-
-signal released
 
 
 func _ready():

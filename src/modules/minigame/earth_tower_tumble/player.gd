@@ -12,7 +12,7 @@ func _ready():
 	start_position = global_position
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var time = Time.get_ticks_msec() / 1000.0
 	var x_offset = sin(time * sway_speed * TAU) * sway_amplitude
 	var y_offset = sin(time * float_speed * TAU) * float_amplitude

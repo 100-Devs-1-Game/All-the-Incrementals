@@ -1,13 +1,13 @@
 extends Node2D
 
-@onready var col = $StaticBody2D/CollisionShape2D
-@onready var poly = $Polygon2D
-
 var base_width_current := 284.0
 var upgrade_width_increment := 64.0
 var upgrade_speed := 15.0
 
 var base_upgrading := false
+
+@onready var col = $StaticBody2D/CollisionShape2D
+@onready var poly = $Polygon2D
 
 
 func _ready():
