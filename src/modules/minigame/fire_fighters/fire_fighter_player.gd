@@ -14,7 +14,7 @@ var last_dir: Vector2
 
 
 func _physics_process(_delta: float) -> void:
-	var move_dir: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var move_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
 	velocity = move_dir * move_speed
 	move_and_slide()
 
@@ -22,7 +22,7 @@ func _physics_process(_delta: float) -> void:
 		last_dir = move_dir
 
 	extinguisher.look_at(position + last_dir)
-	extinguish(Input.is_action_pressed("ui_select"))
+	extinguish(Input.is_action_pressed("primary_action"))
 
 
 func extinguish(flag: bool):
