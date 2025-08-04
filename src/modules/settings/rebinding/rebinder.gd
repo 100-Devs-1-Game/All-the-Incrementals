@@ -4,7 +4,7 @@ var action_id := 0
 var caller: Button
 var listening := true
 
-@onready var input_label = $Panel/Panel/NewKeyLabel
+@onready var input_label = $Panel/Panel2/Panel/NewKeyLabel
 @onready var error_label = $Panel/Error
 
 

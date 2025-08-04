@@ -50,16 +50,51 @@ func _process(_delta: float) -> void:
 	ui_distance_value.text = str(floori(_distance_travelled))
 
 
+func random_spawnable_fish(distance: float, min_height: float, max_height: float) -> WTFFishData:
+	#todo cache, carefully
+	var valid_spawns: Array[WTFFishData]
+
+	var data := fish_db.get_data()
+	for data_key in data:
+		var data_val := data[data_key]
+		var spawnable_x := distance > data_val.spawn.min_spawn_distance
+		var spawn_y_range := data_val.spawn.get_spawn_height_range()
+		var spawnable_y := min_height <= spawn_y_range.y || max_height >= spawn_y_range.x
+		if spawnable_x && spawnable_y:
+			valid_spawns.push_back(data_val)
+
+	#todo, use weightings instead?
+	return valid_spawns.pick_random()
+
+
 func _spawn_fish() -> void:
 	#don't spawn when flying
+	#todo, allow when we have an upgrade for that (inc. change the spawn data)
 	if WTFGlobals.camera.get_bottom() <= WTFConstants.SEALEVEL:
 		return
 
+	var rand_offset_x := randf_range(1, 4) * -stats.scrollspeed.x
+	var min_spawn_y := WTFGlobals.camera.get_top() - 320
+	var max_spawn_y := WTFGlobals.camera.get_bottom() - 320
+
+	var spawnable_fish := random_spawnable_fish(_distance_travelled, min_spawn_y, max_spawn_y)
+
+	if !is_instance_valid(spawnable_fish):
+		return
+
 	var f: WTFFish = fish.instantiate()
-	var rand_offset := randf_range(-stats.scrollspeed.x, -stats.scrollspeed.x * 4)
-	f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + rand_offset)  #avoid clump
-	f.position.y = randf_range(max(0, WTFGlobals.camera.get_top()), WTFGlobals.camera.get_bottom())
-	f.data = fish_db.random()
+	f.data = spawnable_fish
+
+	# avoid clumping the fish together
+	f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + rand_offset_x)
+
+	# somewhere within the valid range and also close to the camera
+	var height_range := f.data.spawn.get_spawn_height_range()
+	f.position.y = randf_range(max(height_range.x, min_spawn_y), min(height_range.y, max_spawn_y))
+
+	# todo, since we move the root entities node
+	# we may eventually deal with floating point imprecision
+	# should instead move all entity children and let them auto-delete, keeping positions sane
 	%Entities.add_child(f)
 
 

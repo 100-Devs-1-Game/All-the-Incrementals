@@ -43,7 +43,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 		)
 
 		WTFGlobals.minigame.stats.weight += maybe_fish.data.pickup.weight
-		WTFGlobals.minigame.stats.scroll_faster(maybe_fish.data.pickup.pixels_per_second)
+		WTFGlobals.minigame.stats.scroll_faster(maybe_fish.data.pickup.speedboost)
 		maybe_fish.queue_free()
 		return
 
@@ -55,7 +55,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 		)
 
 		WTFGlobals.minigame.stats.weight += maybe_cannon.pickup.weight
-		WTFGlobals.minigame.stats.scroll_faster(maybe_cannon.pickup.pixels_per_second)
+		WTFGlobals.minigame.stats.scroll_faster(maybe_cannon.pickup.speedboost)
 		return
 
 

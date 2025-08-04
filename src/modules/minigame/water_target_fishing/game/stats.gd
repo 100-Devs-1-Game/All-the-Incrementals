@@ -16,7 +16,7 @@ var spawn_x_starting_fish: float
 
 
 func _init() -> void:
-	scrollspeed = Vector2(-200, 0)
+	scrollspeed = Vector2(-300, 0)
 
 	score_multiplier = 1.0
 	weight_multiplier = 1.0

@@ -68,4 +68,8 @@ MinigameData which contains the upgrade tree for the Minigame.
 
 ## What is the `EssenceInventory`?
 
+The EssenceInventory is a collection of one or more EssenceStacks. It can be used for the Players Inventory or defining the cost of an Upgrade.
+
 ## What is the `EssenceStack`?
+
+An EssenceStack is the amount of a single type of Essence.

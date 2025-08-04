@@ -6,8 +6,8 @@ extends Node2D
 var _data: Dictionary[String, WTFFishData]
 
 
-func random() -> WTFFishData:
-	return _data.values().pick_random()
+func get_data() -> Dictionary[String, WTFFishData]:
+	return _data
 
 
 func _enter_tree() -> void:
