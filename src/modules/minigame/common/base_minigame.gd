@@ -77,7 +77,15 @@ func _start():
 # It should run the minigame.
 func play():
 	_initialize()
+	_apply_all_upgrades()
 	_start()
+
+
+func _apply_all_upgrades():
+	for upgrade in data.get_all_upgrades(null, true):
+		var minigame_upgrade: MinigameUpgrade = upgrade
+		assert(minigame_upgrade.logic != null)
+		minigame_upgrade.logic._apply_effect(self, upgrade)
 
 
 func add_score(n: int = 1):
