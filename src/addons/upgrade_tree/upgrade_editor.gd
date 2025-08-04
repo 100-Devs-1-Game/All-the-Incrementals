@@ -29,7 +29,7 @@ func set_fields_from_upgrade() -> void:
 	if upgrade.cost_arr.is_empty():
 		add_info_error("MISSING COSTS")
 
-	if upgrade.max_level <= 0:
+	if upgrade.get_max_level() <= 0:
 		add_info_error("MISSING MAX LEVEL")
 
 	if !upgrade.effect_modifier_arr:
@@ -48,8 +48,10 @@ func set_fields_from_upgrade() -> void:
 func add_info_error(msg: String) -> void:
 	add_info("[color=red]%s[/color]" % msg)
 
+
 func add_info_warning(msg: String) -> void:
 	add_info("[color=yellow]%s[/color]" % msg)
+
 
 func add_info(msg: String) -> void:
 	if info.text != "":
