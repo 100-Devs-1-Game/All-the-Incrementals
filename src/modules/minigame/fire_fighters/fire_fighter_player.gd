@@ -6,6 +6,7 @@ signal extinguish_spot(pos: Vector2)
 @export var move_speed: float = 100.0
 @export var acceleration: float = 1000.0
 @export var water_speed: float = 300.0
+@export var arc_factor: float = 0.1
 
 var last_dir: Vector2
 
@@ -53,7 +54,9 @@ func extinguish(flag: bool):
 
 	game.add_water(
 		extinguisher_offset.global_position,
-		velocity + dir * water_speed,
+		dir * water_speed,
+		velocity,
+		arc_factor,
 		extinguisher.global_transform.x
 	)
 

@@ -84,10 +84,11 @@ func _remove_fire(fire: FireFightersMinigameFire):
 	fire.queue_free()
 
 
-func add_water(pos: Vector2, vel: Vector2, dir: Vector2):
+func add_water(pos: Vector2, vel: Vector2, impulse: Vector2, arc_factor: float, dir: Vector2):
 	var water: FireFightersMinigameWater = water_scene.instantiate()
 	water.position = pos
-	water.velocity = vel
+	water.velocity = vel + impulse
+	water.z_velocity = vel.length() * arc_factor
 	water_node.add_child(water)
 	water.look_at(water.position + dir)
 
@@ -148,6 +149,9 @@ func _tick_water():
 	for water: FireFightersMinigameWater in water_node.get_children():
 		var tile: Vector2i = get_tile_at(water.position)
 		var fire: FireFightersMinigameFire = get_fire_at(tile)
+		if not water.is_low():
+			continue
+
 		if fire:
 			var epsilon := 0.001
 			var max_water: float = min(max_water_per_fire, water.density + epsilon)
