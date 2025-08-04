@@ -1,11 +1,22 @@
 class_name FireFightersMinigameItem
 extends Resource
 
+enum Type { PICKUP, OBJECT }
+
 @export var name: String
+@export var type: Type
 @export var icon: Texture2D
 
-var unlocked: bool = false
+var spawn_probability: float = 1.0
 
 
-func get_spawn_probability() -> float:
-	return 1.0
+func _on_burn(_game: FireFightersMinigame, _item: FireFightersMinigameItemInstance):
+	pass
+
+
+func _on_use(_player: FireFighterMinigamePlayer, _item: FireFightersMinigameItemInstance):
+	pass
+
+
+func _on_new_tile(_player: FireFighterMinigamePlayer, _item: FireFightersMinigameItemInstance):
+	pass

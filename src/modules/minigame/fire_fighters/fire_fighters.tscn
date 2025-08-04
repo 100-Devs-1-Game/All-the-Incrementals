@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=28 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_k4ysf"]
 [ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
@@ -17,7 +17,9 @@
 [ext_resource type="Script" uid="uid://bk20clpaekonn" path="res://modules/minigame/fire_fighters/fire_fighters_item_spawner.gd" id="15_ymaye"]
 [ext_resource type="PackedScene" uid="uid://iiekj8nk2k2e" path="res://modules/minigame/fire_fighters/fire_fighers_item.tscn" id="16_s1p25"]
 [ext_resource type="Script" uid="uid://ctpski5ja4jdm" path="res://modules/minigame/fire_fighters/fire_fighters_item.gd" id="17_7ar71"]
+[ext_resource type="PackedScene" uid="uid://c06xs7256anxh" path="res://modules/minigame/fire_fighters/fire_fighters_object.tscn" id="17_40nd2"]
 [ext_resource type="Resource" uid="uid://cg3lw4fm84srm" path="res://modules/minigame/fire_fighters/data/gas_can.tres" id="18_40nd2"]
+[ext_resource type="Resource" uid="uid://ch44pnewmrvkb" path="res://modules/minigame/fire_fighters/data/oil_barrel.tres" id="20_nw0oh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
 texture = ExtResource("2_4r4fr")
@@ -94,8 +96,9 @@ tile_set = SubResource("TileSet_ymaye")
 
 [node name="FireFightersMinigameItemSpawner" type="Node" parent="."]
 script = ExtResource("15_ymaye")
-item_instance_scene = ExtResource("16_s1p25")
-debug_items = Array[ExtResource("17_7ar71")]([ExtResource("18_40nd2")])
+pickup_scene = ExtResource("16_s1p25")
+object_scene = ExtResource("17_40nd2")
+debug_items = Array[ExtResource("17_7ar71")]([ExtResource("18_40nd2"), ExtResource("20_nw0oh")])
 metadata/_custom_type_script = "uid://bk20clpaekonn"
 
 [node name="Timer" type="Timer" parent="FireFightersMinigameItemSpawner"]

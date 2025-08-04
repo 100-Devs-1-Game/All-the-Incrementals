@@ -1,5 +1,5 @@
 class_name FireFightersMinigameItemInstance
-extends Area2D
+extends Node2D
 
 var type: FireFightersMinigameItem
 

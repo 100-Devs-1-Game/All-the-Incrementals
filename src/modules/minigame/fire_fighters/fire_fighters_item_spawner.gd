@@ -1,7 +1,8 @@
 class_name FireFightersMinigameItemSpawner
 extends Node
 
-@export var item_instance_scene: PackedScene
+@export var pickup_scene: PackedScene
+@export var object_scene: PackedScene
 @export var debug_items: Array[FireFightersMinigameItem]
 @export var spawn_tries: int = 10
 
@@ -18,7 +19,7 @@ func activate():
 
 func run():
 	for item in _get_all_items():
-		if RngUtils.chancef(item.get_spawn_probability()):
+		if RngUtils.chancef(item.spawn_probability):
 			for i in spawn_tries:
 				var spawn_tile: Vector2i = game.get_random_tile()
 				if _can_spawn_item_on(spawn_tile):
@@ -27,7 +28,10 @@ func run():
 
 
 func spawn_item(item_type: FireFightersMinigameItem, pos: Vector2):
-	var item: FireFightersMinigameItemInstance = item_instance_scene.instantiate()
+	var scene: PackedScene = (
+		pickup_scene if item_type.type == FireFightersMinigameItem.Type.PICKUP else object_scene
+	)
+	var item: FireFightersMinigameItemInstance = scene.instantiate()
 	item.position = pos
 	game.item_node.add_child(item)
 	item.init(item_type)
