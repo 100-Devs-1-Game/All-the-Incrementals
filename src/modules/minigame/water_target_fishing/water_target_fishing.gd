@@ -25,7 +25,6 @@ func get_pixels_per_second() -> int:
 
 func _enter_tree() -> void:
 	WTFGlobals.minigame = self
-	stats = WTFStats.new()
 
 	## yyyy does it stutter thoooo
 	# I can't find any magic number that solves it :(
@@ -35,6 +34,12 @@ func _enter_tree() -> void:
 
 func _exit_tree() -> void:
 	WTFGlobals.minigame = null
+
+
+func _initialize() -> void:
+	stats = WTFStats.new()
+	data.apply_all_upgrades(self)
+	stats.reset()
 
 
 func _start() -> void:
