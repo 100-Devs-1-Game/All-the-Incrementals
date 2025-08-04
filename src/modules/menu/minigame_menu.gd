@@ -1,11 +1,9 @@
 class_name MinigameMenu
 extends Control
 
-@export var visible_on_start: bool = true
+@export var visible_on_start: bool = false
 @export var minigame: BaseMinigame
 @export var pause: Pause
-
-var _is_first_run: bool = true
 
 
 func _ready() -> void:
@@ -20,13 +18,7 @@ func _ready() -> void:
 
 	tree_exiting.connect(_on_tree_exiting)
 
-	if visible_on_start:
-		pause.pause()
-		visible = true
-	else:
-		visible = false
-		# Since initial menu is disabled, assume first run started.
-		_is_first_run = false
+	visible = visible_on_start
 
 
 func open_menu() -> void:
@@ -37,13 +29,9 @@ func open_menu() -> void:
 func _on_play_pressed() -> void:
 	pause.try_unpause()
 	visible = false
-	_is_first_run = false
-
-	if _is_first_run:
-		minigame.play()
-	else:
-		# Reload the scene from scratch, and start again immediately.
-		SceneLoader.start_minigame(minigame.data, true)
+	if minigame.is_game_over():
+		SceneLoader.enable_immediate_play()
+		SceneLoader.start_minigame(minigame.data)
 
 
 func _on_upgrades_pressed() -> void:

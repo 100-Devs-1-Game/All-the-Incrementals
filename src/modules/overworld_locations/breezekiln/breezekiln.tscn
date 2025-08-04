@@ -48,9 +48,10 @@ fire_fighters_data = ExtResource("4_4lo53")
 wind_platformer_data = ExtResource("5_oivh7")
 wind_rhythm_data = ExtResource("5_0bjiu")
 
-[node name="DebugPopup" parent="." instance=ExtResource("4_32tle")]
+[node name="DebugPopup" parent="." node_paths=PackedStringArray("functions_node") instance=ExtResource("4_32tle")]
 visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
+functions_node = NodePath("..")
 visible_on_start = true
 default_debug_buttons = SubResource("Resource_63gpb")
