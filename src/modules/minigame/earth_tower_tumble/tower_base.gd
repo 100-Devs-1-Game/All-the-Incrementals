@@ -3,10 +3,12 @@ extends Node2D
 var base_width = 220.0
 var base_upgrade_increment = 60.0
 
-@onready var col_shape: CollisionShape2D = $StaticBody2D/CollisionShape2D
-@onready var polygon: Polygon2D = $Polygon2D
+var col_shape: CollisionShape2D
+var polygon: Polygon2D
 
-
+func _ready() -> void:
+	col_shape = $StaticBody2D/CollisionShape2D
+	polygon = $Polygon2D
 
 func _process(_delta):
 	var rect_shape = col_shape.shape as RectangleShape2D
