@@ -23,6 +23,10 @@ func init():
 	for upgrade in data.get_all_upgrades():
 		_add_upgrade_item(upgrade)
 
+	var reset_item = _tree_upgrades.create_child()
+	reset_item.set_text(0, "Reset all upgrades")
+	debug_popup.link_callable(reset_item, data.reset_all_upgrades)
+
 
 func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
 	var new_item = _tree_upgrades.create_child()
@@ -41,7 +45,7 @@ func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
 
 
 func _get_upgrade_button_text(upgrade: BaseUpgrade) -> String:
-	return "%s Lvl %d" % [upgrade.name, upgrade.current_level + 1]
+	return "%s Lvl %d" % [upgrade.name, upgrade.get_level() + 1]
 
 
 func _on_upgrade_item_pressed(item: TreeItem, upgrade: BaseUpgrade):
