@@ -162,7 +162,6 @@ func _add_node(
 ) -> UpgradeEditor:
 	var graph_node: UpgradeEditor = UpgradeEditorScene.instantiate()
 	graph_node.upgrade = new_upgrade
-	graph_node.set_fields_from_upgrade()
 	graph_node.node_selected.connect(_on_upgrade_selected.bind(graph_node))
 	graph_node.dragged.connect(_on_dragged.bind(graph_node))
 	graph_edit.add_child(graph_node)
