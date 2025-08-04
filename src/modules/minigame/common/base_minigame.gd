@@ -30,10 +30,6 @@ func _ready() -> void:
 	else:
 		data = SceneLoader.get_current_minigame()
 
-	#
-	# Make sure the Minigame scene has a instance of
-	# "res://modules/minigame/common/shared/minigame_shared_components.tscn"
-	#
 	assert(
 		_has_child_minigame_shared_components(),
 		"Couldn't find child class of type MinigameSharedComponents in Minigame scene"
@@ -42,9 +38,9 @@ func _ready() -> void:
 	_minigame_shared_components = _get_child_minigame_shared_components()
 
 	if SceneLoader._play_minigame_instantly:
-		on_start_button_pressed()
+		play()
 	else:
-		open_menu()
+		_minigame_shared_components.minigame_menu.open_menu()
 
 
 func _has_child_minigame_shared_components() -> bool:
@@ -75,12 +71,9 @@ func _start():
 	pass
 
 
-func open_menu():
-	_minigame_shared_components.open_main_menu()
-	_minigame_shared_components.minigame_menu.play.connect(on_start_button_pressed)
-
-
-func on_start_button_pressed():
+# This function is called when the Play button on the minigame menu is pressed.
+# It should run the minigame.
+func play():
 	_initialize()
 	_start()
 
@@ -89,20 +82,24 @@ func add_score(n: int = 1):
 	score += n
 
 
+# This function is called when the Upgrades button on the minigame menu is
+# pressed.
+func open_upgrades():
+	print("Not yet implemented")
+
+
+# Call this function when the game ends to re-open the minigame menu.
 func game_over():
 	_minigame_shared_components.minigame_menu.open_menu()
-	#
-	# Trigger reload of the Minigame scene to reset everyting and the play instantly
-	_minigame_shared_components.minigame_menu.play.connect(
-		SceneLoader.start_minigame.bind(data, true)
-	)
-	_minigame_shared_components.minigame_menu.exit.connect(EventBus.exit_minigame.emit)
 
 
+# This function is called when the Exit minigame button is pressed.
 func exit() -> void:
-	print("Emitting exit_minigame signal")
-	EventBus.emit_signal(EventBus.exit_minigame.get_name())
+	# Exiting the minigame will return the player to the settlement. See the
+	# scene_loader.gd file for the corresponding connect() function.
+	EventBus.exit_minigame.emit()
 
 
+# For debugging shortcuts, immediate quit.
 func quit_game() -> void:
 	get_tree().quit()

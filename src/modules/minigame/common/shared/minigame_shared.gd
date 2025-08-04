@@ -16,6 +16,5 @@ func open_upgrade_menu():
 	#TODO ...
 	pass
 
-
-func open_main_menu():
-	minigame_menu.open_menu()
+#func open_main_menu():
+#	minigame_menu.open_menu()

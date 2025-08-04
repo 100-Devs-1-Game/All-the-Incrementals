@@ -1,13 +1,11 @@
 class_name MinigameMenu
 extends Control
 
-signal play
-signal open_upgrades
-signal exit
-
 @export var visible_on_start: bool = true
 @export var minigame: BaseMinigame
 @export var pause: Pause
+
+var _is_first_run: bool = true
 
 
 func _ready() -> void:
@@ -20,11 +18,15 @@ func _ready() -> void:
 		)
 	)
 
+	tree_exiting.connect(_on_tree_exiting)
+
 	if visible_on_start:
 		pause.pause()
 		visible = true
 	else:
 		visible = false
+		# Since initial menu is disabled, assume first run started.
+		_is_first_run = false
 
 
 func open_menu() -> void:
@@ -35,16 +37,22 @@ func open_menu() -> void:
 func _on_play_pressed() -> void:
 	pause.try_unpause()
 	visible = false
-	play.emit()
+	_is_first_run = false
+
+	if _is_first_run:
+		minigame.play()
+	else:
+		# Reload the scene from scratch, and start again immediately.
+		SceneLoader.start_minigame(minigame.data, true)
 
 
 func _on_upgrades_pressed() -> void:
-	open_upgrades.emit()
+	minigame.open_upgrades()
 
 
 func _on_exit_pressed() -> void:
-	visible = false
-	minigame.visible = false
-	pause.try_unpause()
-	exit.emit()
 	minigame.exit()
+
+
+func _on_tree_exiting() -> void:
+	get_tree().paused = false

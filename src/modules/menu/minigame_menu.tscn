@@ -54,7 +54,7 @@ text = "Upgrades"
 
 [node name="Exit" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Exit"
+text = "Exit minigame"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Upgrades" to="." method="_on_upgrades_pressed"]

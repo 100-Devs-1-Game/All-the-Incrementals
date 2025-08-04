@@ -8,7 +8,7 @@ var _play_minigame_instantly: bool = true
 
 
 func _ready() -> void:
-	EventBus.connect(EventBus.exit_minigame.get_name(), Callable(self, "_exit_minigame"))
+	EventBus.exit_minigame.connect(_exit_minigame)
 
 
 func start_minigame(data: MinigameData, play_instantly: bool = false):
