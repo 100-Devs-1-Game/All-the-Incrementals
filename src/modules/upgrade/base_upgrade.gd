@@ -4,10 +4,10 @@ extends Resource
 
 enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
-# how this Upgrade is called in-game
+## how this Upgrade is called in-game
 @export var name: String
 
-# static flavor text
+## static flavor text
 @export var flavor: String
 
 @export var icon: Texture2D
@@ -15,57 +15,59 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
 # ------ cost and effects -------
 
-# cost for each individual level
+## cost for each individual level
 @export var cost_arr: Array[EssenceInventory]
 
-# can be a multiplier, additive, percentage, etc for each level up
+## can be a multiplier, additive, percentage, etc for each level up
 @export var effect_modifier_arr: Array[float]
 
 @export_category("Algorithmic")
 
-# optional: setting cost and effect algorithmically ( arrays will be updated in the setter )
+## optional: setting cost and effect algorithmically ( arrays will be updated in the setter )
 @export var max_level: int:
 	set = set_max_level
 
-# cost for level 1
+## cost for level 1
 @export var base_cost: EssenceInventory:
 	set = set_base_cost
-# cost multiplier per level
+## cost multiplier per level[br]
+## base cost + (base cost modifier * level)
 @export var base_cost_multiplier: float:
 	set = set_base_cost_multiplier
 
-# effect modifier for level 1
+## effect modifier for level 1
 @export var base_effect_modifier: float:
 	set = set_base_effect_modifier
-# modifer multiplier per level
+## modifer multiplier per level[br]
+## base modifier + (modifier multiplier * level)
 @export var effect_modifier_multiplier: float:
 	set = set_effect_modifier_multiplier
 
-# optional: setting cost via curve ( arrays will be updated in the setter  )
+## optional: setting cost via curve ( arrays will be updated in the setter  )
 @export var cost_curve: Curve:
 	set = set_cost_curve
 
 @export_category("Unlocking")
 
-# has it been unlocked by a previous upgrade
+## has it been unlocked by a previous upgrade
 @export_storage var unlocked: bool = false
 
-# level required to unlock all further upgrades of this branch
+## level required to unlock all further upgrades of this branch
 @export var unlock_level: int
 
-# Upgrades that can get unlocked by this one
+## Upgrades that can get unlocked by this one
 @export var unlocks: Array[BaseUpgrade]
 
 @export_category("Description")
 
-# dynamic description for get_description()
-# format: prefix + " " + formatted modifier + " " + suffix
+## dynamic description for get_description()
+## format: prefix + " " + formatted modifier + " " + suffix
 @export var description_prefix: String
 @export var description_suffix: String
 
-# PERCENTAGE: "[N*100]%" or "-[N*100]%"
-# ADDITIVE:   "+N" or "-N"
-# MULTIPLIER  "xN" or "/N" (?)
+## PERCENTAGE: "[N*100]%" or "-[N*100]%"
+## ADDITIVE:   "+N" or "-N"
+## MULTIPLIER  "xN" or "/N" (?)
 @export var description_modifier_format: ModifierFormat
 
 
