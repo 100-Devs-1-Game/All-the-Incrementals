@@ -76,6 +76,18 @@ func _get_all_minigame_data(start_path:String) -> Array[String]:
 			if file_name.ends_with(".tres") or file_name.ends_with(".res"):
 				var file_path = start_path.path_join(file_name)
 				var res = ResourceLoader.load(file_path)
+
+				# sometimes there are strange errors caused by some resources
+				# not being resaved after their scripts change
+				# since this plugin has to load every resource to figure out
+				# which ones are of the type we need
+				# so when that happens, uncomment this and check to see what
+				# files are changed as a result
+
+				#var err := ResourceSaver.save(res, file_path)
+				#if err != OK:
+				#	push_error("%s failed to save?" % file_path)
+
 				if res and res is MinigameData:
 					found_resources.append(file_path)
 		file_name = dir.get_next()
