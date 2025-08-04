@@ -7,4 +7,4 @@ extends FireFightersMinigameUpgradeLogic
 func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 	var my_game: FireFightersMinigame = game
 	my_game.item_spawner.add_available(item)
-	item.set_probability_level(upgrade.get_level())
+	item.set_probability_level(upgrade.get_current_effect_modifier() * 0.01)
