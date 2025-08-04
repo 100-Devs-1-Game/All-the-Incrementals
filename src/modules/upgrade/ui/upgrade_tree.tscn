@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dntdim0jjlhy1"]
+
+[ext_resource type="Script" uid="uid://drfyahgpyskxs" path="res://modules/upgrade/ui/upgrade_tree.gd" id="1_bc6uk"]
+[ext_resource type="Texture2D" uid="uid://dt2e36f2dyeda" path="res://assets/icons/glowing_wind_skn.png" id="6_ele8a"]
+[ext_resource type="Script" uid="uid://dcajbb2nsjenl" path="res://modules/upgrade/ui/upgrade_tree_camera.gd" id="8_bc6uk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_48wnc"]
+size = Vector2(500, 500)
+orientation = 2
+
+[node name="UpgradeTree" type="Node2D"]
+script = ExtResource("1_bc6uk")
+upgrade_folder_path = "res://modules/minigame/example/upgrades"
+center_texture = ExtResource("6_ele8a")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.832915, 0.781549, 0.73108, 1)
+scale = Vector2(500, 500)
+mesh = SubResource("PlaneMesh_48wnc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 2
+script = ExtResource("8_bc6uk")
+
+[node name="Lines" type="Node2D" parent="."]
+
+[node name="Upgrades" type="Node2D" parent="."]

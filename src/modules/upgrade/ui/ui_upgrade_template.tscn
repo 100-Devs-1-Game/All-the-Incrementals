@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://beur62xrtffs5"]
+
+[ext_resource type="Script" uid="uid://d0was623er45f" path="res://modules/upgrade/ui/ui_upgrade_template.gd" id="1_32x2s"]
+[ext_resource type="Texture2D" uid="uid://b81yxykydsfti" path="res://assets/ui/upgrade_tree/BackgroundOff.webp" id="1_l1bu1"]
+[ext_resource type="Texture2D" uid="uid://cwhycls4e3jy3" path="res://assets/ui/upgrade_tree/BackgroundOn.webp" id="2_32x2s"]
+[ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/Lineart1.webp" id="3_ih5fn"]
+[ext_resource type="Texture2D" uid="uid://bk2dkao5rcxkf" path="res://assets/ui/upgrade_tree/GoldSeal.webp" id="4_d4a2w"]
+
+[node name="UiUpgradeTemplate" type="Node2D"]
+script = ExtResource("1_32x2s")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1bu1")
+
+[node name="BackgroundActive" type="Sprite2D" parent="."]
+texture = ExtResource("2_32x2s")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_ih5fn")
+
+[node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(16, 17)
+texture = ExtResource("4_d4a2w")
+
+[node name="Hover" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.76, 0.76)
+
+[node name="Level" type="Label" parent="."]
+visible = false
+offset_left = -35.0
+offset_top = -54.0
+offset_right = 45.0
+offset_bottom = -12.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "0/5"
+horizontal_alignment = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "test"
+
+[node name="Description" type="Label" parent="."]
+visible = false
+offset_left = -35.0
+offset_top = -54.0
+offset_right = 45.0
+offset_bottom = -12.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "0/5"
+horizontal_alignment = 2
