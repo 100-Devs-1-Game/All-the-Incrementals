@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkmts28ofwpuf"]
+
+[ext_resource type="PackedScene" uid="uid://c6yo1b8duigak" path="res://models/animals/insects/cockroach.glb" id="1_j6fbf"]
+
+[node name="cockroach" instance=ExtResource("1_j6fbf")]
+
+[node name="Cockroach" parent="." index="0"]
+transform = Transform3D(8.359, 0, 0, 0, 10.686, 0, 0, 0, 10.921, -8.9579e-05, 4.61463e-06, 0)

@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://b3itxrlohx1"]
+
+[ext_resource type="Texture2D" uid="uid://brvf0ld6mmi66" path="res://vfx/pyre_flame/pyre_flame_blend/01.webp" id="1_uteaw"]
+[ext_resource type="Texture2D" uid="uid://mude82v2mwab" path="res://vfx/pyre_flame/pyre_flame_blend/02.webp" id="2_frbyp"]
+[ext_resource type="Texture2D" uid="uid://81b1o6vn4xn8" path="res://vfx/pyre_flame/pyre_flame_blend/03.webp" id="3_4xjng"]
+[ext_resource type="Texture2D" uid="uid://d7cl6tph3au0" path="res://vfx/pyre_flame/pyre_flame_blend/04.webp" id="4_bkbnh"]
+[ext_resource type="Texture2D" uid="uid://dmqqvxvi8iq15" path="res://vfx/pyre_flame/pyre_flame_blend/05.webp" id="5_l38mh"]
+[ext_resource type="Texture2D" uid="uid://dal3ymb5jufag" path="res://vfx/pyre_flame/pyre_flame_blend/06.webp" id="6_1monp"]
+[ext_resource type="Texture2D" uid="uid://j5heuw6gwobd" path="res://vfx/pyre_flame/pyre_flame_default/01.webp" id="7_fhy5y"]
+[ext_resource type="Texture2D" uid="uid://c37cjq3464mjo" path="res://vfx/pyre_flame/pyre_flame_default/02.webp" id="8_iy240"]
+[ext_resource type="Texture2D" uid="uid://xwaka0v8faly" path="res://vfx/pyre_flame/pyre_flame_default/03.webp" id="9_nqycq"]
+[ext_resource type="Texture2D" uid="uid://c5l417tvqpwfv" path="res://vfx/pyre_flame/pyre_flame_default/04.webp" id="10_whjhr"]
+[ext_resource type="Texture2D" uid="uid://bw3ku2rcch5kp" path="res://vfx/pyre_flame/pyre_flame_default/05.webp" id="11_fvpfu"]
+[ext_resource type="Texture2D" uid="uid://cvxuuiqdea0f5" path="res://vfx/pyre_flame/pyre_flame_default/06.webp" id="12_1xdv4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uteaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_frbyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4xjng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bkbnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l38mh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1monp")
+}],
+"loop": true,
+"name": &"pyre_flame_blend",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fhy5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iy240")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nqycq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_whjhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fvpfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1xdv4")
+}],
+"loop": true,
+"name": &"pyre_flame_default",
+"speed": 12.0
+}]
