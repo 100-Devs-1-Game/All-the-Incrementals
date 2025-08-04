@@ -6,6 +6,7 @@ extends Node2D
 var base_width = 220.0
 var base_upgrade_increment = 60.0
 
+
 func _process(_delta):
 	var rect_shape = col_shape.shape as RectangleShape2D
 	if rect_shape:
@@ -16,6 +17,7 @@ func _process(_delta):
 			Vector2(extents.x, extents.y),
 			Vector2(-extents.x, extents.y)
 		]
+
 
 func _upgrade():
 	pass
