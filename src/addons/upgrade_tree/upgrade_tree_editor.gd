@@ -118,6 +118,7 @@ func _enter_tree() -> void:
 	graph_edit.snapping_distance = 64
 	graph_edit.show_grid_buttons = false
 	graph_edit.right_disconnects = true
+	graph_edit.zoom = graph_edit.zoom_min
 	# Add the main panel to the editor's main viewport.
 	EditorInterface.get_editor_main_screen().add_child(upgrade_tree_editor_instance)
 
