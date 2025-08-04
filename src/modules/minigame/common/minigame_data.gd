@@ -33,7 +33,7 @@ func get_all_upgrades(
 		root_nodes.assign(upgrade_tree_root_nodes)
 
 	for upgrade in root_nodes:
-		if unlocked_only and upgrade.current_level <= -1:
+		if unlocked_only and upgrade.get_level() <= -1:
 			continue
 		result.append(upgrade)
 		result.append_array(get_all_upgrades(upgrade, unlocked_only))
@@ -41,10 +41,16 @@ func get_all_upgrades(
 	return result
 
 
-func apply_all_upgrades(minigame: BaseMinigame):
+func apply_all_upgrades(minigame: BaseMinigame) -> void:
 	for upgrade in get_all_upgrades(null, true):
 		var minigame_upgrade: MinigameUpgrade = upgrade
 		if not minigame_upgrade.logic:
 			push_error("Found an upgrade with no associated logic")
 			continue
 		minigame_upgrade.logic._apply_effect(minigame, minigame_upgrade)
+
+
+func reset_all_upgrades() -> void:
+	for upgrade in get_all_upgrades():
+		SaveGameManager.world_state.minigame_unlock_levels[upgrade.get_uid()] = -1
+	SaveGameManager.save()

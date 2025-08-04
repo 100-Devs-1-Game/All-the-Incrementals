@@ -111,4 +111,3 @@ unlocks = Array[ExtResource("6_twosh")]([])
 description_prefix = "Increase ligh around spirit keeper by"
 description_suffix = ""
 description_modifier_format = 0
-current_level = -1
