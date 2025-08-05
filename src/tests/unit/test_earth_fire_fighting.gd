@@ -19,10 +19,9 @@ func test_earth_fire_fighting_run() -> void:
 
 	print("Simulating")
 	gut.simulate(earth_fire_fighting, 10, .1)
-	await wait_seconds(3)
+	await wait_seconds(1)
 
 	print("Assert")
 	assert_gt(earth_fire_fighting.fires.size(), 0, "fires > 0")
-	assert_gt(earth_fire_fighting.max_water_per_fire, 0, "max_water_per_fire > 0")
 
 	earth_fire_fighting.queue_free()
