@@ -1,4 +1,4 @@
-extends InitialRandomSpawner
+extends RandomPositionSpawner
 
 #region ------------------------ PRIVATE VARS ----------------------------------
 

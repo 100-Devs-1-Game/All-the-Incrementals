@@ -1,15 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1o4hv5ignom3"]
+[gd_scene load_steps=6 format=3 uid="uid://c1o4hv5ignom3"]
 
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_6k1f6"]
 [ext_resource type="Script" uid="uid://d2lj7uujdddn6" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.gd" id="2_6k1f6"]
 [ext_resource type="Script" uid="uid://dowbvmqjoiyxo" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/states/go_to_nearest_youngling.gd" id="3_jinnf"]
 [ext_resource type="Script" uid="uid://c7qcjt10ni6jr" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/states/go_away_from_player.gd" id="4_chc02"]
+[ext_resource type="Texture2D" uid="uid://bcl13fess1l7r" path="res://modules/minigame/art/Spirit.webp" id="5_sj336"]
 
-[node name="EPHEvilSpirit" node_paths=PackedStringArray("_state_machine") instance=ExtResource("1_6k1f6")]
+[node name="EPHEvilSpirit" node_paths=PackedStringArray("_state_machine", "_sprite_rotation_point") instance=ExtResource("1_6k1f6")]
 collision_layer = 4
 script = ExtResource("2_6k1f6")
 _repel_acceleration_multiplier = 10
 _state_machine = NodePath("StateMachine")
+_sprite_rotation_point = NodePath("SpriteRotationPoint")
 _base_acceleration = Vector2(100, 100)
 
 [node name="StateMachine" parent="." index="0" node_paths=PackedStringArray("_states", "_start_state")]
@@ -24,5 +26,17 @@ state_name = "go_to_nearest_youngling"
 script = ExtResource("4_chc02")
 state_name = "go_away_from_player"
 
-[node name="Sprite" parent="." index="2"]
+[node name="SpriteRotationPoint" type="Marker2D" parent="." index="2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteRotationPoint" index="0"]
 self_modulate = Color(1, 0.2, 0.2, 1)
+position = Vector2(-39, 0)
+rotation = -1.5708
+texture = ExtResource("5_sj336")
+
+[node name="Sprite" parent="." index="3"]
+visible = false
+self_modulate = Color(1, 0.2, 0.2, 1)
+position = Vector2(0, -26)
+scale = Vector2(0.630027, 0.630027)
+texture = ExtResource("5_sj336")

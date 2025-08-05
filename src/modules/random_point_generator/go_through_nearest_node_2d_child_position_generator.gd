@@ -28,7 +28,7 @@ func get_point() -> Vector2:
 
 	return (
 		closest_node_position
-		+ (closest_node_position - _node_2d.global_position).normalized() * _overshoot
+		+ (_parent_node.global_position.direction_to(closest_node_position) * _overshoot)
 	)
 
 #endregion

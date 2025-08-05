@@ -33,6 +33,14 @@ func stop_herd_by_player() -> void:
 	_state_machine.change_state("free_roam")
 
 
+func despawn() -> void:
+	#if get_tree().get_nodes_in_group("potatoes").size() == 1:
+	# Last potato standing, it's game over
+	#mini_game.trigger_game_over.emit()
+
+	self.queue_free()
+
+
 #endregion
 
 #region ======================== PRIVATE METHODS ===============================
@@ -51,10 +59,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_youngling_saw_spirit_body_entered(body: Node2D) -> void:
-	if get_tree().get_nodes_in_group("potatoes").size() == 1:
-		# Last potato standing, it's game over
-		mini_game.trigger_game_over.emit()
 	body.queue_free()
-	self.queue_free()
+	despawn()
 
 #endregion

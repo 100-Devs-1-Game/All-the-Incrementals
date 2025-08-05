@@ -4,12 +4,16 @@ var sway_amplitude := 4.0  # pixels left/right
 var sway_speed := 0.3  # cycles per second
 var float_amplitude := 8.0  # pixels up/down
 var float_speed := 0.2  # cycles per second
-
 var start_position: Vector2
 
 
 func _ready():
 	start_position = global_position
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("down"):
+		print("Enter defense mode")
 
 
 func _process(_delta: float) -> void:

@@ -3,6 +3,7 @@ extends Td2dCCWithAcceleration
 
 @export var _repel_acceleration_multiplier := 10
 @export var _state_machine: StateMachine
+@export var _sprite_rotation_point: Marker2D
 var _current_acceleration_multipliers = {}
 
 #region ======================== PUBLIC METHODS ================================
@@ -32,5 +33,11 @@ func _calculate_acceleration() -> Vector2:
 		final *= current_acceleration_multiplier
 
 	return final
+
+
+func _move(delta: float, direction: Vector2) -> void:
+	super(delta, direction)
+
+	_sprite_rotation_point.rotation = Vector2.RIGHT.angle_to(_current_velosity)
 
 #endregion

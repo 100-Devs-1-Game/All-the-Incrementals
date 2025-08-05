@@ -8,6 +8,17 @@ script = ExtResource("1_71at2")
 set_font = ExtResource("2_2q7yq")
 
 [node name="ValueLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 50.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -25.0
+offset_right = 62.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "+15 pts"
+horizontal_alignment = 1
+vertical_alignment = 1
