@@ -4,7 +4,7 @@ const BASE_PLAYER_SPEED = Vector2(300.0, 300.0)
 
 
 func _ready() -> void:
-	var mini_game = get_tree().root.get_node("EarthPotatoHerding")
+	var mini_game = get_tree().get_first_node_in_group("earth_potato_herding")
 	mini_game.spirit_keeper_speed.connect(_on_player_speed_changed)
 	mini_game.spirit_keeper_brightness.connect(_on_player_brightness_changed)
 
