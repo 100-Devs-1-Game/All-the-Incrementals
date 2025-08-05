@@ -6,7 +6,7 @@ extends Node3D
 var base_y := 0.0
 
 
-func _ready():
+func _ready() -> void:
 	base_y = global_transform.origin.y
 
 

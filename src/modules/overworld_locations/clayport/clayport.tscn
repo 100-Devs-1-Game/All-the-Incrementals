@@ -1,55 +1,54 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=8 format=3 uid="uid://b1ucpnb2u1isc"]
 
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_1ftrw"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_i3tw0"]
+[ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="3_2ieeh"]
+[ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="4_wnqv0"]
 
-[sub_resource type="Resource" id="Resource_rkb86"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/overworld/overworld.tscn"
-hotkey = "escape"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[sub_resource type="BoxMesh" id="BoxMesh_ue7jc"]
+size = Vector3(100, 1, 100)
 
-[sub_resource type="Resource" id="Resource_tb6dg"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/overworld_locations/clayport/earth_altar/earth_altar.tscn"
-hotkey = "e"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_piane"]
+points = PackedVector3Array(-50, -0.5, -50, -50, 0.5, -50, 50, -0.5, -50, -50, -0.5, 50, -50, 0.5, 50, 50, 0.5, -50, 50, -0.5, 50, 50, 0.5, 50)
 
-[sub_resource type="Resource" id="Resource_w0tdx"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/overworld_locations/clayport/water_altar/water_altar.tscn"
-hotkey = "w"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[sub_resource type="BoxMesh" id="BoxMesh_sdl0k"]
+size = Vector3(1.735, 1, 2.83)
 
-[sub_resource type="Resource" id="Resource_rnohj"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/minigame/earth_potato_herding/earth_potato_herding.tscn"
-hotkey = "p"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[sub_resource type="SphereShape3D" id="SphereShape3D_4eabd"]
+radius = 3.0
 
-[sub_resource type="Resource" id="Resource_sgyk0"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/minigame/earth_towers/earth_towers.tscn"
-hotkey = "t"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[sub_resource type="BoxMesh" id="BoxMesh_2h4su"]
 
-[sub_resource type="Resource" id="Resource_1p75w"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/minigame/water_diving/water_diving.tscn"
-hotkey = "d"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[node name="Clayport" type="Node"]
 
-[sub_resource type="Resource" id="Resource_oayoy"]
-script = ExtResource("4_i3tw0")
-func_or_path = "res://modules/minigame/water_target_fishing/water_target_fishing.tscn"
-hotkey = "f"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[node name="Content" type="Node3D" parent="."]
 
-[node name="Clayport" type="Node2D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Content"]
+mesh = SubResource("BoxMesh_ue7jc")
 
-[node name="DebugPopup" parent="." instance=ExtResource("3_1ftrw")]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
-visible_on_start = true
-debug_buttons = Array[ExtResource("4_i3tw0")]([SubResource("Resource_rkb86"), SubResource("Resource_tb6dg"), SubResource("Resource_w0tdx"), SubResource("Resource_rnohj"), SubResource("Resource_sgyk0"), SubResource("Resource_1p75w"), SubResource("Resource_oayoy")])
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_piane")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32481, 1, 0.542374)
+mesh = SubResource("BoxMesh_sdl0k")
+
+[node name="SettlementExit" type="Node3D" parent="Content"]
+script = ExtResource("3_2ieeh")
+metadata/_custom_type_script = "uid://cqxo556jptakn"
+
+[node name="InteractionComponent3D" type="Area3D" parent="Content/SettlementExit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+collision_layer = 0
+monitorable = false
+script = ExtResource("4_wnqv0")
+metadata/_custom_type_script = "uid://7n4knvm4dle5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/SettlementExit/InteractionComponent3D"]
+shape = SubResource("SphereShape3D_4eabd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Content/SettlementExit/InteractionComponent3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_2h4su")
+
+[connection signal="interacted_with" from="Content/SettlementExit/InteractionComponent3D" to="Content/SettlementExit" method="exit_settlement"]

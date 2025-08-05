@@ -1,31 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1s2rtgxlns3v"]
+[gd_scene load_steps=8 format=3 uid="uid://d1s2rtgxlns3v"]
 
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_2wcmw"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_mxing"]
+[ext_resource type="Script" uid="uid://bfebdhsesmk67" path="res://modules/overworld/overworld.gd" id="1_2wcmw"]
+[ext_resource type="Resource" uid="uid://cdoij41kganvn" path="res://modules/overworld_locations/breezekiln/breezekiln.tres" id="2_mxing"]
+[ext_resource type="PackedScene" uid="uid://uem0xukdu645" path="res://modules/overworld_character_controller/spiritkeeper_character_controller_3d.tscn" id="3_sx55g"]
+[ext_resource type="PackedScene" uid="uid://dwk76h2iitx0h" path="res://modules/overworld_map/overworld_map.tscn" id="4_bwyud"]
 
-[sub_resource type="Resource" id="Resource_sx55g"]
-script = ExtResource("4_mxing")
-func_or_path = "res://modules/menu/main_menu.tscn"
-hotkey = "escape"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bdc71"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
-[sub_resource type="Resource" id="Resource_bwyud"]
-script = ExtResource("4_mxing")
-func_or_path = "res://modules/overworld_locations/breezekiln/breezekiln.tscn"
-hotkey = "b"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[sub_resource type="Sky" id="Sky_e45hq"]
+sky_material = SubResource("ProceduralSkyMaterial_bdc71")
 
-[sub_resource type="Resource" id="Resource_5v5ja"]
-script = ExtResource("4_mxing")
-func_or_path = "res://modules/overworld_locations/clayport/clayport.tscn"
-hotkey = "c"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[sub_resource type="Environment" id="Environment_2wcmw"]
+background_mode = 1
+background_color = Color(0.698266, 0.900734, 0.912444, 1)
+sky = SubResource("Sky_e45hq")
+ambient_light_source = 2
+ambient_light_color = Color(0.717647, 0.866667, 1, 1)
+ambient_light_energy = 0.5
+tonemap_mode = 2
 
-[node name="Overworld" type="Node2D"]
+[node name="Overworld" type="Node" node_paths=PackedStringArray("overworld_map")]
+script = ExtResource("1_2wcmw")
+starting_settlement_data = ExtResource("2_mxing")
+overworld_map = NodePath("UI/OverworldMap")
 
-[node name="DebugPopup" parent="." instance=ExtResource("3_2wcmw")]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
-visible_on_start = true
-debug_buttons = Array[ExtResource("4_mxing")]([SubResource("Resource_sx55g"), SubResource("Resource_bwyud"), SubResource("Resource_5v5ja")])
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2wcmw")
+
+[node name="PlayerHolder" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SpiritkeeperBody3D" parent="PlayerHolder" instance=ExtResource("3_sx55g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115598, 0.5, -0.0152599)
+
+[node name="SceneHolder" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="OverworldMap" parent="UI" instance=ExtResource("4_bwyud")]

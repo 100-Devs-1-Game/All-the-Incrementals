@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://ckosq1frycwik" path="res://assets/overworld/elements/fire_bloom.webp" id="26_ul5nb"]
 [ext_resource type="Texture2D" uid="uid://cjox17oqo8kjx" path="res://assets/overworld/elements/water_bloom.webp" id="28_dt1ag"]
 [ext_resource type="PackedScene" uid="uid://dox2uuh52nw43" path="res://assets/overworld/models/kitchen_ware/bowl/bowl_05.tscn" id="28_imijt"]
-[ext_resource type="ArrayMesh" uid="uid://cxyhsx2s6ve63" path="res://assets/overworld/models/UI/pill/pill.obj" id="28_serno"]
+[ext_resource type="ArrayMesh" uid="uid://cxyhsx2s6ve63" path="res://assets/overworld/models/ui/pill/pill.obj" id="28_serno"]
 [ext_resource type="Shader" uid="uid://6wy8y15n7vk0" path="res://assets/overworld/scripts/shaders/amount_bar.gdshader" id="29_4aov3"]
 [ext_resource type="Texture2D" uid="uid://drgfx7qw272bv" path="res://assets/overworld/elements/earth_bloom.webp" id="30_n2scs"]
 [ext_resource type="SpriteFrames" uid="uid://b3itxrlohx1" path="res://assets/overworld/vfx/pyre_flame/pyre_flame.tres" id="32_8dlsp"]
@@ -222,7 +222,7 @@ shader_parameter/normal_texture = ExtResource("49_sl2ur")
 shader_parameter/normal_strength = 0.1
 shader_parameter/emission_strength = 0.3
 
-[node name="The Shrine" type="Node3D"]
+[node name="TheShrine" type="Node3D"]
 
 [node name="Camera & Lights" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.62, 1.5, 0)
