@@ -10,13 +10,13 @@ extends PanelContainer
 		_countdown_panel.visible = b
 
 @onready var _score_panel: HBoxContainer = %ScorePanel
-@onready var _score_label: Label = %ScoreLabel
-@onready var _score_icon: TextureRect = %ScoreIcon
+#@onready var _score_label: Label = %ScoreLabel
+#@onready var _score_icon: TextureRect = %ScoreIcon
 @onready var _score_value: Label = %ScoreValue
 
 @onready var _countdown_panel: HBoxContainer = %CountdownPanel
-@onready var _countdown_label: Label = %CountdownLabel
-@onready var _countdown_icon: TextureRect = %CountdownIcon
+#@onready var _countdown_label: Label = %CountdownLabel
+#@onready var _countdown_icon: TextureRect = %CountdownIcon
 @onready var _countdown_value: Label = %CountdownValue
 
 
