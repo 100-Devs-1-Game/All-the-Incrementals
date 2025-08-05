@@ -31,7 +31,7 @@ func grow_up() -> void:
 
 
 func _ready() -> void:
-	mini_game = get_tree().root.get_node("EarthPotatoHerding")
+	mini_game = get_tree().get_first_node_in_group("earth_potato_herding")
 
 
 func _physics_process(delta: float) -> void:
