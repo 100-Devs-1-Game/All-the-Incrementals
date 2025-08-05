@@ -2,11 +2,15 @@ class_name MinigameMenu
 extends Control
 
 @export var visible_on_start: bool = false
-@export var minigame: BaseMinigame
 @export var pause: Pause
+
+var minigame: BaseMinigame
 
 
 func _ready() -> void:
+	minigame = get_tree().current_scene
+	assert(minigame != null)
+
 	assert(
 		minigame is BaseMinigame,
 		(
