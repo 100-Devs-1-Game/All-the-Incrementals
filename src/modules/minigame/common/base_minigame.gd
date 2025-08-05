@@ -105,7 +105,7 @@ func open_upgrades():
 func game_over():
 	_minigame_shared_components.minigame_menu.open_menu()
 	Player.add_stack_to_inventory(
-		EssenceStack.new(data.output_essence, _score * data.currency_conversion_factor)
+		EssenceStack.new(data.output_essence, int(_score * data.currency_conversion_factor))
 	)
 	_is_game_over = true
 
