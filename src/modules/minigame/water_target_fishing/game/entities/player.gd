@@ -37,7 +37,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_fish := other_area.get_parent() as WTFFish
 	if is_instance_valid(maybe_fish):
-		WTFGlobals.minigame.score += maybe_fish.data.pickup.score
+		WTFGlobals.minigame.add_score(maybe_fish.data.pickup.score)
 		TextFloatSystem.floating_text(
 			maybe_fish.global_position, "+%d" % maybe_fish.data.pickup.score, WTFGlobals.minigame
 		)
