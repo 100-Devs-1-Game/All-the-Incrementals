@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=29 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_ewfdg"]
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/fire_fighters_player.tscn" id="2_jiygg"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://ctpski5ja4jdm" path="res://modules/minigame/fire_fighters/fire_fighters_item.gd" id="18_riun2"]
 [ext_resource type="Resource" uid="uid://cg3lw4fm84srm" path="res://modules/minigame/fire_fighters/data/gas_can.tres" id="19_kc2g4"]
 [ext_resource type="Resource" uid="uid://ch44pnewmrvkb" path="res://modules/minigame/fire_fighters/data/oil_barrel.tres" id="20_tmnm7"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="21_jiygg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
 texture = ExtResource("12_n2xsp")
@@ -67,7 +68,7 @@ burn_spot_scene = ExtResource("5_mtp5r")
 enable_burn_spots = false
 map_rect = Rect2i(0, 0, 70, 50)
 map_features = Array[ExtResource("6_0qd66")]([ExtResource("7_67ens"), ExtResource("8_2aotl"), ExtResource("9_j5lxn"), ExtResource("10_8bvf2"), ExtResource("11_ftttk")])
-data_uid = "uid://kt1wsi0p5wkb"
+data_uid = "uid://bqod1tv5hmpgo"
 
 [node name="CanvasLayer Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -110,5 +111,8 @@ metadata/_custom_type_script = "uid://bk20clpaekonn"
 [node name="Decals" type="Node" parent="."]
 
 [node name="Items" type="Node" parent="."]
+
+[node name="MinigameSharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("21_jiygg")]
+minigame_node = NodePath("..")
 
 [connection signal="timeout" from="FireFightersMinigameItemSpawner/Timer" to="FireFightersMinigameItemSpawner" method="_on_timer_timeout"]
