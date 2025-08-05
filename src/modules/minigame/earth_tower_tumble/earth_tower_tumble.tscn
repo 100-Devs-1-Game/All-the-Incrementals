@@ -162,11 +162,7 @@ script = ExtResource("14_uvjps")
 position = Vector2(0, 239)
 shape = SubResource("RectangleShape2D_wlaab")
 
-[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_0yx17")]
-minigame_node = NodePath("..")
-
-[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../../../..")
+[node name="SharedComponents" parent="." instance=ExtResource("2_0yx17")]
 
 [node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
 functions_node = NodePath("../../../..")

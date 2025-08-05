@@ -7,11 +7,7 @@
 script = ExtResource("1_jjxx3")
 data_uid = "uid://ciyrdxjs03cvb"
 
-[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_7tndl")]
-minigame_node = NodePath("..")
-
-[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../../../..")
+[node name="SharedComponents" parent="." instance=ExtResource("2_7tndl")]
 
 [node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
 functions_node = NodePath("../../../..")
