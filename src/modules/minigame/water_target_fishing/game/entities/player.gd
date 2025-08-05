@@ -49,7 +49,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_cannon = other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
-		WTFGlobals.minigame.score += maybe_cannon.pickup.score
+		WTFGlobals.minigame.add_score(maybe_cannon.pickup.score)
 		TextFloatSystem.floating_text(
 			maybe_cannon.global_position, "+%d" % maybe_cannon.pickup.score, WTFGlobals.minigame
 		)
