@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpbxl634kt5sd"]
+
+[ext_resource type="Script" uid="uid://bxir423lfn0b" path="res://modules/minigame/wind_platformer/cloud_platform.gd" id="1_f4ja7"]
+[ext_resource type="PackedScene" uid="uid://c3djvftk8ecjn" path="res://modules/minigame/wind_platformer/cloud_part.tscn" id="3_k72l2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4ja7"]
+size = Vector2(140, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k72l2"]
+size = Vector2(300, 150)
+
+[node name="Cloud Platform" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_f4ja7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f4ja7")
+one_way_collision = true
+
+[node name="Parts" type="Node2D" parent="."]
+
+[node name="CloudPart" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(-51, 11)
+
+[node name="CloudPart2" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(-49, 1)
+
+[node name="CloudPart3" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(-55, -12)
+
+[node name="CloudPart4" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(-25, -13)
+
+[node name="CloudPart5" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(-23, 1)
+
+[node name="CloudPart6" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(-24, 13)
+
+[node name="CloudPart7" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(6, -12)
+
+[node name="CloudPart8" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(37, -14)
+
+[node name="CloudPart9" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(52, -13)
+
+[node name="CloudPart10" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(9, 4)
+
+[node name="CloudPart11" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(44, 3)
+
+[node name="CloudPart12" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(53, 11)
+
+[node name="CloudPart13" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(17, 14)
+
+[node name="CloudPart14" parent="Parts" instance=ExtResource("3_k72l2")]
+position = Vector2(54, 0)
+
+[node name="Player Detection Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection Area"]
+shape = SubResource("RectangleShape2D_k72l2")
+
+[connection signal="body_entered" from="Player Detection Area" to="." method="_on_player_detection_area_body_entered"]
+[connection signal="body_exited" from="Player Detection Area" to="." method="_on_player_detection_area_body_exited"]

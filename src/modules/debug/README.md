@@ -20,3 +20,12 @@ appear on the DebugPopup.
 1. Press the hotkey (default X) to display the DebugPopup.
 1. Click your debug button and ensure that it executes the function
    you defined in the parent scene.
+
+# Extending DebugPopup with your own shortcuts
+
+1. Take a look at debug_minigame_upgrade.gd and tscn files.
+1. Take a look at the example minigame.
+1. The DebugMinigameUpgrade node is added to the scene, and the export variable
+   for DebugPopup is linked accordingly.
+1. Using the DebugPopup's public functions `get_tree_root()`, `link_callable()`,
+   and `register_hotkey()` you can add more items to the tree.

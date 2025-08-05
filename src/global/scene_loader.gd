@@ -1,11 +1,28 @@
+# Global SceneLoader class
 extends Node
 
 var _current_settlement: SettlementData
 var _current_minigame: MinigameData
 
+# We control _play_minigame_instantly here because we need a place to store
+# the state that doesn't get destroyed when the minigame scene is reloaded.
+var _is_immediate_play: bool = false
+
 
 func _ready() -> void:
-	EventBus.connect(EventBus.exit_minigame.get_name(), Callable(self, "_exit_minigame"))
+	EventBus.exit_minigame.connect(_exit_minigame)
+
+
+func enable_immediate_play() -> void:
+	_is_immediate_play = true
+
+
+func disable_immediate_play() -> void:
+	_is_immediate_play = false
+
+
+func is_immediate_play() -> bool:
+	return _is_immediate_play
 
 
 func start_minigame(data: MinigameData):

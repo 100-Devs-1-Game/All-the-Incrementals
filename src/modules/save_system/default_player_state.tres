@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerState" load_steps=5 format=3 uid="uid://djm86u62g4nqp"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_4s2s2"]
+[ext_resource type="Script" uid="uid://ilm74cke112g" path="res://modules/save_system/player_state.gd" id="1_wn5k5"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_dfdge"]
+
+[sub_resource type="Resource" id="Resource_ugayj"]
+script = ExtResource("1_4s2s2")
+earth = 0
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_dfdge")]([])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[resource]
+script = ExtResource("1_wn5k5")
+inventory = SubResource("Resource_ugayj")
+metadata/_custom_type_script = "uid://ilm74cke112g"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://ggnfet5kgg5f"]
+
+[ext_resource type="Script" uid="uid://wra0uj1sup0u" path="res://modules/minigame/earth_tower_tumble/blocks/block.gd" id="1_3wwg2"]
+
+[node name="Iblock" type="RigidBody2D"]
+script = ExtResource("1_3wwg2")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -31.2)
+color = Color(0.178979, 1.79046e-05, 0.732724, 1)
+polygon = PackedVector2Array(-16, -16, -16, 80, 16, 80, 16, -16)
+uv = PackedVector2Array(-136, -51.5, -136, 9.5, -81, 11.5, -83, -51.5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -31.2)
+polygon = PackedVector2Array(-16, -16, -16, 80, 16, 80, 16, -16)

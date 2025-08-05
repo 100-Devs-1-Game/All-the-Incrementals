@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MinigameData" load_steps=4 format=3 uid="uid://bseyt0iuwnq5m"]
+
+[ext_resource type="PackedScene" uid="uid://4xwiy2ryv0xk" path="res://modules/minigame/fire_cooking/fire_cooking.tscn" id="1_etk26"]
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_p0xj7"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_etk26"]
+
+[resource]
+script = ExtResource("1_p0xj7")
+display_name = "fire_cooking"
+minigame_scene = ExtResource("1_etk26")
+upgrade_tree_root_nodes = Array[ExtResource("2_etk26")]([])
+currency_conversion_factor = 0.0
+high_scores = Array[int]([])
+metadata/_custom_type_script = "uid://mwcjys5dkgf4"

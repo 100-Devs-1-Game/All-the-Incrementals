@@ -39,6 +39,8 @@ var master_volume: float = 50.0
 var music_volume: float = 50.0
 var sfx_volume: float = 50.0
 var save_path = "user://settings.cfg"
+var audio_players: Array = []
+var active_audio: bool = false
 
 
 func _ready() -> void:
@@ -54,7 +56,37 @@ func set_audio(bus: int, volume: float):
 		2:
 			sfx_volume = volume * 100.0
 	AudioServer.set_bus_volume_db(bus, volume)
-	print("Audio adjusted: ", bus, volume)
+
+
+## Creates an audio node and plays the given audio globally
+func create_global_audio(audio: AudioStream, bus: String):  #0 is master, 1 is Music, 2 is SFX
+	var audio_player = AudioStreamPlayer.new()
+	add_child(audio_player)
+
+	audio_player.bus = bus
+	audio_player.stream = audio
+	audio_player.play()
+
+	audio_players.append(audio_player)
+
+	if !active_audio:
+		active_audio = true
+		check_audio_players()
+
+
+func check_audio_players():
+	while active_audio:
+		for i in range(audio_players.size() - 1, -1, -1):
+			var a: AudioStreamPlayer = audio_players[i]
+			if !a.is_playing():
+				a.queue_free()
+				audio_players.remove_at(i)
+
+		if audio_players.is_empty():
+			active_audio = false
+			break
+
+	await get_tree().create_timer(0.2).timeout
 
 
 func set_fullscreen(state: bool) -> void:
@@ -140,14 +172,13 @@ func rebind_request(
 	action: String, old_key: InputEventKey, new_key: InputEventKey, action_id
 ) -> bool:
 	var success := true
-	var old_keycode = old_key.keycode
 	var new_keycode = new_key.keycode
 	print(
 		"Request recieved: ", action, " to remove ", old_key.as_text(), " for ", new_key.as_text()
 	)
 	for bind_list in keybinds.values():
 		if new_keycode in bind_list:
-			print("This key is already in use by another action you peasant >:(")
+			print("This key is already in use by another action!")
 			return false
 
 	InputMap.action_erase_event(action, old_key)

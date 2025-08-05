@@ -1,0 +1,113 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://cqskoef0i5b16"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_5p5gn"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_1ksxe"]
+[ext_resource type="Script" uid="uid://cmnrnh0whsxb0" path="res://modules/minigame/example/upgrade_logic/upgrade_logic.gd" id="2_uwgke"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_igob6"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_k3hqn"]
+[ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="4_mun1e"]
+
+[sub_resource type="Resource" id="Resource_2mb8s"]
+script = ExtResource("2_1ksxe")
+essence = ExtResource("3_igob6")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_kodix"]
+script = ExtResource("1_5p5gn")
+earth = 0
+fire = 0
+water = 0
+wind = 1
+slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_2mb8s")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_1ksxe"]
+script = ExtResource("2_1ksxe")
+essence = ExtResource("3_igob6")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_igob6"]
+script = ExtResource("1_5p5gn")
+earth = 0
+fire = 0
+water = 0
+wind = 2
+slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_1ksxe")])
+
+[sub_resource type="Resource" id="Resource_6yy3f"]
+script = ExtResource("2_1ksxe")
+essence = ExtResource("3_igob6")
+amount = 4
+
+[sub_resource type="Resource" id="Resource_hhume"]
+script = ExtResource("1_5p5gn")
+earth = 0
+fire = 0
+water = 0
+wind = 4
+slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_6yy3f")])
+
+[sub_resource type="Resource" id="Resource_vjbn1"]
+script = ExtResource("2_1ksxe")
+essence = ExtResource("3_igob6")
+amount = 6
+
+[sub_resource type="Resource" id="Resource_qq1od"]
+script = ExtResource("1_5p5gn")
+earth = 0
+fire = 0
+water = 0
+wind = 6
+slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_vjbn1")])
+
+[sub_resource type="Resource" id="Resource_pdnwu"]
+script = ExtResource("2_1ksxe")
+essence = ExtResource("3_igob6")
+amount = 8
+
+[sub_resource type="Resource" id="Resource_j76k0"]
+script = ExtResource("1_5p5gn")
+earth = 0
+fire = 0
+water = 0
+wind = 8
+slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_pdnwu")])
+
+[sub_resource type="Resource" id="Resource_jc1qb"]
+script = ExtResource("2_1ksxe")
+essence = ExtResource("3_igob6")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_vi62b"]
+script = ExtResource("1_5p5gn")
+earth = 0
+fire = 0
+water = 0
+wind = 10
+slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_jc1qb")])
+
+[sub_resource type="Resource" id="Resource_amlar"]
+script = ExtResource("2_uwgke")
+type = 0
+metadata/_custom_type_script = "uid://cmnrnh0whsxb0"
+
+[resource]
+script = ExtResource("3_k3hqn")
+logic = SubResource("Resource_amlar")
+unlocks_feature = ""
+name = "Speed algorithmic"
+flavor = ""
+position = Vector2(520, -320)
+cost_arr = Array[ExtResource("1_5p5gn")]([SubResource("Resource_igob6"), SubResource("Resource_hhume"), SubResource("Resource_qq1od"), SubResource("Resource_j76k0"), SubResource("Resource_vi62b")])
+effect_modifier_arr = Array[float]([4.0, 8.0, 12.0, 16.0, 20.0])
+max_level = 5
+base_cost = SubResource("Resource_kodix")
+base_cost_multiplier = 2.0
+base_effect_modifier = 2.0
+effect_modifier_multiplier = 2.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[ExtResource("4_mun1e")]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0

@@ -1,28 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://y3qdot2pnghb"]
+[gd_scene load_steps=10 format=3 uid="uid://y3qdot2pnghb"]
 
 [ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="1_bovhm"]
 [ext_resource type="Script" uid="uid://c2evftqhfy1fl" path="res://modules/settings/rebinding/rebinder.gd" id="1_wvaor"]
+[ext_resource type="Shader" path="res://global/shapes_ui.gdshader" id="3_7elne"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wvaor"]
 shader = ExtResource("1_bovhm")
 shader_parameter/lod = 3.32
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5elyp"]
-bg_color = Color(0.745098, 0.560784, 0.392157, 1)
-border_width_top = 30
-border_width_bottom = 30
-border_color = Color(0.920849, 0.807905, 0.709408, 1)
-border_blend = true
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46we0"]
+bg_color = Color(0.352941, 0.196078, 0.156863, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bovhm"]
-bg_color = Color(0.847059, 0.737255, 0.635294, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_size = 15
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a758s"]
+shader = ExtResource("3_7elne")
+shader_parameter/shape_color = Color(0.917647, 0.823529, 0.65098, 1)
+shader_parameter/background_color = Color(0.996078, 0.960784, 0.85098, 1)
+shader_parameter/shape_size = 0.179
+shader_parameter/shape_density = 8.411
+shader_parameter/randomness = 1.0
+shader_parameter/move_speed = 0.953
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7elne"]
+bg_color = Color(0.996078, 0.960784, 0.85098, 1)
+border_width_left = 3
+border_width_bottom = 11
+border_color = Color(0.917647, 0.823529, 0.65098, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgxiv"]
+bg_color = Color(0.352941, 0.196078, 0.156863, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a758s"]
+bg_color = Color(0.745098, 0.556863, 0.384314, 1)
+border_width_left = 4
+border_width_bottom = 8
+border_color = Color(0.583256, 0.420256, 0.268647, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Rebinder" type="Control"]
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,17 +70,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -249.0
-offset_bottom = 249.0
+offset_left = -697.0
+offset_top = -220.0
+offset_right = 697.0
+offset_bottom = 358.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5elyp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_46we0")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_a758s")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -692.0
+offset_top = -210.0
+offset_right = 692.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7elne")
 
 [node name="KeyLabel" type="Label" parent="Panel"]
 layout_mode = 1
@@ -59,17 +108,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -297.5
-offset_top = -119.0
-offset_right = 297.5
-offset_bottom = -69.0
+offset_left = -439.0
+offset_top = -202.0
+offset_right = 439.0
+offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.972207, 0.930902, 0.895531, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.258824)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 26
 theme_override_font_sizes/font_size = 53
 text = "Press any key to rebind [Bind_Key]"
 
-[node name="Panel" type="Panel" parent="Panel"]
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -73.0
+offset_right = 167.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vgxiv")
+
+[node name="Panel" type="Panel" parent="Panel/Panel2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,14 +145,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -164.0
-offset_top = -6.0
+offset_top = -53.0
 offset_right = 164.0
-offset_bottom = 100.0
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bovhm")
+theme_override_styles/panel = SubResource("StyleBoxFlat_a758s")
 
-[node name="NewKeyLabel" type="Label" parent="Panel/Panel"]
+[node name="NewKeyLabel" type="Label" parent="Panel/Panel2/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,25 +172,35 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -294.0
-offset_top = -111.0
+offset_top = -212.0
 offset_right = 294.0
-offset_bottom = -61.0
+offset_bottom = -162.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.635294, 0, 0, 1)
-text = "Key already in use, try anoter key."
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+text = "Key already in use or Invalid, try anoter key."
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -208.0
-offset_top = -221.0
-offset_right = 208.0
-offset_bottom = -171.0
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = 222.0
+offset_right = 274.0
+offset_bottom = 295.0
 grow_horizontal = 2
-grow_vertical = 0
-text = "Or Press BACK to cancel"
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.258824)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 26
+theme_override_font_sizes/font_size = 53
+text = "Press BACK to cancel."
+horizontal_alignment = 1
+vertical_alignment = 1

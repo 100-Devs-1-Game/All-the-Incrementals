@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=20 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_k4ysf"]
 [ext_resource type="Texture2D" uid="uid://quxpeiq4tx62" path="res://assets/minigames/fire_fighters/placeholder_assets/terrain_tile_set.png" id="2_4r4fr"]
@@ -12,8 +12,8 @@
 [ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/burnt_bush.tres" id="8_ppwky"]
 [ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/burnt_tree.tres" id="9_o1kr5"]
 [ext_resource type="Resource" uid="uid://bhtwwe0fgwlob" path="res://modules/minigame/fire_fighters/data/boulder.tres" id="10_o1kr5"]
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="13_eaqpl"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="14_ymaye"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="13_a330y"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="14_eaqpl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
 texture = ExtResource("2_4r4fr")
@@ -40,16 +40,10 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_n1sel")
 
-[sub_resource type="Resource" id="Resource_3xfq4"]
-script = ExtResource("14_ymaye")
-func_or_path = "exit"
-hotkey = "escape"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
-
-[sub_resource type="Resource" id="Resource_eaqpl"]
-script = ExtResource("14_ymaye")
-func_or_path = "quit_game"
-hotkey = "q"
+[sub_resource type="Resource" id="Resource_ymaye"]
+script = ExtResource("14_eaqpl")
+func_or_path = "game_over"
+hotkey = "v"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [node name="FireFighters" type="Node2D"]
@@ -59,6 +53,7 @@ fire_scene = ExtResource("7_bkat1")
 water_scene = ExtResource("4_n1sel")
 map_rect = Rect2i(0, 0, 70, 50)
 map_features = Array[ExtResource("2_bivsc")]([ExtResource("3_bkat1"), ExtResource("4_o8gxd"), ExtResource("8_ppwky"), ExtResource("9_o1kr5"), ExtResource("10_o1kr5")])
+data_uid = "uid://bqod1tv5hmpgo"
 
 [node name="CanvasLayer Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -81,8 +76,15 @@ tile_set = SubResource("TileSet_prm31")
 
 [node name="Fires" type="Node" parent="."]
 
-[node name="DebugPopup" parent="." instance=ExtResource("13_eaqpl")]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
-debug_buttons = Array[ExtResource("14_ymaye")]([SubResource("Resource_3xfq4"), SubResource("Resource_eaqpl")])
+[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("13_a330y")]
+minigame_node = NodePath("..")
+
+[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
+minigame = NodePath("../../../..")
+
+[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+functions_node = NodePath("../../../..")
+custom_debug_buttons = Array[ExtResource("14_eaqpl")]([SubResource("Resource_ymaye")])
+
+[editable path="SharedComponents"]
+[editable path="SharedComponents/SharedBaseComponents"]

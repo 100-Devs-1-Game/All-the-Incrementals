@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MinigameData" load_steps=5 format=3 uid="uid://dym4je2njvl28"]
+
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_4qrl4"]
+[ext_resource type="PackedScene" uid="uid://dh5qvg687mtli" path="res://modules/minigame/example/minigame.tscn" id="1_pups6"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_pups6"]
+[ext_resource type="Resource" uid="uid://blgvydgjtbdvl" path="res://modules/minigame/example/upgrades/upgrade_speed.tres" id="5_i5wny"]
+
+[resource]
+script = ExtResource("1_4qrl4")
+display_name = "Example Minigame"
+minigame_scene = ExtResource("1_pups6")
+upgrade_tree_root_nodes = Array[ExtResource("2_pups6")]([ExtResource("5_i5wny")])
+currency_conversion_factor = 0.0
+high_scores = Array[int]([])
+metadata/_custom_type_script = "uid://mwcjys5dkgf4"

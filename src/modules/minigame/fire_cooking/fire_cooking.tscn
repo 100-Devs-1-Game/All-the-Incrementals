@@ -1,19 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://4xwiy2ryv0xk"]
+[gd_scene load_steps=3 format=3 uid="uid://4xwiy2ryv0xk"]
 
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="1_ffas7"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="2_wglem"]
-
-[sub_resource type="Resource" id="Resource_bvapi"]
-script = ExtResource("2_wglem")
-func_or_path = "res://modules/overworld_locations/breezekiln/breezekiln.tscn"
-hotkey = "escape"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[ext_resource type="Script" uid="uid://dcvqx7fm0ugom" path="res://modules/minigame/fire_cooking/fire_cooking.gd" id="1_bvapi"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="4_bvapi"]
 
 [node name="FireCooking" type="Node2D"]
+script = ExtResource("1_bvapi")
+data_uid = "uid://bseyt0iuwnq5m"
 
-[node name="DebugPopup" parent="." instance=ExtResource("1_ffas7")]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("4_bvapi")]
+minigame_node = NodePath("..")
+
+[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
+minigame = NodePath("../../../..")
+
+[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+functions_node = NodePath("../../../..")
 visible_on_start = true
-debug_buttons = Array[ExtResource("2_wglem")]([SubResource("Resource_bvapi")])
+
+[editable path="SharedComponents"]
+[editable path="SharedComponents/SharedBaseComponents"]
