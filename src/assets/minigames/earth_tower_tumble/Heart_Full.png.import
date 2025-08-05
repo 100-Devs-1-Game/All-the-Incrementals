@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c02dayueobaw"
-path="res://.godot/imported/Heart_Full.png-7747b8d5f0bdc85a1040590b28cbc87d.ctex"
+path="res://.godot/imported/heart_full.png-ccb82dac24cdfd3723bcc8ce9f9a56bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/earth_tower_tumble/Heart_Full.png"
-dest_files=["res://.godot/imported/Heart_Full.png-7747b8d5f0bdc85a1040590b28cbc87d.ctex"]
+source_file="res://assets/minigames/earth_tower_tumble/heart_full.png"
+dest_files=["res://.godot/imported/heart_full.png-ccb82dac24cdfd3723bcc8ce9f9a56bc.ctex"]
 
 [params]
 

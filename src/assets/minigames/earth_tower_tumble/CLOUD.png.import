@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dem6aslg0cdbs"
-path="res://.godot/imported/CLOUD.png-c34a23942a5b16e8cdfe84b235d77978.ctex"
+path="res://.godot/imported/cloud.png-2d33216fb207a5055a5981edcba0fd6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/earth_tower_tumble/CLOUD.png"
-dest_files=["res://.godot/imported/CLOUD.png-c34a23942a5b16e8cdfe84b235d77978.ctex"]
+source_file="res://assets/minigames/earth_tower_tumble/cloud.png"
+dest_files=["res://.godot/imported/cloud.png-2d33216fb207a5055a5981edcba0fd6b.ctex"]
 
 [params]
 
