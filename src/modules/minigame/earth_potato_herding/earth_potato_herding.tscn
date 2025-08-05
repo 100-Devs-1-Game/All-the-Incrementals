@@ -17,7 +17,7 @@ func_or_path = "game_over"
 hotkey = "v"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
-[node name="EarthPotatoHerding" type="Node2D"]
+[node name="EarthPotatoHerding" type="Node2D" groups=["earth_potato_herding"]]
 script = ExtResource("1_kkhpg")
 data_uid = "uid://cbu6b1qnaw05f"
 
