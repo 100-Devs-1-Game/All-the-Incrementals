@@ -44,7 +44,7 @@ func _start() -> void:
 
 func _process(_delta: float) -> void:
 	ui_speed_value.text = str(get_pixels_per_second())
-	ui_score_value.text = str(score)
+	ui_score_value.text = str(get_score())
 	ui_oxygen_value.text = str(WTFGlobals.minigame.stats.oxygen_percentage()) + "%"
 	ui_weight_value.text = str(floori(stats.total_weight()))
 	ui_distance_value.text = str(floori(_distance_travelled))

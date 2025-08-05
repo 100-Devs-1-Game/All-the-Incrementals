@@ -56,7 +56,7 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 @export var unlock_level: int
 
 ## Upgrades that can get unlocked by this one
-@export var unlocks: Array[BaseUpgrade]
+@export var unlocks: Array[Resource]
 
 @export_category("Description")
 

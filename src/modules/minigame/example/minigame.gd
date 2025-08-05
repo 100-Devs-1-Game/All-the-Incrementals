@@ -19,8 +19,3 @@ func _start() -> void:
 
 func _process(delta: float) -> void:
 	circle_center.rotate(rotation_speed * delta)
-
-
-func on_upgrade_button_pressed(upgrade: MinigameUpgrade):
-	upgrade.level_up()
-	upgrade.logic._apply_effect(self, upgrade)
