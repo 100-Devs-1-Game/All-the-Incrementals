@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @export var earth_potato_herding_data: MinigameData
 @export var earth_towers_data: MinigameData
