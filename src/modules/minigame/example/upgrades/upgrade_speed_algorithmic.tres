@@ -24,66 +24,66 @@ metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 [sub_resource type="Resource" id="Resource_1ksxe"]
 script = ExtResource("2_1ksxe")
 essence = ExtResource("3_igob6")
-amount = 2
+amount = 1
 
 [sub_resource type="Resource" id="Resource_igob6"]
 script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 2
+wind = 1
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_1ksxe")])
 
 [sub_resource type="Resource" id="Resource_6yy3f"]
 script = ExtResource("2_1ksxe")
 essence = ExtResource("3_igob6")
-amount = 4
+amount = 3
 
 [sub_resource type="Resource" id="Resource_hhume"]
 script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 4
+wind = 3
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_6yy3f")])
 
 [sub_resource type="Resource" id="Resource_vjbn1"]
 script = ExtResource("2_1ksxe")
 essence = ExtResource("3_igob6")
-amount = 6
+amount = 5
 
 [sub_resource type="Resource" id="Resource_qq1od"]
 script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 6
+wind = 5
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_vjbn1")])
 
 [sub_resource type="Resource" id="Resource_pdnwu"]
 script = ExtResource("2_1ksxe")
 essence = ExtResource("3_igob6")
-amount = 8
+amount = 7
 
 [sub_resource type="Resource" id="Resource_j76k0"]
 script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 8
+wind = 7
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_pdnwu")])
 
 [sub_resource type="Resource" id="Resource_jc1qb"]
 script = ExtResource("2_1ksxe")
 essence = ExtResource("3_igob6")
-amount = 10
+amount = 9
 
 [sub_resource type="Resource" id="Resource_vi62b"]
 script = ExtResource("1_5p5gn")
 earth = 0
 fire = 0
 water = 0
-wind = 10
+wind = 9
 slots = Array[ExtResource("2_1ksxe")]([SubResource("Resource_jc1qb")])
 
 [sub_resource type="Resource" id="Resource_amlar"]
@@ -99,7 +99,7 @@ name = "Speed algorithmic"
 flavor = ""
 position = Vector2(520, -320)
 cost_arr = Array[ExtResource("1_5p5gn")]([SubResource("Resource_igob6"), SubResource("Resource_hhume"), SubResource("Resource_qq1od"), SubResource("Resource_j76k0"), SubResource("Resource_vi62b")])
-effect_modifier_arr = Array[float]([4.0, 8.0, 12.0, 16.0, 20.0])
+effect_modifier_arr = Array[float]([2.0, 4.0, 6.0, 8.0, 10.0])
 max_level = 5
 base_cost = SubResource("Resource_kodix")
 base_cost_multiplier = 2.0

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dyipeqsa8lcpc"]
 
-[ext_resource type="Shader" path="res://addons/panku_console/res/shader/simple_fast_blur.gdshader" id="1_3h55m"]
+[ext_resource type="Shader" uid="uid://hrospnc1lbdr" path="res://addons/panku_console/res/shader/simple_fast_blur.gdshader" id="1_3h55m"]
 
 [resource]
 shader = ExtResource("1_3h55m")
