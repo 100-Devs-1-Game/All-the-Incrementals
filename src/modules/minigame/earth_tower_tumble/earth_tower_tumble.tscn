@@ -1,34 +1,70 @@
-[gd_scene load_steps=10 format=3 uid="uid://351eaqu7t6ig"]
+[gd_scene load_steps=18 format=3 uid="uid://351eaqu7t6ig"]
 
 [ext_resource type="Script" uid="uid://lhc3e4w56rm4" path="res://modules/minigame/earth_tower_tumble/earth_tower_tumble.gd" id="1_ovh32"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0yx17"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_sfu5h"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_46r7c"]
 [ext_resource type="Script" uid="uid://dwtfj2kuufykl" path="res://modules/minigame/earth_tower_tumble/tower_base.gd" id="5_0yx17"]
+[ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="5_wlaab"]
 [ext_resource type="Script" uid="uid://bqkp2jhuqul2q" path="res://modules/minigame/earth_tower_tumble/block_spawner.gd" id="6_sfu5h"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="7_hwnjf"]
+[ext_resource type="Texture2D" uid="uid://b7o48p71vs2yc" path="res://assets/minigames/earth_tower_tumble/BACK.png" id="9_e1brv"]
+[ext_resource type="Script" uid="uid://b70epgha4rake" path="res://modules/minigame/earth_tower_tumble/parallax_background.gd" id="9_kc8as"]
 [ext_resource type="Script" uid="uid://bdxiechv2n4ff" path="res://modules/minigame/earth_tower_tumble/player.gd" id="9_yt77r"]
+[ext_resource type="Texture2D" uid="uid://dem6aslg0cdbs" path="res://assets/minigames/earth_tower_tumble/CLOUD.png" id="10_e1brv"]
+[ext_resource type="Texture2D" uid="uid://c02dayueobaw" path="res://assets/minigames/earth_tower_tumble/Heart_Full.png" id="12_hn5om"]
+[ext_resource type="Script" uid="uid://l0gnaweii5w6" path="res://modules/minigame/earth_tower_tumble/fall_zone.gd" id="14_uvjps"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvjps"]
+shader = ExtResource("5_wlaab")
+shader_parameter/lod = 0.788
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfu5h"]
 size = Vector2(284, 252.277)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlaab"]
+size = Vector2(2328, 498)
 
 [node name="EarthTowerTumble" type="Node2D"]
 script = ExtResource("1_ovh32")
 data_uid = "uid://s7k08dgu5hxn"
 
-[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_0yx17")]
-minigame_node = NodePath("..")
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -100
 
-[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../../../..")
+[node name="TextureRect" type="TextureRect" parent="BG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1024.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_e1brv")
 
-[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
-functions_node = NodePath("../../../..")
-visible_on_start = true
-custom_debug_buttons = Array[ExtResource("3_sfu5h")]([ExtResource("4_46r7c")])
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BG"]
 
-[node name="Pause" parent="SharedComponents/SharedBaseComponents" index="1"]
-visible = true
+[node name="Parallax2D" type="Parallax2D" parent="BG/ParallaxBackground"]
+scroll_offset = Vector2(1020.84, 596)
+repeat_size = Vector2(1024, 0)
+repeat_times = 5
+script = ExtResource("9_kc8as")
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/ParallaxBackground/Parallax2D"]
+texture = ExtResource("10_e1brv")
+
+[node name="Blur" type="TextureRect" parent="BG/ParallaxBackground/Parallax2D/Sprite2D"]
+material = SubResource("ShaderMaterial_uvjps")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.16498
+offset_top = -596.0
+offset_right = 3.16504
+offset_bottom = -596.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_e1brv")
 
 [node name="TowerBase" type="Node2D" parent="."]
 position = Vector2(949, 1078)
@@ -56,6 +92,89 @@ script = ExtResource("9_yt77r")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(944, 642)
 zoom = Vector2(1.48, 1.48)
+
+[node name="MinigameUI" type="CanvasLayer" parent="."]
+
+[node name="Box" type="HBoxContainer" parent="MinigameUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -593.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="MinigameUI/Box"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 73
+text = "Lives:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hart" type="TextureRect" parent="MinigameUI/Box"]
+layout_mode = 2
+texture = ExtResource("12_hn5om")
+
+[node name="hart2" type="TextureRect" parent="MinigameUI/Box"]
+layout_mode = 2
+texture = ExtResource("12_hn5om")
+
+[node name="hart3" type="TextureRect" parent="MinigameUI/Box"]
+layout_mode = 2
+texture = ExtResource("12_hn5om")
+
+[node name="Win" type="Label" parent="MinigameUI"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 113.0
+offset_right = 20.0
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 26
+theme_override_font_sizes/font_size = 123
+text = "Level Complete!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rem" type="Label" parent="MinigameUI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -117.0
+offset_right = 518.0
+grow_vertical = 0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 60
+text = "Blocks Remaining: 32"
+vertical_alignment = 1
+
+[node name="FallZone" type="Area2D" parent="."]
+position = Vector2(942, 1303)
+script = ExtResource("14_uvjps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallZone"]
+position = Vector2(0, 239)
+shape = SubResource("RectangleShape2D_wlaab")
+
+[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_0yx17")]
+minigame_node = NodePath("..")
+
+[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
+minigame = NodePath("../../../..")
+
+[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+functions_node = NodePath("../../../..")
+visible_on_start = true
+custom_debug_buttons = Array[ExtResource("3_sfu5h")]([ExtResource("4_46r7c")])
+
+[node name="Pause" parent="SharedComponents/SharedBaseComponents" index="1"]
+visible = true
 
 [editable path="SharedComponents"]
 [editable path="SharedComponents/SharedBaseComponents"]
