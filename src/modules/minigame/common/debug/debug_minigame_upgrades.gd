@@ -7,7 +7,6 @@ var _tree_upgrades: TreeItem
 
 
 func _ready() -> void:
-	await get_tree().current_scene.ready
 	init()
 
 
