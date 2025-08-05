@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	EditorInterface.get_resource_filesystem().filesystem_changed.connect(_on_filesystem_changed())
 
 
