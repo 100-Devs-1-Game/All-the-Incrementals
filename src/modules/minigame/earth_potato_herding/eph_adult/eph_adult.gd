@@ -16,7 +16,7 @@ var score: int
 
 func _ready() -> void:
 	mini_game = get_tree().root.get_node("EarthPotatoHerding")
-	score = mini_game.get_score(self)
+	score = mini_game.get_potato_score(self)
 
 
 func is_close_to_bucket() -> bool:
