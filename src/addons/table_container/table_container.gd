@@ -165,8 +165,10 @@ func _get_table_children() -> Array[HBoxContainer]:
 		func(node: Node) -> bool: return node is HBoxContainer
 	)
 	var rows: Array[HBoxContainer] = []
+	# The following original code causes can't assign Array[Object] errors
 	#rows.assign(children)
-	rows = children.map(func(n): return n as HBoxContainer)
+	for n in children:
+		rows.append(n as HBoxContainer)
 	return rows
 
 
@@ -177,8 +179,10 @@ func _get_row_children(row: HBoxContainer) -> Array[Control]:
 		func(node: Node) -> bool: return node is Control
 	)
 	var cells: Array[Control] = []
-	cells = children.map(func(n): return n as Control)
+	# The following original code causes can't assign Array[Object] errors
 	#cells.assign(children)
+	for n in children:
+		cells.append(n as Control)
 	return cells
 
 
