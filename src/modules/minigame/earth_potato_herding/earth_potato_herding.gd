@@ -12,7 +12,7 @@ signal game_started
 var potato_score: int = 1
 
 
-func get_score(_potato: EphAdult) -> int:
+func get_potato_score(_potato: EphAdult) -> int:
 	return potato_score
 
 

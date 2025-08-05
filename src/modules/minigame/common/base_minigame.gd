@@ -10,9 +10,11 @@ extends Node
 @export var data_uid: String
 
 var data: MinigameData
-var score: int
+var _score: int
 var _minigame_shared_components: MinigameSharedComponents
 var _is_game_over: bool = false
+# TODO implement full functionality
+var _countdown: float
 
 
 func _ready() -> void:
@@ -82,7 +84,15 @@ func play():
 
 
 func add_score(n: int = 1):
-	score += n
+	_score += n
+
+
+func get_score() -> int:
+	return _score
+
+
+func get_time_left() -> float:
+	return _countdown
 
 
 # This function is called when the Upgrades button on the minigame menu is
@@ -95,7 +105,7 @@ func open_upgrades():
 func game_over():
 	_minigame_shared_components.minigame_menu.open_menu()
 	Player.add_stack_to_inventory(
-		EssenceStack.new(data.output_essence, score * data.currency_conversion_factor)
+		EssenceStack.new(data.output_essence, int(_score * data.currency_conversion_factor))
 	)
 	_is_game_over = true
 
