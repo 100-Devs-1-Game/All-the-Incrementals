@@ -1,13 +1,13 @@
 extends "res://addons/gut/test.gd"
 
 
-func test_water_target_fishing_run() -> void:
+func test_earth_potato_herding() -> void:
 	var minigame_data: MinigameData = load(
-		"res://modules/minigame/water_target_fishing/data/water_fishing_data.tres"
+		"res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres"
 	)
 
-	var minigame: WTFMinigame = (
-		load("res://modules/minigame/water_target_fishing/water_target_fishing.tscn").instantiate()
+	var minigame: EarthPotatoHerdingMinigame = (
+		load("res://modules/minigame/earth_potato_herding/earth_potato_herding.tscn").instantiate()
 	)
 
 	SceneLoader._current_minigame = minigame_data
@@ -22,7 +22,6 @@ func test_water_target_fishing_run() -> void:
 	await wait_seconds(3)
 
 	print("Assert")
-	assert_gt(minigame._distance_travelled, 0.0, "distance >= 0")
 	assert_gt(minigame.get_score(), -1, "score >= 0")
 
 	minigame.queue_free()
