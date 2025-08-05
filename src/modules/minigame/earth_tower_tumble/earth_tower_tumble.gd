@@ -1,8 +1,8 @@
 class_name EarthTowerTumbleMinigame
 extends BaseMinigame
 
-const HEART_EMPTY = preload("res://assets/minigames/earth_tower_tumble/heart_empty.png")
-const HEART_FULL = preload("res://assets/minigames/earth_tower_tumble/heart_full.png")
+const HEART_EMPTY = preload("res://assets/minigames/earth_tower_tumble/hearts_empty.png")
+const HEART_FULL = preload("res://assets/minigames/earth_tower_tumble/hearts_full.png")
 
 var lives: int = 3
 var game_score: int = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dem6aslg0cdbs"
-path="res://.godot/imported/cloud.png-2d33216fb207a5055a5981edcba0fd6b.ctex"
+uid="uid://c02dayueobaw"
+path="res://.godot/imported/hearts_full.png-9856678a0035d1ed0c778e5359f0e6f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/earth_tower_tumble/cloud.png"
-dest_files=["res://.godot/imported/cloud.png-2d33216fb207a5055a5981edcba0fd6b.ctex"]
+source_file="res://assets/minigames/earth_tower_tumble/hearts_full.png"
+dest_files=["res://.godot/imported/hearts_full.png-9856678a0035d1ed0c778e5359f0e6f4.ctex"]
 
 [params]
 
