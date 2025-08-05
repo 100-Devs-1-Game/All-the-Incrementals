@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://351eaqu7t6ig"]
+[gd_scene load_steps=20 format=3 uid="uid://351eaqu7t6ig"]
 
 [ext_resource type="Script" uid="uid://lhc3e4w56rm4" path="res://modules/minigame/earth_tower_tumble/earth_tower_tumble.gd" id="1_ovh32"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0yx17"]
@@ -9,11 +9,12 @@
 [ext_resource type="Script" uid="uid://bqkp2jhuqul2q" path="res://modules/minigame/earth_tower_tumble/block_spawner.gd" id="6_sfu5h"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="7_hwnjf"]
 [ext_resource type="Texture2D" uid="uid://b7o48p71vs2yc" path="res://assets/minigames/earth_tower_tumble/background.png" id="9_e1brv"]
-[ext_resource type="Script" uid="uid://b70epgha4rake" path="res://modules/minigame/earth_tower_tumble/parallax_background.gd" id="9_kc8as"]
+[ext_resource type="Script" path="res://modules/minigame/earth_tower_tumble/parallax_background.gd" id="9_kc8as"]
 [ext_resource type="Script" uid="uid://bdxiechv2n4ff" path="res://modules/minigame/earth_tower_tumble/player.gd" id="9_yt77r"]
 [ext_resource type="Texture2D" uid="uid://dem6aslg0cdbs" path="res://assets/minigames/earth_tower_tumble/clouds.png" id="10_e1brv"]
 [ext_resource type="Texture2D" uid="uid://c02dayueobaw" path="res://assets/minigames/earth_tower_tumble/hearts_full.png" id="12_hn5om"]
-[ext_resource type="Script" uid="uid://l0gnaweii5w6" path="res://modules/minigame/earth_tower_tumble/fall_zone.gd" id="14_uvjps"]
+[ext_resource type="Script" path="res://modules/minigame/earth_tower_tumble/fall_zone.gd" id="14_uvjps"]
+[ext_resource type="Script" uid="uid://di43dnqtvc367" path="res://modules/minigame/earth_tower_tumble/path_2d.gd" id="15_sn5tp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uvjps"]
 shader = ExtResource("5_wlaab")
@@ -24,6 +25,12 @@ size = Vector2(284, 252.277)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlaab"]
 size = Vector2(2328, 498)
+
+[sub_resource type="Curve2D" id="Curve2D_uvjps"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 430, 422, 0, 0, 0, 0, 1490.85, 422)
+}
+point_count = 2
 
 [node name="EarthTowerTumble" type="Node2D"]
 script = ExtResource("1_ovh32")
@@ -58,10 +65,10 @@ material = SubResource("ShaderMaterial_uvjps")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.16498
-offset_top = -596.0
-offset_right = 3.16504
-offset_bottom = -596.0
+offset_left = -1251.84
+offset_top = -602.0
+offset_right = -1251.84
+offset_bottom = -602.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_e1brv")
@@ -165,6 +172,9 @@ shape = SubResource("RectangleShape2D_wlaab")
 [node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_0yx17")]
 minigame_node = NodePath("..")
 
+[node name="CanvasLayer" parent="SharedComponents/SharedBaseComponents" index="0"]
+visible = false
+
 [node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
 minigame = NodePath("../../../..")
 
@@ -175,6 +185,15 @@ custom_debug_buttons = Array[ExtResource("3_sfu5h")]([ExtResource("4_46r7c")])
 
 [node name="Pause" parent="SharedComponents/SharedBaseComponents" index="1"]
 visible = true
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_uvjps")
+script = ExtResource("15_sn5tp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(960.425, 422)
+progress = 530.425
+loop = false
 
 [editable path="SharedComponents"]
 [editable path="SharedComponents/SharedBaseComponents"]

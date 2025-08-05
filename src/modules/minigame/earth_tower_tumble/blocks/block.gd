@@ -29,16 +29,26 @@ func _randomize_color():
 	$Polygon2D.color = Color(randf(), randf(), randf())
 
 
+func _process(delta: float) -> void:
+	if get_parent().get_parent().build_mode:
+		gravity_scale = 0.5
+	else:
+		if is_held:
+			gravity_scale = 0.1
+		else:
+			gravity_scale = 1.0
+
 func _physics_process(delta):
 	if is_held or last_delay:
-		if Input.is_action_just_pressed("secondary_action"):
-			global_rotation_degrees += 90.0
-		if Input.is_action_just_pressed("left"):
-			target_x -= cell_size
-		elif Input.is_action_just_pressed("right"):
-			target_x += cell_size
-		if Input.is_action_just_pressed("primary_action"):
-			_drop_block()
+		if get_parent().get_parent().build_mode:
+			if Input.is_action_just_pressed("secondary_action"):
+				global_rotation_degrees += 90.0
+			if Input.is_action_just_pressed("left"):
+				target_x -= cell_size
+			elif Input.is_action_just_pressed("right"):
+				target_x += cell_size
+			if Input.is_action_just_pressed("primary_action"):
+				_drop_block()
 
 		global_position.x = lerp(global_position.x, target_x, move_speed * delta)
 	if !is_held:

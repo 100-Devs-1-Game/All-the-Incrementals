@@ -7,6 +7,7 @@ const HEART_FULL = preload("res://assets/minigames/earth_tower_tumble/hearts_ful
 var lives: int = 3
 var game_score: int = 0
 var peices := 18
+var build_mode: = true
 
 @onready var block_handler = $BlockSpawner
 @onready var fall_zone = $FallZone
@@ -44,6 +45,9 @@ func block_dropped():
 	else:
 		game_over()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("down"):
+		build_mode = !build_mode
 
 func _update_ui():
 	remaining.text = "Blocks Left: " + str(peices)
