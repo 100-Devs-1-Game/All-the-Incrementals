@@ -4,7 +4,7 @@ signal released
 
 var cell_size := 32
 var target_x: float
-var move_speed := 30.0
+var move_speed := 45.0
 var is_held := true
 
 var last_delay = false
@@ -12,6 +12,7 @@ var touch_delay := 0.2
 
 
 func _ready():
+	add_to_group("block")
 	contact_monitor = true
 	lock_rotation = true
 	continuous_cd = RigidBody2D.CCD_MODE_CAST_SHAPE
@@ -39,7 +40,6 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("primary_action"):
 			_drop_block()
 
-		#linear_velocity += Vector2(0, 3.5)
 		global_position.x = lerp(global_position.x, target_x, move_speed * delta)
 	if !is_held:
 		lock_rotation = false
@@ -55,7 +55,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 					is_held = false
 					await get_tree().create_timer(touch_delay).timeout
 					_drop_block()
-					print("Drop has been block")
 					break
 	if !is_held:
 		var count = state.get_contact_count()

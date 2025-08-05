@@ -1,5 +1,7 @@
 extends Node2D
 
+signal block_created
+
 var blocks := [
 	preload("res://modules/minigame/earth_tower_tumble/blocks/cblock.tscn"),
 	preload("res://modules/minigame/earth_tower_tumble/blocks/iblock.tscn"),
@@ -13,6 +15,8 @@ var blocks := [
 var current_block: PackedScene
 var next_block: PackedScene
 
+@onready var inst = get_parent()
+
 
 func start():
 	current_block = blocks.pick_random()
@@ -24,6 +28,7 @@ func start():
 func spawn_block(object):
 	var block = object.instantiate()
 	block.connect("released", spawn_next_block)
+	inst.block_dropped()
 	add_child(block)
 	block.global_position = global_position
 
