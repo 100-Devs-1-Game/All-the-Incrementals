@@ -165,7 +165,8 @@ func _get_table_children() -> Array[HBoxContainer]:
 		func(node: Node) -> bool: return node is HBoxContainer
 	)
 	var rows: Array[HBoxContainer] = []
-	rows.assign(children)
+	#rows.assign(children)
+	rows = children.map(func(n): return n as HBoxContainer)
 	return rows
 
 
@@ -176,7 +177,8 @@ func _get_row_children(row: HBoxContainer) -> Array[Control]:
 		func(node: Node) -> bool: return node is Control
 	)
 	var cells: Array[Control] = []
-	cells.assign(children)
+	cells = children.map(func(n): return n as Control)
+	#cells.assign(children)
 	return cells
 
 
