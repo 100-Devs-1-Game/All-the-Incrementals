@@ -1,7 +1,7 @@
 extends "res://addons/gut/test.gd"
 
 
-func test_wind_platformer() -> void:
+func test_water_rowing_rapids() -> void:
 	var minigame_data: MinigameData = load(
 		"res://modules/minigame/water_rowing_rapids/data/water_rowing_rapids_data.tres"
 	)
