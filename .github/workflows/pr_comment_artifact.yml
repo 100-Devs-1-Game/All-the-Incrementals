@@ -6,7 +6,7 @@ on:
     types:
       - "completed"
     workflows:
-      - "CI / CD"
+      - CI / CD
 
 jobs:
   comment-on-pr:
