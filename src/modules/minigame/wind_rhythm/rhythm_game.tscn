@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwtnwarbhh0up"]
+[gd_scene load_steps=7 format=3 uid="uid://bwtnwarbhh0up"]
 
 [ext_resource type="PackedScene" uid="uid://byhlr4ndp885i" path="res://modules/minigame/wind_rhythm/note/note_spawner.tscn" id="1_73mo2"]
 [ext_resource type="Script" uid="uid://b5ygfwh0c0nh" path="res://modules/minigame/wind_rhythm/rhythm_game.gd" id="1_sij3s"]
+[ext_resource type="Texture2D" uid="uid://jsnnw5l5o06j" path="res://assets/minigames/wind_rhythm/placeholder_assets/rhythm_background.png" id="2_hxotr"]
 [ext_resource type="PackedScene" uid="uid://c8l4byfcrycg8" path="res://modules/minigame/wind_rhythm/conductor.tscn" id="2_sij3s"]
 [ext_resource type="PackedScene" uid="uid://ev2tmev7hfu1" path="res://modules/minigame/wind_rhythm/board/rhythm_board.tscn" id="3_hxotr"]
 
@@ -10,43 +11,50 @@
 [node name="RhythmGame" type="Node2D"]
 script = ExtResource("1_sij3s")
 
+[node name="RhythmBackground" type="Sprite2D" parent="."]
+self_modulate = Color(0.597176, 0.597176, 0.597176, 1)
+position = Vector2(908, 541)
+scale = Vector2(1.29686, 1.29686)
+texture = ExtResource("2_hxotr")
+
+[node name="PanelContainer" parent="." instance=ExtResource("3_hxotr")]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
 [node name="Conductor" parent="." instance=ExtResource("2_sij3s")]
 unique_name_in_owner = true
 
-[node name="PanelContainer" parent="." instance=ExtResource("3_hxotr")]
-
 [node name="judgment_line" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(108, 0)
+position = Vector2(120, 0)
 gizmo_extents = 400.0
 
 [node name="DebugLabel" type="Label" parent="."]
 unique_name_in_owner = true
 offset_left = 132.0
-offset_top = 271.0
-offset_right = 172.0
-offset_bottom = 321.0
+offset_top = 421.0
+offset_right = 270.0
+offset_bottom = 471.0
 text = "test 123"
 
 [node name="JudgmentLabel" type="Label" parent="."]
 unique_name_in_owner = true
 offset_left = 129.0
-offset_top = 389.0
-offset_right = 218.0
-offset_bottom = 439.0
+offset_top = 306.0
+offset_right = 228.0
+offset_bottom = 356.0
 text = "!Okay"
 
 [node name="Early_Late" type="Label" parent="."]
 unique_name_in_owner = true
 offset_left = 129.0
-offset_top = 440.0
+offset_top = 357.0
 offset_right = 215.0
-offset_bottom = 490.0
+offset_bottom = 407.0
 text = "!Early"
 label_settings = SubResource("LabelSettings_sij3s")
 
 [node name="NoteSpawner" parent="." instance=ExtResource("1_73mo2")]
-position = Vector2(0, 69)
-scroll_speed = 1
+scroll_speed = 1.0
 conductor_path = NodePath("../Conductor")
 judgment_line = NodePath("../judgment_line")

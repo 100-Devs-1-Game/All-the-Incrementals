@@ -54,9 +54,9 @@ func random_spawnable_fish(distance: float, min_height: float, max_height: float
 	#todo cache, carefully
 	var valid_spawns: Array[WTFFishData]
 
-	var data := fish_db.get_data()
-	for data_key in data:
-		var data_val := data[data_key]
+	var fish_data := fish_db.get_data()
+	for data_key in fish_data:
+		var data_val := fish_data[data_key]
 		var spawnable_x := distance > data_val.spawn.min_spawn_distance
 		var spawn_y_range := data_val.spawn.get_spawn_height_range()
 		var spawnable_y := min_height <= spawn_y_range.y || max_height >= spawn_y_range.x

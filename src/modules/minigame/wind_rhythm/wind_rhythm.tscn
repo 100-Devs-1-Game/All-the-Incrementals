@@ -8,17 +8,12 @@
 script = ExtResource("1_4gb8k")
 data_uid = "uid://cxrnthj4sdjv4"
 
-[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_0ggpn")]
-minigame_node = NodePath("..")
+[node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
 
-[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../../../..")
-
-[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
-functions_node = NodePath("../../../..")
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1"]
 visible_on_start = true
 
 [node name="RhythmGame" parent="." instance=ExtResource("3_top3v")]
 
-[editable path="SharedComponents"]
-[editable path="SharedComponents/SharedBaseComponents"]
+[editable path="MinigameSharedComponents"]
+[editable path="MinigameSharedComponents/SharedBaseComponents"]
