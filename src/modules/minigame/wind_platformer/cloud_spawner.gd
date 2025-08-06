@@ -6,10 +6,10 @@ extends Node
 @export var initial_clouds: int = 30
 @export var cloud_velocity_range: Vector2 = Vector2(20, 150)
 
-@export var initial_rect: Rect2 = Rect2(0, 0, 1920, 1080)
+@export var initial_rect: Rect2 = Rect2(0, 200, 1920, 1000)
 
-@export var left_rect: Rect2 = Rect2(-150, 0, -140, 1080)
-@export var right_rect: Rect2 = Rect2(2000, 0, 2010, 1080)
+@export var left_rect: Rect2 = Rect2(-150, 200, -140, 1000)
+@export var right_rect: Rect2 = Rect2(2060, 200, 2070, 1000)
 
 
 func start() -> void:

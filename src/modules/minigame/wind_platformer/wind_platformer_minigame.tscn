@@ -60,7 +60,6 @@ cloud_scene = ExtResource("4_qs17m")
 clouds_node = NodePath("../Platforms")
 initial_clouds = 100
 cloud_velocity_range = Vector2(10, 50)
-initial_rect = Rect2(0, 200, 1920, 1080)
 left_rect = Rect2(-150, 150, -140, 1080)
 right_rect = Rect2(2000, 150, 2010, 1080)
 
