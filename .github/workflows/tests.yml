@@ -35,3 +35,36 @@ jobs:
           godot_version: ${{ env.GODOT_VERSION }}
           gut_params: -gdir=res://tests/unit
           project_path: src
+
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout LFS objects
+        run: git lfs pull
+
+      - name: unit tests with godot gut
+        uses: 100-Devs-1-Game/godot-gut-ci@feature/add-resource-check
+        with:
+          godot_version: ${{ env.GODOT_VERSION }}
+          gut_params: -gdir=res://tests/unit
+          project_path: src
+
+      - name: Status
+        run: git status
+
+# echo git status:
+# echo "$(git status --porcelain)"
+
+# echo git diff:
+# echo "$(git diff)"
+
+# if [[ -n "$(git status --porcelain)" ]]; then
+#   echo "::error::Some .tres or .res files are not up to date. Please run the Resource Resaver (button in the top-right of the Godot Editor) and fix any broken resources!"
+#   exit 1
+# else
+#   echo "All resources are up to date"
+# fi
