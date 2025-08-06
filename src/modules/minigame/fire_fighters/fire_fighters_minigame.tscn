@@ -115,4 +115,10 @@ metadata/_custom_type_script = "uid://bk20clpaekonn"
 [node name="MinigameSharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("21_jiygg")]
 minigame_node = NodePath("..")
 
+[node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
+minigame = NodePath("../../../..")
+
 [connection signal="timeout" from="FireFightersMinigameItemSpawner/Timer" to="FireFightersMinigameItemSpawner" method="_on_timer_timeout"]
+
+[editable path="MinigameSharedComponents"]
+[editable path="MinigameSharedComponents/SharedBaseComponents"]
