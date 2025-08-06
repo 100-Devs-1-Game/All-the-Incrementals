@@ -37,9 +37,6 @@ grow_vertical = 2
 [node name="MinigameSharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_0gqa2")]
 minigame_node = NodePath("..")
 
-[node name="DebugMinigameUpgrades" parent="MinigameSharedComponents" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../..")
-
 [node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
 minigame = NodePath("../../../..")
 

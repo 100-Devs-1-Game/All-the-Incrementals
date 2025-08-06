@@ -1,6 +1,8 @@
 class_name MinigameOverlay
 extends PanelContainer
 
+@export var minigame: BaseMinigame
+
 @export var enable_score_display: bool = false:
 	set(b):
 		_score_panel.visible = b
@@ -20,7 +22,7 @@ extends PanelContainer
 @onready var _countdown_value: Label = %CountdownValue
 
 
-func update(minigame: BaseMinigame):
+func update():
 	if enable_score_display:
 		_update_score(minigame.get_score())
 	if enable_countdown_display:

@@ -2,8 +2,8 @@ class_name DebugMinigameUpgrades
 extends Node
 
 @export var debug_popup: DebugPopup
-@export var minigame: BaseMinigame
 
+var minigame: BaseMinigame
 var _tree_upgrades: TreeItem
 
 
@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func init():
 	assert(SceneLoader.has_current_minigame())
+	assert(minigame != null)
 
 	var tree_root = debug_popup.get_tree_root()
 	_tree_upgrades = tree_root.create_child()
