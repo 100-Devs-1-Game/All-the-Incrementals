@@ -36,3 +36,7 @@ func _on_player_detection_area_body_entered(_body: Node2D) -> void:
 
 func _on_player_detection_area_body_exited(_body: Node2D) -> void:
 	set_parts_areas_active(false)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
