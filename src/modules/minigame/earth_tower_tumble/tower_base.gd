@@ -1,6 +1,6 @@
 extends Node2D
 
-var base_width_current := 284.0
+var base_width_current := 500.0
 var upgrade_width_increment := 64.0
 var upgrade_speed := 15.0
 
@@ -11,6 +11,7 @@ var base_upgrading := false
 
 
 func _ready():
+	col.shape.size.x = base_width_current
 	update_polygon()
 
 

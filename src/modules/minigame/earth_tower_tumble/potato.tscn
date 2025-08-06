@@ -1,16 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cthth76jfeecw"]
+[gd_scene load_steps=5 format=3 uid="uid://e4xemp6bivp1"]
 
-[ext_resource type="Script" uid="uid://0p56kk67de7v" path="res://potato.gd" id="1_jb446"]
+[ext_resource type="Script" uid="uid://f3arvcfb8t1f" path="res://modules/minigame/earth_tower_tumble/potato.gd" id="1_jb446"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yle8e"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yle8e"]
+albedo_color = Color(0.457018, 0.299053, 0.187391, 1)
 
-[node name="Sprite2D" type="Polygon2D"]
-scale = Vector2(-4.22947, -4.22947)
-color = Color(0.500516, 0.349919, 0.200024, 1)
-polygon = PackedVector2Array(-9, 0, 0, 9, 9, 0, 0, -9)
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2ehu0"]
+material = SubResource("StandardMaterial3D_yle8e")
+radius = 0.65
+height = 1.945
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y7fga"]
+
+[node name="Potato" type="Node2D"]
 script = ExtResource("1_jb446")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.542573, 0.356538, 0.20702, 1)
+position = Vector2(0, 2.80142e-06)
+scale = Vector2(14, 14)
+mesh = SubResource("CapsuleMesh_2ehu0")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_yle8e")
+shape = SubResource("CapsuleShape2D_y7fga")

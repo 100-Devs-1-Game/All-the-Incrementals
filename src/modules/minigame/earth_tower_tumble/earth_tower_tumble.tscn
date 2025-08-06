@@ -21,7 +21,7 @@ shader = ExtResource("5_wlaab")
 shader_parameter/lod = 0.788
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfu5h"]
-size = Vector2(284, 252.277)
+size = Vector2(285, 252.277)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlaab"]
 size = Vector2(2328, 498)
