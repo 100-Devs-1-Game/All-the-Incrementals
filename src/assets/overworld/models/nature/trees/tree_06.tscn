@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ye5ql4d5ljy"]
+
+[ext_resource type="PackedScene" uid="uid://e8qfeom2j8j6" path="res://models/nature/trees/tree_06.gltf" id="1_ubi4p"]
+
+[node name="tree_062" instance=ExtResource("1_ubi4p")]

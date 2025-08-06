@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxrbp781c7125"]
+
+[ext_resource type="PackedScene" uid="uid://co6ddfkswkxo1" path="res://assets/overworld/models/nature/trees/tree_07.gltf" id="1_ygwtp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_snbs8"]
+height = 7.0
+radius = 1.0
+
+[node name="tree_072" instance=ExtResource("1_ygwtp")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+shape = SubResource("CylinderShape3D_snbs8")

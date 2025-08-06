@@ -1,8 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://khnsbhc4bqj8"]
+[gd_scene load_steps=4 format=3 uid="uid://khnsbhc4bqj8"]
 
 [ext_resource type="Script" uid="uid://br6m2cbo4864k" path="res://modules/menu/main_menu.gd" id="1_tsonj"]
-[ext_resource type="PackedScene" uid="uid://d1s2rtgxlns3v" path="res://modules/overworld/overworld.tscn" id="2_yldjb"]
-[ext_resource type="PackedScene" uid="uid://4sdp3vpsbo5v" path="res://modules/menu/extras.tscn" id="3_pk52d"]
 [ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/settings/off_white_styleboxflat.tres" id="4_e5aks"]
 [ext_resource type="PackedScene" uid="uid://1m18lfvfkax2" path="res://modules/settings/settings.tscn" id="8_dysxh"]
 
@@ -11,8 +9,6 @@ custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_tsonj")
-overworld_scene = ExtResource("2_yldjb")
-extras_scene = ExtResource("3_pk52d")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
