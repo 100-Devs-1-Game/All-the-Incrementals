@@ -4,7 +4,15 @@ extends Node
 # this is necessary to avoid circular references
 const OVERWORLD_SCENE := preload("res://modules/overworld/overworld.tscn")
 const EXTRAS_SCENE := preload("res://modules/menu/extras.tscn")
+
+# this is necessary to maintain my sanity
 const SHRINE_SETTLEMENT_DATA := preload("res://modules/overworld_locations/shrine/shrine.tres")
+const BREEZEKILN_SETTLEMENT_DATA := preload(
+	"res://modules/overworld_locations/breezekiln/breezekiln.tres"
+)
+const CLAYPORT_SETTLEMENT_DATA := preload(
+	"res://modules/overworld_locations/clayport/clayport.tres"
+)
 
 var _current_settlement: SettlementData
 var _current_minigame: MinigameData
@@ -59,6 +67,14 @@ func return_to_overworld():
 
 func enter_shrine():
 	enter_settlement(SHRINE_SETTLEMENT_DATA)
+
+
+func enter_breezekiln():
+	enter_settlement(BREEZEKILN_SETTLEMENT_DATA)
+
+
+func enter_clayport():
+	enter_settlement(CLAYPORT_SETTLEMENT_DATA)
 
 
 func enter_extras():
