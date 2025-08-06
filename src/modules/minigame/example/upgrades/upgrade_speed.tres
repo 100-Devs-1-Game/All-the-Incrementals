@@ -102,4 +102,6 @@ unlocks = Array[Resource]([ExtResource("4_ml3xo"), ExtResource("6_d7fem")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0
+test = 0
+test2 = null
 metadata/_custom_type_script = "uid://co4s3tttdeie1"
