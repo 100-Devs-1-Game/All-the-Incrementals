@@ -1,5 +1,5 @@
 # Tests of the project
-name: CI / CD
+name: Pre-commit and Tests
 
 env:
   GODOT_VERSION: 4.4.1
