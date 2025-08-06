@@ -6,6 +6,7 @@ extends SceneTree
 func _init():
 	# we need to delay by a frame, otherwise godot doesn't seem
 	# to know what UID's are, and it'll delete all of them??
+    # ./godot.exe --headless --editor --script "addons/resource_resave/resave_resources.gd" --quit
 	await process_frame
 	print("Resource Resaver - Running as script")
 	resave_resources("res://")
@@ -27,7 +28,6 @@ static func resave_resources(start_path: String) -> void:
 			if file_name.ends_with(".tres") or file_name.ends_with(".res"):
 				var res = ResourceLoader.load(file_path)
 				var err := ResourceSaver.save(res, file_path)
-				print(file_path)
 				if err != OK:
 					push_error("Resource Resaver - %s failed to resave? error=%s" % [file_path, err])
 
