@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://ev2tmev7hfu1"]
 
 [node name="PanelContainer" type="PanelContainer"]
-offset_right = 1114.0
-offset_bottom = 261.0
+offset_right = 1920.0
+offset_bottom = 300.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="RhythmBoard" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_stretch_ratio = 10.0
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
@@ -19,7 +19,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="ColorRect2" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -32,7 +32,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect7" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -45,7 +45,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect3" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -58,7 +58,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect9" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -71,7 +71,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect11" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -84,7 +84,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect13" type="ColorRect" parent="HBoxContainer/RhythmBoard"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -113,7 +113,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="ColorRect2" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -126,7 +126,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect7" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -139,7 +139,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect3" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -152,7 +152,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect9" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -165,7 +165,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect11" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -178,7 +178,7 @@ size_flags_vertical = 3
 color = Color(1, 1, 1, 0.356863)
 
 [node name="ColorRect13" type="ColorRect" parent="HBoxContainer/RhythmBoard2"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
