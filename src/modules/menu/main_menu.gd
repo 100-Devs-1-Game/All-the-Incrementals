@@ -1,8 +1,5 @@
 extends Control
 
-@export var overworld_scene: PackedScene
-@export var extras_scene: PackedScene
-
 @onready var settings: Settings = $Settings
 
 
@@ -29,8 +26,8 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_start_pressed() -> void:
-	SceneLoader.enter_settlement(load("res://modules/overworld_locations/shrine/shrine.tres"))
+	SceneLoader.enter_shrine()
 
 
 func _on_extras_pressed() -> void:
-	get_tree().change_scene_to_packed(extras_scene)
+	SceneLoader.enter_extras()

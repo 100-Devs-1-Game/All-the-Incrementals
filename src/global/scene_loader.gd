@@ -1,7 +1,10 @@
 # Global SceneLoader class
 extends Node
 
+# this is necessary to avoid circular references
 const OVERWORLD_SCENE := preload("res://modules/overworld/overworld.tscn")
+const EXTRAS_SCENE := preload("res://modules/menu/extras.tscn")
+const SHRINE_SETTLEMENT_DATA := preload("res://modules/overworld_locations/shrine/shrine.tres")
 
 var _current_settlement: SettlementData
 var _current_minigame: MinigameData
@@ -52,6 +55,14 @@ func get_current_settlement_data() -> SettlementData:
 func return_to_overworld():
 	# TODO
 	pass
+
+
+func enter_shrine():
+	enter_settlement(SHRINE_SETTLEMENT_DATA)
+
+
+func enter_extras():
+	get_tree().change_scene_to_packed(EXTRAS_SCENE)
 
 
 func _exit_minigame() -> void:
