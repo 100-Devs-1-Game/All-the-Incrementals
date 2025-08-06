@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="MinigameData" load_steps=4 format=3 uid="uid://c8wvg65eqyoco"]
+[gd_resource type="Resource" script_class="MinigameData" load_steps=5 format=3 uid="uid://c8wvg65eqyoco"]
 
 [ext_resource type="PackedScene" uid="uid://cccmrn0cfcn0s" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.tscn" id="1_echju"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="2_bpume"]
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="2_nvcen"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_r2ktw"]
 
 [resource]
 script = ExtResource("2_nvcen")
-display_name = "water_rowing_rapids"
+display_name = "Rowing Rapids"
 minigame_scene = ExtResource("1_echju")
 upgrade_tree_root_nodes = Array[ExtResource("3_r2ktw")]([])
+output_essence = ExtResource("2_bpume")
 currency_conversion_factor = 0.0
 high_scores = Array[int]([])
 metadata/_custom_type_script = "uid://mwcjys5dkgf4"
