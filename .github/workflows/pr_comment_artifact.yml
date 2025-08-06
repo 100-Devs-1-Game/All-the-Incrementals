@@ -26,14 +26,22 @@ jobs:
           echo "Previous Job ID: $PREVIOUS_JOB_ID"
           echo "PREVIOUS_JOB_ID=$PREVIOUS_JOB_ID" >> "$GITHUB_ENV"
 
-          ARTIFACT_URL=$(gh api "/repos/$OWNER/$REPO/actions/artifacts" \
+          WINDOWS_ARTIFACT_URL=$(gh api "/repos/$OWNER/$REPO/actions/artifacts" \
             --jq ".artifacts.[] |
+            select(.name==\"windows-export\") |
             select(.workflow_run.id==${PREVIOUS_JOB_ID}) |
             select(.expired==false) |
             .archive_download_url")
-
-          echo "ARTIFACT URL: $ARTIFACT_URL"
-          echo "ARTIFACT_URL=$ARTIFACT_URL" >> "$GITHUB_ENV"
+          echo "Windows Artifact URL: $WINDOWS_ARTIFACT_URL"
+          LINUX_ARTIFACT_URL=$(gh api "/repos/$OWNER/$REPO/actions/artifacts" \
+            --jq ".artifacts.[] |
+            select(.name==\"linux-export\") |
+            select(.workflow_run.id==${PREVIOUS_JOB_ID}) |
+            select(.expired==false) |
+            .archive_download_url")
+          echo "Linux Artifact URL: $LINUX_ARTIFACT_URL"
+          echo "WINDOWS_ARTIFACT_URL=$WINDOWS_ARTIFACT_URL" >> "$GITHUB_ENV"
+          echo "LINUX_ARTIFACT_URL=$LINUX_ARTIFACT_URL" >> "$GITHUB_ENV"
 
           PR_NUMBER=$(jq -r '.pull_requests[0].number' \
             <<< "$WORKFLOW_RUN_EVENT_OBJ")
