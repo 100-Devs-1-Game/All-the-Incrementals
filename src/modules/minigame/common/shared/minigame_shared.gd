@@ -13,6 +13,7 @@ func _ready():
 	debug_popup.functions_node = minigame_node
 	minigame_menu.minigame = minigame_node
 	debug_minigame_upgrades.minigame = minigame_node
+	minigame_overlay.minigame = minigame_node
 	game_popup_menu.visible = false
 
 
