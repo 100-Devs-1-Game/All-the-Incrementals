@@ -72,6 +72,9 @@ const NO_LEVEL = -1
 ## MULTIPLIER  "xN" or "/N" (?)
 @export var description_modifier_format: ModifierFormat
 
+@export var test: int = 0
+@export var test2: int = 0
+
 
 func _construct_cost_and_modifier_arrays():
 	if not Engine.is_editor_hint():
