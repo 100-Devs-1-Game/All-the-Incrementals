@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MinigameData" load_steps=4 format=3 uid="uid://dh1qjmvspv4uh"]
 
-[ext_resource type="PackedScene" uid="uid://bytqv7h0iow3u" path="res://modules/minigame/wind_platformer/wind_platformer.tscn" id="1_6qta5"]
+[ext_resource type="PackedScene" uid="uid://bytqv7h0iow3u" path="res://modules/minigame/wind_platformer/wind_platformer_minigame.tscn" id="1_6qta5"]
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="2_44lnl"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_vw8gv"]
 
