@@ -7,7 +7,7 @@ func test_earth_fire_fighting_run() -> void:
 	)
 
 	var earth_fire_fighting: FireFightersMinigame = (
-		load("res://modules/minigame/fire_fighters/fire_fighters.tscn").instantiate()
+		load("res://modules/minigame/fire_fighters/fire_fighters_minigame.tscn").instantiate()
 	)
 
 	SceneLoader._current_minigame = earth_fire_fighting_data

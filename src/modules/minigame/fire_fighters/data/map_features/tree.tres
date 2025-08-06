@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FireFightersMinigameMapFeature" load_steps=4 format=3 uid="uid://bmjndms83efn3"]
 
 [ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="1_efq1e"]
-[ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/burnt_tree.tres" id="2_08ihx"]
+[ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/map_features/burnt_tree.tres" id="2_08ihx"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_efq1e"]
 frequency = 0.0336
