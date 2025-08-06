@@ -20,6 +20,7 @@ const BURN_TICK_INTERVAL = 10
 var map_feature_lookup: Dictionary
 var fires: Dictionary
 var player: FireFightersMinigamePlayer
+var saved_tiles: Array[Vector2i]
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
@@ -80,7 +81,12 @@ func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 
 
 func _remove_fire(fire: FireFightersMinigameFire):
-	fires.erase(fires.find_key(fire))
+	var tile: Vector2i = fires.find_key(fire)
+	if has_map_feature(tile):
+		var feature: FireFightersMinigameMapFeature = get_map_feature(tile)
+		if feature.can_burn():
+			_vegetation_saved(tile)
+	fires.erase(tile)
 	fire.queue_free()
 
 
@@ -204,6 +210,13 @@ func _on_extinguish_at(pos: Vector2):
 	if fires.has(tile):
 		var fire: FireFightersMinigameFire = fires[tile]
 		fire.size -= 0.1
+
+
+func _vegetation_saved(tile: Vector2i):
+	print("Point scored")
+	add_score(1)
+	assert(not tile in saved_tiles)
+	saved_tiles.append(tile)
 
 
 func get_tile_at(pos: Vector2) -> Vector2i:
