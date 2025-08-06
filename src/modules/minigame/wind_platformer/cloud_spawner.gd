@@ -24,7 +24,7 @@ func spawn_cloud(rect: Rect2, speed: float):
 	#var pos: Vector2= RngUtils.random_point_in_rect(rect)
 	var pos := Vector2(
 		randf_range(rect.position.x, rect.position.x + rect.size.x),
-		randf_range(rect.position.x, rect.position.x + rect.size.x)
+		randf_range(rect.position.y, rect.position.y + rect.size.y)
 	)
 
 	var cloud: WindPlatformerMinigameCloudPlatform = cloud_scene.instantiate()
