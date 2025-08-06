@@ -15,8 +15,12 @@ func _ready() -> void:
 	assert(is_instance_valid(starting_settlement_data), "Starting settlement data must be set.")
 
 	EventBus.wants_to_travel_to.connect(change_to_settlement)
-	assert(SceneLoader.get_current_settlement_data())
-	change_to_settlement(SceneLoader.get_current_settlement_data())
+
+	# Runs when we started somewhere else
+	if SceneLoader.get_current_settlement_data():
+		change_to_settlement(SceneLoader.get_current_settlement_data())
+	else:  # Runs when we start on the overworld scene directly
+		change_to_settlement(starting_settlement_data)
 
 
 func open_overworld_map() -> void:
