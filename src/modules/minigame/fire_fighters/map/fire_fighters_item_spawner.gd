@@ -7,9 +7,19 @@ extends Node
 @export var spawn_tries: int = 10
 
 var active_items: Array[FireFightersMinigameItem]
+var query: PhysicsShapeQueryParameters2D
 
 @onready var game: FireFightersMinigame = get_parent()
 @onready var timer: Timer = $Timer
+
+
+func _ready() -> void:
+	query = PhysicsShapeQueryParameters2D.new()
+	query.collide_with_areas = true
+	query.collision_mask = 1 + 4 + 8
+	var rect_shape := RectangleShape2D.new()
+	rect_shape.size = Vector2(32, 32)
+	query.shape = rect_shape
 
 
 func activate():
@@ -37,8 +47,13 @@ func spawn_item(item_type: FireFightersMinigameItem, pos: Vector2):
 	item.init(item_type)
 
 
-func _can_spawn_item_on(_tile: Vector2i) -> bool:
-	return true
+func _can_spawn_item_on(tile: Vector2i) -> bool:
+	if game.has_map_feature(tile):
+		return false
+	query.transform.origin = game.get_tile_position(tile)
+	var world := game.player.get_world_2d()
+	var result := world.direct_space_state.intersect_shape(query)
+	return result.is_empty()
 
 
 func _get_all_items() -> Array[FireFightersMinigameItem]:
