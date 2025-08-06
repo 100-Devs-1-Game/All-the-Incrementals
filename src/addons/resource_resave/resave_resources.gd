@@ -6,7 +6,7 @@ extends SceneTree
 func _init():
 	# we need to delay by a frame, otherwise godot doesn't seem
 	# to know what UID's are, and it'll delete all of them??
-    # ./godot.exe --headless --editor --script "addons/resource_resave/resave_resources.gd" --quit
+	# ./godot.exe --headless --editor --script "addons/resource_resave/resave_resources.gd" --quit
 	await process_frame
 	print("Resource Resaver - Running as script")
 	resave_resources("res://")
