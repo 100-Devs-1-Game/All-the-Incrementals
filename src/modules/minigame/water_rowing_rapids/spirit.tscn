@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bam250ejn756g"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_yl50k"]
+
+[sub_resource type="Gradient" id="Gradient_i806a"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 0.309804, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a50qn"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yl50k"]
+color_ramp = SubResource("Gradient_i806a")
+noise = SubResource("FastNoiseLite_a50qn")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x58gl"]
+radius = 1.57825
+
+[node name="Spirit" type="MeshInstance2D"]
+scale = Vector2(26.6199, 25.552)
+mesh = SubResource("SphereMesh_yl50k")
+texture = SubResource("NoiseTexture2D_yl50k")
+
+[node name="Area2D" type="Area2D" parent="." groups=["spirit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_x58gl")
+debug_color = Color(0, 0.6, 0.701961, 0)
