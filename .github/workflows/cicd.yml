@@ -68,7 +68,7 @@ jobs:
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         with:
           name: build-exports
-          path: ${{ steps.build.outputs.archive_directory }}/**/windows_release.zip
+          path: ${{ steps.build.outputs.archive_directory }}/**/windows.zip
           retention-days: 1
           compression-level: 0
       - name: Upload Linux artifacts
