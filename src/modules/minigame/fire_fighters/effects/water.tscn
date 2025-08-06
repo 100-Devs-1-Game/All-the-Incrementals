@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs75gbk0ui0bp"]
+[gd_scene load_steps=4 format=3 uid="uid://bs75gbk0ui0bp"]
 
 [ext_resource type="Script" uid="uid://ci0no7j6rbi3m" path="res://modules/minigame/fire_fighters/effects/water.gd" id="1_hvubx"]
 [ext_resource type="Texture2D" uid="uid://b87y3ig7i37yg" path="res://assets/minigames/fire_fighters/placeholder_assets/water.png" id="2_nrnui"]
 
+[sub_resource type="Curve" id="Curve_nrnui"]
+_data = [Vector2(0.0100671, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0194553), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Water" type="Node2D"]
 script = ExtResource("1_hvubx")
+gravity = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nrnui")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-6, 0)
+amount = 10
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 9.65
+direction = Vector2(-1, 0)
+spread = 15.0
+gravity = Vector2(0, 0)
+damping_min = 8.333
+damping_max = 8.333
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_nrnui")
+color = Color(0.266667, 0.301961, 0.713726, 0.529412)
