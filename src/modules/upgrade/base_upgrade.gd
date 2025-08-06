@@ -4,6 +4,8 @@ extends Resource
 
 enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
+const NO_LEVEL = -1
+
 ## how this Upgrade is called in-game
 @export var name: String
 
@@ -109,7 +111,7 @@ func level_up() -> void:
 
 # 0 = level 1, ...
 func get_level() -> int:
-	return SaveGameManager.world_state.minigame_unlock_levels.get(get_uid(), -1)
+	return SaveGameManager.world_state.minigame_unlock_levels.get(get_uid(), NO_LEVEL)
 
 
 # 0 = level 1, ...
@@ -131,6 +133,8 @@ func get_cost(level: int) -> EssenceInventory:
 # 0 = level 1, ...
 func get_effect_modifier(level: int) -> float:
 	assert(effect_modifier_arr.size() > level)
+	# Setting the effect for level -1 for max effect is likely not intended.
+	assert(level > NO_LEVEL)
 	return effect_modifier_arr[level]
 
 

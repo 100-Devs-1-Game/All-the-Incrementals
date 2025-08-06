@@ -50,5 +50,14 @@ func apply_all_upgrades(minigame: BaseMinigame) -> void:
 
 func reset_all_upgrades() -> void:
 	for upgrade in get_all_upgrades():
-		SaveGameManager.world_state.minigame_unlock_levels[upgrade.get_uid()] = -1
+		SaveGameManager.world_state.minigame_unlock_levels[upgrade.get_uid()] = upgrade.NO_LEVEL
+		print({"minigame_unlock_levels": SaveGameManager.world_state.minigame_unlock_levels})
+		print(
+			(
+				"upgrade "
+				+ str(upgrade.get_uid())
+				+ " level: "
+				+ str(SaveGameManager.world_state.minigame_unlock_levels[upgrade.get_uid()])
+			)
+		)
 	SaveGameManager.save()
