@@ -40,7 +40,7 @@ jobs:
           godot_export_templates_download_url: https://github.com/godotengine/godot-builds/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
           relative_project_path: ./src
           use_preset_export_path: true
-          archive_output: ${{ startsWith(github.ref, 'refs/tags/') }}
+          archive_output: true
 
       - name: show build directory
         if: startsWith(github.ref, 'refs/tags/')
