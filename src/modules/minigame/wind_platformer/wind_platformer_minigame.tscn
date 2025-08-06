@@ -46,7 +46,7 @@ color = Color(0.32549, 0.32549, 0.905882, 1)
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_asxaq")]
-position = Vector2(365, 97)
+position = Vector2(960, 0)
 
 [node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
 modulate = Color(1, 1, 1, 0.541176)

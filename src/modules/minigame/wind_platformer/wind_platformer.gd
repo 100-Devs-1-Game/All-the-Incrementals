@@ -13,11 +13,13 @@ var particles: Array[WindPlatformerMinigameParticle]
 @onready var cloud_spawner: WindPlatformerMinigameCloudSpawner = $"Cloud Spawner"
 
 
-func _ready() -> void:
-	super._ready()
-	cloud_spawner.start()
+func _initialize() -> void:
 	for i in num_particles:
 		spawn_random_particle()
+
+
+func _start():
+	cloud_spawner.start()
 
 
 func _input(event: InputEvent) -> void:
