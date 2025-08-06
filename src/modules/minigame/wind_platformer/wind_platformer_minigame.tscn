@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=10 format=3 uid="uid://bytqv7h0iow3u"]
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_j01kc"]
 [ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/player.tscn" id="2_asxaq"]
-[ext_resource type="Script" uid="uid://cisfp72boumnu" path="res://modules/minigame/wind_platformer/cloud_spawner.gd" id="3_nevpc"]
-[ext_resource type="PackedScene" uid="uid://bpbxl634kt5sd" path="res://modules/minigame/wind_platformer/cloud_platform.tscn" id="4_qs17m"]
+[ext_resource type="PackedScene" uid="uid://coro8piwlirg2" path="res://modules/minigame/wind_platformer/cloud_spawner.tscn" id="3_h8gjg"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="5_falbm"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4orxu"]
@@ -54,14 +53,9 @@ modulate = Color(1, 1, 1, 0.541176)
 multimesh = SubResource("MultiMesh_cj4w2")
 texture = SubResource("GradientTexture1D_cj4w2")
 
-[node name="Cloud Spawner" type="Node" parent="." node_paths=PackedStringArray("clouds_node")]
-script = ExtResource("3_nevpc")
-cloud_scene = ExtResource("4_qs17m")
+[node name="Cloud Spawner" parent="." node_paths=PackedStringArray("clouds_node") instance=ExtResource("3_h8gjg")]
 clouds_node = NodePath("../Platforms")
-initial_clouds = 100
-cloud_velocity_range = Vector2(10, 50)
-left_rect = Rect2(-150, 150, -140, 1080)
-right_rect = Rect2(2000, 150, 2010, 1080)
+initial_clouds = 50
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("5_falbm")]
 
