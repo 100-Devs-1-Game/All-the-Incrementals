@@ -76,15 +76,10 @@ tile_set = SubResource("TileSet_prm31")
 
 [node name="Fires" type="Node" parent="."]
 
-[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("13_a330y")]
-minigame_node = NodePath("..")
+[node name="MinigameSharedComponents" parent="." instance=ExtResource("13_a330y")]
 
-[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../../../..")
-
-[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
-functions_node = NodePath("../../../..")
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1"]
 custom_debug_buttons = Array[ExtResource("14_eaqpl")]([SubResource("Resource_ymaye")])
 
-[editable path="SharedComponents"]
-[editable path="SharedComponents/SharedBaseComponents"]
+[editable path="MinigameSharedComponents"]
+[editable path="MinigameSharedComponents/SharedBaseComponents"]
