@@ -13,6 +13,7 @@ func _ready():
 	minigame_node = get_parent()
 	assert(minigame_node != null)
 
+	minigame_menu.init(minigame_node)
 	debug_popup.functions_node = minigame_node
 	game_popup_menu.visible = false
 

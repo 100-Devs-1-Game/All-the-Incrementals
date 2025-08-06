@@ -7,8 +7,8 @@ extends Control
 var minigame: BaseMinigame
 
 
-func _ready() -> void:
-	minigame = get_tree().current_scene
+func init(p_minigame: BaseMinigame) -> void:
+	minigame = p_minigame
 	assert(minigame != null)
 
 	assert(
