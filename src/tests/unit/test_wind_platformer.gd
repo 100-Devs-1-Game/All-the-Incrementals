@@ -7,7 +7,7 @@ func test_wind_platformer() -> void:
 	)
 
 	var minigame: WindPlatformerMinigame = (
-		load("res://modules/minigame/wind_platformer/wind_platformer.tscn").instantiate()
+		load("res://modules/minigame/wind_platformer/wind_platformer_minigame.tscn").instantiate()
 	)
 
 	SceneLoader._current_minigame = minigame_data
