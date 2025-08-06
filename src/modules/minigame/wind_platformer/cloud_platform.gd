@@ -9,6 +9,10 @@ var fade_tween: Tween
 @onready var parts: Node2D = $Parts
 
 
+func _ready() -> void:
+	modulate = modulate.darkened(randf_range(0.0, 0.25))
+
+
 func _physics_process(delta: float) -> void:
 	position.x += speed * delta
 
