@@ -1,11 +1,11 @@
-extends Node
+class_name OverworldScene extends Node
 
 @export var starting_settlement_data: SettlementData
-@export var overworld_map: Node
 
 var _current_settlement: Node
 var _current_settlement_data: SettlementData
 
+@onready var overworld_map: OverworldMapMenu = %OverworldMap
 @onready var player_holder_node: Node3D = %PlayerHolder
 @onready var settlement_scene_holder_node: Node3D = %SceneHolder
 
@@ -16,7 +16,7 @@ func _ready() -> void:
 
 	EventBus.wants_to_travel_to.connect(change_to_settlement)
 
-	change_to_settlement(starting_settlement_data)
+	change_to_settlement(SceneLoader.get_current_settlement_data())
 
 
 func open_overworld_map() -> void:
@@ -24,13 +24,15 @@ func open_overworld_map() -> void:
 
 
 func change_to_settlement(data: SettlementData) -> void:
+	print("Changing to: ", data.display_name)
 	if is_instance_valid(_current_settlement):
 		_current_settlement.queue_free()
 
 	var new_settlement = data.settlement_scene.instantiate()
 	settlement_scene_holder_node.add_child(new_settlement)
 
-	#TODO: change player position
+	#TODO: Figure out context of where the player is coming from (other settlement/minigame),
+	#and change their position accordingly.
 
 	_current_settlement = new_settlement
 	_current_settlement_data = data

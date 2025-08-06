@@ -19,6 +19,8 @@ const WALK_ANIMATION_NAME := &"imported/walk"
 @export var is_immobile: bool = false
 
 @export_category("Animation")
+@export var spring_bone_simulators: Array[SpringBoneSimulator3D]
+
 @export_group("Model Lean")
 @export var lean_pivot_node: Node3D
 @export var lean_multiplier: float = 0.3

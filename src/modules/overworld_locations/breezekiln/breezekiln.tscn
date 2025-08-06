@@ -1,8 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://bl4s8xuvuf3xb"]
+[gd_scene load_steps=23 format=3 uid="uid://bl4s8xuvuf3xb"]
 
 [ext_resource type="Script" uid="uid://ou1teugr01v8" path="res://modules/overworld_locations/breezekiln/breezekiln.gd" id="1_82p5n"]
+[ext_resource type="Resource" uid="uid://bseyt0iuwnq5m" path="res://modules/minigame/fire_cooking/data/fire_cooking_data.tres" id="2_oivh7"]
+[ext_resource type="Resource" uid="uid://bqod1tv5hmpgo" path="res://modules/minigame/fire_fighters/data/fire_fighters_data.tres" id="3_0bjiu"]
 [ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="4_2i5xv"]
+[ext_resource type="Resource" uid="uid://dh1qjmvspv4uh" path="res://modules/minigame/wind_platformer/data/wind_platformer_data.tres" id="4_lul7l"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="5_4lo53"]
+[ext_resource type="Resource" uid="uid://cxrnthj4sdjv4" path="res://modules/minigame/wind_rhythm/data/wind_rhythm_data.tres" id="5_hefpd"]
+[ext_resource type="Environment" uid="uid://b7he20rpta448" path="res://modules/overworld/overworld_environment.tres" id="6_nnd8j"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="8_0bjiu"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="9_hefpd"]
+[ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="10_nnd8j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_oivh7"]
 size = Vector3(100, 1, 100)
@@ -18,8 +26,54 @@ radius = 3.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_nnd8j"]
 
+[sub_resource type="Resource" id="Resource_hefpd"]
+script = ExtResource("9_hefpd")
+func_or_path = "debug_start_fire_cooking"
+hotkey = "1"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+
+[sub_resource type="Resource" id="Resource_nnd8j"]
+script = ExtResource("9_hefpd")
+func_or_path = "debug_start_fire_fighters"
+hotkey = "2"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+
+[sub_resource type="Resource" id="Resource_5ylet"]
+script = ExtResource("9_hefpd")
+func_or_path = "debug_start_wind_platformer"
+hotkey = "3"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+
+[sub_resource type="Resource" id="Resource_2pg8g"]
+script = ExtResource("9_hefpd")
+func_or_path = "debug_start_wind_rhythm"
+hotkey = "4"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+
+[sub_resource type="Resource" id="Resource_57scy"]
+script = ExtResource("9_hefpd")
+func_or_path = "quit_game"
+hotkey = "5"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+
+[sub_resource type="Resource" id="Resource_6bqf2"]
+script = ExtResource("10_nnd8j")
+collection = Array[ExtResource("9_hefpd")]([SubResource("Resource_hefpd"), SubResource("Resource_nnd8j"), SubResource("Resource_5ylet"), SubResource("Resource_2pg8g"), SubResource("Resource_57scy")])
+metadata/_custom_type_script = "uid://dv7wg0eoca0sr"
+
 [node name="Breezekiln" type="Node"]
 script = ExtResource("1_82p5n")
+fire_cooking_data = ExtResource("2_oivh7")
+fire_fighters_data = ExtResource("3_0bjiu")
+wind_platformer_data = ExtResource("4_lul7l")
+wind_rhythm_data = ExtResource("5_hefpd")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("6_nnd8j")
 
 [node name="Content" type="Node3D" parent="."]
 
@@ -52,5 +106,18 @@ shape = SubResource("SphereShape3D_hefpd")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Content/SettlementExit/InteractionComponent3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_nnd8j")
+
+[node name="Label3D" type="Label3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90617, 0)
+pixel_size = 0.02
+text = "BREEZEKILN"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DebugPopup" parent="CanvasLayer" node_paths=PackedStringArray("functions_node") instance=ExtResource("8_0bjiu")]
+title = "Breezekiln Debug"
+functions_node = NodePath("../..")
+visible_on_start = true
+default_debug_buttons = SubResource("Resource_6bqf2")
 
 [connection signal="interacted_with" from="Content/SettlementExit/InteractionComponent3D" to="Content/SettlementExit" method="exit_settlement"]

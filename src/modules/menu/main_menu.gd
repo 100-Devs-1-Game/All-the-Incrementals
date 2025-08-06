@@ -29,7 +29,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_packed(overworld_scene)
+	SceneLoader.enter_settlement(load("res://modules/overworld_locations/shrine/shrine.tres"))
 
 
 func _on_extras_pressed() -> void:

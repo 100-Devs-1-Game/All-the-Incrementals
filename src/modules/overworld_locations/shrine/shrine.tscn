@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcjwk5lq3xa2k"]
+[gd_scene load_steps=9 format=3 uid="uid://bcjwk5lq3xa2k"]
 
 [ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="1_fp6lq"]
+[ext_resource type="Environment" uid="uid://b7he20rpta448" path="res://modules/overworld/overworld_environment.tres" id="1_v8pda"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_v8pda"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tr0ue"]
@@ -18,6 +19,13 @@ radius = 3.0
 [sub_resource type="BoxMesh" id="BoxMesh_ge6fp"]
 
 [node name="Shrine" type="Node"]
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_v8pda")
 
 [node name="Content" type="Node3D" parent="."]
 
@@ -50,5 +58,10 @@ shape = SubResource("SphereShape3D_c0ttc")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Content/SettlementExit/InteractionComponent3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_ge6fp")
+
+[node name="Label3D" type="Label3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90617, 0)
+pixel_size = 0.02
+text = "SHRINE"
 
 [connection signal="interacted_with" from="Content/SettlementExit/InteractionComponent3D" to="Content/SettlementExit" method="exit_settlement"]

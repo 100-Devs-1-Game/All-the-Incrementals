@@ -1,6 +1,8 @@
 # Global SceneLoader class
 extends Node
 
+const OVERWORLD_SCENE := preload("res://modules/overworld/overworld.tscn")
+
 var _current_settlement: SettlementData
 var _current_minigame: MinigameData
 
@@ -39,8 +41,12 @@ func get_current_minigame() -> MinigameData:
 
 
 func enter_settlement(data: SettlementData):
+	get_tree().change_scene_to_packed(OVERWORLD_SCENE)
 	_current_settlement = data
-	get_tree().change_scene_to_packed(data.settlement_scene)
+
+
+func get_current_settlement_data() -> SettlementData:
+	return _current_settlement
 
 
 func return_to_overworld():
@@ -52,4 +58,4 @@ func _exit_minigame() -> void:
 	if _current_settlement == null:
 		print("No settlement context to exit to. Directly running scene?")
 		return
-	get_tree().change_scene_to_packed(_current_settlement.settlement_scene)
+	enter_settlement(_current_settlement)
