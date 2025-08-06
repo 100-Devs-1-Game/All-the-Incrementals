@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=22 format=3 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="Script" uid="uid://eiutp4wmfx4t" path="res://modules/overworld_locations/clayport/clayport.gd" id="1_q21dp"]
 [ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_piane"]
 [ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="3_2ieeh"]
 [ext_resource type="Resource" uid="uid://s7k08dgu5hxn" path="res://modules/minigame/earth_tower_tumble/data/earth_towers_data.tres" id="3_sdl0k"]
-[ext_resource type="Resource" uid="uid://ciyrdxjs03cvb" path="res://modules/minigame/water_diving/data/water_diving_data.tres" id="4_4eabd"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="4_wnqv0"]
 [ext_resource type="Resource" uid="uid://c7vragnlq8udw" path="res://modules/minigame/water_target_fishing/data/water_fishing_data.tres" id="5_2h4su"]
 [ext_resource type="Environment" uid="uid://dl8n6ddyoo1ca" path="res://modules/overworld/overworld_environment.tres" id="6_sdl0k"]
@@ -40,7 +39,7 @@ metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Resource" id="Resource_ybwht"]
 script = ExtResource("10_0icjx")
-func_or_path = "debug_start_water_diving"
+func_or_path = "debug_start_water_rowing_rapids"
 hotkey = "3"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
@@ -65,7 +64,6 @@ metadata/_custom_type_script = "uid://dv7wg0eoca0sr"
 script = ExtResource("1_q21dp")
 earth_potato_herding_data = ExtResource("2_piane")
 earth_towers_data = ExtResource("3_sdl0k")
-water_diving_data = ExtResource("4_4eabd")
 water_target_fishing_data = ExtResource("5_2h4su")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
