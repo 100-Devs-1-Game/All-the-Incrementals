@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c06xs7256anxh"]
 
-[ext_resource type="Script" uid="uid://cret7kfxa60c" path="res://modules/minigame/fire_fighters/fire_fighters_item_instance.gd" id="1_skffk"]
+[ext_resource type="Script" uid="uid://cret7kfxa60c" path="res://modules/minigame/fire_fighters/map/fire_fighters_item_instance.gd" id="1_skffk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_skffk"]
 radius = 20.0
