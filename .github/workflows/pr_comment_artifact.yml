@@ -83,12 +83,12 @@ jobs:
 
             | Name      | Link
             --------------------------------------------------------------------
-            | Commit    | ${{ env.HEAD_SHA }}
-
-            | Logs      | ${{ env.JOB_PATH }}
-
             | Windows Export | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ env.PREVIOUS_JOB_ID }}/artifacts/${{ env.WINDOWS_ARTIFACT_ID }}
 
             | Linux Export | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ env.PREVIOUS_JOB_ID }}/artifacts/${{ env.LINUX_ARTIFACT_ID }}
+
+            | Commit    | ${{ env.HEAD_SHA }}
+
+            | Logs      | ${{ env.JOB_PATH }}
 
             [badge]: https://img.shields.io/badge/Build-Success!-3fb950?logo=github&style=for-the-badge
