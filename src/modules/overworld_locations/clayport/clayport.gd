@@ -10,6 +10,14 @@ func _ready() -> void:
 	_debug_force_settlement_data()
 
 
+func debug_enter_breezekiln() -> void:
+	SceneLoader.enter_breezekiln()
+
+
+func debug_enter_shrine() -> void:
+	SceneLoader.enter_shrine()
+
+
 func debug_start_earth_potato_herding() -> void:
 	SceneLoader.start_minigame(earth_potato_herding_data)
 
