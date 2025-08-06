@@ -26,22 +26,22 @@ jobs:
           echo "Previous Job ID: $PREVIOUS_JOB_ID"
           echo "PREVIOUS_JOB_ID=$PREVIOUS_JOB_ID" >> "$GITHUB_ENV"
 
-          WINDOWS_ARTIFACT_URL=$(gh api "/repos/$OWNER/$REPO/actions/artifacts" \
+          WINDOWS_ARTIFACT_ID=$(gh api "/repos/$OWNER/$REPO/actions/artifacts" \
             --jq ".artifacts.[] |
             select(.name==\"windows-export\") |
             select(.workflow_run.id==${PREVIOUS_JOB_ID}) |
             select(.expired==false) |
-            .archive_download_url")
-          echo "Windows Artifact URL: $WINDOWS_ARTIFACT_URL"
-          LINUX_ARTIFACT_URL=$(gh api "/repos/$OWNER/$REPO/actions/artifacts" \
+            .id")
+          echo "Windows Artifact ID: $WINDOWS_ARTIFACT_ID"
+          LINUX_ARTIFACT_ID=$(gh api "/repos/$OWNER/$REPO/actions/artifacts" \
             --jq ".artifacts.[] |
             select(.name==\"linux-export\") |
             select(.workflow_run.id==${PREVIOUS_JOB_ID}) |
             select(.expired==false) |
-            .archive_download_url")
-          echo "Linux Artifact URL: $LINUX_ARTIFACT_URL"
-          echo "WINDOWS_ARTIFACT_URL=$WINDOWS_ARTIFACT_URL" >> "$GITHUB_ENV"
-          echo "LINUX_ARTIFACT_URL=$LINUX_ARTIFACT_URL" >> "$GITHUB_ENV"
+            .id")
+          echo "Linux Artifact ID: $LINUX_ARTIFACT_ID"
+          echo "WINDOWS_ARTIFACT_ID=$WINDOWS_ARTIFACT_ID" >> "$GITHUB_ENV"
+          echo "LINUX_ARTIFACT_ID=$LINUX_ARTIFACT_ID" >> "$GITHUB_ENV"
 
           PR_NUMBER=$(jq -r '.pull_requests[0].number' \
             <<< "$WORKFLOW_RUN_EVENT_OBJ")
@@ -55,6 +55,14 @@ jobs:
           echo "Head sha: $HEAD_SHA"
           echo "HEAD_SHA=$HEAD_SHA" >> "$GITHUB_ENV"
 
+      - name: Find Comment
+        uses: peter-evans/find-comment@v3
+        id: fc
+        with:
+          issue-number: ${{ env.PR_NUMBER }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Build Preview
+
       - name: Update Comment
         env:
           JOB_PATH: "${{ github.server_url }}/${{ github.repository }}/actions/\
@@ -62,6 +70,7 @@ jobs:
           HEAD_SHA: ${{ env.HEAD_SHA }}
         uses: peter-evans/create-or-update-comment@v2
         with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ env.PR_NUMBER }}
           body: |-
             ## Build Preview
@@ -70,16 +79,16 @@ jobs:
 
             You can find files attached to the below linked Workflow Run URL (Logs).
 
-            Please note that files only stay for around 90 days!
+            Please note that export artifacts only stay for one day, so if you want to keep them, please download them.
 
             | Name      | Link
             --------------------------------------------------------------------
+            | Windows Export | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ env.PREVIOUS_JOB_ID }}/artifacts/${{ env.WINDOWS_ARTIFACT_ID }}
+
+            | Linux Export | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ env.PREVIOUS_JOB_ID }}/artifacts/${{ env.LINUX_ARTIFACT_ID }}
+
             | Commit    | ${{ env.HEAD_SHA }}
 
             | Logs      | ${{ env.JOB_PATH }}
-
-            | Windows Export | ${{ env.WINDOWS_ARTIFACT_URL }}
-
-            | Linux Export | ${{ env.LINUX_ARTIFACT_URL }}
 
             [badge]: https://img.shields.io/badge/Build-Success!-3fb950?logo=github&style=for-the-badge
