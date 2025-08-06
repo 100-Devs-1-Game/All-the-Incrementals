@@ -75,7 +75,10 @@ func _setup_shortcuts_tree() -> void:
 
 
 func _get_debug_buttons() -> Array[DebugButton]:
-	return default_debug_buttons.collection + custom_debug_buttons
+	if default_debug_buttons && default_debug_buttons.collection:
+		return default_debug_buttons.collection + custom_debug_buttons
+
+	return custom_debug_buttons
 
 
 func _setup_debug_buttons() -> void:
