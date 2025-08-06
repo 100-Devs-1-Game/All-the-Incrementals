@@ -12,5 +12,6 @@ func test_main_menu() -> void:
 	await wait_seconds(1)
 
 	print("Assert")
+	assert_eq(main_menu.name, "MainMenu", "todo: replace with real assert")
 
 	main_menu.queue_free()
