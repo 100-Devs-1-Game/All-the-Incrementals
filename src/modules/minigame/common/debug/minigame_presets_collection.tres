@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DebugButtonCollection" load_steps=8 format=3 uid="uid://1777v8ptcqi4"]
+[gd_resource type="Resource" script_class="DebugButtonCollection" load_steps=7 format=3 uid="uid://1777v8ptcqi4"]
 
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="1_shwgq"]
 [ext_resource type="Resource" uid="uid://b4sluedhgvlgp" path="res://modules/minigame/common/debug/exit_minigame.tres" id="2_7nnsr"]
@@ -7,13 +7,7 @@
 [ext_resource type="Resource" uid="uid://btgr85ek8vof0" path="res://modules/minigame/common/debug/settings.tres" id="5_oikov"]
 [ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="6_alklw"]
 
-[sub_resource type="Resource" id="Resource_shwgq"]
-script = ExtResource("1_shwgq")
-func_or_path = "game_over"
-hotkey = "v"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
-
 [resource]
 script = ExtResource("6_alklw")
-collection = Array[ExtResource("1_shwgq")]([ExtResource("2_7nnsr"), ExtResource("3_0j62v"), ExtResource("4_b5745"), ExtResource("5_oikov"), SubResource("Resource_shwgq")])
+collection = Array[ExtResource("1_shwgq")]([ExtResource("2_7nnsr"), ExtResource("3_0j62v"), ExtResource("4_b5745"), ExtResource("5_oikov")])
 metadata/_custom_type_script = "uid://dv7wg0eoca0sr"

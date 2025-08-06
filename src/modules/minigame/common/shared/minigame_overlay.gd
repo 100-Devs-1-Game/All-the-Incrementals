@@ -1,8 +1,6 @@
 class_name MinigameOverlay
 extends PanelContainer
 
-@export var minigame: BaseMinigame
-
 @export var enable_score_display: bool = false:
 	set(b):
 		_score_panel.visible = b
@@ -10,6 +8,8 @@ extends PanelContainer
 @export var enable_countdown_display: bool = false:
 	set(b):
 		_countdown_panel.visible = b
+
+var minigame: BaseMinigame
 
 @onready var _score_panel: HBoxContainer = %ScorePanel
 #@onready var _score_label: Label = %ScoreLabel

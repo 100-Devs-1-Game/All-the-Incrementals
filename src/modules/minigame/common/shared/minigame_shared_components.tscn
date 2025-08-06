@@ -22,6 +22,7 @@ debug_popup = NodePath("../SharedBaseComponents/CanvasLayer/DebugPopup")
 [node name="SharedBaseComponents" parent="." instance=ExtResource("4_n4jqe")]
 
 [node name="MinigameMenu" parent="SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("pause") instance=ExtResource("5_6lpn0")]
+visible = false
 pause = NodePath("../../Pause")
 
 [node name="DebugPopup" parent="SharedBaseComponents/CanvasLayer" index="1"]

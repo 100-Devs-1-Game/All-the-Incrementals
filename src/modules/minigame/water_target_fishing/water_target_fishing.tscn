@@ -819,17 +819,10 @@ script = ExtResource("10_c8m36")
 directory_path = "res://modules/minigame/water_target_fishing/game/data/fish"
 metadata/_custom_type_script = "uid://bpkdtrhrdt0xr"
 
-[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("11_56cph")]
-minigame_node = NodePath("..")
+[node name="MinigameSharedComponents" parent="." instance=ExtResource("11_56cph")]
 
-[node name="SharedBaseComponents" parent="SharedComponents" index="1"]
+[node name="SharedBaseComponents" parent="MinigameSharedComponents" index="1"]
 allow_popup_menu = null
-
-[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../../../..")
-
-[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
-functions_node = NodePath("../../../..")
 
 [editable path="Clouds/BackgroundSprite"]
 [editable path="Clouds/BackgroundSprite2"]
@@ -839,5 +832,5 @@ functions_node = NodePath("../../../..")
 [editable path="Clouds/BackgroundSprite6"]
 [editable path="Clouds/BackgroundSprite7"]
 [editable path="Clouds/BackgroundSprite8"]
-[editable path="SharedComponents"]
-[editable path="SharedComponents/SharedBaseComponents"]
+[editable path="MinigameSharedComponents"]
+[editable path="MinigameSharedComponents/SharedBaseComponents"]
