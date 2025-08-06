@@ -79,6 +79,14 @@ func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 	fire_node.add_child(fire)
 	fire.died.connect(_remove_fire.bind(fire))
 
+	if tile in saved_tiles:
+		print("Point removed")
+		var old_score: int = _score
+		add_score(-1)
+		# to make sure add_score() keeps supporting subtracting score
+		assert(_score < old_score)
+		saved_tiles.erase(tile)
+
 
 func _remove_fire(fire: FireFightersMinigameFire):
 	var tile: Vector2i = fires.find_key(fire)
@@ -215,7 +223,6 @@ func _on_extinguish_at(pos: Vector2):
 func _vegetation_saved(tile: Vector2i):
 	print("Point scored")
 	add_score(1)
-	assert(not tile in saved_tiles)
 	saved_tiles.append(tile)
 
 
