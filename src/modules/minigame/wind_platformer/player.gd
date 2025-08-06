@@ -24,7 +24,10 @@ func _physics_process(delta: float) -> void:
 
 	is_on_ground = is_on_floor()
 
-	if is_on_ground:
+	if is_on_ground and not get_last_slide_collision():
+		push_warning("On ground without slide collision")
+
+	if is_on_ground and get_last_slide_collision() != null:
 		var platform: WindPlatformerMinigameCloudPlatform = (
 			get_last_slide_collision().get_collider()
 		)
