@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://ciyrdxjs03cvb" path="res://modules/minigame/water_diving/data/water_diving_data.tres" id="4_4eabd"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="4_wnqv0"]
 [ext_resource type="Resource" uid="uid://c7vragnlq8udw" path="res://modules/minigame/water_target_fishing/data/water_fishing_data.tres" id="5_2h4su"]
-[ext_resource type="Environment" uid="uid://b7he20rpta448" path="res://modules/overworld/overworld_environment.tres" id="6_sdl0k"]
+[ext_resource type="Environment" uid="uid://dl8n6ddyoo1ca" path="res://modules/overworld/overworld_environment.tres" id="6_sdl0k"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="9_4eabd"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="10_0icjx"]
 [ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="11_dt5ik"]

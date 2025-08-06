@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bcjwk5lq3xa2k"]
 
 [ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="1_fp6lq"]
-[ext_resource type="Environment" uid="uid://b7he20rpta448" path="res://modules/overworld/overworld_environment.tres" id="1_v8pda"]
+[ext_resource type="Environment" uid="uid://dl8n6ddyoo1ca" path="res://modules/overworld/overworld_environment.tres" id="1_v8pda"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_v8pda"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tr0ue"]

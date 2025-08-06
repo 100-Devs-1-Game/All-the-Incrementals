@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://dh1qjmvspv4uh" path="res://modules/minigame/wind_platformer/data/wind_platformer_data.tres" id="4_lul7l"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="5_4lo53"]
 [ext_resource type="Resource" uid="uid://cxrnthj4sdjv4" path="res://modules/minigame/wind_rhythm/data/wind_rhythm_data.tres" id="5_hefpd"]
-[ext_resource type="Environment" uid="uid://b7he20rpta448" path="res://modules/overworld/overworld_environment.tres" id="6_nnd8j"]
+[ext_resource type="Environment" uid="uid://dl8n6ddyoo1ca" path="res://modules/overworld/overworld_environment.tres" id="6_nnd8j"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="8_0bjiu"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="9_hefpd"]
 [ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="10_nnd8j"]
