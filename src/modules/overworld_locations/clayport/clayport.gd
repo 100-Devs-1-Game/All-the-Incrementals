@@ -1,14 +1,21 @@
-extends Node2D
+extends Node
 
 @export var earth_potato_herding_data: MinigameData
 @export var earth_towers_data: MinigameData
-@export var water_diving_data: MinigameData
-@export var water_target_fishing_data: MinigameData
 @export var water_rowing_rapids_data: MinigameData
+@export var water_target_fishing_data: MinigameData
 
 
 func _ready() -> void:
 	_debug_force_settlement_data()
+
+
+func debug_enter_breezekiln() -> void:
+	SceneLoader.enter_breezekiln()
+
+
+func debug_enter_shrine() -> void:
+	SceneLoader.enter_shrine()
 
 
 func debug_start_earth_potato_herding() -> void:
@@ -19,8 +26,8 @@ func debug_start_earth_towers() -> void:
 	SceneLoader.start_minigame(earth_towers_data)
 
 
-func debug_start_water_diving() -> void:
-	SceneLoader.start_minigame(water_diving_data)
+func debug_start_water_rowing_rapids() -> void:
+	SceneLoader.start_minigame(water_rowing_rapids_data)
 
 
 func debug_start_water_target_fishing() -> void:

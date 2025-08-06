@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dftq7g3sn4brs"]
+
+[ext_resource type="PackedScene" uid="uid://bb68a30j11vge" path="res://assets/overworld/models/architectural/structures/temples/fire_temple.gltf" id="1_o2jov"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4tlki"]
+height = 56.5
+radius = 17.0
+
+[node name="fire_temple" instance=ExtResource("1_o2jov")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.25, 0)
+shape = SubResource("CylinderShape3D_4tlki")

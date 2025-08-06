@@ -1,3 +1,54 @@
-[gd_scene format=3 uid="uid://c7xja8hf88471"]
+[gd_scene load_steps=2 format=3 uid="uid://dwk76h2iitx0h"]
 
-[node name="OverworldMap" type="Node2D"]
+[ext_resource type="Script" uid="uid://ytfn1h4blknb" path="res://modules/overworld_map/overworld_map.gd" id="1_jblrf"]
+
+[node name="OverworldMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jblrf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Breezekiln" type="Button" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 810.0
+offset_top = 163.0
+offset_right = 1104.0
+offset_bottom = 221.0
+text = "Go to Breezekiln"
+
+[node name="Clayport" type="Button" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1211.0
+offset_top = 610.0
+offset_right = 1469.0
+offset_bottom = 668.0
+text = "Go to Clayport"
+
+[node name="Shrine" type="Button" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 451.0
+offset_top = 489.0
+offset_right = 674.0
+offset_bottom = 547.0
+text = "Go to Shrine"

@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_i37fb")
-func_or_path = "res://modules/overworld_locations/clayport/clayport.tscn"
+func_or_path = "debug_enter_clayport"
 hotkey = "c"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
