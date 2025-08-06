@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=22 format=3 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="Script" uid="uid://eiutp4wmfx4t" path="res://modules/overworld_locations/clayport/clayport.gd" id="1_q21dp"]
 [ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_2ieeh"]
@@ -6,11 +6,25 @@
 [ext_resource type="Resource" uid="uid://s7k08dgu5hxn" path="res://modules/minigame/earth_tower_tumble/data/earth_towers_data.tres" id="3_wnqv0"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_i3tw0"]
 [ext_resource type="Resource" uid="uid://ciyrdxjs03cvb" path="res://modules/minigame/water_diving/data/water_diving_data.tres" id="4_ue7jc"]
-[ext_resource type="Resource" path="res://modules/minigame/water_target_fishing/data/water_fishing_data.tres" id="5_0icjx"]
-[ext_resource type="Resource" path="res://modules/minigame/common/debug/overworld.tres" id="7_2h4su"]
+[ext_resource type="Resource" uid="uid://c7vragnlq8udw" path="res://modules/minigame/water_target_fishing/data/water_fishing_data.tres" id="5_0icjx"]
+[ext_resource type="PackedScene" uid="uid://cccmrn0cfcn0s" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.tscn" id="6_jn4u6"]
+[ext_resource type="Resource" uid="uid://b50tc478quiok" path="res://modules/minigame/common/debug/overworld.tres" id="7_2h4su"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="7_squwu"]
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="7_ybwht"]
 [ext_resource type="Resource" uid="uid://btgr85ek8vof0" path="res://modules/minigame/common/debug/settings.tres" id="8_0icjx"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="8_squwu"]
 [ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="9_dt5ik"]
 [ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="10_i6g11"]
+
+[sub_resource type="Resource" id="Resource_pxe2s"]
+script = ExtResource("7_ybwht")
+display_name = "water_rowing"
+minigame_scene = ExtResource("6_jn4u6")
+upgrade_tree_root_nodes = Array[ExtResource("8_squwu")]([])
+output_essence = ExtResource("7_squwu")
+currency_conversion_factor = 0.0
+high_scores = Array[int]([])
+metadata/_custom_type_script = "uid://mwcjys5dkgf4"
 
 [sub_resource type="Resource" id="Resource_jn4u6"]
 script = ExtResource("4_i3tw0")
@@ -47,6 +61,7 @@ earth_potato_herding_data = ExtResource("2_2ieeh")
 earth_towers_data = ExtResource("3_wnqv0")
 water_diving_data = ExtResource("4_ue7jc")
 water_target_fishing_data = ExtResource("5_0icjx")
+water_rowing_rapids_data = SubResource("Resource_pxe2s")
 
 [node name="DebugPopup" parent="." instance=ExtResource("3_1ftrw")]
 visible = false
