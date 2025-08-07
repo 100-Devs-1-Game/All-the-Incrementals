@@ -5,13 +5,16 @@ signal left_screen
 
 @export var move_speed: float = 100.0
 @export var acceleration: float = 100.0
-@export var jump_speed: float = -100.0
+@export var max_jump_speed: float = 100.0
+@export var jump_speed_per_frame: float = 5.0
+
 @export var air_control: float = 0.25
 @export var wind_impact: float = 1.0
 @export var gravity: float = 100.0
 @export var damping: float = 0.5
 
 var current_cloud: WindPlatformerMinigameCloudPlatform
+var jump_charge_frames: int
 
 @onready var head: Polygon2D = %Head
 @onready var hat: Polygon2D = %Hat
@@ -61,8 +64,15 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 0:
 			velocity.y = 0
 
-		if Input.is_action_pressed("up") and velocity.y >= 0:
-			velocity.y = jump_speed
+		if velocity.y >= 0:
+			var total_jump_speed: float = jump_charge_frames * jump_speed_per_frame
+			if Input.is_action_just_released("up") or total_jump_speed > max_jump_speed:
+				velocity.y = -total_jump_speed
+				jump_charge_frames = 0
+			elif Input.is_action_pressed("up"):
+				jump_charge_frames += 1
+		else:
+			jump_charge_frames = 0
 
 		velocity.x = move_toward(velocity.x, hor_input * move_speed, acceleration * delta)
 
