@@ -30,7 +30,9 @@ func _update_dropdown_trees():
 	if current_data:
 		for idx in range(dropdown.item_count):
 			if dropdown.get_item_text(idx) == current_data.resource_path:
+				# for some reason this doesn't call the signal, so we draw the tree
 				dropdown.select(idx)
+				_draw_upgrade_tree(current_data)
 				break
 
 
@@ -100,19 +102,21 @@ func _has_main_screen() -> bool:
 
 
 func _make_visible(visible: bool) -> void:
-	if upgrade_tree_editor_instance:
-		if visible:
-			upgrade_tree_editor_instance.show()
-			_update_dropdown_trees()
-		else:
-			upgrade_tree_editor_instance.hide()
+	if !upgrade_tree_editor_instance:
+		return
 
-		# stop all the upgrade nodes from updating, when we're not on that tab
-		var children := graph_edit.get_children()
-		for child in children:
-			var upgrade_editor: UpgradeEditor = child as UpgradeEditor
-			if upgrade_editor:
-				upgrade_editor.set_process(visible)
+	if visible:
+		upgrade_tree_editor_instance.show()
+		_update_dropdown_trees()
+	else:
+		upgrade_tree_editor_instance.hide()
+
+	# stop all the upgrade nodes from updating, when we're not on that tab
+	var children := graph_edit.get_children()
+	for child in children:
+		var upgrade_editor: UpgradeEditor = child as UpgradeEditor
+		if upgrade_editor:
+			upgrade_editor.set_process(visible)
 
 
 func _get_plugin_name():
@@ -314,7 +318,6 @@ func change_tree(object: Variant) -> void:
 	#FIXME: Need to handle this better when we have non-minigame trees
 	if object is MinigameData:
 		current_data = object
-		_draw_upgrade_tree(current_data)
 		_make_visible(true)
 	elif not object is BaseUpgrade:
 		current_data = null
