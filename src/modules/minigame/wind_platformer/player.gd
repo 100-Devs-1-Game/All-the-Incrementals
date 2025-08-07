@@ -53,7 +53,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 		velocity += game.get_force_at(position) * wind_impact
 
-		velocity.x += hor_input * air_control * delta
+		var new_velocity_x: float = velocity.x + hor_input * air_control * delta
+
+		if new_velocity_x < move_speed or sign(hor_input) != sign(velocity.x):
+			velocity.x = new_velocity_x
 	else:
 		if velocity.y > 0:
 			velocity.y = 0
