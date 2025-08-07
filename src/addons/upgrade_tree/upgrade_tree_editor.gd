@@ -307,6 +307,15 @@ func _on_disconnection_request(from_node, from_port, to_node, to_port):
 	var from_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(from_node))
 	var to_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(to_node))
 	from_node_instance.upgrade.unlocks.erase(to_node_instance.upgrade)
+
+	# the to_node upgrade would no longer be unlocked, so it becomes a root node
+	assert(current_data)
+	if current_data:
+		var idx := current_data.upgrade_tree_root_nodes.find(to_node_instance.upgrade)
+		if idx < 0:
+			print("disconnected, adding as root: ", to_node_instance.upgrade.name)
+			current_data.upgrade_tree_root_nodes.append(to_node_instance.upgrade)
+
 	_save_upgrade(from_node_instance.upgrade)
 	graph_edit.disconnect_node(from_node, from_port, to_node, to_port)
 
@@ -315,10 +324,23 @@ func _on_connection_request(from_node, from_port, to_node, to_port):
 	# Don't connect to input that is already connected
 	for con in graph_edit.get_connection_list():
 		if con.to_node == to_node and con.to_port == to_port:
+print("refusing to connect %s with %s, via port %s" % [from_node.upgrade.name, to_node.upgrade.name, to_port])
 			return
 	var from_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(from_node))
 	var to_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(to_node))
+
 	from_node_instance.upgrade.unlocks.append(to_node_instance.upgrade)
+
+	# the to_node upgrade would no longer be a root node, so remove it if it was
+	assert(current_data)
+	if current_data:
+		var idx := current_data.upgrade_tree_root_nodes.find(to_node_instance.upgrade)
+		if idx >= 0:
+			print("found as root, removing: ", to_node_instance.upgrade.name)
+			current_data.upgrade_tree_root_nodes.remove_at(idx)
+
+	# todo: handle removing any other unlock?
+
 	_save_upgrade(from_node_instance.upgrade)
 	graph_edit.connect_node(from_node, from_port, to_node, to_port)
 
