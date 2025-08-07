@@ -321,10 +321,29 @@ func _on_disconnection_request(from_node, from_port, to_node, to_port):
 
 
 func _on_connection_request(from_node, from_port, to_node, to_port):
+var from_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(from_node))
+	var to_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(to_node))
+
 	# Don't connect to input that is already connected
+if !from_node_instance is UpgradeEditor:
+		push_error("refusing to connect from an invalid node: ", from_node)
+		return
+
+	if !to_node_instance is UpgradeEditor:
+		push_error("refusing to connect from %s to an invalid node: %s" % [from_node, to_node])
+		return
+
+	if !from_node_instance.upgrade.resource_path:
+		push_error("refusing to connect from an unsaved upgrade: ", from_node_instance.upgrade.name)
+		return
+
+	if !to_node_instance.upgrade.resource_path:
+		push_error("refusing to connect to an unsaved upgrade: ", to_node_instance.upgrade.name)
+		return
+
 	for con in graph_edit.get_connection_list():
 		if con.to_node == to_node and con.to_port == to_port:
-print("refusing to connect %s with %s, via port %s" % [from_node.upgrade.name, to_node.upgrade.name, to_port])
+push_warning("refusing to connect %s with %s, via port %s" % [from_node_instance.upgrade.name, to_node_instance.upgrade.name, to_port])
 			return
 	var from_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(from_node))
 	var to_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(to_node))
