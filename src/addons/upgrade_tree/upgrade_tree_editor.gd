@@ -152,12 +152,11 @@ func _enter_tree() -> void:
 	graph_edit.disconnection_request.connect(_on_disconnection_request)
 
 	file_dialog = FileDialog.new()
-	file_dialog.access = FileDialog.ACCESS_FILESYSTEM
-	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 	file_dialog.access = FileDialog.ACCESS_RESOURCES
-	file_dialog.filters = PackedStringArray(["*.res", "*.tres", "*.*"])
+	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+		file_dialog.filters = PackedStringArray(["*.tres"])
 	file_dialog.file_selected.connect(_on_file_selected)
-	file_dialog.name = "SaveResource"
+	file_dialog.name = "Save Upgrade"
 	upgrade_tree_editor_instance.add_child(file_dialog)
 
 
