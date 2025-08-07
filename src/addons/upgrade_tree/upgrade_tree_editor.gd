@@ -30,7 +30,9 @@ func _update_dropdown_trees():
 	if current_data:
 		for idx in range(dropdown.item_count):
 			if dropdown.get_item_text(idx) == current_data.resource_path:
+				# for some reason this doesn't call the signal, so we draw the tree
 				dropdown.select(idx)
+				_draw_upgrade_tree(current_data)
 				break
 
 
@@ -100,19 +102,21 @@ func _has_main_screen() -> bool:
 
 
 func _make_visible(visible: bool) -> void:
-	if upgrade_tree_editor_instance:
-		if visible:
-			upgrade_tree_editor_instance.show()
-			_update_dropdown_trees()
-		else:
-			upgrade_tree_editor_instance.hide()
+	if !upgrade_tree_editor_instance:
+		return
 
-		# stop all the upgrade nodes from updating, when we're not on that tab
-		var children := graph_edit.get_children()
-		for child in children:
-			var upgrade_editor: UpgradeEditor = child as UpgradeEditor
-			if upgrade_editor:
-				upgrade_editor.set_process(visible)
+	if visible:
+		upgrade_tree_editor_instance.show()
+		_update_dropdown_trees()
+	else:
+		upgrade_tree_editor_instance.hide()
+
+	# stop all the upgrade nodes from updating, when we're not on that tab
+	var children := graph_edit.get_children()
+	for child in children:
+		var upgrade_editor: UpgradeEditor = child as UpgradeEditor
+		if upgrade_editor:
+			upgrade_editor.set_process(visible)
 
 
 func _get_plugin_name():
@@ -152,12 +156,11 @@ func _enter_tree() -> void:
 	graph_edit.disconnection_request.connect(_on_disconnection_request)
 
 	file_dialog = FileDialog.new()
-	file_dialog.access = FileDialog.ACCESS_FILESYSTEM
-	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 	file_dialog.access = FileDialog.ACCESS_RESOURCES
-	file_dialog.filters = PackedStringArray(["*.res", "*.tres", "*.*"])
+	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+	file_dialog.filters = PackedStringArray(["*.tres"])
 	file_dialog.file_selected.connect(_on_file_selected)
-	file_dialog.name = "SaveResource"
+	file_dialog.name = "Save Upgrade"
 	upgrade_tree_editor_instance.add_child(file_dialog)
 
 
@@ -197,6 +200,14 @@ func _draw_nodes(current_node: UpgradeEditor):
 #FIXME: Need to handle this better when we have non-minigame trees
 func _draw_upgrade_tree(data: MinigameData) -> void:
 	_clear_upgrade_tree()
+
+	# remove any root upgrades which actually aren't root upgrades, because something unlocks them
+	data.upgrade_tree_root_nodes = data.upgrade_tree_root_nodes.filter(
+		func(upgrade: BaseUpgrade):
+		var unlockable := _upgrade_is_unlockable(upgrade)
+		return !unlockable
+	)
+
 	for upgrade in data.upgrade_tree_root_nodes:
 		if not upgrade:
 			print("Warning: null resource in root upgrades array")
@@ -224,7 +235,7 @@ func _save_upgrade(upgrade: MinigameUpgrade):
 
 func _on_add_upgrade_pressed() -> void:
 	#FIXME: Need to handle this better when we have non-minigame trees
-	if current_data is MinigameData:
+	if current_data:
 		var upgrade = MinigameUpgrade.new()
 		# we can use this in the future to update old upgrades or something
 		# a lil bit of future proofing never hurt innit
@@ -243,6 +254,7 @@ func _on_add_upgrade_pressed() -> void:
 		# explicitly passing null because it auto-connects and that's kinda frustrating tbh
 		_add_node(graph_edit, upgrade, null)
 	else:
+		assert(current_data)
 		push_error("No MiniGameData selected.")
 
 
@@ -268,16 +280,44 @@ func _on_reload_resources_pressed() -> void:
 	_draw_upgrade_tree(current_data)
 
 
+func _upgrade_has_unlockable(p_root: BaseUpgrade, p_unlockable: BaseUpgrade) -> bool:
+	for unlockable in p_root.unlocks:
+		# let's hope no one made an infinite loop kk?
+		if unlockable == p_unlockable || _upgrade_has_unlockable(unlockable, p_unlockable):
+			return true
+
+	return false
+
+
+func _upgrade_is_unlockable(p_upgrade: BaseUpgrade) -> bool:
+	if !current_data:
+		assert(current_data)
+		push_error("no upgrade tree is currently selected")
+		return false
+
+	for root_upgrade in current_data.upgrade_tree_root_nodes:
+		if _upgrade_has_unlockable(root_upgrade, p_upgrade):
+			return true
+
+	return false
+
+
 func _on_file_selected(path: String) -> void:
 	current_selected_node.upgrade.resource_path = ProjectSettings.localize_path(path)
 	ResourceSaver.save(current_selected_node.upgrade)
+	if !current_data:
+		push_error("saved upgrade without a tree selected - unable to edit")
+		return
+
+	var unlockable := _upgrade_is_unlockable(current_selected_node.upgrade)
+	if !unlockable:
+		current_data.upgrade_tree_root_nodes.append(current_selected_node.upgrade)
 
 
 func change_tree(object: Variant) -> void:
 	#FIXME: Need to handle this better when we have non-minigame trees
 	if object is MinigameData:
 		current_data = object
-		_draw_upgrade_tree(current_data)
 		_make_visible(true)
 	elif not object is BaseUpgrade:
 		current_data = null
@@ -307,18 +347,57 @@ func _on_disconnection_request(from_node, from_port, to_node, to_port):
 	var from_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(from_node))
 	var to_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(to_node))
 	from_node_instance.upgrade.unlocks.erase(to_node_instance.upgrade)
+
+	# the to_node upgrade would no longer be unlocked, so it becomes a root node
+	assert(current_data)
+	if current_data:
+		var idx := current_data.upgrade_tree_root_nodes.find(to_node_instance.upgrade)
+		if idx < 0:
+			print("disconnected, adding as root: ", to_node_instance.upgrade.name)
+			current_data.upgrade_tree_root_nodes.append(to_node_instance.upgrade)
+
 	_save_upgrade(from_node_instance.upgrade)
 	graph_edit.disconnect_node(from_node, from_port, to_node, to_port)
 
 
 func _on_connection_request(from_node, from_port, to_node, to_port):
-	# Don't connect to input that is already connected
-	for con in graph_edit.get_connection_list():
-		if con.to_node == to_node and con.to_port == to_port:
-			return
 	var from_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(from_node))
 	var to_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(to_node))
+
+	# Don't connect to input that is already connected
+	if !from_node_instance is UpgradeEditor:
+		push_error("refusing to connect from an invalid node: ", from_node)
+		return
+
+	if !to_node_instance is UpgradeEditor:
+		push_error("refusing to connect from %s to an invalid node: %s" % [from_node, to_node])
+		return
+
+	if !from_node_instance.upgrade.resource_path:
+		push_error("refusing to connect from an unsaved upgrade: ", from_node_instance.upgrade.name)
+		return
+
+	if !to_node_instance.upgrade.resource_path:
+		push_error("refusing to connect to an unsaved upgrade: ", to_node_instance.upgrade.name)
+		return
+
+	for con in graph_edit.get_connection_list():
+		if con.to_node == to_node and con.to_port == to_port:
+			push_warning("refusing to connect %s with %s, via port %s" % [from_node_instance.upgrade.name, to_node_instance.upgrade.name, to_port])
+			return
+
 	from_node_instance.upgrade.unlocks.append(to_node_instance.upgrade)
+
+	# the to_node upgrade would no longer be a root node, so remove it if it was
+	assert(current_data)
+	if current_data:
+		var idx := current_data.upgrade_tree_root_nodes.find(to_node_instance.upgrade)
+		if idx >= 0:
+			print("found as root, removing: ", to_node_instance.upgrade.name)
+			current_data.upgrade_tree_root_nodes.remove_at(idx)
+
+	# todo: handle removing any other unlock?
+
 	_save_upgrade(from_node_instance.upgrade)
 	graph_edit.connect_node(from_node, from_port, to_node, to_port)
 
