@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		current_cloud.fade()
 		current_cloud = null
 
-	var hor_input = Input.get_axis("ui_left", "ui_right")
+	var hor_input = Input.get_axis("left", "right")
 
 	if not is_on_ground:
 		velocity.y += gravity * delta
@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 0:
 			velocity.y = 0
 
-		if Input.is_action_pressed("ui_up") and velocity.y >= 0:
+		if Input.is_action_pressed("up") and velocity.y >= 0:
 			velocity.y = jump_speed
 
 		velocity.x = move_toward(velocity.x, hor_input * move_speed, acceleration * delta)
