@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 
 		var new_velocity_x: float = velocity.x + hor_input * air_control * delta
 
-		if new_velocity_x < move_speed or sign(hor_input) != sign(velocity.x):
+		if abs(new_velocity_x) < move_speed or sign(hor_input) != sign(velocity.x):
 			velocity.x = new_velocity_x
 	else:
 		if velocity.y > 0:
