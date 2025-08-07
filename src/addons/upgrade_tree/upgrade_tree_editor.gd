@@ -154,7 +154,7 @@ func _enter_tree() -> void:
 	file_dialog = FileDialog.new()
 	file_dialog.access = FileDialog.ACCESS_RESOURCES
 	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
-		file_dialog.filters = PackedStringArray(["*.tres"])
+	file_dialog.filters = PackedStringArray(["*.tres"])
 	file_dialog.file_selected.connect(_on_file_selected)
 	file_dialog.name = "Save Upgrade"
 	upgrade_tree_editor_instance.add_child(file_dialog)
@@ -196,6 +196,14 @@ func _draw_nodes(current_node: UpgradeEditor):
 #FIXME: Need to handle this better when we have non-minigame trees
 func _draw_upgrade_tree(data: MinigameData) -> void:
 	_clear_upgrade_tree()
+
+	# remove any root upgrades which actually aren't root upgrades, because something unlocks them
+	data.upgrade_tree_root_nodes = data.upgrade_tree_root_nodes.filter(
+		func(upgrade: BaseUpgrade):
+		var unlockable := _upgrade_is_unlockable(upgrade)
+		return !unlockable
+	)
+
 	for upgrade in data.upgrade_tree_root_nodes:
 		if not upgrade:
 			print("Warning: null resource in root upgrades array")
@@ -223,7 +231,7 @@ func _save_upgrade(upgrade: MinigameUpgrade):
 
 func _on_add_upgrade_pressed() -> void:
 	#FIXME: Need to handle this better when we have non-minigame trees
-	if current_data is MinigameData:
+	if current_data:
 		var upgrade = MinigameUpgrade.new()
 		# we can use this in the future to update old upgrades or something
 		# a lil bit of future proofing never hurt innit
@@ -242,6 +250,7 @@ func _on_add_upgrade_pressed() -> void:
 		# explicitly passing null because it auto-connects and that's kinda frustrating tbh
 		_add_node(graph_edit, upgrade, null)
 	else:
+		assert(current_data)
 		push_error("No MiniGameData selected.")
 
 
@@ -292,7 +301,7 @@ func _upgrade_is_unlockable(p_upgrade: BaseUpgrade) -> bool:
 func _on_file_selected(path: String) -> void:
 	current_selected_node.upgrade.resource_path = ProjectSettings.localize_path(path)
 	ResourceSaver.save(current_selected_node.upgrade)
-if !current_data:
+	if !current_data:
 		push_error("saved upgrade without a tree selected - unable to edit")
 		return
 
@@ -349,11 +358,11 @@ func _on_disconnection_request(from_node, from_port, to_node, to_port):
 
 
 func _on_connection_request(from_node, from_port, to_node, to_port):
-var from_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(from_node))
+	var from_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(from_node))
 	var to_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(to_node))
 
 	# Don't connect to input that is already connected
-if !from_node_instance is UpgradeEditor:
+	if !from_node_instance is UpgradeEditor:
 		push_error("refusing to connect from an invalid node: ", from_node)
 		return
 
@@ -371,9 +380,9 @@ if !from_node_instance is UpgradeEditor:
 
 	for con in graph_edit.get_connection_list():
 		if con.to_node == to_node and con.to_port == to_port:
-push_warning("refusing to connect %s with %s, via port %s" % [from_node_instance.upgrade.name, to_node_instance.upgrade.name, to_port])
+			push_warning("refusing to connect %s with %s, via port %s" % [from_node_instance.upgrade.name, to_node_instance.upgrade.name, to_port])
 			return
-	
+
 	from_node_instance.upgrade.unlocks.append(to_node_instance.upgrade)
 
 	# the to_node upgrade would no longer be a root node, so remove it if it was
