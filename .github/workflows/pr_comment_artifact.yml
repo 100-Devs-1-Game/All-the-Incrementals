@@ -72,6 +72,7 @@ jobs:
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ env.PR_NUMBER }}
+          edit-mode: replace
           body: |-
             ## Build Preview
 
