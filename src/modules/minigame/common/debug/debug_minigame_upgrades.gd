@@ -42,6 +42,10 @@ func _reset_upgrades() -> void:
 	print("Resetting all upgrades")
 	minigame.data.reset_all_upgrades()
 	_refresh_minigame_upgrades_branch()
+	# Resetting the upgrades cannot be done during game play, because upgrades
+	# don't store any "default state information"
+	SceneLoader.enable_immediate_play()
+	SceneLoader.start_minigame(minigame.data)
 
 
 func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
@@ -61,7 +65,7 @@ func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
 
 
 func _get_upgrade_button_text(upgrade: BaseUpgrade) -> String:
-	return "%s Lvl %d/%d" % [upgrade.name, upgrade.get_level(), upgrade.get_max_level()]
+	return "%s Lvl %d/%d" % [upgrade.name, upgrade.get_level() + 1, upgrade.get_max_level() + 1]
 
 
 func _on_upgrade_item_pressed(item: TreeItem, upgrade: BaseUpgrade):
