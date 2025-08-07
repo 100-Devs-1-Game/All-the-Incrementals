@@ -43,7 +43,6 @@
 [ext_resource type="Texture2D" uid="uid://lehri0bj078y" path="res://assets/overworld/vfx/skybox/clouds/cloud_vdb_01.webp" id="42_serno"]
 [ext_resource type="Script" uid="uid://drg20rmnbr8bf" path="res://assets/overworld/scripts/animation_scripts/cloud_animation.gd" id="42_ul5nb"]
 [ext_resource type="Texture2D" uid="uid://ceph8r8tmdewb" path="res://assets/overworld/vfx/skybox/clouds/cloud_vdb_02.webp" id="43_raayy"]
-[ext_resource type="SpriteFrames" uid="uid://crp8bo3g1m4tf" path="res://assets/overworld/vfx/wind/wind.tres" id="44_2y5yr"]
 [ext_resource type="Texture2D" uid="uid://bwu66n7epurv6" path="res://assets/overworld/vfx/skybox/clouds/cloud_vdb_03.webp" id="44_dr8tf"]
 [ext_resource type="SpriteFrames" uid="uid://c1pcfko77da5i" path="res://assets/overworld/vfx/elements_anim/water/elements_water_anim.tres" id="44_n6057"]
 [ext_resource type="Texture2D" uid="uid://b5h2x4gybxfuf" path="res://assets/overworld/vfx/skybox/night/sky_night_01.webp" id="44_qqenq"]
@@ -619,27 +618,6 @@ transform = Transform3D(-1.55613e-07, 0, 3.56, 0, 3.56, 0, -3.56, 0, -1.55613e-0
 material_override = SubResource("ShaderMaterial_e8tmd")
 cast_shadow = 0
 texture = ExtResource("44_qqenq")
-
-[node name="wind_anim" type="AnimatedSprite3D" parent="VFX"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.035, 7.205, -1.066)
-visible = false
-sprite_frames = ExtResource("44_2y5yr")
-animation = &"wind_01"
-autoplay = "wind_01"
-
-[node name="wind_anim2" type="AnimatedSprite3D" parent="VFX"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.035, 6.298, -1.066)
-visible = false
-sprite_frames = ExtResource("44_2y5yr")
-animation = &"wind_02"
-autoplay = "wind_02"
-
-[node name="wind_anim3" type="AnimatedSprite3D" parent="VFX"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.035, -0.324, -1.066)
-visible = false
-sprite_frames = ExtResource("44_2y5yr")
-animation = &"wind_03"
-autoplay = "wind_03"
 
 [node name="circular_water" type="MeshInstance3D" parent="VFX"]
 transform = Transform3D(4.87, 0, 0, 0, 4.87, 0, 0, 0, 4.87, 0, -1.545, 0)
