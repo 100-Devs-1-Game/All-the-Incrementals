@@ -12,6 +12,7 @@ extends BaseMinigame
 var wind_arr: Dictionary
 var particles: Array[WindPlatformerMinigameParticle]
 
+@onready var player: WindPlatformerMinigamePlayer = $Player
 @onready var multi_mesh_instance: MultiMeshInstance2D = $MultiMeshInstance2D
 @onready var cloud_spawner: WindPlatformerMinigameCloudSpawner = $"Cloud Spawner"
 

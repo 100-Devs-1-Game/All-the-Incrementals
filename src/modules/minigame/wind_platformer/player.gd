@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 signal left_screen
 
-@export var move_speed: float = 150.0
+@export var move_speed: float = 100.0
 @export var acceleration: float = 100.0
 @export var jump_speed: float = -100.0
 @export var air_control: float = 0.25
