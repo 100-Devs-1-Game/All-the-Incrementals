@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://hf0wgh6wa7s5"]
 
-[ext_resource type="PackedScene" uid="uid://bkiftaoesukcl" path="res://models/props/ornaments/ornament_06.gltf" id="1_qdjr5"]
-[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://materials/simple/metallic/metallic_gray.tres" id="2_el3io"]
+[ext_resource type="PackedScene" uid="uid://bkiftaoesukcl" path="res://assets/overworld/models/props/ornaments/ornament_06.gltf" id="1_qdjr5"]
+[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://assets/overworld/materials/simple/metallic/metallic_gray.tres" id="2_el3io"]
 
 [node name="ornament_06" instance=ExtResource("1_qdjr5")]
 

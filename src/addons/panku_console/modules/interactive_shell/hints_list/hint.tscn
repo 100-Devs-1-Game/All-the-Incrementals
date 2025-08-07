@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbtn0x604fx5o"]
 
-[ext_resource type="Script" path="res://addons/panku_console/modules/interactive_shell/hints_list/hint.gd" id="1_sa53g"]
+[ext_resource type="Script" uid="uid://cx1fx38626rq" path="res://addons/panku_console/modules/interactive_shell/hints_list/hint.gd" id="1_sa53g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56dbv"]
 

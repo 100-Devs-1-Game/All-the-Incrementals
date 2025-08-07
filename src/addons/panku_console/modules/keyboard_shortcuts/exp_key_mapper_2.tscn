@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6hm8vweq0j4f"]
 
 [ext_resource type="Theme" uid="uid://bk18yfu0d77wk" path="res://addons/panku_console/res/panku_console_theme.tres" id="1_0xd5p"]
-[ext_resource type="Script" path="res://addons/panku_console/modules/keyboard_shortcuts/exp_key_mapper_2.gd" id="2_vxcow"]
+[ext_resource type="Script" uid="uid://yhmhmjrs5s1e" path="res://addons/panku_console/modules/keyboard_shortcuts/exp_key_mapper_2.gd" id="2_vxcow"]
 [ext_resource type="Texture2D" uid="uid://dprpfr0l5xvmu" path="res://addons/panku_console/res/icons2/add.svg" id="3_0d2ct"]
 [ext_resource type="Texture2D" uid="uid://b6jt0ggmuoyeb" path="res://addons/panku_console/res/icons2/info2.svg" id="3_ofrgs"]
 
