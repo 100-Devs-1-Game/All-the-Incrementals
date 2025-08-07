@@ -1,6 +1,8 @@
 class_name WindPlatformerMinigamePlayer
 extends CharacterBody2D
 
+signal left_screen
+
 @export var move_speed: float = 150.0
 @export var acceleration: float = 100.0
 @export var jump_speed: float = -100.0
@@ -62,3 +64,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, hor_input * move_speed, acceleration * delta)
 
 	move_and_slide()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	left_screen.emit()

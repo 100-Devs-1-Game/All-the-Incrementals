@@ -17,6 +17,8 @@ func test_wind_platformer() -> void:
 	print("Adding child")
 	add_child_autofree(minigame)
 
+	assert_eq(minigame.disable_game_over, false, "disable_game_over == false")
+
 	print("Simulating")
 	gut.simulate(minigame, 10, .1)
 	await wait_seconds(3)

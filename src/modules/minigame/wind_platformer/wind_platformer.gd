@@ -6,6 +6,9 @@ extends BaseMinigame
 
 @export var num_particles: int = 1200
 
+@export_category("Debug")
+@export var disable_game_over: bool = false
+
 var wind_arr: Dictionary
 var particles: Array[WindPlatformerMinigameParticle]
 
@@ -80,3 +83,8 @@ func on_particle_destroyed(particle: WindPlatformerMinigameParticle):
 func get_force_at(pos: Vector2) -> Vector2:
 	var noise: float = wind_noise.get_noise_2dv(pos)
 	return Vector2.from_angle(wrapf(noise * 10.0, -PI, PI))
+
+
+func _on_player_left_screen() -> void:
+	if not disable_game_over:
+		game_over()
