@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://dox2uuh52nw43"]
 
-[ext_resource type="PackedScene" uid="uid://dafe7l0p7jcsm" path="res://models/kitchen_ware/bowl/bowl_05.gltf" id="1_lyfu3"]
+[ext_resource type="PackedScene" uid="uid://dafe7l0p7jcsm" path="res://assets/overworld/models/kitchen_ware/bowl/bowl_05.gltf" id="1_lyfu3"]
 
 [node name="bowl_05" instance=ExtResource("1_lyfu3")]

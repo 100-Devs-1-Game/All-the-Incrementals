@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dlnkho5p7p2aq"]
 
 [ext_resource type="Theme" uid="uid://bk18yfu0d77wk" path="res://addons/panku_console/res/panku_console_theme.tres" id="1_5nvur"]
-[ext_resource type="Script" path="res://addons/panku_console/modules/expression_monitor/monitor_group_ui.gd" id="1_b5egi"]
+[ext_resource type="Script" uid="uid://b6u5mk2er2h4y" path="res://addons/panku_console/modules/expression_monitor/monitor_group_ui.gd" id="1_b5egi"]
 [ext_resource type="Texture2D" uid="uid://ws58gucuygx1" path="res://addons/panku_console/res/icons2/chevron_right.svg" id="1_k5xby"]
 [ext_resource type="Texture2D" uid="uid://ecmevhk0tuas" path="res://addons/panku_console/res/icons2/play-1001-svgrepo-com.svg" id="2_wnb5s"]
 [ext_resource type="Texture2D" uid="uid://2cjvp0dp8ede" path="res://addons/panku_console/res/icons2/check-svgrepo-com.svg" id="3_h1h1v"]

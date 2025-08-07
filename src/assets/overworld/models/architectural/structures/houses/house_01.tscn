@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://bc07eflv6c640"]
 
-[ext_resource type="PackedScene" uid="uid://yr4ognxmj0ql" path="res://models/architectural/structures/houses/house_01.gltf" id="1_smbci"]
+[ext_resource type="PackedScene" uid="uid://yr4ognxmj0ql" path="res://assets/overworld/models/architectural/structures/houses/house_01.gltf" id="1_smbci"]
 
 [node name="house_01" instance=ExtResource("1_smbci")]

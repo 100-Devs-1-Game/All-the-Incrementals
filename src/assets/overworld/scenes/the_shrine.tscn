@@ -1,7 +1,6 @@
-[gd_scene load_steps=77 format=3 uid="uid://c5pos323ks1ro"]
+[gd_scene load_steps=76 format=3 uid="uid://c5pos323ks1ro"]
 
 [ext_resource type="PackedScene" uid="uid://cyqvtg6x4rb85" path="res://assets/overworld/models/architectural/column/pillar_01.tscn" id="1_6xidr"]
-[ext_resource type="Texture2D" uid="uid://c55rxu5c8d4g6" path="res://assets/overworld/hdri/night.exr" id="1_tbivr"]
 [ext_resource type="Script" uid="uid://dhpabklvos1rb" path="res://assets/overworld/scripts/animation_scripts/light_flicker.gd" id="2_4aov3"]
 [ext_resource type="PackedScene" uid="uid://cxkc37xd0pka0" path="res://assets/overworld/models/architectural/stair_case/stair_case_01.tscn" id="2_tpa10"]
 [ext_resource type="PackedScene" uid="uid://dbl6vd6owbgae" path="res://assets/overworld/models/architectural/arch/arch_01.tscn" id="3_yaebv"]
@@ -58,7 +57,6 @@
 [ext_resource type="SpriteFrames" uid="uid://bvva1qjrsfn36" path="res://assets/overworld/vfx/elements_anim/earth/elements_earth_anim.tres" id="52_61tad"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1yun8"]
-panorama = ExtResource("1_tbivr")
 
 [sub_resource type="Sky" id="Sky_de3hw"]
 sky_material = SubResource("PanoramaSkyMaterial_1yun8")

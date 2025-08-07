@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cgwg3foes57mq"]
 
-[ext_resource type="Script" path="res://addons/panku_console/modules/about/about.gd" id="1_kpix3"]
+[ext_resource type="Script" uid="uid://dmr20k8sqd0ax" path="res://addons/panku_console/modules/about/about.gd" id="1_kpix3"]
 [ext_resource type="PackedScene" uid="uid://dyq4rjkkjs55d" path="res://addons/panku_console/common/smooth_scroll/smooth_scroll.tscn" id="2_sev6e"]
 [ext_resource type="Texture2D" uid="uid://rkxm4c3bbf34" path="res://addons/panku_console/logo.svg" id="3_eycho"]
 [ext_resource type="PackedScene" uid="uid://cxmplwhfv5l88" path="res://addons/panku_console/modules/about/url_button.tscn" id="4_cqu2c"]
@@ -20,6 +20,7 @@ variation_embolden = 0.5
 
 [sub_resource type="SystemFont" id="SystemFont_6on77"]
 font_names = PackedStringArray("Monospace")
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqcex"]
 content_margin_left = 4.0

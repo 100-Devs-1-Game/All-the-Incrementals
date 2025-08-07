@@ -1,6 +1,5 @@
-[gd_scene load_steps=32 format=3 uid="uid://dilv53e8hkijq"]
+[gd_scene load_steps=31 format=3 uid="uid://dilv53e8hkijq"]
 
-[ext_resource type="Texture2D" uid="uid://bant4hctxsigo" path="res://assets/overworld/hdri/charolettenbrunn_park_2k.hdr" id="1_ob56f"]
 [ext_resource type="PackedScene" uid="uid://drigm1l67ls0l" path="res://assets/overworld/models/architectural/structures/houses/windmill.tscn" id="2_fxord"]
 [ext_resource type="PackedScene" uid="uid://ydpm1355jsmx" path="res://assets/overworld/models/nature/fern/fern_01.tscn" id="3_fxord"]
 [ext_resource type="PackedScene" uid="uid://du1f7ao6i263m" path="res://assets/overworld/models/architectural/structures/houses/fire_wind_house/fire_wind_house.tscn" id="3_n1hja"]
@@ -22,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://14khymasrsh5" path="res://assets/overworld/models/landscapes/mountain_landscape.tscn" id="20_fxord"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hbxmu"]
-panorama = ExtResource("1_ob56f")
 
 [sub_resource type="Sky" id="Sky_s60bt"]
 sky_material = SubResource("PanoramaSkyMaterial_hbxmu")

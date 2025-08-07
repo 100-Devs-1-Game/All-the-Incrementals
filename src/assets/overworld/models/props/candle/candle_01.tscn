@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://b66drvaba8u41"]
 
-[ext_resource type="PackedScene" uid="uid://csdkj6of032wl" path="res://models/props/candle/candle_01.gltf" id="1_01eef"]
+[ext_resource type="PackedScene" uid="uid://csdkj6of032wl" path="res://assets/overworld/models/props/candle/candle_01.gltf" id="1_01eef"]
 
 [node name="candle_012" instance=ExtResource("1_01eef")]

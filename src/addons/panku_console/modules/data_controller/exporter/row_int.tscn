@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnsnrihcgjsa"]
 
-[ext_resource type="Script" path="res://addons/panku_console/modules/data_controller/exporter/row_ui_int.gd" id="1_gi50r"]
+[ext_resource type="Script" uid="uid://bjxkgknmobrkq" path="res://addons/panku_console/modules/data_controller/exporter/row_ui_int.gd" id="1_gi50r"]
 [ext_resource type="PackedScene" uid="uid://drn5t13m088fb" path="res://addons/panku_console/common/panku_button.tscn" id="2_cfn1u"]
 [ext_resource type="Texture2D" uid="uid://dnexm7u6lq3km" path="res://addons/panku_console/res/icons2/remove.svg" id="2_ityxl"]
 [ext_resource type="Texture2D" uid="uid://dprpfr0l5xvmu" path="res://addons/panku_console/res/icons2/add.svg" id="3_3vcaq"]

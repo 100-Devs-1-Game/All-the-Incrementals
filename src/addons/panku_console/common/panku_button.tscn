@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://drn5t13m088fb"]
 
-[ext_resource type="Script" path="res://addons/panku_console/common/panku_button.gd" id="1_7kf5f"]
+[ext_resource type="Script" uid="uid://csyfltsm4qjl4" path="res://addons/panku_console/common/panku_button.gd" id="1_7kf5f"]
 [ext_resource type="Texture2D" uid="uid://dchvk7qgfe37m" path="res://addons/panku_console/res/icons2/fold-svgrepo-com.svg" id="2_su653"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v3kpx"]
