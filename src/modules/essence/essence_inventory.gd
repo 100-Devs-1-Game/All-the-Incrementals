@@ -81,4 +81,35 @@ func get_essence(essence: Essence) -> int:
 
 	return 0
 
+
+# merges stacks from inventories a & b into caller
+func merge(other: EssenceInventory):
+	for stack in other.slots:
+		add_stack(stack)
+
+
+# returns true if a stacks of a certain essence are available
+func has_stack(stack: EssenceStack) -> bool:
+	for i in slots:
+		if i.essence == stack.essence:
+			return true
+	return false
+
+
+# assuming we'll use this to check calling inv has enough for something
+func has_inventory(other: EssenceInventory) -> bool:
+	for stack in other.slots:
+		if get_essence(stack.essence) < stack.amount:
+			return false
+	return true
+
+
+func sub_stack(stack: EssenceStack, amount: int):  # Removes x amount of essence from a given stack
+	for slot in slots:
+		if slot.essence == stack.essence:
+			slot.amount -= amount
+			if slot.amount <= 0:
+				slots.erase(slot)
+			return
+
 # TODO sub_stack, has_essence, has_stack, merge, ...
