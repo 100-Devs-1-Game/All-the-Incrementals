@@ -266,6 +266,7 @@ func _on_delete_upgrade_pressed() -> void:
 func _on_reload_resources_pressed() -> void:
 	_draw_upgrade_tree(current_data)
 
+
 func _upgrade_has_unlockable(p_root: BaseUpgrade, p_unlockable: BaseUpgrade) -> bool:
 	for unlockable in p_root.unlocks:
 		# let's hope no one made an infinite loop kk?
