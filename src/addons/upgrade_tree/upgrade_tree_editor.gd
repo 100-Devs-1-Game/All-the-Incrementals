@@ -372,9 +372,7 @@ if !from_node_instance is UpgradeEditor:
 		if con.to_node == to_node and con.to_port == to_port:
 push_warning("refusing to connect %s with %s, via port %s" % [from_node_instance.upgrade.name, to_node_instance.upgrade.name, to_port])
 			return
-	var from_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(from_node))
-	var to_node_instance: UpgradeEditor = graph_edit.get_node_or_null(NodePath(to_node))
-
+	
 	from_node_instance.upgrade.unlocks.append(to_node_instance.upgrade)
 
 	# the to_node upgrade would no longer be a root node, so remove it if it was
