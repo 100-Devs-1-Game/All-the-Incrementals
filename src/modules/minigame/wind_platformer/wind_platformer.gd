@@ -17,6 +17,7 @@ var particles: Array[WindPlatformerMinigameParticle]
 
 
 func _initialize() -> void:
+	wind_noise.seed = randi()
 	for i in num_particles:
 		spawn_random_particle()
 
