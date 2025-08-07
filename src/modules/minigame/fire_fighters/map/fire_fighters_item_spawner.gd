@@ -44,7 +44,7 @@ func spawn_item(item_type: FireFightersMinigameItem, pos: Vector2):
 	var item: FireFightersMinigameItemInstance = scene.instantiate()
 	item.position = pos
 	game.item_node.add_child(item)
-	item.init(item_type)
+	item.init(item_type, game)
 
 
 func _can_spawn_item_on(tile: Vector2i) -> bool:
