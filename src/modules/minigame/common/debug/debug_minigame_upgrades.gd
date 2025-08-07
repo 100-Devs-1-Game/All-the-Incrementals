@@ -24,13 +24,7 @@ func init():
 
 func _add_minigame_upgrades_children() -> void:
 	for upgrade in minigame.data.get_all_upgrades():
-		# In case of reset, re-apply upgrade at current level
-		if upgrade.logic:
-			if upgrade.get_level() == upgrade.NO_LEVEL:
-				upgrade.level_up()
-			# We do not want to apply an effect of "level -1"
-			assert(upgrade.get_level() >= 0, "should be at least level 0 here")
-			upgrade.logic._apply_effect(minigame, upgrade)
+		assert(upgrade.logic)
 		_add_upgrade_item(upgrade)
 
 	var reset_item = _tree_upgrades.create_child()
