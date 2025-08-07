@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8rfpfel4mqtm"]
 
-[ext_resource type="Script" uid="uid://qgnrdn7pwd12" path="res://addons/panku_console/modules/screen_notifier/log_item.gd" id="1_2q8bu"]
+[ext_resource type="Script" uid="uid://dfnnq7iopnofp" path="res://addons/panku_console/modules/screen_notifier/log_item.gd" id="1_2q8bu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ons3"]
 bg_color = Color(0, 0, 0, 0.501961)

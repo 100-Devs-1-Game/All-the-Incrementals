@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://du6m05vxpcubk"]
 
-[ext_resource type="Script" uid="uid://ryxce2v8hrq2" path="res://addons/panku_console/modules/snake/snake_ui.gd" id="1_0yq81"]
+[ext_resource type="Script" uid="uid://dd8cpl25hdsjs" path="res://addons/panku_console/modules/snake/snake_ui.gd" id="1_0yq81"]
 
 [node name="SnakeUI" type="Control" node_paths=PackedStringArray("tex_rect")]
 clip_contents = true

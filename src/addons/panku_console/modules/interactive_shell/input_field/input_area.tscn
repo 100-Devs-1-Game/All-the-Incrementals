@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bme8twac4ick5"]
 
 [ext_resource type="Theme" uid="uid://bk18yfu0d77wk" path="res://addons/panku_console/res/panku_console_theme.tres" id="1_rocdy"]
-[ext_resource type="Script" uid="uid://ds2ehs4pglguy" path="res://addons/panku_console/modules/interactive_shell/input_field/input_area.gd" id="2_6g40s"]
+[ext_resource type="Script" uid="uid://dmbcyc0px78ue" path="res://addons/panku_console/modules/interactive_shell/input_field/input_area.gd" id="2_6g40s"]
 [ext_resource type="PackedScene" uid="uid://drn5t13m088fb" path="res://addons/panku_console/common/panku_button.tscn" id="4_6t5yf"]
-[ext_resource type="Script" uid="uid://f4kavq3h7hi1" path="res://addons/panku_console/modules/interactive_shell/input_field/input_field.gd" id="4_xjt2l"]
+[ext_resource type="Script" uid="uid://by5meglylgaff" path="res://addons/panku_console/modules/interactive_shell/input_field/input_field.gd" id="4_xjt2l"]
 [ext_resource type="Texture2D" uid="uid://b4jd6tqlie0wx" path="res://addons/panku_console/res/icons2/reply.svg" id="6_w88f1"]
 
 [node name="InputArea" type="HBoxContainer" node_paths=PackedStringArray("input", "btn")]

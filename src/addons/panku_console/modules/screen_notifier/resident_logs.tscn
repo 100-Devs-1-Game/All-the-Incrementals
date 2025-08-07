@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccr06ddwa73ca"]
 
-[ext_resource type="Script" uid="uid://dtcfrtkwulnje" path="res://addons/panku_console/modules/screen_notifier/resident_logs.gd" id="1_uq2bh"]
+[ext_resource type="Script" uid="uid://brhj1qv12s8mi" path="res://addons/panku_console/modules/screen_notifier/resident_logs.gd" id="1_uq2bh"]
 [ext_resource type="Theme" uid="uid://bk18yfu0d77wk" path="res://addons/panku_console/res/panku_console_theme.tres" id="2_npyp1"]
 
 [sub_resource type="GDScript" id="GDScript_p8loh"]

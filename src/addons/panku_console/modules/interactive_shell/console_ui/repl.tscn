@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ca0bkchv6nsrb"]
 
-[ext_resource type="Script" uid="uid://dsp3g31ygsjtq" path="res://addons/panku_console/modules/interactive_shell/console_ui/repl.gd" id="1_dk53o"]
+[ext_resource type="Script" uid="uid://cl8nrmkls8si8" path="res://addons/panku_console/modules/interactive_shell/console_ui/repl.gd" id="1_dk53o"]
 
 [node name="REPL" type="Node"]
 script = ExtResource("1_dk53o")
