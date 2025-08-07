@@ -267,10 +267,38 @@ func _on_delete_upgrade_pressed() -> void:
 func _on_reload_resources_pressed() -> void:
 	_draw_upgrade_tree(current_data)
 
+func _upgrade_has_unlockable(p_root: BaseUpgrade, p_unlockable: BaseUpgrade) -> bool:
+	for unlockable in p_root.unlocks:
+		# let's hope no one made an infinite loop kk?
+		if unlockable == p_unlockable || _upgrade_has_unlockable(unlockable, p_unlockable):
+			return true
+
+	return false
+
+
+func _upgrade_is_unlockable(p_upgrade: BaseUpgrade) -> bool:
+	if !current_data:
+		assert(current_data)
+		push_error("no upgrade tree is currently selected")
+		return false
+
+	for root_upgrade in current_data.upgrade_tree_root_nodes:
+		if _upgrade_has_unlockable(root_upgrade, p_upgrade):
+			return true
+
+	return false
+
 
 func _on_file_selected(path: String) -> void:
 	current_selected_node.upgrade.resource_path = ProjectSettings.localize_path(path)
 	ResourceSaver.save(current_selected_node.upgrade)
+if !current_data:
+		push_error("saved upgrade without a tree selected - unable to edit")
+		return
+
+	var unlockable := _upgrade_is_unlockable(current_selected_node.upgrade)
+	if !unlockable:
+		current_data.upgrade_tree_root_nodes.append(current_selected_node.upgrade)
 
 
 func change_tree(object: Variant) -> void:
