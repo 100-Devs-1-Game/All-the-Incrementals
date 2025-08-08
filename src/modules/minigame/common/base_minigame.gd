@@ -101,12 +101,20 @@ func open_upgrades():
 	print("Not yet implemented")
 
 
+# This function is called when the Show highscores button on the minigame menu is
+# pressed.
+func show_highscores():
+	var highscores = Player.get_highscores(self)
+	_minigame_shared_components.minigame_highscores.open_menu(highscores)
+
+
 # Call this function when the game ends to re-open the minigame menu.
 func game_over():
 	_minigame_shared_components.minigame_menu.open_menu()
 	Player.add_stack_to_inventory(
 		EssenceStack.new(data.output_essence, int(_score * data.currency_conversion_factor))
 	)
+	Player.update_highscores(self, get_score())
 	_is_game_over = true
 
 

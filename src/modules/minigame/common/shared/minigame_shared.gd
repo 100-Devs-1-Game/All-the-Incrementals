@@ -4,6 +4,7 @@ extends Node
 @export var debug_popup: DebugPopup
 @export var game_popup_menu: GamePopupMenu
 @export var minigame_menu: MinigameMenu
+@export var minigame_highscores: HighScores
 @export var minigame_overlay: MinigameOverlay
 @export var debug_minigame_upgrades: DebugMinigameUpgrades
 
