@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=19 format=3 uid="uid://k1jfswtf567r"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://k1jfswtf567r"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_d4w24"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_k72jy"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_4hcru"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="4_ueddq"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_y671g"]
+[ext_resource type="Resource" uid="uid://bvnajtf6bhc0m" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_fish_spawnrate_t3.tres" id="6_k72jy"]
 
 [sub_resource type="Resource" id="Resource_d4w24"]
 script = ExtResource("2_k72jy")
@@ -96,7 +97,7 @@ logic = SubResource("Resource_2rpgf")
 unlocks_feature = ""
 name = "+3 Starting Fish"
 flavor = ""
-position = Vector2(1600, 0)
+position = Vector2(3072, 0)
 cost_arr = Array[ExtResource("1_d4w24")]([SubResource("Resource_ueddq"), SubResource("Resource_i32ev"), SubResource("Resource_t5pm5"), SubResource("Resource_j4ayh"), SubResource("Resource_t3h0n")])
 effect_modifier_arr = Array[float]([3.0, 6.0, 9.0, 12.0, 15.0])
 max_level = 5
@@ -106,7 +107,7 @@ base_effect_modifier = 3.0
 effect_modifier_multiplier = 3.0
 unlocked = false
 unlock_level = 0
-unlocks = Array[Resource]([])
+unlocks = Array[Resource]([ExtResource("6_k72jy")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0
