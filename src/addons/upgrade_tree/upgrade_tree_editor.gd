@@ -237,9 +237,33 @@ func _clear_upgrade_tree() -> void:
 
 #FIXME: Need to handle this better when we have non-minigame trees
 func _save_upgrade(upgrade: MinigameUpgrade):
-	if upgrade.resource_path:
-		upgrade.set_meta("tree_editor_version_saved", UpgradeTreeEditorVersion)
-		ResourceSaver.save(upgrade)
+	if !upgrade.resource_path:
+		return
+
+	if upgrade.has_meta("tree_editor_version_added"):
+		var ver := upgrade.get_meta("tree_editor_version_added")
+		upgrade.set_meta("tree_editor_version_added", null) #remove, need _ prefix for editor
+		upgrade.set_meta("_tree_editor_version_added", ver) #update correct meta name
+
+	if upgrade.has_meta("tree_editor_version_saved"):
+		upgrade.set_meta("tree_editor_version_saved", null) #remove, need _ prefix for editor
+
+	upgrade.set_meta("_tree_editor_version_saved", UpgradeTreeEditorVersion)
+
+	var result := ResourceSaver.save(upgrade)
+	if result != OK:
+		push_error("error saving upgrade: %s", result)
+		upgrade.resource_path = ""
+		return
+
+	if !current_data:
+		push_error("saved upgrade without a tree selected - unable to edit tree")
+		return
+
+	# if the node isn't unlocked by something and wasn't a root, make it a root
+	var unlockable := _upgrade_is_unlockable(upgrade)
+	if !unlockable && !current_data.upgrade_tree_root_nodes.has(upgrade):
+		current_data.upgrade_tree_root_nodes.append(upgrade)
 
 
 # Button press handlers
@@ -331,14 +355,8 @@ func _upgrade_is_unlockable(p_upgrade: BaseUpgrade) -> bool:
 
 func _on_file_selected(path: String) -> void:
 	current_selected_node.upgrade.resource_path = ProjectSettings.localize_path(path)
-	ResourceSaver.save(current_selected_node.upgrade)
-	if !current_data:
-		push_error("saved upgrade without a tree selected - unable to edit")
-		return
-
-	var unlockable := _upgrade_is_unlockable(current_selected_node.upgrade)
-	if !unlockable:
-		current_data.upgrade_tree_root_nodes.append(current_selected_node.upgrade)
+	_save_upgrade(current_selected_node.upgrade)
+	_draw_upgrade_tree(current_data)
 
 
 func change_tree(object: Variant) -> void:
