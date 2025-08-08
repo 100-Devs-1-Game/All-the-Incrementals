@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://cbv0pl4j860i3"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=21 format=3 uid="uid://cbv0pl4j860i3"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_dwqsf"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="2_hggms"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_bk2vr"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_o6dnb"]
 [ext_resource type="Resource" uid="uid://bqtfsjuog7hvf" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_initial_speed_t2.tres" id="6_bk2vr"]
+[ext_resource type="Resource" uid="uid://dhtm5h3d8mmt2" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_speedboost_mult_t1.tres" id="7_bqcl2"]
 
 [sub_resource type="Resource" id="Resource_bqcl2"]
 script = ExtResource("2_o6dnb")
@@ -107,7 +108,7 @@ base_effect_modifier = 1.0
 effect_modifier_multiplier = 1.0
 unlocked = false
 unlock_level = 0
-unlocks = Array[Resource]([ExtResource("6_bk2vr")])
+unlocks = Array[Resource]([ExtResource("6_bk2vr"), ExtResource("7_bqcl2")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0
