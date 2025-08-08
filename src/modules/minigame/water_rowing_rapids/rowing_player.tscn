@@ -1,33 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://mhrfxqqthuy7"]
+[gd_scene load_steps=5 format=3 uid="uid://mhrfxqqthuy7"]
 
 [ext_resource type="Script" uid="uid://dcd2ff4bobsch" path="res://modules/minigame/water_rowing_rapids/rowing_player.gd" id="1_41ocn"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_65ad0"]
 [ext_resource type="PackedScene" uid="uid://c83vkptbsgc61" path="res://modules/minigame/water_rowing_rapids/rowing_ui.tscn" id="3_8qkfb"]
 
-[node name="RowingPlayer" type="Node2D"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8qkfb"]
+bounce = 0.5
+
+[node name="RowingPlayer" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_8qkfb")
+gravity_scale = 0.0
+center_of_mass_mode = 1
+linear_damp = 1.0
+angular_damp = 1.0
 script = ExtResource("1_41ocn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -116.226)
-scale = Vector2(0.311558, 0.311558)
-texture = ExtResource("2_65ad0")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(21, -140.226)
+polygon = PackedVector2Array(-207, 101, 199, 108.226, 236, 106.226, 264, 113.226, 276, 122.226, 268, 136.226, 223, 153.226, 127, 169, -183, 173, -278, 164.226, -320, 144.226, -327, 134.226, -320, 122.226, -287, 110.226)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(21, -140.226)
 color = Color(0.660177, 0.410958, 0.197714, 1)
-polygon = PackedVector2Array(-207, 101, 192, 99, 233, 89, 297, 54, 308, 59, 307, 69, 243, 140, 127, 169, -183, 173, -283, 141, -325, 82, -324, 69, -311, 69)
-
-[node name="Area2D" type="Area2D" parent="Polygon2D"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Polygon2D/Area2D"]
-polygon = PackedVector2Array(-207, 101, 192, 99, 233, 89, 297, 54, 308, 59, 307, 69, 243, 140, 127, 169, -183, 173, -283, 141, -325, 82, -324, 69, -311, 69)
+polygon = PackedVector2Array(-207, 101, 135, 104, 233, 106, 267, 111, 281, 123, 274, 138, 237, 151.226, 127, 169, -183, 173, -282, 165, -322, 147, -331, 135.226, -319.415, 121.084, -283, 109.226)
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygon2D"]
+position = Vector2(0, 4)
 color = Color(0.502376, 0.349917, 0.184573, 1)
 polygon = PackedVector2Array(51, 99.226, 106, 36.226, 107, 33.226, 113, 33.226, 114, 38.226, 109, 40.226, 60, 100.226)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.311558, 0.311558)
+texture = ExtResource("2_65ad0")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -201)
 zoom = Vector2(0.595, 0.595)
 position_smoothing_enabled = true
 

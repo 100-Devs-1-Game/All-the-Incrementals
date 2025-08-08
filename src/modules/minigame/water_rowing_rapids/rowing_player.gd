@@ -1,45 +1,55 @@
-extends Node2D
+extends RigidBody2D
 
-var boat_health := 10
-var boat_row_speed := 85.0
-var boat_ud_speed := 20.0
-var boat_speed_increase := 45.0
+## Regular paddling topspeed of boat
+var speed: float = 300.0
+var boost_impulse: float = 500.0
+## Damping applied to velocity on the boat's broadsides- Aka, "apply extra resistance
+## to the wide sides of the boat to simulate that boats are not hydrodynamic in
+## that direction"
+var broadside_resistance: float = 15.0
+
+## Rotation speed of boat at max speed
+var rotation_max_speed: float = TAU / 5
+## Rotation speed minimum
+var rotation_min_speed: float = TAU / 20
+
 var boat_stability := 100.0
 var boat_max_stability := 100.0
-var boat_stability_drain := 8.0
-var boat_speed_drain := 1.0
-var boat_speed_decrease := 30.0
-var boat_stability_regen := 6.5
 
 
 func _ready() -> void:
-	$Polygon2D/Area2D.area_entered.connect(_boat_touched)
+	pass
 
 
-func _process(delta: float) -> void:
-	global_position.x += boat_row_speed * delta
-	if boat_row_speed > 85.0:
-		boat_row_speed -= boat_speed_drain * delta
-	if boat_row_speed > 300.0:
-		boat_stability -= boat_stability_drain * delta
-	elif boat_row_speed < 300.0 and boat_stability < boat_max_stability:
-		boat_stability += boat_stability_regen * delta
-	if Input.is_action_pressed("up"):
-		global_position.y -= boat_ud_speed * delta
-	elif Input.is_action_pressed("down"):
-		global_position.y += boat_ud_speed * delta
+func _physics_process(delta: float) -> void:
+	linear_velocity += transform.x * Input.get_axis(&"down", &"up") * speed * linear_damp * delta
 
 
-func _boat_touched(area: Area2D):
-	if area.is_in_group("hazzard"):
-		_fail()
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	var forward_speed := transform.x.dot(state.linear_velocity)
+	var broadside_delta := 1 - state.step * broadside_resistance
+	var angular_intent: float = Input.get_axis(&"left", &"right")
+	var rotation_control: float = (
+		-(rotation_max_speed - rotation_min_speed) * min(forward_speed / speed - 1, 1) ** 2
+		+ rotation_max_speed
+	)
+	state.angular_velocity += (angular_intent * rotation_control * angular_damp * state.step)
+	# fake conversion of linear into angular
+	state.linear_velocity -= (
+		transform.x * (abs(angular_intent) * rotation_control * state.step) / rotation_max_speed
+	)
 
+	var broadside_speed := transform.y.dot(state.linear_velocity)
 
-func _boost():
-	boat_row_speed = boat_row_speed + boat_speed_increase
+	if broadside_delta < 0:
+		broadside_delta = 0
+
+	state.linear_velocity -= transform.y * (broadside_speed - broadside_speed * broadside_delta)
 
 
 func _fail():
-	boat_row_speed = clampf(boat_row_speed, 85.0, 1000.0)
-	boat_row_speed = boat_row_speed - boat_speed_decrease
 	boat_stability -= 10.0
+
+
+func _boost():
+	linear_velocity += transform.x * boost_impulse
