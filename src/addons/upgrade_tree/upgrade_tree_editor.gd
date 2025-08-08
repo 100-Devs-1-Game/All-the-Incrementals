@@ -260,7 +260,7 @@ func _on_add_upgrade_pressed() -> void:
 
 			var upgrade_editor_node := current_selected_node as UpgradeEditor
 			if upgrade_editor_node:
-				upgrade.logic = upgrade_editor_node.upgrade.logic
+				upgrade.logic = upgrade_editor_node.upgrade.logic.duplicate(false)
 				upgrade.max_level = upgrade_editor_node.upgrade.max_level
 
 		# explicitly passing null because it auto-connects and that's kinda frustrating tbh
