@@ -8,6 +8,7 @@ enum UpgradeType {
 	INCREASE_SPAWNING_FISH_RATE = 3,
 	INCREASE_OXYGEN_MULT = 4,
 	INCREASE_STARTING_SPEED = 5,
+	INCREASE_SPEEDBOOST_MULT = 6,
 }
 
 @export var type: UpgradeType = UpgradeType.INVALID
@@ -50,7 +51,6 @@ func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
 			)
 			stats.oxygen_capacity_multiplier += _upgrade.get_current_effect_modifier() * 0.05
 			print(stats.oxygen_capacity_multiplier)
-
 		UpgradeType.INCREASE_STARTING_SPEED:
 			print(
 				(
@@ -60,7 +60,10 @@ func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
 			)
 			stats.scrollspeed_initial.x -= _upgrade.get_current_effect_modifier() * 25
 			print(stats.scrollspeed_initial)
-
+		UpgradeType.INCREASE_SPEEDBOOST_MULT:
+			print("WTF - increasing speedboost by %s" % _upgrade.get_current_effect_modifier())
+			stats.speedboost_multiplier += _upgrade.get_current_effect_modifier() / 100.0
+			print(stats.speedboost_multiplier)
 		_:
 			push_error("WTF - upgrade %s is unknown (%s)" % [_upgrade.name, _upgrade.resource_path])
 			assert(false)
