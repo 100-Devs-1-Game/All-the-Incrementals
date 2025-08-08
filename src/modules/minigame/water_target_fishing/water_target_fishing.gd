@@ -48,6 +48,8 @@ func _start() -> void:
 	_distance_since_spawned = stats.spawn_fish_every_x_pixels * stats.spawn_x_starting_fish
 	print("starting with %s fish" % stats.spawn_x_starting_fish)
 	print("fish spawn every %s pixels" % stats.spawn_fish_every_x_pixels)
+	print("oxygen mult %s" % stats.oxygen_capacity_multiplier)
+	print("oxygen total %s/%s" % [stats.oxygen_remaining(), stats.oxygen_capacity()])
 
 
 func _process(_delta: float) -> void:
