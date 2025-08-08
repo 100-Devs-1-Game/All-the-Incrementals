@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d221xrf858pj6" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.gd" id="2_42r0g"]
 [ext_resource type="Script" uid="uid://crcm3yjgpr1fo" path="res://modules/minigame/top_down_2d_controllers/strategies/move_direction_strategy/td_2d_c_mds_input.gd" id="3_xdom8"]
 [ext_resource type="Script" uid="uid://dgxvmcif1cdcd" path="res://modules/minigame/earth_potato_herding/eph_player/states/walk.gd" id="4_kub1s"]
-[ext_resource type="Shader" uid="uid://cbdnos7wwo6gl" path="res://modules/minigame/earth_potato_herding/eph_player/circle.gdshader" id="5_hpfm4"]
+[ext_resource type="Shader" path="res://modules/minigame/earth_potato_herding/eph_player/circle.gdshader" id="5_hpfm4"]
 [ext_resource type="Texture2D" uid="uid://dvr12fl5prm78" path="res://addons/panku_console/res/effect/square_shadow.png" id="6_ho6ah"]
 
 [sub_resource type="Resource" id="Resource_kub1s"]
