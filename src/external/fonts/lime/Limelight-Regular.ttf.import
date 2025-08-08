@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b2acc4v73j881"
-path="res://.godot/imported/Limelight-Regular.ttf-580b2f74910e0586bb4f8147ecf3f688.fontdata"
+path="res://.godot/imported/Limelight-Regular.ttf-9017363320ce399a3dc5f36c0e595bef.fontdata"
 
 [deps]
 
-source_file="res://addons/fonts/lime/Limelight-Regular.ttf"
-dest_files=["res://.godot/imported/Limelight-Regular.ttf-580b2f74910e0586bb4f8147ecf3f688.fontdata"]
+source_file="res://external/fonts/lime/Limelight-Regular.ttf"
+dest_files=["res://.godot/imported/Limelight-Regular.ttf-9017363320ce399a3dc5f36c0e595bef.fontdata"]
 
 [params]
 

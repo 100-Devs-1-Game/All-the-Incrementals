@@ -31,6 +31,6 @@ repos:
         entry: ./.hooks/check_snake_paths.py
         language: python
         language_version: python3
-        exclude: '^\.github/|src/addons/|README\.md$|LICENSE$|^.pre-commit-config.yaml$'
+        exclude: '^\.github/|src/external/|src/addons/|README\.md$|LICENSE$|^.pre-commit-config.yaml$'
 
 exclude: '^src/addons/'
