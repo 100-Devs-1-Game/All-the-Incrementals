@@ -5,7 +5,6 @@ extends Node
 @export var game_popup_menu: GamePopupMenu
 @export var minigame_menu: MinigameMenu
 @export var minigame_overlay: MinigameOverlay
-
 @export var debug_minigame_upgrades: DebugMinigameUpgrades
 
 var minigame_node: BaseMinigame
@@ -30,5 +29,4 @@ func open_upgrade_menu():
 func _process(_delta: float) -> void:
 	if minigame_node:
 		assert(minigame_overlay)
-
 		minigame_overlay.update()

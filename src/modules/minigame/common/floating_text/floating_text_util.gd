@@ -18,7 +18,6 @@ static func floating_text(
 		assert(false)  # Don't add to the root; it causes lag & visual issues
 
 	var instance := FLOATING_TEXT_SCENE.instantiate()
-
 	parent.add_child(instance)
 	instance.position = position
 	instance.reset_physics_interpolation()
