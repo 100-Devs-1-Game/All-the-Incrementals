@@ -204,9 +204,21 @@ func _draw_upgrade_tree(data: MinigameData) -> void:
 	# remove any root upgrades which actually aren't root upgrades, because something unlocks them
 	data.upgrade_tree_root_nodes = data.upgrade_tree_root_nodes.filter(
 		func(upgrade: BaseUpgrade):
-		var unlockable := _upgrade_is_unlockable(upgrade)
-		return !unlockable
+			var unlockable := _upgrade_is_unlockable(upgrade)
+			return !unlockable
 	)
+
+	# remove any duplicate root upgrades
+	var upgrades_found: Array[BaseUpgrade]
+	data.upgrade_tree_root_nodes = data.upgrade_tree_root_nodes.filter(
+		func(upgrade: BaseUpgrade):
+			if !upgrades_found.has(upgrade):
+				upgrades_found.append(upgrade)
+				return true
+
+			return false
+	)
+	upgrades_found.clear()
 
 	for upgrade in data.upgrade_tree_root_nodes:
 		if not upgrade:
