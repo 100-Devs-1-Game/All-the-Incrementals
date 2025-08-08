@@ -69,7 +69,11 @@ func _get_upgrade_button_text(upgrade: BaseUpgrade) -> String:
 
 
 func _on_upgrade_item_pressed(item: TreeItem, upgrade: BaseUpgrade):
-	upgrade.level_up()
+	if debug_popup.was_rmb():
+		upgrade.level_down()
+	else:
+		upgrade.level_up()
+
 	if upgrade is MinigameUpgrade:
 		if upgrade.logic:
 			upgrade.logic._apply_effect(get_tree().current_scene, upgrade)

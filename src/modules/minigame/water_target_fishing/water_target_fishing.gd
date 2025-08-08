@@ -7,8 +7,8 @@ const SECONDS_BEFORE_ENDING_RUN: float = 1
 
 var stats: WTFStats
 
-var _distance_travelled = 0
-var _distance_since_spawned = 0
+var _distance_travelled := 0.0
+var _distance_since_spawned := 0.0
 
 @onready var fish_db: WTFFishDB = %WTFFishDB
 
@@ -25,7 +25,6 @@ func get_pixels_per_second() -> int:
 
 func _enter_tree() -> void:
 	WTFGlobals.minigame = self
-	stats = WTFStats.new()
 
 	## yyyy does it stutter thoooo
 	# I can't find any magic number that solves it :(
@@ -37,16 +36,24 @@ func _exit_tree() -> void:
 	WTFGlobals.minigame = null
 
 
+func _initialize() -> void:
+	stats = WTFStats.new()
+
+
 func _start() -> void:
+	# to handle some upgrades
+	stats.reset()
+
 	# give it an initial amount so we can get some fishies going
 	_distance_since_spawned = stats.spawn_fish_every_x_pixels * stats.spawn_x_starting_fish
+	print("starting with %s fish" % stats.spawn_x_starting_fish)
 
 
 func _process(_delta: float) -> void:
 	ui_speed_value.text = str(get_pixels_per_second())
 	ui_score_value.text = str(get_score())
 	ui_oxygen_value.text = str(WTFGlobals.minigame.stats.oxygen_percentage()) + "%"
-	ui_weight_value.text = str(floori(stats.total_weight()))
+	ui_weight_value.text = str(floori(stats.total_added_weight()))
 	ui_distance_value.text = str(floori(_distance_travelled))
 
 

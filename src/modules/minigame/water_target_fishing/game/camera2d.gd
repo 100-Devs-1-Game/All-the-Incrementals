@@ -22,7 +22,7 @@ func _update() -> void:
 	if _updated:
 		return
 
-	var viewport_size = get_viewport_rect().size
+	var viewport_size := get_viewport_rect().size
 	_visible_rect.position = get_screen_center_position() - viewport_size * 0.5 * zoom
 	_visible_rect.size = viewport_size * zoom
 
