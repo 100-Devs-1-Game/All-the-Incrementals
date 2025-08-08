@@ -22,7 +22,7 @@ var _time_young: float = 0
 
 func grow_up() -> void:
 	eph_adult_spawner.spawn_generic_node_at_position(global_position)
-	queue_free()
+	despawn()
 
 
 func start_herd_by_player() -> void:
@@ -38,7 +38,7 @@ func despawn() -> void:
 	# Last potato standing, it's game over
 	#mini_game.trigger_game_over.emit()
 
-	self.queue_free()
+	super()
 
 
 #endregion
