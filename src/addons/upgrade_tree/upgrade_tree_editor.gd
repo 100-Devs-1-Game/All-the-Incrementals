@@ -16,7 +16,6 @@ var file_dialog: FileDialog
 var graph_edit: GraphEdit
 var add_upgrade: Button
 var delete_upgrade: Button
-var save_upgrade: Button
 var reload_resources: Button
 var dropdown: OptionButton
 
@@ -137,7 +136,6 @@ func _enter_tree() -> void:
 	graph_edit = upgrade_tree_editor_instance.get_node("GraphEdit")
 	add_upgrade = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("AddUpgrade")
 	delete_upgrade = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("DeleteUpgrade")
-	save_upgrade = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("SaveUpgrade")
 	reload_resources = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("ReloadResources")
 	dropdown = upgrade_tree_editor_instance.get_node("UpgradeTreeDropdown")
 
@@ -153,7 +151,6 @@ func _enter_tree() -> void:
 	_make_visible(false)
 	EditorInterface.get_inspector().edited_object_changed.connect(_on_edited_object_changed)
 	add_upgrade.pressed.connect(_on_add_upgrade_pressed)
-	save_upgrade.pressed.connect(_on_save_upgrade_pressed)
 	delete_upgrade.pressed.connect(
 		_on_delete_upgrade_pressed
 	)
@@ -171,6 +168,7 @@ func _enter_tree() -> void:
 	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 	file_dialog.filters = PackedStringArray(["*.tres"])
 	file_dialog.file_selected.connect(_on_file_selected)
+	file_dialog.canceled.connect(_on_file_dialog_closed)
 	file_dialog.name = "Save Upgrade"
 	upgrade_tree_editor_instance.add_child(file_dialog)
 
@@ -286,7 +284,7 @@ func _on_add_upgrade_pressed() -> void:
 		var upgrade = MinigameUpgrade.new()
 		# we can use this in the future to update old upgrades or something
 		# a lil bit of future proofing never hurt innit
-		upgrade.set_meta("tree_editor_version_added", UpgradeTreeEditorVersion)
+		upgrade.set_meta("_tree_editor_version_added", UpgradeTreeEditorVersion)
 		upgrade.name = "New Upgrade"
 		upgrade.position = Vector2(0, 0)
 
@@ -295,18 +293,19 @@ func _on_add_upgrade_pressed() -> void:
 
 			var upgrade_editor_node := current_selected_node as UpgradeEditor
 			if upgrade_editor_node:
-				upgrade.logic = upgrade_editor_node.upgrade.logic.duplicate(false)
+				if upgrade_editor_node.upgrade.logic:
+					upgrade.logic = upgrade_editor_node.upgrade.logic.duplicate(false)
 				upgrade.max_level = upgrade_editor_node.upgrade.max_level
 
 		# explicitly passing null because it auto-connects and that's kinda frustrating tbh
-		_add_node(graph_edit, upgrade, null)
+		var new_node := _add_node(graph_edit, upgrade, null)
+
+		# bit hacky, but it'll do. try to save it straight away, and delete it if the user cancels
+		current_selected_node = new_node
+		file_dialog.popup_centered()
 	else:
 		assert(current_data)
 		push_error("No MiniGameData selected.")
-
-
-func _on_save_upgrade_pressed() -> void:
-	file_dialog.popup_centered()
 
 
 func _try_add_root(p_upgrade: BaseUpgrade) -> bool:
@@ -368,6 +367,11 @@ func _on_file_selected(path: String) -> void:
 	current_selected_node.upgrade.resource_path = ProjectSettings.localize_path(path)
 	_save_upgrade(current_selected_node.upgrade)
 	_draw_upgrade_tree(current_data)
+
+
+func _on_file_dialog_closed() -> void:
+	if !current_selected_node.upgrade.resource_path:
+		_on_delete_upgrade_pressed()
 
 
 func change_tree(object: Variant) -> void:

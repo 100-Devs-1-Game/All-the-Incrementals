@@ -32,11 +32,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Remove Upgrade"
 
-[node name="SaveUpgrade" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 18
-text = "Save Upgrade"
-
 [node name="ReloadResources" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
