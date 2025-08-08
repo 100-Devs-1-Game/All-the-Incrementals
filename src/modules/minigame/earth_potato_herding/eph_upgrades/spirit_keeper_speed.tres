@@ -110,6 +110,4 @@ unlocks = Array[Resource]([])
 description_prefix = "Increase Spirit Keeper speed by"
 description_suffix = ""
 description_modifier_format = 0
-
 metadata/_tree_editor_version_saved = 1
-

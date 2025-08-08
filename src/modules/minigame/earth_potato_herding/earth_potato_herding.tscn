@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cbtiegkndpc6f" path="res://modules/minigame/earth_potato_herding/earth_potato_herding.gd" id="1_kkhpg"]
 [ext_resource type="PackedScene" uid="uid://bx2ptflde5hu" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/spawner/eph_evil_spirit_spawner.tscn" id="2_ag328"]
-[ext_resource type="Texture2D" uid="uid://pskqst4w0e50" path="res://modules/minigame/art/Background.webp" id="2_eeopq"]
+[ext_resource type="Texture2D" uid="uid://pskqst4w0e50" path="res://modules/minigame/art/background.webp" id="2_eeopq"]
 [ext_resource type="PackedScene" uid="uid://mqbrbbxraysb" path="res://modules/minigame/earth_potato_herding/eph_adult/spawner/eph_adult_spawner.tscn" id="2_tk8ls"]
-[ext_resource type="Texture2D" uid="uid://dwajo5hcqdpsl" path="res://modules/minigame/art/Fog.webp" id="3_7gu6e"]
+[ext_resource type="Texture2D" uid="uid://dwajo5hcqdpsl" path="res://modules/minigame/art/fog.webp" id="3_7gu6e"]
 [ext_resource type="PackedScene" uid="uid://vesybpnx50sy" path="res://modules/minigame/earth_potato_herding/eph_adult/eph_adult.tscn" id="3_tk8ls"]
 [ext_resource type="PackedScene" uid="uid://cqhdv2mg3cv3t" path="res://modules/minigame/earth_potato_herding/eph_youngling/spawner/eph_youngling_spawner.tscn" id="3_xo3kj"]
 [ext_resource type="Texture2D" uid="uid://b2jw7ynffcxnk" path="res://modules/minigame/art/magic_circle.webp" id="4_2q4j3"]
@@ -131,7 +131,6 @@ position = Vector2(1003, 530)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(571, 596)
 
-
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-461, -532, -468, 421, 1279, 410, 1253, -512, -437, -546, -534, -598, 1352, -593, 1354, 481, -552, 471, -569, -591)
 
@@ -144,15 +143,10 @@ script = ExtResource("13_2q4j3")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DespawnZone"]
 polygon = PackedVector2Array(-734, -711, -737, 677, 1510, 667, 1500, -724, -855, -749, -824, -845, 1620, -824, 1603, 764, -886, 819, -844, -717)
 
-[node name="MinigameSharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("11_eeopq")]
-minigame_node = NodePath("..")
+[node name="MinigameSharedComponents" parent="." instance=ExtResource("11_eeopq")]
 
 [node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
 visible = false
-
-[node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../../../..")
-
 
 [connection signal="body_entered" from="DespawnZone" to="DespawnZone" method="_on_body_entered"]
 

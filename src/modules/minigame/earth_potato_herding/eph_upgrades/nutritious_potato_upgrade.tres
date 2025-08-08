@@ -110,6 +110,4 @@ unlocks = Array[Resource]([])
 description_prefix = "Increase potato yield by"
 description_suffix = ""
 description_modifier_format = 1
-
 metadata/_tree_editor_version_saved = 1
-

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://yvbn3tb5btx4" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/free_roam.gd" id="3_er4gq"]
 [ext_resource type="Script" uid="uid://bbm78i0skoycb" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/grow_up.gd" id="4_0tlpl"]
 [ext_resource type="Script" uid="uid://rjac1382vllh" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/herd_by_player.gd" id="4_d7cqi"]
-[ext_resource type="Texture2D" uid="uid://crmns8qtpfpj5" path="res://modules/minigame/art/BabyPotato.webp" id="6_58i80"]
+[ext_resource type="Texture2D" uid="uid://crmns8qtpfpj5" path="res://modules/minigame/art/bady_potato.webp" id="6_58i80"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_58i80"]
 radius = 20.0

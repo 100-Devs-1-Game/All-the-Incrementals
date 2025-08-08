@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c653h0282nysv"
-path="res://.godot/imported/Spirithands.webp-2f6851ccb4f44f31b4fb978f58c134fe.ctex"
+uid="uid://bk0jmd7b6st67"
+path="res://.godot/imported/adult_potato.webp-0416b9bf3a68d2eefb7d66bf3e3c49bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/art/Spirithands.webp"
-dest_files=["res://.godot/imported/Spirithands.webp-2f6851ccb4f44f31b4fb978f58c134fe.ctex"]
+source_file="res://modules/minigame/art/adult_potato.webp"
+dest_files=["res://.godot/imported/adult_potato.webp-0416b9bf3a68d2eefb7d66bf3e3c49bd.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pskqst4w0e50"
-path="res://.godot/imported/Background.webp-9f6be27e5d3a4c03eba3c559f79bb364.ctex"
+path="res://.godot/imported/background.webp-7f31617dbaa0f26cd9e905bf49bc5d38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/art/Background.webp"
-dest_files=["res://.godot/imported/Background.webp-9f6be27e5d3a4c03eba3c559f79bb364.ctex"]
+source_file="res://modules/minigame/art/background.webp"
+dest_files=["res://.godot/imported/background.webp-7f31617dbaa0f26cd9e905bf49bc5d38.ctex"]
 
 [params]
 
