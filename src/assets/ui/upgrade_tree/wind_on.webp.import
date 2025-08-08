@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i3fi4secaofx"
-path="res://.godot/imported/Earth_Off.webp-2a69d971a0d3d2c6561782e4a8f88806.ctex"
+uid="uid://dv8l88c5rd3tv"
+path="res://.godot/imported/wind_on.webp-73399b29b0ff7f4cb630de2b735cce53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/upgrade_tree/Earth_Off.webp"
-dest_files=["res://.godot/imported/Earth_Off.webp-2a69d971a0d3d2c6561782e4a8f88806.ctex"]
+source_file="res://assets/ui/upgrade_tree/wind_on.webp"
+dest_files=["res://.godot/imported/wind_on.webp-73399b29b0ff7f4cb630de2b735cce53.ctex"]
 
 [params]
 

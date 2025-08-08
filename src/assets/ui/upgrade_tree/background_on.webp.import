@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv8l88c5rd3tv"
-path="res://.godot/imported/Wind_On.webp-12585e83108f9a8e7e56eb4e37ed1ca9.ctex"
+uid="uid://cwhycls4e3jy3"
+path="res://.godot/imported/background_on.webp-e91f232511c6e12d0bed5526a4ef050b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/upgrade_tree/Wind_On.webp"
-dest_files=["res://.godot/imported/Wind_On.webp-12585e83108f9a8e7e56eb4e37ed1ca9.ctex"]
+source_file="res://assets/ui/upgrade_tree/background_on.webp"
+dest_files=["res://.godot/imported/background_on.webp-e91f232511c6e12d0bed5526a4ef050b.ctex"]
 
 [params]
 

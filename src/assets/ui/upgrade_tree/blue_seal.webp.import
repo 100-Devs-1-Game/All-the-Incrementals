@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd5q04o2ysdg5"
-path="res://.godot/imported/Fire_On.webp-37058880e6b86d6335bd6724c8c672c5.ctex"
+uid="uid://ffiihasabc5k"
+path="res://.godot/imported/blue_seal.webp-4abbd280881ef8a4360a8ef613146f43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/upgrade_tree/Fire_On.webp"
-dest_files=["res://.godot/imported/Fire_On.webp-37058880e6b86d6335bd6724c8c672c5.ctex"]
+source_file="res://assets/ui/upgrade_tree/blue_seal.webp"
+dest_files=["res://.godot/imported/blue_seal.webp-4abbd280881ef8a4360a8ef613146f43.ctex"]
 
 [params]
 

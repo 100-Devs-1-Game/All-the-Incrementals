@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk2dkao5rcxkf"
-path="res://.godot/imported/GoldSeal.webp-b6ad3e5999f5bfece4d6efcce60f2152.ctex"
+uid="uid://ci4g6jhefxagf"
+path="res://.godot/imported/earth_on.webp-e68d03ac2cef79c26a3f46a68b875586.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/upgrade_tree/GoldSeal.webp"
-dest_files=["res://.godot/imported/GoldSeal.webp-b6ad3e5999f5bfece4d6efcce60f2152.ctex"]
+source_file="res://assets/ui/upgrade_tree/earth_on.webp"
+dest_files=["res://.godot/imported/earth_on.webp-e68d03ac2cef79c26a3f46a68b875586.ctex"]
 
 [params]
 

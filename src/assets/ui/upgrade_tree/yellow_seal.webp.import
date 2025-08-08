@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c845irg6ua4ec"
-path="res://.godot/imported/YellowSeal.webp-278a5d1ce118301d88d15359f9c53dee.ctex"
+path="res://.godot/imported/yellow_seal.webp-c03132b4bd3ebae1ad138ce34306920d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/upgrade_tree/YellowSeal.webp"
-dest_files=["res://.godot/imported/YellowSeal.webp-278a5d1ce118301d88d15359f9c53dee.ctex"]
+source_file="res://assets/ui/upgrade_tree/yellow_seal.webp"
+dest_files=["res://.godot/imported/yellow_seal.webp-c03132b4bd3ebae1ad138ce34306920d.ctex"]
 
 [params]
 

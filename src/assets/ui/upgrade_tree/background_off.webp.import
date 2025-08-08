@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j75oe31erpw3"
-path="res://.godot/imported/Wind_Off.webp-187d9e3748d9d53d8d39f0acea1cc0a1.ctex"
+uid="uid://b81yxykydsfti"
+path="res://.godot/imported/background_off.webp-db25aa611f02ab4e4fc745cf196417f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/upgrade_tree/Wind_Off.webp"
-dest_files=["res://.godot/imported/Wind_Off.webp-187d9e3748d9d53d8d39f0acea1cc0a1.ctex"]
+source_file="res://assets/ui/upgrade_tree/background_off.webp"
+dest_files=["res://.godot/imported/background_off.webp-db25aa611f02ab4e4fc745cf196417f1.ctex"]
 
 [params]
 

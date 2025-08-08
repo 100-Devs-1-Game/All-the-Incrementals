@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwhycls4e3jy3"
-path="res://.godot/imported/BackgroundOn.webp-0d16b13559caa1663809d129986359e5.ctex"
+uid="uid://bhfa221lc44d"
+path="res://.godot/imported/lineart1.webp-35bf50d650b50cef61e35bdd3c142fdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/upgrade_tree/BackgroundOn.webp"
-dest_files=["res://.godot/imported/BackgroundOn.webp-0d16b13559caa1663809d129986359e5.ctex"]
+source_file="res://assets/ui/upgrade_tree/lineart1.webp"
+dest_files=["res://.godot/imported/lineart1.webp-35bf50d650b50cef61e35bdd3c142fdc.ctex"]
 
 [params]
 

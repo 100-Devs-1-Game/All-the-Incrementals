@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://dntdim0jjlhy1"]
 
 [ext_resource type="Script" uid="uid://drfyahgpyskxs" path="res://modules/upgrade/ui/upgrade_tree.gd" id="1_bc6uk"]
-[ext_resource type="Texture2D" uid="uid://cd5q04o2ysdg5" path="res://assets/ui/upgrade_tree/Fire_On.webp" id="4_4prp1"]
-[ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/Lineart1.webp" id="5_yvn7f"]
+[ext_resource type="Texture2D" uid="uid://cd5q04o2ysdg5" path="res://assets/ui/upgrade_tree/fire_on.webp" id="4_4prp1"]
+[ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/lineart1.webp" id="5_yvn7f"]
 [ext_resource type="Texture2D" uid="uid://dt2e36f2dyeda" path="res://assets/icons/glowing_wind_skn.png" id="6_ele8a"]
 [ext_resource type="Script" uid="uid://dwlrgoard8eqa" path="res://modules/upgrade/ui/fill_button.gd" id="6_yvn7f"]
 [ext_resource type="Script" uid="uid://dcajbb2nsjenl" path="res://modules/upgrade/ui/upgrade_tree_camera.gd" id="8_bc6uk"]
@@ -274,6 +274,7 @@ mouse_filter = 2
 color = Color(1, 0.214969, 0.44438, 1)
 
 [node name="Filler" type="ColorRect" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
+layout_mode = 0
 offset_bottom = 50.0
 mouse_filter = 2
 color = Color(6.73831e-07, 0.65816, 0.653388, 1)

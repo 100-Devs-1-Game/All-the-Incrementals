@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://beur62xrtffs5"]
 
 [ext_resource type="Script" uid="uid://d0was623er45f" path="res://modules/upgrade/ui/ui_upgrade_template.gd" id="1_32x2s"]
-[ext_resource type="Texture2D" uid="uid://b81yxykydsfti" path="res://assets/ui/upgrade_tree/BackgroundOff.webp" id="1_l1bu1"]
-[ext_resource type="Texture2D" uid="uid://cwhycls4e3jy3" path="res://assets/ui/upgrade_tree/BackgroundOn.webp" id="2_32x2s"]
-[ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/Lineart1.webp" id="3_ih5fn"]
-[ext_resource type="Texture2D" uid="uid://bk2dkao5rcxkf" path="res://assets/ui/upgrade_tree/GoldSeal.webp" id="4_d4a2w"]
+[ext_resource type="Texture2D" uid="uid://b81yxykydsfti" path="res://assets/ui/upgrade_tree/background_off.webp" id="1_l1bu1"]
+[ext_resource type="Texture2D" uid="uid://cwhycls4e3jy3" path="res://assets/ui/upgrade_tree/background_on.webp" id="2_32x2s"]
+[ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/lineart1.webp" id="3_ih5fn"]
+[ext_resource type="Texture2D" uid="uid://bk2dkao5rcxkf" path="res://assets/ui/upgrade_tree/gold_seal.webp" id="4_d4a2w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhghn"]
 size = Vector2(47.6152, 49.5702)

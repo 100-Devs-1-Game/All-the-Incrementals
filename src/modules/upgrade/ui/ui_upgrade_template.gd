@@ -10,17 +10,17 @@ func init(upgradetree: UpgradeTree, essence_type: String):
 	upgrade_tree = upgradetree
 	match essence_type:
 		"Wind":
-			$Background.texture = load("res://assets/ui/upgrade_tree/Wind_Off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/Wind_On.webp")
+			$Background.texture = load("res://assets/ui/upgrade_tree/wind_off.webp")
+			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/wind_on.webp")
 		"Fire":
-			$Background.texture = load("res://assets/ui/upgrade_tree/Fire_Off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/Fire_On.webp")
+			$Background.texture = load("res://assets/ui/upgrade_tree/fire_off.webp")
+			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/fire_on.webp")
 		"Water":
-			$Background.texture = load("res://assets/ui/upgrade_tree/Water_Off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/Water_On.webp")
+			$Background.texture = load("res://assets/ui/upgrade_tree/water_off.webp")
+			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/water_on.webp")
 		"Earth":
-			$Background.texture = load("res://assets/ui/upgrade_tree/Earth_Off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/Earth_On.webp")
+			$Background.texture = load("res://assets/ui/upgrade_tree/earth_off.webp")
+			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/earth_on.webp")
 
 
 func reload_base_upgrade_data() -> void:

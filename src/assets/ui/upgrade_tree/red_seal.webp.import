@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsphu8ygn4boi"
-path="res://.godot/imported/GreenSeal.webp-5b1b9d60342e15278c6d353de82996f8.ctex"
+uid="uid://yiwk0wwp261i"
+path="res://.godot/imported/red_seal.webp-8ae68af3362a2688aa150818eb4f32a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/upgrade_tree/GreenSeal.webp"
-dest_files=["res://.godot/imported/GreenSeal.webp-5b1b9d60342e15278c6d353de82996f8.ctex"]
+source_file="res://assets/ui/upgrade_tree/red_seal.webp"
+dest_files=["res://.godot/imported/red_seal.webp-8ae68af3362a2688aa150818eb4f32a6.ctex"]
 
 [params]
 
