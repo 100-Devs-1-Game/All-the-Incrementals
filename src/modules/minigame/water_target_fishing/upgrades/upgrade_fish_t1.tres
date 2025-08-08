@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://c1au06cx4sygq"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_0ih0k"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_b8cvd"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_xiaio"]
+[ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="4_vmhpg"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_ajr2j"]
+[ext_resource type="Resource" uid="uid://du2juy37elegu" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_fish_t2.tres" id="6_s5kpt"]
+
+[sub_resource type="Resource" id="Resource_pxb4k"]
+script = ExtResource("2_b8cvd")
+essence = ExtResource("3_xiaio")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_5sbol"]
+script = ExtResource("1_0ih0k")
+earth = 0
+fire = 0
+water = 1
+wind = 0
+slots = Array[ExtResource("2_b8cvd")]([SubResource("Resource_pxb4k")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_jrowk"]
+script = ExtResource("2_b8cvd")
+essence = ExtResource("3_xiaio")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_swl10"]
+script = ExtResource("1_0ih0k")
+earth = 0
+fire = 0
+water = 1
+wind = 0
+slots = Array[ExtResource("2_b8cvd")]([SubResource("Resource_jrowk")])
+
+[sub_resource type="Resource" id="Resource_rsyy8"]
+script = ExtResource("2_b8cvd")
+essence = ExtResource("3_xiaio")
+amount = 6
+
+[sub_resource type="Resource" id="Resource_bnkuu"]
+script = ExtResource("1_0ih0k")
+earth = 0
+fire = 0
+water = 6
+wind = 0
+slots = Array[ExtResource("2_b8cvd")]([SubResource("Resource_rsyy8")])
+
+[sub_resource type="Resource" id="Resource_tr6sh"]
+script = ExtResource("2_b8cvd")
+essence = ExtResource("3_xiaio")
+amount = 11
+
+[sub_resource type="Resource" id="Resource_vmwxr"]
+script = ExtResource("1_0ih0k")
+earth = 0
+fire = 0
+water = 11
+wind = 0
+slots = Array[ExtResource("2_b8cvd")]([SubResource("Resource_tr6sh")])
+
+[sub_resource type="Resource" id="Resource_bgunb"]
+script = ExtResource("2_b8cvd")
+essence = ExtResource("3_xiaio")
+amount = 16
+
+[sub_resource type="Resource" id="Resource_68ks2"]
+script = ExtResource("1_0ih0k")
+earth = 0
+fire = 0
+water = 16
+wind = 0
+slots = Array[ExtResource("2_b8cvd")]([SubResource("Resource_bgunb")])
+
+[sub_resource type="Resource" id="Resource_ghe2v"]
+script = ExtResource("2_b8cvd")
+essence = ExtResource("3_xiaio")
+amount = 21
+
+[sub_resource type="Resource" id="Resource_vqsjp"]
+script = ExtResource("1_0ih0k")
+earth = 0
+fire = 0
+water = 21
+wind = 0
+slots = Array[ExtResource("2_b8cvd")]([SubResource("Resource_ghe2v")])
+
+[sub_resource type="Resource" id="Resource_tbqmd"]
+script = ExtResource("4_vmhpg")
+type = 2
+metadata/_custom_type_script = "uid://82mjh0pcfce8"
+
+[resource]
+script = ExtResource("5_ajr2j")
+logic = SubResource("Resource_tbqmd")
+unlocks_feature = ""
+name = "+1 Starting Fish"
+flavor = ""
+position = Vector2(-320, 0)
+cost_arr = Array[ExtResource("1_0ih0k")]([SubResource("Resource_swl10"), SubResource("Resource_bnkuu"), SubResource("Resource_vmwxr"), SubResource("Resource_68ks2"), SubResource("Resource_vqsjp")])
+effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0])
+max_level = 5
+base_cost = SubResource("Resource_5sbol")
+base_cost_multiplier = 5.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([ExtResource("6_s5kpt")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_saved = 1
