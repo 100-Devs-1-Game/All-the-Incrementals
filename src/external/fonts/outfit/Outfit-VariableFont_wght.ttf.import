@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bnc3ho02m7dln"
-path="res://.godot/imported/Outfit-VariableFont_wght.ttf-5fd7479a18fc460525e804a86ecd1b43.fontdata"
+path="res://.godot/imported/Outfit-VariableFont_wght.ttf-9e6ec5ed572436ec1b840c0b9bcaa4c7.fontdata"
 
 [deps]
 
-source_file="res://addons/fonts/outfit/Outfit-VariableFont_wght.ttf"
-dest_files=["res://.godot/imported/Outfit-VariableFont_wght.ttf-5fd7479a18fc460525e804a86ecd1b43.fontdata"]
+source_file="res://external/fonts/outfit/Outfit-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/Outfit-VariableFont_wght.ttf-9e6ec5ed572436ec1b840c0b9bcaa4c7.fontdata"]
 
 [params]
 
