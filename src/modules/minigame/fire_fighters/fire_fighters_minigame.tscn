@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=32 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_ewfdg"]
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.tscn" id="2_jiygg"]
@@ -59,6 +59,15 @@ sources/0 = SubResource("TileSetAtlasSource_n1sel")
 [sub_resource type="TileSet" id="TileSet_ymaye"]
 tile_size = Vector2i(32, 32)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jiygg"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jxvl4"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q2uva"]
+normal = Vector2(-1, 0)
+
 [node name="FireFighters" type="Node2D"]
 script = ExtResource("1_ewfdg")
 player_scene = ExtResource("2_jiygg")
@@ -113,6 +122,23 @@ metadata/_custom_type_script = "uid://bk20clpaekonn"
 [node name="Items" type="Node" parent="."]
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
+
+[node name="Border" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+shape = SubResource("WorldBoundaryShape2D_jiygg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
+position = Vector2(0, 1080)
+shape = SubResource("WorldBoundaryShape2D_jxvl4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Border"]
+shape = SubResource("WorldBoundaryShape2D_jxvl4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
+position = Vector2(1920, 0)
+shape = SubResource("WorldBoundaryShape2D_q2uva")
 
 [connection signal="timeout" from="FireFightersMinigameItemSpawner/Timer" to="FireFightersMinigameItemSpawner" method="_on_timer_timeout"]
 
