@@ -21,5 +21,4 @@ func _on_body_entered(body: Node2D) -> void:
 			queue_free()
 	else:
 		if body is not FireFightersMinigamePlayer:
-			# TODO crap
 			type._on_destroy(game, self)
