@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://beur62xrtffs5"]
+[gd_scene load_steps=7 format=3 uid="uid://beur62xrtffs5"]
 
 [ext_resource type="Script" uid="uid://d0was623er45f" path="res://modules/upgrade/ui/ui_upgrade_template.gd" id="1_32x2s"]
 [ext_resource type="Texture2D" uid="uid://b81yxykydsfti" path="res://assets/ui/upgrade_tree/BackgroundOff.webp" id="1_l1bu1"]
 [ext_resource type="Texture2D" uid="uid://cwhycls4e3jy3" path="res://assets/ui/upgrade_tree/BackgroundOn.webp" id="2_32x2s"]
 [ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/Lineart1.webp" id="3_ih5fn"]
 [ext_resource type="Texture2D" uid="uid://bk2dkao5rcxkf" path="res://assets/ui/upgrade_tree/GoldSeal.webp" id="4_d4a2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhghn"]
+size = Vector2(47.6152, 49.5702)
 
 [node name="UiUpgradeTemplate" type="Node2D"]
 script = ExtResource("1_32x2s")
@@ -26,32 +29,13 @@ texture = ExtResource("4_d4a2w")
 visible = false
 scale = Vector2(0.76, 0.76)
 
-[node name="Level" type="Label" parent="."]
-visible = false
-offset_left = -35.0
-offset_top = -54.0
-offset_right = 45.0
-offset_bottom = -12.0
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 30
-text = "0/5"
-horizontal_alignment = 2
+[node name="ClickArea2D" type="Area2D" parent="."]
+z_index = 50
 
-[node name="TextureButton" type="TextureButton" parent="."]
-visible = false
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-tooltip_text = "test"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea2D"]
+z_index = 55
+position = Vector2(0.63441, 0.671546)
+rotation = 0.815069
+shape = SubResource("RectangleShape2D_dhghn")
 
-[node name="Description" type="Label" parent="."]
-visible = false
-offset_left = -35.0
-offset_top = -54.0
-offset_right = 45.0
-offset_bottom = -12.0
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 30
-text = "0/5"
-horizontal_alignment = 2
+[connection signal="input_event" from="ClickArea2D" to="." method="_on_click_area_2d_input_event"]
