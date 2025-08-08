@@ -9,6 +9,12 @@ func _ready() -> void:
 	mini_game.spirit_keeper_brightness.connect(_on_player_brightness_changed)
 
 
+func _exit_tree() -> void:
+	var mini_game = get_tree().get_first_node_in_group("earth_potato_herding")
+	mini_game.spirit_keeper_speed.disconnect(_on_player_speed_changed)
+	mini_game.spirit_keeper_brightness.disconnect(_on_player_brightness_changed)
+
+
 func _on_evil_spirit_repel_area_body_entered(body: Node2D) -> void:
 	body.start_repel_from_player()
 
