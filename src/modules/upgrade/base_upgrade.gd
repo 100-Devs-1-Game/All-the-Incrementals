@@ -109,6 +109,16 @@ func level_up() -> void:
 	SaveGameManager.save()
 
 
+func level_down() -> void:
+	var current_level = get_level()
+	#TODO: this shouldn't need a +1, but it causes an assert elsewhere
+	if current_level <= NO_LEVEL + 1:
+		push_error("Tried to level down past min level")
+		return
+	SaveGameManager.world_state.minigame_unlock_levels[get_uid()] = (current_level - 1)
+	SaveGameManager.save()
+
+
 # 0 = level 1, ...
 func get_level() -> int:
 	return SaveGameManager.world_state.minigame_unlock_levels.get(get_uid(), NO_LEVEL)
