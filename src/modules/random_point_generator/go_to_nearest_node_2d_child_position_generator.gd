@@ -3,7 +3,9 @@ extends PointGenerator
 
 #region ------------------------ PRIVATE VARS ----------------------------------
 
+# Node that uses point generator
 var _parent_node: Node2D
+# Node that contains childeren to which closest distance is calculated
 var _node_2d: Node2D
 
 #endregion
