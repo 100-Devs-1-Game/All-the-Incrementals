@@ -204,9 +204,21 @@ func _draw_upgrade_tree(data: MinigameData) -> void:
 	# remove any root upgrades which actually aren't root upgrades, because something unlocks them
 	data.upgrade_tree_root_nodes = data.upgrade_tree_root_nodes.filter(
 		func(upgrade: BaseUpgrade):
-		var unlockable := _upgrade_is_unlockable(upgrade)
-		return !unlockable
+			var unlockable := _upgrade_is_unlockable(upgrade)
+			return !unlockable
 	)
+
+	# remove any duplicate root upgrades
+	var upgrades_found: Array[BaseUpgrade]
+	data.upgrade_tree_root_nodes = data.upgrade_tree_root_nodes.filter(
+		func(upgrade: BaseUpgrade):
+			if !upgrades_found.has(upgrade):
+				upgrades_found.append(upgrade)
+				return true
+
+			return false
+	)
+	upgrades_found.clear()
 
 	for upgrade in data.upgrade_tree_root_nodes:
 		if not upgrade:
@@ -225,9 +237,33 @@ func _clear_upgrade_tree() -> void:
 
 #FIXME: Need to handle this better when we have non-minigame trees
 func _save_upgrade(upgrade: MinigameUpgrade):
-	if upgrade.resource_path:
-		upgrade.set_meta("tree_editor_version_saved", UpgradeTreeEditorVersion)
-		ResourceSaver.save(upgrade)
+	if !upgrade.resource_path:
+		return
+
+	if upgrade.has_meta("tree_editor_version_added"):
+		var ver := upgrade.get_meta("tree_editor_version_added")
+		upgrade.set_meta("tree_editor_version_added", null) #remove, need _ prefix for editor
+		upgrade.set_meta("_tree_editor_version_added", ver) #update correct meta name
+
+	if upgrade.has_meta("tree_editor_version_saved"):
+		upgrade.set_meta("tree_editor_version_saved", null) #remove, need _ prefix for editor
+
+	upgrade.set_meta("_tree_editor_version_saved", UpgradeTreeEditorVersion)
+
+	var result := ResourceSaver.save(upgrade)
+	if result != OK:
+		push_error("error saving upgrade: %s", result)
+		upgrade.resource_path = ""
+		return
+
+	if !current_data:
+		push_error("saved upgrade without a tree selected - unable to edit tree")
+		return
+
+	# if the node isn't unlocked by something and wasn't a root, make it a root
+	var unlockable := _upgrade_is_unlockable(upgrade)
+	if !unlockable && !current_data.upgrade_tree_root_nodes.has(upgrade):
+		current_data.upgrade_tree_root_nodes.append(upgrade)
 
 
 # Button press handlers
@@ -248,7 +284,7 @@ func _on_add_upgrade_pressed() -> void:
 
 			var upgrade_editor_node := current_selected_node as UpgradeEditor
 			if upgrade_editor_node:
-				upgrade.logic = upgrade_editor_node.upgrade.logic
+				upgrade.logic = upgrade_editor_node.upgrade.logic.duplicate(false)
 				upgrade.max_level = upgrade_editor_node.upgrade.max_level
 
 		# explicitly passing null because it auto-connects and that's kinda frustrating tbh
@@ -262,6 +298,17 @@ func _on_save_upgrade_pressed() -> void:
 	file_dialog.popup_centered()
 
 
+func _try_add_root(p_upgrade: BaseUpgrade) -> bool:
+	if !current_data:
+		return false
+
+	if _upgrade_is_unlockable(p_upgrade) || current_data.upgrade_tree_root_nodes.has(p_upgrade):
+		return false
+
+	current_data.upgrade_tree_root_nodes.append(p_upgrade)
+	return true
+
+
 func _on_delete_upgrade_pressed() -> void:
 	for child in graph_edit.get_children():
 		if child is UpgradeEditor:
@@ -270,8 +317,12 @@ func _on_delete_upgrade_pressed() -> void:
 				_save_upgrade(child.upgrade)
 				graph_edit.disconnect_node(child.name, 0, current_selected_node.name, 0)
 			if child.upgrade in current_selected_node.upgrade.unlocks:
-				child.upgrade.unlocks.erase(current_selected_node.upgrade)
+				_try_add_root(child.upgrade) #todo: we could force them to connect instead?
 				graph_edit.disconnect_node(current_selected_node.name, 0, child.name, 0)
+
+	# remove it as a root if it was one. if not, then nothing happens
+	current_data.upgrade_tree_root_nodes.erase(current_selected_node.upgrade)
+
 	graph_edit.remove_child(current_selected_node)
 	current_selected_node = null
 
@@ -304,14 +355,8 @@ func _upgrade_is_unlockable(p_upgrade: BaseUpgrade) -> bool:
 
 func _on_file_selected(path: String) -> void:
 	current_selected_node.upgrade.resource_path = ProjectSettings.localize_path(path)
-	ResourceSaver.save(current_selected_node.upgrade)
-	if !current_data:
-		push_error("saved upgrade without a tree selected - unable to edit")
-		return
-
-	var unlockable := _upgrade_is_unlockable(current_selected_node.upgrade)
-	if !unlockable:
-		current_data.upgrade_tree_root_nodes.append(current_selected_node.upgrade)
+	_save_upgrade(current_selected_node.upgrade)
+	_draw_upgrade_tree(current_data)
 
 
 func change_tree(object: Variant) -> void:
@@ -353,7 +398,6 @@ func _on_disconnection_request(from_node, from_port, to_node, to_port):
 	if current_data:
 		var idx := current_data.upgrade_tree_root_nodes.find(to_node_instance.upgrade)
 		if idx < 0:
-			print("disconnected, adding as root: ", to_node_instance.upgrade.name)
 			current_data.upgrade_tree_root_nodes.append(to_node_instance.upgrade)
 
 	_save_upgrade(from_node_instance.upgrade)
@@ -393,7 +437,6 @@ func _on_connection_request(from_node, from_port, to_node, to_port):
 	if current_data:
 		var idx := current_data.upgrade_tree_root_nodes.find(to_node_instance.upgrade)
 		if idx >= 0:
-			print("found as root, removing: ", to_node_instance.upgrade.name)
 			current_data.upgrade_tree_root_nodes.remove_at(idx)
 
 	# todo: handle removing any other unlock?
