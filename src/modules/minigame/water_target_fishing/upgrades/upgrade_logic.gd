@@ -18,6 +18,11 @@ func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
 		assert(false)
 		return
 
+	# any upgrades applied during the game should do nothing - restart the level to see them
+	if WTFGlobals.minigame._started:
+		print("restart the scene to apply upgrade changes")
+		return
+
 	var stats := WTFGlobals.minigame.stats
 
 	match type:

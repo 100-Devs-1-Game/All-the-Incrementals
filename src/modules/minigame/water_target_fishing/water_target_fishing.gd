@@ -10,6 +10,8 @@ var stats: WTFStats
 var _distance_travelled := 0.0
 var _distance_since_spawned := 0.0
 
+var _started: bool = false
+
 @onready var fish_db: WTFFishDB = %WTFFishDB
 
 @onready var ui_speed_value: RichTextLabel = %UISpeedValue
@@ -50,6 +52,8 @@ func _start() -> void:
 	print("fish spawn every %s pixels" % stats.spawn_fish_every_x_pixels)
 	print("oxygen mult %s" % stats.oxygen_capacity_multiplier)
 	print("oxygen total %s/%s" % [stats.oxygen_remaining(), stats.oxygen_capacity()])
+
+	_started = true
 
 
 func _process(_delta: float) -> void:
