@@ -67,5 +67,8 @@ position = Vector2(54, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Detection Area"]
 shape = SubResource("RectangleShape2D_k72l2")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="body_entered" from="Player Detection Area" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="body_exited" from="Player Detection Area" to="." method="_on_player_detection_area_body_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
