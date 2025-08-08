@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @export var fire_cooking_data: MinigameData
 @export var fire_fighters_data: MinigameData
@@ -8,6 +8,14 @@ extends Node2D
 
 func _ready() -> void:
 	_debug_force_settlement_data()
+
+
+func debug_enter_shrine() -> void:
+	SceneLoader.enter_shrine()
+
+
+func debug_enter_clayport() -> void:
+	SceneLoader.enter_clayport()
 
 
 func debug_start_fire_cooking() -> void:

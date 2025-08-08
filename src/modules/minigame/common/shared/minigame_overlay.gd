@@ -9,6 +9,8 @@ extends PanelContainer
 	set(b):
 		_countdown_panel.visible = b
 
+var minigame: BaseMinigame
+
 @onready var _score_panel: HBoxContainer = %ScorePanel
 #@onready var _score_label: Label = %ScoreLabel
 #@onready var _score_icon: TextureRect = %ScoreIcon
@@ -20,7 +22,8 @@ extends PanelContainer
 @onready var _countdown_value: Label = %CountdownValue
 
 
-func update(minigame: BaseMinigame):
+
+func update():
 	if enable_score_display:
 		_update_score(minigame.get_score())
 	if enable_countdown_display:

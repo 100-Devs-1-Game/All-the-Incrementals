@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfja1f2kdxjsq"]
+
+[ext_resource type="PackedScene" uid="uid://dc01e8bpvr2jc" path="res://assets/overworld/models/props/candle/candle_holder.gltf" id="1_u8i3s"]
+
+[node name="candle_holder2" instance=ExtResource("1_u8i3s")]

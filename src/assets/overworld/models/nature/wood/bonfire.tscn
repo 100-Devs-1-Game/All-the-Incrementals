@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b10caj1re0qcc"]
+
+[ext_resource type="PackedScene" uid="uid://d0dv21tavdg33" path="res://assets/overworld/models/nature/wood/bonfire.gltf" id="1_4ufxm"]
+
+[node name="bonfire" instance=ExtResource("1_4ufxm")]

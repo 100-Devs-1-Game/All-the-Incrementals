@@ -39,6 +39,8 @@ func judge_input(note_type: NOTE_TYPE):
 	#var note: NoteData = chart.get_nearest_note(conductor.song_position)
 
 	if note == null:
+		judgment_label.text = "Miss"
+		%Early_Late.text = ""
 		return
 	var time = note.cached_absolute_beat - conductor.song_position
 	var absolute_time = abs(time)
@@ -47,7 +49,7 @@ func judge_input(note_type: NOTE_TYPE):
 		%Early_Late.text = ""
 	elif absolute_time <= judgments.great:
 		judgment_label.text = "Great"
-		%Early_Late.text = "Early" if time < 0 else "Late"
+		%Early_Late.text = "Early" if time > 0 else "Late"
 	elif absolute_time <= judgments.okay:
 		judgment_label.text = "Okay"
-		%Early_Late.text = "Early" if time < 0 else "Late"
+		%Early_Late.text = "Early" if time > 0 else "Late"

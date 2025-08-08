@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3s6vlq4wy6ic"]
+
+[ext_resource type="PackedScene" uid="uid://dx37205y5pq3y" path="res://assets/overworld/models/props/bell/bell_01.gltf" id="1_rodl8"]
+
+[node name="bell_012" instance=ExtResource("1_rodl8")]

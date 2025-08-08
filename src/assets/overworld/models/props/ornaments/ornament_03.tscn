@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhor2w8x1nede"]
+
+[ext_resource type="PackedScene" uid="uid://bdkgo0estytpy" path="res://assets/overworld/models/props/ornaments/ornament_03.gltf" id="1_tkgl6"]
+[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://assets/overworld/materials/simple/metallic/metallic_gray.tres" id="2_g5crh"]
+
+[node name="ornament_03" instance=ExtResource("1_tkgl6")]
+
+[node name="7" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_g5crh")

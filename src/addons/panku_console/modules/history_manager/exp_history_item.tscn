@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhsvbbxqlb1xy"]
 
 [ext_resource type="Theme" uid="uid://bk18yfu0d77wk" path="res://addons/panku_console/res/panku_console_theme.tres" id="1_rsfup"]
-[ext_resource type="Script" path="res://addons/panku_console/modules/history_manager/exp_history_item.gd" id="2_a3mfr"]
+[ext_resource type="Script" uid="uid://dnubwryjqmyyi" path="res://addons/panku_console/modules/history_manager/exp_history_item.gd" id="2_a3mfr"]
 [ext_resource type="Texture2D" uid="uid://hf6h8otb8qkv" path="res://addons/panku_console/res/icons2/favorite.svg" id="3_1odvn"]
 
 [node name="ExpItem" type="HBoxContainer" node_paths=PackedStringArray("checkbox", "fav_icon", "line_edit")]

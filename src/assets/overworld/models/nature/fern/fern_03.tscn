@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://md8btn1ewvxj"]
+
+[ext_resource type="PackedScene" uid="uid://cel1kpxs6j4ae" path="res://assets/overworld/models/nature/fern/fern_03.gltf" id="1_ves5d"]
+
+[node name="fern_03" instance=ExtResource("1_ves5d")]

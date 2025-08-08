@@ -1,0 +1,35 @@
+# Blender 4.5.0 MTL File: 'the_shrine_item_organize.blend'
+# www.blender.org
+
+newmtl FloorMd
+Ns 186.790771
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/KB3D_floorM_Diffuse.jpg
+map_d C:/KB3D_floorM_Diffuse.jpg
+map_Bump -bm 1.000000 C:/KB3D_floorM_Normal.jpg
+
+newmtl PillarsMd
+Ns 186.790771
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/KB3D_pillarsM_Diffuse.jpg
+map_d C:/KB3D_pillarsM_Diffuse.jpg
+map_Bump -bm 1.000000 C:/KB3D_pillarsM_Normal.jpg
+
+newmtl StoneMd
+Ns 186.790771
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd C:/KB3D_stoneM_Diffuse.jpg
+map_d C:/KB3D_stoneM_Diffuse.jpg
+map_Bump -bm 1.000000 C:/KB3D_stoneM_Normal.jpg

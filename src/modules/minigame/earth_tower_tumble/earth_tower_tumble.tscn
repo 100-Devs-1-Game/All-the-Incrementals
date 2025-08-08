@@ -162,19 +162,19 @@ script = ExtResource("14_uvjps")
 position = Vector2(0, 239)
 shape = SubResource("RectangleShape2D_wlaab")
 
-[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_0yx17")]
-minigame_node = NodePath("..")
 
-[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../../../..")
+[node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0yx17")]
 
-[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+
 functions_node = NodePath("../../../..")
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_sfu5h")]([ExtResource("4_46r7c")])
 
-[node name="Pause" parent="SharedComponents/SharedBaseComponents" index="1"]
+
+[node name="Pause" parent="MinigameSharedComponents/SharedBaseComponents" index="1"]
 visible = true
 
-[editable path="SharedComponents"]
-[editable path="SharedComponents/SharedBaseComponents"]
+[editable path="MinigameSharedComponents"]
+[editable path="MinigameSharedComponents/SharedBaseComponents"]
+

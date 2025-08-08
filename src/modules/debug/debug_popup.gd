@@ -25,9 +25,12 @@ var _disable_on_release: bool = false
 # An array of dictionary objects with text_keycode and button properties.
 var _hotkeys: Array = []
 
+var _tree: Tree
 var _tree_root: TreeItem
 var _tree_shortcuts: TreeItem
 var _tree_callables: Dictionary = {}
+
+var _last_input_event: InputEvent
 
 
 func _ready() -> void:
@@ -39,7 +42,10 @@ func _ready() -> void:
 	# By default, the debug popup is not visible. Press 'X' to bring it up.
 	visible = visible_on_start
 	position = Vector2.ZERO
-	$Tree.connect("item_selected", _on_item_selected)
+	_tree = $Tree
+	_tree.allow_rmb_select = true
+	_tree.gui_input.connect(_on_gui_input)
+	_tree.item_selected.connect(_on_item_selected)
 
 	_setup_shortcuts_tree()
 	_setup_debug_buttons()
@@ -69,19 +75,36 @@ func link_callable(tree_item: TreeItem, callable: Callable) -> void:
 	_tree_callables[tree_item.get_instance_id()] = callable
 
 
+func was_rmb() -> bool:
+	assert(_last_input_event)
+	if _last_input_event is InputEventMouseButton and _last_input_event.pressed:
+		var mb_event := _last_input_event as InputEventMouseButton
+		if mb_event.button_index == MOUSE_BUTTON_RIGHT:
+			return true
+
+	return false
+
+
 func _setup_shortcuts_tree() -> void:
 	_tree_shortcuts = get_tree_root().create_child()
 	_tree_shortcuts.set_text(0, "Navigation and functions")
 
 
 func _get_debug_buttons() -> Array[DebugButton]:
-	return default_debug_buttons.collection + custom_debug_buttons
+	if default_debug_buttons && default_debug_buttons.collection:
+		return default_debug_buttons.collection + custom_debug_buttons
+
+	return custom_debug_buttons
 
 
 func _setup_debug_buttons() -> void:
 	for debug_button in _get_debug_buttons():
 		var new_item = _tree_shortcuts.create_child()
 		_setup_item(debug_button, new_item)
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	_last_input_event = event
 
 
 func _on_item_selected():

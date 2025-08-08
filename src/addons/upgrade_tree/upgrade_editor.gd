@@ -28,6 +28,8 @@ func set_fields_from_upgrade() -> void:
 
 	if !upgrade.resource_path:
 		add_info_error("NOT SAVED TO FILE")
+	else:
+		add_info("[i]%s[/i]" % upgrade.resource_path.get_file())
 
 	if !upgrade.logic:
 		add_info_error("MISSING LOGIC")
@@ -50,7 +52,8 @@ func set_fields_from_upgrade() -> void:
 	if upgrade.description_prefix == "" || upgrade.description_suffix:
 		add_info_warning("MISSING DESCRIPTION")
 
-	add_info("Max Level: %d" % upgrade.get_max_level())
+	#TODO: the upgrade levels shouldn't be offset by 1 like this
+	add_info("Max Level: %d" % (upgrade.get_max_level() + 1))
 
 
 func add_info_error(msg: String) -> void:
@@ -65,4 +68,4 @@ func add_info(msg: String) -> void:
 	if info.text != "":
 		info.append_text("\n")
 
-	info.append_text("%s\n" %msg)
+	info.append_text("%s\n" % msg)

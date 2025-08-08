@@ -23,7 +23,7 @@ func sort_notes():
 func calculate_note_times():
 	if notes != null:
 		for note: NoteData in notes:
-			note.cached_absolute_beat = note.bar * (60.0 / audio.bpm)
+			note.cached_absolute_beat = (note.bar + note.beat) * (60.0 / audio.bpm)
 
 
 func get_note_data_from_bar(bar: int) -> NoteData:

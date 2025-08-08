@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://iiekj8nk2k2e"]
+
+[ext_resource type="Script" uid="uid://cret7kfxa60c" path="res://modules/minigame/fire_fighters/map/fire_fighters_item_instance.gd" id="1_edlen"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x06mq"]
+size = Vector2(32, 32)
+
+[node name="Fire Fighers Item" type="Area2D"]
+z_index = 15
+collision_layer = 8
+script = ExtResource("1_edlen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x06mq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

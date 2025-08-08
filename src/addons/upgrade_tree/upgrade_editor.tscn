@@ -38,6 +38,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Information" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 500)
 layout_mode = 2
 theme = ExtResource("1_n60oh")
 bbcode_enabled = true

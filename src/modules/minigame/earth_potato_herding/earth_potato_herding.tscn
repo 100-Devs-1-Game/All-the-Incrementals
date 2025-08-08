@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="11_eeopq"]
 [ext_resource type="Script" uid="uid://7i6e5fekusou" path="res://modules/minigame/earth_potato_herding/despawn_zone/despawn_zone.gd" id="13_2q4j3"]
 
-[node name="EarthPotatoHerding" type="Node2D"]
+[node name="EarthPotatoHerding" type="Node2D" groups=["earth_potato_herding"]]
 script = ExtResource("1_kkhpg")
 data_uid = "uid://cbu6b1qnaw05f"
 
@@ -131,6 +131,7 @@ position = Vector2(1003, 530)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(571, 596)
 
+
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-461, -532, -468, 421, 1279, 410, 1253, -512, -437, -546, -534, -598, 1352, -593, 1354, 481, -552, 471, -569, -591)
 
@@ -151,6 +152,7 @@ visible = false
 
 [node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
 minigame = NodePath("../../../..")
+
 
 [connection signal="body_entered" from="DespawnZone" to="DespawnZone" method="_on_body_entered"]
 

@@ -50,11 +50,11 @@ func _physics_process(delta: float) -> void:
 
 	# do last
 	var wave_amount := wave_movement_component.get_offset(delta)
-	var vel_amount = velocity_component.velocity * delta
-	var grav_amount = velocity_grav * delta
+	var vel_amount := velocity_component.velocity * delta
+	var grav_amount := velocity_grav * delta
 	position += wave_amount + vel_amount + grav_amount
 
 
-func debug_print(msg):
+func debug_print(msg: String) -> void:
 	if should_debug_print:
 		print(msg)
