@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://4xwiy2ryv0xk"]
+[gd_scene load_steps=13 format=3 uid="uid://4xwiy2ryv0xk"]
 
 [ext_resource type="Script" uid="uid://dcvqx7fm0ugom" path="res://modules/minigame/fire_cooking/fire_cooking.gd" id="1_bvapi"]
+[ext_resource type="Texture2D" uid="uid://rgmwv6eqoxqn" path="res://assets/minigames/fire_cooking/pizza.webp" id="3_wglem"]
+[ext_resource type="Texture2D" uid="uid://m376phboftab" path="res://assets/minigames/fire_cooking/pizza_cooked_level_1.webp" id="4_0ggdy"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="4_bvapi"]
+[ext_resource type="Texture2D" uid="uid://sucd3mq44jij" path="res://assets/minigames/fire_cooking/pizza_sauce_level_1.webp" id="5_ervyq"]
+[ext_resource type="Texture2D" uid="uid://gqpqj862xns5" path="res://assets/minigames/fire_cooking/pizza_cooked_level_4.webp" id="5_qa6k4"]
+[ext_resource type="Texture2D" uid="uid://b442abplwvu0p" path="res://assets/minigames/fire_cooking/pizza_topping_level_2.webp" id="6_qa6k4"]
+[ext_resource type="Texture2D" uid="uid://u6gvb3m3kx2y" path="res://assets/minigames/fire_cooking/topping_cheese.webp" id="7_4kn1g"]
+[ext_resource type="Texture2D" uid="uid://drosqc5lhsu35" path="res://assets/minigames/fire_cooking/topping_green_pepper.webp" id="8_uwhc8"]
+[ext_resource type="Texture2D" uid="uid://bxguuaep1gfic" path="res://assets/minigames/fire_cooking/topping_mushroom.webp" id="9_t88lo"]
+[ext_resource type="Texture2D" uid="uid://dsovlga57ka00" path="res://assets/minigames/fire_cooking/topping_pepperoni.webp" id="10_6vih5"]
+[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="11_1ldcd"]
 
 [node name="FireCooking" type="Node2D"]
 script = ExtResource("1_bvapi")
@@ -10,7 +20,143 @@ data_uid = "uid://bseyt0iuwnq5m"
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("4_bvapi")]
 
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1"]
+visible = false
 visible_on_start = true
+
+[node name="PopupMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
+visible = false
+
+[node name="Pizza" type="Sprite2D" parent="."]
+position = Vector2(14, -43)
+texture = ExtResource("3_wglem")
+centered = false
+
+[node name="PizzaCookedLevel1" type="Sprite2D" parent="."]
+position = Vector2(453, 454)
+scale = Vector2(2.82812, 2.82812)
+texture = ExtResource("4_0ggdy")
+
+[node name="PizzaCookedLevel2" type="Sprite2D" parent="."]
+position = Vector2(1431, 412)
+scale = Vector2(2.82812, 2.82812)
+texture = ExtResource("5_qa6k4")
+
+[node name="PizzaSauceLevel1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(391, 848)
+scale = Vector2(2.90625, 2.90625)
+texture = ExtResource("5_ervyq")
+
+[node name="PizzaToppingLevel2" type="Sprite2D" parent="."]
+position = Vector2(921, 881)
+scale = Vector2(2.29688, 2.29688)
+texture = ExtResource("6_qa6k4")
+
+[node name="ToppingCheese" type="Sprite2D" parent="."]
+position = Vector2(966, 753)
+scale = Vector2(2.09375, 2.09375)
+texture = ExtResource("7_4kn1g")
+
+[node name="ToppingGreenPepper" type="Sprite2D" parent="."]
+position = Vector2(873, 1048)
+scale = Vector2(1.84375, 1.84375)
+texture = ExtResource("8_uwhc8")
+
+[node name="ToppingMushroom" type="Sprite2D" parent="."]
+position = Vector2(979, 1039)
+scale = Vector2(1.96875, 1.96875)
+texture = ExtResource("9_t88lo")
+
+[node name="ToppingPepperoni" type="Sprite2D" parent="."]
+position = Vector2(886, 721)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("10_6vih5")
+
+[node name="BasketInCircleSkn" type="Sprite2D" parent="."]
+position = Vector2(502, 842)
+scale = Vector2(0.330208, 0.330208)
+texture = ExtResource("11_1ldcd")
+
+[node name="BasketInCircleSkn3" type="Sprite2D" parent="."]
+modulate = Color(0.358402, 0.546081, 0.143475, 1)
+position = Vector2(1877, 892)
+scale = Vector2(0.330208, 0.330208)
+texture = ExtResource("11_1ldcd")
+
+[node name="BasketInCircleSkn4" type="Sprite2D" parent="."]
+modulate = Color(0.358402, 0.546081, 0.143475, 1)
+position = Vector2(1695, 897)
+scale = Vector2(0.330208, 0.330208)
+texture = ExtResource("11_1ldcd")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 60)
+offset_left = 266.0
+offset_top = 138.0
+offset_right = 666.0
+offset_bottom = 198.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 33.0
+
+[node name="Panel2" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 60)
+offset_left = 774.0
+offset_top = 135.0
+offset_right = 1174.0
+offset_bottom = 195.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel3" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 60)
+offset_left = 1265.0
+offset_top = 135.0
+offset_right = 1665.0
+offset_bottom = 195.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 140.0
+allow_greater = true
+
+[node name="Panel4" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 60)
+offset_left = 132.0
+offset_top = 663.0
+offset_right = 532.0
+offset_bottom = 723.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel4"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 22.0
+allow_greater = true
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]
