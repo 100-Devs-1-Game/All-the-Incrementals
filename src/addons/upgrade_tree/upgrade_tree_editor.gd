@@ -353,7 +353,6 @@ func _on_disconnection_request(from_node, from_port, to_node, to_port):
 	if current_data:
 		var idx := current_data.upgrade_tree_root_nodes.find(to_node_instance.upgrade)
 		if idx < 0:
-			print("disconnected, adding as root: ", to_node_instance.upgrade.name)
 			current_data.upgrade_tree_root_nodes.append(to_node_instance.upgrade)
 
 	_save_upgrade(from_node_instance.upgrade)
@@ -393,7 +392,6 @@ func _on_connection_request(from_node, from_port, to_node, to_port):
 	if current_data:
 		var idx := current_data.upgrade_tree_root_nodes.find(to_node_instance.upgrade)
 		if idx >= 0:
-			print("found as root, removing: ", to_node_instance.upgrade.name)
 			current_data.upgrade_tree_root_nodes.remove_at(idx)
 
 	# todo: handle removing any other unlock?
