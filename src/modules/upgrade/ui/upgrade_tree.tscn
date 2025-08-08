@@ -113,8 +113,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vqp8f")
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[img=40]res://assets/ui/mouse_m.webp[/img] ZOOM 
-[img=40]res://assets/ui/mouse_r.webp[/img] MOVE  
+text = "[img=40]res://assets/ui/mouse_m.webp[/img] ZOOM
+[img=40]res://assets/ui/mouse_r.webp[/img] MOVE
 [img=40]res://assets/ui/mouse_l.webp[/img] SELECT"
 fit_content = true
 scroll_active = false
@@ -203,7 +203,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[font_size=80]Speed 
+text = "[font_size=80]Speed
 "
 fit_content = true
 scroll_active = false
