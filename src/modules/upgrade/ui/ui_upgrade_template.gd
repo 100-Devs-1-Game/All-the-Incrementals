@@ -80,7 +80,7 @@ func _on_select() -> void:
 	)
 
 
-func _on_click_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_click_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			_on_select()
