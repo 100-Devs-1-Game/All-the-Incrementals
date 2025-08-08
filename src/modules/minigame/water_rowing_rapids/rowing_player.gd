@@ -23,6 +23,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	linear_velocity += transform.x * Input.get_axis(&"down", &"up") * speed * linear_damp * delta
+	for i in get_contact_count():
+		_fail()
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
