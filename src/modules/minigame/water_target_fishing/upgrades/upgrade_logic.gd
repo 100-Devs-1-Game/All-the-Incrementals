@@ -2,9 +2,10 @@ class_name WTFMinigameUpgradeLogic
 extends BaseMinigameUpgradeLogic
 
 enum UpgradeType {
-	INVALID,
-	TODO,
-	INCREASE_STARTING_FISH,
+	INVALID = 0,
+	TODO = 1,
+	INCREASE_STARTING_FISH = 2,
+	INCREASE_SPAWNING_FISH_RATE = 3,
 }
 
 @export var type: UpgradeType = UpgradeType.INVALID
@@ -20,10 +21,19 @@ func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
 
 	match type:
 		UpgradeType.TODO:
-			print("WTF - todo")
+			push_warning("WTF - todo")
 		UpgradeType.INCREASE_STARTING_FISH:
-			print("WTF - increasing starting fish by %d", _upgrade.get_current_effect_modifier())
+			print("WTF - increasing starting fish by %s" % _upgrade.get_current_effect_modifier())
 			stats.spawn_x_starting_fish += _upgrade.get_current_effect_modifier()
+		UpgradeType.INCREASE_SPAWNING_FISH_RATE:
+			print(
+				(
+					"WTF - increasing fish spawnrate by %s pixels"
+					% (_upgrade.get_current_effect_modifier() * 8)
+				)
+			)
+			stats.spawn_fish_every_x_pixels -= _upgrade.get_current_effect_modifier() * 8
+			print(stats.spawn_fish_every_x_pixels)
 		_:
 			push_error("WTF - upgrade %s is unknown (%s)" % [_upgrade.name, _upgrade.resource_path])
 			assert(false)

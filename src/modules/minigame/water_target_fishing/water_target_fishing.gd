@@ -47,6 +47,7 @@ func _start() -> void:
 	# give it an initial amount so we can get some fishies going
 	_distance_since_spawned = stats.spawn_fish_every_x_pixels * stats.spawn_x_starting_fish
 	print("starting with %s fish" % stats.spawn_x_starting_fish)
+	print("fish spawn every %s pixels" % stats.spawn_fish_every_x_pixels)
 
 
 func _process(_delta: float) -> void:
