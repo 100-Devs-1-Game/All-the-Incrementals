@@ -50,8 +50,12 @@ func _start() -> void:
 	_distance_since_spawned = stats.spawn_fish_every_x_pixels * stats.spawn_x_starting_fish
 	print(
 		(
-			"starting speed %s with %s%% speedboost"
-			% [-stats.scrollspeed_initial.x, stats._apply_speedboost(100) - 100]
+			"starting speed %s with %s%% (+%s) speedboost"
+			% [
+				-stats.scrollspeed_initial.x,
+				stats.speedboost_multiplier * 100,
+				stats.speedboost_flat
+			]
 		)
 	)
 	print("starting with %s fish" % stats.spawn_x_starting_fish)
