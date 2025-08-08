@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crmns8qtpfpj5"
-path="res://.godot/imported/bady_potato.webp-59fccadac5c3af9edb0b3ace59b672dd.ctex"
+uid="uid://e3q3e0x6t0t"
+path="res://.godot/imported/fists.webp-32ab3a556604ade1a28f7c22ed29b181.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/earth_potato_herding/art/bady_potato.webp"
-dest_files=["res://.godot/imported/bady_potato.webp-59fccadac5c3af9edb0b3ace59b672dd.ctex"]
+source_file="res://assets/minigames/earth_potato_herding/fists.webp"
+dest_files=["res://.godot/imported/fists.webp-32ab3a556604ade1a28f7c22ed29b181.ctex"]
 
 [params]
 

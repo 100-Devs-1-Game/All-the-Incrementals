@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_hp0jy"]
 [ext_resource type="Script" uid="uid://cny8wlkj1ng54" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/eph_evil_dashing_spirit.gd" id="2_xvmqs"]
-[ext_resource type="Texture2D" uid="uid://58jq6rcdxs70" path="res://modules/minigame/art/evil_spirit.webp" id="3_dw7au"]
-[ext_resource type="Texture2D" uid="uid://e3q3e0x6t0t" path="res://modules/minigame/art/fists.webp" id="4_ci7t0"]
-[ext_resource type="Texture2D" uid="uid://bkl78rfb3w03e" path="res://modules/minigame/art/hands.webp" id="5_4fix3"]
+[ext_resource type="Texture2D" uid="uid://58jq6rcdxs70" path="res://assets/minigames/earth_potato_herding/evil_spirit.webp" id="3_dw7au"]
+[ext_resource type="Texture2D" uid="uid://e3q3e0x6t0t" path="res://assets/minigames/earth_potato_herding/fists.webp" id="4_ci7t0"]
+[ext_resource type="Texture2D" uid="uid://bkl78rfb3w03e" path="res://assets/minigames/earth_potato_herding/hands.webp" id="5_4fix3"]
 
 [sub_resource type="GDScript" id="GDScript_b4o6r"]
 script/source = "extends State

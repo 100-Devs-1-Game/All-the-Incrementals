@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwajo5hcqdpsl"
-path="res://.godot/imported/fog.webp-5ee6a4569239eb0c5e722356c86c64c8.ctex"
+uid="uid://bk0jmd7b6st67"
+path="res://.godot/imported/adult_potato.webp-2f7355122f0eed230dffcd8673d616a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/earth_potato_herding/art/fog.webp"
-dest_files=["res://.godot/imported/fog.webp-5ee6a4569239eb0c5e722356c86c64c8.ctex"]
+source_file="res://assets/minigames/earth_potato_herding/adult_potato.webp"
+dest_files=["res://.godot/imported/adult_potato.webp-2f7355122f0eed230dffcd8673d616a8.ctex"]
 
 [params]
 

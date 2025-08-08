@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2jw7ynffcxnk"
-path="res://.godot/imported/magic_circle.webp-54896f8a4047d61fec2ed08289cc81ba.ctex"
+uid="uid://crmns8qtpfpj5"
+path="res://.godot/imported/bady_potato.webp-e4ed2a64116a231235e6baee3573036f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/earth_potato_herding/art/magic_circle.webp"
-dest_files=["res://.godot/imported/magic_circle.webp-54896f8a4047d61fec2ed08289cc81ba.ctex"]
+source_file="res://assets/minigames/earth_potato_herding/bady_potato.webp"
+dest_files=["res://.godot/imported/bady_potato.webp-e4ed2a64116a231235e6baee3573036f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e3q3e0x6t0t"
-path="res://.godot/imported/fists.webp-8b323379cae88e600d55dd569d537a40.ctex"
+uid="uid://pskqst4w0e50"
+path="res://.godot/imported/background.webp-06e7ee7cb217be9b9d582914e07c8520.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/earth_potato_herding/art/fists.webp"
-dest_files=["res://.godot/imported/fists.webp-8b323379cae88e600d55dd569d537a40.ctex"]
+source_file="res://assets/minigames/earth_potato_herding/background.webp"
+dest_files=["res://.godot/imported/background.webp-06e7ee7cb217be9b9d582914e07c8520.ctex"]
 
 [params]
 

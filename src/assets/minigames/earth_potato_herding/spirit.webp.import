@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs54g354tfu61"
-path="res://.godot/imported/dirt_tile.webp-971c1ebf183798d026e2018b12236973.ctex"
+uid="uid://bcl13fess1l7r"
+path="res://.godot/imported/spirit.webp-80d4d1fc730e31fe4d412c9ee31d61da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/earth_potato_herding/art/dirt_tile.webp"
-dest_files=["res://.godot/imported/dirt_tile.webp-971c1ebf183798d026e2018b12236973.ctex"]
+source_file="res://assets/minigames/earth_potato_herding/spirit.webp"
+dest_files=["res://.godot/imported/spirit.webp-80d4d1fc730e31fe4d412c9ee31d61da.ctex"]
 
 [params]
 

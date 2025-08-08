@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_6k1f6"]
 [ext_resource type="Script" uid="uid://bj08qujhu8t8a" path="res://modules/minigame/earth_potato_herding/eph_adult/eph_adult.gd" id="2_6k1f6"]
 [ext_resource type="Script" uid="uid://cjm3jfga0gk76" path="res://modules/minigame/earth_potato_herding/eph_adult/states/go_to_bucket.gd" id="3_6k1f6"]
-[ext_resource type="Texture2D" uid="uid://bk0jmd7b6st67" path="res://modules/minigame/art/adult_potato.webp" id="4_dgjy5"]
+[ext_resource type="Texture2D" uid="uid://bk0jmd7b6st67" path="res://assets/minigames/earth_potato_herding/adult_potato.webp" id="4_dgjy5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6k1f6"]
 radius = 29.0689

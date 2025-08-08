@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcl13fess1l7r"
-path="res://.godot/imported/spirit.webp-3835a4a5a26480b0c2fd3c66b0435e73.ctex"
+uid="uid://b76mp4fuyg6nu"
+path="res://.godot/imported/grave.webp-1e05955f151e9579744df3eb598980aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/earth_potato_herding/art/spirit.webp"
-dest_files=["res://.godot/imported/spirit.webp-3835a4a5a26480b0c2fd3c66b0435e73.ctex"]
+source_file="res://assets/minigames/earth_potato_herding/grave.webp"
+dest_files=["res://.godot/imported/grave.webp-1e05955f151e9579744df3eb598980aa.ctex"]
 
 [params]
 
