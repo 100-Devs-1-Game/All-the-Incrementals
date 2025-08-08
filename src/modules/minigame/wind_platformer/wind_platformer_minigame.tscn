@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=10 format=3 uid="uid://bytqv7h0iow3u"]
 
-[ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_x5t1i"]
-[ext_resource type="Script" uid="uid://cisfp72boumnu" path="res://modules/minigame/wind_platformer/cloud_spawner.gd" id="4_3m7tm"]
-[ext_resource type="PackedScene" uid="uid://bpbxl634kt5sd" path="res://modules/minigame/wind_platformer/cloud_platform.tscn" id="4_cj4w2"]
-[ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/player.tscn" id="5_3m7tm"]
-[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="5_k4m21"]
+[ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_j01kc"]
+[ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/player.tscn" id="2_asxaq"]
+[ext_resource type="PackedScene" uid="uid://coro8piwlirg2" path="res://modules/minigame/wind_platformer/cloud_spawner.tscn" id="3_h8gjg"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="5_falbm"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4orxu"]
 frequency = 0.002
@@ -29,7 +28,7 @@ gradient = SubResource("Gradient_4orxu")
 width = 64
 
 [node name="Wind Platformer" type="Node2D"]
-script = ExtResource("1_x5t1i")
+script = ExtResource("1_j01kc")
 wind_noise = SubResource("FastNoiseLite_4orxu")
 data_uid = "uid://dh1qjmvspv4uh"
 
@@ -46,28 +45,25 @@ color = Color(0.32549, 0.32549, 0.905882, 1)
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("5_3m7tm")]
-position = Vector2(365, 97)
+[node name="Player" parent="." instance=ExtResource("2_asxaq")]
+position = Vector2(960, 50)
+air_control = 25.0
 
 [node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
 modulate = Color(1, 1, 1, 0.541176)
 multimesh = SubResource("MultiMesh_cj4w2")
 texture = SubResource("GradientTexture1D_cj4w2")
 
-[node name="Cloud Spawner" type="Node" parent="." node_paths=PackedStringArray("clouds_node")]
-script = ExtResource("4_3m7tm")
-cloud_scene = ExtResource("4_cj4w2")
+[node name="Cloud Spawner" parent="." node_paths=PackedStringArray("clouds_node") instance=ExtResource("3_h8gjg")]
 clouds_node = NodePath("../Platforms")
-initial_clouds = 100
-cloud_velocity_range = Vector2(10, 50)
-initial_rect = Rect2(0, 200, 1920, 1080)
-left_rect = Rect2(-150, 150, -140, 1080)
-right_rect = Rect2(2000, 150, 2010, 1080)
+initial_clouds = 50
 
-[node name="MinigameSharedComponents" parent="." instance=ExtResource("5_k4m21")]
+[node name="MinigameSharedComponents" parent="." instance=ExtResource("5_falbm")]
 
 [node name="SharedBaseComponents" parent="MinigameSharedComponents" index="1"]
 allow_popup_menu = null
+
+[connection signal="left_screen" from="Player" to="." method="_on_player_left_screen"]
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]
