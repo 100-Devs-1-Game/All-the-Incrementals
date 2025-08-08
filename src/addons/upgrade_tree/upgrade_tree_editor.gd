@@ -293,8 +293,12 @@ func _on_delete_upgrade_pressed() -> void:
 				_save_upgrade(child.upgrade)
 				graph_edit.disconnect_node(child.name, 0, current_selected_node.name, 0)
 			if child.upgrade in current_selected_node.upgrade.unlocks:
-				child.upgrade.unlocks.erase(current_selected_node.upgrade)
+				_try_add_root(child.upgrade) #todo: we could force them to connect instead?
 				graph_edit.disconnect_node(current_selected_node.name, 0, child.name, 0)
+
+	# remove it as a root if it was one. if not, then nothing happens
+	current_data.upgrade_tree_root_nodes.erase(current_selected_node.upgrade)
+
 	graph_edit.remove_child(current_selected_node)
 	current_selected_node = null
 
