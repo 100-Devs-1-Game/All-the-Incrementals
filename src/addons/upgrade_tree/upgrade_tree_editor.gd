@@ -7,16 +7,20 @@ const UpgradeTreeEditorVersion: int = 1
 const MissingCurrentDataText: StringName = "SELECT AN UPGRADE TREE"
 
 var upgrade_tree_editor_instance: Control
-var graph_edit: GraphEdit
 
 #FIXME: Need to handle this better when we have non-minigame trees
 var current_data: MinigameData = null
 var current_selected_node: GraphNode = null
 var file_dialog: FileDialog
 
-func _update_dropdown_trees():
-	var dropdown: OptionButton = upgrade_tree_editor_instance.get_node("UpgradeTreeDropdown")
+var graph_edit: GraphEdit
+var add_upgrade: Button
+var delete_upgrade: Button
+var save_upgrade: Button
+var reload_resources: Button
+var dropdown: OptionButton
 
+func _update_dropdown_trees():
 	var minigame_data_paths := _get_all_minigame_data("res://modules")
 	dropdown.clear()
 
@@ -129,7 +133,14 @@ func _get_plugin_icon():
 
 func _enter_tree() -> void:
 	upgrade_tree_editor_instance = UpgradeTreeEditor.instantiate()
+
 	graph_edit = upgrade_tree_editor_instance.get_node("GraphEdit")
+	add_upgrade = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("AddUpgrade")
+	delete_upgrade = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("DeleteUpgrade")
+	save_upgrade = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("SaveUpgrade")
+	reload_resources = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("ReloadResources")
+	dropdown = upgrade_tree_editor_instance.get_node("UpgradeTreeDropdown")
+
 	graph_edit.snapping_enabled = true
 	graph_edit.snapping_distance = 64
 	graph_edit.show_grid_buttons = false
@@ -141,15 +152,15 @@ func _enter_tree() -> void:
 	# Hide the main panel. Very much required.
 	_make_visible(false)
 	EditorInterface.get_inspector().edited_object_changed.connect(_on_edited_object_changed)
-	upgrade_tree_editor_instance.get_node("AddUpgrade").pressed.connect(_on_add_upgrade_pressed)
-	upgrade_tree_editor_instance.get_node("SaveUpgrade").pressed.connect(_on_save_upgrade_pressed)
-	upgrade_tree_editor_instance.get_node("DeleteUpgrade").pressed.connect(
+	add_upgrade.pressed.connect(_on_add_upgrade_pressed)
+	save_upgrade.pressed.connect(_on_save_upgrade_pressed)
+	delete_upgrade.pressed.connect(
 		_on_delete_upgrade_pressed
 	)
-	upgrade_tree_editor_instance.get_node("ReloadResources").pressed.connect(
+	reload_resources.pressed.connect(
 		_on_reload_resources_pressed
 	)
-	upgrade_tree_editor_instance.get_node("UpgradeTreeDropdown").item_selected.connect(
+	dropdown.item_selected.connect(
 		_on_tree_dropdown_selected
 	)
 	graph_edit.connection_request.connect(_on_connection_request)

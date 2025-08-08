@@ -12,49 +12,41 @@ offset_right = 1919.0
 offset_bottom = 1073.0
 scroll_offset = Vector2(-765, -427)
 right_disconnects = true
+show_grid_buttons = false
 
-[node name="AddUpgrade" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 390.0
-offset_top = 11.0
-offset_right = 529.0
-offset_bottom = 67.0
+offset_left = 195.0
+offset_top = 12.0
+offset_right = 729.0
+offset_bottom = 52.0
+
+[node name="AddUpgrade" type="Button" parent="HBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "Add upgrade
+text = "New upgrade
 "
 
-[node name="DeleteUpgrade" type="Button" parent="."]
-layout_mode = 0
-offset_left = 733.0
-offset_top = 13.0
-offset_right = 918.0
-offset_bottom = 67.0
+[node name="DeleteUpgrade" type="Button" parent="HBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "Delete Upgrade"
+text = "Remove Upgrade"
 
-[node name="SaveUpgrade" type="Button" parent="."]
-layout_mode = 0
-offset_left = 548.0
-offset_top = 9.0
-offset_right = 727.0
-offset_bottom = 67.0
+[node name="SaveUpgrade" type="Button" parent="HBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Save Upgrade"
 
-[node name="ReloadResources" type="Button" parent="."]
-layout_mode = 0
-offset_left = 930.0
-offset_top = 11.0
-offset_right = 1151.0
-offset_bottom = 65.0
+[node name="ReloadResources" type="Button" parent="HBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Reload Tree"
 
 [node name="UpgradeTreeDropdown" type="OptionButton" parent="."]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 96.0
-offset_right = 220.0
-offset_bottom = 147.0
+offset_left = 18.0
+offset_top = 66.0
+offset_right = 221.0
+offset_bottom = 117.0
 tooltip_text = "Select an upgrade tree"
 allow_reselect = true
