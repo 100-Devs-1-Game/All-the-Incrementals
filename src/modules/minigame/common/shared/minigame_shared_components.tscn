@@ -27,17 +27,18 @@ debug_popup = NodePath("../SharedBaseComponents/CanvasLayer/DebugPopup")
 visible = false
 pause = NodePath("../../Pause")
 
-[node name="DebugPopup" parent="SharedBaseComponents/CanvasLayer" index="1"]
+[node name="Highscores" parent="SharedBaseComponents/CanvasLayer" index="1" instance=ExtResource("7_dpum2")]
+visible = false
+
+[node name="DebugPopup" parent="SharedBaseComponents/CanvasLayer" index="2"]
 default_debug_buttons = ExtResource("4_6lpn0")
 
-[node name="MinigameOverlay" parent="SharedBaseComponents/CanvasLayer" index="3" instance=ExtResource("6_dbpkc")]
+[node name="MinigameOverlay" parent="SharedBaseComponents/CanvasLayer" index="4" instance=ExtResource("6_dbpkc")]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -20.0
 offset_bottom = 20.0
 grow_vertical = 2
-
-[node name="Highscores" parent="SharedBaseComponents/CanvasLayer" index="4" instance=ExtResource("7_dpum2")]
 
 [editable path="SharedBaseComponents"]

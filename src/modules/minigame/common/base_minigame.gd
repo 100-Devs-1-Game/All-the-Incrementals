@@ -108,6 +108,10 @@ func show_highscores():
 	_minigame_shared_components.minigame_highscores.open_menu(highscores)
 
 
+func open_main_menu():
+	_minigame_shared_components.minigame_menu.open_menu()
+
+
 # Call this function when the game ends to re-open the minigame menu.
 func game_over():
 	_minigame_shared_components.minigame_menu.open_menu()

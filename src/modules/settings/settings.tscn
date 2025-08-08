@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="3_yv8js"]
 [ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="4_1ylkm"]
 [ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="5_1ylkm"]
+[ext_resource type="StyleBox" uid="uid://ct6fgr57c8vlo" path="res://modules/menu/common/button_stylebox.tres" id="5_k2ij0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ylkm"]
 shader = ExtResource("3_yv8js")
@@ -84,18 +85,6 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv8js"]
-bg_color = Color(0.921569, 0.835294, 0.654902, 1)
-border_width_left = 8
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 8
-border_color = Color(0.313726, 0.176471, 0.133333, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ylkm"]
 bg_color = Color(0.431373, 0.67451, 0.898039, 1)
@@ -671,9 +660,9 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
+theme_override_styles/hover = ExtResource("5_k2ij0")
+theme_override_styles/pressed = ExtResource("5_k2ij0")
+theme_override_styles/normal = ExtResource("5_k2ij0")
 text = "Low"
 
 [node name="Medium" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
@@ -681,9 +670,9 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
+theme_override_styles/hover = ExtResource("5_k2ij0")
+theme_override_styles/pressed = ExtResource("5_k2ij0")
+theme_override_styles/normal = ExtResource("5_k2ij0")
 text = "Medium"
 
 [node name="High" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
@@ -691,9 +680,9 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
+theme_override_styles/hover = ExtResource("5_k2ij0")
+theme_override_styles/pressed = ExtResource("5_k2ij0")
+theme_override_styles/normal = ExtResource("5_k2ij0")
 text = "High"
 
 [node name="Best" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
@@ -701,9 +690,9 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
+theme_override_styles/hover = ExtResource("5_k2ij0")
+theme_override_styles/pressed = ExtResource("5_k2ij0")
+theme_override_styles/normal = ExtResource("5_k2ij0")
 text = "Best"
 
 [node name="FullscreenContainer" type="HBoxContainer" parent="Panel/SettingsContainer/MultiContainer"]
@@ -715,9 +704,9 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yv8js")
-theme_override_styles/normal = SubResource("StyleBoxFlat_yv8js")
+theme_override_styles/hover = ExtResource("5_k2ij0")
+theme_override_styles/pressed = ExtResource("5_k2ij0")
+theme_override_styles/normal = ExtResource("5_k2ij0")
 text = "Fullscreen: Off"
 
 [node name="AudioLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer"]

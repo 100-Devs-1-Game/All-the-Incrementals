@@ -41,7 +41,6 @@ func update_highscores(minigame: BaseMinigame, score: int) -> void:
 		# assuming this is a test session
 		return
 	var minigame_highscores: Array[int] = get_highscores(minigame)
-	print(minigame_highscores)
 	if minigame_highscores.size() < MAX_HIGH_SCORES_STORED:
 		minigame_highscores.append(score)
 	elif minigame_highscores.min() < score:

@@ -1,6 +1,8 @@
 class_name HighScores
 extends Control
 
+var minigame: BaseMinigame
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +18,7 @@ func open_menu(highscores: Array[int]) -> void:
 		$ScoresPanel/Scores.remove_child(n)
 	for i in range(Player.MAX_HIGH_SCORES_STORED):
 		var text_label = Label.new()
-		text_label.add_theme_font_size_override("font_size", 48)
+		text_label.add_theme_font_size_override("font_size", 36)
 		text_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		if i < reversed.size():
 			text_label.text = str(reversed[i])
@@ -24,3 +26,8 @@ func open_menu(highscores: Array[int]) -> void:
 			text_label.text = "-"
 		$ScoresPanel/Scores.add_child(text_label)
 	visible = true
+
+
+func _on_back_pressed() -> void:
+	visible = false
+	minigame.open_main_menu()

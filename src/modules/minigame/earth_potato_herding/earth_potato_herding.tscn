@@ -145,7 +145,12 @@ polygon = PackedVector2Array(-734, -711, -737, 677, 1510, 667, 1500, -724, -855,
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("11_eeopq")]
 
-[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2" node_paths=PackedStringArray("functions_node")]
+visible = false
+functions_node = NodePath("../../../..")
+custom_debug_buttons = Array[ExtResource("10_kkhpg")]([SubResource("Resource_o8bin")])
+
+[node name="PopupMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
 visible = false
 
 [connection signal="body_entered" from="DespawnZone" to="DespawnZone" method="_on_body_entered"]

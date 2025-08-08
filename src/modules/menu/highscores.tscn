@@ -26,7 +26,6 @@ layout_mode = 2
 offset_top = 2.0
 offset_right = 440.0
 offset_bottom = 413.0
-alignment = 1
 
 [node name="HighScoresLabel" type="Label" parent="."]
 layout_mode = 0
@@ -38,3 +37,14 @@ theme_override_styles/normal = ExtResource("4_suyus")
 text = "High Scores"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 570.0
+offset_right = 1019.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
