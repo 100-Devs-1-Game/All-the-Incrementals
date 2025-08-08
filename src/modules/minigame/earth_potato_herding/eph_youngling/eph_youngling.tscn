@@ -41,7 +41,7 @@ state_name = "grow_up"
 shape = SubResource("CircleShape2D_58i80")
 
 [node name="Sprite" parent="." index="2"]
-position = Vector2(4.76837e-07, -12)
+position = Vector2(4.76837e-07, -1)
 scale = Vector2(0.778466, 0.778466)
 texture = ExtResource("6_58i80")
 

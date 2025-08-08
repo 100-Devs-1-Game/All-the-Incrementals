@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dwajo5hcqdpsl" path="res://modules/minigame/art/Fog.webp" id="3_7gu6e"]
 [ext_resource type="PackedScene" uid="uid://vesybpnx50sy" path="res://modules/minigame/earth_potato_herding/eph_adult/eph_adult.tscn" id="3_tk8ls"]
 [ext_resource type="PackedScene" uid="uid://cqhdv2mg3cv3t" path="res://modules/minigame/earth_potato_herding/eph_youngling/spawner/eph_youngling_spawner.tscn" id="3_xo3kj"]
+[ext_resource type="Texture2D" uid="uid://b2jw7ynffcxnk" path="res://modules/minigame/art/magic_circle.webp" id="4_2q4j3"]
 [ext_resource type="PackedScene" uid="uid://c1o4hv5ignom3" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.tscn" id="5_tk8ls"]
 [ext_resource type="PackedScene" uid="uid://bu668uskhmtud" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.tscn" id="7_00m8t"]
 [ext_resource type="PackedScene" uid="uid://bwda8leqqfqki" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/spawner/eph_evil_dashing_spirit_spawner.tscn" id="7_o8bin"]
 [ext_resource type="PackedScene" uid="uid://cgoxxbjngex2d" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/eph_evil_dashing_spirit.tscn" id="8_eeopq"]
-[ext_resource type="Texture2D" uid="uid://b76mp4fuyg6nu" path="res://modules/minigame/art/Grave.webp" id="11_2q4j3"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="11_eeopq"]
 [ext_resource type="Script" uid="uid://7i6e5fekusou" path="res://modules/minigame/earth_potato_herding/despawn_zone/despawn_zone.gd" id="13_2q4j3"]
 
@@ -33,9 +33,9 @@ metadata/_edit_lock_ = true
 position = Vector2(993, 514)
 
 [node name="bucket" type="Sprite2D" parent="Marker2D"]
-position = Vector2(-2.28882e-05, -3)
+position = Vector2(9.99998, 15)
 scale = Vector2(0.616216, 0.616216)
-texture = ExtResource("11_2q4j3")
+texture = ExtResource("4_2q4j3")
 
 [node name="EphYounglingSpawner" parent="." node_paths=PackedStringArray("_free_roam_area", "_free_roam_bounding_box", "_adult_spawner", "_player", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("3_xo3kj")]
 _free_roam_area = NodePath("spawn_zone")
@@ -45,21 +45,21 @@ _player = NodePath("../EPHPlayer")
 _spawnable_area = NodePath("spawn_zone")
 _spawnable_area_bounding_box = NodePath("spawn_bounding_box")
 _add_child_to = NodePath("../YoungPotatoSpawnZone")
-_max_spawned_total = 5
-_max_spawned_at_once = 5
+_max_spawned_total = 15
+_max_spawned_at_once = 15
 _spawn_cooldown = 0.01
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphYounglingSpawner"]
-polygon = PackedVector2Array(672, 818, 1321, 808, 1297, 283, 648, 273)
+polygon = PackedVector2Array(221, 921, 1691, 931, 1719, 175, 217, 175)
 metadata/_edit_lock_ = true
 
 [node name="spawn_bounding_box" type="Control" parent="EphYounglingSpawner"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 607.0
-offset_top = 242.0
-offset_right = 1364.0
-offset_bottom = 857.0
+offset_left = 203.0
+offset_top = 152.0
+offset_right = 1740.0
+offset_bottom = 954.0
 mouse_filter = 2
 
 [node name="YoungPotatoSpawnZone" type="Node2D" parent="."]
@@ -84,7 +84,7 @@ _add_child_to = NodePath("../EvilSpiritSpawnZone")
 _max_spawned_total = -1
 _max_spawned_at_once = 5
 _use_physics_process_to_spawn = true
-_spawn_cooldown = 10.0
+_spawn_cooldown = 3.0
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilSpiritSpawner"]
 polygon = PackedVector2Array(2018, -90, 2040, 1068, 1926, 1061, 1941, -5, -17, -3, -21, 1099, 1978, 1089, 1978, 1158, -90, 1191, -68, -92)
@@ -108,7 +108,7 @@ _spawnable_area = NodePath("spawn_zone")
 _spawnable_area_bounding_box = NodePath("spawn_bounding_box")
 _spawnable_node_scene = ExtResource("8_eeopq")
 _add_child_to = NodePath("../EvilSpiritSpawnZone")
-_max_spawned_at_once = 10
+_max_spawned_at_once = 5
 _spawn_cooldown = 5.0
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilDashingSpiritSpawner"]
@@ -127,6 +127,12 @@ metadata/_edit_lock_ = true
 
 [node name="EPHPlayer" parent="." instance=ExtResource("7_00m8t")]
 position = Vector2(1003, 530)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(571, 596)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-461, -532, -468, 421, 1279, 410, 1253, -512, -437, -546, -534, -598, 1352, -593, 1354, 481, -552, 471, -569, -591)
 
 [node name="DespawnZone" type="Area2D" parent="."]
 position = Vector2(571, 596)

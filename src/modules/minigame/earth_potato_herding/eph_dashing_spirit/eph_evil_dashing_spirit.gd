@@ -1,18 +1,16 @@
 class_name EphEvilDashingSprit
-extends Td2dCCWithAcceleration
-
-@export var _state_machine: StateMachine
-@export var _sprite_rotation_point: Marker2D
+extends EphEvilSprit
 
 #region ======================== PUBLIC METHODS ================================
 
 
 func stop_repel_from_player() -> void:
-	pass
+	_near_player = false
 
 
 func start_repel_from_player() -> void:
-	pass
+	_near_player = true
+	ungrab_youngling()
 
 
 #endregion

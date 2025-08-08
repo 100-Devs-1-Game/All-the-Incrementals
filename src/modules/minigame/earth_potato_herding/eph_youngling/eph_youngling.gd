@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_youngling_saw_spirit_body_entered(body: Node2D) -> void:
-	body.queue_free()
-	despawn()
+	body.grab_youngling(self)  #queue_free()
+	#despawn()
 
 #endregion

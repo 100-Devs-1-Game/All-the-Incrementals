@@ -25,6 +25,8 @@ shader_parameter/size = 6.5
 shader_parameter/color = Color(0.725863, 0.73, 0.6059, 0.294118)
 
 [node name="EPHPlayer" instance=ExtResource("1_y7bht")]
+collision_layer = 1
+collision_mask = 1
 script = ExtResource("2_42r0g")
 _base_speed = Vector2(300, 300)
 _move_direction_strategy = SubResource("Resource_kub1s")

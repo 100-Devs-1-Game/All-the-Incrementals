@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgoxxbjngex2d"]
+[gd_scene load_steps=8 format=3 uid="uid://cgoxxbjngex2d"]
 
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_hp0jy"]
 [ext_resource type="Script" uid="uid://cny8wlkj1ng54" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/eph_evil_dashing_spirit.gd" id="2_xvmqs"]
-[ext_resource type="Texture2D" uid="uid://bcl13fess1l7r" path="res://modules/minigame/art/Spirit.webp" id="3_bbhup"]
+[ext_resource type="Texture2D" uid="uid://58jq6rcdxs70" path="res://modules/minigame/art/evil_spirit.webp" id="3_dw7au"]
+[ext_resource type="Texture2D" uid="uid://e3q3e0x6t0t" path="res://modules/minigame/art/fists.webp" id="4_ci7t0"]
+[ext_resource type="Texture2D" uid="uid://bkl78rfb3w03e" path="res://modules/minigame/art/hands.webp" id="5_4fix3"]
 
 [sub_resource type="GDScript" id="GDScript_b4o6r"]
 script/source = "extends State
@@ -21,11 +23,14 @@ func enter() -> void:
 [sub_resource type="CircleShape2D" id="CircleShape2D_bbhup"]
 radius = 22.2036
 
-[node name="EPHEvilDashingSpirit" node_paths=PackedStringArray("_state_machine", "_sprite_rotation_point") instance=ExtResource("1_hp0jy")]
+[node name="EPHEvilDashingSpirit" node_paths=PackedStringArray("_state_machine", "_sprite_rotation_point", "_hand", "_youngling_place") instance=ExtResource("1_hp0jy")]
 collision_layer = 4
 script = ExtResource("2_xvmqs")
+_repel_acceleration_multiplier = 10
 _state_machine = NodePath("StateMachine")
 _sprite_rotation_point = NodePath("SpriteRotationPoint")
+_hand = NodePath("SpriteRotationPoint/Sprite2D3")
+_youngling_place = NodePath("SpriteRotationPoint/Sprite2D3/Marker2D")
 _base_acceleration = Vector2(200, 200)
 
 [node name="StateMachine" parent="." index="0" node_paths=PackedStringArray("_states", "_start_state")]
@@ -37,13 +42,24 @@ script = SubResource("GDScript_b4o6r")
 state_name = "go_to_nearest_youngling"
 
 [node name="SpriteRotationPoint" type="Marker2D" parent="." index="1"]
+modulate = Color(0.866667, 0.2, 1, 1)
+scale = Vector2(0.455, 0.455)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteRotationPoint" index="0"]
-self_modulate = Color(0.893333, 0.2, 1, 1)
-position = Vector2(-22, -2)
-rotation = -1.5708
-scale = Vector2(0.660439, 0.660439)
-texture = ExtResource("3_bbhup")
+position = Vector2(-19, 0)
+texture = ExtResource("3_dw7au")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SpriteRotationPoint" index="1"]
+position = Vector2(85, 0)
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("4_ci7t0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SpriteRotationPoint" index="2"]
+position = Vector2(102, 0)
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("5_4fix3")
+
+[node name="Marker2D" type="Marker2D" parent="SpriteRotationPoint/Sprite2D3" index="0"]
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_bbhup")
