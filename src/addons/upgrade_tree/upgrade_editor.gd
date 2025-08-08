@@ -28,6 +28,8 @@ func set_fields_from_upgrade() -> void:
 
 	if !upgrade.resource_path:
 		add_info_error("NOT SAVED TO FILE")
+	else:
+		add_info("[i]%s[/i]" % upgrade.resource_path.get_file())
 
 	if !upgrade.logic:
 		add_info_error("MISSING LOGIC")
@@ -65,4 +67,4 @@ func add_info(msg: String) -> void:
 	if info.text != "":
 		info.append_text("\n")
 
-	info.append_text("%s\n" %msg)
+	info.append_text("%s\n" % msg)
