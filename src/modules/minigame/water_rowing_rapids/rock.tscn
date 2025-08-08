@@ -13,6 +13,7 @@ noise = SubResource("FastNoiseLite_jnvkn")
 [node name="Polygon2D" type="Polygon2D"]
 color = Color(0.544974, 0.544974, 0.544974, 1)
 texture = SubResource("NoiseTexture2D_nbyof")
+texture_offset = Vector2(256, 256)
 polygon = PackedVector2Array(49, 19, 24, 18, 1, 23, -17, 23, -34, 21, -59, 21, -72, 14, -77, -2, -67, -28, -63, -38, -29, -58, -15, -59, 12, -55, 31, -52, 44, -41, 55, -17, 52, -3, 51, 3)
 
 [node name="Area2D" type="Area2D" parent="." groups=["hazzard"]]
