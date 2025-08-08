@@ -1,6 +1,19 @@
 # Global SceneLoader class
 extends Node
 
+# this is necessary to avoid circular references
+const OVERWORLD_SCENE := preload("res://modules/overworld/overworld.tscn")
+const EXTRAS_SCENE := preload("res://modules/menu/extras.tscn")
+
+# this is necessary to maintain my sanity
+const SHRINE_SETTLEMENT_DATA := preload("res://modules/overworld_locations/shrine/shrine.tres")
+const BREEZEKILN_SETTLEMENT_DATA := preload(
+	"res://modules/overworld_locations/breezekiln/breezekiln.tres"
+)
+const CLAYPORT_SETTLEMENT_DATA := preload(
+	"res://modules/overworld_locations/clayport/clayport.tres"
+)
+
 var _current_settlement: SettlementData
 var _current_minigame: MinigameData
 
@@ -39,8 +52,12 @@ func get_current_minigame() -> MinigameData:
 
 
 func enter_settlement(data: SettlementData):
+	get_tree().change_scene_to_packed(OVERWORLD_SCENE)
 	_current_settlement = data
-	get_tree().change_scene_to_packed(data.settlement_scene)
+
+
+func get_current_settlement_data() -> SettlementData:
+	return _current_settlement
 
 
 func return_to_overworld():
@@ -48,8 +65,24 @@ func return_to_overworld():
 	pass
 
 
+func enter_shrine():
+	enter_settlement(SHRINE_SETTLEMENT_DATA)
+
+
+func enter_breezekiln():
+	enter_settlement(BREEZEKILN_SETTLEMENT_DATA)
+
+
+func enter_clayport():
+	enter_settlement(CLAYPORT_SETTLEMENT_DATA)
+
+
+func enter_extras():
+	get_tree().change_scene_to_packed(EXTRAS_SCENE)
+
+
 func _exit_minigame() -> void:
 	if _current_settlement == null:
 		print("No settlement context to exit to. Directly running scene?")
 		return
-	get_tree().change_scene_to_packed(_current_settlement.settlement_scene)
+	enter_settlement(_current_settlement)

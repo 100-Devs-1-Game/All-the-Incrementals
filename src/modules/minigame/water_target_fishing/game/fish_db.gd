@@ -14,22 +14,22 @@ func _enter_tree() -> void:
 	load_fish()
 
 
-func load_fish():
+func load_fish() -> void:
 	_load_fish(directory_path)
 
 
 func _load_fish(path: StringName) -> void:
 	_data.clear()
 
-	var files = ResourceLoader.list_directory(path)
+	var files := ResourceLoader.list_directory(path)
 	if files == null:
 		push_error("Failed to open data directory: " + path)
 		return
 
 	for file_name in files:
 		if file_name.ends_with(".tres"):
-			var file_path = path.path_join(file_name)
-			var data = ResourceLoader.load(file_path) as WTFFishData
+			var file_path := path.path_join(file_name)
+			var data := ResourceLoader.load(file_path) as WTFFishData
 
 			if data != null && _data.get(data.resource_path) == null:
 				_data[data.resource_path] = data

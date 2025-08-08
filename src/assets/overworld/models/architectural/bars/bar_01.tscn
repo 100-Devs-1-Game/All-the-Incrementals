@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://corlpgtayffvx"]
+
+[ext_resource type="PackedScene" uid="uid://jaw2sfny2buq" path="res://assets/overworld/models/architectural/bars/bar_01.gltf" id="1_wbwc0"]
+[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://assets/overworld/materials/simple/metallic/metallic_gray.tres" id="2_y5ler"]
+
+[node name="bar_01" instance=ExtResource("1_wbwc0")]
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_y5ler")

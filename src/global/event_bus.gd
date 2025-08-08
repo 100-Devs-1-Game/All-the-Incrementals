@@ -4,6 +4,10 @@ extends Node
 # the place for all global signals
 # add individual regions for modules
 
+#region Overworld
+signal wants_to_travel_to(settlement_data: SettlementData)
+#endregion
+
 #region Game
 signal game_loaded(world_state: WorldState)
 signal exit_minigame

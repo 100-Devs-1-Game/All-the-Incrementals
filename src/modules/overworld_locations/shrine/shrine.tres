@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SettlementData" load_steps=3 format=3 uid="uid://depjmek44wqwq"]
+
+[ext_resource type="Script" uid="uid://cbvt5rfiyp1m7" path="res://modules/minigame/common/settlement_data.gd" id="1_6ubhg"]
+[ext_resource type="PackedScene" uid="uid://bcjwk5lq3xa2k" path="res://modules/overworld_locations/shrine/shrine.tscn" id="2_6b6jb"]
+
+[resource]
+script = ExtResource("1_6ubhg")
+display_name = "Shrine"
+settlement_scene = ExtResource("2_6b6jb")
+metadata/_custom_type_script = "uid://cbvt5rfiyp1m7"

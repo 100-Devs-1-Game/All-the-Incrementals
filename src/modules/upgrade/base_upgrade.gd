@@ -4,6 +4,8 @@ extends Resource
 
 enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 
+const NO_LEVEL = -1
+
 ## how this Upgrade is called in-game
 @export var name: String
 
@@ -56,7 +58,7 @@ enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
 @export var unlock_level: int
 
 ## Upgrades that can get unlocked by this one
-@export var unlocks: Array[BaseUpgrade]
+@export var unlocks: Array[Resource]
 
 @export_category("Description")
 
@@ -107,9 +109,19 @@ func level_up() -> void:
 	SaveGameManager.save()
 
 
+func level_down() -> void:
+	var current_level = get_level()
+	#TODO: this shouldn't need a +1, but it causes an assert elsewhere
+	if current_level <= NO_LEVEL + 1:
+		push_error("Tried to level down past min level")
+		return
+	SaveGameManager.world_state.minigame_unlock_levels[get_uid()] = (current_level - 1)
+	SaveGameManager.save()
+
+
 # 0 = level 1, ...
 func get_level() -> int:
-	return SaveGameManager.world_state.minigame_unlock_levels.get(get_uid(), -1)
+	return SaveGameManager.world_state.minigame_unlock_levels.get(get_uid(), NO_LEVEL)
 
 
 # 0 = level 1, ...
@@ -131,6 +143,8 @@ func get_cost(level: int) -> EssenceInventory:
 # 0 = level 1, ...
 func get_effect_modifier(level: int) -> float:
 	assert(effect_modifier_arr.size() > level)
+	# Setting the effect for level -1 for max effect is likely not intended.
+	assert(level > NO_LEVEL)
 	return effect_modifier_arr[level]
 
 

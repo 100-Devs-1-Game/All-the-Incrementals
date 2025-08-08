@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxyhsx2s6ve63"
+path="res://.godot/imported/pill.obj-fc4f8897608615f852fde4053facc280.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pill.obj-fc4f8897608615f852fde4053facc280.mesh"]
+
+source_file="res://assets/overworld/models/ui/pill/pill.obj"
+dest_files=["res://.godot/imported/pill.obj-fc4f8897608615f852fde4053facc280.mesh", "res://.godot/imported/pill.obj-fc4f8897608615f852fde4053facc280.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

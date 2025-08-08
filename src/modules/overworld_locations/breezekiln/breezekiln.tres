@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SettlementData" load_steps=3 format=3 uid="uid://cdoij41kganvn"]
+
+[ext_resource type="Script" uid="uid://cbvt5rfiyp1m7" path="res://modules/minigame/common/settlement_data.gd" id="1_4kew2"]
+[ext_resource type="PackedScene" uid="uid://bl4s8xuvuf3xb" path="res://modules/overworld_locations/breezekiln/breezekiln.tscn" id="2_ekb2w"]
+
+[resource]
+script = ExtResource("1_4kew2")
+display_name = "Breezekiln"
+settlement_scene = ExtResource("2_ekb2w")
+metadata/_custom_type_script = "uid://cbvt5rfiyp1m7"

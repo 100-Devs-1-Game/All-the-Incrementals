@@ -40,7 +40,8 @@ jobs:
           godot_export_templates_download_url: https://github.com/godotengine/godot-builds/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
           relative_project_path: ./src
           use_preset_export_path: true
-          archive_output: ${{ startsWith(github.ref, 'refs/tags/') }}
+          archive_output: true
+          export_debug: ${{ !startsWith(github.ref, 'refs/tags/') }}
 
       - name: show build directory
         if: startsWith(github.ref, 'refs/tags/')
@@ -63,7 +64,22 @@ jobs:
           else
             ls -R .
           fi
-
+      - name: Upload Windows artifacts
+        uses: actions/upload-artifact@v4
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        with:
+          name: windows-export
+          path: ${{ steps.build.outputs.archive_directory }}/**/windows.zip
+          retention-days: 1
+          compression-level: 0
+      - name: Upload Linux artifacts
+        uses: actions/upload-artifact@v4
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        with:
+          name: linux-export
+          path: ${{ steps.build.outputs.archive_directory }}/**/linux_release.zip
+          retention-days: 1
+          compression-level: 0
       - name: create release
         if: startsWith(github.ref, 'refs/tags/')
         uses: ncipollo/release-action@v1

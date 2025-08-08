@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6evijo5uuuwh"]
+
+[ext_resource type="Texture2D" uid="uid://dv0s7hgkfdhk8" path="res://assets/minigames/fire_fighters/placeholder_assets/burn_spot.png" id="1_ceilj"]
+
+[node name="Sprite2D" type="Sprite2D"]
+z_index = 1
+texture = ExtResource("1_ceilj")
