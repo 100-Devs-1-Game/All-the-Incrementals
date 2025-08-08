@@ -38,6 +38,10 @@ func _enter_start_state() -> void:
 #region ======================== PUBLIC METHODS ================================
 
 
+func get_current_state_name() -> String:
+	return _current_state.name
+
+
 func change_state(state_name: String) -> void:
 	assert(_states_map.has(state_name), "State not found")
 
