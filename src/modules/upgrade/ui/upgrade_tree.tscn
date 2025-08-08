@@ -123,6 +123,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="UpgradeInfoContainer" type="MarginContainer" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -158,15 +159,15 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer"]
+[node name="MC" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = -85
 theme_override_constants/margin_right = 155
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MarginContainer"]
+[node name="HC" type="HBoxContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC"]
 layout_mode = 2
 
-[node name="Cost" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MarginContainer/HBoxContainer"]
+[node name="Cost" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC"]
 custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -179,7 +180,7 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 2
 
-[node name="CostInfo" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MarginContainer/HBoxContainer"]
+[node name="CostInfo" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC"]
 custom_minimum_size = Vector2(250, 280)
 layout_mode = 2
 size_flags_horizontal = 4

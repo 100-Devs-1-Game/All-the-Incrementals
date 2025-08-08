@@ -1,16 +1,16 @@
-extends Control
 class_name FillButton
-@onready var button: Button = $UpgradeButton
-@onready var filler: ColorRect = $Filler
-@onready var particles: GPUParticles2D = $Particles
-@onready var particles_copy: GPUParticles2D
-var tween: Tween
+extends Control
+signal fill_complete(fill_button: FillButton)
 
+var tween: Tween
 var fill_time := 0.5
 var is_pressed := false
 var switch := false
 
-signal fill_complete(fill_button: FillButton)
+@onready var button: Button = $UpgradeButton
+@onready var filler: ColorRect = $Filler
+@onready var particles: GPUParticles2D = $Particles
+@onready var particles_copy: GPUParticles2D
 
 
 func _ready():

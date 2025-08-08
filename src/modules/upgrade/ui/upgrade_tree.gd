@@ -1,14 +1,14 @@
-extends Node
 class_name UpgradeTree
+extends Node
 ## The folder with all the upgrades.tres files
 @export_dir var upgrade_folder_path: String
 @export var center_texture: Texture2D
-@onready var line_texure: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
 var ui_upgrade_template = preload("res://modules/upgrade/ui/ui_upgrade_template.tscn")
 var upgrades: Array[BaseUpgrade]
 var ui_spacer_scale: float = 0.2
 var current_upgrade: BaseUpgrade
 var essence_type: String
+@onready var line_texure: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,7 +33,7 @@ func change_display(
 	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer/NameInfo.text = (
 		"[font_size=80]" + name_text
 	)
-	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MarginContainer/HBoxContainer/CostInfo.text = (
+	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC/CostInfo.text = (
 		"[font_size=50]" + cost_text
 	)
 	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/LevelInfo.text = (
