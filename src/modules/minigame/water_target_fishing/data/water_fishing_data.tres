@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="MinigameData" load_steps=5 format=3 uid="uid://c7vragnlq8udw"]
+[gd_resource type="Resource" script_class="MinigameData" load_steps=6 format=3 uid="uid://c7vragnlq8udw"]
 
 [ext_resource type="PackedScene" uid="uid://dbvdwycj4dcgw" path="res://modules/minigame/water_target_fishing/water_target_fishing.tscn" id="1_fbagk"]
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_sxeok"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="1_xhtl0"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_xhtl0"]
+[ext_resource type="Resource" uid="uid://boijlkxv4okxj" path="res://modules/minigame/water_target_fishing/upgrades/upgrade1.tres" id="5_7fgwq"]
 
 [resource]
 script = ExtResource("1_sxeok")
 display_name = "WTF"
 minigame_scene = ExtResource("1_fbagk")
-upgrade_tree_root_nodes = Array[ExtResource("2_xhtl0")]([])
+upgrade_tree_root_nodes = Array[ExtResource("2_xhtl0")]([ExtResource("5_7fgwq")])
 output_essence = ExtResource("1_xhtl0")
 currency_conversion_factor = 0.0
 high_scores = Array[int]([])

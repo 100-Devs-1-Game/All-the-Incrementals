@@ -1,30 +1,114 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=5 format=3 uid="uid://boijlkxv4okxj"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://boijlkxv4okxj"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_jgvf6"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="2_0t1gb"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_nylnd"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_64pyt"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_nylnd"]
+[ext_resource type="Resource" uid="uid://du2juy37elegu" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_fish_t2.tres" id="6_nylnd"]
+
+[sub_resource type="Resource" id="Resource_pxb4k"]
+script = ExtResource("2_nylnd")
+essence = ExtResource("3_64pyt")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_5sbol"]
+script = ExtResource("1_jgvf6")
+earth = 0
+fire = 0
+water = 1
+wind = 0
+slots = Array[ExtResource("2_nylnd")]([SubResource("Resource_pxb4k")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_0t1gb"]
+script = ExtResource("2_nylnd")
+essence = ExtResource("3_64pyt")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_nylnd"]
+script = ExtResource("1_jgvf6")
+earth = 0
+fire = 0
+water = 1
+wind = 0
+slots = Array[ExtResource("2_nylnd")]([SubResource("Resource_0t1gb")])
+
+[sub_resource type="Resource" id="Resource_64pyt"]
+script = ExtResource("2_nylnd")
+essence = ExtResource("3_64pyt")
+amount = 6
+
+[sub_resource type="Resource" id="Resource_s2su5"]
+script = ExtResource("1_jgvf6")
+earth = 0
+fire = 0
+water = 6
+wind = 0
+slots = Array[ExtResource("2_nylnd")]([SubResource("Resource_64pyt")])
+
+[sub_resource type="Resource" id="Resource_ewrae"]
+script = ExtResource("2_nylnd")
+essence = ExtResource("3_64pyt")
+amount = 11
+
+[sub_resource type="Resource" id="Resource_icpvw"]
+script = ExtResource("1_jgvf6")
+earth = 0
+fire = 0
+water = 11
+wind = 0
+slots = Array[ExtResource("2_nylnd")]([SubResource("Resource_ewrae")])
+
+[sub_resource type="Resource" id="Resource_23qwp"]
+script = ExtResource("2_nylnd")
+essence = ExtResource("3_64pyt")
+amount = 16
+
+[sub_resource type="Resource" id="Resource_6a8nb"]
+script = ExtResource("1_jgvf6")
+earth = 0
+fire = 0
+water = 16
+wind = 0
+slots = Array[ExtResource("2_nylnd")]([SubResource("Resource_23qwp")])
+
+[sub_resource type="Resource" id="Resource_df5y5"]
+script = ExtResource("2_nylnd")
+essence = ExtResource("3_64pyt")
+amount = 21
+
+[sub_resource type="Resource" id="Resource_m6ihg"]
+script = ExtResource("1_jgvf6")
+earth = 0
+fire = 0
+water = 21
+wind = 0
+slots = Array[ExtResource("2_nylnd")]([SubResource("Resource_df5y5")])
 
 [sub_resource type="Resource" id="Resource_tbqmd"]
 script = ExtResource("2_0t1gb")
-type = 1
+type = 2
 metadata/_custom_type_script = "uid://82mjh0pcfce8"
 
 [resource]
 script = ExtResource("3_nylnd")
 logic = SubResource("Resource_tbqmd")
 unlocks_feature = ""
-name = "TODO"
+name = "+1 Starting Fish"
 flavor = ""
-position = Vector2(100, -220)
-cost_arr = Array[ExtResource("1_jgvf6")]([])
-effect_modifier_arr = Array[float]([])
-max_level = 0
-base_cost_multiplier = 0.0
-base_effect_modifier = 0.0
-effect_modifier_multiplier = 0.0
+position = Vector2(-320, 0)
+cost_arr = Array[ExtResource("1_jgvf6")]([SubResource("Resource_nylnd"), SubResource("Resource_s2su5"), SubResource("Resource_icpvw"), SubResource("Resource_6a8nb"), SubResource("Resource_m6ihg")])
+effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0])
+max_level = 5
+base_cost = SubResource("Resource_5sbol")
+base_cost_multiplier = 5.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
 unlocked = false
 unlock_level = 0
-unlocks = Array[Resource]([])
+unlocks = Array[Resource]([ExtResource("6_nylnd")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0
+metadata/_tree_editor_version_saved = 1
