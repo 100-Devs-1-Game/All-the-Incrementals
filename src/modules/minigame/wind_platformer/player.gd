@@ -5,7 +5,7 @@ signal left_screen
 
 @export var move_speed: float = 100.0
 @export var acceleration: float = 100.0
-@export var max_jump_speed: float = 100.0
+@export var max_jump_speed: float = 150.0
 @export var jump_speed_per_frame: float = 10.0
 
 @export var air_control: float = 0.25
@@ -64,16 +64,16 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 0:
 			velocity.y = 0
 
-		if velocity.y >= 0:
-			if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed:
-				velocity.y = -jump_speed_per_frame
-				current_jump_speed += jump_speed_per_frame
-			else:
-				current_jump_speed = 0
+		velocity.x = move_toward(velocity.x, hor_input * move_speed, acceleration * delta)
+
+	if (is_on_ground and velocity.y >= 0) or current_jump_speed > 0:
+		if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed:
+			velocity.y -= jump_speed_per_frame
+			current_jump_speed += jump_speed_per_frame
 		else:
 			current_jump_speed = 0
-
-		velocity.x = move_toward(velocity.x, hor_input * move_speed, acceleration * delta)
+	else:
+		current_jump_speed = 0
 
 	move_and_slide()
 
