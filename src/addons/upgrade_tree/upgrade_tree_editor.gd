@@ -274,6 +274,17 @@ func _on_save_upgrade_pressed() -> void:
 	file_dialog.popup_centered()
 
 
+func _try_add_root(p_upgrade: BaseUpgrade) -> bool:
+	if !current_data:
+		return false
+
+	if _upgrade_is_unlockable(p_upgrade) || current_data.upgrade_tree_root_nodes.has(p_upgrade):
+		return false
+
+	current_data.upgrade_tree_root_nodes.append(p_upgrade)
+	return true
+
+
 func _on_delete_upgrade_pressed() -> void:
 	for child in graph_edit.get_children():
 		if child is UpgradeEditor:
