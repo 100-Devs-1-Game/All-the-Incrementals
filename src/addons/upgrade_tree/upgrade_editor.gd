@@ -52,7 +52,8 @@ func set_fields_from_upgrade() -> void:
 	if upgrade.description_prefix == "" || upgrade.description_suffix:
 		add_info_warning("MISSING DESCRIPTION")
 
-	add_info("Max Level: %d" % upgrade.get_max_level())
+	#TODO: the upgrade levels shouldn't be offset by 1 like this
+	add_info("Max Level: %d" % (upgrade.get_max_level() + 1))
 
 
 func add_info_error(msg: String) -> void:
