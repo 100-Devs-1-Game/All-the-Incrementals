@@ -55,6 +55,10 @@ func reset() -> void:
 	oxygen_remaining_seconds = oxygen_capacity()
 
 
+func _apply_speedboost(amount: float) -> float:
+	return (amount * speedboost_multiplier) + speedboost_flat
+
+
 func scrolling() -> bool:
 	return scrollspeed.x < 0
 
@@ -64,7 +68,7 @@ func stop_scrolling() -> void:
 
 
 func scroll_faster(amount: float) -> void:
-	scrollspeed.x -= amount
+	scrollspeed.x -= _apply_speedboost(amount)
 	scrollspeed.x = min(0, scrollspeed.x)
 
 
