@@ -11,7 +11,6 @@ extends Node
 var minigame_node: BaseMinigame
 
 
-
 func _ready():
 	minigame_node = get_parent()
 	assert(minigame_node != null)
@@ -33,4 +32,3 @@ func _process(_delta: float) -> void:
 		assert(minigame_overlay)
 
 		minigame_overlay.update()
-

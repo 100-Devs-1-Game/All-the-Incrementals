@@ -22,7 +22,6 @@ var minigame: BaseMinigame
 @onready var _countdown_value: Label = %CountdownValue
 
 
-
 func update():
 	if enable_score_display:
 		_update_score(minigame.get_score())
