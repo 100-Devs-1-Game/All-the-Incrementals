@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crmns8qtpfpj5"
-path="res://.godot/imported/bady_potato.webp-bc6d652df9ec46eac14f508ef940aa1a.ctex"
+path="res://.godot/imported/bady_potato.webp-59fccadac5c3af9edb0b3ace59b672dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/art/bady_potato.webp"
-dest_files=["res://.godot/imported/bady_potato.webp-bc6d652df9ec46eac14f508ef940aa1a.ctex"]
+source_file="res://modules/minigame/earth_potato_herding/art/bady_potato.webp"
+dest_files=["res://.godot/imported/bady_potato.webp-59fccadac5c3af9edb0b3ace59b672dd.ctex"]
 
 [params]
 

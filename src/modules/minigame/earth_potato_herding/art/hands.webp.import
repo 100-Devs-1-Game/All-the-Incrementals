@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkl78rfb3w03e"
-path="res://.godot/imported/hands.webp-1d61bfc58f40b35379e31c10bdf12a14.ctex"
+path="res://.godot/imported/hands.webp-fab0826c0f12cef3fa44ccd164a3648a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/art/hands.webp"
-dest_files=["res://.godot/imported/hands.webp-1d61bfc58f40b35379e31c10bdf12a14.ctex"]
+source_file="res://modules/minigame/earth_potato_herding/art/hands.webp"
+dest_files=["res://.godot/imported/hands.webp-fab0826c0f12cef3fa44ccd164a3648a.ctex"]
 
 [params]
 

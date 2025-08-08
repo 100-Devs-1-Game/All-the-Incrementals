@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcl13fess1l7r"
-path="res://.godot/imported/spirit.webp-7b97c17baff4a63eb7991df6a7b62ec1.ctex"
+path="res://.godot/imported/spirit.webp-3835a4a5a26480b0c2fd3c66b0435e73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/art/spirit.webp"
-dest_files=["res://.godot/imported/spirit.webp-7b97c17baff4a63eb7991df6a7b62ec1.ctex"]
+source_file="res://modules/minigame/earth_potato_herding/art/spirit.webp"
+dest_files=["res://.godot/imported/spirit.webp-3835a4a5a26480b0c2fd3c66b0435e73.ctex"]
 
 [params]
 

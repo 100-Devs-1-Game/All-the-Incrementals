@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwajo5hcqdpsl"
-path="res://.godot/imported/fog.webp-d382f10504094ceffa3899ddbaa94332.ctex"
+path="res://.godot/imported/fog.webp-5ee6a4569239eb0c5e722356c86c64c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/art/fog.webp"
-dest_files=["res://.godot/imported/fog.webp-d382f10504094ceffa3899ddbaa94332.ctex"]
+source_file="res://modules/minigame/earth_potato_herding/art/fog.webp"
+dest_files=["res://.godot/imported/fog.webp-5ee6a4569239eb0c5e722356c86c64c8.ctex"]
 
 [params]
 

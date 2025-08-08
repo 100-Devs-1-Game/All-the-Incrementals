@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e3q3e0x6t0t"
-path="res://.godot/imported/fists.webp-54aa2fe5467088ec36b640d335da8269.ctex"
+path="res://.godot/imported/fists.webp-8b323379cae88e600d55dd569d537a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/art/fists.webp"
-dest_files=["res://.godot/imported/fists.webp-54aa2fe5467088ec36b640d335da8269.ctex"]
+source_file="res://modules/minigame/earth_potato_herding/art/fists.webp"
+dest_files=["res://.godot/imported/fists.webp-8b323379cae88e600d55dd569d537a40.ctex"]
 
 [params]
 

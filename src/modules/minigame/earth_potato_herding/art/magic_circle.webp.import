@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2jw7ynffcxnk"
-path="res://.godot/imported/magic_circle.webp-aa94ee204c0a4ac708a9d1588ecb557f.ctex"
+path="res://.godot/imported/magic_circle.webp-54896f8a4047d61fec2ed08289cc81ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/art/magic_circle.webp"
-dest_files=["res://.godot/imported/magic_circle.webp-aa94ee204c0a4ac708a9d1588ecb557f.ctex"]
+source_file="res://modules/minigame/earth_potato_herding/art/magic_circle.webp"
+dest_files=["res://.godot/imported/magic_circle.webp-54896f8a4047d61fec2ed08289cc81ba.ctex"]
 
 [params]
 
