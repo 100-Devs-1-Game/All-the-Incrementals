@@ -38,13 +38,15 @@ func _exit_tree() -> void:
 
 func _initialize() -> void:
 	stats = WTFStats.new()
-	data.apply_all_upgrades(self)
-	stats.reset()
 
 
 func _start() -> void:
+	# to handle some upgrades
+	stats.reset()
+
 	# give it an initial amount so we can get some fishies going
 	_distance_since_spawned = stats.spawn_fish_every_x_pixels * stats.spawn_x_starting_fish
+	print("starting with %s fish" % stats.spawn_x_starting_fish)
 
 
 func _process(_delta: float) -> void:
