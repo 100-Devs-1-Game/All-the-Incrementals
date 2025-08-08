@@ -18,7 +18,6 @@ var right_rect: Rect2
 
 func _ready() -> void:
 	var viewport := get_viewport_rect().size
-	print(viewport)
 
 	var x_offset: int = 100
 
@@ -42,8 +41,6 @@ func spawn_cloud(rect: Rect2, force_direction: int = 0):
 		randf_range(rect.position.x, rect.position.x + rect.size.x),
 		randf_range(rect.position.y, rect.position.y + rect.size.y)
 	)
-
-	prints(pos)
 
 	var cloud: WindPlatformerMinigameCloudPlatform = cloud_scene.instantiate()
 	cloud.position = pos
