@@ -226,6 +226,20 @@ func _vegetation_saved(tile: Vector2i):
 	TextFloatSystem.floating_text(get_tile_position(tile), str("+1"), tile_map_terrain)
 
 
+func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
+	for x in range(-radius, radius + 1):
+		for y in range(-radius, radius + 1):
+			var vec := Vector2i(x, y)
+			if vec.length() > radius:
+				continue
+
+			var tile: Vector2i = center_tile + vec
+			if is_tile_in_bounds(tile):
+				add_oil(tile)
+				if on_fire:
+					_add_fire(tile, 0.1, 1.0)
+
+
 func get_tile_at(pos: Vector2) -> Vector2i:
 	return tile_map_terrain.local_to_map(pos)
 
@@ -269,3 +283,7 @@ func get_random_tile() -> Vector2i:
 		randi_range(map_rect.position.x, map_rect.position.x + map_rect.size.x),
 		randi_range(map_rect.position.y, map_rect.position.y + map_rect.size.y)
 	)
+
+
+func is_tile_in_bounds(tile: Vector2i) -> bool:
+	return map_rect.has_point(tile)
