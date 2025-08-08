@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_sxeok"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="1_xhtl0"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_xhtl0"]
-[ext_resource type="Resource" uid="uid://c1au06cx4sygq" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_fish_t1.tres" id="5_7fgwq"]
+[ext_resource type="Resource" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_fish_t1.tres" id="5_7fgwq"]
 [ext_resource type="Resource" uid="uid://ci261q4qorwsd" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_fish_spawnrate_t1.tres" id="6_8jg6f"]
 [ext_resource type="Resource" uid="uid://nr857byojkav" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_oxygen_mult_t1.tres" id="7_fiswx"]
 [ext_resource type="Resource" uid="uid://cbv0pl4j860i3" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_initial_speed_t1.tres" id="8_1oiaf"]
