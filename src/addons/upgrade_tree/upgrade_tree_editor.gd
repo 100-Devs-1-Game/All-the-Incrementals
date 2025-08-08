@@ -7,16 +7,19 @@ const UpgradeTreeEditorVersion: int = 1
 const MissingCurrentDataText: StringName = "SELECT AN UPGRADE TREE"
 
 var upgrade_tree_editor_instance: Control
-var graph_edit: GraphEdit
 
 #FIXME: Need to handle this better when we have non-minigame trees
 var current_data: MinigameData = null
 var current_selected_node: GraphNode = null
 var file_dialog: FileDialog
 
-func _update_dropdown_trees():
-	var dropdown: OptionButton = upgrade_tree_editor_instance.get_node("UpgradeTreeDropdown")
+var graph_edit: GraphEdit
+var add_upgrade: Button
+var delete_upgrade: Button
+var reload_resources: Button
+var dropdown: OptionButton
 
+func _update_dropdown_trees():
 	var minigame_data_paths := _get_all_minigame_data("res://modules")
 	dropdown.clear()
 
@@ -129,7 +132,13 @@ func _get_plugin_icon():
 
 func _enter_tree() -> void:
 	upgrade_tree_editor_instance = UpgradeTreeEditor.instantiate()
+
 	graph_edit = upgrade_tree_editor_instance.get_node("GraphEdit")
+	add_upgrade = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("AddUpgrade")
+	delete_upgrade = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("DeleteUpgrade")
+	reload_resources = upgrade_tree_editor_instance.get_node("HBoxContainer").get_node("ReloadResources")
+	dropdown = upgrade_tree_editor_instance.get_node("UpgradeTreeDropdown")
+
 	graph_edit.snapping_enabled = true
 	graph_edit.snapping_distance = 64
 	graph_edit.show_grid_buttons = false
@@ -141,15 +150,14 @@ func _enter_tree() -> void:
 	# Hide the main panel. Very much required.
 	_make_visible(false)
 	EditorInterface.get_inspector().edited_object_changed.connect(_on_edited_object_changed)
-	upgrade_tree_editor_instance.get_node("AddUpgrade").pressed.connect(_on_add_upgrade_pressed)
-	upgrade_tree_editor_instance.get_node("SaveUpgrade").pressed.connect(_on_save_upgrade_pressed)
-	upgrade_tree_editor_instance.get_node("DeleteUpgrade").pressed.connect(
+	add_upgrade.pressed.connect(_on_add_upgrade_pressed)
+	delete_upgrade.pressed.connect(
 		_on_delete_upgrade_pressed
 	)
-	upgrade_tree_editor_instance.get_node("ReloadResources").pressed.connect(
+	reload_resources.pressed.connect(
 		_on_reload_resources_pressed
 	)
-	upgrade_tree_editor_instance.get_node("UpgradeTreeDropdown").item_selected.connect(
+	dropdown.item_selected.connect(
 		_on_tree_dropdown_selected
 	)
 	graph_edit.connection_request.connect(_on_connection_request)
@@ -160,6 +168,7 @@ func _enter_tree() -> void:
 	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 	file_dialog.filters = PackedStringArray(["*.tres"])
 	file_dialog.file_selected.connect(_on_file_selected)
+	file_dialog.canceled.connect(_on_file_dialog_closed)
 	file_dialog.name = "Save Upgrade"
 	upgrade_tree_editor_instance.add_child(file_dialog)
 
@@ -275,7 +284,7 @@ func _on_add_upgrade_pressed() -> void:
 		var upgrade = MinigameUpgrade.new()
 		# we can use this in the future to update old upgrades or something
 		# a lil bit of future proofing never hurt innit
-		upgrade.set_meta("tree_editor_version_added", UpgradeTreeEditorVersion)
+		upgrade.set_meta("_tree_editor_version_added", UpgradeTreeEditorVersion)
 		upgrade.name = "New Upgrade"
 		upgrade.position = Vector2(0, 0)
 
@@ -284,18 +293,19 @@ func _on_add_upgrade_pressed() -> void:
 
 			var upgrade_editor_node := current_selected_node as UpgradeEditor
 			if upgrade_editor_node:
-				upgrade.logic = upgrade_editor_node.upgrade.logic.duplicate(false)
+				if upgrade_editor_node.upgrade.logic:
+					upgrade.logic = upgrade_editor_node.upgrade.logic.duplicate(false)
 				upgrade.max_level = upgrade_editor_node.upgrade.max_level
 
 		# explicitly passing null because it auto-connects and that's kinda frustrating tbh
-		_add_node(graph_edit, upgrade, null)
+		var new_node := _add_node(graph_edit, upgrade, null)
+
+		# bit hacky, but it'll do. try to save it straight away, and delete it if the user cancels
+		current_selected_node = new_node
+		file_dialog.popup_centered()
 	else:
 		assert(current_data)
 		push_error("No MiniGameData selected.")
-
-
-func _on_save_upgrade_pressed() -> void:
-	file_dialog.popup_centered()
 
 
 func _try_add_root(p_upgrade: BaseUpgrade) -> bool:
@@ -357,6 +367,11 @@ func _on_file_selected(path: String) -> void:
 	current_selected_node.upgrade.resource_path = ProjectSettings.localize_path(path)
 	_save_upgrade(current_selected_node.upgrade)
 	_draw_upgrade_tree(current_data)
+
+
+func _on_file_dialog_closed() -> void:
+	if !current_selected_node.upgrade.resource_path:
+		_on_delete_upgrade_pressed()
 
 
 func change_tree(object: Variant) -> void:
