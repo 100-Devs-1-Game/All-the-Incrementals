@@ -1,5 +1,4 @@
 shader_type canvas_item;
-render_mode blend_add;
 
 uniform float pulse_intensity = 0.12;
 uniform float wobble_offset = 18.0;
