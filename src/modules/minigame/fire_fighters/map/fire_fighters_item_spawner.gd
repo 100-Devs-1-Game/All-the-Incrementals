@@ -3,7 +3,6 @@ extends Node
 
 @export var pickup_scene: PackedScene
 @export var object_scene: PackedScene
-@export var debug_items: Array[FireFightersMinigameItem]
 @export var spawn_tries: int = 10
 
 var active_items: Array[FireFightersMinigameItem]
@@ -46,6 +45,11 @@ func spawn_item(item_type: FireFightersMinigameItem, pos: Vector2):
 	item.init(item_type, game)
 
 
+func add_item(item: FireFightersMinigameItem):
+	if not item in active_items:
+		active_items.append(item)
+
+
 func _can_spawn_item_on(tile: Vector2i) -> bool:
 	if game.has_map_feature(tile):
 		return false
@@ -56,4 +60,4 @@ func _can_spawn_item_on(tile: Vector2i) -> bool:
 
 
 func _get_all_items() -> Array[FireFightersMinigameItem]:
-	return debug_items + active_items
+	return active_items
