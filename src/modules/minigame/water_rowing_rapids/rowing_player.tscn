@@ -78,3 +78,4 @@ shape = SubResource("CapsuleShape2D_j5ul3")
 debug_color = Color(0, 0.537255, 0, 0.247059)
 
 [connection signal="area_entered" from="SpritCollectionArea" to="SpritCollectionArea" method="_on_area_entered"]
+[connection signal="spirit_collected" from="SpritCollectionArea" to="." method="_on_sprit_collection_area_spirit_collected"]
