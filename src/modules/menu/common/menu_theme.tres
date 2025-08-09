@@ -7,8 +7,6 @@
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 Button/constants/outline_size = 7
-Button/styles/disabled = null
-Button/styles/focus = null
 Button/styles/hover = ExtResource("1_k5h6c")
 Button/styles/normal = ExtResource("1_k5h6c")
 Button/styles/pressed = ExtResource("1_k5h6c")
