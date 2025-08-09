@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cccmrn0cfcn0s"]
+[gd_scene load_steps=12 format=3 uid="uid://cccmrn0cfcn0s"]
 
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
@@ -22,6 +22,14 @@ generate_mipmaps = false
 color_ramp = SubResource("Gradient_tk8vt")
 noise = SubResource("FastNoiseLite_i806a")
 
+[sub_resource type="Environment" id="Environment_a50qn"]
+background_mode = 3
+glow_enabled = true
+glow_hdr_threshold = 0.9
+glow_hdr_scale = 0.15
+adjustment_enabled = true
+adjustment_contrast = 1.15
+
 [node name="EarthRowingRapids" type="Node2D"]
 script = ExtResource("1_tk8vt")
 data_uid = "uid://c7vragnlq8udw"
@@ -42,6 +50,7 @@ position = Vector2(-4570, 1007)
 [node name="Enviroment" type="Node2D" parent="."]
 
 [node name="Spirit" parent="Enviroment" instance=ExtResource("3_yl50k")]
+modulate = Color(6, 6, 0.494, 1)
 position = Vector2(-4577, 147)
 
 [node name="Spirit2" parent="Enviroment" instance=ExtResource("3_yl50k")]
@@ -336,6 +345,11 @@ custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
 
 [node name="Pause" parent="MinigameSharedComponents/SharedBaseComponents" index="1"]
 visible = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a50qn")
+
+[connection signal="spirit_collected" from="RowingPlayer" to="." method="_on_rowing_player_spirit_collected"]
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]

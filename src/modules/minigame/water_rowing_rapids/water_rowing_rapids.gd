@@ -8,3 +8,7 @@ func _init() -> void:
 
 func _start():
 	pass
+
+
+func _on_rowing_player_spirit_collected(value: int) -> void:
+	add_score(value)
