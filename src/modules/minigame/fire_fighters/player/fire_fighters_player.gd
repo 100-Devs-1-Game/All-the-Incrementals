@@ -11,16 +11,16 @@ signal changed_tile(tile: Vector2i)
 @export var tank_size: float = 5.0
 @export var arc_factor: float = 0.1
 
+var move_speed_factor: float = 1.0
+var water_speed_factor: float = 1.0
+var arc_reduction: float = 1.0
+var water_spread_factor: float = 1.0
+var tank_bonus_size: float = 1.0
+
 var _last_dir: Vector2
 var _current_item: FireFightersMinigameItem
 var _current_tile: Vector2i
 var _water_used: float
-
-var _move_speed_factor: float = 1.0
-var _water_speed_factor: float = 1.0
-var _arc_reduction: float = 1.0
-var _water_spread_factor: float = 1.0
-var _tank_bonus_size: float = 1.0
 
 @onready var game: FireFightersMinigame = get_parent()
 @onready var extinguisher: Node2D = $Extinguisher
@@ -40,9 +40,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var move_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
-	velocity = velocity.move_toward(
-		move_dir * move_speed * _move_speed_factor, acceleration * delta
-	)
+	velocity = velocity.move_toward(move_dir * move_speed * move_speed_factor, acceleration * delta)
 	move_and_slide()
 
 	if move_dir:
@@ -72,19 +70,19 @@ func extinguish(flag: bool):
 	if not extinguisher_cooldown.is_stopped():
 		return
 
-	if _water_used > tank_size + _tank_bonus_size:
+	if _water_used > tank_size + tank_bonus_size:
 		return
 
 	var dir: Vector2 = extinguisher.global_transform.x
-	var spread: float = water_spread * _water_spread_factor
+	var spread: float = water_spread * water_spread_factor
 	dir += dir.rotated(PI / 2) * randf_range(-spread, spread)
 	dir = dir.normalized()
 
 	game.add_water(
 		extinguisher_offset.global_position,
-		dir * water_speed * _water_speed_factor,
+		dir * water_speed * water_speed_factor,
 		velocity,
-		arc_factor * _arc_reduction,
+		arc_factor * arc_reduction,
 		extinguisher.global_transform.x
 	)
 
