@@ -11,6 +11,6 @@ display_name = "Rowing Rapids"
 minigame_scene = ExtResource("1_echju")
 upgrade_tree_root_nodes = Array[ExtResource("3_r2ktw")]([])
 output_essence = ExtResource("2_bpume")
-currency_conversion_factor = 0.0
+currency_conversion_factor = 1.0
 high_scores = Array[int]([])
 metadata/_custom_type_script = "uid://mwcjys5dkgf4"

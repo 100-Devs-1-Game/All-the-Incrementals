@@ -177,5 +177,5 @@ unlocks = Array[Resource]([])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0
-metadata/tree_editor_version_added = 1
-metadata/tree_editor_version_saved = 1
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1
