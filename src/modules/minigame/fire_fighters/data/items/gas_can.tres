@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_ufq23")
 num_oil_drops = 10
+explosion_radius = 2
 name = "Gas Can"
 type = 0
 icon = ExtResource("1_ufq23")

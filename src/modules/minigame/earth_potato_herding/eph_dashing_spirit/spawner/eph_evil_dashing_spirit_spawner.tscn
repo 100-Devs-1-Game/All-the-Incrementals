@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwda8leqqfqki"]
+
+[ext_resource type="Script" uid="uid://qpbwc41dvbm" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/spawner/eph_evil_dashing_spirit_spawner.gd" id="1_kckg5"]
+
+[node name="EphEvilDashingSpiritSpawner" type="Node2D"]
+script = ExtResource("1_kckg5")

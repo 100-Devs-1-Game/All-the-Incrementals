@@ -1,0 +1,181 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=29 format=3 uid="uid://b41vli43q2u2h"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_geiwc"]
+[ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="2_qeg2m"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_s22d1"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_ifcvh"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_s22d1"]
+
+[sub_resource type="Resource" id="Resource_7r832"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = 1000
+
+[sub_resource type="Resource" id="Resource_vr4gh"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = 1000
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_7r832")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_s22d1"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = 1000
+
+[sub_resource type="Resource" id="Resource_3hk35"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = 1000
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_s22d1")])
+
+[sub_resource type="Resource" id="Resource_eadd1"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = 2000000
+
+[sub_resource type="Resource" id="Resource_3urxu"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = 2000000
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_eadd1")])
+
+[sub_resource type="Resource" id="Resource_a3htd"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = 4000000000
+
+[sub_resource type="Resource" id="Resource_sp1g1"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = 4000000000
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_a3htd")])
+
+[sub_resource type="Resource" id="Resource_882vh"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = 8000000000000
+
+[sub_resource type="Resource" id="Resource_x5jj2"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = 8000000000000
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_882vh")])
+
+[sub_resource type="Resource" id="Resource_6lyww"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = 16000000000000000
+
+[sub_resource type="Resource" id="Resource_3xh0a"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = 16000000000000000
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_6lyww")])
+
+[sub_resource type="Resource" id="Resource_4y4oa"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = -9223372036854775808
+
+[sub_resource type="Resource" id="Resource_4w5of"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = -9223372036854775808
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_4y4oa")])
+
+[sub_resource type="Resource" id="Resource_iwdkt"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = -9223372036854775808
+
+[sub_resource type="Resource" id="Resource_f7huq"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = -9223372036854775808
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_iwdkt")])
+
+[sub_resource type="Resource" id="Resource_84o05"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = -9223372036854775808
+
+[sub_resource type="Resource" id="Resource_f51v1"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = -9223372036854775808
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_84o05")])
+
+[sub_resource type="Resource" id="Resource_rwlqr"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = -9223372036854775808
+
+[sub_resource type="Resource" id="Resource_dc4hj"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = -9223372036854775808
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_rwlqr")])
+
+[sub_resource type="Resource" id="Resource_fu44u"]
+script = ExtResource("2_s22d1")
+essence = ExtResource("3_ifcvh")
+amount = -9223372036854775808
+
+[sub_resource type="Resource" id="Resource_esxhk"]
+script = ExtResource("1_geiwc")
+earth = 0
+fire = 0
+water = -9223372036854775808
+wind = 0
+slots = Array[ExtResource("2_s22d1")]([SubResource("Resource_fu44u")])
+
+[sub_resource type="Resource" id="Resource_ifcvh"]
+script = ExtResource("2_qeg2m")
+type = 6
+metadata/_custom_type_script = "uid://82mjh0pcfce8"
+
+[resource]
+script = ExtResource("3_s22d1")
+logic = SubResource("Resource_ifcvh")
+unlocks_feature = ""
+name = "+20% Speedboost"
+flavor = ""
+position = Vector2(3840, 3008)
+cost_arr = Array[ExtResource("1_geiwc")]([SubResource("Resource_3hk35"), SubResource("Resource_3urxu"), SubResource("Resource_sp1g1"), SubResource("Resource_x5jj2"), SubResource("Resource_3xh0a"), SubResource("Resource_4w5of"), SubResource("Resource_f7huq"), SubResource("Resource_f51v1"), SubResource("Resource_dc4hj"), SubResource("Resource_esxhk")])
+effect_modifier_arr = Array[float]([20.0, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0, 200.0])
+max_level = 10
+base_cost = SubResource("Resource_vr4gh")
+base_cost_multiplier = 2000.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 20.0
+effect_modifier_multiplier = 20.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

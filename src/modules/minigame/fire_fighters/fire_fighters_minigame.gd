@@ -6,9 +6,6 @@ const BURN_TICK_INTERVAL = 10
 @export var player_scene: PackedScene
 @export var fire_scene: PackedScene
 @export var water_scene: PackedScene
-@export var burn_spot_scene: PackedScene
-
-@export var enable_burn_spots: bool = true
 
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
@@ -31,8 +28,10 @@ var saved_tiles: Array[Vector2i]
 @onready var fire_node: Node = $Fires
 @onready var decal_node: Node = $Decals
 @onready var item_node: Node = $Items
+@onready var effects_node: Node = $Effects
 
-@onready var item_spawner: FireFightersMinigameItemSpawner = $FireFightersMinigameItemSpawner
+@onready var item_spawner: FireFightersMinigameItemSpawner = $ItemSpawner
+@onready var effects_player: FireFightersMinigameEffectsPlayer = $EffectsPlayer
 
 
 func _start() -> void:
@@ -80,12 +79,12 @@ func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 	fire.died.connect(_remove_fire.bind(fire))
 
 	if tile in saved_tiles:
-		print("Point removed")
 		var old_score: int = _score
 		add_score(-1)
 		# to make sure add_score() keeps supporting subtracting score
 		assert(_score < old_score)
 		saved_tiles.erase(tile)
+		TextFloatSystem.floating_text(get_tile_position(tile), str("-1"), tile_map_terrain)
 
 
 func _remove_fire(fire: FireFightersMinigameFire):
@@ -103,6 +102,7 @@ func add_water(pos: Vector2, vel: Vector2, impulse: Vector2, arc_factor: float, 
 	water.position = pos
 	water.velocity = vel + impulse
 	water.z_velocity = vel.length() * arc_factor
+	water.splash.connect(effects_player.play_water_splash)
 	water_node.add_child(water)
 	water.look_at(water.position + dir)
 
@@ -130,8 +130,6 @@ func _fire_burn_tick(
 	if feature and fire.total_burn > feature.burn_duration and feature.turns_into != null:
 		replace_feature(tile, feature.turns_into)
 		_burn_vegetation(tile)
-		if enable_burn_spots:
-			_add_burn_spot(tile)
 
 	if feature:
 		fire.size = min(1.5, fire.size + feature.flammability * 0.1)
@@ -206,13 +204,6 @@ func _burn_vegetation(tile: Vector2i):
 	tile_map_terrain.set_cell(tile, -1)
 
 
-func _add_burn_spot(tile: Vector2i):
-	var spot: Sprite2D = burn_spot_scene.instantiate()
-	spot.position = get_tile_position(tile)
-	spot.flip_h = RngUtils.chance100(50)
-	decal_node.add_child(spot)
-
-
 func _on_extinguish_at(pos: Vector2):
 	var tile: Vector2i = tile_map_terrain.local_to_map(pos)
 	if fires.has(tile):
@@ -221,9 +212,23 @@ func _on_extinguish_at(pos: Vector2):
 
 
 func _vegetation_saved(tile: Vector2i):
-	print("Point scored")
 	add_score(1)
 	saved_tiles.append(tile)
+	TextFloatSystem.floating_text(get_tile_position(tile), str("+1"), tile_map_terrain)
+
+
+func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
+	for x in range(-radius, radius + 1):
+		for y in range(-radius, radius + 1):
+			var vec := Vector2i(x, y)
+			if vec.length() > radius:
+				continue
+
+			var tile: Vector2i = center_tile + vec
+			if is_tile_in_bounds(tile):
+				add_oil(tile)
+				if on_fire:
+					_add_fire(tile, 0.1, 1.0)
 
 
 func get_tile_at(pos: Vector2) -> Vector2i:
@@ -269,3 +274,7 @@ func get_random_tile() -> Vector2i:
 		randi_range(map_rect.position.x, map_rect.position.x + map_rect.size.x),
 		randi_range(map_rect.position.y, map_rect.position.y + map_rect.size.y)
 	)
+
+
+func is_tile_in_bounds(tile: Vector2i) -> bool:
+	return map_rect.has_point(tile)

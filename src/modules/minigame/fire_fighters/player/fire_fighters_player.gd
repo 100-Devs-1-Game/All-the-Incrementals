@@ -6,12 +6,21 @@ signal changed_tile(tile: Vector2i)
 
 @export var move_speed: float = 100.0
 @export var acceleration: float = 1000.0
-@export var water_speed: float = 300.0
+@export var water_speed: float = 200.0
+@export var water_spread: float = 0.1
+@export var tank_size: float = 5.0
 @export var arc_factor: float = 0.1
 
-var last_dir: Vector2
+var move_speed_factor: float = 1.0
+var water_speed_factor: float = 1.0
+var arc_reduction: float = 1.0
+var water_spread_factor: float = 1.0
+var tank_bonus_size: float = 1.0
+
+var _last_dir: Vector2
 var _current_item: FireFightersMinigameItem
 var _current_tile: Vector2i
+var _water_used: float
 
 @onready var game: FireFightersMinigame = get_parent()
 @onready var extinguisher: Node2D = $Extinguisher
@@ -31,20 +40,20 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var move_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
-	velocity = velocity.move_toward(move_dir * move_speed, acceleration * delta)
+	velocity = velocity.move_toward(move_dir * move_speed * move_speed_factor, acceleration * delta)
 	move_and_slide()
 
 	if move_dir:
-		if is_diagonal(last_dir) and not is_diagonal(move_dir):
+		if is_diagonal(_last_dir) and not is_diagonal(move_dir):
 			if diagonal_cooldown.is_stopped():
-				last_dir = move_dir
+				_last_dir = move_dir
 		else:
-			last_dir = move_dir
+			_last_dir = move_dir
 
 		if is_diagonal(move_dir):
 			diagonal_cooldown.start()
 
-	extinguisher.look_at(position + last_dir)
+	extinguisher.look_at(position + _last_dir)
 	extinguish(Input.is_action_pressed("primary_action"))
 
 	if Input.is_action_just_pressed("secondary_action"):
@@ -61,18 +70,23 @@ func extinguish(flag: bool):
 	if not extinguisher_cooldown.is_stopped():
 		return
 
+	if _water_used > tank_size + tank_bonus_size:
+		return
+
 	var dir: Vector2 = extinguisher.global_transform.x
-	var spread: float = 0.2
+	var spread: float = water_spread * water_spread_factor
 	dir += dir.rotated(PI / 2) * randf_range(-spread, spread)
 	dir = dir.normalized()
 
 	game.add_water(
 		extinguisher_offset.global_position,
-		dir * water_speed,
+		dir * water_speed * water_speed_factor,
 		velocity,
-		arc_factor,
+		arc_factor * arc_reduction,
 		extinguisher.global_transform.x
 	)
+
+	_water_used += 0.1
 
 	extinguisher_cooldown.start()
 

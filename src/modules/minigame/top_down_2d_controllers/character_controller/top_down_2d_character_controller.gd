@@ -29,6 +29,10 @@ func _set_up() -> void:
 #region ======================== PUBLIC METHODS ================================
 
 
+func despawn() -> void:
+	queue_free()
+
+
 func add_state_move_direction_strategy(
 	state_name: String, new_move_direction_strategy: TD2DCMDSBase
 ) -> void:

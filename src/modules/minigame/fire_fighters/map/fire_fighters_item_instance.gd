@@ -13,6 +13,11 @@ func init(p_type: FireFightersMinigameItem, p_game: FireFightersMinigame):
 	sprite.texture = type.icon
 
 
+func _physics_process(_delta: float) -> void:
+	if game.is_tile_burning(game.get_tile_at(position)):
+		type._on_burn(game, self)
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if type.type == FireFightersMinigameItem.Type.PICKUP:
 		var player: FireFightersMinigamePlayer = body
@@ -21,5 +26,4 @@ func _on_body_entered(body: Node2D) -> void:
 			queue_free()
 	else:
 		if body is not FireFightersMinigamePlayer:
-			# TODO crap
 			type._on_destroy(game, self)
