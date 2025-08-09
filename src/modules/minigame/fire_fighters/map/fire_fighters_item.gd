@@ -7,7 +7,7 @@ enum Type { PICKUP, OBJECT }
 @export var type: Type
 @export var icon: Texture2D
 
-var spawn_probability: float = 1.0
+var spawn_amount: int = 0
 
 
 func _on_burn(_game: FireFightersMinigame, _item: FireFightersMinigameItemInstance):
