@@ -5,6 +5,7 @@
 
 [node name="Minigame" type="Node"]
 script = ExtResource("1_d7uj7")
+has_countdown = true
 data_uid = "uid://dym4je2njvl28"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -36,9 +37,19 @@ grow_vertical = 2
 
 [node name="SharedComponents" parent="." instance=ExtResource("2_0gqa2")]
 
-[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="2" node_paths=PackedStringArray("functions_node")]
 functions_node = NodePath("../../../..")
 visible_on_start = true
+
+[node name="MinigameOverlay" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
+anchors_preset = 1
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 40.0
+grow_vertical = 1
+enable_score_display = true
+enable_countdown_display = true
 
 [editable path="SharedComponents"]
 [editable path="SharedComponents/SharedBaseComponents"]

@@ -4,6 +4,9 @@
 class_name BaseMinigame
 extends Node
 
+## If this is enabled override `_get_countdown_duration()`
+@export var has_countdown: bool = false
+
 ## Stores a uid reference to the MinigameData Resource.
 ## This can be assigned manually so the Minigame scene is able to start
 ## directly from the Editor, even when using `_start()` as entry point.
@@ -13,8 +16,8 @@ var data: MinigameData
 var _score: int
 var _minigame_shared_components: MinigameSharedComponents
 var _is_game_over: bool = false
-# TODO implement full functionality
-var _countdown: float
+
+var _countdown: Timer
 
 
 func _ready() -> void:
@@ -85,6 +88,8 @@ func play():
 	_initialize()
 	data.apply_all_upgrades(self)
 	_start()
+	if has_countdown:
+		start_countdown()
 
 
 func add_score(n: int = 1):
@@ -95,8 +100,28 @@ func get_score() -> int:
 	return _score
 
 
+func start_countdown():
+	assert(has_countdown)
+	_countdown = Timer.new()
+
+	_countdown.wait_time = _get_countdown_duration()
+	assert(_countdown.wait_time > 0)
+
+	_countdown.one_shot = true
+
+	_countdown.timeout.connect(game_over)
+
+	add_child(_countdown)
+	_countdown.start()
+
+
 func get_time_left() -> float:
-	return _countdown
+	return _countdown.time_left
+
+
+## virtual function
+func _get_countdown_duration() -> float:
+	return 0
 
 
 # This function is called when the Upgrades button on the minigame menu is
