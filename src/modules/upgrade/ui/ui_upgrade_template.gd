@@ -71,7 +71,7 @@ func _set_description_text() -> void:
 
 func _set_background() -> void:
 	#if(base_upgrade.flavor)
-	var texure: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
+	pass  #var texture: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
 
 
 func _on_select() -> void:
