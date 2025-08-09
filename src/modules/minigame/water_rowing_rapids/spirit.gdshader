@@ -1,8 +1,10 @@
 shader_type canvas_item;
+render_mode blend_add;
 
 uniform float pulse_intensity = 0.12;
 uniform float wobble_offset = 18.0;
 uniform float radius_offset_intensity = 0.2;
+uniform sampler2D gradient:source_color;
 
 varying vec2 world_pos;
 
@@ -16,5 +18,7 @@ void fragment() {
 	vec2 corrected_uv = UV;
 	corrected_uv.y -= 0.5;
 	corrected_uv.x -= 0.5 - sin(world_pos.y / wobble_offset)*radius_offset_intensity/2.0;
-	COLOR.a = step(length(corrected_uv), radius/2.0);
+	float dst = length(corrected_uv); // reuse t
+	COLOR.rgb = COLOR.rgb + texture(gradient, vec2(dst / radius * 2.0 , 0.0)).rgb;
+	COLOR.a = step(dst, radius/2.0);
 }
