@@ -1,5 +1,5 @@
 class_name FireFightersMinigameItemUpgradeLogic
-extends FireFightersMinigameUpgradeLogic
+extends BaseMinigameUpgradeLogic
 
 @export var item: FireFightersMinigameItem
 
