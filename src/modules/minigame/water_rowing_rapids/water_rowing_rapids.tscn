@@ -36,8 +36,12 @@ uv = PackedVector2Array(21.6394, 14.8792, 26.7529, 15.078, 29.516, 15.078, 33.47
 color = Color(0.501417, 0.327795, 0.124571, 1)
 polygon = PackedVector2Array(29251, 4481, 29215, 3479, 31051, 3468, 31194, 8390, 29275, 8390)
 
-[node name="RowingPlayer" parent="." instance=ExtResource("5_f4xkx")]
+[node name="RowingPlayer" parent="." node_paths=PackedStringArray("boost_timer") instance=ExtResource("5_f4xkx")]
 position = Vector2(-4570, 1007)
+boost_timer = NodePath("BoostTimer")
+
+[node name="BoostTimer" type="Timer" parent="RowingPlayer"]
+one_shot = true
 
 [node name="Enviroment" type="Node2D" parent="."]
 
@@ -336,6 +340,8 @@ custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
 
 [node name="Pause" parent="MinigameSharedComponents/SharedBaseComponents" index="1"]
 visible = true
+
+[connection signal="timeout" from="RowingPlayer/BoostTimer" to="RowingPlayer" method="_on_boost_timer_timeout"]
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]
