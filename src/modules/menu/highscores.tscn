@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://iy2lu8ho3nio"]
+[gd_scene load_steps=4 format=3 uid="uid://iy2lu8ho3nio"]
 
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_c4qwa"]
 [ext_resource type="Script" uid="uid://ctdbyp0m6dy8i" path="res://modules/menu/highscores.gd" id="2_xi8kf"]
 [ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="3_35adv"]
-[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="4_suyus"]
 
 [node name="Highscores" type="Control"]
 layout_mode = 3
@@ -18,7 +17,6 @@ offset_left = 734.0
 offset_top = 244.0
 offset_right = 1174.0
 offset_bottom = 655.0
-theme_override_styles/panel = ExtResource("4_suyus")
 
 [node name="Scores" type="VBoxContainer" parent="ScoresPanel"]
 custom_minimum_size = Vector2(440, 411)
@@ -33,7 +31,6 @@ offset_left = 734.0
 offset_top = 49.0
 offset_right = 1174.0
 offset_bottom = 169.0
-theme_override_styles/normal = ExtResource("4_suyus")
 text = "High Scores"
 horizontal_alignment = 1
 vertical_alignment = 1

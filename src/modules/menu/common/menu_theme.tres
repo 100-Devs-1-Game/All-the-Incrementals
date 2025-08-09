@@ -17,4 +17,5 @@ Label/colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 25
 Label/font_sizes/font_size = 71
+Label/styles/normal = ExtResource("1_c5coo")
 Panel/styles/panel = ExtResource("1_c5coo")
