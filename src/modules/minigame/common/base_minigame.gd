@@ -4,6 +4,7 @@
 class_name BaseMinigame
 extends Node
 
+## If this is enabled override `_get_countdown_duration()`
 @export var has_countdown: bool = false
 
 ## Stores a uid reference to the MinigameData Resource.
