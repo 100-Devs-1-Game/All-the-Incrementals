@@ -28,8 +28,10 @@ var saved_tiles: Array[Vector2i]
 @onready var fire_node: Node = $Fires
 @onready var decal_node: Node = $Decals
 @onready var item_node: Node = $Items
+@onready var effects_node: Node = $Effects
 
 @onready var item_spawner: FireFightersMinigameItemSpawner = $ItemSpawner
+@onready var effects_player: FireFightersMinigameEffectsPlayer = $EffectsPlayer
 
 
 func _start() -> void:
@@ -100,6 +102,7 @@ func add_water(pos: Vector2, vel: Vector2, impulse: Vector2, arc_factor: float, 
 	water.position = pos
 	water.velocity = vel + impulse
 	water.z_velocity = vel.length() * arc_factor
+	water.splash.connect(effects_player.play_water_splash)
 	water_node.add_child(water)
 	water.look_at(water.position + dir)
 

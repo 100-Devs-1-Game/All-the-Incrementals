@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=30 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_ewfdg"]
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.tscn" id="2_jiygg"]
@@ -15,7 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://c7nq5cvot6nf5" path="res://assets/minigames/fire_fighters/placeholder_assets/objects_tile_set.png" id="14_vetek"]
 [ext_resource type="Script" uid="uid://bk20clpaekonn" path="res://modules/minigame/fire_fighters/map/fire_fighters_item_spawner.gd" id="15_gckvd"]
 [ext_resource type="PackedScene" uid="uid://iiekj8nk2k2e" path="res://modules/minigame/fire_fighters/map/fire_fighers_item.tscn" id="16_na7l3"]
+[ext_resource type="Script" uid="uid://b8nkin5yvvnsu" path="res://modules/minigame/fire_fighters/effects/fire_fighters_effects_player.gd" id="17_7q2b4"]
 [ext_resource type="PackedScene" uid="uid://c06xs7256anxh" path="res://modules/minigame/fire_fighters/map/fire_fighters_object.tscn" id="17_bwfd8"]
+[ext_resource type="PackedScene" uid="uid://c7dqt6ar2dixt" path="res://modules/minigame/fire_fighters/effects/water_splash.tscn" id="18_cumqa"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="21_jiygg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
@@ -104,13 +106,9 @@ pickup_scene = ExtResource("16_na7l3")
 object_scene = ExtResource("17_bwfd8")
 metadata/_custom_type_script = "uid://bk20clpaekonn"
 
-[node name="Water" type="Node" parent="."]
-
-[node name="Fires" type="Node" parent="."]
-
-[node name="Decals" type="Node" parent="."]
-
-[node name="Items" type="Node" parent="."]
+[node name="EffectsPlayer" type="Node" parent="."]
+script = ExtResource("17_7q2b4")
+water_splash_scene = ExtResource("18_cumqa")
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
 
@@ -130,6 +128,16 @@ shape = SubResource("WorldBoundaryShape2D_jxvl4")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
 position = Vector2(1920, 0)
 shape = SubResource("WorldBoundaryShape2D_q2uva")
+
+[node name="Water" type="Node" parent="."]
+
+[node name="Fires" type="Node" parent="."]
+
+[node name="Decals" type="Node" parent="."]
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Effects" type="Node" parent="."]
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]
