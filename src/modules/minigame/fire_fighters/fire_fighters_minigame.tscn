@@ -111,8 +111,6 @@ object_scene = ExtResource("17_bwfd8")
 debug_items = Array[ExtResource("18_riun2")]([ExtResource("19_kc2g4"), ExtResource("20_tmnm7")])
 metadata/_custom_type_script = "uid://bk20clpaekonn"
 
-[node name="Timer" type="Timer" parent="ItemSpawner"]
-
 [node name="Water" type="Node" parent="."]
 
 [node name="Fires" type="Node" parent="."]
@@ -139,8 +137,6 @@ shape = SubResource("WorldBoundaryShape2D_jxvl4")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
 position = Vector2(1920, 0)
 shape = SubResource("WorldBoundaryShape2D_q2uva")
-
-[connection signal="timeout" from="ItemSpawner/Timer" to="ItemSpawner" method="_on_timer_timeout"]
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]

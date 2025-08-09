@@ -10,7 +10,6 @@ var active_items: Array[FireFightersMinigameItem]
 var query: PhysicsShapeQueryParameters2D
 
 @onready var game: FireFightersMinigame = get_parent()
-@onready var timer: Timer = $Timer
 
 
 func _ready() -> void:
@@ -23,13 +22,13 @@ func _ready() -> void:
 
 
 func activate():
+	await get_tree().physics_frame
 	run()
-	timer.start()
 
 
 func run():
 	for item in _get_all_items():
-		if RngUtils.chancef(item.spawn_probability):
+		for n in item.spawn_amount:
 			for i in spawn_tries:
 				var spawn_tile: Vector2i = game.get_random_tile()
 				if _can_spawn_item_on(spawn_tile):
@@ -58,7 +57,3 @@ func _can_spawn_item_on(tile: Vector2i) -> bool:
 
 func _get_all_items() -> Array[FireFightersMinigameItem]:
 	return debug_items + active_items
-
-
-func _on_timer_timeout() -> void:
-	run()
