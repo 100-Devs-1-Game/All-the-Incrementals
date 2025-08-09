@@ -32,7 +32,7 @@ var saved_tiles: Array[Vector2i]
 @onready var decal_node: Node = $Decals
 @onready var item_node: Node = $Items
 
-@onready var item_spawner: FireFightersMinigameItemSpawner = $FireFightersMinigameItemSpawner
+@onready var item_spawner: FireFightersMinigameItemSpawner = $ItemSpawner
 
 
 func _start() -> void:
