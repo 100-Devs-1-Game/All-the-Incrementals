@@ -155,6 +155,11 @@ func is_game_over():
 	return _is_game_over
 
 
+func reload():
+	SceneLoader.enable_immediate_play()
+	SceneLoader.start_minigame(data)
+
+
 # This function is called when the Exit minigame button is pressed.
 func exit() -> void:
 	# Ensure the minigame menu appears next time.
