@@ -102,7 +102,7 @@ func get_time_left() -> float:
 # This function is called when the Upgrades button on the minigame menu is
 # pressed.
 func open_upgrades():
-	print("Not yet implemented")
+	SceneLoader.enter_upgrade_tree()
 
 
 # This function is called when the Show highscores button on the minigame menu is
