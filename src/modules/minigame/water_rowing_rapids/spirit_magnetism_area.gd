@@ -16,4 +16,3 @@ func _physics_process(delta: float) -> void:
 			* magnetism_strength
 			* delta
 		)
-		print((1 - minf(relative.length() / max_distance, 1)) * magnetism_strength * delta)
