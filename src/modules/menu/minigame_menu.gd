@@ -28,6 +28,11 @@ func _on_upgrades_pressed() -> void:
 	minigame.open_upgrades()
 
 
+func _on_highscores_pressed() -> void:
+	visible = false
+	minigame.show_highscores()
+
+
 func _on_exit_pressed() -> void:
 	minigame.exit()
 

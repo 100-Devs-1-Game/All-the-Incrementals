@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c30jjlroha8h3" path="res://modules/menu/popup_menu.gd" id="1_5oejy"]
 [ext_resource type="PackedScene" uid="uid://1m18lfvfkax2" path="res://modules/settings/settings.tscn" id="2_84h8u"]
 [ext_resource type="PackedScene" uid="uid://khnsbhc4bqj8" path="res://modules/menu/main_menu.tscn" id="2_xjd7q"]
-[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/settings/off_white_styleboxflat.tres" id="3_36e67"]
+[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="3_36e67"]
 
 [node name="GamePopupMenu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)

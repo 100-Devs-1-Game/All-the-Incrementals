@@ -16,4 +16,5 @@ metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 [resource]
 script = ExtResource("1_wn5k5")
 inventory = SubResource("Resource_ugayj")
+highscores = null
 metadata/_custom_type_script = "uid://ilm74cke112g"
