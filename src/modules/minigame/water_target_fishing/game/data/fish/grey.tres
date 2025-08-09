@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WTFFishData" load_steps=7 format=3 uid="uid://bcf0rlnnc5h6p"]
+[gd_resource type="Resource" script_class="WTFFishData" load_steps=8 format=3 uid="uid://bcf0rlnnc5h6p"]
 
 [ext_resource type="Script" uid="uid://dl0x10lns1e17" path="res://modules/minigame/water_target_fishing/game/fish_data.gd" id="1_5aihd"]
 [ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_7t1ck"]
@@ -20,9 +20,20 @@ _min_spawn_depth = 0.0
 _max_spawn_depth = 300.0
 metadata/_custom_type_script = "uid://meklva8v881i"
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_k71g5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bgu2p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_5aihd")
-texture = ExtResource("2_bgu2p")
+texture = SubResource("SpriteFrames_k71g5")
 pickup = SubResource("Resource_k71g5")
 spawn = SubResource("Resource_8egcm")
 metadata/_custom_type_script = "uid://dl0x10lns1e17"
