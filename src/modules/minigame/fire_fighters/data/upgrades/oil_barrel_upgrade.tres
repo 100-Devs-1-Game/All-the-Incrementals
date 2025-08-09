@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=6 format=3 uid="uid://cxhyrtclfgjie"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_em810"]
+[ext_resource type="Resource" uid="uid://ch44pnewmrvkb" path="res://modules/minigame/fire_fighters/data/objects/oil_barrel.tres" id="2_n0f5k"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_ndnmy"]
+[ext_resource type="Script" uid="uid://bc8rlt8j3ykhm" path="res://modules/minigame/fire_fighters/upgrades/fire_fighters_item_upgrade_logic.gd" id="3_xauqc"]
+
+[sub_resource type="Resource" id="Resource_uvw6x"]
+script = ExtResource("3_xauqc")
+item = ExtResource("2_n0f5k")
+metadata/_custom_type_script = "uid://bc8rlt8j3ykhm"
+
+[resource]
+script = ExtResource("2_ndnmy")
+logic = SubResource("Resource_uvw6x")
+unlocks_feature = ""
+name = ""
+flavor = ""
+position = Vector2(0, 0)
+cost_arr = Array[ExtResource("1_em810")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 0
+base_cost_multiplier = 0.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_custom_type_script = "uid://co4s3tttdeie1"

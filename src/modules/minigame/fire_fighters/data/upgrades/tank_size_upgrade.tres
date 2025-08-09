@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=5 format=3 uid="uid://wn7ulnj04odi"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_2mr1n"]
+[ext_resource type="Script" uid="uid://sbcdkb7hovgy" path="res://modules/minigame/fire_fighters/upgrades/fire_fighters_upgrade_logic.gd" id="2_fvgai"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_dxroa"]
+
+[sub_resource type="Resource" id="Resource_l8nep"]
+script = ExtResource("2_fvgai")
+type = 1
+metadata/_custom_type_script = "uid://sbcdkb7hovgy"
+
+[resource]
+script = ExtResource("3_dxroa")
+logic = SubResource("Resource_l8nep")
+unlocks_feature = ""
+name = ""
+flavor = ""
+position = Vector2(0, 0)
+cost_arr = Array[ExtResource("1_2mr1n")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 0
+base_cost_multiplier = 0.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_custom_type_script = "uid://co4s3tttdeie1"
