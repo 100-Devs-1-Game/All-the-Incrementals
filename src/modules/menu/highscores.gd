@@ -16,6 +16,7 @@ func open_menu(highscores: Array[int]) -> void:
 	reversed.reverse()
 	for n in $ScoresPanel/Scores.get_children():
 		$ScoresPanel/Scores.remove_child(n)
+		n.queue_free()
 	for i in range(Player.MAX_HIGH_SCORES_STORED):
 		var text_label = Label.new()
 		text_label.add_theme_font_size_override("font_size", 36)
