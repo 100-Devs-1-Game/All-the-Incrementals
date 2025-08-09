@@ -6,9 +6,6 @@ const BURN_TICK_INTERVAL = 10
 @export var player_scene: PackedScene
 @export var fire_scene: PackedScene
 @export var water_scene: PackedScene
-@export var burn_spot_scene: PackedScene
-
-@export var enable_burn_spots: bool = true
 
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
@@ -130,8 +127,6 @@ func _fire_burn_tick(
 	if feature and fire.total_burn > feature.burn_duration and feature.turns_into != null:
 		replace_feature(tile, feature.turns_into)
 		_burn_vegetation(tile)
-		if enable_burn_spots:
-			_add_burn_spot(tile)
 
 	if feature:
 		fire.size = min(1.5, fire.size + feature.flammability * 0.1)
@@ -204,13 +199,6 @@ func replace_feature(tile: Vector2i, new_feature: FireFightersMinigameMapFeature
 
 func _burn_vegetation(tile: Vector2i):
 	tile_map_terrain.set_cell(tile, -1)
-
-
-func _add_burn_spot(tile: Vector2i):
-	var spot: Sprite2D = burn_spot_scene.instantiate()
-	spot.position = get_tile_position(tile)
-	spot.flip_h = RngUtils.chance100(50)
-	decal_node.add_child(spot)
 
 
 func _on_extinguish_at(pos: Vector2):
