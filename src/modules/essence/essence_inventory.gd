@@ -74,6 +74,20 @@ func remove_essence(essence: Essence):
 			return
 
 
+# overwrites previous essence amount of a given type
+func set_essence(essence: Essence, amount: int):
+	for slot in slots:
+		if slot.essence == essence:
+			slot.amount = amount
+			return
+	add_stack(EssenceStack.new(essence, amount))
+
+
+# completely deletes all essence, you never know :D
+func clear_essence():
+	slots.clear()
+
+
 func get_essence(essence: Essence) -> int:
 	for slot in slots:
 		if slot.essence == essence:
@@ -82,18 +96,23 @@ func get_essence(essence: Essence) -> int:
 	return 0
 
 
-# merges stacks from inventories a & b into caller
+# checks if called inventory has any essence of that type
+func has_essence(essence: Essence) -> bool:
+	for slot in slots:
+		if slot.essence == essence:
+			return true
+	return false
+
+
+# merges stacks from other inventory into this one
 func merge(other: EssenceInventory):
 	for stack in other.slots:
 		add_stack(stack)
 
 
-# returns true if a stacks of a certain essence are available
+# returns true if caller has more than the other
 func has_stack(stack: EssenceStack) -> bool:
-	for i in slots:
-		if i.essence == stack.essence:
-			return true
-	return false
+	return get_essence(stack.essence) >= stack.amount
 
 
 # assuming we'll use this to check calling inv has enough for something
@@ -111,5 +130,3 @@ func sub_stack(stack: EssenceStack, amount: int):  # Removes x amount of essence
 			if slot.amount <= 0:
 				slots.erase(slot)
 			return
-
-# TODO sub_stack, has_essence, has_stack, merge, ...
