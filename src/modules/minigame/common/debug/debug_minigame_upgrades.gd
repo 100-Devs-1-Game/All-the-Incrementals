@@ -24,13 +24,7 @@ func init():
 
 func _add_minigame_upgrades_children() -> void:
 	for upgrade in minigame.data.get_all_upgrades():
-		# In case of reset, re-apply upgrade at current level
-		if upgrade.logic:
-			if upgrade.get_level() == upgrade.NO_LEVEL:
-				upgrade.level_up()
-			# We do not want to apply an effect of "level -1"
-			assert(upgrade.get_level() >= 0, "should be at least level 0 here")
-			upgrade.logic._apply_effect(minigame, upgrade)
+		assert(upgrade.logic)
 		_add_upgrade_item(upgrade)
 
 	var reset_item = _tree_upgrades.create_child()
@@ -41,6 +35,7 @@ func _add_minigame_upgrades_children() -> void:
 func _refresh_minigame_upgrades_branch() -> void:
 	for item in _tree_upgrades.get_children():
 		_tree_upgrades.remove_child(item)
+		_tree_upgrades.queue_free()
 	_add_minigame_upgrades_children()
 
 
@@ -48,6 +43,10 @@ func _reset_upgrades() -> void:
 	print("Resetting all upgrades")
 	minigame.data.reset_all_upgrades()
 	_refresh_minigame_upgrades_branch()
+	# Resetting the upgrades cannot be done during game play, because upgrades
+	# don't store any "default state information"
+	SceneLoader.enable_immediate_play()
+	SceneLoader.start_minigame(minigame.data)
 
 
 func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
@@ -67,11 +66,15 @@ func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
 
 
 func _get_upgrade_button_text(upgrade: BaseUpgrade) -> String:
-	return "%s Lvl %d/%d" % [upgrade.name, upgrade.get_level(), upgrade.get_max_level()]
+	return "%s Lvl %d/%d" % [upgrade.name, upgrade.get_level() + 1, upgrade.get_max_level() + 1]
 
 
 func _on_upgrade_item_pressed(item: TreeItem, upgrade: BaseUpgrade):
-	upgrade.level_up()
+	if debug_popup.was_rmb():
+		upgrade.level_down()
+	else:
+		upgrade.level_up()
+
 	if upgrade is MinigameUpgrade:
 		if upgrade.logic:
 			upgrade.logic._apply_effect(get_tree().current_scene, upgrade)

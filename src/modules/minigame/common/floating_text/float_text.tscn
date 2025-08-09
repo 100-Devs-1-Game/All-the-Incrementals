@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://neuksmyojpdh"]
 
 [ext_resource type="Script" uid="uid://c8afxm8dwpwgp" path="res://modules/minigame/common/floating_text/float_text.gd" id="1_71at2"]
-[ext_resource type="FontFile" uid="uid://bnc3ho02m7dln" path="res://addons/fonts/outfit/Outfit-VariableFont_wght.ttf" id="2_2q7yq"]
+[ext_resource type="FontFile" uid="uid://bnc3ho02m7dln" path="res://external/fonts/outfit/Outfit-VariableFont_wght.ttf" id="2_2q7yq"]
 
 [node name="FloatText" type="Node2D"]
 script = ExtResource("1_71at2")

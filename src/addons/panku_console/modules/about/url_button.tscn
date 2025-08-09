@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxmplwhfv5l88"]
 
-[ext_resource type="Script" path="res://addons/panku_console/modules/about/url_button.gd" id="1_01blg"]
+[ext_resource type="Script" uid="uid://jpe7vhkrm5bj" path="res://addons/panku_console/modules/about/url_button.gd" id="1_01blg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivnlg"]
 content_margin_left = 8.0

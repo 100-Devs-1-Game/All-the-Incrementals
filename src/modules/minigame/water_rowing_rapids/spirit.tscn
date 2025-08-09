@@ -1,24 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bam250ejn756g"]
+[gd_scene load_steps=5 format=3 uid="uid://bam250ejn756g"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_yl50k"]
+[ext_resource type="Shader" uid="uid://d2lkkp2x1pcwd" path="res://modules/minigame/water_rowing_rapids/spirit.gdshader" id="1_6yxh1"]
+[ext_resource type="Script" uid="uid://ba6bjgoioagnt" path="res://modules/minigame/water_rowing_rapids/spirit.gd" id="1_gc2sf"]
 
-[sub_resource type="Gradient" id="Gradient_i806a"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 0.309804, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_a50qn"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yl50k"]
-color_ramp = SubResource("Gradient_i806a")
-noise = SubResource("FastNoiseLite_a50qn")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6yxh1"]
+shader = ExtResource("1_6yxh1")
+shader_parameter/pulse_intensity = 0.1
+shader_parameter/wobble_offset = 18.0
+shader_parameter/radius_offset_intensity = 0.2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x58gl"]
-radius = 1.57825
+radius = 16.0
 
-[node name="Spirit" type="MeshInstance2D"]
-scale = Vector2(26.6199, 25.552)
-mesh = SubResource("SphereMesh_yl50k")
-texture = SubResource("NoiseTexture2D_yl50k")
+[node name="Spirit" type="Node2D"]
+material = SubResource("ShaderMaterial_6yxh1")
+script = ExtResource("1_gc2sf")
 
 [node name="Area2D" type="Area2D" parent="." groups=["spirit"]]
 

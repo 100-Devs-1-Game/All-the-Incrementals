@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://cogab52tmj0v3"]
 
-[ext_resource type="PackedScene" uid="uid://cxonylkutyl8m" path="res://models/nature/trees/tree_05.gltf" id="1_jstrn"]
+[ext_resource type="PackedScene" uid="uid://cxonylkutyl8m" path="res://assets/overworld/models/nature/trees/tree_05.gltf" id="1_jstrn"]
 
 [node name="tree_052" instance=ExtResource("1_jstrn")]

@@ -1,33 +1,62 @@
 class_name WTFStats
 extends Resource
 
+# data that changes during the run
+# todo maybe move to minigame? but nice to have all the helper funcs together atm
 var scrollspeed: Vector2
-
-var score_multiplier: float
-var weight_multiplier: float
-var weight_initial: float
 var weight: float
-
-var oxygen_capacity_seconds: float
+var carrying: int
 var oxygen_remaining_seconds: float
 
-var spawn_fish_every_x_pixels: float
-var spawn_x_starting_fish: float
+# data that changes due to upgrades/rebalancing
+var scrollspeed_initial: Vector2 = Vector2(-300, 0)
+var speedboost_multiplier: float = 1
+var speedboost_flat: float = 0
+
+var score_multiplier: float = 1
+var score_flat: float = 0
+var weight_multiplier: float = 1
+var weight_initial: float = 100
+var carry_capacity: int = 5
+
+var oxygen_capacity_seconds: float = 3
+var oxygen_capacity_multiplier: float = 1
+var oxygen_capacity_flat: float = 0
+
+var spawn_fish_every_x_pixels: float = 300
+var spawn_x_starting_fish: float = 3
+var fish_movespeed_multiplier: float = 1
+var fish_movespeed_flat: float = 0
+var fish_spawn_above_sealevel: bool = false
+var fish_can_fly: bool = false
+var spawnable_fish_min_depth_offset: float = 0
+var spawnable_fish_min_distance_offset: float = 0
+
+var spawn_boats: bool = false
+var spawn_boats_every_x_pixels: float = 5000
+var spawn_boats_chance: float = 5
+var boats_carry_capacity: int = 5
+var boats_movespeed_initial: float = 2000
+var boats_movespeed_multiplier: float = 1
+var boats_movespeed_flat: float = 0
+
+var spawn_junk_every_x_pixels: float = 100
 
 
 func _init() -> void:
-	scrollspeed = Vector2(-300, 0)
+	reset()
 
-	score_multiplier = 1.0
-	weight_multiplier = 1.0
-	weight_initial = 100
+
+func reset() -> void:
+	scrollspeed = scrollspeed_initial
+	#we don't add the initial amount to avoid it in the UI
 	weight = 0
+	carrying = 0
+	oxygen_remaining_seconds = oxygen_capacity()
 
-	oxygen_capacity_seconds = 3
-	oxygen_remaining_seconds = 3
 
-	spawn_fish_every_x_pixels = 300
-	spawn_x_starting_fish = 3
+func _apply_speedboost(amount: float) -> float:
+	return (amount * speedboost_multiplier) + speedboost_flat
 
 
 func scrolling() -> bool:
@@ -39,7 +68,7 @@ func stop_scrolling() -> void:
 
 
 func scroll_faster(amount: float) -> void:
-	scrollspeed.x -= amount
+	scrollspeed.x -= _apply_speedboost(amount)
 	scrollspeed.x = min(0, scrollspeed.x)
 
 
@@ -49,7 +78,11 @@ func scroll_slower(amount: float) -> void:
 
 
 func total_weight() -> float:
-	return weight_initial + (weight * weight_multiplier)
+	return weight_initial + total_added_weight()
+
+
+func total_added_weight() -> float:
+	return weight * weight_multiplier
 
 
 func consume_oxygen(seconds: float) -> void:
@@ -59,7 +92,7 @@ func consume_oxygen(seconds: float) -> void:
 func refill_oxygen(seconds: float) -> void:
 	oxygen_remaining_seconds = max(0, oxygen_remaining_seconds)
 	oxygen_remaining_seconds += 3 * seconds
-	oxygen_remaining_seconds = min(oxygen_remaining_seconds, oxygen_capacity_seconds)
+	oxygen_remaining_seconds = min(oxygen_remaining_seconds, oxygen_capacity())
 
 
 func no_oxygen() -> bool:
@@ -67,4 +100,12 @@ func no_oxygen() -> bool:
 
 
 func oxygen_percentage() -> int:
-	return floori((max(0, oxygen_remaining_seconds) / oxygen_capacity_seconds) * 100.0)
+	return floori((max(0, oxygen_remaining_seconds) / oxygen_capacity()) * 100.0)
+
+
+func oxygen_capacity() -> float:
+	return (oxygen_capacity_seconds * oxygen_capacity_multiplier) + oxygen_capacity_flat
+
+
+func oxygen_remaining() -> float:
+	return oxygen_remaining_seconds

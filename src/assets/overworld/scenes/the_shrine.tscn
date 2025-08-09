@@ -1,7 +1,6 @@
-[gd_scene load_steps=77 format=3 uid="uid://c5pos323ks1ro"]
+[gd_scene load_steps=76 format=3 uid="uid://c5pos323ks1ro"]
 
 [ext_resource type="PackedScene" uid="uid://cyqvtg6x4rb85" path="res://assets/overworld/models/architectural/column/pillar_01.tscn" id="1_6xidr"]
-[ext_resource type="Texture2D" uid="uid://c55rxu5c8d4g6" path="res://assets/overworld/hdri/night.exr" id="1_tbivr"]
 [ext_resource type="Script" uid="uid://dhpabklvos1rb" path="res://assets/overworld/scripts/animation_scripts/light_flicker.gd" id="2_4aov3"]
 [ext_resource type="PackedScene" uid="uid://cxkc37xd0pka0" path="res://assets/overworld/models/architectural/stair_case/stair_case_01.tscn" id="2_tpa10"]
 [ext_resource type="PackedScene" uid="uid://dbl6vd6owbgae" path="res://assets/overworld/models/architectural/arch/arch_01.tscn" id="3_yaebv"]
@@ -44,7 +43,6 @@
 [ext_resource type="Texture2D" uid="uid://lehri0bj078y" path="res://assets/overworld/vfx/skybox/clouds/cloud_vdb_01.webp" id="42_serno"]
 [ext_resource type="Script" uid="uid://drg20rmnbr8bf" path="res://assets/overworld/scripts/animation_scripts/cloud_animation.gd" id="42_ul5nb"]
 [ext_resource type="Texture2D" uid="uid://ceph8r8tmdewb" path="res://assets/overworld/vfx/skybox/clouds/cloud_vdb_02.webp" id="43_raayy"]
-[ext_resource type="SpriteFrames" uid="uid://crp8bo3g1m4tf" path="res://assets/overworld/vfx/wind/wind.tres" id="44_2y5yr"]
 [ext_resource type="Texture2D" uid="uid://bwu66n7epurv6" path="res://assets/overworld/vfx/skybox/clouds/cloud_vdb_03.webp" id="44_dr8tf"]
 [ext_resource type="SpriteFrames" uid="uid://c1pcfko77da5i" path="res://assets/overworld/vfx/elements_anim/water/elements_water_anim.tres" id="44_n6057"]
 [ext_resource type="Texture2D" uid="uid://b5h2x4gybxfuf" path="res://assets/overworld/vfx/skybox/night/sky_night_01.webp" id="44_qqenq"]
@@ -58,7 +56,6 @@
 [ext_resource type="SpriteFrames" uid="uid://bvva1qjrsfn36" path="res://assets/overworld/vfx/elements_anim/earth/elements_earth_anim.tres" id="52_61tad"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1yun8"]
-panorama = ExtResource("1_tbivr")
 
 [sub_resource type="Sky" id="Sky_de3hw"]
 sky_material = SubResource("PanoramaSkyMaterial_1yun8")
@@ -621,27 +618,6 @@ transform = Transform3D(-1.55613e-07, 0, 3.56, 0, 3.56, 0, -3.56, 0, -1.55613e-0
 material_override = SubResource("ShaderMaterial_e8tmd")
 cast_shadow = 0
 texture = ExtResource("44_qqenq")
-
-[node name="wind_anim" type="AnimatedSprite3D" parent="VFX"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.035, 7.205, -1.066)
-visible = false
-sprite_frames = ExtResource("44_2y5yr")
-animation = &"wind_01"
-autoplay = "wind_01"
-
-[node name="wind_anim2" type="AnimatedSprite3D" parent="VFX"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.035, 6.298, -1.066)
-visible = false
-sprite_frames = ExtResource("44_2y5yr")
-animation = &"wind_02"
-autoplay = "wind_02"
-
-[node name="wind_anim3" type="AnimatedSprite3D" parent="VFX"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.035, -0.324, -1.066)
-visible = false
-sprite_frames = ExtResource("44_2y5yr")
-animation = &"wind_03"
-autoplay = "wind_03"
 
 [node name="circular_water" type="MeshInstance3D" parent="VFX"]
 transform = Transform3D(4.87, 0, 0, 0, 4.87, 0, 0, 0, 4.87, 0, -1.545, 0)

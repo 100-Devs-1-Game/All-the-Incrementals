@@ -20,12 +20,14 @@ extends Resource
 
 
 ## Returns all upgrades in the tree via recursion
-func get_all_upgrades(branch: BaseUpgrade = null, unlocked_only: bool = false) -> Array[Resource]:
-	var result: Array[Resource]
-	var root_nodes: Array[Resource]
+func get_all_upgrades(
+	branch: BaseUpgrade = null, unlocked_only: bool = false
+) -> Array[BaseUpgrade]:
+	var result: Array[BaseUpgrade]
+	var root_nodes: Array[BaseUpgrade]
 
 	if branch:
-		root_nodes = branch.unlocks
+		root_nodes.assign(branch.unlocks)
 	else:
 		# Array type conversion BaseUpgrade <- upgrade_tree_root_nodes
 		root_nodes.assign(upgrade_tree_root_nodes)

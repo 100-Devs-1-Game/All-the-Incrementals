@@ -162,12 +162,15 @@ script = ExtResource("14_uvjps")
 position = Vector2(0, 239)
 shape = SubResource("RectangleShape2D_wlaab")
 
+
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0yx17")]
 
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+
 functions_node = NodePath("../../../..")
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_sfu5h")]([ExtResource("4_46r7c")])
+
 
 [node name="Pause" parent="MinigameSharedComponents/SharedBaseComponents" index="1"]
 visible = true
