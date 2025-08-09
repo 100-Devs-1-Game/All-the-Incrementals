@@ -23,1300 +23,1300 @@ metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 [sub_resource type="Resource" id="Resource_r1k22"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10000
+amount = 100
 
 [sub_resource type="Resource" id="Resource_d6hqx"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10000
+water = 100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_r1k22")])
 
 [sub_resource type="Resource" id="Resource_yn4ek"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10100
+amount = 200
 
 [sub_resource type="Resource" id="Resource_tdgsh"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10100
+water = 200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_yn4ek")])
 
 [sub_resource type="Resource" id="Resource_52fyv"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10200
+amount = 300
 
 [sub_resource type="Resource" id="Resource_cdep4"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10200
+water = 300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_52fyv")])
 
 [sub_resource type="Resource" id="Resource_sgpce"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10300
+amount = 400
 
 [sub_resource type="Resource" id="Resource_y00va"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10300
+water = 400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_sgpce")])
 
 [sub_resource type="Resource" id="Resource_yyao8"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10400
+amount = 500
 
 [sub_resource type="Resource" id="Resource_3onoa"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10400
+water = 500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_yyao8")])
 
 [sub_resource type="Resource" id="Resource_4rvej"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10500
+amount = 600
 
 [sub_resource type="Resource" id="Resource_ihfuy"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10500
+water = 600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_4rvej")])
 
 [sub_resource type="Resource" id="Resource_sxrwx"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10600
+amount = 700
 
 [sub_resource type="Resource" id="Resource_a6a1c"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10600
+water = 700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_sxrwx")])
 
 [sub_resource type="Resource" id="Resource_jkg7s"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10700
+amount = 800
 
 [sub_resource type="Resource" id="Resource_lhusv"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10700
+water = 800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_jkg7s")])
 
 [sub_resource type="Resource" id="Resource_cgikl"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10800
+amount = 900
 
 [sub_resource type="Resource" id="Resource_0fwfb"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10800
+water = 900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_cgikl")])
 
 [sub_resource type="Resource" id="Resource_upyru"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 10900
+amount = 1000
 
 [sub_resource type="Resource" id="Resource_u7m74"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 10900
+water = 1000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_upyru")])
 
 [sub_resource type="Resource" id="Resource_v12lh"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11000
+amount = 1100
 
 [sub_resource type="Resource" id="Resource_vwkbo"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11000
+water = 1100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_v12lh")])
 
 [sub_resource type="Resource" id="Resource_07otr"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11100
+amount = 1200
 
 [sub_resource type="Resource" id="Resource_w1nl2"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11100
+water = 1200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_07otr")])
 
 [sub_resource type="Resource" id="Resource_pga83"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11200
+amount = 1300
 
 [sub_resource type="Resource" id="Resource_21u1y"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11200
+water = 1300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_pga83")])
 
 [sub_resource type="Resource" id="Resource_s0hfn"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11300
+amount = 1400
 
 [sub_resource type="Resource" id="Resource_sve5q"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11300
+water = 1400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_s0hfn")])
 
 [sub_resource type="Resource" id="Resource_xfqah"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11400
+amount = 1500
 
 [sub_resource type="Resource" id="Resource_gk8xa"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11400
+water = 1500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_xfqah")])
 
 [sub_resource type="Resource" id="Resource_g34nv"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11500
+amount = 1600
 
 [sub_resource type="Resource" id="Resource_rhbew"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11500
+water = 1600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_g34nv")])
 
 [sub_resource type="Resource" id="Resource_yb1ur"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11600
+amount = 1700
 
 [sub_resource type="Resource" id="Resource_1tqm8"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11600
+water = 1700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_yb1ur")])
 
 [sub_resource type="Resource" id="Resource_ga3vn"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11700
+amount = 1800
 
 [sub_resource type="Resource" id="Resource_2q4so"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11700
+water = 1800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_ga3vn")])
 
 [sub_resource type="Resource" id="Resource_bha3y"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11800
+amount = 1900
 
 [sub_resource type="Resource" id="Resource_kmb7p"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11800
+water = 1900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_bha3y")])
 
 [sub_resource type="Resource" id="Resource_ctetl"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 11900
+amount = 2000
 
 [sub_resource type="Resource" id="Resource_spl2f"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 11900
+water = 2000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_ctetl")])
 
 [sub_resource type="Resource" id="Resource_f4b6h"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12000
+amount = 2100
 
 [sub_resource type="Resource" id="Resource_5v6qu"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12000
+water = 2100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_f4b6h")])
 
 [sub_resource type="Resource" id="Resource_gyyxc"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12100
+amount = 2200
 
 [sub_resource type="Resource" id="Resource_bf8ib"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12100
+water = 2200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_gyyxc")])
 
 [sub_resource type="Resource" id="Resource_hdxw0"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12200
+amount = 2300
 
 [sub_resource type="Resource" id="Resource_mqkx2"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12200
+water = 2300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_hdxw0")])
 
 [sub_resource type="Resource" id="Resource_qn42n"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12300
+amount = 2400
 
 [sub_resource type="Resource" id="Resource_aofq8"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12300
+water = 2400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_qn42n")])
 
 [sub_resource type="Resource" id="Resource_8ju7u"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12400
+amount = 2500
 
 [sub_resource type="Resource" id="Resource_qoraa"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12400
+water = 2500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_8ju7u")])
 
 [sub_resource type="Resource" id="Resource_0d7al"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12500
+amount = 2600
 
 [sub_resource type="Resource" id="Resource_8fuik"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12500
+water = 2600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_0d7al")])
 
 [sub_resource type="Resource" id="Resource_1pruq"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12600
+amount = 2700
 
 [sub_resource type="Resource" id="Resource_0f6k4"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12600
+water = 2700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_1pruq")])
 
 [sub_resource type="Resource" id="Resource_kwufw"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12700
+amount = 2800
 
 [sub_resource type="Resource" id="Resource_uusn8"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12700
+water = 2800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_kwufw")])
 
 [sub_resource type="Resource" id="Resource_obhc8"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12800
+amount = 2900
 
 [sub_resource type="Resource" id="Resource_giy0d"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12800
+water = 2900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_obhc8")])
 
 [sub_resource type="Resource" id="Resource_rsw42"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 12900
+amount = 3000
 
 [sub_resource type="Resource" id="Resource_5e7uc"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 12900
+water = 3000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_rsw42")])
 
 [sub_resource type="Resource" id="Resource_k3xrx"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13000
+amount = 3100
 
 [sub_resource type="Resource" id="Resource_ovlhh"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13000
+water = 3100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_k3xrx")])
 
 [sub_resource type="Resource" id="Resource_0j7p7"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13100
+amount = 3200
 
 [sub_resource type="Resource" id="Resource_ml3jb"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13100
+water = 3200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_0j7p7")])
 
 [sub_resource type="Resource" id="Resource_dorvm"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13200
+amount = 3300
 
 [sub_resource type="Resource" id="Resource_glojd"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13200
+water = 3300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_dorvm")])
 
 [sub_resource type="Resource" id="Resource_kv5og"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13300
+amount = 3400
 
 [sub_resource type="Resource" id="Resource_8hves"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13300
+water = 3400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_kv5og")])
 
 [sub_resource type="Resource" id="Resource_1cocf"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13400
+amount = 3500
 
 [sub_resource type="Resource" id="Resource_h8qrb"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13400
+water = 3500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_1cocf")])
 
 [sub_resource type="Resource" id="Resource_nu5aa"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13500
+amount = 3600
 
 [sub_resource type="Resource" id="Resource_gs2f5"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13500
+water = 3600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_nu5aa")])
 
 [sub_resource type="Resource" id="Resource_eqtwo"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13600
+amount = 3700
 
 [sub_resource type="Resource" id="Resource_w7stc"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13600
+water = 3700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_eqtwo")])
 
 [sub_resource type="Resource" id="Resource_33v2e"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13700
+amount = 3800
 
 [sub_resource type="Resource" id="Resource_gghwp"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13700
+water = 3800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_33v2e")])
 
 [sub_resource type="Resource" id="Resource_r72kb"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13800
+amount = 3900
 
 [sub_resource type="Resource" id="Resource_7oupj"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13800
+water = 3900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_r72kb")])
 
 [sub_resource type="Resource" id="Resource_4uy7o"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 13900
+amount = 4000
 
 [sub_resource type="Resource" id="Resource_j7xdj"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 13900
+water = 4000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_4uy7o")])
 
 [sub_resource type="Resource" id="Resource_5n5bi"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14000
+amount = 4100
 
 [sub_resource type="Resource" id="Resource_wxnh3"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14000
+water = 4100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_5n5bi")])
 
 [sub_resource type="Resource" id="Resource_e3qus"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14100
+amount = 4200
 
 [sub_resource type="Resource" id="Resource_au20y"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14100
+water = 4200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_e3qus")])
 
 [sub_resource type="Resource" id="Resource_8ii45"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14200
+amount = 4300
 
 [sub_resource type="Resource" id="Resource_hrlu8"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14200
+water = 4300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_8ii45")])
 
 [sub_resource type="Resource" id="Resource_01wn6"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14300
+amount = 4400
 
 [sub_resource type="Resource" id="Resource_jn34x"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14300
+water = 4400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_01wn6")])
 
 [sub_resource type="Resource" id="Resource_kgtiv"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14400
+amount = 4500
 
 [sub_resource type="Resource" id="Resource_1k7gj"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14400
+water = 4500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_kgtiv")])
 
 [sub_resource type="Resource" id="Resource_6a2b3"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14500
+amount = 4600
 
 [sub_resource type="Resource" id="Resource_agx7m"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14500
+water = 4600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_6a2b3")])
 
 [sub_resource type="Resource" id="Resource_mxrdn"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14600
+amount = 4700
 
 [sub_resource type="Resource" id="Resource_qfgbc"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14600
+water = 4700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_mxrdn")])
 
 [sub_resource type="Resource" id="Resource_vgsyq"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14700
+amount = 4800
 
 [sub_resource type="Resource" id="Resource_oub16"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14700
+water = 4800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_vgsyq")])
 
 [sub_resource type="Resource" id="Resource_h7gvg"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14800
+amount = 4900
 
 [sub_resource type="Resource" id="Resource_c73yr"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14800
+water = 4900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_h7gvg")])
 
 [sub_resource type="Resource" id="Resource_ni3o4"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 14900
+amount = 5000
 
 [sub_resource type="Resource" id="Resource_ge0ld"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 14900
+water = 5000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_ni3o4")])
 
 [sub_resource type="Resource" id="Resource_qksm5"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15000
+amount = 5100
 
 [sub_resource type="Resource" id="Resource_sa0f5"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15000
+water = 5100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_qksm5")])
 
 [sub_resource type="Resource" id="Resource_ph3tt"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15100
+amount = 5200
 
 [sub_resource type="Resource" id="Resource_h67r3"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15100
+water = 5200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_ph3tt")])
 
 [sub_resource type="Resource" id="Resource_nm13l"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15200
+amount = 5300
 
 [sub_resource type="Resource" id="Resource_m2gyy"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15200
+water = 5300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_nm13l")])
 
 [sub_resource type="Resource" id="Resource_qq56p"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15300
+amount = 5400
 
 [sub_resource type="Resource" id="Resource_7c1cb"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15300
+water = 5400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_qq56p")])
 
 [sub_resource type="Resource" id="Resource_0gntj"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15400
+amount = 5500
 
 [sub_resource type="Resource" id="Resource_spcbt"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15400
+water = 5500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_0gntj")])
 
 [sub_resource type="Resource" id="Resource_1hxa4"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15500
+amount = 5600
 
 [sub_resource type="Resource" id="Resource_s8fvg"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15500
+water = 5600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_1hxa4")])
 
 [sub_resource type="Resource" id="Resource_618s8"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15600
+amount = 5700
 
 [sub_resource type="Resource" id="Resource_33t32"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15600
+water = 5700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_618s8")])
 
 [sub_resource type="Resource" id="Resource_eqbtr"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15700
+amount = 5800
 
 [sub_resource type="Resource" id="Resource_r6k20"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15700
+water = 5800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_eqbtr")])
 
 [sub_resource type="Resource" id="Resource_a4pm8"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15800
+amount = 5900
 
 [sub_resource type="Resource" id="Resource_8t4b1"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15800
+water = 5900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_a4pm8")])
 
 [sub_resource type="Resource" id="Resource_iqgtm"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 15900
+amount = 6000
 
 [sub_resource type="Resource" id="Resource_n1wm8"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 15900
+water = 6000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_iqgtm")])
 
 [sub_resource type="Resource" id="Resource_xj1tt"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16000
+amount = 6100
 
 [sub_resource type="Resource" id="Resource_irdtd"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16000
+water = 6100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_xj1tt")])
 
 [sub_resource type="Resource" id="Resource_buem3"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16100
+amount = 6200
 
 [sub_resource type="Resource" id="Resource_g2ky2"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16100
+water = 6200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_buem3")])
 
 [sub_resource type="Resource" id="Resource_6lwq3"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16200
+amount = 6300
 
 [sub_resource type="Resource" id="Resource_xc4de"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16200
+water = 6300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_6lwq3")])
 
 [sub_resource type="Resource" id="Resource_xadu2"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16300
+amount = 6400
 
 [sub_resource type="Resource" id="Resource_okfpv"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16300
+water = 6400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_xadu2")])
 
 [sub_resource type="Resource" id="Resource_u2uq7"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16400
+amount = 6500
 
 [sub_resource type="Resource" id="Resource_g7byx"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16400
+water = 6500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_u2uq7")])
 
 [sub_resource type="Resource" id="Resource_xv6cw"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16500
+amount = 6600
 
 [sub_resource type="Resource" id="Resource_wvisl"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16500
+water = 6600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_xv6cw")])
 
 [sub_resource type="Resource" id="Resource_dbapn"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16600
+amount = 6700
 
 [sub_resource type="Resource" id="Resource_q85t3"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16600
+water = 6700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_dbapn")])
 
 [sub_resource type="Resource" id="Resource_i4cau"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16700
+amount = 6800
 
 [sub_resource type="Resource" id="Resource_ap2sa"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16700
+water = 6800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_i4cau")])
 
 [sub_resource type="Resource" id="Resource_l2rp7"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16800
+amount = 6900
 
 [sub_resource type="Resource" id="Resource_l03da"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16800
+water = 6900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_l2rp7")])
 
 [sub_resource type="Resource" id="Resource_k402e"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 16900
+amount = 7000
 
 [sub_resource type="Resource" id="Resource_d12r1"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 16900
+water = 7000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_k402e")])
 
 [sub_resource type="Resource" id="Resource_vmqjl"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17000
+amount = 7100
 
 [sub_resource type="Resource" id="Resource_4hl8q"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17000
+water = 7100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_vmqjl")])
 
 [sub_resource type="Resource" id="Resource_rwuml"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17100
+amount = 7200
 
 [sub_resource type="Resource" id="Resource_lss5t"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17100
+water = 7200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_rwuml")])
 
 [sub_resource type="Resource" id="Resource_cddxe"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17200
+amount = 7300
 
 [sub_resource type="Resource" id="Resource_8dy8a"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17200
+water = 7300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_cddxe")])
 
 [sub_resource type="Resource" id="Resource_5dlut"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17300
+amount = 7400
 
 [sub_resource type="Resource" id="Resource_75brn"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17300
+water = 7400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_5dlut")])
 
 [sub_resource type="Resource" id="Resource_noib4"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17400
+amount = 7500
 
 [sub_resource type="Resource" id="Resource_tmnvc"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17400
+water = 7500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_noib4")])
 
 [sub_resource type="Resource" id="Resource_t3css"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17500
+amount = 7600
 
 [sub_resource type="Resource" id="Resource_c08ih"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17500
+water = 7600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_t3css")])
 
 [sub_resource type="Resource" id="Resource_n7ej0"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17600
+amount = 7700
 
 [sub_resource type="Resource" id="Resource_eclux"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17600
+water = 7700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_n7ej0")])
 
 [sub_resource type="Resource" id="Resource_dtk48"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17700
+amount = 7800
 
 [sub_resource type="Resource" id="Resource_phwmu"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17700
+water = 7800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_dtk48")])
 
 [sub_resource type="Resource" id="Resource_78efw"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17800
+amount = 7900
 
 [sub_resource type="Resource" id="Resource_imdil"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17800
+water = 7900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_78efw")])
 
 [sub_resource type="Resource" id="Resource_wwf66"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 17900
+amount = 8000
 
 [sub_resource type="Resource" id="Resource_fngae"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 17900
+water = 8000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_wwf66")])
 
 [sub_resource type="Resource" id="Resource_k0fsc"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18000
+amount = 8100
 
 [sub_resource type="Resource" id="Resource_apxl4"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18000
+water = 8100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_k0fsc")])
 
 [sub_resource type="Resource" id="Resource_316kx"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18100
+amount = 8200
 
 [sub_resource type="Resource" id="Resource_3ersf"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18100
+water = 8200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_316kx")])
 
 [sub_resource type="Resource" id="Resource_oxrbu"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18200
+amount = 8300
 
 [sub_resource type="Resource" id="Resource_3b343"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18200
+water = 8300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_oxrbu")])
 
 [sub_resource type="Resource" id="Resource_753ia"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18300
+amount = 8400
 
 [sub_resource type="Resource" id="Resource_r60xi"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18300
+water = 8400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_753ia")])
 
 [sub_resource type="Resource" id="Resource_a77i6"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18400
+amount = 8500
 
 [sub_resource type="Resource" id="Resource_mbjn8"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18400
+water = 8500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_a77i6")])
 
 [sub_resource type="Resource" id="Resource_iij7p"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18500
+amount = 8600
 
 [sub_resource type="Resource" id="Resource_87rxc"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18500
+water = 8600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_iij7p")])
 
 [sub_resource type="Resource" id="Resource_s1y2q"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18600
+amount = 8700
 
 [sub_resource type="Resource" id="Resource_gig01"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18600
+water = 8700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_s1y2q")])
 
 [sub_resource type="Resource" id="Resource_f2ylt"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18700
+amount = 8800
 
 [sub_resource type="Resource" id="Resource_hmmsg"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18700
+water = 8800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_f2ylt")])
 
 [sub_resource type="Resource" id="Resource_h2d4w"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18800
+amount = 8900
 
 [sub_resource type="Resource" id="Resource_owba7"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18800
+water = 8900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_h2d4w")])
 
 [sub_resource type="Resource" id="Resource_yay06"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 18900
+amount = 9000
 
 [sub_resource type="Resource" id="Resource_1yy3p"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 18900
+water = 9000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_yay06")])
 
 [sub_resource type="Resource" id="Resource_s06ce"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19000
+amount = 9100
 
 [sub_resource type="Resource" id="Resource_p8wrk"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19000
+water = 9100
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_s06ce")])
 
 [sub_resource type="Resource" id="Resource_jxxpg"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19100
+amount = 9200
 
 [sub_resource type="Resource" id="Resource_3v7hj"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19100
+water = 9200
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_jxxpg")])
 
 [sub_resource type="Resource" id="Resource_3hkso"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19200
+amount = 9300
 
 [sub_resource type="Resource" id="Resource_65bgj"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19200
+water = 9300
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_3hkso")])
 
 [sub_resource type="Resource" id="Resource_fbhtp"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19300
+amount = 9400
 
 [sub_resource type="Resource" id="Resource_gcg4p"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19300
+water = 9400
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_fbhtp")])
 
 [sub_resource type="Resource" id="Resource_afr8l"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19400
+amount = 9500
 
 [sub_resource type="Resource" id="Resource_g5ibt"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19400
+water = 9500
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_afr8l")])
 
 [sub_resource type="Resource" id="Resource_4mtne"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19500
+amount = 9600
 
 [sub_resource type="Resource" id="Resource_tsney"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19500
+water = 9600
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_4mtne")])
 
 [sub_resource type="Resource" id="Resource_ne7kb"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19600
+amount = 9700
 
 [sub_resource type="Resource" id="Resource_qd0oc"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19600
+water = 9700
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_ne7kb")])
 
 [sub_resource type="Resource" id="Resource_f3e6g"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19700
+amount = 9800
 
 [sub_resource type="Resource" id="Resource_ebei7"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19700
+water = 9800
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_f3e6g")])
 
 [sub_resource type="Resource" id="Resource_r80l6"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19800
+amount = 9900
 
 [sub_resource type="Resource" id="Resource_ghpr4"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19800
+water = 9900
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_r80l6")])
 
 [sub_resource type="Resource" id="Resource_a8lbe"]
 script = ExtResource("2_k4ycq")
 essence = ExtResource("3_qln2g")
-amount = 19900
+amount = 10000
 
 [sub_resource type="Resource" id="Resource_qu35w"]
 script = ExtResource("1_ueo4q")
 earth = 0
 fire = 0
-water = 19900
+water = 10000
 wind = 0
 slots = Array[ExtResource("2_k4ycq")]([SubResource("Resource_a8lbe")])
 
