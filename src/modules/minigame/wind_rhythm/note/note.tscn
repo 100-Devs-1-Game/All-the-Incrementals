@@ -8,6 +8,7 @@
 script = ExtResource("1_db7ty")
 
 [node name="Background" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_u6fge")
 

@@ -20,6 +20,7 @@ func _ready():
 	stream = chart.audio
 	play()
 	seconds_per_beat = 60.0 / chart.audio.bpm
+	notes_in_bar = chart.notes_in_bar
 
 
 func _process(_delta):
