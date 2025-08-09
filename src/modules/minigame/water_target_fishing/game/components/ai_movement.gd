@@ -77,7 +77,6 @@ func try_move() -> bool:
 		return false
 
 	force_move()
-
 	return true
 
 
@@ -96,6 +95,11 @@ func _physics_process(delta: float) -> void:
 func tick(delta: float) -> void:
 	_seconds_since_started_moving += delta
 
+	# keep fish onscreen for longer
+	var player_movement := 0
+	if WTFGlobals.minigame.stats.scrollspeed.x <= 500:
+		player_movement = -WTFGlobals.minigame.stats.scrollspeed.x * 0.5
+
 	if !is_moving():
 		var antivec := -_velocity.normalized() * decceleration * delta
 		var combined := _velocity + antivec
@@ -105,13 +109,10 @@ func tick(delta: float) -> void:
 			_velocity = Vector2.ZERO
 		else:
 			_velocity = combined
+	else:
+		_velocity += _target_direction.normalized() * acceleration * delta
 
-		velocity_component.velocity = _velocity
-		return
+		if _velocity.length() > max_speed:
+			_velocity = _velocity.normalized() * max_speed
 
-	_velocity += _target_direction.normalized() * acceleration * delta
-
-	if _velocity.length() > max_speed:
-		_velocity = _velocity.normalized() * max_speed
-
-		velocity_component.velocity = _velocity
+	velocity_component.velocity = _velocity + Vector2(player_movement, 0)
