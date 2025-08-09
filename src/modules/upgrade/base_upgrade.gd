@@ -25,29 +25,38 @@ const NO_LEVEL = -1
 
 @export_category("Algorithmic")
 
-## optional: setting cost and effect algorithmically ( arrays will be updated in the setter )
+## optional: _setting cost and effect algorithmically ( arrays will be updated in the _setter )
 @export var max_level: int:
-	set = set_max_level
+	set = _set_max_level
 
 ## cost for level 1
 @export var base_cost: EssenceInventory:
-	set = set_base_cost
+	set = _set_base_cost
 ## cost multiplier per level[br]
 ## base cost + (base cost modifier * level)
 @export var base_cost_multiplier: float:
-	set = set_base_cost_multiplier
+	set = _set_base_cost_multiplier
+
+## make costs scale exponentially
+@export var exponential_cost: bool = true:
+	set = _set_exponential_cost
+
+## only affects exponential costs[br]
+## less smoothness => more precise, more smoothness => more rounding
+@export var round_smoothness: float = 1.0:
+	set = _set_round_smoothness
 
 ## effect modifier for level 1
 @export var base_effect_modifier: float:
-	set = set_base_effect_modifier
+	set = _set_base_effect_modifier
 ## modifer multiplier per level[br]
 ## base modifier + (modifier multiplier * level)
 @export var effect_modifier_multiplier: float:
-	set = set_effect_modifier_multiplier
+	set = _set_effect_modifier_multiplier
 
-## optional: setting cost via curve ( arrays will be updated in the setter  )
+## optional: _setting cost via curve ( arrays will be updated in the _setter  )
 @export var cost_curve: Curve:
-	set = set_cost_curve
+	set = _set_cost_curve
 
 @export_category("Unlocking")
 
@@ -78,7 +87,7 @@ func _construct_cost_and_modifier_arrays():
 		return
 
 	if max_level <= 0:
-		push_error("failed to calculate costs/effect - max level is not set")
+		push_error("failed to calculate costs/effect - max level is not _set")
 		return
 
 	if base_cost && base_cost.slots && base_cost_multiplier > 0:
@@ -86,7 +95,13 @@ func _construct_cost_and_modifier_arrays():
 		for i in range(max_level):
 			var new_cost: EssenceInventory = EssenceInventory.new()
 			for stack: EssenceStack in base_cost.slots:
-				var cost_calc: int = stack.amount + int(base_cost_multiplier * i)
+				var cost_calc: int
+				if exponential_cost:
+					cost_calc = round_nice(
+						stack.amount * pow(base_cost_multiplier, i), round_smoothness
+					)
+				else:
+					cost_calc = stack.amount + int(base_cost_multiplier * i)
 				new_cost.add_stack(EssenceStack.new(stack.essence, cost_calc))
 			cost_arr.append(new_cost)
 
@@ -143,7 +158,7 @@ func get_cost(level: int) -> EssenceInventory:
 # 0 = level 1, ...
 func get_effect_modifier(level: int) -> float:
 	assert(effect_modifier_arr.size() > level)
-	# Setting the effect for level -1 for max effect is likely not intended.
+	# _setting the effect for level -1 for max effect is likely not intended.
 	assert(level > NO_LEVEL)
 	return effect_modifier_arr[level]
 
@@ -172,37 +187,62 @@ func can_afford_next_level() -> bool:
 	return Player.can_afford(get_next_level_cost())
 
 
-func set_max_level(level: int):
+func _set_max_level(level: int):
 	max_level = level
 	if max_level:
 		_construct_cost_and_modifier_arrays()
 
 
-func set_base_cost(cost: EssenceInventory):
+func _set_base_cost(cost: EssenceInventory):
 	base_cost = cost
 	if base_cost:
 		_construct_cost_and_modifier_arrays()
 
 
-func set_base_cost_multiplier(multiplier: float):
+func _set_base_cost_multiplier(multiplier: float):
 	base_cost_multiplier = multiplier
 	if base_cost_multiplier:
 		_construct_cost_and_modifier_arrays()
 
 
-func set_base_effect_modifier(modifier: float):
+func _set_exponential_cost(b: bool):
+	exponential_cost = b
+	_construct_cost_and_modifier_arrays()
+
+
+func _set_round_smoothness(factor: float):
+	round_smoothness = factor
+	_construct_cost_and_modifier_arrays()
+
+
+func _set_base_effect_modifier(modifier: float):
 	base_effect_modifier = modifier
 	if base_effect_modifier:
 		_construct_cost_and_modifier_arrays()
 
 
-func set_effect_modifier_multiplier(multiplier: float):
+func _set_effect_modifier_multiplier(multiplier: float):
 	effect_modifier_multiplier = multiplier
 	if effect_modifier_multiplier:
 		_construct_cost_and_modifier_arrays()
 
 
-func set_cost_curve(curve: Curve):
+func _set_cost_curve(curve: Curve):
 	cost_curve = curve
 	if cost_curve:
 		pass
+
+
+# rounds to nearest 1, 5, 10.. depending on how large x is & the smoothness
+static func round_nice(x, smoothness: float) -> int:
+	var base: float = x * smoothness * 0.1
+
+	var steps := [1, 5, 10, 50, 100, 500, 1000]
+	var nice: int = 1
+
+	for i in steps:
+		nice = i
+		if base <= i:
+			break
+
+	return floor(x / float(nice)) * nice

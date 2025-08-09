@@ -36,52 +36,52 @@ slots = Array[ExtResource("2_58yqc")]([SubResource("Resource_58yqc")])
 [sub_resource type="Resource" id="Resource_xee8h"]
 script = ExtResource("2_58yqc")
 essence = ExtResource("3_pp2j6")
-amount = 200
+amount = 10000
 
 [sub_resource type="Resource" id="Resource_t0ugm"]
 script = ExtResource("1_c2eto")
 earth = 0
 fire = 0
-water = 200
+water = 10000
 wind = 0
 slots = Array[ExtResource("2_58yqc")]([SubResource("Resource_xee8h")])
 
 [sub_resource type="Resource" id="Resource_cdvoe"]
 script = ExtResource("2_58yqc")
 essence = ExtResource("3_pp2j6")
-amount = 300
+amount = 1000000
 
 [sub_resource type="Resource" id="Resource_2svqe"]
 script = ExtResource("1_c2eto")
 earth = 0
 fire = 0
-water = 300
+water = 1000000
 wind = 0
 slots = Array[ExtResource("2_58yqc")]([SubResource("Resource_cdvoe")])
 
 [sub_resource type="Resource" id="Resource_aav6n"]
 script = ExtResource("2_58yqc")
 essence = ExtResource("3_pp2j6")
-amount = 400
+amount = 100000000
 
 [sub_resource type="Resource" id="Resource_l64xg"]
 script = ExtResource("1_c2eto")
 earth = 0
 fire = 0
-water = 400
+water = 100000000
 wind = 0
 slots = Array[ExtResource("2_58yqc")]([SubResource("Resource_aav6n")])
 
 [sub_resource type="Resource" id="Resource_gtp7n"]
 script = ExtResource("2_58yqc")
 essence = ExtResource("3_pp2j6")
-amount = 500
+amount = 10000000000
 
 [sub_resource type="Resource" id="Resource_x8hmi"]
 script = ExtResource("1_c2eto")
 earth = 0
 fire = 0
-water = 500
+water = 10000000000
 wind = 0
 slots = Array[ExtResource("2_58yqc")]([SubResource("Resource_gtp7n")])
 
@@ -102,6 +102,8 @@ effect_modifier_arr = Array[float]([3.0, 6.0, 9.0, 12.0, 15.0])
 max_level = 5
 base_cost = SubResource("Resource_jdoxv")
 base_cost_multiplier = 100.0
+exponential_cost = true
+round_smoothness = 1.0
 base_effect_modifier = 3.0
 effect_modifier_multiplier = 3.0
 unlocked = false
