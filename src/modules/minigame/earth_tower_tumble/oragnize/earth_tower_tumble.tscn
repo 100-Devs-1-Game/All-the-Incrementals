@@ -14,7 +14,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uvjps"]
 shader = ExtResource("5_wlaab")
-shader_parameter/lod = 0.788
+shader_parameter/lod = 1.173
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vk6td"]
 size = Vector2(232, 415)

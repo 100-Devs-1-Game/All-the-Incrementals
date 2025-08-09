@@ -11,3 +11,6 @@ func _initialize():
 
 func _start():
 	game_started.emit()
+
+func _gameover():
+	pass

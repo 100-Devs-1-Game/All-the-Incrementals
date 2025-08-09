@@ -14,6 +14,8 @@ const HEARTS_FULL = preload("res://assets/minigames/earth_tower_tumble/hearts_fu
 func set_state(new_state: TowerTumbleState):
 	state = new_state
 	state.score_changed.connect(_on_score_changed)
+	state.blocks_changed.connect(_on_blocks_changed)
+	state.lives_changed.connect(_on_lives_changed)
 	await get_tree().create_timer(1.0).timeout
 	state.force_update()
 
