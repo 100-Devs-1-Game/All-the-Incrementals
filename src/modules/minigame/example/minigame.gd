@@ -18,4 +18,11 @@ func _start() -> void:
 
 
 func _process(delta: float) -> void:
+	var prev_rotation: float = circle_center.rotation
 	circle_center.rotate(rotation_speed * delta)
+	if int(circle_center.rotation / PI) != int(prev_rotation / PI):
+		add_score(1)
+
+
+func _get_countdown_duration() -> float:
+	return 20
