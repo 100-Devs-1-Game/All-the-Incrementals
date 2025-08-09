@@ -28,19 +28,18 @@ func can_afford(_cost: EssenceInventory) -> bool:
 	#return data.inventory.has_all(cost)
 
 
-func get_highscores(minigame: BaseMinigame) -> Array[int]:
-	var minigame_uid = ResourceLoader.get_resource_uid(minigame.data.resource_path)
+func get_highscores(minigame_uid: int) -> Array[int]:
 	var minigame_highscores: Array[int]
 	minigame_highscores.assign(data.highscores.get_or_add(minigame_uid, []))
 	return minigame_highscores
 
 
-func update_highscores(minigame: BaseMinigame, score: int) -> void:
+func update_highscores(minigame_uid: int, score: int) -> void:
 	if not data:
 		push_error("Player data not set")
 		# assuming this is a test session
 		return
-	var minigame_highscores: Array[int] = get_highscores(minigame)
+	var minigame_highscores: Array[int] = get_highscores(minigame_uid)
 	if minigame_highscores.size() < MAX_HIGH_SCORES_STORED:
 		minigame_highscores.append(score)
 	elif minigame_highscores.min() < score:
@@ -48,6 +47,5 @@ func update_highscores(minigame: BaseMinigame, score: int) -> void:
 		minigame_highscores.pop_front()
 		minigame_highscores.append(score)
 	minigame_highscores.sort()
-	var minigame_uid = ResourceLoader.get_resource_uid(minigame.data.resource_path)
 	data.highscores[minigame_uid] = minigame_highscores
 	SaveGameManager.save()
