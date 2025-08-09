@@ -11,6 +11,7 @@ var _distance_travelled := 0.0
 var _distance_since_spawned := 0.0
 
 var _started: bool = false
+var _old_physics_tickrate: int
 
 @onready var fish_db: WTFFishDB = %WTFFishDB
 
@@ -27,6 +28,8 @@ func get_pixels_per_second() -> int:
 
 func _enter_tree() -> void:
 	WTFGlobals.minigame = self
+	_old_physics_tickrate = Engine.physics_ticks_per_second
+	Engine.physics_ticks_per_second = 10
 
 	## yyyy does it stutter thoooo
 	# I can't find any magic number that solves it :(
@@ -36,6 +39,7 @@ func _enter_tree() -> void:
 
 func _exit_tree() -> void:
 	WTFGlobals.minigame = null
+	Engine.physics_ticks_per_second = _old_physics_tickrate
 
 
 func _initialize() -> void:
