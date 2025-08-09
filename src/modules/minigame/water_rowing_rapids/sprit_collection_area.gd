@@ -4,7 +4,7 @@ extends Area2D
 signal spirit_collected(value: int)
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(spirit: Area2D) -> void:
 	# assume this is a spirt for convenience
-	area.owner.queue_free()
-	spirit_collected.emit(1)  # TODO: Unhardcode this
+	spirit.owner.queue_free()
+	spirit_collected.emit(spirit.owner.value)
