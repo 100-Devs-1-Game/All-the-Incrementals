@@ -344,6 +344,9 @@ visible = false
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
 
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
+anchors_preset = 6
+
 [node name="Pause" parent="MinigameSharedComponents/SharedBaseComponents" index="1"]
 visible = true
 

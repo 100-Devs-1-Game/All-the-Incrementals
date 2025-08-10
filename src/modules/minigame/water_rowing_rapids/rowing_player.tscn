@@ -17,7 +17,7 @@ height = 860.0
 radius = 29.0
 height = 570.0
 
-[node name="RowingPlayer" type="RigidBody2D"]
+[node name="RowingPlayer" type="RigidBody2D" node_paths=PackedStringArray("boost_timer")]
 physics_material_override = SubResource("PhysicsMaterial_8qkfb")
 gravity_scale = 0.0
 center_of_mass_mode = 1
@@ -27,6 +27,7 @@ max_contacts_reported = 2
 linear_damp = 1.0
 angular_damp = 1.0
 script = ExtResource("1_41ocn")
+boost_timer = NodePath("BoostTimer")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(21, -140.226)
@@ -77,5 +78,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_j5ul3")
 debug_color = Color(0, 0.537255, 0, 0.247059)
 
+[node name="BoostTimer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="SpritCollectionArea" to="SpritCollectionArea" method="_on_area_entered"]
 [connection signal="spirit_collected" from="SpritCollectionArea" to="." method="_on_sprit_collection_area_spirit_collected"]
+[connection signal="timeout" from="BoostTimer" to="." method="_on_boost_timer_timeout"]
