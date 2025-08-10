@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c83vkptbsgc61"]
 
-[ext_resource type="Script" uid="uid://cscelbquidnbf" path="res://modules/minigame/water_rowing_rapids/rowing_ui.gd" id="1_f7fqh"]
+[ext_resource type="Script" uid="uid://cscelbquidnbf" path="res://modules/minigame/water_rowing_rapids/ui/rowing_ui.gd" id="1_f7fqh"]
 
 [sub_resource type="Gradient" id="Gradient_f7fqh"]
 offsets = PackedFloat32Array(0)

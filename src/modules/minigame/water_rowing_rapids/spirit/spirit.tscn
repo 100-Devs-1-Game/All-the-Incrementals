@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bam250ejn756g"]
 
 [ext_resource type="Shader" uid="uid://d2lkkp2x1pcwd" path="res://modules/minigame/water_rowing_rapids/spirit.gdshader" id="1_6yxh1"]
-[ext_resource type="Script" uid="uid://ba6bjgoioagnt" path="res://modules/minigame/water_rowing_rapids/spirit.gd" id="1_gc2sf"]
+[ext_resource type="Script" uid="uid://ba6bjgoioagnt" path="res://modules/minigame/water_rowing_rapids/spirit/spirit.gd" id="1_gc2sf"]
 
 [sub_resource type="Gradient" id="Gradient_6yxh1"]
 offsets = PackedFloat32Array(0, 0.736607, 0.933036, 1)
