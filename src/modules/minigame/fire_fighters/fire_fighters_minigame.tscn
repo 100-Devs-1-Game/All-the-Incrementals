@@ -79,6 +79,7 @@ extinguish_effect_scene = ExtResource("5_ewfdg")
 explosion_effect_scene = ExtResource("6_jiygg")
 map_rect = Rect2i(0, 0, 60, 33)
 map_features = Array[ExtResource("6_0qd66")]([ExtResource("7_67ens"), ExtResource("8_2aotl"), ExtResource("9_j5lxn"), ExtResource("10_8bvf2"), ExtResource("11_ftttk")])
+has_countdown = true
 data_uid = "uid://bqod1tv5hmpgo"
 
 [node name="CanvasLayer Background" type="CanvasLayer" parent="."]
@@ -124,7 +125,12 @@ sequence = ExtResource("22_mtp5r")
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
 
 [node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
-anchors_preset = 6
+anchors_preset = 1
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 40.0
+grow_vertical = 1
 enable_countdown_display = true
 
 [node name="Border" type="StaticBody2D" parent="."]

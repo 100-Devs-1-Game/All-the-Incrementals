@@ -13,6 +13,7 @@ const BURN_TICK_INTERVAL = 10
 @export var map_features: Array[FireFightersMinigameMapFeature]
 
 @export var max_water_per_fire: float = 0.1
+@export var countdown_duration: float = 10.0
 
 @export var rng_seed: int = -1
 
@@ -20,6 +21,7 @@ var map_feature_lookup: Dictionary
 var fires: Dictionary
 var player: FireFightersMinigamePlayer
 var saved_tiles: Array[Vector2i]
+var countdown_bonus: int
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
@@ -246,6 +248,10 @@ func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
 		var explosion: Node2D = explosion_effect_scene.instantiate()
 		explosion.position = get_tile_position(center_tile)
 		effects_node.add_child(explosion)
+
+
+func _get_countdown_duration() -> float:
+	return countdown_duration + countdown_bonus
 
 
 func get_tile_at(pos: Vector2) -> Vector2i:
