@@ -1,22 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://bam250ejn756g"]
+[gd_scene load_steps=7 format=3 uid="uid://bam250ejn756g"]
 
 [ext_resource type="Shader" uid="uid://d2lkkp2x1pcwd" path="res://modules/minigame/water_rowing_rapids/spirit.gdshader" id="1_6yxh1"]
 [ext_resource type="Script" uid="uid://ba6bjgoioagnt" path="res://modules/minigame/water_rowing_rapids/spirit.gd" id="1_gc2sf"]
+
+[sub_resource type="Gradient" id="Gradient_6yxh1"]
+offsets = PackedFloat32Array(0, 0.736607, 0.933036, 1)
+colors = PackedColorArray(0.266575, 0.266575, 0.266575, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.366595, 0.366595, 0.366595, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_14k7n"]
+gradient = SubResource("Gradient_6yxh1")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6yxh1"]
 shader = ExtResource("1_6yxh1")
 shader_parameter/pulse_intensity = 0.1
 shader_parameter/wobble_offset = 18.0
 shader_parameter/radius_offset_intensity = 0.2
+shader_parameter/gradient = SubResource("GradientTexture1D_14k7n")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x58gl"]
 radius = 16.0
 
 [node name="Spirit" type="Node2D"]
+modulate = Color(1, 1, 0.494118, 1)
 material = SubResource("ShaderMaterial_6yxh1")
 script = ExtResource("1_gc2sf")
 
 [node name="Area2D" type="Area2D" parent="." groups=["spirit"]]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_x58gl")

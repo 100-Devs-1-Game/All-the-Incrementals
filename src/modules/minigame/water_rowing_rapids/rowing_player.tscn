@@ -1,11 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://mhrfxqqthuy7"]
+[gd_scene load_steps=9 format=3 uid="uid://mhrfxqqthuy7"]
 
 [ext_resource type="Script" uid="uid://dcd2ff4bobsch" path="res://modules/minigame/water_rowing_rapids/rowing_player.gd" id="1_41ocn"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_65ad0"]
 [ext_resource type="PackedScene" uid="uid://c83vkptbsgc61" path="res://modules/minigame/water_rowing_rapids/rowing_ui.tscn" id="3_8qkfb"]
+[ext_resource type="Script" uid="uid://binflulp46bk3" path="res://modules/minigame/water_rowing_rapids/sprit_collection_area.gd" id="4_j5ul3"]
+[ext_resource type="Script" uid="uid://5pqtelgggjsh" path="res://modules/minigame/water_rowing_rapids/spirit_magnetism_area.gd" id="4_qdgbt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8qkfb"]
 bounce = 0.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qkfb"]
+radius = 200.0
+height = 860.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5ul3"]
+radius = 29.0
+height = 570.0
 
 [node name="RowingPlayer" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_8qkfb")
@@ -44,3 +54,28 @@ position_smoothing_enabled = true
 
 [node name="RowingUI" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_8qkfb")]
 player = NodePath("../..")
+
+[node name="SpiritMagnetismArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("4_qdgbt")
+
+[node name="Collider" type="CollisionShape2D" parent="SpiritMagnetismArea"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8qkfb")
+debug_color = Color(0.611765, 0.537255, 0, 0.133333)
+
+[node name="SpritCollectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("4_j5ul3")
+
+[node name="Collider" type="CollisionShape2D" parent="SpritCollectionArea"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_j5ul3")
+debug_color = Color(0, 0.537255, 0, 0.247059)
+
+[connection signal="area_entered" from="SpritCollectionArea" to="SpritCollectionArea" method="_on_area_entered"]
+[connection signal="spirit_collected" from="SpritCollectionArea" to="." method="_on_sprit_collection_area_spirit_collected"]

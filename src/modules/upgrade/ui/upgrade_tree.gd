@@ -8,7 +8,7 @@ var upgrades: Array[BaseUpgrade]
 var ui_spacer_scale: float = 0.2
 var current_upgrade: BaseUpgrade
 var essence_type: String
-@onready var line_texure: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
+@onready var line_texture: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -82,12 +82,13 @@ func _load_upgrades():
 					* Vector2(ui_spacer_scale, ui_spacer_scale)
 				)
 			)
-			line.texture = line_texure
+			line.texture = line_texture
 			line.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 			line.texture_mode = Line2D.LINE_TEXTURE_TILE
 			line.width = 10
 
 
 func _on_fill_button_fill_complete(fill_button: FillButton) -> void:
-	current_upgrade.level_up()
-	fill_button.trigger_again()
+	if current_upgrade.can_afford_next_level():
+		current_upgrade.level_up()
+		fill_button.trigger_again()

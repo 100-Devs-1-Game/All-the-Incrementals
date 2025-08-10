@@ -4,6 +4,7 @@ extends Node
 # this is necessary to avoid circular references
 const OVERWORLD_SCENE := preload("res://modules/overworld/overworld.tscn")
 const EXTRAS_SCENE := preload("res://modules/menu/extras.tscn")
+const UPGRADE_TREE_SCENE := preload("res://modules/upgrade/ui/upgrade_tree.tscn")
 
 # this is necessary to maintain my sanity
 const SHRINE_SETTLEMENT_DATA := preload("res://modules/overworld_locations/shrine/shrine.tres")
@@ -79,6 +80,10 @@ func enter_clayport():
 
 func enter_extras():
 	get_tree().change_scene_to_packed(EXTRAS_SCENE)
+
+
+func enter_upgrade_tree():
+	get_tree().change_scene_to_packed(UPGRADE_TREE_SCENE)
 
 
 func _exit_minigame() -> void:
