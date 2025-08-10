@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FireFightersMinigameOilBarrel" load_steps=3 format=3 uid="uid://ch44pnewmrvkb"]
 
 [ext_resource type="Texture2D" uid="uid://0f3h888gsab7" path="res://assets/minigames/fire_fighters/placeholder_assets/items/oil_barrel.png" id="1_na4hr"]
-[ext_resource type="Script" uid="uid://c4jcftojywdi4" path="res://modules/minigame/fire_fighters/items/fire_fighter_oil_barrel.gd" id="2_iwbbb"]
+[ext_resource type="Script" path="res://modules/minigame/fire_fighters/items/fire_fighter_oil_barrel.gd" id="2_iwbbb"]
 
 [resource]
 script = ExtResource("2_iwbbb")

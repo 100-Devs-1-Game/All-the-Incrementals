@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://jsnnw5l5o06j" path="res://assets/minigames/wind_rhythm/placeholder_assets/rhythm_background.png" id="2_hxotr"]
 [ext_resource type="PackedScene" uid="uid://c8l4byfcrycg8" path="res://modules/minigame/wind_rhythm/conductor.tscn" id="2_sij3s"]
 [ext_resource type="PackedScene" uid="uid://ev2tmev7hfu1" path="res://modules/minigame/wind_rhythm/board/rhythm_board.tscn" id="3_hxotr"]
-[ext_resource type="Script" uid="uid://bbkocoumc6jas" path="res://modules/minigame/wind_rhythm/rhythm_combo.gd" id="6_fyydw"]
+[ext_resource type="Script" path="res://modules/minigame/wind_rhythm/rhythm_combo.gd" id="6_fyydw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sij3s"]
 

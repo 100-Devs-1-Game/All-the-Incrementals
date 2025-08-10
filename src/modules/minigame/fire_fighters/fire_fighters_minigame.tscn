@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c7nq5cvot6nf5" path="res://assets/minigames/fire_fighters/placeholder_assets/objects_tile_set.png" id="14_vetek"]
 [ext_resource type="Script" uid="uid://bk20clpaekonn" path="res://modules/minigame/fire_fighters/map/fire_fighters_item_spawner.gd" id="15_gckvd"]
 [ext_resource type="PackedScene" uid="uid://iiekj8nk2k2e" path="res://modules/minigame/fire_fighters/map/fire_fighers_item.tscn" id="16_na7l3"]
-[ext_resource type="Script" uid="uid://b8nkin5yvvnsu" path="res://modules/minigame/fire_fighters/effects/fire_fighters_effects_player.gd" id="17_7q2b4"]
+[ext_resource type="Script" path="res://modules/minigame/fire_fighters/effects/fire_fighters_effects_player.gd" id="17_7q2b4"]
 [ext_resource type="PackedScene" uid="uid://c06xs7256anxh" path="res://modules/minigame/fire_fighters/map/fire_fighters_object.tscn" id="17_bwfd8"]
 [ext_resource type="PackedScene" uid="uid://c7dqt6ar2dixt" path="res://modules/minigame/fire_fighters/effects/water_splash.tscn" id="18_cumqa"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="21_jiygg"]

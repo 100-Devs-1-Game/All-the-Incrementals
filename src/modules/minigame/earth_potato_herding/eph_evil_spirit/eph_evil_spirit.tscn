@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_6k1f6"]
 [ext_resource type="Script" uid="uid://d2lj7uujdddn6" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.gd" id="2_6k1f6"]
 [ext_resource type="Script" uid="uid://dowbvmqjoiyxo" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/states/go_to_nearest_youngling.gd" id="3_jinnf"]
-[ext_resource type="Script" uid="uid://c7qcjt10ni6jr" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/states/go_away_from_player.gd" id="4_chc02"]
+[ext_resource type="Script" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/states/go_away_from_player.gd" id="4_chc02"]
 [ext_resource type="Texture2D" uid="uid://58jq6rcdxs70" path="res://assets/minigames/earth_potato_herding/evil_spirit.webp" id="5_sj336"]
 [ext_resource type="Texture2D" uid="uid://e3q3e0x6t0t" path="res://assets/minigames/earth_potato_herding/fists.webp" id="6_va8ji"]
 [ext_resource type="Texture2D" uid="uid://bkl78rfb3w03e" path="res://assets/minigames/earth_potato_herding/hands.webp" id="7_vcycw"]
