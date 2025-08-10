@@ -1,33 +1,116 @@
-[gd_scene load_steps=8 format=3 uid="uid://4sdp3vpsbo5v"]
+[gd_scene load_steps=6 format=3 uid="uid://4sdp3vpsbo5v"]
 
-[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="3_5tr2e"]
-[ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="3_cues5"]
-[ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="4_5y15t"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="4_cues5"]
+[ext_resource type="Script" uid="uid://b1uv5hrreamha" path="res://modules/menu/extras.gd" id="1_03ewq"]
+[ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_cues5"]
+[ext_resource type="StyleBox" uid="uid://ct2goca0ruxhd" path="res://modules/menu/common/back_panel_stylebox.tres" id="1_snq8b"]
+[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="2_03ewq"]
+[ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="5_5y15t"]
 
-[sub_resource type="Resource" id="Resource_brgc7"]
-script = ExtResource("3_cues5")
-collection = Array[ExtResource("4_cues5")]([])
-metadata/_custom_type_script = "uid://dv7wg0eoca0sr"
+[node name="Extras" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cues5")
+script = ExtResource("1_03ewq")
 
-[sub_resource type="Resource" id="Resource_ss1js"]
-script = ExtResource("4_cues5")
-func_or_path = "res://modules/gallery/gallery.tscn"
-hotkey = "g"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[node name="ExtrasLabel" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -491.0
+offset_right = 226.0
+offset_bottom = -371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "Extras"
+horizontal_alignment = 1
 
-[sub_resource type="Resource" id="Resource_14luc"]
-script = ExtResource("4_cues5")
-func_or_path = "res://modules/credits/credits.tscn"
-hotkey = "c"
-metadata/_custom_type_script = "uid://bniv0kd24eb7w"
+[node name="Backpnl" type="Panel" parent="ExtrasLabel"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_snq8b")
 
-[node name="Extras" type="Node2D"]
+[node name="Panel" type="Panel" parent="ExtrasLabel"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_03ewq")
 
-[node name="DebugPopup" parent="." instance=ExtResource("3_5tr2e")]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
-visible_on_start = true
-default_debug_buttons = SubResource("Resource_brgc7")
-custom_debug_buttons = Array[ExtResource("4_cues5")]([ExtResource("4_5y15t"), SubResource("Resource_ss1js"), SubResource("Resource_14luc")])
+[node name="BackPanel" type="Panel" parent="."]
+offset_left = 599.0
+offset_top = 216.0
+offset_right = 1325.0
+offset_bottom = 898.0
+theme_override_styles/panel = ExtResource("1_snq8b")
+
+[node name="Panel" type="Panel" parent="."]
+material = ExtResource("5_5y15t")
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -316.0
+offset_right = 364.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -267.0
+offset_right = 201.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Credits" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Gallery" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Gallery"
+
+[node name="Back" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Gallery" to="." method="_on_gallery_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Back" to="." method="_on_back_pressed"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://mhrfxqqthuy7"]
 
-[ext_resource type="Script" uid="uid://dcd2ff4bobsch" path="res://modules/minigame/water_rowing_rapids/rowing_player.gd" id="1_41ocn"]
+[ext_resource type="Script" uid="uid://dcd2ff4bobsch" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.gd" id="1_41ocn"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_65ad0"]
-[ext_resource type="PackedScene" uid="uid://c83vkptbsgc61" path="res://modules/minigame/water_rowing_rapids/rowing_ui.tscn" id="3_8qkfb"]
-[ext_resource type="Script" uid="uid://binflulp46bk3" path="res://modules/minigame/water_rowing_rapids/sprit_collection_area.gd" id="4_j5ul3"]
-[ext_resource type="Script" uid="uid://5pqtelgggjsh" path="res://modules/minigame/water_rowing_rapids/spirit_magnetism_area.gd" id="4_qdgbt"]
+[ext_resource type="PackedScene" uid="uid://c83vkptbsgc61" path="res://modules/minigame/water_rowing_rapids/player/ui/rowing_ui.tscn" id="3_8qkfb"]
+[ext_resource type="Script" uid="uid://binflulp46bk3" path="res://modules/minigame/water_rowing_rapids/player/sprit_collection_area.gd" id="4_j5ul3"]
+[ext_resource type="Script" uid="uid://5pqtelgggjsh" path="res://modules/minigame/water_rowing_rapids/player/spirit_magnetism_area.gd" id="4_qdgbt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8qkfb"]
 bounce = 0.5

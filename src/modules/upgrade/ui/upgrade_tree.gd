@@ -60,6 +60,11 @@ func _read_upgrade_files():
 			dir.list_dir_end()
 
 
+func _input(event: InputEvent) -> void:
+	if SceneLoader.has_current_minigame() and event.is_action_pressed("exit_menu"):
+		SceneLoader.start_minigame(SceneLoader.get_current_minigame())
+
+
 func _load_upgrades():
 	for upgrade_data in upgrades:
 		var instance = ui_upgrade_template.instantiate()
