@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=34 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_ewfdg"]
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.tscn" id="2_jiygg"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://c06xs7256anxh" path="res://modules/minigame/fire_fighters/map/fire_fighters_object.tscn" id="17_bwfd8"]
 [ext_resource type="PackedScene" uid="uid://c7dqt6ar2dixt" path="res://modules/minigame/fire_fighters/effects/water_splash.tscn" id="18_cumqa"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="21_jiygg"]
+[ext_resource type="PackedScene" uid="uid://bdmtajovey0in" path="res://modules/minigame/fire_fighters/components/audio_sequence_container.tscn" id="21_q2uva"]
+[ext_resource type="Resource" uid="uid://by75lx5d0j0bv" path="res://modules/minigame/fire_fighters/data/audio/oil_drop_audio_container.tres" id="22_mtp5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
 texture = ExtResource("12_n2xsp")
@@ -113,6 +115,11 @@ metadata/_custom_type_script = "uid://bk20clpaekonn"
 [node name="EffectsPlayer" type="Node" parent="."]
 script = ExtResource("17_7q2b4")
 water_splash_scene = ExtResource("18_cumqa")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="AudioContainer Oil" parent="Audio" instance=ExtResource("21_q2uva")]
+sequence = ExtResource("22_mtp5r")
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
 

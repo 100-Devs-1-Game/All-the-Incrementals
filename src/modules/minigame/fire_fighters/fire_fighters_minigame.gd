@@ -35,6 +35,9 @@ var saved_tiles: Array[Vector2i]
 @onready var item_spawner: FireFightersMinigameItemSpawner = $ItemSpawner
 @onready var effects_player: FireFightersMinigameEffectsPlayer = $EffectsPlayer
 
+@onready
+var audio_container_oil: FireFightersMinigameAudioSequenceContainer = $"Audio/AudioContainer Oil"
+
 
 func _start() -> void:
 	_run()
@@ -187,8 +190,10 @@ func _soak_tile(tile: Vector2i):
 		tile_map_water.set_cell(tile, water_level + 1, Vector2.ZERO)
 
 
-func add_oil(tile: Vector2i):
+func add_oil(tile: Vector2i, counter: int = -1):
 	tile_map_oil.set_cell(tile, 0, Vector2.ZERO)
+	if counter > -1:
+		audio_container_oil.play(counter)
 
 
 func _spawn_player():
