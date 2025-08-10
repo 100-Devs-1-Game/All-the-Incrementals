@@ -7,6 +7,7 @@ const BURN_TICK_INTERVAL = 10
 @export var fire_scene: PackedScene
 @export var water_scene: PackedScene
 @export var extinguish_effect_scene: PackedScene
+@export var explosion_effect_scene: PackedScene
 
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
@@ -235,6 +236,11 @@ func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
 				add_oil(tile)
 				if on_fire:
 					_add_fire(tile, 0.1, 1.0)
+
+	if on_fire:
+		var explosion: Node2D = explosion_effect_scene.instantiate()
+		explosion.position = get_tile_position(center_tile)
+		effects_node.add_child(explosion)
 
 
 func get_tile_at(pos: Vector2) -> Vector2i:
