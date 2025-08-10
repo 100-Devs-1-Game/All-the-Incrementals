@@ -113,6 +113,7 @@ water_splash_scene = ExtResource("18_cumqa")
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
 
 [node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
+anchors_preset = 6
 enable_countdown_display = true
 
 [node name="Border" type="StaticBody2D" parent="."]
