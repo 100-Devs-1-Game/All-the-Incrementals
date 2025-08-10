@@ -162,8 +162,8 @@ Thanks goes to all these wonderful people :heart:
 ### Sound (in alphabetical order)
 
 * 4tenmu
+* Ben Thomson
 * Fae
 * Frog
-* Ben Thomson
 
 If anyone is missing from the list, let us know in Discord right away!
