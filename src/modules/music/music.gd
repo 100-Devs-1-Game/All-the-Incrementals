@@ -21,6 +21,10 @@ func _ready() -> void:
 
 
 func _on_music_request_event(song: StringName) -> void:
+	if (not _music_player.playing) or not _music_player.has_stream_playback():
+		# Sanity check- As far as I know this should never happen.
+		push_error("Music player is dead, restarting..")
+		_music_player.play()
 	var playback: AudioStreamPlaybackInteractive = _music_player.get_stream_playback()
 	if song == stream.get_clip_name(playback.get_current_clip_index()):
 		return
