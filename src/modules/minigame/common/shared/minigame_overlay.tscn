@@ -5,49 +5,36 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qwu2"]
 
 [node name="MinigameOverlay" type="PanelContainer"]
-offset_right = 111.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
 offset_bottom = 120.0
+grow_horizontal = 0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_7qwu2")
 script = ExtResource("1_7qwu2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="Panels" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 alignment = 1
-
-[node name="ScorePanel" type="HBoxContainer" parent="MarginContainer/Panels"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="ScoreLabel" type="Label" parent="MarginContainer/Panels/ScorePanel"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Score"
-
-[node name="ScoreIcon" type="TextureRect" parent="MarginContainer/Panels/ScorePanel"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="ScoreValue" type="Label" parent="MarginContainer/Panels/ScorePanel"]
-unique_name_in_owner = true
-layout_mode = 2
 
 [node name="CountdownPanel" type="HBoxContainer" parent="MarginContainer/Panels"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 2
 
 [node name="CountdownLabel" type="Label" parent="MarginContainer/Panels/CountdownPanel"]
 unique_name_in_owner = true
@@ -62,3 +49,26 @@ layout_mode = 2
 [node name="CountdownValue" type="Label" parent="MarginContainer/Panels/CountdownPanel"]
 unique_name_in_owner = true
 layout_mode = 2
+text = "---"
+
+[node name="ScorePanel" type="HBoxContainer" parent="MarginContainer/Panels"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/Panels/ScorePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Score:"
+
+[node name="ScoreIcon" type="TextureRect" parent="MarginContainer/Panels/ScorePanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ScoreValue" type="Label" parent="MarginContainer/Panels/ScorePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"

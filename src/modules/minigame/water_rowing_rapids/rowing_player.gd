@@ -1,5 +1,8 @@
 extends RigidBody2D
 
+## Emitted when the player collects a spirit
+signal spirit_collected(value: int)
+
 ## Regular paddling topspeed of boat
 var speed: float = 300.0
 var boost_impulse: float = 500.0
@@ -55,3 +58,7 @@ func _fail():
 
 func _boost():
 	linear_velocity += transform.x * boost_impulse
+
+
+func _on_sprit_collection_area_spirit_collected(value: int) -> void:
+	spirit_collected.emit(value)
