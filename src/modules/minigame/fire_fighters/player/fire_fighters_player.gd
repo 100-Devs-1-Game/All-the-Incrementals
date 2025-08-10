@@ -33,6 +33,11 @@ var _water_used: float
 # of the last release key otherwise - if they aren't released perfectly simultaneous )
 @onready var diagonal_cooldown: Timer = $"Diagonal Cooldown"
 
+@onready var audio_extinguisher: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher"
+@onready
+var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Stop"
+@onready var audio_extinguisher_out: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Out"
+
 
 func _ready() -> void:
 	_current_tile = game.get_tile_at(position)
@@ -64,13 +69,17 @@ func _physics_process(delta: float) -> void:
 
 
 func extinguish(flag: bool):
+	if _water_used > tank_size + tank_bonus_size:
+		audio_extinguisher.playing = false
+		audio_extinguisher_out.play()
+		return
+
+	audio_extinguisher.playing = flag
+
 	if not flag:
 		return
 
 	if not extinguisher_cooldown.is_stopped():
-		return
-
-	if _water_used > tank_size + tank_bonus_size:
 		return
 
 	var dir: Vector2 = extinguisher.global_transform.x

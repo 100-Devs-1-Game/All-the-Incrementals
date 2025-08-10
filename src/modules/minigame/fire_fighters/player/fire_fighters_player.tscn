@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmbhboa0omojg"]
+[gd_scene load_steps=7 format=3 uid="uid://bmbhboa0omojg"]
 
 [ext_resource type="Script" uid="uid://d3gde2qbcgqdg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.gd" id="1_kwj77"]
 [ext_resource type="Script" uid="uid://byjfedtjqjrpb" path="res://modules/minigame/fire_fighters/player/fire_fighters_oil_drop_component.gd" id="2_a054y"]
+[ext_resource type="AudioStream" uid="uid://dns8knkvhb614" path="res://assets/minigames/fire_fighters/sfx/water_hose_spray.ogg" id="2_u0cb5"]
+[ext_resource type="AudioStream" uid="uid://jwwwei2y1m8l" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_hose_stop_01.ogg" id="3_2mmi3"]
+[ext_resource type="AudioStream" uid="uid://d2ontc6xrt3q7" path="res://assets/minigames/fire_fighters/sfx/water_hose_last_drop.ogg" id="4_asx0j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
 
@@ -45,6 +48,17 @@ one_shot = true
 [node name="Extinguisher Offset" type="Node2D" parent="Extinguisher"]
 unique_name_in_owner = true
 position = Vector2(35, 0)
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="AudioStreamPlayer Extinguisher" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("2_u0cb5")
+
+[node name="AudioStreamPlayer Extinguisher Stop" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("3_2mmi3")
+
+[node name="AudioStreamPlayer Extinguisher Out" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_asx0j")
 
 [node name="Diagonal Cooldown" type="Timer" parent="."]
 wait_time = 0.2
