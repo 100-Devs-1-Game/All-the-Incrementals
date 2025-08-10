@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://by18kqakehrup"]
+[gd_scene load_steps=17 format=3 uid="uid://by18kqakehrup"]
 
 [ext_resource type="Script" uid="uid://cbtiegkndpc6f" path="res://modules/minigame/earth_potato_herding/earth_potato_herding.gd" id="1_kuuhj"]
 [ext_resource type="Texture2D" uid="uid://pskqst4w0e50" path="res://assets/minigames/earth_potato_herding/background.webp" id="2_ttg4n"]
 [ext_resource type="Texture2D" uid="uid://dwajo5hcqdpsl" path="res://assets/minigames/earth_potato_herding/fog.webp" id="3_a831y"]
 [ext_resource type="Texture2D" uid="uid://b2jw7ynffcxnk" path="res://assets/minigames/earth_potato_herding/magic_circle.webp" id="4_w4xl5"]
 [ext_resource type="PackedScene" uid="uid://cqhdv2mg3cv3t" path="res://modules/minigame/earth_potato_herding/eph_youngling/spawner/eph_youngling_spawner.tscn" id="5_kh8xl"]
+[ext_resource type="Script" uid="uid://2pr4unlcvuo3" path="res://modules/minigame/earth_potato_herding/eph_bucket_collision.gd" id="5_t1lt2"]
 [ext_resource type="PackedScene" uid="uid://mqbrbbxraysb" path="res://modules/minigame/earth_potato_herding/eph_adult/spawner/eph_adult_spawner.tscn" id="6_hi1yc"]
 [ext_resource type="PackedScene" uid="uid://vesybpnx50sy" path="res://modules/minigame/earth_potato_herding/eph_adult/eph_adult.tscn" id="7_d1808"]
 [ext_resource type="PackedScene" uid="uid://bx2ptflde5hu" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/spawner/eph_evil_spirit_spawner.tscn" id="8_y36sp"]
@@ -14,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://bu668uskhmtud" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.tscn" id="12_ngpls"]
 [ext_resource type="Script" uid="uid://7i6e5fekusou" path="res://modules/minigame/earth_potato_herding/despawn_zone/despawn_zone.gd" id="13_fp0k5"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="14_nm6ba"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2q4j3"]
+radius = 77.0
 
 [node name="EarthPotatoHerding" type="Node2D" groups=["earth_potato_herding"]]
 script = ExtResource("1_kuuhj")
@@ -30,12 +34,19 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(993, 514)
+position = Vector2(1003, 530)
 
 [node name="bucket" type="Sprite2D" parent="Marker2D"]
-position = Vector2(9.99998, 15)
 scale = Vector2(0.616216, 0.616216)
 texture = ExtResource("4_w4xl5")
+
+[node name="Area2D" type="Area2D" parent="Marker2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("5_t1lt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/Area2D"]
+shape = SubResource("CircleShape2D_2q4j3")
 
 [node name="EphYounglingSpawner" parent="." node_paths=PackedStringArray("_free_roam_area", "_free_roam_bounding_box", "_adult_spawner", "_player", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("5_kh8xl")]
 _free_roam_area = NodePath("spawn_zone")
@@ -77,14 +88,15 @@ _spawn_cooldown = -1.0
 position = Vector2(1, 0)
 _potato_swawn_zone = NodePath("../YoungPotatoSpawnZone")
 _player = NodePath("../EPHPlayer")
+points = Array[Vector2]([Vector2(0, 1), Vector2(1, 1)])
 _spawnable_area = NodePath("spawn_zone")
 _spawnable_area_bounding_box = NodePath("spawn_bounding_box")
 _spawnable_node_scene = ExtResource("9_w12vf")
 _add_child_to = NodePath("../EvilSpiritSpawnZone")
 _max_spawned_total = -1
-_max_spawned_at_once = 5
+_max_spawned_at_once = 50
 _use_physics_process_to_spawn = true
-_spawn_cooldown = 3.0
+_spawn_cooldown = 1.0
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilSpiritSpawner"]
 polygon = PackedVector2Array(2018, -90, 2040, 1068, 1926, 1061, 1941, -5, -17, -3, -21, 1099, 1978, 1089, 1978, 1158, -90, 1191, -68, -92)
@@ -109,7 +121,7 @@ _spawnable_area_bounding_box = NodePath("spawn_bounding_box")
 _spawnable_node_scene = ExtResource("11_pp8t6")
 _add_child_to = NodePath("../EvilSpiritSpawnZone")
 _max_spawned_at_once = 5
-_spawn_cooldown = 5.0
+_spawn_cooldown = 2.5
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilDashingSpiritSpawner"]
 polygon = PackedVector2Array(2018, -90, 2040, 1068, 1926, 1061, 1941, -5, -17, -3, -21, 1099, 1978, 1089, 1978, 1158, -90, 1191, -68, -92)
@@ -145,9 +157,7 @@ polygon = PackedVector2Array(-734, -711, -737, 677, 1510, 667, 1500, -724, -855,
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("14_nm6ba")]
 
-[node name="SharedBaseComponents" parent="MinigameSharedComponents" index="1"]
-allow_popup_menu = null
-
+[connection signal="body_entered" from="Marker2D/Area2D" to="Marker2D/Area2D" method="is_it_a_demon"]
 [connection signal="body_entered" from="DespawnZone" to="DespawnZone" method="_on_body_entered"]
 
 [editable path="MinigameSharedComponents"]

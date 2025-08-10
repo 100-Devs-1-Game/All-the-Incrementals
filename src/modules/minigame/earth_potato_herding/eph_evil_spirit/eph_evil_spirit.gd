@@ -1,6 +1,7 @@
 class_name EphEvilSprit
 extends Td2dCCWithAcceleration
 
+@export var player_instantly_kills := true
 @export var _repel_acceleration_multiplier := 10
 @export var _state_machine: StateMachine
 @export var _sprite_rotation_point: Marker2D
@@ -20,9 +21,9 @@ func stop_repel_from_player() -> void:
 
 
 func start_repel_from_player() -> void:
+	ungrab_youngling()
 	_current_acceleration_multipliers["repel"] = _repel_acceleration_multiplier
 	_near_player = true
-	ungrab_youngling()
 	_state_machine.change_state("go_away_from_player")
 
 
@@ -36,6 +37,9 @@ func ungrab_youngling() -> void:
 	if _grabbed_youngling != null:
 		_hand.visible = true
 		_grabbed_youngling = null
+	if player_instantly_kills:
+		despawn()
+		return
 
 
 #endregion
