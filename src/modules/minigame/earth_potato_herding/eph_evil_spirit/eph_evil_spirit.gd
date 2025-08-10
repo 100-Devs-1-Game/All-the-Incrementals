@@ -22,9 +22,6 @@ func stop_repel_from_player() -> void:
 
 func start_repel_from_player() -> void:
 	ungrab_youngling()
-	if player_instantly_kills:
-		despawn()
-		return
 	_current_acceleration_multipliers["repel"] = _repel_acceleration_multiplier
 	_near_player = true
 	_state_machine.change_state("go_away_from_player")
@@ -40,6 +37,9 @@ func ungrab_youngling() -> void:
 	if _grabbed_youngling != null:
 		_hand.visible = true
 		_grabbed_youngling = null
+	if player_instantly_kills:
+		despawn()
+		return
 
 
 #endregion

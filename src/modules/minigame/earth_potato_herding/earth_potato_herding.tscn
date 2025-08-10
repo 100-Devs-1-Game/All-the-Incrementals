@@ -84,7 +84,7 @@ _add_child_to = NodePath("../EvilSpiritSpawnZone")
 _max_spawned_total = -1
 _max_spawned_at_once = 5
 _use_physics_process_to_spawn = true
-_spawn_cooldown = 3.0
+_spawn_cooldown = 1.0
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilSpiritSpawner"]
 polygon = PackedVector2Array(2018, -90, 2040, 1068, 1926, 1061, 1941, -5, -17, -3, -21, 1099, 1978, 1089, 1978, 1158, -90, 1191, -68, -92)
@@ -109,7 +109,7 @@ _spawnable_area_bounding_box = NodePath("spawn_bounding_box")
 _spawnable_node_scene = ExtResource("11_pp8t6")
 _add_child_to = NodePath("../EvilSpiritSpawnZone")
 _max_spawned_at_once = 5
-_spawn_cooldown = 5.0
+_spawn_cooldown = 2.5
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilDashingSpiritSpawner"]
 polygon = PackedVector2Array(2018, -90, 2040, 1068, 1926, 1061, 1941, -5, -17, -3, -21, 1099, 1978, 1089, 1978, 1158, -90, 1191, -68, -92)
@@ -144,9 +144,6 @@ script = ExtResource("13_fp0k5")
 polygon = PackedVector2Array(-734, -711, -737, 677, 1510, 667, 1500, -724, -855, -749, -824, -845, 1620, -824, 1603, 764, -886, 819, -844, -717)
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("14_nm6ba")]
-
-[node name="SharedBaseComponents" parent="MinigameSharedComponents" index="1"]
-allow_popup_menu = null
 
 [connection signal="body_entered" from="DespawnZone" to="DespawnZone" method="_on_body_entered"]
 
