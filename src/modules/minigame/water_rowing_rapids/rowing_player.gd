@@ -3,9 +3,13 @@ extends RigidBody2D
 ## Emitted when the player collects a spirit
 signal spirit_collected(value: int)
 
+@export var boost_timer: Timer
+
 ## Regular paddling topspeed of boat
-var speed: float = 300.0
-var boost_impulse: float = 500.0
+var speed: float = 600.0
+var boost_impulse: float = 60
+var boost_duration: float = 0.3
+var is_boosting: bool = false
 ## Damping applied to velocity on the boat's broadsides- Aka, "apply extra resistance
 ## to the wide sides of the boat to simulate that boats are not hydrodynamic in
 ## that direction"
@@ -26,6 +30,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	linear_velocity += transform.x * Input.get_axis(&"down", &"up") * speed * linear_damp * delta
+	if is_boosting:
+		linear_velocity += transform.x * boost_impulse
 	for i in get_contact_count():
 		_fail()
 
@@ -57,8 +63,10 @@ func _fail():
 
 
 func _boost():
-	linear_velocity += transform.x * boost_impulse
+	is_boosting = true
+	boost_timer.wait_time = boost_duration
+	boost_timer.start()
 
 
-func _on_sprit_collection_area_spirit_collected(value: int) -> void:
-	spirit_collected.emit(value)
+func _on_boost_timer_timeout() -> void:
+	is_boosting = false
