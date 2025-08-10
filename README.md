@@ -132,6 +132,7 @@ Thanks goes to all these wonderful people :heart:
 ### Art (in alphabetical order)
 
 * Axureé
+* Hannah Sekerka
 * JMC-87
 * KLIPNITY
 * Skin
@@ -139,6 +140,7 @@ Thanks goes to all these wonderful people :heart:
 
 ### Code (in alphabetical order)
 
+* AssortedFrogs
 * Cdw849
 * [CodeLitschi](https://github.com/CodeLitschi) (Kevin)
 * Codimon
@@ -162,5 +164,6 @@ Thanks goes to all these wonderful people :heart:
 * 4tenmu
 * Fae
 * Frog
+* Ben Thomson
 
 If anyone is missing from the list, let us know in Discord right away!
