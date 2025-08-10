@@ -1,6 +1,7 @@
 class_name EphEvilSprit
 extends Td2dCCWithAcceleration
 
+@export var player_instantly_kills := false
 @export var _repel_acceleration_multiplier := 10
 @export var _state_machine: StateMachine
 @export var _sprite_rotation_point: Marker2D
