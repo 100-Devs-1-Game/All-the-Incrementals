@@ -16,7 +16,6 @@ var current_bar: int = 0
 
 
 func _ready():
-	print("ready")
 	stream = chart.audio
 	play()
 	seconds_per_beat = 60.0 / chart.audio.bpm

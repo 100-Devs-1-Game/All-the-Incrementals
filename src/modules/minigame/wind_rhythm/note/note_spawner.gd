@@ -38,6 +38,10 @@ func spawn_notes():
 			spawn_note(spawn_x, PI / 2, 125, note.copy({"type": NOTE_TYPE.RIGHT}))
 		if note.type & NOTE_TYPE.DOWN:
 			spawn_note(spawn_x, PI, 175, note.copy({"type": NOTE_TYPE.DOWN}))
+		if note.type & NOTE_TYPE.SPECIAL1:
+			spawn_note(spawn_x, PI / 4, 220, note.copy({"type": NOTE_TYPE.SPECIAL1}))
+		if note.type & NOTE_TYPE.SPECIAL2:
+			spawn_note(spawn_x, -PI / 4, 270, note.copy({"type": NOTE_TYPE.DOWN}))
 
 
 # TODO: Use different arrow sprites instead of rotating

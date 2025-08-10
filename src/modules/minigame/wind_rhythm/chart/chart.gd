@@ -22,6 +22,13 @@ const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.g
 }
 
 
+func length() -> int:
+	var size = 0
+	for lane in lanes.values():
+		size += lane.size()
+	return size
+
+
 func _ready():
 	bpm = audio.bpm
 

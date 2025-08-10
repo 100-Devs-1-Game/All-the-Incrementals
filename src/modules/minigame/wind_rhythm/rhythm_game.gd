@@ -56,6 +56,8 @@ func _check_for_missed_notes():
 		if conductor.song_position - note.cached_absolute_beat > judgments.miss:
 			note_missed.emit(note)
 			notes.pop_front()
+			judgment_label.text = "Miss"
+			%Early_Late.text = ""
 
 
 func judge_input(note_type: NOTE_TYPE):
@@ -64,7 +66,7 @@ func judge_input(note_type: NOTE_TYPE):
 		return
 	var note: NoteData = lane.front()
 	if note == null:
-		judgment_label.text = "Miss"
+		judgment_label.text = ""
 		%Early_Late.text = ""
 		return
 	var time = note.cached_absolute_beat - conductor.song_position
