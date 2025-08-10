@@ -31,6 +31,9 @@ const MOVEMENT_VECTORS: Dictionary[MovementDirection, Vector2] = {
 @export var min_movement_seconds: float = 0.1
 @export var max_movement_seconds: float = 0.4
 
+var player_movement_multiplier: float = 0.5
+var base_speed: float = 0
+
 var _seconds_since_started_moving: float = 0
 var _seconds_required_moving: float = 0
 
@@ -39,6 +42,8 @@ var _target_direction: Vector2 = Vector2.ZERO
 
 var _last_movement_direction: MovementDirection
 var _current_movement_direction: MovementDirection
+
+var _player_movespeed_on_spawn: float = 0
 
 
 func set_autorun(p_autorun: bool) -> void:
@@ -88,6 +93,19 @@ func _ready() -> void:
 	set_physics_process(autorun)
 
 
+func provide(p_data: WTFFishData) -> void:
+	player_movement_multiplier = p_data.player_movement_multiplier
+	base_speed = p_data.base_speed
+
+	var rnd := randf_range(0.8, 1.2)
+	max_speed *= rnd
+	acceleration *= rnd
+	base_speed *= rnd
+	player_movement_multiplier *= rnd
+	player_movement_multiplier = min(max(0.2, player_movement_multiplier), 0.8)
+	_player_movespeed_on_spawn = -WTFGlobals.minigame.stats.scrollspeed.x
+
+
 func _physics_process(delta: float) -> void:
 	tick(delta)
 
@@ -96,9 +114,7 @@ func tick(delta: float) -> void:
 	_seconds_since_started_moving += delta
 
 	# keep fish onscreen for longer
-	var player_movement := 0
-	if WTFGlobals.minigame.stats.scrollspeed.x <= 500:
-		player_movement = -WTFGlobals.minigame.stats.scrollspeed.x * 0.5
+	var player_movement := -WTFGlobals.minigame.stats.scrollspeed.x * player_movement_multiplier
 
 	if !is_moving():
 		var antivec := -_velocity.normalized() * decceleration * delta
@@ -115,4 +131,16 @@ func tick(delta: float) -> void:
 		if _velocity.length() > max_speed:
 			_velocity = _velocity.normalized() * max_speed
 
-	velocity_component.velocity = _velocity + Vector2(player_movement, 0)
+	velocity_component.velocity = (_velocity + Vector2(player_movement, 0) + Vector2(base_speed, 0))
+
+	#if velocity_component.velocity.x > 0:
+	#	velocity_component.velocity.x = max(
+	#		velocity_component.velocity.x,
+	#		_player_movespeed_on_spawn - 1920
+	#	)
+
+	# keep the fish onscreen for one second at least...? maybe?
+	# velocity = pixels per second, 2000 = nearly screen width
+	#var delta_speed := -WTFGlobals.minigame.stats.scrollspeed.x - velocity_component.velocity.x
+	#delta_speed = max(delta_speed, 2000)
+	#velocity_component.velocity += Vector2(delta_speed - 2000, 0)

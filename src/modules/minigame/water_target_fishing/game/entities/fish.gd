@@ -18,6 +18,15 @@ var _next_move_time: float
 @onready var sprite2d: AnimatedSprite2D = %AnimatedSprite2D
 
 
+func provide(p_data: WTFFishData):
+	data = p_data
+
+	if ai_movement_component:
+		ai_movement_component.provide(p_data)
+	else:  # this is so scuffed
+		provide.bind(p_data).call_deferred()
+
+
 func _ready() -> void:
 	assert(data)
 

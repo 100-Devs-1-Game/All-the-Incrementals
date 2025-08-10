@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://hrgdcmm0gruk"
 [sub_resource type="Resource" id="Resource_8egcm"]
 script = ExtResource("3_4iy3a")
 spawn_type = 2
-min_spawn_distance = 0.0
+min_spawn_distance = 6000.0
 _min_spawn_depth = 0.0
 _max_spawn_depth = 300.0
 metadata/_custom_type_script = "uid://meklva8v881i"
@@ -37,6 +37,8 @@ animations = [{
 
 [resource]
 script = ExtResource("2_8stxh")
+player_movement_multiplier = 0.6
+base_speed = 2000.0
 texture = SubResource("SpriteFrames_mqh0r")
 pickup = SubResource("Resource_k71g5")
 spawn = SubResource("Resource_8egcm")

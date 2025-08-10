@@ -78,7 +78,9 @@ func _process(_delta: float) -> void:
 	ui_distance_value.text = str(floori(_distance_travelled))
 
 
-func random_spawnable_fish(distance: float, min_height: float, max_height: float) -> WTFFishData:
+func random_spawnable_fish(
+	distance: float, min_height: float, max_height: float, min_speed: float
+) -> WTFFishData:
 	#todo cache, carefully
 	var valid_spawns: Array[WTFFishData]
 
@@ -88,7 +90,10 @@ func random_spawnable_fish(distance: float, min_height: float, max_height: float
 		var spawnable_x := distance > data_val.spawn.min_spawn_distance
 		var spawn_y_range := data_val.spawn.get_spawn_height_range()
 		var spawnable_y := min_height <= spawn_y_range.y || max_height >= spawn_y_range.x
-		if spawnable_x && spawnable_y:
+		var too_fast := data_val.base_speed > min_speed
+		#var too_slow := data_val.base_speed < min_speed - 2000
+		#print("%s is too_fast? %s. %s > %s" % [data_key, too_fast, data_val.base_speed, min_speed])
+		if spawnable_x && spawnable_y && !too_fast:
 			valid_spawns.push_back(data_val)
 
 	#todo, use weightings instead?
@@ -105,13 +110,15 @@ func _spawn_fish() -> void:
 	var min_spawn_y := WTFGlobals.camera.get_top() - 320
 	var max_spawn_y := WTFGlobals.camera.get_bottom() - 320
 
-	var spawnable_fish := random_spawnable_fish(_distance_travelled, min_spawn_y, max_spawn_y)
+	var spawnable_fish := random_spawnable_fish(
+		_distance_travelled, min_spawn_y, max_spawn_y, -stats.scrollspeed.x
+	)
 
 	if !is_instance_valid(spawnable_fish):
 		return
 
 	var f: WTFFish = fish.instantiate()
-	f.data = spawnable_fish
+	f.provide(spawnable_fish)
 
 	# avoid clumping the fish together
 	f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + rand_offset_x)

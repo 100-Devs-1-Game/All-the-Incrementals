@@ -33,6 +33,8 @@ animations = [{
 
 [resource]
 script = ExtResource("2_i4wb7")
+player_movement_multiplier = 0.3
+base_speed = 1000.0
 texture = SubResource("SpriteFrames_i4wb7")
 pickup = SubResource("Resource_k71g5")
 spawn = SubResource("Resource_we70o")
