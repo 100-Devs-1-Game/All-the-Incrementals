@@ -2,9 +2,13 @@
 extends Node
 
 # this is necessary to avoid circular references
+const MAIN_MENU_SCENE := preload("res://modules/menu/main_menu.tscn")
 const OVERWORLD_SCENE := preload("res://modules/overworld/overworld.tscn")
 const EXTRAS_SCENE := preload("res://modules/menu/extras.tscn")
+const SETTINGS_SCENE := preload("res://modules/settings/settings.tscn")
 const UPGRADE_TREE_SCENE := preload("res://modules/upgrade/ui/upgrade_tree.tscn")
+const CREDITS_SCENE := preload("res://modules/credits/credits.tscn")
+const GALLERY_SCENE := preload("res://modules/gallery/gallery.tscn")
 
 # this is necessary to maintain my sanity
 const SHRINE_SETTLEMENT_DATA := preload("res://modules/overworld_locations/shrine/shrine.tres")
@@ -78,8 +82,25 @@ func enter_clayport():
 	enter_settlement(CLAYPORT_SETTLEMENT_DATA)
 
 
+func enter_credits():
+	get_tree().change_scene_to_packed(CREDITS_SCENE)
+
+
+func enter_gallery():
+	get_tree().change_scene_to_packed(GALLERY_SCENE)
+
+
+func enter_main_menu():
+	get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
+
+
 func enter_extras():
+	print("Extras")
 	get_tree().change_scene_to_packed(EXTRAS_SCENE)
+
+
+func enter_settings():
+	get_tree().change_scene_to_packed(SETTINGS_SCENE)
 
 
 func enter_upgrade_tree():

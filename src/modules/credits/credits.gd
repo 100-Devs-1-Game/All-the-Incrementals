@@ -12,15 +12,14 @@ func _ready() -> void:
 	tween.tween_callback($DarkGradient.queue_free)
 	tween.tween_interval(5)
 	tween.tween_callback(_done)
-	EventBus.emit_signal("ui_credits_start")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _done() -> void:
-	EventBus.emit_signal("ui_credits_done")
+	SceneLoader.enter_extras()
 
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("exit_menu"):
 		print("Credits canceled :(")
 		_done()
