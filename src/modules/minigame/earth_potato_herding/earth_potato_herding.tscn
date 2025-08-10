@@ -30,10 +30,9 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(993, 514)
+position = Vector2(1003, 530)
 
 [node name="bucket" type="Sprite2D" parent="Marker2D"]
-position = Vector2(9.99998, 15)
 scale = Vector2(0.616216, 0.616216)
 texture = ExtResource("4_w4xl5")
 
