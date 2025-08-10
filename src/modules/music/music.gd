@@ -14,10 +14,9 @@ func _ready() -> void:
 
 
 func _on_music_request_event(song: StringName) -> void:
-	if not _music_player.has_stream_playback():
-		_music_player[&"parameters/switch_to_clip"] = song
-		_music_player.play()
 	var playback: AudioStreamPlaybackInteractive = _music_player.get_stream_playback()
+	if song == STREAM.get_clip_name(playback.get_current_clip_index()):
+		return
 	print(_music_player.playing)
 	print(playback.get_current_clip_index())
 	playback.switch_to_clip_by_name(song)

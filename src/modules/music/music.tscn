@@ -9,4 +9,5 @@ script = ExtResource("1_rycrl")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_mmd20")
+autoplay = true
 bus = &"BGMusic"
