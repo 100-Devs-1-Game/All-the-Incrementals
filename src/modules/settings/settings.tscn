@@ -1,11 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://1m18lfvfkax2"]
+[gd_scene load_steps=25 format=3 uid="uid://1m18lfvfkax2"]
 
 [ext_resource type="Script" uid="uid://d4jpioyg02kt4" path="res://modules/settings/settings.gd" id="1_mpnl8"]
 [ext_resource type="Texture2D" uid="uid://cgp7j8ngwsnht" path="res://assets/icons/basket_skn.png" id="2_8gkc8"]
 [ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="3_yv8js"]
 [ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="4_1ylkm"]
 [ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="5_1ylkm"]
+[ext_resource type="Theme" uid="uid://bdm544cuwxbre" path="res://modules/settings/settings_theme.tres" id="5_8f0vb"]
 [ext_resource type="StyleBox" uid="uid://ct6fgr57c8vlo" path="res://modules/menu/common/button_stylebox.tres" id="5_k2ij0"]
+[ext_resource type="StyleBox" uid="uid://ct2goca0ruxhd" path="res://modules/menu/common/back_panel_stylebox.tres" id="7_x2f43"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ylkm"]
 shader = ExtResource("3_yv8js")
@@ -107,13 +109,6 @@ color = Color(0.85098, 0.494118, 0.231373, 1)
 grow_end = 11.0
 thickness = 35
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8f0vb"]
-bg_color = Color(0.337255, 0.203922, 0.152941, 1)
-corner_radius_top_left = 41
-corner_radius_top_right = 41
-corner_radius_bottom_right = 41
-corner_radius_bottom_left = 41
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph4q5"]
 bg_color = Color(0.737255, 0.564706, 0.835294, 1)
 border_width_left = 8
@@ -210,6 +205,7 @@ offset_right = -10.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("5_8f0vb")
 
 [node name="KeybindContainer" type="VBoxContainer" parent="Panel/SettingsContainer"]
 layout_mode = 2
@@ -910,7 +906,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8f0vb")
+theme_override_styles/panel = ExtResource("7_x2f43")
 
 [node name="Panel" type="Panel" parent="SettingsLabel"]
 z_index = -1

@@ -151,7 +151,7 @@ func rotate_right() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit_menu"):
-		get_tree().change_scene_to_packed(extras)
+		SceneLoader.enter_extras()
 	elif event.is_action_pressed("left"):
 		rotate_left()
 	elif event.is_action_pressed("right"):

@@ -32,3 +32,10 @@ func open_menu(highscores: Array[int]) -> void:
 func _on_back_pressed() -> void:
 	visible = false
 	minigame.open_main_menu()
+
+
+func _input(event):
+	if visible and event.is_action_pressed("exit_menu"):
+		visible = false
+		minigame.open_main_menu()
+		get_viewport().set_input_as_handled()

@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bdm544cuwxbre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r27qd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqdwl"]
+
+[resource]
+Label/font_sizes/font_size = 36
+Label/styles/normal = SubResource("StyleBoxEmpty_r27qd")
+Panel/styles/panel = SubResource("StyleBoxEmpty_sqdwl")
