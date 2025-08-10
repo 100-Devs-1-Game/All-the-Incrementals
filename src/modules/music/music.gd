@@ -11,7 +11,7 @@ func _init() -> void:
 		# A bug in Godot makes AudioStreamInteractives leak Resources, causing
 		# CI/CD to fail.
 		return
-	stream = load("res://modules/music/stream.tres")
+	stream = load("uid://d263hyurubktn")
 
 
 func _ready() -> void:
