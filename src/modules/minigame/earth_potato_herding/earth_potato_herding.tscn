@@ -145,6 +145,9 @@ polygon = PackedVector2Array(-734, -711, -737, 677, 1510, 667, 1500, -724, -855,
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("14_nm6ba")]
 
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
+anchors_preset = 6
+
 [connection signal="body_entered" from="DespawnZone" to="DespawnZone" method="_on_body_entered"]
 
 [editable path="MinigameSharedComponents"]

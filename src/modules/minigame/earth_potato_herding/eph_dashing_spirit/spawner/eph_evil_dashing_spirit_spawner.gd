@@ -1,4 +1,4 @@
-extends RandomPositionSpawner
+extends EPHRandomPositionSpawner
 
 #region ------------------------ PRIVATE VARS ----------------------------------
 
