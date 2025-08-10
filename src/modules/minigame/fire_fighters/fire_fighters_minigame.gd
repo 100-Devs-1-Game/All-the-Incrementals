@@ -74,8 +74,8 @@ func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 	var fire: FireFightersMinigameFire = fire_scene.instantiate()
 	fires[tile] = fire
 	fire.position = tile_map_terrain.map_to_local(tile)
-	fire.size = randf_range(min_size, max_size)
 	fire_node.add_child(fire)
+	fire.size = randf_range(min_size, max_size)
 	fire.died.connect(_remove_fire.bind(fire))
 
 	if tile in saved_tiles:
