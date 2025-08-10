@@ -7,5 +7,4 @@ process_mode = 3
 script = ExtResource("1_rycrl")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-autoplay = true
 bus = &"BGMusic"

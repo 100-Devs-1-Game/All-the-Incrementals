@@ -17,6 +17,7 @@ func _init() -> void:
 func _ready() -> void:
 	_music_player.stream = stream
 	EventBus.request_music.connect(_on_music_request_event)
+	_music_player.play()
 
 
 func _on_music_request_event(song: StringName) -> void:
