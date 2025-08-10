@@ -1,17 +1,19 @@
 class_name EPHRandomPositionSpawner
 extends RandomPositionSpawner
 
-@export var points:Array[Vector2]=[Vector2.ZERO,Vector2(0.99,0),Vector2.ONE]
+@export var points:Array[Vector2]=[Vector2.ZERO,Vector2.ONE]
 enum OVER_TIME {ONESHOT=0, REPEAT=1, FINAL_RATE=2, BEGIN_RATE=3}
 @export var cur_mode:OVER_TIME=OVER_TIME.FINAL_RATE
 @export var time_multiplier:float=10.0
+@export var autospawn:bool=false
 var _total_delta_time:float=0
 
 
 func _set_up() -> void:
 	_init_random_point_generator()
 	_total_delta_time=0.0
-	_time_since_last_spawn = _spawn_cooldown
+	if not autospawn:
+		_time_since_last_spawn = _spawn_cooldown
 
 func get_current_rate()->float:
 	var cur_time:=_total_delta_time
