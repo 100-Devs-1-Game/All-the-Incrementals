@@ -2,64 +2,66 @@ class_name EPHRandomPositionSpawner
 extends RandomPositionSpawner
 
 # Points that define spawn rate over time. X value should be non-descending.
-@export var points:Array[Vector2]=[Vector2.ZERO,Vector2.ONE] # I couldn't get Path2D or Curve to work the way they should, so here's an array of points for now.
+@export var points: Array[Vector2] = [Vector2.ZERO, Vector2.ONE]  # I couldn't get Path2D or Curve to work the way they should, so here's an array of points for now.
 
 # How spawn rate behaves when last point is passed
-enum OVER_TIME {ONESHOT=0, REPEAT=1, FINAL_RATE=2, BEGIN_RATE=3} 
-@export var cur_mode:OVER_TIME=OVER_TIME.FINAL_RATE
+enum OVER_TIME { ONESHOT = 0, REPEAT = 1, FINAL_RATE = 2, BEGIN_RATE = 3 }
+@export var cur_mode: OVER_TIME = OVER_TIME.FINAL_RATE
 
-@export var time_multiplier:float=20.0 # Multiply all point times by this value (that is, divide the time).
-@export var autospawn:bool=false # Whether an instance is automatically spawned at the beginning.
-var _total_delta_time:float=0
+@export var time_multiplier: float = 20.0  # Multiply all point times by this value (that is, divide the time).
+@export var autospawn: bool = false  # Whether an instance is automatically spawned at the beginning.
+var _total_delta_time: float = 0
 
 
 func _set_up() -> void:
 	_init_random_point_generator()
-	_total_delta_time=0.0
+	_total_delta_time = 0.0
 	if not autospawn:
 		_time_since_last_spawn = _spawn_cooldown
 
-func get_current_rate()->float:
+
+func get_current_rate() -> float:
 	# Get multiplier-adjusted current time.
-	var cur_time:=_total_delta_time
-	cur_time/=time_multiplier
-	
+	var cur_time := _total_delta_time
+	cur_time /= time_multiplier
+
 	# Get current time.
-	var time_size:=points[-1].x
-	if cur_time>time_size:
+	var time_size := points[-1].x
+	if cur_time > time_size:
 		match cur_mode:
 			OVER_TIME.ONESHOT:
-				return 0.0 # No spawning.
+				return 0.0  # No spawning.
 			OVER_TIME.REPEAT:
-				cur_time-=int(cur_time)
+				cur_time -= int(cur_time)
 			OVER_TIME.FINAL_RATE:
-				cur_time=1.0
+				cur_time = 1.0
 			OVER_TIME.BEGIN_RATE:
-				cur_time=0.0
-	
+				cur_time = 0.0
+
 	# Find first interval between points that includes the current time.
-	var res:=Vector2.ZERO
+	var res := Vector2.ZERO
 	for val in points:
-		if val.x>cur_time:
+		if val.x > cur_time:
 			# Find point on line that has the right x-value.
-			var diff:=(cur_time-res.x)/(val.x-res.x)
-			res+=(val-res)*diff
+			var diff := (cur_time - res.x) / (val.x - res.x)
+			res += (val - res) * diff
 			break
-		res=val
-		if val.x==cur_time:
-			break #It's exactly on the dot.
+		res = val
+		if val.x == cur_time:
+			break  #It's exactly on the dot.
 	# Hey, as long as it works...
 	# print([_total_delta_time,cur_time,time_multiplier,cur_time,res])
 	return res.y
+
 
 #region ======================== PRIVATE METHODS ===============================
 
 
 func _physics_process(delta: float) -> void:
-	_total_delta_time+=delta
+	_total_delta_time += delta
 	if _use_physics_process_to_spawn:
-		var multiplier:=get_current_rate()
-		_time_since_last_spawn -= delta*multiplier
+		var multiplier := get_current_rate()
+		_time_since_last_spawn -= delta * multiplier
 		_try_spawn()
 
 
