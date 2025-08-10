@@ -19,8 +19,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2q4j3"]
 radius = 77.0
 
-[node name="EarthPotatoHerding" type="Node2D" groups=["earth_potato_herding"]]
+[node name="EarthPotatoHerding" type="Node2D" node_paths=PackedStringArray("bucket") groups=["earth_potato_herding"]]
 script = ExtResource("1_kuuhj")
+bucket = NodePath("Marker2D/Area2D")
 data_uid = "uid://cbu6b1qnaw05f"
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -37,13 +38,15 @@ metadata/_edit_lock_ = true
 position = Vector2(1003, 530)
 
 [node name="bucket" type="Sprite2D" parent="Marker2D"]
+modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.616216, 0.616216)
 texture = ExtResource("4_w4xl5")
 
-[node name="Area2D" type="Area2D" parent="Marker2D"]
+[node name="Area2D" type="Area2D" parent="Marker2D" node_paths=PackedStringArray("bucket")]
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("5_t1lt2")
+bucket = NodePath("../bucket")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/Area2D"]
 shape = SubResource("CircleShape2D_2q4j3")
