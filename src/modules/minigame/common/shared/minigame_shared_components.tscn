@@ -34,7 +34,7 @@ visible = false
 default_debug_buttons = ExtResource("4_6lpn0")
 
 [node name="MinigameOverlay" parent="SharedBaseComponents/CanvasLayer" index="4" instance=ExtResource("6_dbpkc")]
-anchors_preset = 4
+anchors_preset = 6
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -20.0

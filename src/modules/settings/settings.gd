@@ -81,19 +81,20 @@ func connect_signals():
 		key.text = OS.get_keycode_string(keycode)
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("exit_menu"):
+		SceneLoader.enter_main_menu()
+
+
 func _on_button_pressed(action: String) -> void:
 	match action:
 		"Low", "Medium", "High", "Best":
 			GameSettings.quality = action
 		"Fullscreen":
 			fullscreen = !fullscreen
-			print(fullscreen)
 			GameSettings.set_fullscreen(fullscreen)
 		"Exit":
-			if !action_menu:
-				get_tree().change_scene_to_packed(load("res://modules/menu/main_menu.tscn"))
-			else:
-				queue_free()
+			SceneLoader.enter_main_menu()
 		"Restore":
 			GameSettings.restore_defaults()
 			_on_button_pressed("Exit")

@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc8arfi4le746"]
+[gd_scene load_steps=3 format=3 uid="uid://bc8arfi4le746"]
 
 [ext_resource type="Script" uid="uid://c30jjlroha8h3" path="res://modules/menu/popup_menu.gd" id="1_5oejy"]
-[ext_resource type="PackedScene" uid="uid://1m18lfvfkax2" path="res://modules/settings/settings.tscn" id="2_84h8u"]
-[ext_resource type="PackedScene" uid="uid://khnsbhc4bqj8" path="res://modules/menu/main_menu.tscn" id="2_xjd7q"]
 [ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="3_36e67"]
 
 [node name="GamePopupMenu" type="Control"]
@@ -14,7 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5oejy")
-main_menu_scene = ExtResource("2_xjd7q")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(0, 0, 0, 0.309804)
@@ -70,9 +67,6 @@ text = "Gallery & Credits"
 [node name="QuitGame" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Quit Game"
-
-[node name="Settings" parent="." instance=ExtResource("2_84h8u")]
-visible = false
 
 [connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
