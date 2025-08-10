@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DebugButton" load_steps=2 format=3 uid="uid://bfvpmsgxdpwdi"]
+
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="1_j5hb1"]
+
+[resource]
+script = ExtResource("1_j5hb1")
+func_or_path = "reload"
+hotkey = "ctrl+r"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"

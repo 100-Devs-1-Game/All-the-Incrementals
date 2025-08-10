@@ -1,10 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=30 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_ewfdg"]
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.tscn" id="2_jiygg"]
 [ext_resource type="PackedScene" uid="uid://cwrb3svm6p8o7" path="res://modules/minigame/fire_fighters/effects/fire.tscn" id="3_jxvl4"]
 [ext_resource type="PackedScene" uid="uid://bs75gbk0ui0bp" path="res://modules/minigame/fire_fighters/effects/water.tscn" id="4_q2uva"]
-[ext_resource type="PackedScene" uid="uid://b6evijo5uuuwh" path="res://modules/minigame/fire_fighters/effects/burn_spot.tscn" id="5_mtp5r"]
 [ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="6_0qd66"]
 [ext_resource type="Resource" uid="uid://bsovy80upwnb4" path="res://modules/minigame/fire_fighters/data/map_features/bush.tres" id="7_67ens"]
 [ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/map_features/tree.tres" id="8_2aotl"]
@@ -16,10 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://c7nq5cvot6nf5" path="res://assets/minigames/fire_fighters/placeholder_assets/objects_tile_set.png" id="14_vetek"]
 [ext_resource type="Script" uid="uid://bk20clpaekonn" path="res://modules/minigame/fire_fighters/map/fire_fighters_item_spawner.gd" id="15_gckvd"]
 [ext_resource type="PackedScene" uid="uid://iiekj8nk2k2e" path="res://modules/minigame/fire_fighters/map/fire_fighers_item.tscn" id="16_na7l3"]
+[ext_resource type="Script" uid="uid://b8nkin5yvvnsu" path="res://modules/minigame/fire_fighters/effects/fire_fighters_effects_player.gd" id="17_7q2b4"]
 [ext_resource type="PackedScene" uid="uid://c06xs7256anxh" path="res://modules/minigame/fire_fighters/map/fire_fighters_object.tscn" id="17_bwfd8"]
-[ext_resource type="Script" uid="uid://ctpski5ja4jdm" path="res://modules/minigame/fire_fighters/map/fire_fighters_item.gd" id="18_riun2"]
-[ext_resource type="Resource" uid="uid://cg3lw4fm84srm" path="res://modules/minigame/fire_fighters/data/items/gas_can.tres" id="19_kc2g4"]
-[ext_resource type="Resource" uid="uid://ch44pnewmrvkb" path="res://modules/minigame/fire_fighters/data/objects/oil_barrel.tres" id="20_tmnm7"]
+[ext_resource type="PackedScene" uid="uid://c7dqt6ar2dixt" path="res://modules/minigame/fire_fighters/effects/water_splash.tscn" id="18_cumqa"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="21_jiygg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
@@ -59,14 +57,21 @@ sources/0 = SubResource("TileSetAtlasSource_n1sel")
 [sub_resource type="TileSet" id="TileSet_ymaye"]
 tile_size = Vector2i(32, 32)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jiygg"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jxvl4"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q2uva"]
+normal = Vector2(-1, 0)
+
 [node name="FireFighters" type="Node2D"]
 script = ExtResource("1_ewfdg")
 player_scene = ExtResource("2_jiygg")
 fire_scene = ExtResource("3_jxvl4")
 water_scene = ExtResource("4_q2uva")
-burn_spot_scene = ExtResource("5_mtp5r")
-enable_burn_spots = false
-map_rect = Rect2i(0, 0, 70, 50)
+map_rect = Rect2i(0, 0, 60, 33)
 map_features = Array[ExtResource("6_0qd66")]([ExtResource("7_67ens"), ExtResource("8_2aotl"), ExtResource("9_j5lxn"), ExtResource("10_8bvf2"), ExtResource("11_ftttk")])
 data_uid = "uid://bqod1tv5hmpgo"
 
@@ -95,14 +100,34 @@ tile_set = SubResource("TileSet_prm31")
 enabled = false
 tile_set = SubResource("TileSet_ymaye")
 
-[node name="FireFightersMinigameItemSpawner" type="Node" parent="."]
+[node name="ItemSpawner" type="Node" parent="."]
 script = ExtResource("15_gckvd")
 pickup_scene = ExtResource("16_na7l3")
 object_scene = ExtResource("17_bwfd8")
-debug_items = Array[ExtResource("18_riun2")]([ExtResource("19_kc2g4"), ExtResource("20_tmnm7")])
 metadata/_custom_type_script = "uid://bk20clpaekonn"
 
-[node name="Timer" type="Timer" parent="FireFightersMinigameItemSpawner"]
+[node name="EffectsPlayer" type="Node" parent="."]
+script = ExtResource("17_7q2b4")
+water_splash_scene = ExtResource("18_cumqa")
+
+[node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
+
+[node name="Border" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+shape = SubResource("WorldBoundaryShape2D_jiygg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
+position = Vector2(0, 1080)
+shape = SubResource("WorldBoundaryShape2D_jxvl4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Border"]
+shape = SubResource("WorldBoundaryShape2D_jxvl4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
+position = Vector2(1920, 0)
+shape = SubResource("WorldBoundaryShape2D_q2uva")
 
 [node name="Water" type="Node" parent="."]
 
@@ -112,9 +137,7 @@ metadata/_custom_type_script = "uid://bk20clpaekonn"
 
 [node name="Items" type="Node" parent="."]
 
-[node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
-
-[connection signal="timeout" from="FireFightersMinigameItemSpawner/Timer" to="FireFightersMinigameItemSpawner" method="_on_timer_timeout"]
+[node name="Effects" type="Node" parent="."]
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]

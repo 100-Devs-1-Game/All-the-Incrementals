@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cret7kfxa60c" path="res://modules/minigame/fire_fighters/map/fire_fighters_item_instance.gd" id="1_skffk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_skffk"]
-radius = 20.0
+radius = 15.0
 
 [node name="Fire Fighers Object" type="RigidBody2D"]
 z_index = 15
@@ -15,7 +15,7 @@ continuous_cd = 2
 contact_monitor = true
 max_contacts_reported = 2
 linear_damp_mode = 1
-linear_damp = 1.0
+linear_damp = 0.7
 script = ExtResource("1_skffk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -55,6 +55,11 @@ func _ready() -> void:
 		functions_node = get_parent()
 
 
+func _exit_tree() -> void:
+	if _tree_shortcuts != null:
+		_tree_shortcuts.free()
+
+
 func set_functions_node(node: Node) -> void:
 	functions_node = node
 	if functions_node:

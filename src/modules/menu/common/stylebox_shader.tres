@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cmqa4wnnm1upl"]
+
+[ext_resource type="Shader" uid="uid://cw2er8aje1t5g" path="res://global/shapes_ui.gdshader" id="1_4j5fc"]
+
+[resource]
+shader = ExtResource("1_4j5fc")
+shader_parameter/shape_color = Color(0.917647, 0.823529, 0.65098, 1)
+shader_parameter/background_color = Color(0.996078, 0.960784, 0.854902, 1)
+shader_parameter/shape_size = 0.116
+shader_parameter/shape_density = 10.0
+shader_parameter/randomness = 1.0
+shader_parameter/move_speed = 0.378

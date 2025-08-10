@@ -1,6 +1,12 @@
 extends RigidBody2D
 
+
+## Emitted when the player collects a spirit
+signal spirit_collected(value: int)
+
+
 @export var boost_timer: Timer
+
 
 ## Regular paddling topspeed of boat
 var speed: float = 600.0
