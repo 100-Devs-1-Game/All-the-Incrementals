@@ -69,15 +69,16 @@ func _physics_process(delta: float) -> void:
 
 
 func extinguish(flag: bool):
-	if _water_used > tank_size + tank_bonus_size:
-		audio_extinguisher.playing = false
-		audio_extinguisher_out.play()
-		return
-
-	audio_extinguisher.playing = flag
-
 	if not flag:
+		audio_extinguisher.stop()
 		return
+
+	if _is_tank_empty():
+		audio_extinguisher.stop()
+		return
+
+	if not audio_extinguisher.playing and flag:
+		audio_extinguisher.play()
 
 	if not extinguisher_cooldown.is_stopped():
 		return
@@ -96,6 +97,9 @@ func extinguish(flag: bool):
 	)
 
 	_water_used += 0.1
+
+	if _is_tank_empty():
+		audio_extinguisher_out.play()
 
 	extinguisher_cooldown.start()
 
@@ -123,6 +127,10 @@ func use_item():
 
 func unequip_item():
 	_current_item = null
+
+
+func _is_tank_empty() -> bool:
+	return _water_used > tank_size + tank_bonus_size
 
 
 func has_item() -> bool:
