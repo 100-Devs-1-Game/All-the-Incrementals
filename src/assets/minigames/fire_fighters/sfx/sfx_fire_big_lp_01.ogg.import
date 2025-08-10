@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/sfx_fire_big_lp_01.ogg-d73c31bbc0c8cb56f62ce0
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
