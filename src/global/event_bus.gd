@@ -18,3 +18,7 @@ signal ui_credits_done
 signal ui_credits_start
 signal ui_upgrade_bought(upgrade: BaseUpgrade)
 #endregion
+
+#region Audio
+signal request_music(song: AudioStream)
+#endregion

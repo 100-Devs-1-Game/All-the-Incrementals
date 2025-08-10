@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp52b00waki3k"]
+
+[ext_resource type="AudioStream" uid="uid://d263hyurubktn" path="res://modules/music/stream.tres" id="1_mmd20"]
+[ext_resource type="Script" uid="uid://bmguls2kjv2ya" path="res://modules/music/music.gd" id="1_rycrl"]
+
+[node name="Music" type="Node"]
+process_mode = 3
+script = ExtResource("1_rycrl")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_mmd20")
+bus = &"BGMusic"
