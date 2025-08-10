@@ -1,7 +1,5 @@
 extends Control
 
-@onready var settings: Settings = $Settings
-
 
 func _ready() -> void:
 	get_tree().paused = false
