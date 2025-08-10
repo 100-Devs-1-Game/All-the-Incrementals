@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_a50qn"]
-[ext_resource type="PackedScene" uid="uid://tofxqtl6im0p" path="res://modules/minigame/water_rowing_rapids/rock.tscn" id="3_i806a"]
-[ext_resource type="PackedScene" uid="uid://bam250ejn756g" path="res://modules/minigame/water_rowing_rapids/spirit.tscn" id="3_yl50k"]
+[ext_resource type="PackedScene" uid="uid://tofxqtl6im0p" path="res://modules/minigame/water_rowing_rapids/rock/rock.tscn" id="3_i806a"]
+[ext_resource type="PackedScene" uid="uid://bam250ejn756g" path="res://modules/minigame/water_rowing_rapids/spirit/spirit.tscn" id="3_yl50k"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_yl50k"]
-[ext_resource type="PackedScene" uid="uid://mhrfxqqthuy7" path="res://modules/minigame/water_rowing_rapids/rowing_player.tscn" id="5_f4xkx"]
+[ext_resource type="PackedScene" uid="uid://mhrfxqqthuy7" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.tscn" id="5_f4xkx"]
 
 [sub_resource type="Gradient" id="Gradient_tk8vt"]
 offsets = PackedFloat32Array(0, 0.422111, 0.743719, 0.884422)
