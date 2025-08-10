@@ -1,15 +1,21 @@
 extends Node
 
-var stream: AudioStreamInteractive = preload("res://modules/music/stream.tres")
+var stream: AudioStreamInteractive
 
 @onready var _music_player: AudioStreamPlayer = $MusicPlayer
 
 
 func _init() -> void:
-	pass
+	if OS.has_feature("Server"):
+		# Trick Unit testing - Don't load the stream.
+		# A bug in Godot makes AudioStreamInteractives leak Resources, causing
+		# CI/CD to fail.
+		return
+	stream = load("res://modules/music/stream.tres")
 
 
 func _ready() -> void:
+	_music_player.stream = stream
 	EventBus.request_music.connect(_on_music_request_event)
 
 
