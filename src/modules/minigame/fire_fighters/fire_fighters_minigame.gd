@@ -6,6 +6,7 @@ const BURN_TICK_INTERVAL = 10
 @export var player_scene: PackedScene
 @export var fire_scene: PackedScene
 @export var water_scene: PackedScene
+@export var extinguish_effect_scene: PackedScene
 
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
@@ -214,7 +215,12 @@ func _on_extinguish_at(pos: Vector2):
 func _vegetation_saved(tile: Vector2i):
 	add_score(1)
 	saved_tiles.append(tile)
-	TextFloatSystem.floating_text(get_tile_position(tile), str("+1"), tile_map_terrain)
+
+	var pos: Vector2 = get_tile_position(tile)
+	var effect: Node2D = extinguish_effect_scene.instantiate()
+	effect.position = pos
+	effects_node.add_child(effect)
+	TextFloatSystem.floating_text(pos, str("+1"), tile_map_terrain)
 
 
 func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
