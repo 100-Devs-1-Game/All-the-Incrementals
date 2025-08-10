@@ -2,14 +2,16 @@ class_name EPHRandomPositionSpawner
 extends RandomPositionSpawner
 
 # Points that define spawn rate over time. X value should be non-descending.
-@export var points: Array[Vector2] = [Vector2.ZERO, Vector2.ONE]  # I couldn't get Path2D or Curve to work the way they should, so here's an array of points for now.
+@export var points: Array[Vector2] = [Vector2.ZERO, Vector2.ONE] 
+# I couldn't get Path2D or Curve to work the way they should,
+# so here's an array of points for now.
 
 # How spawn rate behaves when last point is passed
-enum OVER_TIME { ONESHOT = 0, REPEAT = 1, FINAL_RATE = 2, BEGIN_RATE = 3 }
-@export var cur_mode: OVER_TIME = OVER_TIME.FINAL_RATE
+enum enum_over_time { ONESHOT = 0, REPEAT = 1, FINAL_RATE = 2, BEGIN_RATE = 3 }
+@export var cur_mode: enum_over_time = enum_over_time.FINAL_RATE
 
-@export var time_multiplier: float = 20.0  # Multiply all point times by this value (that is, divide the time).
-@export var autospawn: bool = false  # Whether an instance is automatically spawned at the beginning.
+@export var time_multiplier: float = 20.0  
+@export var autospawn: bool = false 
 var _total_delta_time: float = 0
 
 
@@ -29,13 +31,13 @@ func get_current_rate() -> float:
 	var time_size := points[-1].x
 	if cur_time > time_size:
 		match cur_mode:
-			OVER_TIME.ONESHOT:
+			enum_over_time.ONESHOT:
 				return 0.0  # No spawning.
-			OVER_TIME.REPEAT:
+			enum_over_time.REPEAT:
 				cur_time -= int(cur_time)
-			OVER_TIME.FINAL_RATE:
+			enum_over_time.FINAL_RATE:
 				cur_time = 1.0
-			OVER_TIME.BEGIN_RATE:
+			enum_over_time.BEGIN_RATE:
 				cur_time = 0.0
 
 	# Find first interval between points that includes the current time.
