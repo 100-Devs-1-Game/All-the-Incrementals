@@ -27,7 +27,7 @@ buses/default_bus_layout="uid://cdssaq4iic0q6"
 
 EventBus="*res://global/event_bus.gd"
 Logger="*res://addons/godot-logger/logger.gd"
-Audio="*res://modules/audio/audio.gd"
+Music="*res://modules/music/music.tscn"
 SaveGameManager="*res://modules/save_system/save_game_manager.gd"
 Panku="*res://addons/panku_console/console.tscn"
 GameSettings="*res://modules/settings/game_settings.gd"
