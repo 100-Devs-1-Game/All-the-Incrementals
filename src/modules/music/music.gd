@@ -6,10 +6,10 @@ var stream: AudioStreamInteractive
 
 
 func _init() -> void:
-	if OS.has_feature("Server"):
+	if DisplayServer.get_name() == "headless":
 		# Trick Unit testing - Don't load the stream.
 		# A bug in Godot makes AudioStreamInteractives leak Resources, causing
-		# CI/CD to fail.
+		# GUT to fail.
 		return
 	stream = load("uid://d263hyurubktn")
 
