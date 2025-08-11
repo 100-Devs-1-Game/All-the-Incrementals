@@ -37,6 +37,7 @@ var _water_used: float
 @onready
 var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Stop"
 @onready var audio_extinguisher_out: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Out"
+@onready var audio_item_pickup: AudioStreamPlayer = $"Audio/AudioStreamPlayer Item Pickup"
 
 
 func _ready() -> void:
@@ -107,6 +108,7 @@ func extinguish(flag: bool):
 func pick_up_item(type: FireFightersMinigameItem):
 	_current_item = type
 	_current_item._on_pick_up(self)
+	audio_item_pickup.play()
 
 
 func _update_tile():
