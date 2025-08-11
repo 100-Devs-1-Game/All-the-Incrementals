@@ -148,6 +148,7 @@ Thanks goes to all these wonderful people :heart:
 * microlancer
 * Noxalas
 * Rokle
+* [Sarian](https://github.com/SaronTetra)
 * Thaeta-Of-Diamonds
 * [Zephilinox](https://zephilinox.com/)
 
@@ -167,4 +168,4 @@ Thanks goes to all these wonderful people :heart:
 * Frog
 
 
-If anyone is missing from the list, let us know in Discord right away!
+If anyone is missing from the list, let us know in [Discord](https://discord.com/channels/1393033395298373643/1398176092082278464) right away!
