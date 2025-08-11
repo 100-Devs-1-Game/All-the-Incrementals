@@ -35,7 +35,6 @@ func _add_minigame_upgrades_children() -> void:
 func _refresh_minigame_upgrades_branch() -> void:
 	for item in _tree_upgrades.get_children():
 		_tree_upgrades.remove_child(item)
-		_tree_upgrades.queue_free()
 	_add_minigame_upgrades_children()
 
 
