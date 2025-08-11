@@ -59,10 +59,12 @@ func _initialize():
 		if feature.spawn_noise:
 			feature.spawn_noise.seed = rng_seed
 
-	FireFightersMinigameMapGenerator.generate_map(self)
+	_spawn_player()
 
 
 func _run():
+	FireFightersMinigameMapGenerator.generate_map(self)
+
 	for i in starting_fires + fires_bonus:
 		var tile := Vector2i(
 			randi_range(map_rect.position.x, map_rect.position.x + map_rect.size.x),
@@ -70,7 +72,6 @@ func _run():
 		)
 		_add_fire(tile, randf_range(0.2, 0.8))
 
-	_spawn_player()
 	item_spawner.activate()
 
 
