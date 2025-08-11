@@ -39,6 +39,7 @@ collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_kwj77")
 move_speed = 200.0
+hitpoints = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pbvvr")
@@ -99,3 +100,8 @@ metadata/_custom_type_script = "uid://byjfedtjqjrpb"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="Damage Update" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Damage Update" to="." method="_on_damage_update_timeout"]

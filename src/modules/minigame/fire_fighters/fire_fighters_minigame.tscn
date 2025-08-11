@@ -161,7 +161,7 @@ shape = SubResource("WorldBoundaryShape2D_q2uva")
 [node name="Effects" type="Node" parent="."]
 
 [node name="Damage Overlay" type="CanvasLayer" parent="."]
-layer = 128
+layer = 20
 
 [node name="ColorRect" type="ColorRect" parent="Damage Overlay"]
 visible = false

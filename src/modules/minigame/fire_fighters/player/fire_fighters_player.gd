@@ -10,17 +10,20 @@ signal changed_tile(tile: Vector2i)
 @export var water_spread: float = 0.1
 @export var tank_size: float = 5.0
 @export var arc_factor: float = 0.1
+@export var hitpoints: int = 3
 
 var move_speed_factor: float = 1.0
 var water_speed_factor: float = 1.0
 var arc_reduction: float = 1.0
 var water_spread_factor: float = 1.0
 var tank_bonus_size: float = 1.0
+var hitpoint_bonus: int
 
 var _last_dir := Vector2(0, 1)
 var _current_item: FireFightersMinigameItem
 var _current_tile: Vector2i
 var _water_used: float
+var _hitpoints_left: int
 
 @onready var game: FireFightersMinigame = get_parent()
 @onready var extinguisher: Node2D = $Extinguisher
@@ -42,6 +45,10 @@ var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extin
 
 func _ready() -> void:
 	_current_tile = game.get_tile_at(position)
+
+
+func init():
+	_hitpoints_left = hitpoints + hitpoint_bonus
 
 
 func _physics_process(delta: float) -> void:
@@ -143,6 +150,15 @@ func unequip_item():
 	_current_item = null
 
 
+func _take_damage():
+	_hitpoints_left -= 1
+
+	game.play_damage_effect()
+
+	if _hitpoints_left <= 0:
+		game.game_over()
+
+
 func _is_tank_empty() -> bool:
 	return _water_used > tank_size + tank_bonus_size
 
@@ -157,3 +173,8 @@ func is_diagonal(vec: Vector2) -> bool:
 
 func get_tile() -> Vector2i:
 	return game.get_tile_at(position)
+
+
+func _on_damage_update_timeout() -> void:
+	if game.is_tile_burning(_current_tile):
+		_take_damage()

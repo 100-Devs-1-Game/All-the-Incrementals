@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://puhu64bo33jh"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=31 format=3 uid="uid://puhu64bo33jh"]
 
 [ext_resource type="Script" uid="uid://sbcdkb7hovgy" path="res://modules/minigame/fire_fighters/upgrades/fire_fighters_upgrade_logic.gd" id="1_46f17"]
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_80gss"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_7vxgd"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_mv6il"]
 [ext_resource type="Resource" uid="uid://daaat4h7tn64i" path="res://modules/minigame/fire_fighters/data/upgrades/longer_countdown_upgrade.tres" id="6_wbpca"]
+[ext_resource type="Resource" uid="uid://c1avxl58rbutd" path="res://modules/minigame/fire_fighters/upgrades/hitpoints_upgrade.tres" id="7_7vxgd"]
 
 [sub_resource type="Resource" id="Resource_pk60h"]
 script = ExtResource("2_7vxgd")
@@ -174,7 +175,7 @@ base_effect_modifier = 0.1
 effect_modifier_multiplier = 0.1
 unlocked = false
 unlock_level = 0
-unlocks = Array[Resource]([ExtResource("6_wbpca")])
+unlocks = Array[Resource]([ExtResource("6_wbpca"), ExtResource("7_7vxgd")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0

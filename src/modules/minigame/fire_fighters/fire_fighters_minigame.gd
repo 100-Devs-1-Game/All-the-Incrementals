@@ -26,7 +26,6 @@ var saved_tiles: Array[Vector2i]
 var countdown_bonus: int
 var fires_bonus: int
 var reduce_map_feature_thresholds: Dictionary
-var hitpoint_bonus: int
 
 var _damage_effect_tween: Tween
 
@@ -50,10 +49,6 @@ var audio_container_oil: FireFightersMinigameAudioSequenceContainer = $"Audio/Au
 @onready var damage_color_rect: ColorRect = $"Damage Overlay/ColorRect"
 
 
-func _start() -> void:
-	_run()
-
-
 func _initialize():
 	if rng_seed == -1:
 		rng_seed = randi()
@@ -66,7 +61,9 @@ func _initialize():
 	_spawn_player()
 
 
-func _run():
+func _start():
+	player.init()
+
 	FireFightersMinigameMapGenerator.generate_map(self)
 
 	for i in starting_fires + fires_bonus:
@@ -258,7 +255,7 @@ func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
 		effects_node.add_child(explosion)
 
 
-func _play_damage_effect():
+func play_damage_effect():
 	if _damage_effect_tween:
 		_damage_effect_tween.kill()
 	_damage_effect_tween = create_tween()
