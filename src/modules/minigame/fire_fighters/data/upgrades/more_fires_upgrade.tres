@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=34 format=3 uid="uid://b6rju4fadud6p"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=32 format=3 uid="uid://b6rju4fadud6p"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_y3tu1"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_af4hw"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_g0kh0"]
 [ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="3_jl5jj"]
 [ext_resource type="Texture2D" uid="uid://blnuj43p2ihnl" path="res://assets/minigames/fire_fighters/icons/more_fires.png" id="4_wi0dl"]
-[ext_resource type="Script" uid="uid://sbcdkb7hovgy" path="res://modules/minigame/fire_fighters/upgrades/fire_fighters_upgrade_logic.gd" id="5_60l7d"]
 [ext_resource type="Resource" uid="uid://cxhyrtclfgjie" path="res://modules/minigame/fire_fighters/data/upgrades/oil_barrel_upgrade.tres" id="6_jl5jj"]
 [ext_resource type="Resource" uid="uid://cyu5uj3gwiv2r" path="res://modules/minigame/fire_fighters/data/upgrades/gas_can_upgrade.tres" id="7_wi0dl"]
 [ext_resource type="Resource" uid="uid://c4innp551p2u0" path="res://modules/minigame/fire_fighters/data/upgrades/more_bushes.tres" id="8_we28e"]
@@ -155,14 +154,8 @@ water = 0
 wind = 0
 slots = Array[ExtResource("2_g0kh0")]([SubResource("Resource_7uyp6")])
 
-[sub_resource type="Resource" id="Resource_5f3yx"]
-script = ExtResource("5_60l7d")
-type = 0
-metadata/_custom_type_script = "uid://sbcdkb7hovgy"
-
 [resource]
 script = ExtResource("2_af4hw")
-logic = SubResource("Resource_5f3yx")
 unlocks_feature = ""
 name = "More Fires"
 flavor = ""
