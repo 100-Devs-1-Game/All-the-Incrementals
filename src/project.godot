@@ -33,6 +33,7 @@ Panku="*res://addons/panku_console/console.tscn"
 GameSettings="*res://modules/settings/game_settings.gd"
 SceneLoader="*res://global/scene_loader.gd"
 Player="*res://global/player.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [debug]
 
@@ -52,7 +53,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/resource_resave/plugin.cfg", "res://addons/table_container/plugin.cfg", "res://addons/upgrade_tree/plugin.cfg", "res://addons/version_check/plugin.cfg")
+enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/resource_resave/plugin.cfg", "res://addons/table_container/plugin.cfg", "res://addons/upgrade_tree/plugin.cfg", "res://addons/version_check/plugin.cfg")
 
 [global_group]
 
