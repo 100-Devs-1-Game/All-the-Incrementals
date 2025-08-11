@@ -1,12 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmbhboa0omojg"]
+[gd_scene load_steps=12 format=3 uid="uid://bmbhboa0omojg"]
 
 [ext_resource type="Script" uid="uid://d3gde2qbcgqdg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.gd" id="1_kwj77"]
 [ext_resource type="Script" uid="uid://byjfedtjqjrpb" path="res://modules/minigame/fire_fighters/player/fire_fighters_oil_drop_component.gd" id="2_a054y"]
+[ext_resource type="Texture2D" uid="uid://u8lymqspkvwj" path="res://assets/minigames/fire_fighters/character/right_01.png" id="2_giabo"]
 [ext_resource type="AudioStream" uid="uid://dns8knkvhb614" path="res://assets/minigames/fire_fighters/sfx/water_hose_spray.ogg" id="2_u0cb5"]
 [ext_resource type="AudioStream" uid="uid://jwwwei2y1m8l" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_hose_stop_01.ogg" id="3_2mmi3"]
+[ext_resource type="Texture2D" uid="uid://bdv75dr4ln3hw" path="res://assets/minigames/fire_fighters/character/down_01.png" id="3_ndivj"]
+[ext_resource type="Texture2D" uid="uid://co2rfbkel1kyc" path="res://assets/minigames/fire_fighters/character/left_01.png" id="4_5beh5"]
 [ext_resource type="AudioStream" uid="uid://c1vv4jcunslpi" path="res://assets/minigames/fire_fighters/sfx/sfx_item_pickup_02.ogg" id="4_u0cb5"]
+[ext_resource type="Texture2D" uid="uid://cp2uorwwbsndv" path="res://assets/minigames/fire_fighters/character/up_01.png" id="5_8yk0c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
+radius = 20.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0cb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_giabo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ndivj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5beh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8yk0c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 20
@@ -18,7 +43,12 @@ move_speed = 200.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pbvvr")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_u0cb5")
+
 [node name="Model" type="Node2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 
 [node name="Polygon2D" type="Polygon2D" parent="Model"]

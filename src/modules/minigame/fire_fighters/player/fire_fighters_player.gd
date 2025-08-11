@@ -27,6 +27,7 @@ var _water_used: float
 @onready var extinguisher_cooldown: Timer = %Cooldown
 @onready var extinguisher_offset: Node2D = %"Extinguisher Offset"
 @onready var oil_dropper: FireFightersMinigameOilDropComponent = $"Oil Dropper"
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # helps to keep the extinguisher shooting diagonally after the player has
 # stopped moving ( releasing both keys will let the player face in the direction
@@ -57,6 +58,18 @@ func _physics_process(delta: float) -> void:
 
 	if move_dir and not is_diagonal(move_dir):
 		_last_dir = move_dir
+
+	match Vector2i(_last_dir):
+		Vector2i.RIGHT:
+			animated_sprite.frame = 0
+		Vector2i.DOWN:
+			animated_sprite.frame = 1
+		Vector2i.LEFT:
+			animated_sprite.frame = 2
+		Vector2i.UP:
+			animated_sprite.frame = 3
+
+	print_debug(animated_sprite.frame)
 
 	extinguisher.look_at(position + _last_dir)
 	extinguish(Input.is_action_pressed("primary_action"))
