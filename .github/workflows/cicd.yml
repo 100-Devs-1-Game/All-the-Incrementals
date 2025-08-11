@@ -14,13 +14,6 @@ on:
 
   pull_request:
     branches: [ main ]
-    paths:
-      - 'src/**'
-      - '.github/**'
-      - '.hooks/**'
-      - '.pre-commit-config.yaml'
-      - 'export_presets.cfg'
-      - 'project.godot'
 
 jobs:
   build-game:

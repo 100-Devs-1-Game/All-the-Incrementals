@@ -123,10 +123,15 @@ func has_inventory(other: EssenceInventory) -> bool:
 	return true
 
 
-func sub_stack(stack: EssenceStack, amount: int):  # Removes x amount of essence from a given stack
+func sub_stack(stack: EssenceStack):  # Removes x amount of essence from a given stack
 	for slot in slots:
 		if slot.essence == stack.essence:
-			slot.amount -= amount
+			slot.amount -= stack.amount
 			if slot.amount <= 0:
 				slots.erase(slot)
 			return
+
+
+func sub_inventory(inventory: EssenceInventory):  # Removes all stack amounts from an inventory
+	for stack in inventory.slots:
+		sub_stack(stack)

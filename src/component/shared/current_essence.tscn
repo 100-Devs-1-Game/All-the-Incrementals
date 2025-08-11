@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://yehkf7i1dt50"]
+
+[ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_45ils"]
+[ext_resource type="Script" uid="uid://dfgq1xudjfqad" path="res://component/shared/current_essence.gd" id="2_rnfkg"]
+[ext_resource type="Theme" uid="uid://bdm544cuwxbre" path="res://modules/settings/settings_theme.tres" id="2_ryht4"]
+[ext_resource type="Texture2D" uid="uid://n517d510r676" path="res://assets/icons/glowing_water_skn.png" id="3_rnfkg"]
+[ext_resource type="Texture2D" uid="uid://kn8v1at0k6t" path="res://assets/icons/glowing_earth_skn.png" id="4_6bkfc"]
+[ext_resource type="Texture2D" uid="uid://cef6u7a7us8ic" path="res://assets/icons/glowing_fire_skn.png" id="5_se7ep"]
+[ext_resource type="Texture2D" uid="uid://dt2e36f2dyeda" path="res://assets/icons/glowing_wind_skn.png" id="6_ulaa6"]
+
+[node name="CurrentEssence" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_45ils")
+script = ExtResource("2_rnfkg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 690.0
+offset_bottom = 95.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_right = 1082.0
+offset_bottom = 273.0
+scale = Vector2(0.3, 0.3)
+theme = ExtResource("2_ryht4")
+
+[node name="WaterLabel" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "   0"
+
+[node name="WaterIcon" type="TextureRect" parent="Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_rnfkg")
+
+[node name="EarthLabel" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "    0"
+
+[node name="EarthIcon" type="TextureRect" parent="Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_6bkfc")
+
+[node name="FireLabel" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "    0"
+
+[node name="FireIcon" type="TextureRect" parent="Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_se7ep")
+
+[node name="WindLabel" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "    0"
+
+[node name="WindIcon" type="TextureRect" parent="Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_ulaa6")

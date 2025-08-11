@@ -16,6 +16,9 @@ const JUDGMENT = preload(JUDGMENT_PATH).Judgment
 	NOTE_TYPE.SPECIAL2: [],
 }
 
+@export_flags("Up", "Left", "Right", "Down", "Special1", "Special2") var autoplay: int = 0
+@export var autoplay_level: JUDGMENT = JUDGMENT.MISS
+
 @onready var conductor: Conductor = %Conductor
 @onready var chart: Chart = conductor.chart
 @onready var judgment_label = %JudgmentLabel
@@ -43,6 +46,7 @@ func _ready():
 
 func _process(_delta):
 	_check_for_missed_notes()
+	_auto_play()
 
 
 func _check_for_missed_notes():
@@ -58,6 +62,27 @@ func _check_for_missed_notes():
 			notes.pop_front()
 			judgment_label.text = "Miss"
 			%Early_Late.text = ""
+
+
+func _auto_play():
+	for lane in lanes.keys():
+		if lane & autoplay:
+			var notes = lanes[lane]
+			if notes.is_empty():
+				continue
+
+			var note: NoteData = notes[0]
+			var autoplay_threshold = judgments.miss
+			# This is offset by one level
+			# because we want to play just outside of previous threshold
+			if autoplay_level & JUDGMENT.PERFECT:
+				autoplay_threshold = 0
+			if autoplay_level & JUDGMENT.GREAT:
+				autoplay_threshold = judgments.perfect
+			if autoplay_level & JUDGMENT.OKAY:
+				autoplay_threshold = judgments.great
+			if conductor.song_position - note.cached_absolute_beat > autoplay_threshold:
+				judge_input(note.type)
 
 
 func judge_input(note_type: NOTE_TYPE):
