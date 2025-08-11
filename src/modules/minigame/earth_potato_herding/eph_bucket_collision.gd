@@ -10,7 +10,10 @@ extends Area2D
 #- staticvars
 #- exports
 @export var bucket: Sprite2D
-@export var start_color: Color = Color.WHITE
+@export var timer: TextureProgressBar
+@export var text: RichTextLabel
+
+@export var start_color: Color = Color.BLACK
 @export var end_color: Color = Color.RED
 @export var ready_color: Color = Color.WHITE
 #- pubvars
@@ -31,19 +34,19 @@ func is_it_a_demon(body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	_time += delta
-	if _time >= 0:
-		bucket.modulate = self.ready_color
+	var cur := 0.0
+	if _time <= 0:
+		cur = 1 + (_time / _total_time)
+		bucket.modulate = self.start_color
+		text.text = "Protect the younglings!"
 	else:
-		var cur := -(_time / _total_time)
-		var diff := sin(_time)
-		if diff > 0:
-			cur += (1 - cur) * diff
-		else:
-			cur += cur * diff
-		bucket.modulate = self.end_color.lerp(self.start_color, cur)
-		print([-_time / _total_time, cur, bucket.modulate])
+		bucket.modulate = self.ready_color
+		text.text = "Harvesting." + ".".repeat(int(_time * 3) % 3)
+	timer.value = cur
 
 
 func start_effect(total_time: float):
 	assert(bucket)
+	assert(timer)
+	assert(text)
 	self._time = -total_time
