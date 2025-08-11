@@ -133,7 +133,8 @@ func _tick_fires():
 func _fire_burn_tick(
 	fire: FireFightersMinigameFire, tile: Vector2i, feature: FireFightersMinigameMapFeature
 ):
-	fire.total_burn += fire.size / (60.0 / BURN_TICK_INTERVAL)
+	# somehow not accurate?
+	fire.total_burn += BURN_TICK_INTERVAL / 60.0
 
 	if has_oil(tile):
 		fire.size = 10.0
