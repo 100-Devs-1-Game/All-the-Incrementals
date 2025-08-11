@@ -42,6 +42,9 @@ func change_display(
 	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer/DescriptionInfo.text = (
 		"[font_size=50]" + description
 	)
+	$CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton/UpgradeButton.disabled = !(
+		current_upgrade.can_afford_next_level()
+	)
 
 
 func _read_upgrade_files():
@@ -95,5 +98,7 @@ func _load_upgrades():
 
 func _on_fill_button_fill_complete(fill_button: FillButton) -> void:
 	if current_upgrade.can_afford_next_level():
+		Player.pay_upgrade_cost(current_upgrade.get_next_level_cost())
 		current_upgrade.level_up()
 		fill_button.trigger_again()
+		EventBus.ui_upgrade_bought.emit(current_upgrade)
