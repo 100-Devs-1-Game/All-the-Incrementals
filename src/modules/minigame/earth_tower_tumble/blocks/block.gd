@@ -2,14 +2,16 @@ extends RigidBody2D
 
 signal released
 
-var cell_size := 32
+var block_health: = 10
+var cell_size: = 32
 var target_x: float
-var move_speed := 45.0
-var is_held := true
+var move_speed: = 45.0
+var is_held: = true
 
 var last_delay = false
 var touch_delay := 0.2
 
+@onready var inst = get_tree().current_scene
 
 func _ready():
 	add_to_group("block")
@@ -29,30 +31,28 @@ func _randomize_color():
 	$Polygon2D.color = Color(randf(), randf(), randf())
 
 
-func _process(delta: float) -> void:
-	if get_parent().get_parent().build_mode:
-		gravity_scale = 0.5
-	else:
-		if is_held:
-			gravity_scale = 0.1
-		else:
-			gravity_scale = 1.0
-
 func _physics_process(delta):
-	if is_held or last_delay:
-		if get_parent().get_parent().build_mode:
-			if Input.is_action_just_pressed("secondary_action"):
-				global_rotation_degrees += 90.0
-			if Input.is_action_just_pressed("left"):
-				target_x -= cell_size
-			elif Input.is_action_just_pressed("right"):
-				target_x += cell_size
-			if Input.is_action_just_pressed("primary_action"):
-				_drop_block()
+	if !inst.build_mode and is_held:
+		gravity_scale = 0.2
+	elif inst.build_mode and is_held:
+		gravity_scale = 0.5
+	if is_held and inst.build_mode or last_delay:
+		if Input.is_action_just_pressed("secondary_action"):
+			global_rotation_degrees += 90.0
+		if Input.is_action_just_pressed("left"):
+			target_x -= cell_size
+		elif Input.is_action_just_pressed("right"):
+			target_x += cell_size
+		if Input.is_action_just_pressed("primary_action"):
+			_drop_block()
 
 		global_position.x = lerp(global_position.x, target_x, move_speed * delta)
 	if !is_held:
 		lock_rotation = false
+	
+	if global_position.y > 1600.0:
+		get_tree().current_scene.block_penalty()
+		queue_free()
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -76,6 +76,20 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 					linear_velocity = Vector2.ZERO
 					angular_velocity = 0
 					break
+
+
+func apply_effect(effect: int, amount: int):
+	match effect:
+		0: # Push1
+			print("Push block")
+		1: # Stick
+			print("Stick to block")
+			mass += amount
+			
+		2: # Damage
+			block_health -= amount
+			if block_health <= 0:
+				queue_free()
 
 
 func _drop_block():

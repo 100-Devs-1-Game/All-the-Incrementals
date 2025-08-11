@@ -1,6 +1,6 @@
 extends Node2D
 
-var base_width_current := 500.0
+var base_width_current := 64.0
 var upgrade_width_increment := 64.0
 var upgrade_speed := 15.0
 

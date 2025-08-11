@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://e4xemp6bivp1"]
 
-[ext_resource type="Script" uid="uid://f3arvcfb8t1f" path="res://modules/minigame/earth_tower_tumble/potato.gd" id="1_jb446"]
+[ext_resource type="Script" uid="uid://f3arvcfb8t1f" path="res://modules/minigame/earth_tower_tumble/oragnize/potato.gd" id="1_jb446"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yle8e"]
 albedo_color = Color(0.457018, 0.299053, 0.187391, 1)
@@ -21,7 +21,7 @@ position = Vector2(0, 2.80142e-06)
 scale = Vector2(14, 14)
 mesh = SubResource("CapsuleMesh_2ehu0")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["potato"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_y7fga")

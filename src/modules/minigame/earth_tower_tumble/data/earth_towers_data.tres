@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MinigameData" load_steps=4 format=3 uid="uid://s7k08dgu5hxn"]
 
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_ui8ix"]
-[ext_resource type="PackedScene" uid="uid://351eaqu7t6ig" path="res://modules/minigame/earth_tower_tumble/oragnize/earth_tower_tumble.tscn" id="1_w0vse"]
+[ext_resource type="PackedScene" uid="uid://351eaqu7t6ig" path="res://modules/minigame/earth_tower_tumble/earth_tower_tumble.tscn" id="1_w0vse"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_w0vse"]
 
 [resource]

@@ -22,11 +22,6 @@ var blocks_remaining: int = 18:
 		var _blocks_remaining = value
 		blocks_changed.emit(_blocks_remaining)
 
-func force_update():
-	lives_changed.emit()
-	score_changed.emit(score)
-	blocks_changed.emit(blocks_remaining)
-
 func reset():
 	lives = 0
 	score = 0
