@@ -52,9 +52,11 @@ func init():
 
 
 func _physics_process(delta: float) -> void:
+	var is_extinguishing := Input.is_action_pressed("primary_action")
+
 	var move_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
 
-	if is_diagonal(move_dir):
+	if is_extinguishing and is_diagonal(move_dir):
 		if abs(_last_dir.x) > 0:
 			velocity.x = 0
 		elif abs(_last_dir.y) > 0:
@@ -79,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	print_debug(animated_sprite.frame)
 
 	extinguisher.look_at(position + _last_dir)
-	extinguish(Input.is_action_pressed("primary_action"))
+	extinguish(is_extinguishing)
 
 	if Input.is_action_just_pressed("secondary_action"):
 		if has_item():
