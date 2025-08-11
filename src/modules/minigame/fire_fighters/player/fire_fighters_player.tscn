@@ -63,10 +63,6 @@ stream = ExtResource("3_2mmi3")
 [node name="AudioStreamPlayer Item Pickup" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("4_u0cb5")
 
-[node name="Diagonal Cooldown" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
-
 [node name="Oil Dropper" type="Node" parent="."]
 script = ExtResource("2_a054y")
 metadata/_custom_type_script = "uid://byjfedtjqjrpb"

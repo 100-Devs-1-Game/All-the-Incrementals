@@ -17,7 +17,7 @@ var arc_reduction: float = 1.0
 var water_spread_factor: float = 1.0
 var tank_bonus_size: float = 1.0
 
-var _last_dir: Vector2
+var _last_dir := Vector2(0, 1)
 var _current_item: FireFightersMinigameItem
 var _current_tile: Vector2i
 var _water_used: float
@@ -31,7 +31,6 @@ var _water_used: float
 # helps to keep the extinguisher shooting diagonally after the player has
 # stopped moving ( releasing both keys will let the player face in the direction
 # of the last release key otherwise - if they aren't released perfectly simultaneous )
-@onready var diagonal_cooldown: Timer = $"Diagonal Cooldown"
 
 @onready var audio_extinguisher: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher"
 @onready
@@ -46,18 +45,18 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var move_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
+
+	if is_diagonal(move_dir):
+		if abs(_last_dir.x) > 0:
+			velocity.x = 0
+		elif abs(_last_dir.y) > 0:
+			velocity.y = 0
+
 	velocity = velocity.move_toward(move_dir * move_speed * move_speed_factor, acceleration * delta)
 	move_and_slide()
 
-	if move_dir:
-		if is_diagonal(_last_dir) and not is_diagonal(move_dir):
-			if diagonal_cooldown.is_stopped():
-				_last_dir = move_dir
-		else:
-			_last_dir = move_dir
-
-		if is_diagonal(move_dir):
-			diagonal_cooldown.start()
+	if move_dir and not is_diagonal(move_dir):
+		_last_dir = move_dir
 
 	extinguisher.look_at(position + _last_dir)
 	extinguish(Input.is_action_pressed("primary_action"))
@@ -140,7 +139,7 @@ func has_item() -> bool:
 
 
 func is_diagonal(vec: Vector2) -> bool:
-	return abs(vec.x) + abs(vec.y) > 1
+	return not is_zero_approx(vec.x) and not is_zero_approx(vec.y)
 
 
 func get_tile() -> Vector2i:
