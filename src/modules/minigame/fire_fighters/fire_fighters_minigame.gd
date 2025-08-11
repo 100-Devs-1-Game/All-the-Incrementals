@@ -12,8 +12,10 @@ const BURN_TICK_INTERVAL = 10
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
 
-@export var max_water_per_fire: float = 0.1
+@export var starting_fires: int = 25
 @export var countdown_duration: float = 10.0
+
+@export var max_water_per_fire: float = 0.1
 
 @export var rng_seed: int = -1
 
@@ -23,8 +25,7 @@ var player: FireFightersMinigamePlayer
 var saved_tiles: Array[Vector2i]
 var countdown_bonus: int
 var fires_bonus: int
-var tree_threshold: float
-var bush_threshold: float
+var reduce_map_feature_thresholds: Dictionary
 var hitpoint_bonus: int
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
@@ -58,13 +59,11 @@ func _initialize():
 		if feature.spawn_noise:
 			feature.spawn_noise.seed = rng_seed
 
-	FireFightersMinigameMapGenerator.generate_map(
-		map_rect, tile_map_terrain, tile_map_objects, map_features
-	)
+	FireFightersMinigameMapGenerator.generate_map(self)
 
 
 func _run():
-	for i in 80:
+	for i in starting_fires + fires_bonus:
 		var tile := Vector2i(
 			randi_range(map_rect.position.x, map_rect.position.x + map_rect.size.x),
 			randi_range(map_rect.position.y, map_rect.position.y + map_rect.size.y)
