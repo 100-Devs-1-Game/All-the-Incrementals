@@ -42,14 +42,37 @@ modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.616216, 0.616216)
 texture = ExtResource("4_w4xl5")
 
-[node name="Area2D" type="Area2D" parent="Marker2D" node_paths=PackedStringArray("bucket")]
+[node name="Area2D" type="Area2D" parent="Marker2D" node_paths=PackedStringArray("bucket", "timer", "text")]
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("5_t1lt2")
 bucket = NodePath("../bucket")
+timer = NodePath("../TextureProgressBar")
+text = NodePath("../RichTextLabel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/Area2D"]
 shape = SubResource("CircleShape2D_2q4j3")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Marker2D"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+scale = Vector2(0.6, 0.6)
+max_value = 1.0
+step = 0.0
+value = 0.69
+fill_mode = 4
+texture_progress = ExtResource("4_w4xl5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Marker2D"]
+offset_left = -345.0
+offset_top = 133.7
+offset_right = 345.0
+offset_bottom = 202.7
+text = "Add some text !!!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="EphYounglingSpawner" parent="." node_paths=PackedStringArray("_free_roam_area", "_free_roam_bounding_box", "_adult_spawner", "_player", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("5_kh8xl")]
 _free_roam_area = NodePath("spawn_zone")
@@ -159,6 +182,12 @@ script = ExtResource("13_fp0k5")
 polygon = PackedVector2Array(-734, -711, -737, 677, 1510, 667, 1500, -724, -855, -749, -824, -845, 1620, -824, 1603, 764, -886, 819, -844, -717)
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("14_nm6ba")]
+
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
+offset_left = -99.0
+offset_top = -79.0
+offset_right = -99.0
+offset_bottom = -79.0
 
 [connection signal="body_entered" from="Marker2D/Area2D" to="Marker2D/Area2D" method="is_it_a_demon"]
 [connection signal="body_entered" from="DespawnZone" to="DespawnZone" method="_on_body_entered"]
