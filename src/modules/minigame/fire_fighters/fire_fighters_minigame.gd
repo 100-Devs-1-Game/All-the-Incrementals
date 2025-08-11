@@ -22,6 +22,10 @@ var fires: Dictionary
 var player: FireFightersMinigamePlayer
 var saved_tiles: Array[Vector2i]
 var countdown_bonus: int
+var fires_bonus: int
+var tree_threshold: float
+var bush_threshold: float
+var hitpoint_bonus: int
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"

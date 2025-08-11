@@ -1,7 +1,18 @@
 class_name FireFightersMinigameUpgradeLogic
 extends BaseMinigameUpgradeLogic
 
-enum Type { WALK_SPEED, TANK_SIZE, WATER_SPEED, WATER_SPREAD, WATER_ARC_REDUCTION, HITPOINTS }
+enum Type {
+	WALK_SPEED,
+	TANK_SIZE,
+	WATER_SPEED,
+	WATER_SPREAD,
+	WATER_ARC_REDUCTION,
+	HITPOINTS,
+	FIRES,
+	BUSHES,
+	TREES,
+	COUNTDOWN
+}
 
 @export var type: Type
 
@@ -19,4 +30,13 @@ func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 			my_game.player.water_spread_factor = upgrade.get_current_effect_modifier() + 1
 		Type.WATER_ARC_REDUCTION:
 			my_game.player.arc_reduction = 1 - upgrade.get_current_effect_modifier()
-		#Type.HITPOINTS:
+		Type.FIRES:
+			my_game.fires_bonus = int(upgrade.get_current_effect_modifier())
+		Type.BUSHES:
+			my_game.bush_threshold = -upgrade.get_current_effect_modifier()
+		Type.TREES:
+			my_game.tree_threshold = -upgrade.get_current_effect_modifier()
+		Type.COUNTDOWN:
+			my_game.countdown_bonus = int(upgrade.get_current_effect_modifier())
+		Type.HITPOINTS:
+			my_game.hitpoint_bonus = int(upgrade.get_current_effect_modifier())
