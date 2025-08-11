@@ -160,5 +160,17 @@ shape = SubResource("WorldBoundaryShape2D_q2uva")
 
 [node name="Effects" type="Node" parent="."]
 
+[node name="Damage Overlay" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="ColorRect" type="ColorRect" parent="Damage Overlay"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.839216, 0, 0.168627, 0.498039)
+
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]

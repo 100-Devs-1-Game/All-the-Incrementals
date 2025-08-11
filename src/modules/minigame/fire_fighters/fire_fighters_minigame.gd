@@ -28,6 +28,8 @@ var fires_bonus: int
 var reduce_map_feature_thresholds: Dictionary
 var hitpoint_bonus: int
 
+var _damage_effect_tween: Tween
+
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
 @onready var tile_map_water: TileMapLayer = $"TileMapLayer Water"
@@ -44,6 +46,8 @@ var hitpoint_bonus: int
 
 @onready
 var audio_container_oil: FireFightersMinigameAudioSequenceContainer = $"Audio/AudioContainer Oil"
+
+@onready var damage_color_rect: ColorRect = $"Damage Overlay/ColorRect"
 
 
 func _start() -> void:
@@ -252,6 +256,18 @@ func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
 		var explosion: Node2D = explosion_effect_scene.instantiate()
 		explosion.position = get_tile_position(center_tile)
 		effects_node.add_child(explosion)
+
+
+func _play_damage_effect():
+	if _damage_effect_tween:
+		_damage_effect_tween.kill()
+	_damage_effect_tween = create_tween()
+	damage_color_rect.modulate = Color.WHITE
+
+	_damage_effect_tween.tween_property(damage_color_rect, "modulate", Color.TRANSPARENT, 0.3)
+	_damage_effect_tween.tween_callback(damage_color_rect.hide)
+
+	damage_color_rect.show()
 
 
 func _get_countdown_duration() -> float:
