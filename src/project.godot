@@ -33,6 +33,7 @@ GameSettings="*res://modules/settings/game_settings.gd"
 SceneLoader="*res://global/scene_loader.gd"
 Player="*res://global/player.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+Panku="*res://addons/panku_console/console.tscn"
 
 [debug]
 
@@ -52,7 +53,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/resource_resave/plugin.cfg", "res://addons/table_container/plugin.cfg", "res://addons/upgrade_tree/plugin.cfg", "res://addons/version_check/plugin.cfg")
+enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg", "res://addons/godot-logger/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/resource_resave/plugin.cfg", "res://addons/table_container/plugin.cfg", "res://addons/upgrade_tree/plugin.cfg", "res://addons/version_check/plugin.cfg")
 
 [global_group]
 
@@ -111,6 +112,11 @@ exit_menu={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"location":0,"echo":false,"script":null)
 ]
 }
+
+[panku]
+
+disable_on_release=true
+custom_default_config="res://default_panku_config.cfg"
 
 [physics]
 
