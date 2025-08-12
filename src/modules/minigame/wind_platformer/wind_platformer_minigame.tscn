@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=12 format=3 uid="uid://bytqv7h0iow3u"]
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_j01kc"]
 [ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/player.tscn" id="2_asxaq"]
@@ -11,6 +11,13 @@ fractal_octaves = 2
 domain_warp_enabled = true
 domain_warp_frequency = 0.205
 domain_warp_fractal_octaves = 3
+
+[sub_resource type="Gradient" id="Gradient_h8gjg"]
+colors = PackedColorArray(3.03224e-06, 0.476617, 0.618364, 1, 0.104315, 0.192576, 0.686322, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j01kc"]
+gradient = SubResource("Gradient_h8gjg")
+width = 512
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4orxu"]
 size = Vector2(15, 2)
@@ -42,6 +49,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.32549, 0.32549, 0.905882, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1920.0
+offset_right = 1080.0
+offset_bottom = 840.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_j01kc")
 
 [node name="Platforms" type="Node" parent="."]
 
