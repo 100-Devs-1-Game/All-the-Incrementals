@@ -111,6 +111,7 @@ tile_set = SubResource("TileSet_ymaye")
 script = ExtResource("15_gckvd")
 pickup_scene = ExtResource("16_na7l3")
 object_scene = ExtResource("17_bwfd8")
+spawn_tries = 20
 metadata/_custom_type_script = "uid://bk20clpaekonn"
 
 [node name="EffectsPlayer" type="Node" parent="."]

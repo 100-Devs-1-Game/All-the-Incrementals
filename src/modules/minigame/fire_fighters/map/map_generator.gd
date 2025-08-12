@@ -8,6 +8,9 @@ static func generate_map(game: FireFightersMinigame):
 		for y in range(rect.position.y, rect.position.y + rect.size.y):
 			var tile := Vector2i(x, y)
 
+			if rect.get_center().distance_to(tile) < 4:
+				continue
+
 			if randf() < 0.2:
 				game.tile_map_terrain.set_cell(tile, 0, Vector2i([0, 1].pick_random(), 0))
 
