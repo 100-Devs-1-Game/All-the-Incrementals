@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var blocks := [
 	preload("res://modules/minigame/earth_tower_tumble/blocks/cblock.tscn"),
 	preload("res://modules/minigame/earth_tower_tumble/blocks/iblock.tscn"),

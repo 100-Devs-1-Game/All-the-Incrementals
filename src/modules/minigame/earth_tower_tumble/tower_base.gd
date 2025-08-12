@@ -11,6 +11,7 @@ var base_upgrading := false
 @onready var poly: Polygon2D = $Polygon2D
 @onready var rect: RectangleShape2D = null
 
+
 func _ready():
 	rect = col.shape as RectangleShape2D
 	if rect == null:
@@ -18,6 +19,7 @@ func _ready():
 		col.shape = rect
 	rect.size.x = base_width_current
 	update_polygon()
+
 
 func _process(delta: float) -> void:
 	if base_upgrading:
@@ -29,15 +31,19 @@ func _process(delta: float) -> void:
 			base_upgrading = false
 			update_polygon()
 
+
 func update_polygon():
 	var half_w := rect.size.x * 0.5
 	var half_h := rect.size.y * 0.5
-	poly.polygon = PackedVector2Array([
-		Vector2(-half_w, -half_h),
-		Vector2( half_w, -half_h),
-		Vector2( half_w,  half_h),
-		Vector2(-half_w,  half_h),
-	])
+	poly.polygon = PackedVector2Array(
+		[
+			Vector2(-half_w, -half_h),
+			Vector2(half_w, -half_h),
+			Vector2(half_w, half_h),
+			Vector2(-half_w, half_h),
+		]
+	)
+
 
 func upgrade_base():
 	base_width_current += upgrade_width_increment

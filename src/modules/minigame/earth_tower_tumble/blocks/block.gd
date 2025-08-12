@@ -19,16 +19,19 @@ var is_held := true
 @onready var inst = get_tree().current_scene
 @onready var poly := $Polygon2D
 
+
 func _ready():
 	add_to_group("block")
 	_setup_physics()
 	target_x = global_position.x
 	_randomize_color()
 
+
 func _physics_process(delta):
 	_update_gravity()
 	_handle_input(delta)
 	_check_out_of_bounds()
+
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if is_held:
@@ -36,8 +39,10 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	else:
 		_snap_if_touching_held_block(state)
 
+
 func _randomize_color():
 	poly.color = Color(randf(), randf(), randf())
+
 
 func _setup_physics():
 	contact_monitor = true
@@ -49,11 +54,13 @@ func _setup_physics():
 	mass = 10.0
 	gravity_scale = PREVIEW_GRAVITY
 
+
 func _update_gravity():
 	if inst.build_mode:
 		gravity_scale = PREVIEW_GRAVITY if is_held else DROP_GRAVITY
 	else:
 		gravity_scale = SLOW_FALL_GRAVITY if is_held else DROP_GRAVITY
+
 
 func _handle_input(delta):
 	if not is_held:
@@ -72,10 +79,12 @@ func _handle_input(delta):
 
 	global_position.x = lerp(global_position.x, target_x, MOVE_SPEED * delta)
 
+
 func _check_out_of_bounds():
 	if global_position.y > OUT_OF_BOUNDS_Y:
 		inst.block_penalty()
 		queue_free()
+
 
 func _check_initial_contact(state):
 	for i in state.get_contact_count():
@@ -86,6 +95,7 @@ func _check_initial_contact(state):
 			_drop_block()
 			break
 
+
 func _snap_if_touching_held_block(state):
 	for i in state.get_contact_count():
 		var collider = state.get_contact_collider_object(i)
@@ -95,10 +105,12 @@ func _snap_if_touching_held_block(state):
 			angular_velocity = 0
 			break
 
+
 func damage(amount: int):
 	block_health -= amount
 	if block_health <= 0:
 		queue_free()
+
 
 func _drop_block():
 	is_held = false

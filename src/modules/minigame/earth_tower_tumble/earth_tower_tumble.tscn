@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://351eaqu7t6ig"]
+[gd_scene load_steps=19 format=3 uid="uid://351eaqu7t6ig"]
 
 [ext_resource type="Script" uid="uid://lhc3e4w56rm4" path="res://modules/minigame/earth_tower_tumble/earth_tower_tumble.gd" id="1_e1brv"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_hn5om"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="11_uvjps"]
 [ext_resource type="Script" uid="uid://bdxiechv2n4ff" path="res://modules/minigame/earth_tower_tumble/player.gd" id="11_w41d8"]
 [ext_resource type="Script" uid="uid://dwtfj2kuufykl" path="res://modules/minigame/earth_tower_tumble/tower_base.gd" id="11_wlaab"]
-[ext_resource type="PackedScene" uid="uid://e4xemp6bivp1" path="res://modules/minigame/earth_tower_tumble/potato.tscn" id="12_6o04t"]
 [ext_resource type="Script" uid="uid://bqkp2jhuqul2q" path="res://modules/minigame/earth_tower_tumble/block_spawner.gd" id="12_hn5om"]
 [ext_resource type="PackedScene" uid="uid://be8balsm15egw" path="res://modules/minigame/earth_tower_tumble/enemies/ett_evil_spirit.tscn" id="13_uvjps"]
 
@@ -168,7 +167,6 @@ color = Color(0.314316, 0.314316, 0.314316, 1)
 [node name="Player" type="Node2D" parent="Game"]
 position = Vector2(474, 568)
 script = ExtResource("11_w41d8")
-POTATO = ExtResource("12_6o04t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Game/Player"]
 scale = Vector2(0.21, 0.21)

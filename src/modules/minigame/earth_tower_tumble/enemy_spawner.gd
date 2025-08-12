@@ -4,12 +4,14 @@ extends Node2D
 @export var right: Marker2D
 @export var ett_evil_spirit: PackedScene
 
+
 func _ready() -> void:
 	var timer := Timer.new()
 	timer.autostart = true
 	timer.wait_time = randf_range(4.0, 12.0)
 	timer.timeout.connect(spawn_spirit)
 	add_child(timer)
+
 
 func spawn_spirit():
 	var spawn_marker = [left, right].pick_random()

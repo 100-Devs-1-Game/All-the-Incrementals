@@ -1,14 +1,15 @@
 extends Node2D
 
-@export var POTATO: PackedScene
+@export var potato: PackedScene
 @export var flight_speed := 1.3
 @export var shoot_delay := 0.3
+@export var follow: PathFollow2D
 
 var can_shoot := true
 var start_position: Vector2
 
 @onready var inst = get_tree().current_scene
-@export var follow: PathFollow2D
+
 
 func _ready():
 	start_position = global_position
@@ -16,6 +17,7 @@ func _ready():
 		var path2d := inst.find_child("Path2D")
 		if path2d and path2d.get_child_count() > 0:
 			follow = path2d.get_child(0)
+
 
 func _input(event: InputEvent) -> void:
 	if not inst.build_mode and event.is_action_pressed("primary_action"):
@@ -26,15 +28,17 @@ func _input(event: InputEvent) -> void:
 		if follow:
 			follow.progress_ratio = 0.5
 
+
 func _shoot():
-	if not can_shoot or POTATO == null:
+	if not can_shoot or potato == null:
 		return
-	var pew := POTATO.instantiate()
+	var pew := potato.instantiate()
 	pew.global_position = global_position
 	get_parent().add_child(pew)
 	can_shoot = false
 	await get_tree().create_timer(shoot_delay).timeout
 	can_shoot = true
+
 
 func _process(delta: float) -> void:
 	var t = clamp(flight_speed * delta, 0.0, 1.0)

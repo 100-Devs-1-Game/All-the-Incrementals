@@ -1,53 +1,59 @@
 extends RigidBody2D
 
-enum behaviours {
-	PUSH,
-	DAMAGE
-}
+const BEHAVIOURS := ["push", "damage"]
 
-var damage_amount: = 5
-var float_speed: = 80.50
-var behaviour: behaviours
-var grabbing: bool = false
-var target
+@export var damage_amount := 5
+@export var float_speed := 80.5
+var behaviour: String
+var grabbing := false
+var target: Node2D
+
+@onready var area: Area2D = $Area2D
+@onready var collider: CollisionShape2D = $collider
+@onready var poly: Polygon2D = $Polygon2D
+
 
 func _ready() -> void:
-	behaviour = behaviours.values().pick_random()
-	if behaviour == behaviours.PUSH:
-		$collider.disabled = false
-		$Polygon2D.color = Color.PURPLE
-	$Area2D.area_entered.connect(touched)
-	$Area2D.body_entered.connect(touched)
+	behaviour = BEHAVIOURS.pick_random()
+
+	if behaviour == "push":
+		collider.disabled = false
+		poly.color = Color.PURPLE
+
+	# Hook collisions to one handler
+	area.area_entered.connect(_on_touch)
+	area.body_entered.connect(_on_touch)
 
 
 func _process(delta: float) -> void:
-	if !grabbing:
-		if target:
-			move_to_location(delta)
-		else:
-			print("Getting a target")
-			pick_target()
+	if grabbing:
+		return
+
+	if target == null or not is_instance_valid(target):
+		_pick_target()
+		return
+
+	_move_to_target(delta)
 
 
-func pick_target():
-	var options = get_tree().get_nodes_in_group("block")
-	if !options.is_empty():
-		target = options.pick_random()
-	else:
+func _pick_target() -> void:
+	var options := get_tree().get_nodes_in_group("block")
+	if options.is_empty():
 		queue_free()
+		return
+	target = options.pick_random()
 
 
-func move_to_location(delta):
-	var direction = target.global_position - global_position
-	direction = direction.normalized()
-	global_position += direction * float_speed * delta
+func _move_to_target(delta: float) -> void:
+	var dir := target.global_position - global_position
+	if dir == Vector2.ZERO:
+		return
+	global_position += dir.normalized() * float_speed * delta
 
 
-func touched(other):
+func _on_touch(other: Node) -> void:
 	if other.is_in_group("potato"):
-		print("Spirit hit")
 		queue_free()
 	elif other.is_in_group("block"):
-		match behaviour:
-			behaviours.DAMAGE:
-				other.damage(damage_amount)
+		if behaviour == "damage" and other.has_method("damage"):
+			other.damage(damage_amount)

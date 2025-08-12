@@ -19,6 +19,7 @@ var blocks_remaining := 18:
 		blocks_remaining = value
 		blocks_changed.emit(value)
 
+
 func _start():
 	_begin()
 	get_tree().node_added.connect(_on_node_added)
@@ -43,6 +44,7 @@ func _begin():
 func _on_block_placed(amount: int):
 	score += amount
 
+
 func block_penalty():
 	if lives > 0:
 		lives -= 1
@@ -50,6 +52,7 @@ func block_penalty():
 		life_lost.emit()
 		if lives <= 0:
 			game_over()
+
 
 func force_update():
 	score_changed.emit(score)
