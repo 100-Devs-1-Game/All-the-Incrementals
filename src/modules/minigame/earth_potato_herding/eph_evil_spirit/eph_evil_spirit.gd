@@ -47,6 +47,10 @@ func ungrab_youngling() -> void:
 #region ======================== PRIVATE METHODS ===============================
 
 
+func _ready() -> void:
+	$SpriteRotationPoint/AnimatedSprite2D.play("default")
+
+
 func _calculate_acceleration() -> Vector2:
 	var base = super()
 
