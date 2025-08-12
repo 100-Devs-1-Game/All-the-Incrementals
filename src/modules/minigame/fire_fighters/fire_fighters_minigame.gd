@@ -206,7 +206,7 @@ func add_oil(tile: Vector2i, counter: int = -1):
 
 func _spawn_player():
 	player = player_scene.instantiate()
-	player.position = DisplayServer.window_get_size() / 2
+	player.position = tile_map_terrain.get_viewport_rect().size / 2
 	add_child(player)
 	player.extinguish_spot.connect(_on_extinguish_at)
 
