@@ -41,6 +41,7 @@ var _hitpoints_left: int
 var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Stop"
 @onready var audio_extinguisher_out: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Out"
 @onready var audio_item_pickup: AudioStreamPlayer = $"Audio/AudioStreamPlayer Item Pickup"
+@onready var audio_singe: AudioStreamPlayer = $"Audio/AudioStreamPlayer Singe"
 
 
 func _ready() -> void:
@@ -158,6 +159,8 @@ func _take_damage():
 
 	if _hitpoints_left <= 0:
 		game.game_over()
+
+	audio_singe.play()
 
 
 func _is_tank_empty() -> bool:
