@@ -62,7 +62,8 @@ func _physics_process(delta: float) -> void:
 		elif abs(_last_dir.y) > 0:
 			velocity.y = 0
 
-	velocity = velocity.move_toward(move_dir * move_speed * move_speed_factor, acceleration * delta)
+	var motion := move_dir * move_speed * move_speed_factor
+	velocity = velocity.move_toward(motion, acceleration * delta * move_speed_factor)
 	move_and_slide()
 
 	if move_dir and not is_diagonal(move_dir):
@@ -77,8 +78,6 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.frame = 2
 		Vector2i.UP:
 			animated_sprite.frame = 3
-
-	print_debug(animated_sprite.frame)
 
 	extinguisher.look_at(position + _last_dir)
 	extinguish(is_extinguishing)
