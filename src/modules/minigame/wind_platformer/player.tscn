@@ -22,9 +22,16 @@ shape = SubResource("RectangleShape2D_dkh7d")
 color = Color(1, 0.396078, 0.270588, 1)
 polygon = PackedVector2Array(8, 16, 8, 4, -8, 4, -8, 16, -4, 16, -4, 8, 4, 8, 4, 16)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Model"]
+[node name="Polygon2D Torso" type="Polygon2D" parent="Model"]
+unique_name_in_owner = true
 color = Color(1, 0.396078, 0.270588, 1)
 polygon = PackedVector2Array(-8, 4, -8, -4, -16, -4, -16, -8, 16, -8, 16, -4, 8, -4, 8, 4)
+
+[node name="Polygon2D Torso Dive" type="Polygon2D" parent="Model"]
+unique_name_in_owner = true
+visible = false
+color = Color(1, 0.396078, 0.270588, 1)
+polygon = PackedVector2Array(-8, 4, -8, -8, 8, -8, 8, 4)
 
 [node name="Head" type="Polygon2D" parent="Model"]
 unique_name_in_owner = true

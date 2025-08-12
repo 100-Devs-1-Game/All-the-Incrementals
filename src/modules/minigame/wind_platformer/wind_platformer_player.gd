@@ -15,6 +15,7 @@ signal left_screen
 
 var current_cloud: WindPlatformerMinigameCloudPlatform
 var current_jump_speed: float
+var can_dive: bool = true
 
 @onready var head: Polygon2D = %Head
 @onready var hat: Polygon2D = %Hat
@@ -52,9 +53,21 @@ func _physics_process(delta: float) -> void:
 
 	var hor_input = Input.get_axis("left", "right")
 
+	%"Polygon2D Torso".show()
+	%"Polygon2D Torso Dive".hide()
+
 	if not is_on_ground:
-		velocity.y += gravity * delta
-		velocity += game.get_force_at(position) * wind_impact
+		var final_gravity: float = gravity
+		if can_dive and Input.is_action_pressed("down"):
+			final_gravity *= 2
+			%"Polygon2D Torso".hide()
+			%"Polygon2D Torso Dive".show()
+
+		velocity.y += final_gravity * delta
+
+		var wind_force: Vector2 = game.get_force_at(position) * wind_impact
+
+		velocity += wind_force
 
 		var new_velocity_x: float = velocity.x + hor_input * air_control * delta
 
