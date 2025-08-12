@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cccmrn0cfcn0s"]
+[gd_scene load_steps=14 format=3 uid="uid://cccmrn0cfcn0s"]
 
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://bam250ejn756g" path="res://modules/minigame/water_rowing_rapids/spirit/spirit.tscn" id="3_yl50k"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_yl50k"]
 [ext_resource type="PackedScene" uid="uid://mhrfxqqthuy7" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.tscn" id="5_f4xkx"]
+
+[sub_resource type="Curve2D" id="Curve2D_a50qn"]
+bake_interval = 300.0
+_data = {
+"points": PackedVector2Array(-258.99, 258.989, 258.99, -258.989, -5870, 427, -618.233, -20.8863, 618.233, 20.8863, -4220, -298, -212.96, -118.459, 212.96, 118.459, -2751, 486, -764.437, 12.5317, 764.437, -12.5317, -909, 649, -789.5, 45.9497, 789.5, -45.9497, 620, 523, -939.881, -162.913, 939.881, 162.913, 3214, 586, -1226.74, 44.7715, 1226.74, -44.7715, 6634, 665, -1584.91, 188.04, 1584.91, -188.04, 11259, -779, -1907.27, -662.619, 1907.27, 662.619, 19603, -112, -88.6005, -267.922, 88.6005, 267.922, 21879, 1575, -127.835, -605.947, 127.835, 605.947, 21810, 2513, -356.924, -181.418, 356.924, 181.418, 23915, 4560, 0, 0, 0, 0, 29438, 4443, 0, 0, 0, 0, 29439, 6880, 728.881, 128.047, -728.881, -128.047, 26248, 6604, 422.738, 64.3296, -422.738, -64.3296, 23882, 5946, 1009.47, 380.19, -1009.47, -380.19, 21095, 5213, 222.87, 694.83, -222.87, -694.83, 18779, 2735, 689.482, 349.218, -689.482, -349.218, 17678, 1043, 2668.38, -170.132, -2668.38, 170.132, 13953, 354, 1755.04, 53.7258, -1755.04, -53.7258, 7022, 2726, 707.39, 259.675, -707.39, -259.675, 3541, 1934, 372.515, -11.1198, -372.515, 11.1198, 1520, 1673, 460.108, -54.7751, -460.108, 54.7751, -884, 2127, 384.307, -12.5317, -384.307, 12.5317, -3202, 2203, 731.019, 534.688, -731.019, -534.688, -5721, 1910, -262.278, 243.566, 262.278, -243.566, -5870, 427)
+}
+point_count = 27
 
 [sub_resource type="Gradient" id="Gradient_tk8vt"]
 offsets = PackedFloat32Array(0, 0.422111, 0.743719, 1)
@@ -24,12 +31,7 @@ seamless_blend_skirt = 0.3
 color_ramp = SubResource("Gradient_tk8vt")
 noise = SubResource("FastNoiseLite_i806a")
 
-[sub_resource type="Curve2D" id="Curve2D_a50qn"]
-bake_interval = 300.0
-_data = {
-"points": PackedVector2Array(-258.99, 258.989, 258.99, -258.989, -5870, 427, -618.233, -20.8863, 618.233, 20.8863, -4220, -298, -212.96, -118.459, 212.96, 118.459, -2751, 486, -764.437, 12.5317, 764.437, -12.5317, -909, 649, -789.5, 45.9497, 789.5, -45.9497, 620, 523, -939.881, -162.913, 939.881, 162.913, 3214, 586, -1226.74, 44.7715, 1226.74, -44.7715, 6634, 665, -1584.91, 188.04, 1584.91, -188.04, 11259, -779, -1907.27, -662.619, 1907.27, 662.619, 19603, -112, -88.6005, -267.922, 88.6005, 267.922, 21879, 1575, -127.835, -605.947, 127.835, 605.947, 21810, 2513, -356.924, -181.418, 356.924, 181.418, 23915, 4560, 0, 0, 0, 0, 29438, 4443, 0, 0, 0, 0, 29439, 6880, 728.881, 128.047, -728.881, -128.047, 26248, 6604, 422.738, 64.3296, -422.738, -64.3296, 23882, 5946, 1009.47, 380.19, -1009.47, -380.19, 21095, 5213, 222.87, 694.83, -222.87, -694.83, 18779, 2735, 689.482, 349.218, -689.482, -349.218, 17678, 1043, 2668.38, -170.132, -2668.38, 170.132, 13953, 354, 1755.04, 53.7258, -1755.04, -53.7258, 7022, 2726, 707.39, 259.675, -707.39, -259.675, 3541, 1934, 372.515, -11.1198, -372.515, 11.1198, 1520, 1673, 460.108, -54.7751, -460.108, 54.7751, -884, 2127, 384.307, -12.5317, -384.307, 12.5317, -3202, 2203, 731.019, 534.688, -731.019, -534.688, -5721, 1910, -262.278, 243.566, 262.278, -243.566, -5870, 427)
-}
-point_count = 27
+[sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_a50qn"]
 
 [sub_resource type="Environment" id="Environment_a50qn"]
 background_mode = 3
@@ -43,13 +45,20 @@ adjustment_contrast = 1.15
 script = ExtResource("1_tk8vt")
 data_uid = "uid://c7vragnlq8udw"
 
-[node name="Wadder" type="Polygon2D" parent="."]
+[node name="River" type="Path2D" parent="."]
+curve = SubResource("Curve2D_a50qn")
+
+[node name="Wadder" type="Polygon2D" parent="River"]
+unique_name_in_owner = true
 texture_repeat = 2
 color = Color(0.123517, 0.23114, 0.186891, 1)
 texture = SubResource("NoiseTexture2D_a50qn")
 
-[node name="River" type="Path2D" parent="."]
-curve = SubResource("Curve2D_a50qn")
+[node name="StaticBody2D" type="StaticBody2D" parent="River"]
+
+[node name="RiverCollider" type="CollisionShape2D" parent="River/StaticBody2D"]
+unique_name_in_owner = true
+shape = SubResource("ConcavePolygonShape2D_a50qn")
 
 [node name="RowingPlayer" parent="." instance=ExtResource("5_f4xkx")]
 position = Vector2(-4570, 1007)
