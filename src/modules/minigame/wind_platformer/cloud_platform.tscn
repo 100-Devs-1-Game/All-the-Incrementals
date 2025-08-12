@@ -68,6 +68,7 @@ position = Vector2(54, 0)
 shape = SubResource("RectangleShape2D_k72l2")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-100, -10, 200, 20)
 
 [connection signal="body_entered" from="Player Detection Area" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="body_exited" from="Player Detection Area" to="." method="_on_player_detection_area_body_exited"]
