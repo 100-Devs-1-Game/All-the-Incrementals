@@ -21,8 +21,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+
       - name: Checkout LFS objects
         run: git lfs pull
+
       - name: build game
         id: build
         # Use latest version (see releases for all versions)
@@ -65,6 +67,7 @@ jobs:
           path: ${{ steps.build.outputs.archive_directory }}/**/windows.zip
           retention-days: 1
           compression-level: 0
+
       - name: Upload Linux artifacts
         uses: actions/upload-artifact@v4
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
@@ -73,6 +76,50 @@ jobs:
           path: ${{ steps.build.outputs.archive_directory }}/**/linux_release.zip
           retention-days: 1
           compression-level: 0
+
+      - name: Test Linux export
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          OUTER_ZIP=$(find "${{ steps.build.outputs.archive_directory }}" -name "linux-export.zip" | head -n 1)
+          mkdir ./outer
+          unzip "$OUTER_ZIP" -d ./outer
+
+          INNER_ZIP=$(find ./outer -name "linux_release.zip" | head -n 1)
+          mkdir ./test_game
+          unzip "$INNER_ZIP" -d ./test_game
+
+          chmod +x ./test_game/*
+
+          ./test_game/linux_release.x86_64 --headless -d -s addons/gut/gut_cmdln.gd -gexit -gdir=res://tests/unit --render-thread safe --single-threaded-scene --verbose 2>&1 | tee $TEMP_FILE
+
+          # This should line up with https://github.com/100-Devs-1-Game/godot-gut-ci/blob/fix/import-gut/init-and-run-tests.sh#L50
+          # Godot always exists with error 0, but we want this action to fail in case of errors
+          if grep -q "No tests ran" "$TEMP_FILE" || grep -qE "Asserts\s+none" "$TEMP_FILE";
+          then
+            echo "No test ran. Please check your 'gut_params'"
+            exit 1
+          fi
+
+          if  ! grep -q "All tests passed" "$TEMP_FILE"
+          then
+            echo "One or more test have failed"
+            exit 1
+          fi
+
+          # Check for any error lines (case-insensitive)
+          # Ignores null time for textures: https://github.com/godotengine/godot/issues/108994
+          FILTERED_ERRORS=$(grep -i "ERROR" "$TEMP_FILE" | grep -v 'ERROR: Parameter "t" is null.') || true
+
+          if [ -n "$FILTERED_ERRORS" ]; then
+            echo "Detected error output in test logs:"
+            echo "$FILTERED_ERRORS"
+            exit 1
+          fi
+
+          echo "ALL GOOD :) :) :)"
+
+          exit 0
+
       - name: create release
         if: startsWith(github.ref, 'refs/tags/')
         uses: ncipollo/release-action@v1
