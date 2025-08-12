@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5gx7hrc8phfj"]
+[gd_scene load_steps=4 format=3 uid="uid://b5gx7hrc8phfj"]
 
 [ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
+[ext_resource type="Texture2D" uid="uid://1aogi6ltoyce" path="res://assets/minigames/wind_platformer/48x_cat.png" id="2_dkh7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkh7d"]
-size = Vector2(20, 32)
+size = Vector2(32, 48)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
@@ -17,6 +18,7 @@ damping = 0.25
 shape = SubResource("RectangleShape2D_dkh7d")
 
 [node name="Model" type="Node2D" parent="."]
+visible = false
 
 [node name="Polygon2D" type="Polygon2D" parent="Model"]
 color = Color(1, 0.396078, 0.270588, 1)
@@ -44,5 +46,8 @@ visible = false
 polygon = PackedVector2Array(4, -16, -4, -16, 0, -24)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="48xCat" type="Sprite2D" parent="."]
+texture = ExtResource("2_dkh7d")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
