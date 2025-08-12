@@ -130,6 +130,10 @@ jobs:
 
       - name: Run tests
         run: |
+          set -e
+          set -o pipefail
+
+          TEMP_FILE=/tmp/test_linux_release.log
           ./test_game/linux_release.x86_64 --headless --render-thread safe --single-threaded-scene --verbose --quit-after 60 2>&1 | tee $TEMP_FILE
 
           # This should line up with https://github.com/100-Devs-1-Game/godot-gut-ci/blob/fix/import-gut/init-and-run-tests.sh#L50
