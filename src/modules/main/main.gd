@@ -5,8 +5,15 @@ extends Node2D
 
 @export var main_menu: PackedScene
 
-var _splash_utils: SplashUtils = preload("res://modules/main/splash_utils.gd").new()
 var _show_splash_screens = true
+var _current_splash: Node
+
+@onready var _splash_utils: SplashUtils = %SplashUtils
+
+
+func _exit_tree() -> void:
+	if is_instance_valid(_current_splash):
+		_current_splash.queue_free()
 
 
 func _ready():
@@ -41,12 +48,12 @@ func _start_splash_screens() -> void:
 		return
 
 	for file in _splash_screens:
-		var splash: Node = load(file).instantiate()
-		splash.modulate.a = 0.0  # invisible at start
-		add_child(splash)
-		await _splash_utils.fade_in_scene(splash, _splash_duration)
-		await _splash_utils.fade_out_scene(splash, _splash_duration / 2)
-		splash.queue_free()
+		_current_splash = load(file).instantiate()
+		_current_splash.modulate.a = 0.0  # invisible at start
+		add_child(_current_splash)
+		await _splash_utils.fade_in_scene(_current_splash, _splash_duration)
+		await _splash_utils.fade_out_scene(_current_splash, _splash_duration / 2)
+		_current_splash.queue_free()
 
 	_load_main_menu()
 
