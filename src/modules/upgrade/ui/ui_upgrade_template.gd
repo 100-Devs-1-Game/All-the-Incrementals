@@ -37,6 +37,16 @@ func reload_base_upgrade_data(_upgrade = null) -> void:
 
 func _set_icon() -> void:
 	$Icon.texture = base_upgrade.icon
+	_resize_texture($Background.texture.get_size())
+
+
+func _resize_texture(target_size: Vector2):
+	if $Icon.texture == null:
+		return
+	var tex_size = $Icon.texture.get_size()
+	if tex_size.x == 0 or tex_size.y == 0:
+		return
+	$Icon.scale = target_size / tex_size
 
 
 func _set_level_text() -> void:
