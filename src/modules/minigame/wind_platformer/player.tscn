@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5gx7hrc8phfj"]
+[gd_scene load_steps=16 format=3 uid="uid://b5gx7hrc8phfj"]
 
 [ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
 [ext_resource type="Texture2D" uid="uid://7fjjhjaqd5v8" path="res://assets/minigames/wind_platformer/character/run/000.png" id="2_e810b"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bjs6bvocnfn1f" path="res://assets/minigames/wind_platformer/character/stand/002.png" id="9_62oln"]
 [ext_resource type="Texture2D" uid="uid://cil6vksb3kqo0" path="res://assets/minigames/wind_platformer/character/stand/003.png" id="10_p0ww4"]
 [ext_resource type="Texture2D" uid="uid://cnk4ej8cyyk87" path="res://assets/minigames/wind_platformer/character/stand/004.png" id="11_d1vcw"]
+[ext_resource type="AudioStream" uid="uid://cmeopcfcjv6b0" path="res://assets/minigames/wind_platformer/sfx/sfx_walk_cloud_lp_01.ogg" id="13_x8qgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkh7d"]
 size = Vector2(32, 48)
@@ -112,5 +113,15 @@ polygon = PackedVector2Array(4, -16, -4, -16, 0, -24)
 sprite_frames = SubResource("SpriteFrames_kpnvy")
 animation = &"running"
 frame_progress = 0.317648
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="AudioStreamPlayer Run" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_x8qgx")
+volume_db = -10.667
+
+[node name="Run Audio Delay" type="Timer" parent="Audio"]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

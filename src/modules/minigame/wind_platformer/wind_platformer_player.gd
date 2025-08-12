@@ -17,11 +17,15 @@ var current_cloud: WindPlatformerMinigameCloudPlatform
 var current_jump_speed: float
 var can_dive: bool = true
 
+var _is_running: bool = false
+
 @onready var head: Polygon2D = %Head
 @onready var hat: Polygon2D = %Hat
 
 @onready var game: WindPlatformerMinigame = get_parent()
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_run: AudioStreamPlayer = $"Audio/AudioStreamPlayer Run"
+@onready var run_audio_delay: Timer = $"Audio/Run Audio Delay"
 
 
 func _physics_process(delta: float) -> void:
@@ -54,15 +58,10 @@ func _physics_process(delta: float) -> void:
 
 	var hor_input = Input.get_axis("left", "right")
 
-	#%"Polygon2D Torso".show()
-	#%"Polygon2D Torso Dive".hide()
-
 	if not is_on_ground:
 		var final_gravity: float = gravity
 		if can_dive and Input.is_action_pressed("down"):
 			final_gravity *= 2
-			#%"Polygon2D Torso".hide()
-			#%"Polygon2D Torso Dive".show()
 
 		velocity.y += final_gravity * delta
 
@@ -89,15 +88,29 @@ func _physics_process(delta: float) -> void:
 	else:
 		current_jump_speed = 0
 
+	var was_running: bool = _is_running
+	_is_running = false
+
 	if is_on_ground:
 		if velocity.x:
-			animated_sprite.play("running")
+			_is_running = true
 			animated_sprite.flip_h = velocity.x > 0
+
+		if _is_running and not was_running:
+			run_audio_delay.start()
+
+		if _is_running:
+			animated_sprite.play("running")
+			if not audio_run.playing and run_audio_delay.is_stopped():
+				audio_run.play()
 		else:
 			animated_sprite.play("standing")
+			audio_run.stop()
+
 	else:
 		animated_sprite.play("standing")
 		animated_sprite.pause()
+		audio_run.stop()
 
 	move_and_slide()
 
