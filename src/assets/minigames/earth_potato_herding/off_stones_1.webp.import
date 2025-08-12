@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://58jq6rcdxs70"
-path="res://.godot/imported/evil_spirit.webp-7001aa1a353187bd4456f0a325f8cfca.ctex"
+uid="uid://dacl2gm8uqfp1"
+path="res://.godot/imported/off_stones_1.webp-834d421dba078560c1c494f27757ed8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/earth_potato_herding/evil_spirit.webp"
-dest_files=["res://.godot/imported/evil_spirit.webp-7001aa1a353187bd4456f0a325f8cfca.ctex"]
+source_file="res://assets/minigames/earth_potato_herding/off_stones_1.webp"
+dest_files=["res://.godot/imported/off_stones_1.webp-834d421dba078560c1c494f27757ed8b.ctex"]
 
 [params]
 
