@@ -18,6 +18,7 @@ var current_jump_speed: float
 var can_dive: bool = true
 
 var _is_running: bool = false
+var _is_on_ground: bool = false
 
 @onready var head: Polygon2D = %Head
 @onready var hat: Polygon2D = %Hat
@@ -31,14 +32,12 @@ var _is_running: bool = false
 func _physics_process(delta: float) -> void:
 	velocity *= (1 - damping * delta)
 
-	var is_on_ground: bool = false
+	_is_on_ground = is_on_floor()
 
-	is_on_ground = is_on_floor()
-
-	if is_on_ground and not get_last_slide_collision():
+	if _is_on_ground and not get_last_slide_collision():
 		push_warning("On ground without slide collision")
 
-	if is_on_ground and get_last_slide_collision() != null:
+	if _is_on_ground and get_last_slide_collision() != null:
 		var platform: WindPlatformerMinigameCloudPlatform = (
 			get_last_slide_collision().get_collider()
 		)
@@ -50,7 +49,7 @@ func _physics_process(delta: float) -> void:
 
 		# means current cloud faded while standing on it?
 		if current_cloud == null:
-			is_on_ground = false
+			_is_on_ground = false
 
 	elif current_cloud != null:
 		current_cloud.fade()
@@ -58,7 +57,7 @@ func _physics_process(delta: float) -> void:
 
 	var hor_input = Input.get_axis("left", "right")
 
-	if not is_on_ground:
+	if not _is_on_ground:
 		var final_gravity: float = gravity
 		if can_dive and Input.is_action_pressed("down"):
 			final_gravity *= 2
@@ -79,7 +78,15 @@ func _physics_process(delta: float) -> void:
 
 		velocity.x = move_toward(velocity.x, hor_input * move_speed, acceleration * delta)
 
-	if (is_on_ground and velocity.y >= 0) or current_jump_speed > 0:
+	jump_logic()
+
+	animation_and_audio_logic()
+
+	move_and_slide()
+
+
+func jump_logic():
+	if (_is_on_ground and velocity.y >= 0) or current_jump_speed > 0:
 		if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed:
 			velocity.y -= jump_speed_per_frame
 			current_jump_speed += jump_speed_per_frame
@@ -88,10 +95,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		current_jump_speed = 0
 
+
+func animation_and_audio_logic():
 	var was_running: bool = _is_running
 	_is_running = false
 
-	if is_on_ground:
+	if _is_on_ground:
 		if velocity.x:
 			_is_running = true
 			animated_sprite.flip_h = velocity.x > 0
@@ -111,8 +120,6 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("standing")
 		animated_sprite.pause()
 		audio_run.stop()
-
-	move_and_slide()
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
