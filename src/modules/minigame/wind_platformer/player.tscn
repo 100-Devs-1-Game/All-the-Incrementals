@@ -1,10 +1,71 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5gx7hrc8phfj"]
+[gd_scene load_steps=15 format=3 uid="uid://b5gx7hrc8phfj"]
 
 [ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
-[ext_resource type="Texture2D" uid="uid://1aogi6ltoyce" path="res://assets/minigames/wind_platformer/48x_cat.png" id="2_dkh7d"]
+[ext_resource type="Texture2D" uid="uid://7fjjhjaqd5v8" path="res://assets/minigames/wind_platformer/character/run/000.png" id="2_e810b"]
+[ext_resource type="Texture2D" uid="uid://d1e2k1nj8d0p1" path="res://assets/minigames/wind_platformer/character/run/001.png" id="3_sls4m"]
+[ext_resource type="Texture2D" uid="uid://cs34beod3ce3j" path="res://assets/minigames/wind_platformer/character/run/002.png" id="4_x8qgx"]
+[ext_resource type="Texture2D" uid="uid://djqs4r0ahyu44" path="res://assets/minigames/wind_platformer/character/run/003.png" id="5_xt8ha"]
+[ext_resource type="Texture2D" uid="uid://lot3tpkbxx7w" path="res://assets/minigames/wind_platformer/character/run/004.png" id="6_xs7bh"]
+[ext_resource type="Texture2D" uid="uid://dsfwp6rcudyk1" path="res://assets/minigames/wind_platformer/character/stand/000.png" id="7_68ttx"]
+[ext_resource type="Texture2D" uid="uid://c3q6fmuor5v23" path="res://assets/minigames/wind_platformer/character/run/005.png" id="7_sls4m"]
+[ext_resource type="Texture2D" uid="uid://dix1117cjljul" path="res://assets/minigames/wind_platformer/character/stand/001.png" id="8_0b7bb"]
+[ext_resource type="Texture2D" uid="uid://bjs6bvocnfn1f" path="res://assets/minigames/wind_platformer/character/stand/002.png" id="9_62oln"]
+[ext_resource type="Texture2D" uid="uid://cil6vksb3kqo0" path="res://assets/minigames/wind_platformer/character/stand/003.png" id="10_p0ww4"]
+[ext_resource type="Texture2D" uid="uid://cnk4ej8cyyk87" path="res://assets/minigames/wind_platformer/character/stand/004.png" id="11_d1vcw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkh7d"]
 size = Vector2(32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpnvy"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e810b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sls4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x8qgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xt8ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xs7bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sls4m")
+}],
+"loop": true,
+"name": &"running",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_68ttx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0b7bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_62oln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p0ww4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d1vcw")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 6.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
@@ -47,7 +108,9 @@ polygon = PackedVector2Array(4, -16, -4, -16, 0, -24)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="48xCat" type="Sprite2D" parent="."]
-texture = ExtResource("2_dkh7d")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kpnvy")
+animation = &"running"
+frame_progress = 0.317648
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -21,6 +21,7 @@ var can_dive: bool = true
 @onready var hat: Polygon2D = %Hat
 
 @onready var game: WindPlatformerMinigame = get_parent()
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _physics_process(delta: float) -> void:
@@ -53,15 +54,15 @@ func _physics_process(delta: float) -> void:
 
 	var hor_input = Input.get_axis("left", "right")
 
-	%"Polygon2D Torso".show()
-	%"Polygon2D Torso Dive".hide()
+	#%"Polygon2D Torso".show()
+	#%"Polygon2D Torso Dive".hide()
 
 	if not is_on_ground:
 		var final_gravity: float = gravity
 		if can_dive and Input.is_action_pressed("down"):
 			final_gravity *= 2
-			%"Polygon2D Torso".hide()
-			%"Polygon2D Torso Dive".show()
+			#%"Polygon2D Torso".hide()
+			#%"Polygon2D Torso Dive".show()
 
 		velocity.y += final_gravity * delta
 
@@ -87,6 +88,16 @@ func _physics_process(delta: float) -> void:
 			current_jump_speed = 0
 	else:
 		current_jump_speed = 0
+
+	if is_on_ground:
+		if velocity.x:
+			animated_sprite.play("running")
+			animated_sprite.flip_h = velocity.x > 0
+		else:
+			animated_sprite.play("standing")
+	else:
+		animated_sprite.play("standing")
+		animated_sprite.pause()
 
 	move_and_slide()
 
