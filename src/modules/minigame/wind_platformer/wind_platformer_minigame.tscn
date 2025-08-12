@@ -60,9 +60,6 @@ initial_clouds = 50
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("5_falbm")]
 
-[node name="SharedBaseComponents" parent="MinigameSharedComponents" index="1"]
-allow_popup_menu = null
-
 [connection signal="left_screen" from="Player" to="." method="_on_player_left_screen"]
 
 [editable path="MinigameSharedComponents"]

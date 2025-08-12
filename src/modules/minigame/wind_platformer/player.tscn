@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5gx7hrc8phfj"]
 
-[ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/player.gd" id="1_hjopy"]
+[ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkh7d"]
 size = Vector2(20, 32)
