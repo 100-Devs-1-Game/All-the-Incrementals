@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjfskhoh04d0n"]
+[gd_scene load_steps=4 format=3 uid="uid://cjfskhoh04d0n"]
 
 [ext_resource type="Script" uid="uid://bw8dvte2xqrph" path="res://modules/main/main.gd" id="1_374gq"]
 [ext_resource type="PackedScene" uid="uid://khnsbhc4bqj8" path="res://modules/menu/main_menu.tscn" id="2_qtwxo"]
+[ext_resource type="Script" uid="uid://cdlewuqysh3ik" path="res://modules/main/splash_utils.gd" id="3_dm0cy"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_374gq")
@@ -14,3 +15,12 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="SplashUtils" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_dm0cy")
+metadata/_custom_type_script = "uid://cdlewuqysh3ik"
