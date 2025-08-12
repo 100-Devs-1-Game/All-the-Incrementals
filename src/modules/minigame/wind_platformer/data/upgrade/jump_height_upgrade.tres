@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=8 format=3 uid="uid://xrgrlffqjrcf"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_5mprv"]
+[ext_resource type="Script" uid="uid://dw7inpofcgoc" path="res://modules/minigame/wind_platformer/upgrade_logic.gd" id="2_8ylre"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_k6tw8"]
+[ext_resource type="Resource" uid="uid://ouq23x8ewxpc" path="res://modules/minigame/wind_platformer/data/upgrade/diving_upgrade.tres" id="4_8ylre"]
+[ext_resource type="Resource" uid="uid://b8s4ipwcfdlxa" path="res://modules/minigame/wind_platformer/data/upgrade/move_speed_upgrade.tres" id="5_k6tw8"]
+[ext_resource type="Resource" uid="uid://bso8bd0ijflav" path="res://modules/minigame/wind_platformer/data/upgrade/air_control_upgrade.tres" id="6_ip8yb"]
+
+[sub_resource type="Resource" id="Resource_ip8yb"]
+script = ExtResource("2_8ylre")
+type = 0
+metadata/_custom_type_script = "uid://dw7inpofcgoc"
+
+[resource]
+script = ExtResource("3_k6tw8")
+logic = SubResource("Resource_ip8yb")
+unlocks_feature = ""
+name = "Jump Height"
+flavor = ""
+position = Vector2(-2688, -960)
+cost_arr = Array[ExtResource("1_5mprv")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 10
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([ExtResource("4_8ylre"), ExtResource("5_k6tw8"), ExtResource("6_ip8yb")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

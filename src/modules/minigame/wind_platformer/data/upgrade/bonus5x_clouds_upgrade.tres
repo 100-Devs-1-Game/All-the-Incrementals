@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=5 format=3 uid="uid://dqbedabauyvux"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_naerv"]
+[ext_resource type="Script" uid="uid://dw7inpofcgoc" path="res://modules/minigame/wind_platformer/upgrade_logic.gd" id="2_q21c2"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_nhytw"]
+
+[sub_resource type="Resource" id="Resource_2pigt"]
+script = ExtResource("2_q21c2")
+type = 0
+metadata/_custom_type_script = "uid://dw7inpofcgoc"
+
+[resource]
+script = ExtResource("3_nhytw")
+logic = SubResource("Resource_2pigt")
+unlocks_feature = ""
+name = "5x Clouds"
+flavor = ""
+position = Vector2(-768, 1088)
+cost_arr = Array[ExtResource("1_naerv")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 10
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

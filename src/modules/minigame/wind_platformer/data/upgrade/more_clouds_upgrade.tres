@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=6 format=3 uid="uid://b2ifu34javhc3"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_3q8k3"]
+[ext_resource type="Script" uid="uid://dw7inpofcgoc" path="res://modules/minigame/wind_platformer/upgrade_logic.gd" id="2_1phem"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_gu5b6"]
+[ext_resource type="Resource" uid="uid://cyc8yvxhn34j2" path="res://modules/minigame/wind_platformer/data/upgrade/bonus2x_clouds_upgrade.tres" id="4_1phem"]
+
+[sub_resource type="Resource" id="Resource_imshc"]
+script = ExtResource("2_1phem")
+type = 0
+metadata/_custom_type_script = "uid://dw7inpofcgoc"
+
+[resource]
+script = ExtResource("3_gu5b6")
+logic = SubResource("Resource_imshc")
+unlocks_feature = ""
+name = "More Clouds"
+flavor = ""
+position = Vector2(-2752, 1088)
+cost_arr = Array[ExtResource("1_3q8k3")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 10
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([ExtResource("4_1phem")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1
