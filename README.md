@@ -146,19 +146,30 @@ Thanks goes to all these wonderful people :heart:
 * Codimon
 * ErnestasK760
 * microlancer
+* [Mouse Potato Does Stuff](https://github.com/MousePotatoDoesStuff)
 * Noxalas
 * Rokle
 * [Sarian](https://github.com/SaronTetra)
 * Thaeta-Of-Diamonds
+* UwUMacaroniTime
 * [Zephilinox](https://zephilinox.com/)
+
+### Narrative (in alphabetical order)
+
+* [Chris Smith](christopherrexsmith.com)
 
 ### Operations (in alphabetical order)
 
+* alienteavend
 * Codimon
 * krova
 * microlancer
 * niconorsk
 * [Zephilinox](https://zephilinox.com/)
+
+### QA (in alphabetical order)
+
+* Duncan
 
 ### Sound (in alphabetical order)
 
