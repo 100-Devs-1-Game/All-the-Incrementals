@@ -78,18 +78,10 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 					break
 
 
-func apply_effect(effect: int, amount: int):
-	match effect:
-		0: # Push1
-			print("Push block")
-		1: # Stick
-			print("Stick to block")
-			mass += amount
-			
-		2: # Damage
-			block_health -= amount
-			if block_health <= 0:
-				queue_free()
+func damage(amount: int):
+	block_health -= amount
+	if block_health <= 0:
+		queue_free()
 
 
 func _drop_block():

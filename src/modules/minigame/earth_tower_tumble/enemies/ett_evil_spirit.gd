@@ -2,10 +2,10 @@ extends RigidBody2D
 
 enum behaviours {
 	PUSH,
-	STICK,
 	DAMAGE
 }
 
+var damage_amount: = 5
 var float_speed: = 80.50
 var behaviour: behaviours
 var grabbing: bool = false
@@ -48,11 +48,6 @@ func touched(other):
 		print("Spirit hit")
 		queue_free()
 	elif other.is_in_group("block"):
-		if other.has_method("apply_effect"):
-			if other == target:
-				if behaviour == behaviours.DAMAGE:
-					other.apply_effect(behaviour, 5)
-					queue_free()
-				if behaviour == behaviours.STICK:
-					other.apply_effect(behaviour, 15)
-					queue_free()
+		match behaviour:
+			behaviours.DAMAGE:
+				other.damage(damage_amount)
