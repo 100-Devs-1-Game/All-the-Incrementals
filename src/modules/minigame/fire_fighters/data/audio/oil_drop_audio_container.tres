@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FireFightersMinigameAudioSequence" load_steps=12 format=3 uid="uid://by75lx5d0j0bv"]
+
+[ext_resource type="Script" uid="uid://cbox67urn80lt" path="res://modules/minigame/fire_fighters/components/audio_sequence.gd" id="1_e2os2"]
+[ext_resource type="AudioStream" uid="uid://lcrwt6qtnyaf" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_01.ogg" id="2_qfgsm"]
+[ext_resource type="AudioStream" uid="uid://8nxgmxlit7us" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_02.ogg" id="3_nq6b3"]
+[ext_resource type="AudioStream" uid="uid://dmy28vg07y00i" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_03.ogg" id="4_j8j0x"]
+[ext_resource type="AudioStream" uid="uid://btnteo7teogaq" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_04.ogg" id="5_5ah86"]
+[ext_resource type="AudioStream" uid="uid://bwywpeuivxdte" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_05.ogg" id="6_bt3xu"]
+[ext_resource type="AudioStream" uid="uid://fqq0esifvt7e" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_06.ogg" id="7_hbrqi"]
+[ext_resource type="AudioStream" uid="uid://c4tpbfq2w1gx1" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_07.ogg" id="8_0saci"]
+[ext_resource type="AudioStream" uid="uid://g4ttugmpt7mb" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_08.ogg" id="9_kkadq"]
+[ext_resource type="AudioStream" uid="uid://b1ytpcy5v0pxa" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_09.ogg" id="10_23by6"]
+[ext_resource type="AudioStream" uid="uid://cj6ilc7pfop7w" path="res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_10.ogg" id="11_sdf5l"]
+
+[resource]
+script = ExtResource("1_e2os2")
+streams = Array[AudioStream]([ExtResource("2_qfgsm"), ExtResource("3_nq6b3"), ExtResource("4_j8j0x"), ExtResource("5_5ah86"), ExtResource("6_bt3xu"), ExtResource("7_hbrqi"), ExtResource("8_0saci"), ExtResource("9_kkadq"), ExtResource("10_23by6"), ExtResource("11_sdf5l")])
+metadata/_custom_type_script = "uid://cbox67urn80lt"

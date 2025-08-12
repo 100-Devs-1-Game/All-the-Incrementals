@@ -1,10 +1,12 @@
-[gd_scene load_steps=30 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=34 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_ewfdg"]
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.tscn" id="2_jiygg"]
 [ext_resource type="PackedScene" uid="uid://cwrb3svm6p8o7" path="res://modules/minigame/fire_fighters/effects/fire.tscn" id="3_jxvl4"]
 [ext_resource type="PackedScene" uid="uid://bs75gbk0ui0bp" path="res://modules/minigame/fire_fighters/effects/water.tscn" id="4_q2uva"]
+[ext_resource type="PackedScene" uid="uid://e5yfcw42tsgi" path="res://modules/minigame/fire_fighters/effects/extinguish_effect.tscn" id="5_ewfdg"]
 [ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="6_0qd66"]
+[ext_resource type="PackedScene" uid="uid://d1vt6mwpxr17" path="res://modules/minigame/fire_fighters/effects/explosion_effect.tscn" id="6_jiygg"]
 [ext_resource type="Resource" uid="uid://bsovy80upwnb4" path="res://modules/minigame/fire_fighters/data/map_features/bush.tres" id="7_67ens"]
 [ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/map_features/tree.tres" id="8_2aotl"]
 [ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/map_features/burnt_bush.tres" id="9_j5lxn"]
@@ -19,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://c06xs7256anxh" path="res://modules/minigame/fire_fighters/map/fire_fighters_object.tscn" id="17_bwfd8"]
 [ext_resource type="PackedScene" uid="uid://c7dqt6ar2dixt" path="res://modules/minigame/fire_fighters/effects/water_splash.tscn" id="18_cumqa"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="21_jiygg"]
+[ext_resource type="PackedScene" uid="uid://bdmtajovey0in" path="res://modules/minigame/fire_fighters/components/audio_sequence_container.tscn" id="21_q2uva"]
+[ext_resource type="Resource" uid="uid://by75lx5d0j0bv" path="res://modules/minigame/fire_fighters/data/audio/oil_drop_audio_container.tres" id="22_mtp5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkat1"]
 texture = ExtResource("12_n2xsp")
@@ -71,8 +75,11 @@ script = ExtResource("1_ewfdg")
 player_scene = ExtResource("2_jiygg")
 fire_scene = ExtResource("3_jxvl4")
 water_scene = ExtResource("4_q2uva")
+extinguish_effect_scene = ExtResource("5_ewfdg")
+explosion_effect_scene = ExtResource("6_jiygg")
 map_rect = Rect2i(0, 0, 60, 33)
 map_features = Array[ExtResource("6_0qd66")]([ExtResource("7_67ens"), ExtResource("8_2aotl"), ExtResource("9_j5lxn"), ExtResource("10_8bvf2"), ExtResource("11_ftttk")])
+has_countdown = true
 data_uid = "uid://bqod1tv5hmpgo"
 
 [node name="CanvasLayer Background" type="CanvasLayer" parent="."]
@@ -104,13 +111,28 @@ tile_set = SubResource("TileSet_ymaye")
 script = ExtResource("15_gckvd")
 pickup_scene = ExtResource("16_na7l3")
 object_scene = ExtResource("17_bwfd8")
+spawn_tries = 20
 metadata/_custom_type_script = "uid://bk20clpaekonn"
 
 [node name="EffectsPlayer" type="Node" parent="."]
 script = ExtResource("17_7q2b4")
 water_splash_scene = ExtResource("18_cumqa")
 
+[node name="Audio" type="Node" parent="."]
+
+[node name="AudioContainer Oil" parent="Audio" instance=ExtResource("21_q2uva")]
+sequence = ExtResource("22_mtp5r")
+
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
+
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+anchors_preset = 1
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 40.0
+grow_vertical = 1
+enable_countdown_display = true
 
 [node name="Border" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -138,6 +160,18 @@ shape = SubResource("WorldBoundaryShape2D_q2uva")
 [node name="Items" type="Node" parent="."]
 
 [node name="Effects" type="Node" parent="."]
+
+[node name="Damage Overlay" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="ColorRect" type="ColorRect" parent="Damage Overlay"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.839216, 0, 0.168627, 0.498039)
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]

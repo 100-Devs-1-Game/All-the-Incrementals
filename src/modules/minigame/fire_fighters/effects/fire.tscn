@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwrb3svm6p8o7"]
+[gd_scene load_steps=10 format=3 uid="uid://cwrb3svm6p8o7"]
 
 [ext_resource type="Texture2D" uid="uid://dte4yb53pkgrb" path="res://assets/minigames/fire_fighters/placeholder_assets/fire_animation.png" id="1_bouqu"]
 [ext_resource type="Script" uid="uid://vjrxcjxxc86q" path="res://modules/minigame/fire_fighters/effects/fire.gd" id="1_yis8u"]
+[ext_resource type="AudioStream" uid="uid://ceh3vxx55k6m2" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_small_lp_01.ogg" id="3_ie6vx"]
+[ext_resource type="AudioStream" uid="uid://1ve14jrb4fql" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_big_lp_01.ogg" id="3_r231b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yis8u"]
 atlas = ExtResource("1_bouqu")
@@ -47,3 +49,20 @@ offset = 2.0
 modulate = Color(0.827451, 0.482353, 0.207843, 0.52549)
 sprite_frames = SubResource("SpriteFrames_12iut")
 frame = 3
+
+[node name="AudioStreamPlayer2D Fire Small" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ie6vx")
+volume_db = -12.0
+max_distance = 500.0
+attenuation = 3.36358
+max_polyphony = 10
+panning_strength = 2.0
+
+[node name="AudioStreamPlayer2D Fire Big" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_r231b")
+volume_db = -12.0
+autoplay = true
+max_distance = 500.0
+attenuation = 3.36358
+max_polyphony = 10
+panning_strength = 2.0

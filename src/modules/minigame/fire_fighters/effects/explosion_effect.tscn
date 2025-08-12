@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://d1vt6mwpxr17"]
+
+[ext_resource type="AudioStream" uid="uid://tmtt20bkthj6" path="res://assets/minigames/fire_fighters/sfx/sfx_explosion_01.ogg" id="1_but1a"]
+[ext_resource type="AudioStream" uid="uid://dlq5nbq5bm7h1" path="res://assets/minigames/fire_fighters/sfx/sfx_explosion_02.ogg" id="2_nvjrx"]
+[ext_resource type="AudioStream" uid="uid://d2dia2vwwrekx" path="res://assets/minigames/fire_fighters/sfx/sfx_explosion_03.ogg" id="3_sy1ic"]
+[ext_resource type="AudioStream" uid="uid://b1pcn1grs15nb" path="res://assets/minigames/fire_fighters/sfx/sfx_explosion_04.ogg" id="4_adl4p"]
+[ext_resource type="AudioStream" uid="uid://bd6rsesbvi2ol" path="res://assets/minigames/fire_fighters/sfx/sfx_explosion_05.ogg" id="5_md7vs"]
+[ext_resource type="AudioStream" uid="uid://dcrrok31b4goh" path="res://assets/minigames/fire_fighters/sfx/sfx_explosion_06.ogg" id="6_wfxwm"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fgqp0"]
+streams_count = 6
+stream_0/stream = ExtResource("1_but1a")
+stream_1/stream = ExtResource("2_nvjrx")
+stream_2/stream = ExtResource("3_sy1ic")
+stream_3/stream = ExtResource("4_adl4p")
+stream_4/stream = ExtResource("5_md7vs")
+stream_5/stream = ExtResource("6_wfxwm")
+
+[sub_resource type="Curve" id="Curve_but1a"]
+_data = [Vector2(0.00409836, 0.968872), 0.0, -2.45731, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_nvjrx"]
+offsets = PackedFloat32Array(0, 0.504762, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.857253, 0.623302, 0.358676, 1, 0, 0, 0, 0.764706)
+
+[node name="ExplosionEffect" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_fgqp0")
+autoplay = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+damping_min = 1.0
+damping_max = 2.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_but1a")
+color_ramp = SubResource("Gradient_nvjrx")
+
+[connection signal="ready" from="." to="CPUParticles2D" method="set_emitting" binds= [true]]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="queue_free"]
