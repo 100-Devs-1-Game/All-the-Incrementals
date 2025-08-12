@@ -77,19 +77,52 @@ jobs:
           retention-days: 1
           compression-level: 0
 
-      - name: Test Linux export
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          OUTER_ZIP=$(find "${{ steps.build.outputs.archive_directory }}" -name "linux-export.zip" | head -n 1)
-          mkdir ./outer
-          unzip "$OUTER_ZIP" -d ./outer
+      - name: create release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          generateReleaseNotes: true
+          tag: ${{ github.ref_name }}
+          artifacts: |
+            ${{ steps.build.outputs.archive_directory }}/**/*.zip
 
-          INNER_ZIP=$(find ./outer -name "linux_release.zip" | head -n 1)
+      - name: Deploy to itch.io
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          ./get_butler.sh
+          BUTLER_API_KEY=${{ secrets.BUTLER_API_KEY }} ./butler --verbose push ${{ steps.build.outputs.build_directory }}/web_release ${{ vars.ITCHIO_USERNAME }}/${{ vars.ITCHIO_GAME }}:web
+
+      - name: Send Discord notification
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_RELEASE_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'SpiritKeeper ${{ github.ref_name }} has been released to : https://${{ vars.ITCHIO_USERNAME }}.itch.io/${{ vars.ITCHIO_GAME }} Password: ${{ secrets.ITCHIO_PAGE_PASS }}'
+
+  test-linux-build:
+    needs: build-game
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Linux artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: linux-export
+          path: ./linux-build
+
+      - name: Unzip artifact
+        run: |
+          mkdir ./outer
+          unzip "./linux-build/linux-export.zip" -d ./outer
+
           mkdir ./test_game
-          unzip "$INNER_ZIP" -d ./test_game
+          unzip "$(find ./outer -name linux_release.zip)" -d ./test_game
 
           chmod +x ./test_game/*
 
+      - name: Run tests
+        run: |
           ./test_game/linux_release.x86_64 --headless -d -s addons/gut/gut_cmdln.gd -gexit -gdir=res://tests/unit --render-thread safe --single-threaded-scene --verbose 2>&1 | tee $TEMP_FILE
 
           # This should line up with https://github.com/100-Devs-1-Game/godot-gut-ci/blob/fix/import-gut/init-and-run-tests.sh#L50
@@ -119,27 +152,3 @@ jobs:
           echo "ALL GOOD :) :) :)"
 
           exit 0
-
-      - name: create release
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: ncipollo/release-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          generateReleaseNotes: true
-          tag: ${{ github.ref_name }}
-          artifacts: |
-            ${{ steps.build.outputs.archive_directory }}/**/*.zip
-
-      - name: Deploy to itch.io
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          ./get_butler.sh
-          BUTLER_API_KEY=${{ secrets.BUTLER_API_KEY }} ./butler --verbose push ${{ steps.build.outputs.build_directory }}/web_release ${{ vars.ITCHIO_USERNAME }}/${{ vars.ITCHIO_GAME }}:web
-
-      - name: Send Discord notification
-        if: startsWith(github.ref, 'refs/tags/')
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_RELEASE_WEBHOOK }}
-        uses: Ilshidur/action-discord@master
-        with:
-          args: 'SpiritKeeper ${{ github.ref_name }} has been released to : https://${{ vars.ITCHIO_USERNAME }}.itch.io/${{ vars.ITCHIO_GAME }} Password: ${{ secrets.ITCHIO_PAGE_PASS }}'
