@@ -134,7 +134,7 @@ jobs:
           set -o pipefail
 
           TEMP_FILE=/tmp/test_linux_release.log
-          ./test_game/linux_release.x86_64 --headless --render-thread safe --single-threaded-scene --verbose --quit-after 60 2>&1 | tee $TEMP_FILE
+          ./test_game/linux_release.x86_64 --headless --render-thread safe --single-threaded-scene --verbose --quit-after 1000 2>&1 | tee $TEMP_FILE
 
           # This should line up with https://github.com/100-Devs-1-Game/godot-gut-ci/blob/fix/import-gut/init-and-run-tests.sh#L50
           # Except GUT requires an editor build, so we can't use it in the release? idk
