@@ -24,6 +24,7 @@ func _initialize() -> void:
 
 
 func _start():
+	cloud_spawner.cloud_spawned.connect(_on_cloud_spawned)
 	cloud_spawner.start()
 
 
@@ -90,3 +91,7 @@ func get_force_at(pos: Vector2) -> Vector2:
 func _on_player_left_screen() -> void:
 	if not disable_game_over:
 		game_over()
+
+
+func _on_cloud_spawned(cloud: WindPlatformerMinigameCloudPlatform):
+	cloud.removed.connect(add_score)

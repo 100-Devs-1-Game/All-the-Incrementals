@@ -1,6 +1,8 @@
 class_name WindPlatformerMinigameCloudPlatform
 extends AnimatableBody2D
 
+signal removed
+
 @export var fade_duration: float = 2.5
 
 var speed := randf_range(-50, 50)
@@ -28,6 +30,8 @@ func fade():
 	fade_tween = create_tween()
 	fade_tween.tween_property(self, "modulate", Color.TRANSPARENT, fade_duration)
 	fade_tween.tween_callback(queue_free)
+
+	removed.emit()
 
 
 func _on_player_detection_area_body_entered(_body: Node2D) -> void:

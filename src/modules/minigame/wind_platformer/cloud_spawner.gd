@@ -1,6 +1,8 @@
 class_name WindPlatformerMinigameCloudSpawner
 extends Node2D
 
+signal cloud_spawned(cloud: WindPlatformerMinigameCloudPlatform)
+
 @export var cloud_scene: PackedScene
 @export var clouds_node: Node
 @export var initial_clouds: int = 30
@@ -50,6 +52,7 @@ func spawn_cloud(rect: Rect2, force_direction: int = 0):
 
 	cloud.speed = randf_range(cloud_velocity_range.x, cloud_velocity_range.y) * dir
 	clouds_node.add_child(cloud)
+	cloud_spawned.emit(cloud)
 
 
 func _on_timer_timeout() -> void:
