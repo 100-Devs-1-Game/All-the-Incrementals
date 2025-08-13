@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FireFightersMinigameGasCan" load_steps=3 format=3 uid="uid://cg3lw4fm84srm"]
+
+[ext_resource type="Texture2D" uid="uid://b66085pq2o3yx" path="res://assets/minigames/fire_fighters/placeholder_assets/items/gas_can.png" id="1_ufq23"]
+[ext_resource type="Script" uid="uid://dkpp8p40xhm8i" path="res://modules/minigame/fire_fighters/items/fire_fighters_gas_can.gd" id="2_ufq23"]
+
+[resource]
+script = ExtResource("2_ufq23")
+num_oil_drops = 10
+explosion_radius = 2
+name = "Gas Can"
+type = 0
+icon = ExtResource("1_ufq23")
+metadata/_custom_type_script = "uid://ctpski5ja4jdm"

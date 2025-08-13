@@ -47,7 +47,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 		maybe_fish.queue_free()
 		return
 
-	var maybe_cannon = other_area.get_parent() as WTFJetCannon
+	var maybe_cannon := other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
 		WTFGlobals.minigame.add_score(maybe_cannon.pickup.score)
 		TextFloatSystem.floating_text(

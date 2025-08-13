@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bpaqxlijch4be"]
+
+[ext_resource type="Material" uid="uid://drrgjhrt2ajf2" path="res://assets/overworld/entities/spiritkeeper/spiritkeeper_material_nox.tres" id="1_t6wgg"]
+[ext_resource type="Shader" uid="uid://drnptp7rcdpbm" path="res://assets/overworld/entities/spiritkeeper/xray_shader_3d_nox.gdshader" id="2_wabsa"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_t6wgg")
+shader = ExtResource("2_wabsa")
+shader_parameter/color = Color(0.886275, 0.690196, 0, 0.862745)

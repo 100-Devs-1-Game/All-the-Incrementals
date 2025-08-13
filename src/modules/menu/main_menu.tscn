@@ -1,18 +1,21 @@
 [gd_scene load_steps=6 format=3 uid="uid://khnsbhc4bqj8"]
 
+[ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_e5aks"]
 [ext_resource type="Script" uid="uid://br6m2cbo4864k" path="res://modules/menu/main_menu.gd" id="1_tsonj"]
-[ext_resource type="PackedScene" uid="uid://d1s2rtgxlns3v" path="res://modules/overworld/overworld.tscn" id="2_yldjb"]
-[ext_resource type="PackedScene" uid="uid://4sdp3vpsbo5v" path="res://modules/menu/extras.tscn" id="3_pk52d"]
-[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/settings/off_white_styleboxflat.tres" id="4_e5aks"]
-[ext_resource type="PackedScene" uid="uid://1m18lfvfkax2" path="res://modules/settings/settings.tscn" id="8_dysxh"]
+[ext_resource type="StyleBox" uid="uid://ct2goca0ruxhd" path="res://modules/menu/common/back_panel_stylebox.tres" id="3_e5aks"]
+[ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="3_tsonj"]
+[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="5_e5aks"]
 
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
+offset_left = -3.0
+offset_top = 5.0
+offset_right = 1917.0
+offset_bottom = 1085.0
+theme = ExtResource("1_e5aks")
 script = ExtResource("1_tsonj")
-overworld_scene = ExtResource("2_yldjb")
-extras_scene = ExtResource("3_pk52d")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -22,7 +25,16 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
+[node name="BackPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 599.0
+offset_top = 216.0
+offset_right = 1325.0
+offset_bottom = 898.0
+theme_override_styles/panel = ExtResource("3_e5aks")
+
 [node name="Panel" type="Panel" parent="."]
+material = ExtResource("3_tsonj")
 custom_minimum_size = Vector2(400, 600)
 layout_mode = 1
 anchors_preset = 8
@@ -30,13 +42,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -450.0
-offset_top = -350.0
-offset_right = 450.0
+offset_left = -348.0
+offset_top = -316.0
+offset_right = 364.0
 offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_e5aks")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -45,10 +56,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -199.5
-offset_top = -105.5
-offset_right = 200.5
-offset_bottom = 300.5
+offset_left = -230.0
+offset_top = -267.0
+offset_right = 201.0
+offset_bottom = 301.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -69,25 +80,50 @@ text = "Extras"
 layout_mode = 2
 text = "Quit Game"
 
-[node name="Title" type="Label" parent="Panel"]
+[node name="Title" type="Label" parent="."]
+z_index = 2
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.186
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.186
-offset_left = -231.0
-offset_top = -58.026
-offset_right = 231.0
-offset_bottom = 57.974
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -491.0
+offset_right = 226.0
+offset_bottom = -371.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.813516, 0.667797, 0.151444, 1)
-theme_override_font_sizes/font_size = 85
-text = "Spiritkeeper"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "SpiritKeeper"
+horizontal_alignment = 1
 
-[node name="Settings" parent="." instance=ExtResource("8_dysxh")]
-visible = false
+[node name="Backpnl" type="Panel" parent="Title"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_e5aks")
+
+[node name="Panel" type="Panel" parent="Title"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_e5aks")
 
 [connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

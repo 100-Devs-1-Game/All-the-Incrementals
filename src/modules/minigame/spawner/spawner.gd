@@ -47,9 +47,11 @@ func spawn_generic_node_at_position(global_position: Vector2) -> void:
 
 func spawn_at_position(node: Node, global_position: Vector2) -> void:
 	if _max_spawned_at_once >= 0 and _add_child_to.get_child_count() >= _max_spawned_at_once:
+		node.queue_free()
 		return
 
 	if _max_spawned_total >= 0 and _spawned_total >= _max_spawned_total:
+		node.queue_free()
 		return
 
 	_spawned_total += 1

@@ -1,5 +1,5 @@
 class_name EphYoungling
-extends TopDown2DCharacterController
+extends Td2dCCWithAcceleration
 
 @export var _time_to_grow: float = 10
 @export var _state_machine: StateMachine
@@ -22,7 +22,23 @@ var _time_young: float = 0
 
 func grow_up() -> void:
 	eph_adult_spawner.spawn_generic_node_at_position(global_position)
-	queue_free()
+	despawn()
+
+
+func start_herd_by_player() -> void:
+	_state_machine.change_state("herd_by_player")
+
+
+func stop_herd_by_player() -> void:
+	_state_machine.change_state("free_roam")
+
+
+func despawn() -> void:
+	#if get_tree().get_nodes_in_group("potatoes").size() == 1:
+	# Last potato standing, it's game over
+	#mini_game.trigger_game_over.emit()
+
+	super()
 
 
 #endregion
@@ -32,6 +48,7 @@ func grow_up() -> void:
 
 func _ready() -> void:
 	mini_game = get_tree().get_first_node_in_group("earth_potato_herding")
+	$Sprite.play("default")
 
 
 func _physics_process(delta: float) -> void:
@@ -42,19 +59,8 @@ func _physics_process(delta: float) -> void:
 		_state_machine.change_state("grow_up")
 
 
-func _on_youngling_saw_player_area_area_entered(_area: Area2D) -> void:
-	_state_machine.change_state("herd_by_player")
-
-
-func _on_youngling_saw_player_area_area_exited(_area: Area2D) -> void:
-	_state_machine.change_state("free_roam")
-
-
 func _on_youngling_saw_spirit_body_entered(body: Node2D) -> void:
-	if get_tree().get_nodes_in_group("potatoes").size() == 1:
-		# Last potato standing, it's game over
-		mini_game.trigger_game_over.emit()
-	body.queue_free()
-	self.queue_free()
+	body.grab_youngling(self)  #queue_free()
+	#despawn()
 
 #endregion

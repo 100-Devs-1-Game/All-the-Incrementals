@@ -1,0 +1,95 @@
+[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://bvva1qjrsfn36"]
+
+[ext_resource type="Texture2D" uid="uid://b8r0n3re1ohrt" path="res://assets/overworld/vfx/elements_anim/earth/black/000.webp" id="1_ndfkx"]
+[ext_resource type="Texture2D" uid="uid://blh2gtmhjc10h" path="res://assets/overworld/vfx/elements_anim/earth/black/001.webp" id="2_du6hc"]
+[ext_resource type="Texture2D" uid="uid://duxx74bhy6req" path="res://assets/overworld/vfx/elements_anim/earth/black/002.webp" id="3_eq2jm"]
+[ext_resource type="Texture2D" uid="uid://f8fixt4dravk" path="res://assets/overworld/vfx/elements_anim/earth/black/003.webp" id="4_hcvof"]
+[ext_resource type="Texture2D" uid="uid://doqha0mvpyklf" path="res://assets/overworld/vfx/elements_anim/earth/black/004.webp" id="5_tbrce"]
+[ext_resource type="Texture2D" uid="uid://b1n0speadrm0" path="res://assets/overworld/vfx/elements_anim/earth/black/005.webp" id="6_r14b4"]
+[ext_resource type="Texture2D" uid="uid://cp8byjfterl4o" path="res://assets/overworld/vfx/elements_anim/earth/black/006.webp" id="7_mocjb"]
+[ext_resource type="Texture2D" uid="uid://b7kpljb7dhveh" path="res://assets/overworld/vfx/elements_anim/earth/black/007.webp" id="8_xsgna"]
+[ext_resource type="Texture2D" uid="uid://b15d01s8jgutf" path="res://assets/overworld/vfx/elements_anim/earth/black/008.webp" id="9_eav27"]
+[ext_resource type="Texture2D" uid="uid://dkllt4qbxfhq" path="res://assets/overworld/vfx/elements_anim/earth/black/009.webp" id="10_w7vhw"]
+[ext_resource type="Texture2D" uid="uid://beyg4v8agi77q" path="res://assets/overworld/vfx/elements_anim/earth/colored/000.webp" id="11_huxe5"]
+[ext_resource type="Texture2D" uid="uid://cwpkx030qi2xv" path="res://assets/overworld/vfx/elements_anim/earth/colored/001.webp" id="12_woqkh"]
+[ext_resource type="Texture2D" uid="uid://dt6offsujo4vs" path="res://assets/overworld/vfx/elements_anim/earth/colored/002.webp" id="13_da8nf"]
+[ext_resource type="Texture2D" uid="uid://bfs5i1teii2ku" path="res://assets/overworld/vfx/elements_anim/earth/colored/003.webp" id="14_gy07d"]
+[ext_resource type="Texture2D" uid="uid://rn2jhudob0t5" path="res://assets/overworld/vfx/elements_anim/earth/colored/004.webp" id="15_58w2i"]
+[ext_resource type="Texture2D" uid="uid://b2w261c4ttut6" path="res://assets/overworld/vfx/elements_anim/earth/colored/005.webp" id="16_w4woh"]
+[ext_resource type="Texture2D" uid="uid://cday6jdddxbjs" path="res://assets/overworld/vfx/elements_anim/earth/colored/006.webp" id="17_ues6k"]
+[ext_resource type="Texture2D" uid="uid://c54nmalwvwcks" path="res://assets/overworld/vfx/elements_anim/earth/colored/007.webp" id="18_afcdq"]
+[ext_resource type="Texture2D" uid="uid://dd5db30fr8gft" path="res://assets/overworld/vfx/elements_anim/earth/colored/008.webp" id="19_3vm6p"]
+[ext_resource type="Texture2D" uid="uid://sve144v2ujk7" path="res://assets/overworld/vfx/elements_anim/earth/colored/009.webp" id="20_tdwdu"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ndfkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_du6hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eq2jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hcvof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tbrce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r14b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mocjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xsgna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eav27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w7vhw")
+}],
+"loop": true,
+"name": &"black",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_huxe5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_woqkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_da8nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gy07d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_58w2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w4woh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ues6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_afcdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3vm6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tdwdu")
+}],
+"loop": true,
+"name": &"colored",
+"speed": 12.0
+}]

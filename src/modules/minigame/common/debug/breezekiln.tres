@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_kv45f")
-func_or_path = "res://modules/overworld_locations/breezekiln/breezekiln.tscn"
+func_or_path = "debug_enter_breezekiln"
 hotkey = "b"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"

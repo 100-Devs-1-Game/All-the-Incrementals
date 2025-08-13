@@ -15,7 +15,8 @@ var _update_point_on_every_call: bool = false
 
 func set_point_generator(new_point_generator: PointGenerator) -> TD2DCMDSGoToPoint:
 	_point_generator = new_point_generator
-	select_new_point()
+	# Call deferred is used to ensure that all nodes in point generator is ready
+	call_deferred("select_new_point")
 	return self
 
 

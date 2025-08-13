@@ -1,21 +1,67 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu668uskhmtud"]
+[gd_scene load_steps=17 format=3 uid="uid://bu668uskhmtud"]
 
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_y7bht"]
 [ext_resource type="Script" uid="uid://d221xrf858pj6" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.gd" id="2_42r0g"]
 [ext_resource type="Script" uid="uid://crcm3yjgpr1fo" path="res://modules/minigame/top_down_2d_controllers/strategies/move_direction_strategy/td_2d_c_mds_input.gd" id="3_xdom8"]
 [ext_resource type="Script" uid="uid://dgxvmcif1cdcd" path="res://modules/minigame/earth_potato_herding/eph_player/states/walk.gd" id="4_kub1s"]
+[ext_resource type="Texture2D" uid="uid://bdv75dr4ln3hw" path="res://assets/minigames/fire_fighters/character/down_01.png" id="5_63sd7"]
+[ext_resource type="Shader" uid="uid://cbdnos7wwo6gl" path="res://modules/minigame/earth_potato_herding/eph_player/circle.gdshader" id="5_hpfm4"]
+[ext_resource type="Texture2D" uid="uid://co2rfbkel1kyc" path="res://assets/minigames/fire_fighters/character/left_01.png" id="6_ntfs8"]
+[ext_resource type="Texture2D" uid="uid://u8lymqspkvwj" path="res://assets/minigames/fire_fighters/character/right_01.png" id="7_8yr16"]
+[ext_resource type="Texture2D" uid="uid://cp2uorwwbsndv" path="res://assets/minigames/fire_fighters/character/up_01.png" id="8_xad13"]
 
 [sub_resource type="Resource" id="Resource_kub1s"]
 script = ExtResource("3_xdom8")
 metadata/_custom_type_script = "uid://crcm3yjgpr1fo"
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfwjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_63sd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ntfs8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8yr16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xad13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kub1s"]
-radius = 128.062
+radius = 116.069
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hpfm4"]
 radius = 125.897
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ho6ah"]
+resource_local_to_scene = true
+shader = ExtResource("5_hpfm4")
+shader_parameter/min_radius = 20.5
+shader_parameter/size = 6.5
+shader_parameter/color = Color(0.725863, 0.73, 0.6059, 0.294118)
+
+[sub_resource type="Gradient" id="Gradient_63sd7"]
+offsets = PackedFloat32Array(0.461039, 0.506494)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ntfs8"]
+gradient = SubResource("Gradient_63sd7")
+width = 500
+height = 500
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 1)
+metadata/_snap_count = 14
+
 [node name="EPHPlayer" instance=ExtResource("1_y7bht")]
+collision_layer = 1
+collision_mask = 1
 script = ExtResource("2_42r0g")
 _base_speed = Vector2(300, 300)
 _move_direction_strategy = SubResource("Resource_kub1s")
@@ -28,11 +74,17 @@ _start_state = NodePath("Walk")
 script = ExtResource("4_kub1s")
 state_name = "walk"
 
+[node name="Sprite" parent="." index="2"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_gfwjq")
+
 [node name="YounglingHerdArea" type="Area2D" parent="." index="3"]
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YounglingHerdArea" index="0"]
+visible = false
 shape = SubResource("CircleShape2D_kub1s")
 metadata/_edit_lock_ = true
 
@@ -42,7 +94,15 @@ collision_mask = 4
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EvilSpiritRepelArea" index="0"]
+visible = false
 shape = SubResource("CircleShape2D_hpfm4")
 metadata/_edit_lock_ = true
 
+[node name="HerdCircle" type="Sprite2D" parent="." index="5"]
+material = SubResource("ShaderMaterial_ho6ah")
+texture = SubResource("GradientTexture2D_ntfs8")
+
+[connection signal="body_entered" from="YounglingHerdArea" to="." method="_on_youngling_herd_area_body_entered"]
+[connection signal="body_exited" from="YounglingHerdArea" to="." method="_on_youngling_herd_area_body_exited"]
 [connection signal="body_entered" from="EvilSpiritRepelArea" to="." method="_on_evil_spirit_repel_area_body_entered"]
+[connection signal="body_exited" from="EvilSpiritRepelArea" to="." method="_on_evil_spirit_repel_area_body_exited"]

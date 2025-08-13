@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=22 format=3 uid="uid://bqtfsjuog7hvf"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_vc0oj"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_coq1h"]
+[ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="2_orrmm"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_coq1h"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_gtktl"]
+[ext_resource type="Resource" uid="uid://bi5yekv4513o2" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_initial_speed_t3.tres" id="6_gtktl"]
+[ext_resource type="Resource" uid="uid://cmvn2e4uha13q" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_speedboost_mult_t2.tres" id="7_iwhwk"]
+[ext_resource type="Resource" uid="uid://brpuiog1pnfdl" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_speedboost_flat_t2.tres" id="8_knfnd"]
+
+[sub_resource type="Resource" id="Resource_iwhwk"]
+script = ExtResource("2_coq1h")
+essence = ExtResource("3_gtktl")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_knfnd"]
+script = ExtResource("1_vc0oj")
+earth = 0
+fire = 0
+water = 10
+wind = 0
+slots = Array[ExtResource("2_coq1h")]([SubResource("Resource_iwhwk")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_pdg2o"]
+script = ExtResource("2_coq1h")
+essence = ExtResource("3_gtktl")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_0l1jd"]
+script = ExtResource("1_vc0oj")
+earth = 0
+fire = 0
+water = 10
+wind = 0
+slots = Array[ExtResource("2_coq1h")]([SubResource("Resource_pdg2o")])
+
+[sub_resource type="Resource" id="Resource_xbh1d"]
+script = ExtResource("2_coq1h")
+essence = ExtResource("3_gtktl")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_ij0o4"]
+script = ExtResource("1_vc0oj")
+earth = 0
+fire = 0
+water = 100
+wind = 0
+slots = Array[ExtResource("2_coq1h")]([SubResource("Resource_xbh1d")])
+
+[sub_resource type="Resource" id="Resource_uajgw"]
+script = ExtResource("2_coq1h")
+essence = ExtResource("3_gtktl")
+amount = 1000
+
+[sub_resource type="Resource" id="Resource_nfbsk"]
+script = ExtResource("1_vc0oj")
+earth = 0
+fire = 0
+water = 1000
+wind = 0
+slots = Array[ExtResource("2_coq1h")]([SubResource("Resource_uajgw")])
+
+[sub_resource type="Resource" id="Resource_lm3bg"]
+script = ExtResource("2_coq1h")
+essence = ExtResource("3_gtktl")
+amount = 10000
+
+[sub_resource type="Resource" id="Resource_den4y"]
+script = ExtResource("1_vc0oj")
+earth = 0
+fire = 0
+water = 10000
+wind = 0
+slots = Array[ExtResource("2_coq1h")]([SubResource("Resource_lm3bg")])
+
+[sub_resource type="Resource" id="Resource_evkqh"]
+script = ExtResource("2_coq1h")
+essence = ExtResource("3_gtktl")
+amount = 100000
+
+[sub_resource type="Resource" id="Resource_8am2f"]
+script = ExtResource("1_vc0oj")
+earth = 0
+fire = 0
+water = 100000
+wind = 0
+slots = Array[ExtResource("2_coq1h")]([SubResource("Resource_evkqh")])
+
+[sub_resource type="Resource" id="Resource_gtktl"]
+script = ExtResource("2_orrmm")
+type = 5
+metadata/_custom_type_script = "uid://82mjh0pcfce8"
+
+[resource]
+script = ExtResource("3_coq1h")
+logic = SubResource("Resource_gtktl")
+unlocks_feature = ""
+name = "++ Starting Speed"
+flavor = ""
+position = Vector2(1536, 2304)
+cost_arr = Array[ExtResource("1_vc0oj")]([SubResource("Resource_0l1jd"), SubResource("Resource_ij0o4"), SubResource("Resource_nfbsk"), SubResource("Resource_den4y"), SubResource("Resource_8am2f")])
+effect_modifier_arr = Array[float]([3.0, 6.0, 9.0, 12.0, 15.0])
+max_level = 5
+base_cost = SubResource("Resource_knfnd")
+base_cost_multiplier = 10.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 3.0
+effect_modifier_multiplier = 3.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([ExtResource("6_gtktl"), ExtResource("7_iwhwk"), ExtResource("8_knfnd")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

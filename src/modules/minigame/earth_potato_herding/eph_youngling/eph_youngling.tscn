@@ -1,20 +1,117 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqkes8pccdkns"]
+[gd_scene load_steps=22 format=3 uid="uid://cqkes8pccdkns"]
 
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_t88fu"]
 [ext_resource type="Script" uid="uid://5sducby6jjy2" path="res://modules/minigame/earth_potato_herding/eph_youngling/eph_youngling.gd" id="2_jfyq0"]
 [ext_resource type="Script" uid="uid://yvbn3tb5btx4" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/free_roam.gd" id="3_er4gq"]
 [ext_resource type="Script" uid="uid://bbm78i0skoycb" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/grow_up.gd" id="4_0tlpl"]
 [ext_resource type="Script" uid="uid://rjac1382vllh" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/herd_by_player.gd" id="4_d7cqi"]
+[ext_resource type="Texture2D" uid="uid://bpidcu8v3dgal" path="res://assets/minigames/earth_potato_herding/baby_potato_spritesheet.webp" id="6_58i80"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58i80"]
+radius = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo4fq"]
+atlas = ExtResource("6_58i80")
+region = Rect2(0, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14e6o"]
+atlas = ExtResource("6_58i80")
+region = Rect2(69, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbtsg"]
+atlas = ExtResource("6_58i80")
+region = Rect2(138, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwk1b"]
+atlas = ExtResource("6_58i80")
+region = Rect2(207, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do3rt"]
+atlas = ExtResource("6_58i80")
+region = Rect2(276, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqirp"]
+atlas = ExtResource("6_58i80")
+region = Rect2(345, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_albwd"]
+atlas = ExtResource("6_58i80")
+region = Rect2(414, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ult5u"]
+atlas = ExtResource("6_58i80")
+region = Rect2(483, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fhfq"]
+atlas = ExtResource("6_58i80")
+region = Rect2(552, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m8gk"]
+atlas = ExtResource("6_58i80")
+region = Rect2(621, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mseft"]
+atlas = ExtResource("6_58i80")
+region = Rect2(690, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc28y"]
+atlas = ExtResource("6_58i80")
+region = Rect2(759, 0, 69, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7gdob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oo4fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14e6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbtsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwk1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do3rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqirp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_albwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ult5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fhfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6m8gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mseft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc28y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0tlpl"]
-radius = 66.0076
+radius = 20.025
 
 [node name="EPHYoungling" node_paths=PackedStringArray("_state_machine") groups=["potatoes"] instance=ExtResource("1_t88fu")]
 collision_layer = 2
 script = ExtResource("2_jfyq0")
-_time_to_grow = 10.0
+_time_to_grow = 60.0
 _state_machine = NodePath("StateMachine")
-_base_speed = Vector2(50, 50)
+_base_acceleration = Vector2(800, 800)
+_base_speed = Vector2(100, 100)
 
 [node name="StateMachine" parent="." index="0" node_paths=PackedStringArray("_states", "_start_state")]
 _states = [NodePath("FreeRoam"), NodePath("HerdByPlayer"), NodePath("GrowUp")]
@@ -32,22 +129,20 @@ state_name = "herd_by_player"
 script = ExtResource("4_0tlpl")
 state_name = "grow_up"
 
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_58i80")
+
 [node name="Sprite" parent="." index="2"]
-self_modulate = Color(0.231373, 1, 0.2, 1)
+position = Vector2(4.76837e-07, -1)
+scale = Vector2(0.778466, 0.778466)
+sprite_frames = SubResource("SpriteFrames_7gdob")
+frame_progress = 0.877154
 
-[node name="YounglingSawPlayerArea" type="Area2D" parent="." index="3"]
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YounglingSawPlayerArea" index="0"]
-shape = SubResource("CircleShape2D_0tlpl")
-
-[node name="YounglingSawSpirit" type="Area2D" parent="." index="4"]
+[node name="YounglingSawSpirit" type="Area2D" parent="." index="3"]
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YounglingSawSpirit" index="0"]
 shape = SubResource("CircleShape2D_0tlpl")
 
-[connection signal="area_entered" from="YounglingSawPlayerArea" to="." method="_on_youngling_saw_player_area_area_entered"]
-[connection signal="area_exited" from="YounglingSawPlayerArea" to="." method="_on_youngling_saw_player_area_area_exited"]
 [connection signal="body_entered" from="YounglingSawSpirit" to="." method="_on_youngling_saw_spirit_body_entered"]

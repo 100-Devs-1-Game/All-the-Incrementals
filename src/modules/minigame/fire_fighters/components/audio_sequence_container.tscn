@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdmtajovey0in"]
+
+[ext_resource type="Script" uid="uid://b6esr8ow11oty" path="res://modules/minigame/fire_fighters/components/audio_sequence_container.gd" id="1_urd8s"]
+
+[node name="Audio Sequence Container" type="Node" node_paths=PackedStringArray("players")]
+script = ExtResource("1_urd8s")
+players = [NodePath("AudioStreamPlayer"), NodePath("AudioStreamPlayer2"), NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer4")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]

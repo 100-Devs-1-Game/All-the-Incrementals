@@ -1,0 +1,297 @@
+[gd_scene load_steps=17 format=3 uid="uid://dntdim0jjlhy1"]
+
+[ext_resource type="Script" uid="uid://drfyahgpyskxs" path="res://modules/upgrade/ui/upgrade_tree.gd" id="1_bc6uk"]
+[ext_resource type="Texture2D" uid="uid://cd5q04o2ysdg5" path="res://assets/ui/upgrade_tree/fire_on.webp" id="4_4prp1"]
+[ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/lineart1.webp" id="5_yvn7f"]
+[ext_resource type="Texture2D" uid="uid://dt2e36f2dyeda" path="res://assets/icons/glowing_wind_skn.png" id="6_ele8a"]
+[ext_resource type="Script" uid="uid://dwlrgoard8eqa" path="res://modules/upgrade/ui/fill_button.gd" id="6_yvn7f"]
+[ext_resource type="PackedScene" uid="uid://yehkf7i1dt50" path="res://component/shared/current_essence.tscn" id="7_vxjcf"]
+[ext_resource type="Script" uid="uid://dcajbb2nsjenl" path="res://modules/upgrade/ui/upgrade_tree_camera.gd" id="8_bc6uk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_48wnc"]
+size = Vector2(500, 500)
+orientation = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqp8f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt4jk"]
+bg_color = Color(0.862745, 0.670588, 0.443137, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4prp1"]
+bg_color = Color(0.909804, 0.168627, 0.0745098, 0)
+
+[sub_resource type="Curve" id="Curve_yvn7f"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.492414, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.97011, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vxjcf"]
+curve = SubResource("Curve_yvn7f")
+
+[sub_resource type="Gradient" id="Gradient_yvn7f"]
+offsets = PackedFloat32Array(0.116448, 0.432314, 0.737991, 1)
+colors = PackedColorArray(1, 0.124999, 0.0700735, 1, 2.11775e-06, 0.66466, 0.920357, 1, 0.272183, 0.7304, 0, 1, 1, 0.23175, 0.800056, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vxjcf"]
+gradient = SubResource("Gradient_yvn7f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bc6uk"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 1, 1)
+angle_min = 200.0
+angle_max = 330.0
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 184.57
+initial_velocity_max = 294.0
+angular_velocity_min = 0.999984
+angular_velocity_max = 3.99998
+gravity = Vector3(0, 98, 0)
+scale_min = 4.0
+scale_max = 7.0
+color_initial_ramp = SubResource("GradientTexture1D_vxjcf")
+alpha_curve = SubResource("CurveTexture_vxjcf")
+
+[node name="UpgradeTree" type="Node"]
+script = ExtResource("1_bc6uk")
+upgrade_folder_path = "res://modules/minigame/example/upgrades"
+center_texture = ExtResource("6_ele8a")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.832915, 0.781549, 0.73108, 1)
+scale = Vector2(500, 500)
+mesh = SubResource("PlaneMesh_48wnc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 2
+script = ExtResource("8_bc6uk")
+
+[node name="Lines" type="Node2D" parent="."]
+
+[node name="Upgrades" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HintsContainer" type="MarginContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -95.0
+offset_bottom = 95.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 40
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/UI/HintsContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vqp8f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UI/HintsContainer/Panel"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[img=40]res://assets/ui/mouse_m.webp[/img] ZOOM
+[img=40]res://assets/ui/mouse_r.webp[/img] MOVE
+[img=40]res://assets/ui/mouse_l.webp[/img] SELECT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="UpgradeInfoContainer" type="MarginContainer" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -320.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UI/UpgradeInfoContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nt4jk")
+
+[node name="RContainer" type="VBoxContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = -11
+
+[node name="LevelInfo" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[font_size=80]3/5
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="MC" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -85
+theme_override_constants/margin_right = 155
+
+[node name="HC" type="HBoxContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC"]
+layout_mode = 2
+
+[node name="Cost" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[font_size=50]Cost:
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="CostInfo" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC"]
+custom_minimum_size = Vector2(250, 280)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[font_size=50][img=50]res://assets/icons/glowing_fire_skn.png[/img]500
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="LContainer" type="VBoxContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = -11
+
+[node name="NameInfo" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[font_size=80]Speed
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="DescriptionInfo" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer"]
+custom_minimum_size = Vector2(580, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[font_size=28]bla bla bla bla bla bla bla bla bla bal bla bla bla bla bla bla bla bla bla bla bla bla bvla fdhgi sdfhgkjdsh fgkjlshdf gkjsdhfgkjsdh fjksdh
+"
+scroll_active = false
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -50
+theme_override_constants/margin_bottom = -35
+
+[node name="UpgradeBackground" type="TextureRect" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/MarginContainer2"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("4_4prp1")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="LineArt" type="TextureRect" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/MarginContainer2/UpgradeBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_yvn7f")
+
+[node name="MarginButton" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_top = -35
+theme_override_constants/margin_right = 600
+theme_override_constants/margin_bottom = 0
+
+[node name="FillButton" type="Control" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton"]
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("6_yvn7f")
+
+[node name="UpgradeButton" type="Button" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
+z_index = 4096
+z_as_relative = false
+layout_mode = 2
+offset_right = 420.0
+offset_bottom = 50.0
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4prp1")
+text = "BUY UPGRADE"
+
+[node name="NormalColor" type="ColorRect" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
+layout_mode = 2
+offset_right = 420.0
+offset_bottom = 50.0
+mouse_filter = 2
+color = Color(1, 0.214969, 0.44438, 1)
+
+[node name="Filler" type="ColorRect" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
+layout_mode = 0
+offset_bottom = 50.0
+mouse_filter = 2
+color = Color(6.73831e-07, 0.65816, 0.653388, 1)
+
+[node name="Particles" type="GPUParticles2D" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
+position = Vector2(210, 0)
+emitting = false
+amount = 200
+one_shot = true
+explosiveness = 0.9
+randomness = 0.15
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bc6uk")
+
+[node name="CurrentEssence" parent="CanvasLayer/UI" instance=ExtResource("7_vxjcf")]
+layout_mode = 1
+
+[connection signal="fill_complete" from="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton" to="." method="_on_fill_button_fill_complete"]

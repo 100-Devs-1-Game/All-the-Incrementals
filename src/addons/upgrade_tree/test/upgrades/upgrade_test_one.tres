@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=6 format=3 uid="uid://3jirvwm784l2"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=5 format=3 uid="uid://3jirvwm784l2"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_iyquk"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_h5kgm"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_iyquk"]
-[ext_resource type="Script" uid="uid://dyq4tvwv4ovr1" path="res://modules/upgrade/base_upgrade.gd" id="3_iyquk"]
 [ext_resource type="Resource" uid="uid://cb8jw3hov4rgw" path="res://addons/upgrade_tree/test/upgrades/upgrade_test_two.tres" id="5_iyquk"]
 
 [resource]
@@ -17,11 +16,13 @@ cost_arr = Array[ExtResource("1_iyquk")]([])
 effect_modifier_arr = Array[float]([])
 max_level = 0
 base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
 base_effect_modifier = 0.0
 effect_modifier_multiplier = 0.0
 unlocked = false
 unlock_level = 0
-unlocks = Array[ExtResource("3_iyquk")]([ExtResource("5_iyquk")])
+unlocks = Array[Resource]([ExtResource("5_iyquk")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0

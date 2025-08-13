@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://coro8piwlirg2"]
+
+[ext_resource type="Script" uid="uid://cisfp72boumnu" path="res://modules/minigame/wind_platformer/cloud_spawner.gd" id="1_pnlyi"]
+[ext_resource type="PackedScene" uid="uid://bpbxl634kt5sd" path="res://modules/minigame/wind_platformer/cloud_platform.tscn" id="2_tkmho"]
+
+[node name="Cloud Spawner" type="Node2D"]
+script = ExtResource("1_pnlyi")
+cloud_scene = ExtResource("2_tkmho")
+initial_clouds = 0
+cloud_velocity_range = Vector2(10, 50)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

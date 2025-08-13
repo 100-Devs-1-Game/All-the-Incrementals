@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://iy2lu8ho3nio"]
+
+[ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_fyi5s"]
+[ext_resource type="Script" uid="uid://ctdbyp0m6dy8i" path="res://modules/menu/highscores.gd" id="2_xi8kf"]
+[ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="3_35adv"]
+[ext_resource type="StyleBox" uid="uid://ct2goca0ruxhd" path="res://modules/menu/common/back_panel_stylebox.tres" id="3_xi8kf"]
+[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="4_35adv"]
+[ext_resource type="Theme" uid="uid://bdm544cuwxbre" path="res://modules/settings/settings_theme.tres" id="6_35adv"]
+
+[node name="Highscores" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_fyi5s")
+script = ExtResource("2_xi8kf")
+
+[node name="BackPanel" type="Panel" parent="."]
+offset_left = 729.0
+offset_top = 236.0
+offset_right = 1175.0
+offset_bottom = 655.0
+theme_override_styles/panel = ExtResource("3_xi8kf")
+
+[node name="HighScoresLabel" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 734.0
+offset_top = 49.0
+offset_right = 1186.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "High Scores"
+horizontal_alignment = 1
+
+[node name="Backpnl" type="Panel" parent="HighScoresLabel"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_xi8kf")
+
+[node name="Panel" type="Panel" parent="HighScoresLabel"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_35adv")
+
+[node name="ScoresPanel" type="Panel" parent="."]
+material = ExtResource("3_35adv")
+layout_mode = 0
+offset_left = 734.0
+offset_top = 244.0
+offset_right = 1174.0
+offset_bottom = 655.0
+
+[node name="Scores" type="VBoxContainer" parent="ScoresPanel"]
+custom_minimum_size = Vector2(440, 411)
+layout_mode = 2
+offset_top = 2.0
+offset_right = 440.0
+offset_bottom = 413.0
+theme = ExtResource("6_35adv")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 570.0
+offset_right = 1019.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://c83vkptbsgc61"]
+
+[ext_resource type="Script" uid="uid://cscelbquidnbf" path="res://modules/minigame/water_rowing_rapids/player/ui/rowing_ui.gd" id="1_f7fqh"]
+
+[sub_resource type="Gradient" id="Gradient_f7fqh"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.541176)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u0vh0"]
+gradient = SubResource("Gradient_f7fqh")
+
+[sub_resource type="Gradient" id="Gradient_plesl"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0.584314, 0.360784, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uw4na"]
+gradient = SubResource("Gradient_plesl")
+
+[node name="RowingUI" type="Control" node_paths=PackedStringArray("stability_bar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f7fqh")
+stability_bar = NodePath("StabilityBar")
+
+[node name="Panel" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -120.0
+offset_right = 324.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.490196)
+
+[node name="GoodZone" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_right = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 1, 0.341176, 1)
+
+[node name="Point" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0.392157, 1)
+
+[node name="StabilityBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -148.0
+offset_right = 324.0
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_u0vh0")
+texture_progress = SubResource("GradientTexture2D_uw4na")

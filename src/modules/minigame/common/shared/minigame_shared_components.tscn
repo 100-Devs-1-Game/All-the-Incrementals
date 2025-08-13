@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://4sywdwm7ofk2"]
+[gd_scene load_steps=8 format=3 uid="uid://4sywdwm7ofk2"]
 
 [ext_resource type="Script" uid="uid://5a31xjos7p8k" path="res://modules/minigame/common/shared/minigame_shared.gd" id="1_77b54"]
 [ext_resource type="PackedScene" uid="uid://qofcdmvxcelc" path="res://modules/minigame/common/debug/debug_minigame_upgrades.tscn" id="3_v3xib"]
@@ -6,14 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://be3qx1qjfoh8d" path="res://component/shared/shared_base_components.tscn" id="4_n4jqe"]
 [ext_resource type="PackedScene" uid="uid://dfgybu1xb5gr0" path="res://modules/menu/minigame_menu.tscn" id="5_6lpn0"]
 [ext_resource type="PackedScene" uid="uid://chd6mr5uxua70" path="res://modules/minigame/common/shared/minigame_overlay.tscn" id="6_dbpkc"]
+[ext_resource type="PackedScene" uid="uid://iy2lu8ho3nio" path="res://modules/menu/highscores.tscn" id="7_dpum2"]
 
-[node name="MinigameSharedComponents" type="Node" node_paths=PackedStringArray("debug_popup", "game_popup_menu", "minigame_menu", "minigame_overlay")]
+[node name="MinigameSharedComponents" type="Node" node_paths=PackedStringArray("debug_popup", "minigame_menu", "minigame_highscores", "minigame_overlay", "debug_minigame_upgrades")]
 process_mode = 3
 script = ExtResource("1_77b54")
 debug_popup = NodePath("SharedBaseComponents/CanvasLayer/DebugPopup")
-game_popup_menu = NodePath("SharedBaseComponents/CanvasLayer/PopupMenu")
 minigame_menu = NodePath("SharedBaseComponents/CanvasLayer/MinigameMenu")
+minigame_highscores = NodePath("SharedBaseComponents/CanvasLayer/Highscores")
 minigame_overlay = NodePath("SharedBaseComponents/CanvasLayer/MinigameOverlay")
+debug_minigame_upgrades = NodePath("DebugMinigameUpgrades")
 
 [node name="DebugMinigameUpgrades" parent="." node_paths=PackedStringArray("debug_popup") instance=ExtResource("3_v3xib")]
 debug_popup = NodePath("../SharedBaseComponents/CanvasLayer/DebugPopup")
@@ -21,13 +23,17 @@ debug_popup = NodePath("../SharedBaseComponents/CanvasLayer/DebugPopup")
 [node name="SharedBaseComponents" parent="." instance=ExtResource("4_n4jqe")]
 
 [node name="MinigameMenu" parent="SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("pause") instance=ExtResource("5_6lpn0")]
+visible = false
 pause = NodePath("../../Pause")
 
-[node name="DebugPopup" parent="SharedBaseComponents/CanvasLayer" index="1"]
+[node name="Highscores" parent="SharedBaseComponents/CanvasLayer" index="1" instance=ExtResource("7_dpum2")]
+visible = false
+
+[node name="DebugPopup" parent="SharedBaseComponents/CanvasLayer" index="2"]
 default_debug_buttons = ExtResource("4_6lpn0")
 
 [node name="MinigameOverlay" parent="SharedBaseComponents/CanvasLayer" index="3" instance=ExtResource("6_dbpkc")]
-anchors_preset = 4
+anchors_preset = 6
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -20.0

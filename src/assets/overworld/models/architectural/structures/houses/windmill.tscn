@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://drigm1l67ls0l"]
+
+[ext_resource type="PackedScene" uid="uid://dxdit4a1q86yc" path="res://assets/overworld/models/architectural/structures/houses/windmill.gltf" id="1_vcj2g"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_afbwi"]
+height = 17.0
+radius = 4.0
+
+[node name="windmill2" instance=ExtResource("1_vcj2g")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+shape = SubResource("CylinderShape3D_afbwi")

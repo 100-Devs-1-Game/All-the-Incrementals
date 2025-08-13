@@ -4,6 +4,9 @@
 class_name BaseMinigame
 extends Node
 
+## If this is enabled override `_get_countdown_duration()`
+@export var has_countdown: bool = false
+
 ## Stores a uid reference to the MinigameData Resource.
 ## This can be assigned manually so the Minigame scene is able to start
 ## directly from the Editor, even when using `_start()` as entry point.
@@ -13,8 +16,8 @@ var data: MinigameData
 var _score: int
 var _minigame_shared_components: MinigameSharedComponents
 var _is_game_over: bool = false
-# TODO implement full functionality
-var _countdown: float
+
+var _countdown: Timer
 
 
 func _ready() -> void:
@@ -75,12 +78,18 @@ func _start():
 	pass
 
 
+func _get_uid() -> int:
+	return ResourceLoader.get_resource_uid(data.resource_path)
+
+
 # This function is called when the Play button on the minigame menu is pressed.
 # It should run the minigame.
 func play():
 	_initialize()
 	data.apply_all_upgrades(self)
 	_start()
+	if has_countdown:
+		start_countdown()
 
 
 func add_score(n: int = 1):
@@ -91,14 +100,45 @@ func get_score() -> int:
 	return _score
 
 
+func start_countdown():
+	assert(has_countdown)
+	_countdown = Timer.new()
+
+	_countdown.wait_time = _get_countdown_duration()
+	assert(_countdown.wait_time > 0)
+
+	_countdown.one_shot = true
+
+	_countdown.timeout.connect(game_over)
+
+	add_child(_countdown)
+	_countdown.start()
+
+
 func get_time_left() -> float:
-	return _countdown
+	return _countdown.time_left
+
+
+## virtual function
+func _get_countdown_duration() -> float:
+	return 0
 
 
 # This function is called when the Upgrades button on the minigame menu is
 # pressed.
 func open_upgrades():
-	print("Not yet implemented")
+	SceneLoader.enter_upgrade_tree()
+
+
+# This function is called when the Show highscores button on the minigame menu is
+# pressed.
+func show_highscores():
+	var highscores = Player.get_highscores(_get_uid())
+	_minigame_shared_components.minigame_highscores.open_menu(highscores)
+
+
+func open_main_menu():
+	_minigame_shared_components.minigame_menu.open_menu()
 
 
 # Call this function when the game ends to re-open the minigame menu.
@@ -107,11 +147,17 @@ func game_over():
 	Player.add_stack_to_inventory(
 		EssenceStack.new(data.output_essence, int(_score * data.currency_conversion_factor))
 	)
+	Player.update_highscores(_get_uid(), get_score())
 	_is_game_over = true
 
 
 func is_game_over():
 	return _is_game_over
+
+
+func reload():
+	SceneLoader.enable_immediate_play()
+	SceneLoader.start_minigame(data)
 
 
 # This function is called when the Exit minigame button is pressed.

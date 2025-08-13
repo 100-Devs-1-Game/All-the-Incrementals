@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DebugButton" load_steps=2 format=3 uid="uid://cd2bfjnf2ywiv"]
+
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="1_5x0uf"]
+
+[resource]
+script = ExtResource("1_5x0uf")
+func_or_path = "debug_enter_shrine"
+hotkey = "v"
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"

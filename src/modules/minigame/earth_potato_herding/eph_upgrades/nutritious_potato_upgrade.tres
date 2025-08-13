@@ -36,11 +36,11 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_vaqat")])
 [sub_resource type="Resource" id="Resource_l6v5y"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 11
+amount = 10
 
 [sub_resource type="Resource" id="Resource_7mlmy"]
 script = ExtResource("1_xifid")
-earth = 11
+earth = 10
 fire = 0
 water = 0
 wind = 0
@@ -49,11 +49,11 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_l6v5y")])
 [sub_resource type="Resource" id="Resource_wnvnx"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 12
+amount = 10
 
 [sub_resource type="Resource" id="Resource_tr78e"]
 script = ExtResource("1_xifid")
-earth = 12
+earth = 10
 fire = 0
 water = 0
 wind = 0
@@ -62,11 +62,11 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_wnvnx")])
 [sub_resource type="Resource" id="Resource_acjq0"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 13
+amount = 10
 
 [sub_resource type="Resource" id="Resource_oqr42"]
 script = ExtResource("1_xifid")
-earth = 13
+earth = 10
 fire = 0
 water = 0
 wind = 0
@@ -75,11 +75,11 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_acjq0")])
 [sub_resource type="Resource" id="Resource_b4b16"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 14
+amount = 10
 
 [sub_resource type="Resource" id="Resource_q3agd"]
 script = ExtResource("1_xifid")
-earth = 14
+earth = 10
 fire = 0
 water = 0
 wind = 0
@@ -95,13 +95,15 @@ script = ExtResource("5_x3cqj")
 logic = SubResource("Resource_fl18i")
 unlocks_feature = ""
 name = "Nutritious potatoes"
-flavor = ""
-position = Vector2(100, 100)
+flavor = "mmm yummy"
+position = Vector2(-448, -512)
 cost_arr = Array[ExtResource("1_xifid")]([SubResource("Resource_56pjp"), SubResource("Resource_7mlmy"), SubResource("Resource_tr78e"), SubResource("Resource_oqr42"), SubResource("Resource_q3agd")])
 effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0])
 max_level = 5
 base_cost = SubResource("Resource_ydyeb")
 base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
 base_effect_modifier = 1.0
 effect_modifier_multiplier = 1.0
 unlocked = false

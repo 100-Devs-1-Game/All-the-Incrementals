@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfgybu1xb5gr0"]
+[gd_scene load_steps=5 format=3 uid="uid://dfgybu1xb5gr0"]
 
+[ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_jupi2"]
 [ext_resource type="Script" uid="uid://c0138l55svl62" path="res://modules/menu/minigame_menu.gd" id="1_oo15i"]
-[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/settings/off_white_styleboxflat.tres" id="2_j24fc"]
+[ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="2_etsp6"]
+[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="2_j24fc"]
 
 [node name="MinigameMenu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -11,10 +13,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_jupi2")
 script = ExtResource("1_oo15i")
 
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(400, 300)
+material = ExtResource("2_etsp6")
+custom_minimum_size = Vector2(400, 350)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,10 +56,15 @@ text = "Play"
 layout_mode = 2
 text = "Upgrades"
 
+[node name="Highscores" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "High Scores"
+
 [node name="Exit" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Exit minigame"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Highscores" to="." method="_on_highscores_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,20 +1,115 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1o4hv5ignom3"]
+[gd_scene load_steps=16 format=3 uid="uid://c1o4hv5ignom3"]
 
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_6k1f6"]
 [ext_resource type="Script" uid="uid://d2lj7uujdddn6" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.gd" id="2_6k1f6"]
 [ext_resource type="Script" uid="uid://dowbvmqjoiyxo" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/states/go_to_nearest_youngling.gd" id="3_jinnf"]
+[ext_resource type="Script" uid="uid://c7qcjt10ni6jr" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/states/go_away_from_player.gd" id="4_chc02"]
+[ext_resource type="Texture2D" uid="uid://n8674ncvxmu6" path="res://assets/minigames/earth_potato_herding/evil_spirit_spritesheet.webp" id="5_va8ji"]
+[ext_resource type="Texture2D" uid="uid://e3q3e0x6t0t" path="res://assets/minigames/earth_potato_herding/fists.webp" id="6_va8ji"]
+[ext_resource type="Texture2D" uid="uid://bkl78rfb3w03e" path="res://assets/minigames/earth_potato_herding/hands.webp" id="7_vcycw"]
 
-[node name="EPHEvilSpirit" instance=ExtResource("1_6k1f6")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcycw"]
+atlas = ExtResource("5_va8ji")
+region = Rect2(0, 0, 151, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0radt"]
+atlas = ExtResource("5_va8ji")
+region = Rect2(151, 0, 151, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbv35"]
+atlas = ExtResource("5_va8ji")
+region = Rect2(302, 0, 151, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s6ux"]
+atlas = ExtResource("5_va8ji")
+region = Rect2(453, 0, 151, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_equfj"]
+atlas = ExtResource("5_va8ji")
+region = Rect2(604, 0, 151, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpjr2"]
+atlas = ExtResource("5_va8ji")
+region = Rect2(755, 0, 151, 179)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4r5ph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcycw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0radt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbv35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s6ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_equfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpjr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sj336"]
+radius = 28.0713
+
+[node name="EPHEvilSpirit" node_paths=PackedStringArray("_state_machine", "_sprite_rotation_point", "_hand", "_youngling_place") instance=ExtResource("1_6k1f6")]
 collision_layer = 4
 script = ExtResource("2_6k1f6")
+player_instantly_kills = true
+_repel_acceleration_multiplier = 10
+_state_machine = NodePath("StateMachine")
+_sprite_rotation_point = NodePath("SpriteRotationPoint")
+_hand = NodePath("SpriteRotationPoint/Sprite2D3")
+_youngling_place = NodePath("SpriteRotationPoint/Sprite2D3/Marker2D")
+_base_acceleration = Vector2(100, 100)
 
 [node name="StateMachine" parent="." index="0" node_paths=PackedStringArray("_states", "_start_state")]
-_states = [NodePath("GoToNearestYongling")]
+_states = [NodePath("GoToNearestYongling"), NodePath("GoAwayFromPlayer")]
 _start_state = NodePath("GoToNearestYongling")
 
 [node name="GoToNearestYongling" type="Node" parent="StateMachine" index="0"]
 script = ExtResource("3_jinnf")
 state_name = "go_to_nearest_youngling"
 
-[node name="Sprite" parent="." index="2"]
+[node name="GoAwayFromPlayer" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("4_chc02")
+state_name = "go_away_from_player"
+
+[node name="SpriteRotationPoint" type="Marker2D" parent="." index="1"]
+modulate = Color(1, 0.2, 0.2, 1)
+scale = Vector2(0.73, 0.73)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpriteRotationPoint" index="0"]
+position = Vector2(-19, 0)
+rotation = 4.71239
+sprite_frames = SubResource("SpriteFrames_4r5ph")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SpriteRotationPoint" index="1"]
+position = Vector2(85, 0)
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("6_va8ji")
+
+[node name="Sprite2D3" type="Sprite2D" parent="SpriteRotationPoint" index="2"]
+position = Vector2(102, 0)
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("7_vcycw")
+
+[node name="Marker2D" type="Marker2D" parent="SpriteRotationPoint/Sprite2D3" index="0"]
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_sj336")
+
+[node name="Sprite" parent="." index="3"]
+visible = false
 self_modulate = Color(1, 0.2, 0.2, 1)
+position = Vector2(0, -26)
+scale = Vector2(0.630027, 0.630027)

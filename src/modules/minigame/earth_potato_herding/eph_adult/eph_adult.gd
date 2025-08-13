@@ -1,5 +1,5 @@
 class_name EphAdult
-extends TopDown2DCharacterController
+extends Td2dCCWithAcceleration
 
 @export var _close_to_bucket_margin: float = 10
 
@@ -17,6 +17,7 @@ var score: int
 func _ready() -> void:
 	mini_game = get_tree().root.get_node("EarthPotatoHerding")
 	score = mini_game.get_potato_score(self)
+	$Sprite.play("default")
 
 
 func is_close_to_bucket() -> bool:
@@ -29,10 +30,11 @@ func is_close_to_bucket() -> bool:
 func add_self_to_bucket() -> void:
 	mini_game.add_score(score)
 	TextFloatSystem.floating_text(global_position, "+%d" % score, mini_game)
+	queue_free()
+
 	if get_tree().get_nodes_in_group("potatoes").size() == 1:
 		# Last potato standing, it's game over
 		mini_game.game_over()
-	queue_free()
 
 
 #endregion
@@ -46,10 +48,11 @@ func _on_nutritious_potato_changed(modifier: float) -> void:
 
 
 func _on_adult_saw_spirit_body_entered(body: Node2D) -> void:
+	body.queue_free()
+	self.queue_free()
+
 	if get_tree().get_nodes_in_group("potatoes").size() == 1:
 		# Last potato standing, it's game over
 		mini_game.game_over()
-	body.queue_free()
-	self.queue_free()
 
 #endregion

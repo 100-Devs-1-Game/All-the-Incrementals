@@ -64,7 +64,7 @@ func force_move() -> void:
 
 	_last_movement_direction = _current_movement_direction
 
-	var random_dir = _last_movement_direction
+	var random_dir := _last_movement_direction
 	while random_dir == _last_movement_direction:
 		random_dir = WTFUtilities.random_enum(MovementDirection)
 

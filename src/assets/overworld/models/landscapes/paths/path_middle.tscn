@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwkp74mk0myvm"]
+
+[ext_resource type="PackedScene" uid="uid://pk6jkc60435o" path="res://assets/overworld/models/landscapes/paths/path_middle.gltf" id="1_4kpr0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kpr0"]
+albedo_color = Color(0.57, 0.46968, 0.3192, 1)
+
+[node name="path_middle" instance=ExtResource("1_4kpr0")]
+
+[node name="middle_part_02" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4kpr0")

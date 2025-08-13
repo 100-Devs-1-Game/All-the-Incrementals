@@ -1,17 +1,21 @@
-[gd_resource type="Resource" script_class="MinigameData" load_steps=7 format=3 uid="uid://cbu6b1qnaw05f"]
+[gd_resource type="Resource" script_class="MinigameData" load_steps=10 format=3 uid="uid://cbu6b1qnaw05f"]
 
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_hhm2j"]
 [ext_resource type="PackedScene" uid="uid://by18kqakehrup" path="res://modules/minigame/earth_potato_herding/earth_potato_herding.tscn" id="1_vneja"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="2_5ky2n"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_kp5bk"]
 [ext_resource type="Resource" uid="uid://cgewuml70cd2u" path="res://modules/minigame/earth_potato_herding/eph_upgrades/nutritious_potato_upgrade.tres" id="4_q4dpp"]
 [ext_resource type="Resource" uid="uid://bon5kervat4ob" path="res://modules/minigame/earth_potato_herding/eph_upgrades/spirit_keeper_brightness.tres" id="5_5ky2n"]
 [ext_resource type="Resource" uid="uid://by57hxq7wplj1" path="res://modules/minigame/earth_potato_herding/eph_upgrades/spirit_keeper_speed.tres" id="6_ngahi"]
+[ext_resource type="Resource" uid="uid://c4an244wfmth0" path="res://modules/minigame/earth_potato_herding/eph_upgrades/potato_growth_speed.tres" id="8_ngahi"]
+[ext_resource type="Resource" uid="uid://dp15tnue0jpc8" path="res://modules/minigame/earth_potato_herding/eph_upgrades/player_aura_level.tres" id="9_4lleo"]
 
 [resource]
 script = ExtResource("1_hhm2j")
 display_name = "earth_potato_herding"
 minigame_scene = ExtResource("1_vneja")
-upgrade_tree_root_nodes = Array[ExtResource("2_kp5bk")]([ExtResource("4_q4dpp"), ExtResource("5_5ky2n"), ExtResource("6_ngahi")])
-currency_conversion_factor = 0.0
+upgrade_tree_root_nodes = Array[ExtResource("2_kp5bk")]([ExtResource("4_q4dpp"), ExtResource("5_5ky2n"), ExtResource("6_ngahi"), ExtResource("8_ngahi"), ExtResource("9_4lleo")])
+output_essence = ExtResource("2_5ky2n")
+currency_conversion_factor = 1.0
 high_scores = Array[int]([])
 metadata/_custom_type_script = "uid://mwcjys5dkgf4"

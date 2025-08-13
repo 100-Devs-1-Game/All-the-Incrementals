@@ -1,15 +1,123 @@
-[gd_scene load_steps=5 format=3 uid="uid://vesybpnx50sy"]
+[gd_scene load_steps=21 format=3 uid="uid://vesybpnx50sy"]
 
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_6k1f6"]
 [ext_resource type="Script" uid="uid://bj08qujhu8t8a" path="res://modules/minigame/earth_potato_herding/eph_adult/eph_adult.gd" id="2_6k1f6"]
 [ext_resource type="Script" uid="uid://cjm3jfga0gk76" path="res://modules/minigame/earth_potato_herding/eph_adult/states/go_to_bucket.gd" id="3_6k1f6"]
+[ext_resource type="Texture2D" uid="uid://dyqkgi52d1iwb" path="res://assets/minigames/earth_potato_herding/adult_potato_spritesheet.webp" id="4_dgjy5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jinnf"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(0, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_318fq"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(237, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghyer"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(474, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjuyq"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(711, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0op3"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(948, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3tdh"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(1185, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6sa4"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(1422, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7l03"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(1659, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3ntp"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(1896, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3fxa"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(2133, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1v20"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(2370, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo8vw"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(2607, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0p5j"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(2844, 0, 237, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1hwf"]
+atlas = ExtResource("4_dgjy5")
+region = Rect2(3081, 0, 237, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5hrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jinnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_318fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghyer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjuyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0op3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3tdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6sa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7l03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3ntp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3fxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1v20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo8vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0p5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1hwf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6k1f6"]
-radius = 66.0076
+radius = 29.0689
 
 [node name="EPHAdult" groups=["potatoes"] instance=ExtResource("1_6k1f6")]
 script = ExtResource("2_6k1f6")
 _close_to_bucket_margin = 10.0
+_base_acceleration = Vector2(200, 200)
 _base_speed = Vector2(100, 100)
 
 [node name="StateMachine" parent="." index="0" node_paths=PackedStringArray("_states", "_start_state")]
@@ -21,7 +129,9 @@ script = ExtResource("3_6k1f6")
 state_name = "go_to_bucket"
 
 [node name="Sprite" parent="." index="2"]
-self_modulate = Color(1, 0.813333, 0.2, 1)
+position = Vector2(0.309326, 0.8823)
+scale = Vector2(0.452523, 0.469844)
+sprite_frames = SubResource("SpriteFrames_p5hrp")
 
 [node name="AdultSawSpirit" type="Area2D" parent="." index="3"]
 collision_layer = 0

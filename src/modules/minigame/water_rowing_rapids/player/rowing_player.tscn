@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://mhrfxqqthuy7"]
+
+[ext_resource type="Script" uid="uid://dcd2ff4bobsch" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.gd" id="1_41ocn"]
+[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_65ad0"]
+[ext_resource type="PackedScene" uid="uid://c83vkptbsgc61" path="res://modules/minigame/water_rowing_rapids/player/ui/rowing_ui.tscn" id="3_8qkfb"]
+[ext_resource type="Script" uid="uid://binflulp46bk3" path="res://modules/minigame/water_rowing_rapids/player/sprit_collection_area.gd" id="4_j5ul3"]
+[ext_resource type="Script" uid="uid://5pqtelgggjsh" path="res://modules/minigame/water_rowing_rapids/player/spirit_magnetism_area.gd" id="4_qdgbt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8qkfb"]
+bounce = 0.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qkfb"]
+radius = 200.0
+height = 860.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5ul3"]
+radius = 29.0
+height = 570.0
+
+[node name="RowingPlayer" type="RigidBody2D" node_paths=PackedStringArray("boost_timer")]
+physics_material_override = SubResource("PhysicsMaterial_8qkfb")
+gravity_scale = 0.0
+center_of_mass_mode = 1
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 2
+linear_damp = 1.0
+angular_damp = 1.0
+script = ExtResource("1_41ocn")
+boost_timer = NodePath("BoostTimer")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(21, -140.226)
+polygon = PackedVector2Array(-207, 101, 199, 108.226, 236, 106.226, 264, 113.226, 276, 122.226, 268, 136.226, 223, 153.226, 127, 169, -183, 173, -278, 164.226, -320, 144.226, -327, 134.226, -320, 122.226, -287, 110.226)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(21, -140.226)
+color = Color(0.660177, 0.410958, 0.197714, 1)
+polygon = PackedVector2Array(-207, 101, 135, 104, 233, 106, 267, 111, 281, 123, 274, 138, 237, 151.226, 127, 169, -183, 173, -282, 165, -322, 147, -331, 135.226, -319.415, 121.084, -283, 109.226)
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygon2D"]
+position = Vector2(0, 4)
+color = Color(0.502376, 0.349917, 0.184573, 1)
+polygon = PackedVector2Array(51, 99.226, 106, 36.226, 107, 33.226, 113, 33.226, 114, 38.226, 109, 40.226, 60, 100.226)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.311558, 0.311558)
+texture = ExtResource("2_65ad0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.595, 0.595)
+position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RowingUI" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_8qkfb")]
+player = NodePath("../..")
+
+[node name="SpiritMagnetismArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("4_qdgbt")
+
+[node name="Collider" type="CollisionShape2D" parent="SpiritMagnetismArea"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8qkfb")
+debug_color = Color(0.611765, 0.537255, 0, 0.133333)
+
+[node name="SpritCollectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("4_j5ul3")
+
+[node name="Collider" type="CollisionShape2D" parent="SpritCollectionArea"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_j5ul3")
+debug_color = Color(0, 0.537255, 0, 0.247059)
+
+[node name="BoostTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="SpritCollectionArea" to="SpritCollectionArea" method="_on_area_entered"]
+[connection signal="spirit_collected" from="SpritCollectionArea" to="." method="_on_sprit_collection_area_spirit_collected"]
+[connection signal="timeout" from="BoostTimer" to="." method="_on_boost_timer_timeout"]

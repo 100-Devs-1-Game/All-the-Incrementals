@@ -7,8 +7,10 @@ const SECONDS_BEFORE_ENDING_RUN: float = 1
 
 var stats: WTFStats
 
-var _distance_travelled = 0
-var _distance_since_spawned = 0
+var _distance_travelled := 0.0
+var _distance_since_spawned := 0.0
+
+var _started: bool = false
 
 @onready var fish_db: WTFFishDB = %WTFFishDB
 
@@ -25,7 +27,6 @@ func get_pixels_per_second() -> int:
 
 func _enter_tree() -> void:
 	WTFGlobals.minigame = self
-	stats = WTFStats.new()
 
 	## yyyy does it stutter thoooo
 	# I can't find any magic number that solves it :(
@@ -37,16 +38,39 @@ func _exit_tree() -> void:
 	WTFGlobals.minigame = null
 
 
+func _initialize() -> void:
+	stats = WTFStats.new()
+
+
 func _start() -> void:
+	# to handle some upgrades
+	stats.reset()
+
 	# give it an initial amount so we can get some fishies going
 	_distance_since_spawned = stats.spawn_fish_every_x_pixels * stats.spawn_x_starting_fish
+	print(
+		(
+			"starting speed %s with %s%% (+%s) speedboost"
+			% [
+				-stats.scrollspeed_initial.x,
+				stats.speedboost_multiplier * 100,
+				stats.speedboost_flat
+			]
+		)
+	)
+	print("starting with %s fish" % stats.spawn_x_starting_fish)
+	print("fish spawn every %s pixels" % stats.spawn_fish_every_x_pixels)
+	print("oxygen mult %s" % stats.oxygen_capacity_multiplier)
+	print("oxygen total %s/%s" % [stats.oxygen_remaining(), stats.oxygen_capacity()])
+
+	_started = true
 
 
 func _process(_delta: float) -> void:
 	ui_speed_value.text = str(get_pixels_per_second())
 	ui_score_value.text = str(get_score())
 	ui_oxygen_value.text = str(WTFGlobals.minigame.stats.oxygen_percentage()) + "%"
-	ui_weight_value.text = str(floori(stats.total_weight()))
+	ui_weight_value.text = str(floori(stats.total_added_weight()))
 	ui_distance_value.text = str(floori(_distance_travelled))
 
 
@@ -54,9 +78,9 @@ func random_spawnable_fish(distance: float, min_height: float, max_height: float
 	#todo cache, carefully
 	var valid_spawns: Array[WTFFishData]
 
-	var data := fish_db.get_data()
-	for data_key in data:
-		var data_val := data[data_key]
+	var fish_data := fish_db.get_data()
+	for data_key in fish_data:
+		var data_val := fish_data[data_key]
 		var spawnable_x := distance > data_val.spawn.min_spawn_distance
 		var spawn_y_range := data_val.spawn.get_spawn_height_range()
 		var spawnable_y := min_height <= spawn_y_range.y || max_height >= spawn_y_range.x

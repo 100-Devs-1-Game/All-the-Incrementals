@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbl6vd6owbgae"]
+
+[ext_resource type="PackedScene" uid="uid://bf08tpi716rka" path="res://assets/overworld/models/architectural/arch/arch_01.gltf" id="1_o01er"]
+
+[node name="arch_012" instance=ExtResource("1_o01er")]
