@@ -215,9 +215,6 @@ offset_top = -79.0
 offset_right = -99.0
 offset_bottom = -79.0
 
-[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
-anchors_preset = 6
-
 [connection signal="body_entered" from="Marker2D/Area2D" to="Marker2D/Area2D" method="is_it_a_demon"]
 [connection signal="body_entered" from="DespawnZone" to="DespawnZone" method="_on_body_entered"]
 
