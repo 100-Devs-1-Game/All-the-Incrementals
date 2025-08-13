@@ -1,7 +1,7 @@
 class_name WindPlatformerMinigameUpgradeLogic
 extends BaseMinigameUpgradeLogic
 
-enum Type { MOVE_SPEED, AIR_CONTROL, DIVE, JUMP_HEIGHT, MORE_CLOUDS, BONUS2X, BONUS5X }
+enum Type { MOVE_SPEED, AIR_CONTROL, DIVE, JUMP_HEIGHT, MORE_CLOUDS, BONUS2X, BONUS5X, BORDERS }
 
 @export var type: Type
 
