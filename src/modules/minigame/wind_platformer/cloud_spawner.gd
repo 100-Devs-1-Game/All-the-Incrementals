@@ -10,10 +10,10 @@ signal cloud_spawned(cloud: WindPlatformerMinigameCloudPlatform)
 
 @export var initial_rect: Rect2 = Rect2(0, 200, 1920, 1000)
 
-var off_screen_spawn_offset := Vector2(0, 200)
-var off_screen_spawn_size := Vector2(10, 800)
-var left_rect: Rect2
-var right_rect: Rect2
+var _off_screen_spawn_offset := Vector2(0, 200)
+var _off_screen_spawn_size := Vector2(10, 800)
+var _left_rect: Rect2
+var _right_rect: Rect2
 
 @onready var timer: Timer = $Timer
 
@@ -23,12 +23,12 @@ func _ready() -> void:
 
 	var x_offset: int = 100
 
-	left_rect = Rect2(
-		off_screen_spawn_offset - Vector2(x_offset, 0) - Vector2(off_screen_spawn_size.x, 0),
-		off_screen_spawn_size
+	_left_rect = Rect2(
+		_off_screen_spawn_offset - Vector2(x_offset, 0) - Vector2(_off_screen_spawn_size.x, 0),
+		_off_screen_spawn_size
 	)
-	right_rect = Rect2(
-		off_screen_spawn_offset + Vector2(viewport.x + x_offset, 0), off_screen_spawn_size
+	_right_rect = Rect2(
+		_off_screen_spawn_offset + Vector2(viewport.x + x_offset, 0), _off_screen_spawn_size
 	)
 
 
@@ -60,6 +60,6 @@ func _on_timer_timeout() -> void:
 		return
 
 	if RngUtils.chance100(50):
-		spawn_cloud(left_rect, 1)
+		spawn_cloud(_left_rect, 1)
 	else:
-		spawn_cloud(right_rect, -1)
+		spawn_cloud(_right_rect, -1)
