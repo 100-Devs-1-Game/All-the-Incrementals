@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://351eaqu7t6ig"]
+[gd_scene load_steps=20 format=3 uid="uid://351eaqu7t6ig"]
 
 [ext_resource type="Script" uid="uid://lhc3e4w56rm4" path="res://modules/minigame/earth_tower_tumble/earth_tower_tumble.gd" id="1_e1brv"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_hn5om"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bdxiechv2n4ff" path="res://modules/minigame/earth_tower_tumble/player.gd" id="11_w41d8"]
 [ext_resource type="Script" uid="uid://dwtfj2kuufykl" path="res://modules/minigame/earth_tower_tumble/tower_base.gd" id="11_wlaab"]
 [ext_resource type="Script" uid="uid://bqkp2jhuqul2q" path="res://modules/minigame/earth_tower_tumble/block_spawner.gd" id="12_hn5om"]
+[ext_resource type="PackedScene" uid="uid://e4xemp6bivp1" path="res://modules/minigame/earth_tower_tumble/potato.tscn" id="12_w41d8"]
 [ext_resource type="PackedScene" uid="uid://be8balsm15egw" path="res://modules/minigame/earth_tower_tumble/enemies/ett_evil_spirit.tscn" id="13_uvjps"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uvjps"]
@@ -33,16 +34,13 @@ point_count = 2
 script = ExtResource("1_e1brv")
 data_uid = "uid://s7k08dgu5hxn"
 
-[node name="SharedComponents" parent="." node_paths=PackedStringArray("minigame_node") instance=ExtResource("2_hn5om")]
-minigame_node = NodePath("..")
+[node name="SharedComponents" parent="." instance=ExtResource("2_hn5om")]
 
-[node name="CanvasLayer" parent="SharedComponents/SharedBaseComponents" index="0"]
+[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
+visible = true
+
+[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="2" node_paths=PackedStringArray("functions_node")]
 visible = false
-
-[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0" node_paths=PackedStringArray("minigame")]
-minigame = NodePath("../../../..")
-
-[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
 functions_node = NodePath("../../../..")
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_wlaab")]([ExtResource("4_uvjps")])
@@ -167,6 +165,7 @@ color = Color(0.314316, 0.314316, 0.314316, 1)
 [node name="Player" type="Node2D" parent="Game"]
 position = Vector2(474, 568)
 script = ExtResource("11_w41d8")
+potato = ExtResource("12_w41d8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Game/Player"]
 scale = Vector2(0.21, 0.21)
