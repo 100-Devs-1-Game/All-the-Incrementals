@@ -70,6 +70,44 @@ shape = SubResource("RectangleShape2D_k72l2")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 rect = Rect2(-100, -10, 200, 20)
 
+[node name="Label Multiplier 2x" type="Label" parent="."]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.818307, 0.769019, 0, 1)
+text = "2x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label Multiplier 5x" type="Label" parent="."]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.819608, 0.360784, 0, 1)
+text = "5x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Player Detection Area" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="body_exited" from="Player Detection Area" to="." method="_on_player_detection_area_body_exited"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

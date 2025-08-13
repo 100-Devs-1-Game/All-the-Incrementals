@@ -10,6 +10,9 @@ signal cloud_spawned(cloud: WindPlatformerMinigameCloudPlatform)
 
 @export var initial_rect: Rect2 = Rect2(0, 200, 1920, 1000)
 
+var multiplier_2x_chance: float = 0.0
+var multiplier_5x_chance: float = 0.0
+
 var _off_screen_spawn_offset := Vector2(0, 200)
 var _off_screen_spawn_size := Vector2(10, 800)
 var _left_rect: Rect2
@@ -51,6 +54,12 @@ func spawn_cloud(rect: Rect2, force_direction: int = 0):
 		dir = [-1, 1].pick_random()
 
 	cloud.speed = randf_range(cloud_velocity_range.x, cloud_velocity_range.y) * dir
+
+	if RngUtils.chance100(multiplier_5x_chance):
+		cloud.score_multiplier = 5
+	elif RngUtils.chance100(multiplier_2x_chance):
+		cloud.score_multiplier = 2
+
 	clouds_node.add_child(cloud)
 	cloud_spawned.emit(cloud)
 
