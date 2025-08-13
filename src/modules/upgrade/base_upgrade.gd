@@ -2,7 +2,7 @@
 class_name BaseUpgrade
 extends Resource
 
-enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
+enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER, UNLOCK }
 
 const NO_LEVEL = -1
 
