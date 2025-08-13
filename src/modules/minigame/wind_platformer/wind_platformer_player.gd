@@ -147,6 +147,8 @@ func animation_and_audio_logic():
 			animated_sprite.play("falling")
 		audio_run.stop()
 
+	audio_run.pitch_scale = clampf(abs(velocity.x) * 0.01, 1, 3)
+
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	left_screen.emit()
