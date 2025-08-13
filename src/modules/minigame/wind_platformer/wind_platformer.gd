@@ -3,6 +3,7 @@ extends BaseMinigame
 
 @export var wind_noise: FastNoiseLite
 @export var size: Vector2i = Vector2i(2000, 1100)
+@export var countdown_duration: float = 15.0
 
 @export var num_particles: int = 1200
 
@@ -86,6 +87,10 @@ func on_particle_destroyed(particle: WindPlatformerMinigameParticle):
 func get_force_at(pos: Vector2) -> Vector2:
 	var noise: float = wind_noise.get_noise_2dv(pos)
 	return Vector2.from_angle(wrapf(noise * 10.0, -PI, PI))
+
+
+func _get_countdown_duration() -> float:
+	return countdown_duration
 
 
 func _on_player_left_screen() -> void:

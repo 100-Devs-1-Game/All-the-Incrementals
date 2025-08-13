@@ -37,6 +37,7 @@ width = 64
 [node name="Wind Platformer" type="Node2D"]
 script = ExtResource("1_j01kc")
 wind_noise = SubResource("FastNoiseLite_4orxu")
+has_countdown = true
 data_uid = "uid://dh1qjmvspv4uh"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -78,6 +79,15 @@ clouds_node = NodePath("../Platforms")
 initial_clouds = 50
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("5_falbm")]
+
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+anchors_preset = 1
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 40.0
+grow_vertical = 1
+enable_countdown_display = true
 
 [connection signal="left_screen" from="Player" to="." method="_on_player_left_screen"]
 
