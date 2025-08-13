@@ -202,7 +202,7 @@ func _physics_process(delta: float) -> void:
 		# hack that acts as a one second timer before the run ends
 		var player_done := stats.oxygen_remaining_seconds <= -SECONDS_BEFORE_ENDING_RUN
 		if !WTFGlobals.player.underwater() && player_done:
-			get_tree().reload_current_scene()
+			game_over()
 
 	_distance_travelled += -1 * stats.scrollspeed.x * delta
 	_distance_since_spawned += -1 * stats.scrollspeed.x * delta
