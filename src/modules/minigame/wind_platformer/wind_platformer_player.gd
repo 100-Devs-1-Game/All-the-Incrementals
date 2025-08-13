@@ -12,6 +12,7 @@ signal left_screen
 @export var wind_impact: float = 1.0
 @export var gravity: float = 100.0
 @export var damping: float = 0.5
+@export var start_y_velocity = 50.0
 
 var current_cloud: WindPlatformerMinigameCloudPlatform
 var current_jump_speed: float
@@ -27,6 +28,10 @@ var _is_on_ground: bool = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_run: AudioStreamPlayer = $"Audio/AudioStreamPlayer Run"
 @onready var run_audio_delay: Timer = $"Audio/Run Audio Delay"
+
+
+func _ready() -> void:
+	velocity.y = start_y_velocity
 
 
 func _physics_process(delta: float) -> void:
