@@ -10,6 +10,7 @@ signal cloud_spawned(cloud: WindPlatformerMinigameCloudPlatform)
 
 @export var initial_rect: Rect2 = Rect2(0, 200, 1920, 1000)
 
+var cloud_bonus: int = 0
 var multiplier_2x_chance: float = 0.0
 var multiplier_5x_chance: float = 0.0
 
@@ -36,7 +37,7 @@ func _ready() -> void:
 
 
 func start() -> void:
-	for i in initial_clouds:
+	for i in initial_clouds + cloud_bonus:
 		spawn_cloud(initial_rect)
 	timer.start()
 
@@ -65,7 +66,7 @@ func spawn_cloud(rect: Rect2, force_direction: int = 0):
 
 
 func _on_timer_timeout() -> void:
-	if clouds_node.get_child_count() >= initial_clouds:
+	if clouds_node.get_child_count() >= initial_clouds + cloud_bonus:
 		return
 
 	if RngUtils.chance100(50):

@@ -76,7 +76,7 @@ texture = SubResource("GradientTexture1D_cj4w2")
 
 [node name="Cloud Spawner" parent="." node_paths=PackedStringArray("clouds_node") instance=ExtResource("3_h8gjg")]
 clouds_node = NodePath("../Platforms")
-initial_clouds = 50
+initial_clouds = 20
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("5_falbm")]
 

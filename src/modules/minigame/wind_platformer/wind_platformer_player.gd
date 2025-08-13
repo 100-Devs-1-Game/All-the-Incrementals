@@ -16,7 +16,11 @@ signal left_screen
 
 var current_cloud: WindPlatformerMinigameCloudPlatform
 var current_jump_speed: float
-var can_dive: bool = true
+
+var move_speed_factor: float = 1.0
+var dive_control: float = 0.0
+var air_control_bonus: float = 0.0
+var jump_speed_bonus: float = 0.0
 
 var _is_running: bool = false
 var _is_on_ground: bool = false
@@ -61,11 +65,12 @@ func _physics_process(delta: float) -> void:
 		current_cloud = null
 
 	var hor_input = Input.get_axis("left", "right")
+	var max_speed: float = move_speed * move_speed_factor
 
 	if not _is_on_ground:
 		var final_gravity: float = gravity
-		if can_dive and Input.is_action_pressed("down"):
-			final_gravity *= 2
+		if dive_control > 0 and Input.is_action_pressed("down"):
+			final_gravity *= 1 + dive_control
 
 		velocity.y += final_gravity * delta
 
@@ -73,15 +78,19 @@ func _physics_process(delta: float) -> void:
 
 		velocity += wind_force
 
-		var new_velocity_x: float = velocity.x + hor_input * air_control * delta
+		var new_velocity_x: float = (
+			velocity.x + hor_input * (air_control + air_control_bonus) * delta
+		)
 
-		if abs(new_velocity_x) < move_speed or sign(hor_input) != sign(velocity.x):
+		if abs(new_velocity_x) < max_speed or sign(hor_input) != sign(velocity.x):
 			velocity.x = new_velocity_x
 	else:
 		if velocity.y > 0:
 			velocity.y = 0
 
-		velocity.x = move_toward(velocity.x, hor_input * move_speed, acceleration * delta)
+		velocity.x = move_toward(
+			velocity.x, hor_input * max_speed, acceleration * move_speed_factor * delta
+		)
 
 	jump_logic()
 
@@ -92,7 +101,7 @@ func _physics_process(delta: float) -> void:
 
 func jump_logic():
 	if (_is_on_ground and velocity.y >= 0) or current_jump_speed > 0:
-		if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed:
+		if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed + jump_speed_bonus:
 			velocity.y -= jump_speed_per_frame
 			current_jump_speed += jump_speed_per_frame
 		else:
