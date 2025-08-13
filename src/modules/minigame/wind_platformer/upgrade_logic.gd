@@ -19,7 +19,7 @@ func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 		Type.JUMP_HEIGHT:
 			my_game.player.jump_speed_bonus = upgrade.get_current_effect_modifier()
 		Type.MORE_CLOUDS:
-			my_game.cloud_spawner.cloud_bonus = upgrade.get_current_effect_modifier()
+			my_game.cloud_spawner.cloud_bonus = int(upgrade.get_current_effect_modifier())
 		Type.BONUS2X:
 			my_game.cloud_spawner.multiplier_2x_chance = upgrade.get_current_effect_modifier()
 		Type.BONUS5X:
