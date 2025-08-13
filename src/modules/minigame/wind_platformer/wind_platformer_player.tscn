@@ -1,15 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://b5gx7hrc8phfj"]
+[gd_scene load_steps=24 format=3 uid="uid://b5gx7hrc8phfj"]
 
 [ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
 [ext_resource type="Texture2D" uid="uid://7fjjhjaqd5v8" path="res://assets/minigames/wind_platformer/character/run/000.png" id="2_e810b"]
+[ext_resource type="Texture2D" uid="uid://dg67av3slji5h" path="res://assets/minigames/wind_platformer/character/fall/000.png" id="2_rjep0"]
+[ext_resource type="Texture2D" uid="uid://djaneighimnva" path="res://assets/minigames/wind_platformer/character/fall/001.png" id="3_5gvck"]
 [ext_resource type="Texture2D" uid="uid://d1e2k1nj8d0p1" path="res://assets/minigames/wind_platformer/character/run/001.png" id="3_sls4m"]
+[ext_resource type="Texture2D" uid="uid://c7ogqolgmsd3w" path="res://assets/minigames/wind_platformer/character/fall/002.png" id="4_7xqbe"]
 [ext_resource type="Texture2D" uid="uid://cs34beod3ce3j" path="res://assets/minigames/wind_platformer/character/run/002.png" id="4_x8qgx"]
+[ext_resource type="Texture2D" uid="uid://c4dyid3crggrn" path="res://assets/minigames/wind_platformer/character/jump/000.png" id="5_3wnla"]
 [ext_resource type="Texture2D" uid="uid://djqs4r0ahyu44" path="res://assets/minigames/wind_platformer/character/run/003.png" id="5_xt8ha"]
+[ext_resource type="Texture2D" uid="uid://t4llhq4mq8vd" path="res://assets/minigames/wind_platformer/character/jump/001.png" id="6_hdmq6"]
 [ext_resource type="Texture2D" uid="uid://lot3tpkbxx7w" path="res://assets/minigames/wind_platformer/character/run/004.png" id="6_xs7bh"]
 [ext_resource type="Texture2D" uid="uid://dsfwp6rcudyk1" path="res://assets/minigames/wind_platformer/character/stand/000.png" id="7_68ttx"]
 [ext_resource type="Texture2D" uid="uid://c3q6fmuor5v23" path="res://assets/minigames/wind_platformer/character/run/005.png" id="7_sls4m"]
+[ext_resource type="Texture2D" uid="uid://dryabtoykf2rb" path="res://assets/minigames/wind_platformer/character/jump/002.png" id="7_uom4x"]
 [ext_resource type="Texture2D" uid="uid://dix1117cjljul" path="res://assets/minigames/wind_platformer/character/stand/001.png" id="8_0b7bb"]
+[ext_resource type="Texture2D" uid="uid://dmwnf025rpj3w" path="res://assets/minigames/wind_platformer/character/jump/003.png" id="8_af6i6"]
 [ext_resource type="Texture2D" uid="uid://bjs6bvocnfn1f" path="res://assets/minigames/wind_platformer/character/stand/002.png" id="9_62oln"]
+[ext_resource type="Texture2D" uid="uid://ppyv18e51oua" path="res://assets/minigames/wind_platformer/character/jump/004.png" id="9_qmyqh"]
 [ext_resource type="Texture2D" uid="uid://cil6vksb3kqo0" path="res://assets/minigames/wind_platformer/character/stand/003.png" id="10_p0ww4"]
 [ext_resource type="Texture2D" uid="uid://cnk4ej8cyyk87" path="res://assets/minigames/wind_platformer/character/stand/004.png" id="11_d1vcw"]
 [ext_resource type="AudioStream" uid="uid://cmeopcfcjv6b0" path="res://assets/minigames/wind_platformer/sfx/sfx_walk_cloud_lp_01.ogg" id="13_x8qgx"]
@@ -23,6 +31,40 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rjep0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5gvck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7xqbe")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3wnla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hdmq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uom4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_af6i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qmyqh")
+}],
+"loop": false,
+"name": &"jumping",
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -111,8 +153,7 @@ polygon = PackedVector2Array(4, -16, -4, -16, 0, -24)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kpnvy")
-animation = &"running"
-frame_progress = 0.317648
+animation = &"jumping"
 
 [node name="Audio" type="Node" parent="."]
 
@@ -125,3 +166,4 @@ wait_time = 0.2
 one_shot = true
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_animation_finished"]

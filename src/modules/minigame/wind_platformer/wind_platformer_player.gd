@@ -24,6 +24,7 @@ var jump_speed_bonus: float = 0.0
 
 var _is_running: bool = false
 var _is_on_ground: bool = false
+var _is_jumping: bool = false
 
 @onready var head: Polygon2D = %Head
 @onready var hat: Polygon2D = %Hat
@@ -36,6 +37,7 @@ var _is_on_ground: bool = false
 
 func _ready() -> void:
 	velocity.y = start_y_velocity
+	animated_sprite.play("falling")
 
 
 func _physics_process(delta: float) -> void:
@@ -66,6 +68,9 @@ func _physics_process(delta: float) -> void:
 
 	var hor_input = Input.get_axis("left", "right")
 	var max_speed: float = move_speed * move_speed_factor
+
+	if not is_zero_approx(hor_input):
+		animated_sprite.flip_h = hor_input > 0
 
 	if not _is_on_ground:
 		var final_gravity: float = gravity
@@ -104,10 +109,18 @@ func jump_logic():
 		if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed + jump_speed_bonus:
 			velocity.y -= jump_speed_per_frame
 			current_jump_speed += jump_speed_per_frame
+			_is_jumping = true
+			if animated_sprite.animation != "jumping" and animated_sprite.animation == "falling":
+				animated_sprite.play("jumping")
+
 		else:
+			#if _is_jumping:
+			#animated_sprite.play("jumping")
 			current_jump_speed = 0
+			_is_jumping = false
 	else:
 		current_jump_speed = 0
+		_is_jumping = false
 
 
 func animation_and_audio_logic():
@@ -117,7 +130,6 @@ func animation_and_audio_logic():
 	if _is_on_ground:
 		if velocity.x:
 			_is_running = true
-			animated_sprite.flip_h = velocity.x > 0
 
 		if _is_running and not was_running:
 			run_audio_delay.start()
@@ -131,10 +143,14 @@ func animation_and_audio_logic():
 			audio_run.stop()
 
 	else:
-		animated_sprite.play("standing")
-		animated_sprite.pause()
+		if animated_sprite.animation == "running":
+			animated_sprite.play("falling")
 		audio_run.stop()
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	left_screen.emit()
+
+
+func _on_animated_sprite_animation_finished() -> void:
+	animated_sprite.play("falling")
