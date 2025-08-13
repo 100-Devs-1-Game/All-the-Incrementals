@@ -147,6 +147,7 @@ Thanks goes to all these wonderful people :heart:
 * ErnestasK760
 * microlancer
 * [Mouse Potato Does Stuff](https://github.com/MousePotatoDoesStuff)
+* niconorsk
 * Noxalas
 * Rokle
 * [Sarian](https://github.com/SaronTetra)
