@@ -1,0 +1,97 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://r1ptwenkshfx"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_4ao6h"]
+[ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="2_gd7my"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_qdq5n"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_55fdj"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_s0syc"]
+[ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="4_h4j7y"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="5_wi18a"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="6_66woc"]
+
+[sub_resource type="Resource" id="Resource_0vdct"]
+script = ExtResource("2_qdq5n")
+essence = ExtResource("3_s0syc")
+amount = 5000
+
+[sub_resource type="Resource" id="Resource_4q6fw"]
+script = ExtResource("2_qdq5n")
+essence = ExtResource("4_h4j7y")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_hy7ev"]
+script = ExtResource("2_qdq5n")
+essence = ExtResource("5_wi18a")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_agp0c"]
+script = ExtResource("2_qdq5n")
+essence = ExtResource("6_66woc")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_nwf4x"]
+script = ExtResource("1_4ao6h")
+earth = 5000
+fire = 100
+water = 100
+wind = 100
+slots = Array[ExtResource("2_qdq5n")]([SubResource("Resource_0vdct"), SubResource("Resource_4q6fw"), SubResource("Resource_hy7ev"), SubResource("Resource_agp0c")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_qdq5n"]
+script = ExtResource("2_qdq5n")
+essence = ExtResource("3_s0syc")
+amount = 5000
+
+[sub_resource type="Resource" id="Resource_s0syc"]
+script = ExtResource("2_qdq5n")
+essence = ExtResource("4_h4j7y")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_h4j7y"]
+script = ExtResource("2_qdq5n")
+essence = ExtResource("5_wi18a")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_wi18a"]
+script = ExtResource("2_qdq5n")
+essence = ExtResource("6_66woc")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_66woc"]
+script = ExtResource("1_4ao6h")
+earth = 5000
+fire = 100
+water = 100
+wind = 100
+slots = Array[ExtResource("2_qdq5n")]([SubResource("Resource_qdq5n"), SubResource("Resource_s0syc"), SubResource("Resource_h4j7y"), SubResource("Resource_wi18a")])
+
+[sub_resource type="Resource" id="Resource_y7ugm"]
+script = ExtResource("2_gd7my")
+upgrade_type = 3
+metadata/_custom_type_script = "uid://r3iai3luuocl"
+
+[resource]
+script = ExtResource("3_55fdj")
+logic = SubResource("Resource_y7ugm")
+unlocks_feature = "destroy_evil_spirits"
+name = "Destroy evil spirits"
+flavor = "Those dashing spirits really hate you!"
+position = Vector2(1472, -1664)
+cost_arr = Array[ExtResource("1_4ao6h")]([SubResource("Resource_66woc")])
+effect_modifier_arr = Array[float]([1.0])
+max_level = 1
+base_cost = SubResource("Resource_nwf4x")
+base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level = 1
+unlocks = Array[Resource]([])
+description_prefix = "Evil spirits are destroyed by Spirit Keeper"
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1
