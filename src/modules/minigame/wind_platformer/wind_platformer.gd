@@ -12,6 +12,7 @@ extends BaseMinigame
 
 var wind_arr: Dictionary
 var particles: Array[WindPlatformerMinigameParticle]
+var countdown_bonus: int
 
 @onready var player: WindPlatformerMinigamePlayer = $Player
 @onready var multi_mesh_instance: MultiMeshInstance2D = $MultiMeshInstance2D
@@ -90,7 +91,7 @@ func get_force_at(pos: Vector2) -> Vector2:
 
 
 func _get_countdown_duration() -> float:
-	return countdown_duration
+	return countdown_duration + countdown_bonus
 
 
 func _on_player_left_screen() -> void:

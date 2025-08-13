@@ -1,13 +1,26 @@
 class_name WindPlatformerMinigameUpgradeLogic
 extends BaseMinigameUpgradeLogic
 
-enum Type { MOVE_SPEED, AIR_CONTROL, DIVE, JUMP_HEIGHT, MORE_CLOUDS, BONUS2X, BONUS5X, BORDERS }
+enum Type {
+	MOVE_SPEED,
+	AIR_CONTROL,
+	DIVE,
+	JUMP_HEIGHT,
+	MORE_CLOUDS,
+	BONUS2X,
+	BONUS5X,
+	DOUBLE_JUMP,
+	BORDERS,
+	COUNTDOWN
+}
 
 @export var type: Type
 
 
 func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 	var my_game: WindPlatformerMinigame = game
+
+	prints(upgrade.name, upgrade.get_current_effect_modifier())
 
 	match type:
 		Type.MOVE_SPEED:
@@ -24,3 +37,11 @@ func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 			my_game.cloud_spawner.multiplier_2x_chance = upgrade.get_current_effect_modifier()
 		Type.BONUS5X:
 			my_game.cloud_spawner.multiplier_5x_chance = upgrade.get_current_effect_modifier()
+		Type.COUNTDOWN:
+			my_game.countdown_bonus = int(upgrade.get_current_effect_modifier())
+		Type.DOUBLE_JUMP:
+			assert(false, "not implemented")
+			pass
+		Type.BORDERS:
+			assert(false, "not implemented")
+			pass
