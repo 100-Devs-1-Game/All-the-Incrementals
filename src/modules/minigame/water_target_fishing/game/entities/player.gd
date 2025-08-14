@@ -50,13 +50,14 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_cannon := other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
-		#WTFGlobals.minigame.add_score(maybe_cannon.pickup.score)
-		#TextFloatSystem.floating_text(
-		#	maybe_cannon.global_position, "+%d" % maybe_cannon.pickup.score, WTFGlobals.minigame
-		#)
-
-		#WTFGlobals.minigame.stats.weight += maybe_cannon.pickup.weight
 		WTFGlobals.minigame.stats.scroll_faster(maybe_cannon.pickup.speedboost)
+		other_area.queue_free()
+		return
+
+	var maybe_boat := other_area.get_parent() as WTFBoat
+	if is_instance_valid(maybe_boat):
+		WTFGlobals.minigame.stats.carrying -= 1
+		other_area.queue_free()
 		return
 
 
