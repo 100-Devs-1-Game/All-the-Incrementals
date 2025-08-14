@@ -2,7 +2,7 @@
 class_name BaseUpgrade
 extends Resource
 
-enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
+enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER, UNLOCK }
 
 const NO_LEVEL = -1
 
@@ -115,8 +115,10 @@ func _construct_cost_and_modifier_arrays():
 			effect_modifier_arr.append(base_effect_modifier + (effect_modifier_multiplier * i))
 
 
-func get_uid() -> int:
-	return ResourceLoader.get_resource_uid(resource_path)
+func get_key() -> StringName:
+	# https://github.com/godotengine/godot/issues/75617
+	# TODO: replace with UID when this is fixed
+	return resource_path
 
 
 func level_up() -> void:
@@ -124,7 +126,7 @@ func level_up() -> void:
 	if is_maxed_out():
 		push_error("Tried to level up past max level")
 		return
-	SaveGameManager.world_state.minigame_unlock_levels[get_uid()] = (current_level + 1)
+	SaveGameManager.world_state.minigame_unlock_levels[get_key()] = (current_level + 1)
 	SaveGameManager.save()
 
 
@@ -134,13 +136,13 @@ func level_down() -> void:
 	if current_level <= NO_LEVEL + 1:
 		push_error("Tried to level down past min level")
 		return
-	SaveGameManager.world_state.minigame_unlock_levels[get_uid()] = (current_level - 1)
+	SaveGameManager.world_state.minigame_unlock_levels[get_key()] = (current_level - 1)
 	SaveGameManager.save()
 
 
 # 0 = level 1, ...
 func get_level() -> int:
-	return SaveGameManager.world_state.minigame_unlock_levels.get(get_uid(), NO_LEVEL)
+	return SaveGameManager.world_state.minigame_unlock_levels.get(get_key(), NO_LEVEL)
 
 
 # 0 = level 1, ...

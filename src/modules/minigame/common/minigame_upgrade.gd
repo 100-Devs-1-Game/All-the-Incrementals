@@ -11,4 +11,4 @@ extends BaseUpgrade
 
 
 func get_max_level() -> int:
-	return 1 if not unlocks_feature.is_empty() else super()
+	return 0 if not unlocks_feature.is_empty() else super()
