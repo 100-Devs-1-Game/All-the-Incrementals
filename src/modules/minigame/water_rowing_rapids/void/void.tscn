@@ -49,6 +49,9 @@ initial_velocity_max = 147.0
 gravity = Vector3(-294, 0, 0)
 
 [node name="Void" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
 script = ExtResource("1_cntsu")
 volume_fadeout = SubResource("Curve_dkylo")
 rubberband = SubResource("Curve_hfjwf")

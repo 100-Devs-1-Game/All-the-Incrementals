@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 @export var volume_fadeout: Curve
 @export var rubberband: Curve
@@ -26,6 +26,9 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var rubberbanded_speed = rubberband.sample_baked(get_distance()) * speed
 	position.x += rubberbanded_speed * delta
+
+	for player in get_overlapping_bodies():
+		player.take_damage(delta * 20.0)
 
 
 func get_distance() -> float:

@@ -68,6 +68,10 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	state.linear_velocity -= transform.y * (broadside_speed - broadside_speed * broadside_delta)
 
 
+func take_damage(amount: float):
+	boat_stability -= amount
+
+
 func _fail():
 	boat_stability -= 10.0
 	invincibility += 0.1
