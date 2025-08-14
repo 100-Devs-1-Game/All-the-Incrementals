@@ -10,51 +10,78 @@ signal changed_tile(tile: Vector2i)
 @export var water_spread: float = 0.1
 @export var tank_size: float = 5.0
 @export var arc_factor: float = 0.1
+@export var hitpoints: int = 3
 
 var move_speed_factor: float = 1.0
 var water_speed_factor: float = 1.0
 var arc_reduction: float = 1.0
 var water_spread_factor: float = 1.0
 var tank_bonus_size: float = 1.0
+var hitpoint_bonus: int
 
-var _last_dir: Vector2
+var _last_dir := Vector2(0, 1)
 var _current_item: FireFightersMinigameItem
 var _current_tile: Vector2i
 var _water_used: float
+var _hitpoints_left: int
 
 @onready var game: FireFightersMinigame = get_parent()
 @onready var extinguisher: Node2D = $Extinguisher
 @onready var extinguisher_cooldown: Timer = %Cooldown
 @onready var extinguisher_offset: Node2D = %"Extinguisher Offset"
 @onready var oil_dropper: FireFightersMinigameOilDropComponent = $"Oil Dropper"
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # helps to keep the extinguisher shooting diagonally after the player has
 # stopped moving ( releasing both keys will let the player face in the direction
 # of the last release key otherwise - if they aren't released perfectly simultaneous )
-@onready var diagonal_cooldown: Timer = $"Diagonal Cooldown"
+
+@onready var audio_extinguisher: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher"
+@onready
+var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Stop"
+@onready var audio_extinguisher_out: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Out"
+@onready var audio_item_pickup: AudioStreamPlayer = $"Audio/AudioStreamPlayer Item Pickup"
+@onready var audio_singe: AudioStreamPlayer = $"Audio/AudioStreamPlayer Singe"
 
 
 func _ready() -> void:
 	_current_tile = game.get_tile_at(position)
 
 
+func init():
+	_hitpoints_left = hitpoints + hitpoint_bonus
+
+
 func _physics_process(delta: float) -> void:
+	var is_extinguishing := Input.is_action_pressed("primary_action")
+
 	var move_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
-	velocity = velocity.move_toward(move_dir * move_speed * move_speed_factor, acceleration * delta)
+
+	if is_extinguishing and is_diagonal(move_dir):
+		if abs(_last_dir.x) > 0:
+			velocity.x = 0
+		elif abs(_last_dir.y) > 0:
+			velocity.y = 0
+
+	var motion := move_dir * move_speed * move_speed_factor
+	velocity = velocity.move_toward(motion, acceleration * delta * move_speed_factor)
 	move_and_slide()
 
-	if move_dir:
-		if is_diagonal(_last_dir) and not is_diagonal(move_dir):
-			if diagonal_cooldown.is_stopped():
-				_last_dir = move_dir
-		else:
-			_last_dir = move_dir
+	if move_dir and not is_diagonal(move_dir):
+		_last_dir = move_dir
 
-		if is_diagonal(move_dir):
-			diagonal_cooldown.start()
+	match Vector2i(_last_dir):
+		Vector2i.RIGHT:
+			animated_sprite.frame = 0
+		Vector2i.DOWN:
+			animated_sprite.frame = 1
+		Vector2i.LEFT:
+			animated_sprite.frame = 2
+		Vector2i.UP:
+			animated_sprite.frame = 3
 
 	extinguisher.look_at(position + _last_dir)
-	extinguish(Input.is_action_pressed("primary_action"))
+	extinguish(is_extinguishing)
 
 	if Input.is_action_just_pressed("secondary_action"):
 		if has_item():
@@ -65,12 +92,17 @@ func _physics_process(delta: float) -> void:
 
 func extinguish(flag: bool):
 	if not flag:
+		audio_extinguisher.stop()
 		return
+
+	if _is_tank_empty():
+		audio_extinguisher.stop()
+		return
+
+	if not audio_extinguisher.playing and flag:
+		audio_extinguisher.play()
 
 	if not extinguisher_cooldown.is_stopped():
-		return
-
-	if _water_used > tank_size + tank_bonus_size:
 		return
 
 	var dir: Vector2 = extinguisher.global_transform.x
@@ -88,12 +120,16 @@ func extinguish(flag: bool):
 
 	_water_used += 0.1
 
+	if _is_tank_empty():
+		audio_extinguisher_out.play()
+
 	extinguisher_cooldown.start()
 
 
 func pick_up_item(type: FireFightersMinigameItem):
 	_current_item = type
 	_current_item._on_pick_up(self)
+	audio_item_pickup.play()
 
 
 func _update_tile():
@@ -116,13 +152,33 @@ func unequip_item():
 	_current_item = null
 
 
+func _take_damage():
+	_hitpoints_left -= 1
+
+	game.play_damage_effect()
+
+	if _hitpoints_left <= 0:
+		game.game_over()
+
+	audio_singe.play()
+
+
+func _is_tank_empty() -> bool:
+	return _water_used > tank_size + tank_bonus_size
+
+
 func has_item() -> bool:
 	return _current_item != null
 
 
 func is_diagonal(vec: Vector2) -> bool:
-	return abs(vec.x) + abs(vec.y) > 1
+	return not is_zero_approx(vec.x) and not is_zero_approx(vec.y)
 
 
 func get_tile() -> Vector2i:
 	return game.get_tile_at(position)
+
+
+func _on_damage_update_timeout() -> void:
+	if game.is_tile_burning(_current_tile):
+		_take_damage()

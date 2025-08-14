@@ -17,6 +17,7 @@ var score: int
 func _ready() -> void:
 	mini_game = get_tree().root.get_node("EarthPotatoHerding")
 	score = mini_game.get_potato_score(self)
+	$Sprite.play("default")
 
 
 func is_close_to_bucket() -> bool:

@@ -30,6 +30,8 @@ func run():
 		for n in item.spawn_amount:
 			for i in spawn_tries:
 				var spawn_tile: Vector2i = game.get_random_tile()
+				if spawn_tile.distance_to(game.map_rect.get_center()) < 4:
+					continue
 				if _can_spawn_item_on(spawn_tile):
 					spawn_item(item, game.get_tile_position(spawn_tile))
 					break

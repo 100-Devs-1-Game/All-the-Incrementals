@@ -5,5 +5,6 @@
 [node name="WtfCamera2D" type="Camera2D" groups=["wtf_camera"]]
 physics_interpolation_mode = 2
 anchor_mode = 0
+zoom = Vector2(0.5, 0.5)
 script = ExtResource("1_wer28")
 metadata/_custom_type_script = "uid://b1fpagrjaync"

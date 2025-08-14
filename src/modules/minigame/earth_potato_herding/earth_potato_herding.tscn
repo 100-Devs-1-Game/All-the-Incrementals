@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://by18kqakehrup"]
+[gd_scene load_steps=25 format=3 uid="uid://by18kqakehrup"]
 
 [ext_resource type="Script" uid="uid://cbtiegkndpc6f" path="res://modules/minigame/earth_potato_herding/earth_potato_herding.gd" id="1_kuuhj"]
 [ext_resource type="Texture2D" uid="uid://pskqst4w0e50" path="res://assets/minigames/earth_potato_herding/background.webp" id="2_ttg4n"]
@@ -7,17 +7,53 @@
 [ext_resource type="PackedScene" uid="uid://cqhdv2mg3cv3t" path="res://modules/minigame/earth_potato_herding/eph_youngling/spawner/eph_youngling_spawner.tscn" id="5_kh8xl"]
 [ext_resource type="Script" uid="uid://2pr4unlcvuo3" path="res://modules/minigame/earth_potato_herding/eph_bucket_collision.gd" id="5_t1lt2"]
 [ext_resource type="PackedScene" uid="uid://mqbrbbxraysb" path="res://modules/minigame/earth_potato_herding/eph_adult/spawner/eph_adult_spawner.tscn" id="6_hi1yc"]
+[ext_resource type="Texture2D" uid="uid://dx2tnld420se4" path="res://assets/minigames/earth_potato_herding/off_stones_6.webp" id="6_wan2k"]
 [ext_resource type="PackedScene" uid="uid://vesybpnx50sy" path="res://modules/minigame/earth_potato_herding/eph_adult/eph_adult.tscn" id="7_d1808"]
+[ext_resource type="Texture2D" uid="uid://c1wfbfs6ytdqw" path="res://assets/minigames/earth_potato_herding/off_stones_5.webp" id="7_pdhbv"]
+[ext_resource type="Texture2D" uid="uid://cgevke1qv33oj" path="res://assets/minigames/earth_potato_herding/off_stones_3.webp" id="8_2fr6l"]
 [ext_resource type="PackedScene" uid="uid://bx2ptflde5hu" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/spawner/eph_evil_spirit_spawner.tscn" id="8_y36sp"]
+[ext_resource type="Texture2D" uid="uid://psjewfp577sq" path="res://assets/minigames/earth_potato_herding/off_stones_2.webp" id="9_4hiv3"]
 [ext_resource type="PackedScene" uid="uid://c1o4hv5ignom3" path="res://modules/minigame/earth_potato_herding/eph_evil_spirit/eph_evil_spirit.tscn" id="9_w12vf"]
+[ext_resource type="Texture2D" uid="uid://dacl2gm8uqfp1" path="res://assets/minigames/earth_potato_herding/off_stones_1.webp" id="10_6kctu"]
 [ext_resource type="PackedScene" uid="uid://bwda8leqqfqki" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/spawner/eph_evil_dashing_spirit_spawner.tscn" id="10_7ayer"]
+[ext_resource type="Texture2D" uid="uid://dfaope4xajqxu" path="res://assets/minigames/earth_potato_herding/off_stones.webp" id="11_opl0y"]
 [ext_resource type="PackedScene" uid="uid://cgoxxbjngex2d" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/eph_evil_dashing_spirit.tscn" id="11_pp8t6"]
+[ext_resource type="Texture2D" uid="uid://bdluk1vwtg4xm" path="res://assets/minigames/earth_potato_herding/glowing_stones.webp" id="12_bhxf4"]
 [ext_resource type="PackedScene" uid="uid://bu668uskhmtud" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.tscn" id="12_ngpls"]
 [ext_resource type="Script" uid="uid://7i6e5fekusou" path="res://modules/minigame/earth_potato_herding/despawn_zone/despawn_zone.gd" id="13_fp0k5"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="14_nm6ba"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2q4j3"]
 radius = 77.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkqae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wan2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pdhbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2fr6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4hiv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6kctu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_opl0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bhxf4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="EarthPotatoHerding" type="Node2D" node_paths=PackedStringArray("bucket") groups=["earth_potato_herding"]]
 script = ExtResource("1_kuuhj")
@@ -38,32 +74,19 @@ metadata/_edit_lock_ = true
 position = Vector2(1003, 530)
 
 [node name="bucket" type="Sprite2D" parent="Marker2D"]
-modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.616216, 0.616216)
 texture = ExtResource("4_w4xl5")
 
-[node name="Area2D" type="Area2D" parent="Marker2D" node_paths=PackedStringArray("bucket", "timer", "text")]
+[node name="Area2D" type="Area2D" parent="Marker2D" node_paths=PackedStringArray("bucket", "stones", "text")]
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("5_t1lt2")
 bucket = NodePath("../bucket")
-timer = NodePath("../TextureProgressBar")
+stones = NodePath("../AnimatedSprite2D")
 text = NodePath("../RichTextLabel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/Area2D"]
 shape = SubResource("CircleShape2D_2q4j3")
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Marker2D"]
-offset_left = -75.0
-offset_top = -75.0
-offset_right = 75.0
-offset_bottom = 75.0
-scale = Vector2(0.6, 0.6)
-max_value = 1.0
-step = 0.0
-value = 0.69
-fill_mode = 4
-texture_progress = ExtResource("4_w4xl5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Marker2D"]
 offset_left = -345.0
@@ -73,6 +96,9 @@ offset_bottom = 202.7
 text = "Add some text !!!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Marker2D"]
+sprite_frames = SubResource("SpriteFrames_jkqae")
 
 [node name="EphYounglingSpawner" parent="." node_paths=PackedStringArray("_free_roam_area", "_free_roam_bounding_box", "_adult_spawner", "_player", "_spawnable_area", "_spawnable_area_bounding_box", "_add_child_to") instance=ExtResource("5_kh8xl")]
 _free_roam_area = NodePath("spawn_zone")
@@ -188,6 +214,9 @@ offset_left = -99.0
 offset_top = -79.0
 offset_right = -99.0
 offset_bottom = -79.0
+
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+anchors_preset = 6
 
 [connection signal="body_entered" from="Marker2D/Area2D" to="Marker2D/Area2D" method="is_it_a_demon"]
 [connection signal="body_entered" from="DespawnZone" to="DespawnZone" method="_on_body_entered"]

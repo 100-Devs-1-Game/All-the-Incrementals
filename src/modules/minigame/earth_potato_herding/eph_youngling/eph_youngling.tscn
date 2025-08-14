@@ -1,14 +1,106 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqkes8pccdkns"]
+[gd_scene load_steps=22 format=3 uid="uid://cqkes8pccdkns"]
 
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_t88fu"]
 [ext_resource type="Script" uid="uid://5sducby6jjy2" path="res://modules/minigame/earth_potato_herding/eph_youngling/eph_youngling.gd" id="2_jfyq0"]
 [ext_resource type="Script" uid="uid://yvbn3tb5btx4" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/free_roam.gd" id="3_er4gq"]
 [ext_resource type="Script" uid="uid://bbm78i0skoycb" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/grow_up.gd" id="4_0tlpl"]
 [ext_resource type="Script" uid="uid://rjac1382vllh" path="res://modules/minigame/earth_potato_herding/eph_youngling/states/herd_by_player.gd" id="4_d7cqi"]
-[ext_resource type="Texture2D" uid="uid://crmns8qtpfpj5" path="res://assets/minigames/earth_potato_herding/bady_potato.webp" id="6_58i80"]
+[ext_resource type="Texture2D" uid="uid://bpidcu8v3dgal" path="res://assets/minigames/earth_potato_herding/baby_potato_spritesheet.webp" id="6_58i80"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_58i80"]
 radius = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo4fq"]
+atlas = ExtResource("6_58i80")
+region = Rect2(0, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14e6o"]
+atlas = ExtResource("6_58i80")
+region = Rect2(69, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbtsg"]
+atlas = ExtResource("6_58i80")
+region = Rect2(138, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwk1b"]
+atlas = ExtResource("6_58i80")
+region = Rect2(207, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do3rt"]
+atlas = ExtResource("6_58i80")
+region = Rect2(276, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqirp"]
+atlas = ExtResource("6_58i80")
+region = Rect2(345, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_albwd"]
+atlas = ExtResource("6_58i80")
+region = Rect2(414, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ult5u"]
+atlas = ExtResource("6_58i80")
+region = Rect2(483, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fhfq"]
+atlas = ExtResource("6_58i80")
+region = Rect2(552, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m8gk"]
+atlas = ExtResource("6_58i80")
+region = Rect2(621, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mseft"]
+atlas = ExtResource("6_58i80")
+region = Rect2(690, 0, 69, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc28y"]
+atlas = ExtResource("6_58i80")
+region = Rect2(759, 0, 69, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7gdob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oo4fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14e6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbtsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwk1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do3rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqirp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_albwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ult5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fhfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6m8gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mseft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc28y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0tlpl"]
 radius = 20.025
@@ -43,7 +135,8 @@ shape = SubResource("CircleShape2D_58i80")
 [node name="Sprite" parent="." index="2"]
 position = Vector2(4.76837e-07, -1)
 scale = Vector2(0.778466, 0.778466)
-texture = ExtResource("6_58i80")
+sprite_frames = SubResource("SpriteFrames_7gdob")
+frame_progress = 0.877154
 
 [node name="YounglingSawSpirit" type="Area2D" parent="." index="3"]
 collision_layer = 0

@@ -6,9 +6,14 @@ const BURN_TICK_INTERVAL = 10
 @export var player_scene: PackedScene
 @export var fire_scene: PackedScene
 @export var water_scene: PackedScene
+@export var extinguish_effect_scene: PackedScene
+@export var explosion_effect_scene: PackedScene
 
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
+
+@export var starting_fires: int = 25
+@export var countdown_duration: float = 10.0
 
 @export var max_water_per_fire: float = 0.1
 
@@ -18,6 +23,11 @@ var map_feature_lookup: Dictionary
 var fires: Dictionary
 var player: FireFightersMinigamePlayer
 var saved_tiles: Array[Vector2i]
+var countdown_bonus: int
+var fires_bonus: int
+var reduce_map_feature_thresholds: Dictionary
+
+var _damage_effect_tween: Tween
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
@@ -33,9 +43,10 @@ var saved_tiles: Array[Vector2i]
 @onready var item_spawner: FireFightersMinigameItemSpawner = $ItemSpawner
 @onready var effects_player: FireFightersMinigameEffectsPlayer = $EffectsPlayer
 
+@onready
+var audio_container_oil: FireFightersMinigameAudioSequenceContainer = $"Audio/AudioContainer Oil"
 
-func _start() -> void:
-	_run()
+@onready var damage_color_rect: ColorRect = $"Damage Overlay/ColorRect"
 
 
 func _initialize():
@@ -47,20 +58,21 @@ func _initialize():
 		if feature.spawn_noise:
 			feature.spawn_noise.seed = rng_seed
 
-	FireFightersMinigameMapGenerator.generate_map(
-		map_rect, tile_map_terrain, tile_map_objects, map_features
-	)
+	_spawn_player()
 
 
-func _run():
-	for i in 80:
+func _start():
+	player.init()
+
+	FireFightersMinigameMapGenerator.generate_map(self)
+
+	for i in starting_fires + fires_bonus:
 		var tile := Vector2i(
 			randi_range(map_rect.position.x, map_rect.position.x + map_rect.size.x),
 			randi_range(map_rect.position.y, map_rect.position.y + map_rect.size.y)
 		)
 		_add_fire(tile, randf_range(0.2, 0.8))
 
-	_spawn_player()
 	item_spawner.activate()
 
 
@@ -74,8 +86,8 @@ func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 	var fire: FireFightersMinigameFire = fire_scene.instantiate()
 	fires[tile] = fire
 	fire.position = tile_map_terrain.map_to_local(tile)
-	fire.size = randf_range(min_size, max_size)
 	fire_node.add_child(fire)
+	fire.size = randf_range(min_size, max_size)
 	fire.died.connect(_remove_fire.bind(fire))
 
 	if tile in saved_tiles:
@@ -121,7 +133,8 @@ func _tick_fires():
 func _fire_burn_tick(
 	fire: FireFightersMinigameFire, tile: Vector2i, feature: FireFightersMinigameMapFeature
 ):
-	fire.total_burn += fire.size / (60.0 / BURN_TICK_INTERVAL)
+	# somehow not accurate?
+	fire.total_burn += BURN_TICK_INTERVAL / 60.0
 
 	if has_oil(tile):
 		fire.size = 10.0
@@ -185,13 +198,15 @@ func _soak_tile(tile: Vector2i):
 		tile_map_water.set_cell(tile, water_level + 1, Vector2.ZERO)
 
 
-func add_oil(tile: Vector2i):
+func add_oil(tile: Vector2i, counter: int = -1):
 	tile_map_oil.set_cell(tile, 0, Vector2.ZERO)
+	if counter > -1:
+		audio_container_oil.play(counter)
 
 
 func _spawn_player():
 	player = player_scene.instantiate()
-	player.position = DisplayServer.window_get_size() / 2
+	player.position = tile_map_terrain.get_viewport_rect().size / 2
 	add_child(player)
 	player.extinguish_spot.connect(_on_extinguish_at)
 
@@ -214,7 +229,12 @@ func _on_extinguish_at(pos: Vector2):
 func _vegetation_saved(tile: Vector2i):
 	add_score(1)
 	saved_tiles.append(tile)
-	TextFloatSystem.floating_text(get_tile_position(tile), str("+1"), tile_map_terrain)
+
+	var pos: Vector2 = get_tile_position(tile)
+	var effect: Node2D = extinguish_effect_scene.instantiate()
+	effect.position = pos
+	effects_node.add_child(effect)
+	TextFloatSystem.floating_text(pos, str("+1"), tile_map_terrain)
 
 
 func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
@@ -229,6 +249,27 @@ func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
 				add_oil(tile)
 				if on_fire:
 					_add_fire(tile, 0.1, 1.0)
+
+	if on_fire:
+		var explosion: Node2D = explosion_effect_scene.instantiate()
+		explosion.position = get_tile_position(center_tile)
+		effects_node.add_child(explosion)
+
+
+func play_damage_effect():
+	if _damage_effect_tween:
+		_damage_effect_tween.kill()
+	_damage_effect_tween = create_tween()
+	damage_color_rect.modulate = Color.WHITE
+
+	_damage_effect_tween.tween_property(damage_color_rect, "modulate", Color.TRANSPARENT, 0.3)
+	_damage_effect_tween.tween_callback(damage_color_rect.hide)
+
+	damage_color_rect.show()
+
+
+func _get_countdown_duration() -> float:
+	return countdown_duration + countdown_bonus
 
 
 func get_tile_at(pos: Vector2) -> Vector2i:

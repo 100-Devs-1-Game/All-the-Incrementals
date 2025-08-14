@@ -48,6 +48,7 @@ func despawn() -> void:
 
 func _ready() -> void:
 	mini_game = get_tree().get_first_node_in_group("earth_potato_herding")
+	$Sprite.play("default")
 
 
 func _physics_process(delta: float) -> void:

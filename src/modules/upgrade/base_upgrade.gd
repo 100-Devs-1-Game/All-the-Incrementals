@@ -82,12 +82,16 @@ const NO_LEVEL = -1
 @export var description_modifier_format: ModifierFormat
 
 
+func _init() -> void:
+	if base_cost:
+		base_cost.changed.connect(_on_base_cost_changed)
+
+
 func _construct_cost_and_modifier_arrays():
 	if not Engine.is_editor_hint():
 		return
 
 	if max_level <= 0:
-		push_error("failed to calculate costs/effect - max level is not _set")
 		return
 
 	if base_cost && base_cost.slots && base_cost_multiplier > 0:
@@ -194,9 +198,17 @@ func _set_max_level(level: int):
 
 
 func _set_base_cost(cost: EssenceInventory):
+	if base_cost:
+		base_cost.changed.disconnect(_on_base_cost_changed)
+
 	base_cost = cost
 	if base_cost:
 		_construct_cost_and_modifier_arrays()
+		base_cost.changed.connect(_on_base_cost_changed)
+
+
+func _on_base_cost_changed() -> void:
+	_construct_cost_and_modifier_arrays()
 
 
 func _set_base_cost_multiplier(multiplier: float):

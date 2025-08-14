@@ -1,9 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://0xvvfgkrdmro"]
+[gd_scene load_steps=4 format=3 uid="uid://0xvvfgkrdmro"]
 
 [ext_resource type="PackedScene" uid="uid://di5qytko63bu3" path="res://modules/minigame/water_target_fishing/game/entities/background_sprite.tscn" id="1_tm6xv"]
-[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_bjjxq"]
+[ext_resource type="Texture2D" uid="uid://1rps4ncbbl1" path="res://assets/minigames/water_target_fishing/clouds/cloud_01.webp" id="2_tm6xv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8b4kq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tm6xv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Cloud" type="Node2D"]
 
 [node name="BackgroundSprite" parent="." instance=ExtResource("1_tm6xv")]
-texture = ExtResource("2_bjjxq")
+self_modulate = Color(4, 4, 3, 1)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_8b4kq")
+frame_progress = 0.74573
+
+[node name="WtfParallaxComponent" parent="BackgroundSprite" index="0"]
+min_movement_multiplier = 0.3
+max_movement_multiplier = 0.6
+base_speed = -20.0
+
+[editable path="BackgroundSprite"]
