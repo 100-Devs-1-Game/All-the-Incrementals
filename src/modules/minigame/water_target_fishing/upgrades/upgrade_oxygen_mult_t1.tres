@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://nr857byojkav"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=21 format=3 uid="uid://nr857byojkav"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_cnw6l"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_syaoj"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_ya8wv"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_donsq"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="4_c4cma"]
+[ext_resource type="Texture2D" uid="uid://gb85rnphm0t2" path="res://assets/minigames/water_target_fishing/upgrades/increase_oxygen_capacity_multiplier.png" id="4_xbcvp"]
 [ext_resource type="Resource" uid="uid://d308idisdwcrx" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_oxygen_mult_t2.tres" id="6_donsq"]
 
 [sub_resource type="Resource" id="Resource_donsq"]
@@ -21,70 +22,70 @@ wind = 0
 slots = Array[ExtResource("2_syaoj")]([SubResource("Resource_donsq")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_c4cma"]
-script = ExtResource("2_syaoj")
-essence = ExtResource("3_donsq")
-amount = 2
-
-[sub_resource type="Resource" id="Resource_xbcvp"]
-script = ExtResource("1_cnw6l")
-earth = 0
-fire = 0
-water = 2
-wind = 0
-slots = Array[ExtResource("2_syaoj")]([SubResource("Resource_c4cma")])
-
 [sub_resource type="Resource" id="Resource_fdpue"]
 script = ExtResource("2_syaoj")
 essence = ExtResource("3_donsq")
-amount = 3
+amount = 2
 
 [sub_resource type="Resource" id="Resource_s2rlx"]
 script = ExtResource("1_cnw6l")
 earth = 0
 fire = 0
-water = 3
+water = 2
 wind = 0
 slots = Array[ExtResource("2_syaoj")]([SubResource("Resource_fdpue")])
 
 [sub_resource type="Resource" id="Resource_jfwuf"]
 script = ExtResource("2_syaoj")
 essence = ExtResource("3_donsq")
-amount = 4
+amount = 3
 
 [sub_resource type="Resource" id="Resource_75uuw"]
 script = ExtResource("1_cnw6l")
 earth = 0
 fire = 0
-water = 4
+water = 3
 wind = 0
 slots = Array[ExtResource("2_syaoj")]([SubResource("Resource_jfwuf")])
 
 [sub_resource type="Resource" id="Resource_ycm4j"]
 script = ExtResource("2_syaoj")
 essence = ExtResource("3_donsq")
-amount = 6
+amount = 4
 
 [sub_resource type="Resource" id="Resource_xipjj"]
 script = ExtResource("1_cnw6l")
 earth = 0
 fire = 0
-water = 6
+water = 4
 wind = 0
 slots = Array[ExtResource("2_syaoj")]([SubResource("Resource_ycm4j")])
 
 [sub_resource type="Resource" id="Resource_4dkkf"]
 script = ExtResource("2_syaoj")
 essence = ExtResource("3_donsq")
-amount = 10
+amount = 6
 
 [sub_resource type="Resource" id="Resource_c51hg"]
 script = ExtResource("1_cnw6l")
 earth = 0
 fire = 0
-water = 10
+water = 6
 wind = 0
 slots = Array[ExtResource("2_syaoj")]([SubResource("Resource_4dkkf")])
+
+[sub_resource type="Resource" id="Resource_xi532"]
+script = ExtResource("2_syaoj")
+essence = ExtResource("3_donsq")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_ytugo"]
+script = ExtResource("1_cnw6l")
+earth = 0
+fire = 0
+water = 10
+wind = 0
+slots = Array[ExtResource("2_syaoj")]([SubResource("Resource_xi532")])
 
 [sub_resource type="Resource" id="Resource_0hkom"]
 script = ExtResource("4_c4cma")
@@ -97,8 +98,9 @@ logic = SubResource("Resource_0hkom")
 unlocks_feature = ""
 name = "+5% Oxygen"
 flavor = ""
+icon = ExtResource("4_xbcvp")
 position = Vector2(0, -1024)
-cost_arr = Array[ExtResource("1_cnw6l")]([SubResource("Resource_xbcvp"), SubResource("Resource_s2rlx"), SubResource("Resource_75uuw"), SubResource("Resource_xipjj"), SubResource("Resource_c51hg")])
+cost_arr = Array[ExtResource("1_cnw6l")]([SubResource("Resource_s2rlx"), SubResource("Resource_75uuw"), SubResource("Resource_xipjj"), SubResource("Resource_c51hg"), SubResource("Resource_ytugo")])
 effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0])
 max_level = 5
 base_cost = SubResource("Resource_lbbdp")

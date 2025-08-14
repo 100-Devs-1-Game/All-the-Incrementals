@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=22 format=3 uid="uid://bqtfsjuog7hvf"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=23 format=3 uid="uid://bqtfsjuog7hvf"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_vc0oj"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_coq1h"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="2_orrmm"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_coq1h"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_gtktl"]
+[ext_resource type="Texture2D" uid="uid://dl83ypv4hwjr3" path="res://assets/minigames/water_target_fishing/upgrades/increase_starting_speed.png" id="4_pdg2o"]
 [ext_resource type="Resource" uid="uid://bi5yekv4513o2" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_initial_speed_t3.tres" id="6_gtktl"]
 [ext_resource type="Resource" uid="uid://cmvn2e4uha13q" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_speedboost_mult_t2.tres" id="7_iwhwk"]
 [ext_resource type="Resource" uid="uid://brpuiog1pnfdl" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_speedboost_flat_t2.tres" id="8_knfnd"]
@@ -99,6 +100,7 @@ logic = SubResource("Resource_gtktl")
 unlocks_feature = ""
 name = "++ Starting Speed"
 flavor = ""
+icon = ExtResource("4_pdg2o")
 position = Vector2(1536, 2432)
 cost_arr = Array[ExtResource("1_vc0oj")]([SubResource("Resource_xbh1d"), SubResource("Resource_uajgw"), SubResource("Resource_lm3bg"), SubResource("Resource_evkqh"), SubResource("Resource_ab8yf")])
 effect_modifier_arr = Array[float]([3.0, 6.0, 9.0, 12.0, 15.0])

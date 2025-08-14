@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=29 format=3 uid="uid://dhtm5h3d8mmt2"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://dhtm5h3d8mmt2"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_oqcwo"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_70fq7"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_f4vjk"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_ikoaq"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="4_4db3r"]
+[ext_resource type="Texture2D" uid="uid://b6cxm33swducr" path="res://assets/minigames/water_target_fishing/upgrades/increase_starting_speed_multiplier.png" id="4_ikoaq"]
 
 [sub_resource type="Resource" id="Resource_f4vjk"]
 script = ExtResource("2_f4vjk")
@@ -20,135 +21,135 @@ wind = 0
 slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_f4vjk")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_ikoaq"]
+[sub_resource type="Resource" id="Resource_4db3r"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 1
 
-[sub_resource type="Resource" id="Resource_4db3r"]
+[sub_resource type="Resource" id="Resource_cklge"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 1
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_ikoaq")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_4db3r")])
 
-[sub_resource type="Resource" id="Resource_cklge"]
+[sub_resource type="Resource" id="Resource_afqdx"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 3
 
-[sub_resource type="Resource" id="Resource_afqdx"]
+[sub_resource type="Resource" id="Resource_ar5ic"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 3
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_cklge")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_afqdx")])
 
-[sub_resource type="Resource" id="Resource_ar5ic"]
+[sub_resource type="Resource" id="Resource_c6gv1"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 10
 
-[sub_resource type="Resource" id="Resource_c6gv1"]
+[sub_resource type="Resource" id="Resource_fujiu"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 10
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_ar5ic")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_c6gv1")])
 
-[sub_resource type="Resource" id="Resource_fujiu"]
+[sub_resource type="Resource" id="Resource_stkou"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 40
 
-[sub_resource type="Resource" id="Resource_stkou"]
+[sub_resource type="Resource" id="Resource_7hfo8"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 40
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_fujiu")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_stkou")])
 
-[sub_resource type="Resource" id="Resource_7hfo8"]
+[sub_resource type="Resource" id="Resource_fl2bp"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 150
 
-[sub_resource type="Resource" id="Resource_fl2bp"]
+[sub_resource type="Resource" id="Resource_e8d7a"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 150
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_7hfo8")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_fl2bp")])
 
-[sub_resource type="Resource" id="Resource_e8d7a"]
+[sub_resource type="Resource" id="Resource_8wnqd"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 500
 
-[sub_resource type="Resource" id="Resource_8wnqd"]
+[sub_resource type="Resource" id="Resource_tguy5"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 500
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_e8d7a")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_8wnqd")])
 
-[sub_resource type="Resource" id="Resource_tguy5"]
+[sub_resource type="Resource" id="Resource_tuvek"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 1500
 
-[sub_resource type="Resource" id="Resource_tuvek"]
+[sub_resource type="Resource" id="Resource_lhiiv"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 1500
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_tguy5")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_tuvek")])
 
-[sub_resource type="Resource" id="Resource_lhiiv"]
+[sub_resource type="Resource" id="Resource_npg4e"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 6000
 
-[sub_resource type="Resource" id="Resource_npg4e"]
+[sub_resource type="Resource" id="Resource_cnso0"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 6000
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_lhiiv")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_npg4e")])
 
-[sub_resource type="Resource" id="Resource_cnso0"]
+[sub_resource type="Resource" id="Resource_mwjju"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 22000
 
-[sub_resource type="Resource" id="Resource_mwjju"]
+[sub_resource type="Resource" id="Resource_8v4a0"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 22000
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_cnso0")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_mwjju")])
 
-[sub_resource type="Resource" id="Resource_8v4a0"]
+[sub_resource type="Resource" id="Resource_xxb3a"]
 script = ExtResource("2_f4vjk")
 essence = ExtResource("3_ikoaq")
 amount = 78000
 
-[sub_resource type="Resource" id="Resource_xxb3a"]
+[sub_resource type="Resource" id="Resource_ewkyt"]
 script = ExtResource("1_oqcwo")
 earth = 0
 fire = 0
 water = 78000
 wind = 0
-slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_8v4a0")])
+slots = Array[ExtResource("2_f4vjk")]([SubResource("Resource_xxb3a")])
 
 [sub_resource type="Resource" id="Resource_py1h6"]
 script = ExtResource("4_4db3r")
@@ -161,8 +162,9 @@ logic = SubResource("Resource_py1h6")
 unlocks_feature = ""
 name = "+5% Speedboost"
 flavor = ""
+icon = ExtResource("4_ikoaq")
 position = Vector2(768, 3136)
-cost_arr = Array[ExtResource("1_oqcwo")]([SubResource("Resource_4db3r"), SubResource("Resource_afqdx"), SubResource("Resource_c6gv1"), SubResource("Resource_stkou"), SubResource("Resource_fl2bp"), SubResource("Resource_8wnqd"), SubResource("Resource_tuvek"), SubResource("Resource_npg4e"), SubResource("Resource_mwjju"), SubResource("Resource_xxb3a")])
+cost_arr = Array[ExtResource("1_oqcwo")]([SubResource("Resource_cklge"), SubResource("Resource_ar5ic"), SubResource("Resource_fujiu"), SubResource("Resource_7hfo8"), SubResource("Resource_e8d7a"), SubResource("Resource_tguy5"), SubResource("Resource_lhiiv"), SubResource("Resource_cnso0"), SubResource("Resource_8v4a0"), SubResource("Resource_ewkyt")])
 effect_modifier_arr = Array[float]([5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0])
 max_level = 10
 base_cost = SubResource("Resource_kusri")
