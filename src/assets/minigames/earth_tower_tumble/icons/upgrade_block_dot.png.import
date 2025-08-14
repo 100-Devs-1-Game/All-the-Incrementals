@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dem6aslg0cdbs"
-path="res://.godot/imported/clouds.png-45730c699b727363139f07a92b87f803.ctex"
+uid="uid://bwsi5tlnwblru"
+path="res://.godot/imported/upgrade_block_dot.png-62eb8a794143f4c3bd20fee2d016ba1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/earth_tower_tumble/clouds.png"
-dest_files=["res://.godot/imported/clouds.png-45730c699b727363139f07a92b87f803.ctex"]
+source_file="res://assets/minigames/earth_tower_tumble/icons/upgrade_block_dot.png"
+dest_files=["res://.godot/imported/upgrade_block_dot.png-62eb8a794143f4c3bd20fee2d016ba1c.ctex"]
 
 [params]
 
