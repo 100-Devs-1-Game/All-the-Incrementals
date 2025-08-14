@@ -9,7 +9,7 @@ enum UpgradeType {
 	ENEMY_MOVE_SPEED,
 	BASE_WIDTH,
 	LIVES,
-	}
+}
 
 @export var type: UpgradeType
 
@@ -19,7 +19,7 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 
 	var effect_modifier: float = upgrade.get_current_effect_modifier()
 	print("Current effect modifier: " + str(effect_modifier))
-	
+
 	match type:
 		UpgradeType.FLIGHT_SPEED:
 			print("Flight speed upgraded")

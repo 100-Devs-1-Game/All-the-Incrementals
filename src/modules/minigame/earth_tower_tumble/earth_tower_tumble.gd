@@ -6,6 +6,12 @@ signal life_lost
 signal score_changed(value)
 signal blocks_changed(value)
 
+@export var player: Node2D
+@export var base: Node2D
+@export var enemy_spawner: Node2D
+@export var block_spawner: Node2D
+@export var game_ui: CanvasLayer
+
 var lives := 3
 var build_mode := true
 
@@ -14,11 +20,6 @@ var blocks_remaining := 18:
 		blocks_remaining = value
 		blocks_changed.emit(value)
 
-@export var player: Node2D
-@export var base: Node2D
-@export var enemy_spawner: Node2D
-@export var block_spawner: Node2D
-@export var game_ui: CanvasLayer
 
 func _start():
 	_begin()
@@ -45,6 +46,7 @@ func _on_block_placed(amount: int):
 	add_score(amount)
 	$UI/TempUI/Score.text = "Score: " + str(get_score())
 
+
 func block_penalty():
 	if lives > 0:
 		lives -= 1
@@ -52,6 +54,7 @@ func block_penalty():
 		life_lost.emit()
 		if lives <= 0:
 			game_over()
+
 
 func player_speed_modifier(modifier):
 	player.direction_speed = player.direction_speed * modifier
