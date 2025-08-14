@@ -674,10 +674,9 @@ scale = Vector2(200, 200)
 texture = SubResource("GradientTexture2D_om2bs")
 centered = false
 
-[node name="WtfCamera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_o5mdu")]
+[node name="WtfCamera2D" parent="." instance=ExtResource("7_o5mdu")]
 position = Vector2(0, -300)
 position_smoothing_enabled = true
-player = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -813,6 +812,31 @@ text = "0
 "
 fit_content = true
 
+[node name="UICarry" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UICarryLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UICarry"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
+text = "Carrying"
+fit_content = true
+
+[node name="UICarryValue" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UICarry"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
+text = "0
+"
+fit_content = true
+
 [node name="WTFFishDB" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("10_c8m36")
@@ -820,9 +844,6 @@ directory_path = "res://modules/minigame/water_target_fishing/game/data/fish"
 metadata/_custom_type_script = "uid://bpkdtrhrdt0xr"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("11_56cph")]
-
-[node name="SharedBaseComponents" parent="MinigameSharedComponents" index="1"]
-allow_popup_menu = null
 
 [editable path="Clouds/BackgroundSprite"]
 [editable path="Clouds/BackgroundSprite2"]

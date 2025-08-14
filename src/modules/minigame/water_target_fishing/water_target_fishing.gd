@@ -20,6 +20,7 @@ var _old_physics_tickrate: int
 @onready var ui_oxygen_value: RichTextLabel = %UIOxygenValue
 @onready var ui_weight_value: RichTextLabel = %UIWeightValue
 @onready var ui_distance_value: RichTextLabel = %UIDistanceValue
+@onready var ui_carry_value: RichTextLabel = %UICarryValue
 
 
 func get_pixels_per_second() -> int:
@@ -76,6 +77,7 @@ func _process(_delta: float) -> void:
 	ui_oxygen_value.text = str(WTFGlobals.minigame.stats.oxygen_percentage()) + "%"
 	ui_weight_value.text = str(floori(stats.total_added_weight()))
 	ui_distance_value.text = str(floori(_distance_travelled))
+	ui_carry_value.text = "%s/%s" % [floori(stats.carrying), floori(stats.carry_capacity())]
 
 
 func random_spawnable_fish(
