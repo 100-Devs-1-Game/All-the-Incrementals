@@ -108,7 +108,7 @@ func jump_logic():
 		if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed + jump_speed_bonus:
 			velocity.y -= jump_speed_per_frame
 			current_jump_speed += jump_speed_per_frame
-			if animated_sprite.animation != "jumping" and animated_sprite.animation == "falling":
+			if animated_sprite.animation != "jumping" and animated_sprite.animation != "falling":
 				animated_sprite.play("jumping")
 		else:
 			current_jump_speed = 0
