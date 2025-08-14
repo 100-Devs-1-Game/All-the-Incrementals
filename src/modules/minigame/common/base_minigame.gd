@@ -78,8 +78,10 @@ func _start():
 	pass
 
 
-func _get_uid() -> int:
-	return ResourceLoader.get_resource_uid(data.resource_path)
+func _get_key() -> StringName:
+	# https://github.com/godotengine/godot/issues/75617
+	# TODO: replace with UID when this is fixed
+	return data.resource_path
 
 
 # This function is called when the Play button on the minigame menu is pressed.
@@ -133,7 +135,7 @@ func open_upgrades():
 # This function is called when the Show highscores button on the minigame menu is
 # pressed.
 func show_highscores():
-	var highscores = Player.get_highscores(_get_uid())
+	var highscores = Player.get_highscores(_get_key())
 	_minigame_shared_components.minigame_highscores.open_menu(highscores)
 
 
@@ -147,7 +149,7 @@ func game_over():
 	Player.add_stack_to_inventory(
 		EssenceStack.new(data.output_essence, int(_score * data.currency_conversion_factor))
 	)
-	Player.update_highscores(_get_uid(), get_score())
+	Player.update_highscores(_get_key(), get_score())
 	_is_game_over = true
 
 
