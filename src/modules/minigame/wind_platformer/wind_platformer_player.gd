@@ -40,7 +40,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	velocity *= (1 - damping * delta)
+	velocity *= (1 - damping * move_speed_factor * delta)
 
 	_is_on_ground = is_on_floor()
 
