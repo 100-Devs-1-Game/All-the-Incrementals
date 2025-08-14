@@ -84,17 +84,57 @@ func random_spawnable_fish(
 	#todo cache, carefully
 	var valid_spawns: Array[WTFFishData]
 
+	var fastest := ""
+	var fastest_speed := 0
+
+	var slowest := ""
+	var slowest_speed := 9999999999
+
 	var fish_data := fish_db.get_data()
 	for data_key in fish_data:
 		var data_val := fish_data[data_key]
+
+		if (
+			data_val.base_speed + (min_speed * data_val.player_movement_multiplier * 1.4)
+			< slowest_speed
+		):
+			slowest_speed = (
+				data_val.base_speed + (min_speed * data_val.player_movement_multiplier * 1.4)
+			)
+			slowest = data_key
+
 		var spawnable_x := distance > data_val.spawn.min_spawn_distance
 		var spawn_y_range := data_val.spawn.get_spawn_height_range()
 		var spawnable_y := min_height <= spawn_y_range.y || max_height >= spawn_y_range.x
-		var too_fast := data_val.base_speed > min_speed
-		#var too_slow := data_val.base_speed < min_speed - 2000
+		var too_fast := (
+			data_val.base_speed + (min_speed * data_val.player_movement_multiplier * 1.4)
+			> min_speed
+		)
+		var too_slow := (
+			data_val.base_speed + (min_speed * data_val.player_movement_multiplier * 1.4)
+			< min_speed - 2000
+		)
 		#print("%s is too_fast? %s. %s > %s" % [data_key, too_fast, data_val.base_speed, min_speed])
 		if spawnable_x && spawnable_y && !too_fast:
-			valid_spawns.push_back(data_val)
+			if (
+				data_val.base_speed + (min_speed * data_val.player_movement_multiplier * 1.4)
+				> fastest_speed
+			):
+				fastest_speed = (
+					data_val.base_speed + (min_speed * data_val.player_movement_multiplier * 1.4)
+				)
+				fastest = data_key
+
+			if !too_slow:
+				valid_spawns.push_back(data_val)
+
+	if valid_spawns.is_empty() && fastest:
+		valid_spawns.push_back(fish_data[fastest])
+
+	if valid_spawns.is_empty() && slowest:
+		valid_spawns.push_back(fish_data[slowest])
+
+	assert(!valid_spawns.is_empty())
 
 	#todo, use weightings instead?
 	return valid_spawns.pick_random()
