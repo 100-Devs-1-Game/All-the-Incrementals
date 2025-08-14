@@ -1,12 +1,13 @@
 extends Node
 
+var disabled: bool = DisplayServer.get_name() == "headless"
 var stream: AudioStreamInteractive
 
 @onready var _music_player: AudioStreamPlayer = $MusicPlayer
 
 
 func _init() -> void:
-	if DisplayServer.get_name() == "headless":
+	if disabled:
 		# Trick Unit testing - Don't load the stream.
 		# A bug in Godot makes AudioStreamInteractives leak Resources, causing
 		# GUT to fail.
@@ -21,10 +22,13 @@ func _ready() -> void:
 
 
 func _on_music_request_event(song: StringName) -> void:
+	if disabled:
+		return
 	if (not _music_player.playing) or not _music_player.has_stream_playback():
 		# Sanity check- As far as I know this should never happen.
 		push_error("Music player is dead, restarting..")
 		_music_player.play()
+		await get_tree().process_frame
 	var playback: AudioStreamPlaybackInteractive = _music_player.get_stream_playback()
 	if song == stream.get_clip_name(playback.get_current_clip_index()):
 		return
