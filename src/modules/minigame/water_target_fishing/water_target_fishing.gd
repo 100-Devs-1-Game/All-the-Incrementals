@@ -146,6 +146,9 @@ func _spawn_fish() -> void:
 	if WTFGlobals.camera.get_bottom() <= WTFConstants.SEALEVEL:
 		return
 
+	if $%Entities.get_child_count() > 200:
+		return
+
 	var rand_offset_x := randf_range(1, 4) * -stats.scrollspeed.x
 	var min_spawn_y := WTFGlobals.camera.get_top() - 320
 	var max_spawn_y := WTFGlobals.camera.get_bottom() - 320
