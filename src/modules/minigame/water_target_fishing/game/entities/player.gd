@@ -9,7 +9,7 @@ var velocity: Vector2 = Vector2.ZERO
 var disabled_input := false
 
 @onready var area2d: Area2D = %Area2D
-@onready var sprite2d: Sprite2D = %Sprite2D
+@onready var sprite2d: AnimatedSprite2D = %AnimatedSprite2D
 
 
 func underwater() -> bool:
@@ -28,6 +28,7 @@ func _exit_tree() -> void:
 
 func _ready() -> void:
 	area2d.area_entered.connect(_on_area_entered)
+	sprite2d.play("default")
 
 
 func _on_area_entered(other_area: Area2D) -> void:
@@ -118,7 +119,12 @@ func _physics_process(delta: float) -> void:
 	position += velocity * delta
 
 	# don't let them fall behind out of view
-	var min_x := WTFGlobals.camera.get_left() + sprite2d.texture.get_width() + 16
+	var min_x := (
+		WTFGlobals.camera.get_left()
+		+ sprite2d.sprite_frames.get_frame_texture(sprite2d.animation, sprite2d.frame).get_width()
+		+ 16
+	)
+
 	if position.x < min_x:
 		position.x = min_x
 
