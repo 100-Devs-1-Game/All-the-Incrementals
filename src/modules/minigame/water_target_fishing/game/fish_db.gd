@@ -19,6 +19,7 @@ func load_fish() -> void:
 
 
 func _load_fish(path: StringName) -> void:
+	assert(path)
 	_data.clear()
 
 	var files := ResourceLoader.list_directory(path)

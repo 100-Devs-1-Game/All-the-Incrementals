@@ -187,6 +187,7 @@ func _add_node(
 	var graph_node: UpgradeEditor = UpgradeEditorScene.instantiate()
 	graph_node.upgrade = new_upgrade
 	graph_node.node_selected.connect(_on_upgrade_selected.bind(graph_node))
+	graph_node.node_deselected.connect(_on_upgrade_deselected.bind(graph_node))
 	graph_node.dragged.connect(_on_dragged.bind(graph_node))
 	graph_edit.add_child(graph_node)
 	if current_node:
@@ -248,6 +249,9 @@ func _clear_upgrade_tree() -> void:
 func _save_upgrade(upgrade: MinigameUpgrade):
 	if !upgrade.resource_path:
 		return
+
+	if upgrade.max_level > 0:
+		upgrade._construct_cost_and_modifier_arrays()
 
 	if upgrade.has_meta("tree_editor_version_added"):
 		var ver := upgrade.get_meta("tree_editor_version_added")
@@ -395,6 +399,11 @@ func _on_edited_object_changed() -> void:
 func _on_upgrade_selected(graph_node: GraphNode) -> void:
 	current_selected_node = graph_node
 	EditorInterface.edit_resource(graph_node.upgrade)
+	_save_upgrade(graph_node.upgrade)
+
+
+func _on_upgrade_deselected(graph_node: GraphNode) -> void:
+	_save_upgrade(graph_node.upgrade)
 
 
 func _on_dragged(_old_position: Vector2, new_position: Vector2, graph_node: GraphNode) -> void:

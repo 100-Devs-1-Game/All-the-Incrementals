@@ -1,16 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbvdwycj4dcgw"]
+[gd_scene load_steps=18 format=3 uid="uid://dbvdwycj4dcgw"]
 
 [ext_resource type="Script" uid="uid://bn8ub2x73bjo5" path="res://modules/minigame/water_target_fishing/water_target_fishing.gd" id="1_8oyae"]
-[ext_resource type="PackedScene" uid="uid://di5qytko63bu3" path="res://modules/minigame/water_target_fishing/game/entities/background_sprite.tscn" id="2_o5mdu"]
 [ext_resource type="PackedScene" uid="uid://1v03jevu1t0e" path="res://modules/minigame/water_target_fishing/game/entities/player.tscn" id="3_8gbkq"]
+[ext_resource type="Script" uid="uid://drsovvatd2hk1" path="res://modules/minigame/water_target_fishing/game/parallax_spawner.gd" id="3_n7mqc"]
 [ext_resource type="PackedScene" uid="uid://l2ulaahw6l1c" path="res://modules/minigame/water_target_fishing/game/entities/fish.tscn" id="4_8oyae"]
 [ext_resource type="PackedScene" uid="uid://cdhf8qfjh31pi" path="res://modules/minigame/water_target_fishing/game/components/parallax_component.tscn" id="4_duxhx"]
+[ext_resource type="PackedScene" uid="uid://0xvvfgkrdmro" path="res://modules/minigame/water_target_fishing/game/entities/cloud.tscn" id="4_m3rs1"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="5_duxhx"]
 [ext_resource type="PackedScene" uid="uid://nq42u721e3vl" path="res://modules/minigame/water_target_fishing/game/entities/jet_cannon.tscn" id="6_0rl8x"]
 [ext_resource type="PackedScene" uid="uid://brvr7tulxw60v" path="res://modules/minigame/water_target_fishing/game/camera2d.tscn" id="7_o5mdu"]
 [ext_resource type="PackedScene" uid="uid://dj70751qtb0ff" path="res://modules/minigame/water_target_fishing/game/components/generic/clear_colour.tscn" id="9_qq2lg"]
 [ext_resource type="Script" uid="uid://bpkdtrhrdt0xr" path="res://modules/minigame/water_target_fishing/game/fish_db.gd" id="10_c8m36"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="11_56cph"]
+[ext_resource type="Script" uid="uid://rvvogndal0rd" path="res://modules/minigame/water_target_fishing/game/parallax_db.gd" id="11_n7mqc"]
 
 [sub_resource type="Gradient" id="Gradient_duxhx"]
 
@@ -33,69 +35,33 @@ script = ExtResource("1_8oyae")
 fish = ExtResource("4_8oyae")
 data_uid = "uid://c7vragnlq8udw"
 
-[node name="ClearColour" parent="." instance=ExtResource("9_qq2lg")]
+[node name="Logic" type="Node2D" parent="."]
+
+[node name="Clear Colour" parent="Logic" instance=ExtResource("9_qq2lg")]
 clear_colour = Color(0.768627, 0.878431, 0.94902, 1)
 
-[node name="Clouds" type="Node2D" parent="."]
+[node name="Cloud Spawner" type="Node2D" parent="Logic"]
+script = ExtResource("3_n7mqc")
+scene = ExtResource("4_m3rs1")
+metadata/_custom_type_script = "uid://drsovvatd2hk1"
 
-[node name="BackgroundSprite" parent="Clouds" instance=ExtResource("2_o5mdu")]
-position = Vector2(2868, -74)
-texture = ExtResource("5_duxhx")
+[node name="World Parallax" parent="Logic" node_paths=PackedStringArray("target") instance=ExtResource("4_duxhx")]
+target = NodePath("../../World")
 
-[node name="WtfParallaxComponent" parent="Clouds/BackgroundSprite" index="0"]
-base_speed = -100.0
+[node name="WTFFishDB" type="Node2D" parent="Logic"]
+unique_name_in_owner = true
+script = ExtResource("10_c8m36")
+directory_path = "res://modules/minigame/water_target_fishing/game/data/fish"
+metadata/_custom_type_script = "uid://bpkdtrhrdt0xr"
 
-[node name="BackgroundSprite2" parent="Clouds" instance=ExtResource("2_o5mdu")]
-position = Vector2(7713, -132)
-texture = ExtResource("5_duxhx")
-
-[node name="WtfParallaxComponent" parent="Clouds/BackgroundSprite2" index="0"]
-base_speed = -100.0
-
-[node name="BackgroundSprite3" parent="Clouds" instance=ExtResource("2_o5mdu")]
-position = Vector2(12876, -175)
-texture = ExtResource("5_duxhx")
-
-[node name="WtfParallaxComponent" parent="Clouds/BackgroundSprite3" index="0"]
-base_speed = -100.0
-
-[node name="BackgroundSprite4" parent="Clouds" instance=ExtResource("2_o5mdu")]
-position = Vector2(10437, -129)
-texture = ExtResource("5_duxhx")
-
-[node name="WtfParallaxComponent" parent="Clouds/BackgroundSprite4" index="0"]
-base_speed = -100.0
-
-[node name="BackgroundSprite5" parent="Clouds" instance=ExtResource("2_o5mdu")]
-position = Vector2(5188, -129)
-texture = ExtResource("5_duxhx")
-
-[node name="WtfParallaxComponent" parent="Clouds/BackgroundSprite5" index="0"]
-base_speed = -100.0
-
-[node name="BackgroundSprite6" parent="Clouds" instance=ExtResource("2_o5mdu")]
-position = Vector2(14571, -106)
-texture = ExtResource("5_duxhx")
-
-[node name="WtfParallaxComponent" parent="Clouds/BackgroundSprite6" index="0"]
-base_speed = -100.0
-
-[node name="BackgroundSprite7" parent="Clouds" instance=ExtResource("2_o5mdu")]
-position = Vector2(19239, -83)
-texture = ExtResource("5_duxhx")
-
-[node name="WtfParallaxComponent" parent="Clouds/BackgroundSprite7" index="0"]
-base_speed = -100.0
-
-[node name="BackgroundSprite8" parent="Clouds" instance=ExtResource("2_o5mdu")]
-position = Vector2(23234, -13)
-texture = ExtResource("5_duxhx")
-
-[node name="WtfParallaxComponent" parent="Clouds/BackgroundSprite8" index="0"]
-base_speed = -100.0
+[node name="WTFParallaxDB" type="Node2D" parent="Logic"]
+unique_name_in_owner = true
+script = ExtResource("11_n7mqc")
+directory_path = "res://modules/minigame/water_target_fishing/game/data/parallax/"
+metadata/_custom_type_script = "uid://rvvogndal0rd"
 
 [node name="OceanBackground" type="Sprite2D" parent="."]
-modulate = Color(0.3399, 0.609912, 0.688383, 1)
+modulate = Color(0.282353, 0.596078, 0.807843, 1)
 position = Vector2(-10000, 0)
 scale = Vector2(200, 200)
 texture = SubResource("GradientTexture2D_om2bs")
@@ -664,9 +630,6 @@ position = Vector2(929, 374)
 [node name="Player" parent="." instance=ExtResource("3_8gbkq")]
 position = Vector2(480, 390)
 
-[node name="WtfParallaxComponent" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_duxhx")]
-target = NodePath("../World")
-
 [node name="OceanOverlay" type="Sprite2D" parent="."]
 modulate = Color(0.196078, 0.333333, 1, 0.231373)
 position = Vector2(-10000, 0)
@@ -674,10 +637,9 @@ scale = Vector2(200, 200)
 texture = SubResource("GradientTexture2D_om2bs")
 centered = false
 
-[node name="WtfCamera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_o5mdu")]
+[node name="WtfCamera2D" parent="." instance=ExtResource("7_o5mdu")]
 position = Vector2(0, -300)
 position_smoothing_enabled = true
-player = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -813,24 +775,32 @@ text = "0
 "
 fit_content = true
 
-[node name="WTFFishDB" type="Node2D" parent="."]
+[node name="UICarry" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UICarryLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UICarry"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
+text = "Carrying"
+fit_content = true
+
+[node name="UICarryValue" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/UICarry"]
 unique_name_in_owner = true
-script = ExtResource("10_c8m36")
-directory_path = "res://modules/minigame/water_target_fishing/game/data/fish"
-metadata/_custom_type_script = "uid://bpkdtrhrdt0xr"
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0.247685, 0.21218, 0.47451)
+theme_override_constants/outline_size = 8
+text = "0
+"
+fit_content = true
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("11_56cph")]
 
-[node name="SharedBaseComponents" parent="MinigameSharedComponents" index="1"]
-allow_popup_menu = null
-
-[editable path="Clouds/BackgroundSprite"]
-[editable path="Clouds/BackgroundSprite2"]
-[editable path="Clouds/BackgroundSprite3"]
-[editable path="Clouds/BackgroundSprite4"]
-[editable path="Clouds/BackgroundSprite5"]
-[editable path="Clouds/BackgroundSprite6"]
-[editable path="Clouds/BackgroundSprite7"]
-[editable path="Clouds/BackgroundSprite8"]
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]

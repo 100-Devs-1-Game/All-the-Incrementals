@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://di5qytko63bu3"]
+[gd_scene load_steps=4 format=3 uid="uid://di5qytko63bu3"]
 
+[ext_resource type="Script" uid="uid://c3uimh5bsf8h2" path="res://modules/minigame/water_target_fishing/game/entities/background_sprite.gd" id="1_3ayi5"]
 [ext_resource type="PackedScene" uid="uid://dxwmelnhcy88u" path="res://modules/minigame/water_target_fishing/game/components/offscreen_deleter.tscn" id="2_3ayi5"]
 [ext_resource type="PackedScene" uid="uid://cdhf8qfjh31pi" path="res://modules/minigame/water_target_fishing/game/components/parallax_component.tscn" id="2_kuuq1"]
 
-[node name="BackgroundSprite" type="Sprite2D"]
+[node name="BackgroundSprite" type="AnimatedSprite2D"]
+script = ExtResource("1_3ayi5")
 
-[node name="WtfParallaxComponent" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_kuuq1")]
-target = NodePath("..")
+[node name="WtfParallaxComponent" parent="." instance=ExtResource("2_kuuq1")]
+unique_name_in_owner = true
 min_movement_multiplier = 0.8
 max_movement_multiplier = 1.2
 
