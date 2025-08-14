@@ -7,9 +7,8 @@
 [node name="BackgroundSprite" type="AnimatedSprite2D"]
 script = ExtResource("1_3ayi5")
 
-[node name="WtfParallaxComponent" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_kuuq1")]
+[node name="WtfParallaxComponent" parent="." instance=ExtResource("2_kuuq1")]
 unique_name_in_owner = true
-target = NodePath("")
 min_movement_multiplier = 0.8
 max_movement_multiplier = 1.2
 

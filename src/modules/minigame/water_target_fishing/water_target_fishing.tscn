@@ -40,10 +40,9 @@ data_uid = "uid://c7vragnlq8udw"
 [node name="Clear Colour" parent="Logic" instance=ExtResource("9_qq2lg")]
 clear_colour = Color(0.768627, 0.878431, 0.94902, 1)
 
-[node name="Cloud Spawner" type="Node2D" parent="Logic" node_paths=PackedStringArray("target")]
+[node name="Cloud Spawner" type="Node2D" parent="Logic"]
 script = ExtResource("3_n7mqc")
 scene = ExtResource("4_m3rs1")
-target = NodePath("")
 metadata/_custom_type_script = "uid://drsovvatd2hk1"
 
 [node name="World Parallax" parent="Logic" node_paths=PackedStringArray("target") instance=ExtResource("4_duxhx")]
@@ -62,7 +61,7 @@ directory_path = "res://modules/minigame/water_target_fishing/game/data/parallax
 metadata/_custom_type_script = "uid://rvvogndal0rd"
 
 [node name="OceanBackground" type="Sprite2D" parent="."]
-modulate = Color(0.3399, 0.609912, 0.688383, 1)
+modulate = Color(0.282353, 0.596078, 0.807843, 1)
 position = Vector2(-10000, 0)
 scale = Vector2(200, 200)
 texture = SubResource("GradientTexture2D_om2bs")
