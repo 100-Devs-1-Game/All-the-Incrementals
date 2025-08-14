@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_vph0v"]
 [ext_resource type="Script" uid="uid://dl0x10lns1e17" path="res://modules/minigame/water_target_fishing/game/fish_data.gd" id="2_i4wb7"]
 [ext_resource type="Script" uid="uid://meklva8v881i" path="res://modules/minigame/water_target_fishing/game/spawn_data.gd" id="3_i4wb7"]
-[ext_resource type="Texture2D" uid="uid://daotcw5wj8t8m" path="res://assets/minigames/water_target_fishing/fish/banana_fish.png" id="3_vph0v"]
+[ext_resource type="Texture2D" uid="uid://dlkp6px3xijiv" path="res://assets/minigames/water_target_fishing/fish/shrimp.png" id="4_i4wb7"]
 
 [sub_resource type="Resource" id="Resource_k71g5"]
 script = ExtResource("1_vph0v")
@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://meklva8v881i"
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_vph0v")
+"texture": ExtResource("4_i4wb7")
 }],
 "loop": true,
 "name": &"default",

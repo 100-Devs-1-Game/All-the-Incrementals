@@ -37,7 +37,7 @@ animations = [{
 
 [resource]
 script = ExtResource("2_8stxh")
-player_movement_multiplier = 0.6
+player_movement_multiplier = 0.3
 base_speed = 2000.0
 texture = SubResource("SpriteFrames_mqh0r")
 pickup = SubResource("Resource_k71g5")
