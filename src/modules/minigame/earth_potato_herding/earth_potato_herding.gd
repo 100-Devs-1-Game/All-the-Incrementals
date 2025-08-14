@@ -19,28 +19,40 @@ signal game_started
 @export var bucket: EPHBucketCollision
 
 var potato_score: int = 1
+var potato_growth_time: float = 30.0
 
 
 func get_potato_score(_potato: EphAdult) -> int:
 	return potato_score
 
 
+func get_potato_growth_time() -> float:
+	return potato_growth_time
+
+
 func _initialize() -> void:
-	spirit_keeper_brightness.emit(0.0)
-	spirit_keeper_speed.emit(0.0)
+	spirit_keeper_brightness.emit(0.0)  # Implemented
+	spirit_keeper_speed.emit(0.0)  # Implemented
 	destroy_dashing_spirits.emit(0.0)
 	destroy_evil_spirits.emit(0.0)
-	potato_growth_speed.emit(0.0)
 	more_potatoes.emit(0.0)
 	slower_spirits.emit(0.0)
 	less_dashing_spirits.emit(0.0)
 	less_evil_spirits.emit(0.0)
+
+	potato_growth_time = 30.0
+	potato_growth_speed.connect(_on_potato_growth_speed_changed)  # Implemented
+
 	potato_score = 1
-	nutritious_potato.connect(_on_nutrition_changed)
+	nutritious_potato.connect(_on_nutrition_changed)  # Implemented
 
 
-func _on_nutrition_changed(modifier: float):
+func _on_nutrition_changed(modifier: float) -> void:
 	potato_score = 1 + int(modifier)
+
+
+func _on_potato_growth_speed_changed(modifier: float) -> void:
+	potato_growth_time = 30.0 - 30.0 * modifier / 100
 
 
 func _start() -> void:

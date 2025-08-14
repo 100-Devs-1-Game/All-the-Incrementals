@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://by18kqakehrup"]
+[gd_scene load_steps=24 format=3 uid="uid://by18kqakehrup"]
 
 [ext_resource type="Script" uid="uid://cbtiegkndpc6f" path="res://modules/minigame/earth_potato_herding/earth_potato_herding.gd" id="1_kuuhj"]
 [ext_resource type="Texture2D" uid="uid://pskqst4w0e50" path="res://assets/minigames/earth_potato_herding/background.webp" id="2_ttg4n"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://bwda8leqqfqki" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/spawner/eph_evil_dashing_spirit_spawner.tscn" id="10_7ayer"]
 [ext_resource type="Texture2D" uid="uid://dfaope4xajqxu" path="res://assets/minigames/earth_potato_herding/off_stones.webp" id="11_opl0y"]
 [ext_resource type="PackedScene" uid="uid://cgoxxbjngex2d" path="res://modules/minigame/earth_potato_herding/eph_dashing_spirit/eph_evil_dashing_spirit.tscn" id="11_pp8t6"]
-[ext_resource type="Texture2D" uid="uid://bdluk1vwtg4xm" path="res://assets/minigames/earth_potato_herding/glowing_stones.webp" id="12_bhxf4"]
 [ext_resource type="PackedScene" uid="uid://bu668uskhmtud" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.tscn" id="12_ngpls"]
 [ext_resource type="Script" uid="uid://7i6e5fekusou" path="res://modules/minigame/earth_potato_herding/despawn_zone/despawn_zone.gd" id="13_fp0k5"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="14_nm6ba"]
@@ -46,9 +45,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_opl0y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_bhxf4")
 }],
 "loop": true,
 "name": &"default",
