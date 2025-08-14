@@ -24,7 +24,6 @@ var jump_speed_bonus: float = 0.0
 
 var _is_running: bool = false
 var _is_on_ground: bool = false
-var _is_jumping: bool = false
 
 @onready var head: Polygon2D = %Head
 @onready var hat: Polygon2D = %Hat
@@ -109,18 +108,12 @@ func jump_logic():
 		if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed + jump_speed_bonus:
 			velocity.y -= jump_speed_per_frame
 			current_jump_speed += jump_speed_per_frame
-			_is_jumping = true
 			if animated_sprite.animation != "jumping" and animated_sprite.animation == "falling":
 				animated_sprite.play("jumping")
-
 		else:
-			#if _is_jumping:
-			#animated_sprite.play("jumping")
 			current_jump_speed = 0
-			_is_jumping = false
 	else:
 		current_jump_speed = 0
-		_is_jumping = false
 
 
 func animation_and_audio_logic():
