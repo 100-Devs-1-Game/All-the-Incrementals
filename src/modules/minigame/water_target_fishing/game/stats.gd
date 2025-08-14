@@ -113,11 +113,11 @@ func oxygen_remaining() -> float:
 
 
 func carry_capacity() -> float:
-	return (carry_initial) + carry_flat
+	return float(carry_initial) + float(carry_flat)
 
 
 func carry_remaining() -> float:
-	return carry_capacity() - carrying
+	return carry_capacity() - float(carrying)
 
 
 func try_carry() -> bool:

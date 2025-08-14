@@ -89,10 +89,10 @@ func random_spawnable_fish(
 	var valid_spawns: Array[WTFFishData]
 
 	var fastest := ""
-	var fastest_speed := 0
+	var fastest_speed := 0.0
 
 	var slowest := ""
-	var slowest_speed := 9999999999
+	var slowest_speed := 9999999999.9
 
 	var fish_data := fish_db.get_data()
 	for data_key in fish_data:
