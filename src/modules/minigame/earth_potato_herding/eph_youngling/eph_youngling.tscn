@@ -108,7 +108,6 @@ radius = 20.025
 [node name="EPHYoungling" node_paths=PackedStringArray("_state_machine") groups=["potatoes"] instance=ExtResource("1_t88fu")]
 collision_layer = 2
 script = ExtResource("2_jfyq0")
-_time_to_grow = 60.0
 _state_machine = NodePath("StateMachine")
 _base_acceleration = Vector2(800, 800)
 _base_speed = Vector2(100, 100)

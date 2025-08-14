@@ -7,6 +7,7 @@ extends Area2D
 #- signals
 #- enums
 #- consts
+const DEFAULT_TIME_TO_GROW: float = 30.0
 #- staticvars
 #- exports
 @export var bucket: Sprite2D
@@ -15,10 +16,10 @@ extends Area2D
 
 #- pubvars
 #- prvvars
-
+var minigame: EarthPotatoHerdingMinigame
 var _time := 1.0
-var _total_time := 60.0
-var _purple_frames := 6
+var _total_time
+var _purple_frames := 5
 #- onreadypubvars
 #- onreadyprvvars
 #- others
@@ -40,8 +41,11 @@ func _process(delta: float) -> void:
 		text.text = "Harvesting." + ".".repeat(int(_time * 3) % 3)
 
 
-func start_effect(total_time: float):
-	assert(bucket)
-	assert(text)
+func _start_effect():
 	self._time = 0.0
-	self._total_time = total_time
+	self._total_time = minigame.get_potato_growth_time()
+
+
+func _ready() -> void:
+	minigame = get_tree().get_first_node_in_group("earth_potato_herding")
+	minigame.game_started.connect(_start_effect)
