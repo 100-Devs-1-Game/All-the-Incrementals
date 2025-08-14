@@ -179,7 +179,18 @@ func _spawn_fish() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	stats.scroll_slower(stats.total_weight() * delta)
+	var base_slow := (-stats.scrollspeed.x / 1000) * stats.total_weight()
+	if stats.no_oxygen():
+		base_slow *= 8
+
+	if stats.carry_remaining() <= 0:
+		base_slow *= 2
+
+	if stats.scrollspeed.x > -300:
+		base_slow *= 2
+		base_slow += 100
+
+	stats.scroll_slower(base_slow * delta)
 
 	# effectively stopped
 	if !stats.scrolling():
