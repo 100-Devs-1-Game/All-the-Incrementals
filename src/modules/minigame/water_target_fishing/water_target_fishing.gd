@@ -12,6 +12,7 @@ var _distance_since_spawned := 0.0
 
 var _started: bool = false
 var _old_physics_tickrate: int
+var _first_spawn: bool = true
 
 @onready var fish_db: WTFFishDB = %WTFFishDB
 
@@ -166,7 +167,10 @@ func _spawn_fish() -> void:
 	f.provide(spawnable_fish)
 
 	# avoid clumping the fish together
-	f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + rand_offset_x)
+	if _first_spawn:
+		f.position.x = -stats.scrollspeed.x + randf_range(0, WTFGlobals.camera.get_right() * 2)
+	else:
+		f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + rand_offset_x)
 
 	# somewhere within the valid range and also close to the camera
 	var height_range := f.data.spawn.get_spawn_height_range()
@@ -207,3 +211,4 @@ func _physics_process(delta: float) -> void:
 	while _distance_since_spawned > stats.spawn_fish_every_x_pixels:
 		_spawn_fish()
 		_distance_since_spawned -= stats.spawn_fish_every_x_pixels
+	_first_spawn = false
