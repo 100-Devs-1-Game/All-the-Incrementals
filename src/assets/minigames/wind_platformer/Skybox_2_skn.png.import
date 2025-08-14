@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjcsbaukgkyn3"
-path="res://.godot/imported/Skybox_2_skn.png-66a17a1067ad58af1b0166b064ef9e42.ctex"
+path="res://.godot/imported/skybox_2_skn.png-f5437e9766c56ccb93f7e9498c82dd0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/wind_platformer/Skybox_2_skn.png"
-dest_files=["res://.godot/imported/Skybox_2_skn.png-66a17a1067ad58af1b0166b064ef9e42.ctex"]
+source_file="res://assets/minigames/wind_platformer/skybox_2_skn.png"
+dest_files=["res://.godot/imported/skybox_2_skn.png-f5437e9766c56ccb93f7e9498c82dd0f.ctex"]
 
 [params]
 
