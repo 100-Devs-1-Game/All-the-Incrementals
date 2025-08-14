@@ -1,20 +1,16 @@
-[gd_resource type="AudioStreamInteractive" load_steps=4 format=3 uid="uid://d263hyurubktn"]
+[gd_resource type="AudioStreamInteractive" load_steps=3 format=3 uid="uid://d263hyurubktn"]
 
 [ext_resource type="AudioStream" uid="uid://br5jc2gh7ifjw" path="res://assets/other/empty.mp3" id="1_f66fh"]
-[ext_resource type="AudioStream" uid="uid://j8xgw0ptbh7o" path="res://assets/minigames/wind_rhythm/placeholder_assets/exotic_house.ogg" id="1_qcpy4"]
 [ext_resource type="AudioStream" uid="uid://dnlbb2meucm37" path="res://assets/minigames/water_rowing_rapids/rowing_rapids.ogg" id="2_qcpy4"]
 
 [resource]
-clip_count = 3
+clip_count = 2
 clip_0/name = &"null"
 clip_0/stream = ExtResource("1_f66fh")
 clip_0/auto_advance = 0
 clip_1/name = &"rowing_rapids"
 clip_1/stream = ExtResource("2_qcpy4")
 clip_1/auto_advance = 0
-clip_2/name = &"exotic_house"
-clip_2/stream = ExtResource("1_qcpy4")
-clip_2/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1.0,
