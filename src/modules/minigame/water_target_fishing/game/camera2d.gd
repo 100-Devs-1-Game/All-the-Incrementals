@@ -1,10 +1,7 @@
 class_name WTFCamera2D
 extends Camera2D
 
-@export var player: WTFPlayer
-
 var _updated: bool = false
-
 var _visible_rect: Rect2
 
 
@@ -23,8 +20,8 @@ func _update() -> void:
 		return
 
 	var viewport_size := get_viewport_rect().size
-	_visible_rect.position = get_screen_center_position() - viewport_size * 0.5 * zoom
-	_visible_rect.size = viewport_size * zoom
+	_visible_rect.position = get_screen_center_position() - viewport_size * 0.5 / zoom
+	_visible_rect.size = viewport_size / zoom
 
 	_updated = true
 	return
@@ -57,5 +54,7 @@ func get_bottom() -> float:
 
 func _process(_delta: float) -> void:
 	_updated = false
-	#todo: idk if it should follow the player tbh?
-	#global_position = player.global_position
+	global_position = (
+		WTFGlobals.player.global_position
+		- Vector2(get_visible_rect().size.x / 4, get_visible_rect().size.y / 2)
+	)

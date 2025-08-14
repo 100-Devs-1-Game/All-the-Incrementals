@@ -34,6 +34,7 @@ func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
 		UpgradeType.INCREASE_STARTING_FISH:
 			print("WTF - increasing starting fish by %s" % _upgrade.get_current_effect_modifier())
 			stats.spawn_x_starting_fish += _upgrade.get_current_effect_modifier()
+			stats.carry_flat += floori(_upgrade.get_current_effect_modifier())
 		UpgradeType.INCREASE_SPAWNING_FISH_RATE:
 			print(
 				(
