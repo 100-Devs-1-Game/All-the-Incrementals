@@ -29,7 +29,7 @@ mesh = SubResource("PlaneMesh_4orxu")
 
 [sub_resource type="Gradient" id="Gradient_4orxu"]
 offsets = PackedFloat32Array(0, 0.307018, 1)
-colors = PackedColorArray(0, 0, 0.996078, 0.172549, 0.607843, 0.67451, 1, 0.784314, 1, 1, 1, 1)
+colors = PackedColorArray(0.339606, 0.542632, 1, 0.172549, 0.690459, 0.747382, 1, 0.784314, 0.65098, 0.945098, 0.65098, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cj4w2"]
 gradient = SubResource("Gradient_4orxu")
