@@ -8,7 +8,7 @@ signal left_screen
 @export var max_jump_speed: float = 150.0
 @export var jump_speed_per_frame: float = 10.0
 
-@export var air_control: float = 0.25
+@export var air_control: float = 1
 @export var wind_impact: float = 1.0
 @export var gravity: float = 100.0
 @export var damping: float = 0.5
@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 		velocity += wind_force
 
 		var new_velocity_x: float = (
-			velocity.x + hor_input * (air_control + air_control_bonus) * delta
+			velocity.x + hor_input * (pow(air_control + air_control_bonus, 2)) * delta
 		)
 
 		if abs(new_velocity_x) < max_speed or sign(hor_input) != sign(velocity.x):
