@@ -15,6 +15,7 @@ var _old_physics_tickrate: int
 var _first_spawn: bool = true
 
 @onready var fish_db: WTFFishDB = %WTFFishDB
+@onready var parallax_db: WTFParallaxDB = %WTFParallaxDB
 
 @onready var ui_speed_value: RichTextLabel = %UISpeedValue
 @onready var ui_score_value: RichTextLabel = %UIScoreValue
