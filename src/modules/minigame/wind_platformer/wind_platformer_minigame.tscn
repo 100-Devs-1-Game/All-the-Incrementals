@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_j01kc"]
 [ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/wind_platformer_player.tscn" id="2_asxaq"]
-[ext_resource type="Texture2D" uid="uid://6d7pl3ow77ms" path="res://assets/minigames/wind_platformer/Skybox_4_skn.png" id="2_j01kc"]
+[ext_resource type="Texture2D" uid="uid://cjcsbaukgkyn3" path="res://assets/minigames/wind_platformer/Skybox_2_skn.png" id="3_asxaq"]
 [ext_resource type="PackedScene" uid="uid://coro8piwlirg2" path="res://modules/minigame/wind_platformer/cloud_spawner.tscn" id="3_h8gjg"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="5_falbm"]
 
@@ -29,7 +29,7 @@ mesh = SubResource("PlaneMesh_4orxu")
 
 [sub_resource type="Gradient" id="Gradient_4orxu"]
 offsets = PackedFloat32Array(0, 0.307018, 1)
-colors = PackedColorArray(0.339606, 0.542632, 1, 0.172549, 0.690459, 0.747382, 1, 0.784314, 0.65098, 0.945098, 0.65098, 1)
+colors = PackedColorArray(0.339606, 0.542632, 1, 0.172549, 0.690459, 0.747382, 1, 0.784314, 0.788235, 0.992157, 0.992157, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cj4w2"]
 gradient = SubResource("Gradient_4orxu")
@@ -66,14 +66,13 @@ grow_vertical = 2
 rotation = 1.5708
 texture = SubResource("GradientTexture1D_j01kc")
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
-modulate = Color(0.712129, 0.712129, 0.712129, 0.87451)
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_j01kc")
+texture = ExtResource("3_asxaq")
 expand_mode = 2
 
 [node name="Platforms" type="Node" parent="."]
