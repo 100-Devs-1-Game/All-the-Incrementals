@@ -2,8 +2,8 @@ extends CanvasLayer
 
 # Handles all UI changes (temporary)
 
-const HEARTS_EMPTY := preload("res://assets/minigames/earth_tower_tumble/hearts_empty.png")
-const HEARTS_FULL := preload("res://assets/minigames/earth_tower_tumble/hearts_full.png")
+@export var FULL_HEART: Texture2D
+@export var EMPTY_HEART: Texture2D
 
 @onready var life_container = $LifeContainer
 @onready var score_label = $Score
@@ -30,8 +30,8 @@ func _on_blocks_changed(value):
 func _on_lives_changed():
 	for i in range(life_container.get_child_count() - 1, -1, -1):
 		var node := life_container.get_child(i)
-		if node is TextureRect and node.texture == HEARTS_FULL:
-			node.texture = HEARTS_EMPTY
+		if node is TextureRect and node.texture == FULL_HEART:
+			node.texture = EMPTY_HEART
 			return
 
 
@@ -41,5 +41,5 @@ func setup():
 
 	for _i in range(minigame.lives):
 		var heart := TextureRect.new()
-		heart.texture = HEARTS_FULL
+		heart.texture = FULL_HEART
 		life_container.add_child(heart)

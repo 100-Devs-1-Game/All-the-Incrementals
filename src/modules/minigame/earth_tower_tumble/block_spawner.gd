@@ -1,14 +1,6 @@
 extends Node2D
 
-var blocks := [
-	preload("res://modules/minigame/earth_tower_tumble/blocks/cblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/iblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/lblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/square.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/tblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/vblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/zblock.tscn")
-]
+@export var blocks: Array[PackedScene] = []
 
 var current_block: PackedScene
 

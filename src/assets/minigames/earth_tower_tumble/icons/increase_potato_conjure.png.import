@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce51u5w5vb3lc"
-path="res://.godot/imported/hearts_empty.png-682a9c03f3f35287eb4b7ca31e6297f4.ctex"
+uid="uid://dhk4rinw8yehe"
+path="res://.godot/imported/increase_potato_conjure.png-0dc2d61ecb02cbc9a67494e2e593c2a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/earth_tower_tumble/hearts_empty.png"
-dest_files=["res://.godot/imported/hearts_empty.png-682a9c03f3f35287eb4b7ca31e6297f4.ctex"]
+source_file="res://assets/minigames/earth_tower_tumble/icons/increase_potato_conjure.png"
+dest_files=["res://.godot/imported/increase_potato_conjure.png-0dc2d61ecb02cbc9a67494e2e593c2a9.ctex"]
 
 [params]
 

@@ -1,9 +1,9 @@
 extends Node2D
 
 @export var potato: PackedScene
-@export var shoot_delay := 0.3
-@export var transition_speed := 3020.0
-@export var direction_speed := 420.0
+@export var shoot_delay := 1.2
+@export var transition_speed := 2025.0
+@export var direction_speed := 130.0
 @export var follow: PathFollow2D
 
 var can_shoot := true
