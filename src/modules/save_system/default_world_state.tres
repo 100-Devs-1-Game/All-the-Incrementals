@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("2_4m006")
-minigame_unlock_levels = Dictionary[int, int]({})
+minigame_unlock_levels = Dictionary[StringName, int]({})
 metadata/_custom_type_script = "uid://d23i4ukvgjxej"
