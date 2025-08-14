@@ -1,20 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8jmv0yqj5qvh"]
+[gd_scene load_steps=2 format=3 uid="uid://b8jmv0yqj5qvh"]
 
-[ext_resource type="Script" uid="uid://hwjgdilgstk6" path="res://modules/minigame/water_rowing_rapids/void/void.gd" id="1_cntsu"]
-
-[sub_resource type="Gradient" id="Gradient_cntsu"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_k4c0p"]
-gradient = SubResource("Gradient_cntsu")
-width = 1
-fill_from = Vector2(1, 1)
+[ext_resource type="Script" uid="uid://hwjgdilgstk6" path="res://modules/minigame/water_rowing_rapids/void/zoom_correct_parallax.gd" id="1_cntsu"]
 
 [node name="Parallax2D" type="Parallax2D"]
 repeat_size = Vector2(0, 2000)
 script = ExtResource("1_cntsu")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 2000.0
-texture = SubResource("GradientTexture2D_k4c0p")
-expand_mode = 1
