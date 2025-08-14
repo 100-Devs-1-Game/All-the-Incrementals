@@ -350,9 +350,6 @@ position = Vector2(8840, 1635)
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_i806a")]
 
-[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
-visible = false
-
 [node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
 visible = true
 

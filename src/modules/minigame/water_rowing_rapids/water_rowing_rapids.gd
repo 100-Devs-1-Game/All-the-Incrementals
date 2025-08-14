@@ -1,6 +1,9 @@
 class_name WaterRowingRapidsMinigame
 extends BaseMinigame
 
+@onready var player: RigidBody2D = $RowingPlayer
+@onready var chase_void: Area2D = $Void
+
 
 func _initialize():
 	var river_polygon: PackedVector2Array = $River.curve.get_baked_points()
@@ -9,11 +12,12 @@ func _initialize():
 	%RiverCollider.shape.segments = polyline_to_segments(river_polygon)
 	water.texture_scale = Vector2.ONE * 50.0 / 1000.0  # don't ask
 	EventBus.request_music.emit(&"rowing_rapids")
-	$Void.player = $RowingPlayer
+	chase_void.player = player
+	print("REGEN: ", player.stability_regen)
 
 
 func _start():
-	pass
+	print("REGEN: ", player.stability_regen)
 
 
 func _on_rowing_player_spirit_collected(value: int) -> void:

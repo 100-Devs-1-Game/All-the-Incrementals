@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="MinigameData" load_steps=5 format=3 uid="uid://bseyt0iuwnq5m"]
+[gd_resource type="Resource" script_class="MinigameData" load_steps=6 format=3 uid="uid://bseyt0iuwnq5m"]
 
 [ext_resource type="PackedScene" uid="uid://4xwiy2ryv0xk" path="res://modules/minigame/fire_cooking/fire_cooking.tscn" id="1_etk26"]
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_p0xj7"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_etk26"]
 [ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="2_kse2p"]
+[ext_resource type="Resource" uid="uid://c5lbw2qtfhfc3" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_speed.tres" id="5_l0r53"]
 
 [resource]
 script = ExtResource("1_p0xj7")
 display_name = "fire_cooking"
 minigame_scene = ExtResource("1_etk26")
-upgrade_tree_root_nodes = Array[ExtResource("2_etk26")]([])
+upgrade_tree_root_nodes = Array[ExtResource("2_etk26")]([ExtResource("5_l0r53")])
 output_essence = ExtResource("2_kse2p")
 currency_conversion_factor = 1.0
 high_scores = Array[int]([])

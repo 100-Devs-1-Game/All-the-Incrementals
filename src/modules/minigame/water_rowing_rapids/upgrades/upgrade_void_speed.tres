@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=15 format=3 uid="uid://de5osmx82dyqc"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_smr16"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_58hfe"]
+[ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="3_tjid4"]
+[ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="4_yurdt"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_ybcxk"]
+
+[sub_resource type="Resource" id="Resource_smr16"]
+script = ExtResource("2_58hfe")
+essence = ExtResource("3_tjid4")
+amount = 4
+
+[sub_resource type="Resource" id="Resource_chprs"]
+script = ExtResource("1_smr16")
+earth = 0
+fire = 4
+water = 0
+wind = 0
+slots = Array[ExtResource("2_58hfe")]([SubResource("Resource_smr16")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_58hfe"]
+script = ExtResource("2_58hfe")
+essence = ExtResource("3_tjid4")
+amount = 4
+
+[sub_resource type="Resource" id="Resource_tjid4"]
+script = ExtResource("1_smr16")
+earth = 0
+fire = 4
+water = 0
+wind = 0
+slots = Array[ExtResource("2_58hfe")]([SubResource("Resource_58hfe")])
+
+[sub_resource type="Resource" id="Resource_yurdt"]
+script = ExtResource("2_58hfe")
+essence = ExtResource("3_tjid4")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_ybcxk"]
+script = ExtResource("1_smr16")
+earth = 0
+fire = 10
+water = 0
+wind = 0
+slots = Array[ExtResource("2_58hfe")]([SubResource("Resource_yurdt")])
+
+[sub_resource type="Resource" id="Resource_my736"]
+script = ExtResource("2_58hfe")
+essence = ExtResource("3_tjid4")
+amount = 35
+
+[sub_resource type="Resource" id="Resource_g5hku"]
+script = ExtResource("1_smr16")
+earth = 0
+fire = 35
+water = 0
+wind = 0
+slots = Array[ExtResource("2_58hfe")]([SubResource("Resource_my736")])
+
+[sub_resource type="Resource" id="Resource_g075e"]
+script = ExtResource("4_yurdt")
+type = 5
+metadata/_custom_type_script = "uid://cpbg43rac3mxr"
+
+[resource]
+script = ExtResource("5_ybcxk")
+logic = SubResource("Resource_g075e")
+unlocks_feature = ""
+name = "-2.5% Void Speed"
+flavor = ""
+position = Vector2(768, 1536)
+cost_arr = Array[ExtResource("1_smr16")]([SubResource("Resource_tjid4"), SubResource("Resource_ybcxk"), SubResource("Resource_g5hku")])
+effect_modifier_arr = Array[float]([0.025, 0.05, 0.075])
+max_level = 3
+base_cost = SubResource("Resource_chprs")
+base_cost_multiplier = 3.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.025
+effect_modifier_multiplier = 0.025
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

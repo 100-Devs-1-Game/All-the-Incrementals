@@ -6,9 +6,12 @@ extends Area2D
 var player: Node2D
 
 var speed: float = 700.0
-var accel: float = 50.0
 
 @onready var whispers: AudioStreamPlayer = $Whispers
+
+
+func _init() -> void:
+	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(self, [&"speed"])
 
 
 func _ready() -> void:
