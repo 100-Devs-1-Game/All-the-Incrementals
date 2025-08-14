@@ -1,7 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8jmv0yqj5qvh"]
+[gd_scene load_steps=7 format=3 uid="uid://b8jmv0yqj5qvh"]
 
-[ext_resource type="Script" uid="uid://hwjgdilgstk6" path="res://modules/minigame/water_rowing_rapids/void/zoom_correct_parallax.gd" id="1_cntsu"]
+[ext_resource type="Script" uid="uid://b48hc7h2lomi0" path="res://modules/minigame/water_rowing_rapids/void/void.gd" id="1_cntsu"]
+[ext_resource type="Script" uid="uid://hwjgdilgstk6" path="res://modules/minigame/water_rowing_rapids/void/zoom_correct_parallax.gd" id="2_k4c0p"]
 
-[node name="Parallax2D" type="Parallax2D"]
-repeat_size = Vector2(0, 2000)
+[sub_resource type="Gradient" id="Gradient_k4c0p"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_auihn"]
+gradient = SubResource("Gradient_k4c0p")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dkylo"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 1000, 1)
+spread = 0.0
+initial_velocity_min = 147.0
+initial_velocity_max = 147.0
+gravity = Vector3(-294, 0, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cntsu"]
+normal = Vector2(1, 0)
+
+[node name="Void" type="Area2D"]
 script = ExtResource("1_cntsu")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(0, 2000)
+ignore_camera_scroll = true
+script = ExtResource("2_k4c0p")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Parallax2D"]
+position = Vector2(0, 1000)
+amount = 80
+texture = SubResource("GradientTexture2D_auihn")
+lifetime = 1.2
+visibility_rect = Rect2(-100, -1000, 200, 2000)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_dkylo")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_cntsu")
