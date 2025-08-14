@@ -8,6 +8,7 @@ func _initialize():
 	water.polygon = river_polygon
 	%RiverCollider.shape.segments = polyline_to_segments(river_polygon)
 	water.texture_scale = Vector2.ONE * 50.0 / 1000.0  # don't ask
+	EventBus.request_music.emit(&"rowing_rapids")
 
 
 func _start():
