@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=13 format=3 uid="uid://bytqv7h0iow3u"]
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_j01kc"]
 [ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/wind_platformer_player.tscn" id="2_asxaq"]
+[ext_resource type="Texture2D" uid="uid://6d7pl3ow77ms" path="res://assets/minigames/wind_platformer/Skybox_4_skn.png" id="2_j01kc"]
 [ext_resource type="PackedScene" uid="uid://coro8piwlirg2" path="res://modules/minigame/wind_platformer/cloud_spawner.tscn" id="3_h8gjg"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="5_falbm"]
 
@@ -44,6 +45,7 @@ data_uid = "uid://dh1qjmvspv4uh"
 layer = -1
 
 [node name="CanvasLayer Background" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -52,6 +54,7 @@ grow_vertical = 2
 color = Color(0.32549, 0.32549, 0.905882, 1)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -62,6 +65,16 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5708
 texture = SubResource("GradientTexture1D_j01kc")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0.712129, 0.712129, 0.712129, 0.87451)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j01kc")
+expand_mode = 2
 
 [node name="Platforms" type="Node" parent="."]
 
