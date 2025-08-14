@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_uo3ek"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_eco4y"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_uo3ek"]
-[ext_resource type="Resource" uid="uid://bsip0ecp7kkq3" path="res://modules/minigame/wind_platformer/data/upgrade/double_jump.tres" id="6_eco4y"]
+[ext_resource type="Resource" uid="uid://bsip0ecp7kkq3" path="res://modules/minigame/wind_platformer/data/upgrade/double_jump_upgrade.tres" id="6_eco4y"]
 
 [sub_resource type="Resource" id="Resource_ynt4f"]
 script = ExtResource("2_uo3ek")
