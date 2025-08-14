@@ -37,7 +37,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 		return
 
 	var maybe_fish := other_area.get_parent() as WTFFish
-	if is_instance_valid(maybe_fish):
+	if is_instance_valid(maybe_fish) && WTFGlobals.minigame.stats.try_carry():
 		WTFGlobals.minigame.add_score(maybe_fish.data.pickup.score)
 		TextFloatSystem.floating_text(
 			maybe_fish.global_position, "+%d" % maybe_fish.data.pickup.score, WTFGlobals.minigame
@@ -50,12 +50,12 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_cannon := other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
-		WTFGlobals.minigame.add_score(maybe_cannon.pickup.score)
-		TextFloatSystem.floating_text(
-			maybe_cannon.global_position, "+%d" % maybe_cannon.pickup.score, WTFGlobals.minigame
-		)
+		#WTFGlobals.minigame.add_score(maybe_cannon.pickup.score)
+		#TextFloatSystem.floating_text(
+		#	maybe_cannon.global_position, "+%d" % maybe_cannon.pickup.score, WTFGlobals.minigame
+		#)
 
-		WTFGlobals.minigame.stats.weight += maybe_cannon.pickup.weight
+		#WTFGlobals.minigame.stats.weight += maybe_cannon.pickup.weight
 		WTFGlobals.minigame.stats.scroll_faster(maybe_cannon.pickup.speedboost)
 		return
 
@@ -76,6 +76,9 @@ func _physics_process(delta: float) -> void:
 	# potentially having stuff to do in the sky as well, if they exit the ocean at velocity
 	#rotation += 10 * input_dir.y * delta
 	#rotation = rotate_toward(rotation, deg_to_rad(45) * input_dir.y, delta)
+
+	#if !WTFGlobals.minigame.stats.scrolling():
+	#WTFGlobals.minigame.stats.consume_oxygen(WTFGlobals.minigame.stats.oxygen_remaining())
 
 	if input_dir != Vector2.ZERO:
 		velocity = velocity.move_toward(input_dir * max_speed, acceleration * delta)
