@@ -4,7 +4,8 @@ class_name UpgradeEditor
 
 @export var upgrade: MinigameUpgrade
 
-@onready var info: RichTextLabel =  %Information
+@onready var info: RichTextLabel = %Information
+
 
 func _ready() -> void:
 	if upgrade:
@@ -37,7 +38,7 @@ func set_fields_from_upgrade() -> void:
 	if upgrade.cost_arr.is_empty():
 		add_info_error("MISSING COSTS")
 
-	if upgrade.get_max_level() <= 0:
+	if upgrade.get_max_level() < 0:
 		add_info_error("MISSING MAX LEVEL")
 
 	if !upgrade.effect_modifier_arr:
@@ -49,7 +50,7 @@ func set_fields_from_upgrade() -> void:
 	if upgrade.flavor == "":
 		add_info_warning("MISSING FLAVOR")
 
-	if upgrade.description_prefix == "" || upgrade.description_suffix:
+	if upgrade.description_prefix == "" && upgrade.description_suffix == "":
 		add_info_warning("MISSING DESCRIPTION")
 
 	#TODO: the upgrade levels shouldn't be offset by 1 like this

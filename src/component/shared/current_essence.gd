@@ -12,4 +12,4 @@ func _refresh_labels(_upgrade = null) -> void:
 	$Panel/HBoxContainer/WaterLabel.text = "%4d" % inventory.water
 	$Panel/HBoxContainer/EarthLabel.text = "%4d" % inventory.earth
 	$Panel/HBoxContainer/FireLabel.text = "%4d" % inventory.fire
-	$Panel/HBoxContainer/WindLabel.text = "%4d" % inventory.water
+	$Panel/HBoxContainer/WindLabel.text = "%4d" % inventory.wind

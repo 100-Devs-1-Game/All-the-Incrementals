@@ -38,7 +38,7 @@ animations = [{
 radius = 116.069
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hpfm4"]
-radius = 125.897
+radius = 116.039
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ho6ah"]
 resource_local_to_scene = true
@@ -79,16 +79,17 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_gfwjq")
 
 [node name="YounglingHerdArea" type="Area2D" parent="." index="3"]
+visible = false
 collision_layer = 0
 collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YounglingHerdArea" index="0"]
-visible = false
 shape = SubResource("CircleShape2D_kub1s")
 metadata/_edit_lock_ = true
 
 [node name="EvilSpiritRepelArea" type="Area2D" parent="." index="4"]
+visible = false
 collision_layer = 0
 collision_mask = 4
 metadata/_edit_lock_ = true
