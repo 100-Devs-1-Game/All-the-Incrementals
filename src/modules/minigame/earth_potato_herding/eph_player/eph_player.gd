@@ -1,6 +1,7 @@
 extends TopDown2DCharacterController
 
 const BASE_PLAYER_SPEED = Vector2(300.0, 300.0)
+const SHADER_CIRCLE_DEFAULT_RADIUS = 20.5
 
 
 func _ready() -> void:
@@ -42,3 +43,7 @@ func _on_player_brightness_changed(modifier: float) -> void:
 	print("Player brightness changed %s" % modifier)
 	var perc_scale = 1 + modifier / 100
 	$EvilSpiritRepelArea/CollisionShape2D.scale = Vector2(perc_scale, perc_scale)
+	$YounglingHerdArea/CollisionShape2D.scale = Vector2(perc_scale, perc_scale)
+	$HerdCircle.material.set_shader_parameter(
+		"min_radius", SHADER_CIRCLE_DEFAULT_RADIUS * perc_scale
+	)
