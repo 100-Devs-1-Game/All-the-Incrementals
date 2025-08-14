@@ -6,82 +6,82 @@
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_bx1al"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="4_2w8ci"]
 
-[sub_resource type="Resource" id="Resource_dbol4"]
+[sub_resource type="Resource" id="Resource_rgylx"]
 script = ExtResource("2_rgylx")
 essence = ExtResource("3_bx1al")
-amount = 1
+amount = 6
 
 [sub_resource type="Resource" id="Resource_hydat"]
 script = ExtResource("1_3gfb7")
 earth = 0
 fire = 0
-water = 1
+water = 6
 wind = 0
-slots = Array[ExtResource("2_rgylx")]([SubResource("Resource_dbol4")])
+slots = Array[ExtResource("2_rgylx")]([SubResource("Resource_rgylx")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_rgylx"]
+[sub_resource type="Resource" id="Resource_bx1al"]
 script = ExtResource("2_rgylx")
 essence = ExtResource("3_bx1al")
-amount = 1
+amount = 6
 
-[sub_resource type="Resource" id="Resource_bx1al"]
+[sub_resource type="Resource" id="Resource_2w8ci"]
 script = ExtResource("1_3gfb7")
 earth = 0
 fire = 0
-water = 1
+water = 6
 wind = 0
-slots = Array[ExtResource("2_rgylx")]([SubResource("Resource_rgylx")])
+slots = Array[ExtResource("2_rgylx")]([SubResource("Resource_bx1al")])
 
-[sub_resource type="Resource" id="Resource_2w8ci"]
+[sub_resource type="Resource" id="Resource_dbol4"]
 script = ExtResource("2_rgylx")
 essence = ExtResource("3_bx1al")
-amount = 1
+amount = 15
 
 [sub_resource type="Resource" id="Resource_dra44"]
 script = ExtResource("1_3gfb7")
 earth = 0
 fire = 0
-water = 1
+water = 15
 wind = 0
-slots = Array[ExtResource("2_rgylx")]([SubResource("Resource_2w8ci")])
+slots = Array[ExtResource("2_rgylx")]([SubResource("Resource_dbol4")])
 
 [sub_resource type="Resource" id="Resource_i1xpi"]
 script = ExtResource("2_rgylx")
 essence = ExtResource("3_bx1al")
-amount = 1
+amount = 50
 
 [sub_resource type="Resource" id="Resource_4w4ne"]
 script = ExtResource("1_3gfb7")
 earth = 0
 fire = 0
-water = 1
+water = 50
 wind = 0
 slots = Array[ExtResource("2_rgylx")]([SubResource("Resource_i1xpi")])
 
 [sub_resource type="Resource" id="Resource_wnfq3"]
 script = ExtResource("2_rgylx")
 essence = ExtResource("3_bx1al")
-amount = 1
+amount = 150
 
 [sub_resource type="Resource" id="Resource_xa0xy"]
 script = ExtResource("1_3gfb7")
 earth = 0
 fire = 0
-water = 1
+water = 150
 wind = 0
 slots = Array[ExtResource("2_rgylx")]([SubResource("Resource_wnfq3")])
 
 [sub_resource type="Resource" id="Resource_1k301"]
 script = ExtResource("2_rgylx")
 essence = ExtResource("3_bx1al")
-amount = 1
+amount = 450
 
 [sub_resource type="Resource" id="Resource_og7a4"]
 script = ExtResource("1_3gfb7")
 earth = 0
 fire = 0
-water = 1
+water = 450
 wind = 0
 slots = Array[ExtResource("2_rgylx")]([SubResource("Resource_1k301")])
 
@@ -97,11 +97,11 @@ unlocks_feature = ""
 name = "+ Fish Spawnrate"
 flavor = ""
 position = Vector2(768, 704)
-cost_arr = Array[ExtResource("1_3gfb7")]([SubResource("Resource_bx1al"), SubResource("Resource_dra44"), SubResource("Resource_4w4ne"), SubResource("Resource_xa0xy"), SubResource("Resource_og7a4")])
+cost_arr = Array[ExtResource("1_3gfb7")]([SubResource("Resource_2w8ci"), SubResource("Resource_dra44"), SubResource("Resource_4w4ne"), SubResource("Resource_xa0xy"), SubResource("Resource_og7a4")])
 effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0])
 max_level = 5
 base_cost = SubResource("Resource_hydat")
-base_cost_multiplier = 1.0
+base_cost_multiplier = 3.0
 exponential_cost = true
 round_smoothness = 1.0
 base_effect_modifier = 1.0

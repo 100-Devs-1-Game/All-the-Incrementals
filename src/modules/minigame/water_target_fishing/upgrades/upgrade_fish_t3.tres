@@ -7,84 +7,84 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_y671g"]
 [ext_resource type="Resource" uid="uid://bvnajtf6bhc0m" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_fish_spawnrate_t3.tres" id="6_k72jy"]
 
-[sub_resource type="Resource" id="Resource_d4w24"]
+[sub_resource type="Resource" id="Resource_4hcru"]
 script = ExtResource("2_k72jy")
 essence = ExtResource("3_4hcru")
-amount = 100
+amount = 300
 
 [sub_resource type="Resource" id="Resource_k72jy"]
 script = ExtResource("1_d4w24")
 earth = 0
 fire = 0
-water = 100
-wind = 0
-slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_d4w24")])
-metadata/_custom_type_script = "uid://cjjat8tguw7wt"
-
-[sub_resource type="Resource" id="Resource_4hcru"]
-script = ExtResource("2_k72jy")
-essence = ExtResource("3_4hcru")
-amount = 100
-
-[sub_resource type="Resource" id="Resource_ueddq"]
-script = ExtResource("1_d4w24")
-earth = 0
-fire = 0
-water = 100
+water = 300
 wind = 0
 slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_4hcru")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_ueddq"]
+script = ExtResource("2_k72jy")
+essence = ExtResource("3_4hcru")
+amount = 300
 
 [sub_resource type="Resource" id="Resource_y671g"]
-script = ExtResource("2_k72jy")
-essence = ExtResource("3_4hcru")
-amount = 10000
+script = ExtResource("1_d4w24")
+earth = 0
+fire = 0
+water = 300
+wind = 0
+slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_ueddq")])
 
 [sub_resource type="Resource" id="Resource_i32ev"]
-script = ExtResource("1_d4w24")
-earth = 0
-fire = 0
-water = 10000
-wind = 0
-slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_y671g")])
+script = ExtResource("2_k72jy")
+essence = ExtResource("3_4hcru")
+amount = 1000
 
 [sub_resource type="Resource" id="Resource_tpokr"]
-script = ExtResource("2_k72jy")
-essence = ExtResource("3_4hcru")
-amount = 1000000
+script = ExtResource("1_d4w24")
+earth = 0
+fire = 0
+water = 1000
+wind = 0
+slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_i32ev")])
 
 [sub_resource type="Resource" id="Resource_t5pm5"]
-script = ExtResource("1_d4w24")
-earth = 0
-fire = 0
-water = 1000000
-wind = 0
-slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_tpokr")])
+script = ExtResource("2_k72jy")
+essence = ExtResource("3_4hcru")
+amount = 3500
 
 [sub_resource type="Resource" id="Resource_jbo03"]
-script = ExtResource("2_k72jy")
-essence = ExtResource("3_4hcru")
-amount = 100000000
+script = ExtResource("1_d4w24")
+earth = 0
+fire = 0
+water = 3500
+wind = 0
+slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_t5pm5")])
 
 [sub_resource type="Resource" id="Resource_j4ayh"]
-script = ExtResource("1_d4w24")
-earth = 0
-fire = 0
-water = 100000000
-wind = 0
-slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_jbo03")])
-
-[sub_resource type="Resource" id="Resource_4keui"]
 script = ExtResource("2_k72jy")
 essence = ExtResource("3_4hcru")
-amount = 10000000000
+amount = 12000
 
-[sub_resource type="Resource" id="Resource_t3h0n"]
+[sub_resource type="Resource" id="Resource_4keui"]
 script = ExtResource("1_d4w24")
 earth = 0
 fire = 0
-water = 10000000000
+water = 12000
 wind = 0
-slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_4keui")])
+slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_j4ayh")])
+
+[sub_resource type="Resource" id="Resource_t3h0n"]
+script = ExtResource("2_k72jy")
+essence = ExtResource("3_4hcru")
+amount = 45000
+
+[sub_resource type="Resource" id="Resource_a0d6u"]
+script = ExtResource("1_d4w24")
+earth = 0
+fire = 0
+water = 45000
+wind = 0
+slots = Array[ExtResource("2_k72jy")]([SubResource("Resource_t3h0n")])
 
 [sub_resource type="Resource" id="Resource_2rpgf"]
 script = ExtResource("4_ueddq")
@@ -98,11 +98,11 @@ unlocks_feature = ""
 name = "+3 Starting Fish"
 flavor = ""
 position = Vector2(3072, 0)
-cost_arr = Array[ExtResource("1_d4w24")]([SubResource("Resource_ueddq"), SubResource("Resource_i32ev"), SubResource("Resource_t5pm5"), SubResource("Resource_j4ayh"), SubResource("Resource_t3h0n")])
+cost_arr = Array[ExtResource("1_d4w24")]([SubResource("Resource_y671g"), SubResource("Resource_tpokr"), SubResource("Resource_jbo03"), SubResource("Resource_4keui"), SubResource("Resource_a0d6u")])
 effect_modifier_arr = Array[float]([3.0, 6.0, 9.0, 12.0, 15.0])
 max_level = 5
 base_cost = SubResource("Resource_k72jy")
-base_cost_multiplier = 100.0
+base_cost_multiplier = 3.5
 exponential_cost = true
 round_smoothness = 1.0
 base_effect_modifier = 3.0
