@@ -5,7 +5,7 @@ extends Node2D
 # maybe for simple ones we could teleport them, it's just a bit iffy.
 # better to be slow and correct for now
 
-@export var margin := 256
+@export var margin := 512
 
 
 func _physics_process(_delta: float) -> void:

@@ -193,6 +193,10 @@ func _call_function(function_name: String) -> void:
 		return
 
 	print("Calling " + functions_node.name + "." + function_name + "()")
+	if not functions_node.has_method(function_name):
+		push_error("Tried to call non-existing function %s" % function_name)
+		return
+
 	functions_node.call(function_name)
 
 
