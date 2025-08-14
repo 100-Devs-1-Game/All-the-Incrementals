@@ -184,5 +184,11 @@ func cheat_credits() -> void:
 	Player.add_stack_to_inventory(EssenceStack.new(EssenceInventory.WIND_ESSENCE, 1000))
 
 
+# For debugging
+func reset_savegame() -> void:
+	SaveGameManager.reset()
+	reload()
+
+
 func save_game() -> void:
 	SaveGameManager.save()
