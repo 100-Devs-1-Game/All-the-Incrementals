@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://r8cv7m35nnyq"]
+
+[ext_resource type="Script" uid="uid://c704p2xgmuwnu" path="res://modules/minigame/wind_rhythm/editor/chart_editor.gd" id="1_gssk8"]
+[ext_resource type="Resource" uid="uid://ovags5pg4rqe" path="res://modules/minigame/wind_rhythm/chart/exotic_house.tres" id="2_b4rfj"]
+
+[node name="RhythmEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("1_gssk8")
+chart = ExtResource("2_b4rfj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 50.0
+mouse_filter = 1
+text = "Chart Editor"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="CurrentBeat" type="Label" parent="."]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 40.0
+offset_bottom = 105.0
+text = "27.0"
+
+[node name="LoadChart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 252.0
+offset_right = 451.0
+offset_bottom = 58.0
+text = "Load Chart"
+
+[connection signal="pressed" from="LoadChart" to="." method="_on_load_chart_pressed"]
