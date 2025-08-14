@@ -26,7 +26,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _spawn() -> bool:
-	var inst := scene.instantiate()
 	var data: WTFParallaxData = WTFGlobals.minigame.parallax_db.get_data().values().pick_random()
 	var min_y := data.spawn.get_spawn_height_range().x
 	var max_y := data.spawn.get_spawn_height_range().y
@@ -34,6 +33,7 @@ func _spawn() -> bool:
 	if y < min_y || y > max_y:
 		return false
 
+	var inst := scene.instantiate()
 	inst.global_position = Vector2(WTFGlobals.camera.get_right() + 256, y)
 	target.add_child(inst)
 	reset_physics_interpolation()
