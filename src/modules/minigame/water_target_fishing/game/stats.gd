@@ -9,7 +9,7 @@ var carrying: int
 var oxygen_remaining_seconds: float
 
 # data that changes due to upgrades/rebalancing
-var scrollspeed_initial: Vector2 = Vector2(-300, 0)
+var scrollspeed_initial: Vector2 = Vector2(-1000, 0)
 var speedboost_multiplier: float = 1
 var speedboost_flat: float = 0
 
@@ -17,7 +17,8 @@ var score_multiplier: float = 1
 var score_flat: float = 0
 var weight_multiplier: float = 1
 var weight_initial: float = 100
-var carry_capacity: int = 5
+var carry_initial: int = 5
+var carry_flat: int = 0
 
 var oxygen_capacity_seconds: float = 3
 var oxygen_capacity_multiplier: float = 1
@@ -68,7 +69,7 @@ func stop_scrolling() -> void:
 
 
 func scroll_faster(amount: float) -> void:
-	scrollspeed.x -= _apply_speedboost(amount)
+	scrollspeed.x -= _apply_speedboost(amount) * 0.4
 	scrollspeed.x = min(0, scrollspeed.x)
 
 
@@ -109,3 +110,19 @@ func oxygen_capacity() -> float:
 
 func oxygen_remaining() -> float:
 	return oxygen_remaining_seconds
+
+
+func carry_capacity() -> float:
+	return (carry_initial) + carry_flat
+
+
+func carry_remaining() -> float:
+	return carry_capacity() - carrying
+
+
+func try_carry() -> bool:
+	if carry_remaining() <= 0:
+		return false
+
+	carrying = carrying + 1
+	return true
