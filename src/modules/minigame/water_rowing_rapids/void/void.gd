@@ -30,8 +30,8 @@ func _physics_process(delta: float) -> void:
 	var rubberbanded_speed = rubberband.sample_baked(get_distance()) * speed
 	position.x += rubberbanded_speed * delta
 
-	for player in get_overlapping_bodies():
-		player.take_damage(delta * 20.0)
+	for body in get_overlapping_bodies():
+		body.take_damage(delta * 20.0)
 
 
 func get_distance() -> float:
