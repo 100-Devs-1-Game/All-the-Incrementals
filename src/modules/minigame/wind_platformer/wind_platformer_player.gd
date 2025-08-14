@@ -136,7 +136,13 @@ func animation_and_audio_logic():
 			audio_run.stop()
 
 	else:
-		if animated_sprite.animation == "running":
+		if (
+			dive_control > 0
+			and Input.is_action_pressed("down")
+			and animated_sprite.animation != "diving"
+		):
+			animated_sprite.play("diving")
+		elif animated_sprite.animation == "running" or animated_sprite.animation == "diving":
 			animated_sprite.play("falling")
 		audio_run.stop()
 

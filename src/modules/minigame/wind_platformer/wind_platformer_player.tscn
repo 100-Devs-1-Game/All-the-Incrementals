@@ -1,8 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://b5gx7hrc8phfj"]
+[gd_scene load_steps=26 format=3 uid="uid://b5gx7hrc8phfj"]
 
 [ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
+[ext_resource type="Texture2D" uid="uid://bg1q5342vtyof" path="res://assets/minigames/wind_platformer/character/dive/000.png" id="2_7xqbe"]
 [ext_resource type="Texture2D" uid="uid://7fjjhjaqd5v8" path="res://assets/minigames/wind_platformer/character/run/000.png" id="2_e810b"]
 [ext_resource type="Texture2D" uid="uid://dg67av3slji5h" path="res://assets/minigames/wind_platformer/character/fall/000.png" id="2_rjep0"]
+[ext_resource type="Texture2D" uid="uid://b0et030xsm1f7" path="res://assets/minigames/wind_platformer/character/dive/001.png" id="3_3wnla"]
 [ext_resource type="Texture2D" uid="uid://djaneighimnva" path="res://assets/minigames/wind_platformer/character/fall/001.png" id="3_5gvck"]
 [ext_resource type="Texture2D" uid="uid://d1e2k1nj8d0p1" path="res://assets/minigames/wind_platformer/character/run/001.png" id="3_sls4m"]
 [ext_resource type="Texture2D" uid="uid://c7ogqolgmsd3w" path="res://assets/minigames/wind_platformer/character/fall/002.png" id="4_7xqbe"]
@@ -31,6 +33,17 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7xqbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3wnla")
+}],
+"loop": true,
+"name": &"diving",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -153,7 +166,7 @@ polygon = PackedVector2Array(4, -16, -4, -16, 0, -24)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kpnvy")
-animation = &"jumping"
+animation = &"diving"
 
 [node name="Audio" type="Node" parent="."]
 
