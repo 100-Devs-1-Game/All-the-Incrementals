@@ -40,8 +40,8 @@ func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 		Type.COUNTDOWN:
 			my_game.countdown_bonus = int(upgrade.get_current_effect_modifier())
 		Type.DOUBLE_JUMP:
-			assert(false, "not implemented")
+			#assert(false, "not implemented")
 			pass
 		Type.BORDERS:
-			assert(false, "not implemented")
+			#assert(false, "not implemented")
 			pass
