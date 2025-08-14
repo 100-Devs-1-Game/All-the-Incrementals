@@ -174,5 +174,13 @@ func quit_game() -> void:
 	get_tree().quit()
 
 
+# For debugging
+func cheat_credits() -> void:
+	Player.add_stack_to_inventory(EssenceStack.new(EssenceInventory.EARTH_ESSENCE, 1000))
+	Player.add_stack_to_inventory(EssenceStack.new(EssenceInventory.FIRE_ESSENCE, 1000))
+	Player.add_stack_to_inventory(EssenceStack.new(EssenceInventory.WATER_ESSENCE, 1000))
+	Player.add_stack_to_inventory(EssenceStack.new(EssenceInventory.WIND_ESSENCE, 1000))
+
+
 func save_game() -> void:
 	SaveGameManager.save()
