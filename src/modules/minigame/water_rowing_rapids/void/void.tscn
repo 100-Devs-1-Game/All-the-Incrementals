@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8jmv0yqj5qvh"]
+[gd_scene load_steps=14 format=3 uid="uid://b8jmv0yqj5qvh"]
 
 [ext_resource type="Script" uid="uid://b48hc7h2lomi0" path="res://modules/minigame/water_rowing_rapids/void/void.gd" id="1_cntsu"]
 [ext_resource type="Script" uid="uid://hwjgdilgstk6" path="res://modules/minigame/water_rowing_rapids/void/zoom_correct_parallax.gd" id="2_k4c0p"]
@@ -9,6 +9,11 @@
 _limits = [0.0, 1.0, 0.0, 2000.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(2000, 1), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="Curve" id="Curve_hfjwf"]
+_limits = [1.0, 2.00368, 1000.0, 3000.0]
+_data = [Vector2(1000, 1), 0.0, 0.000101698, 0, 0, Vector2(2000, 1.5), 0.0010835, 0.0010835, 0, 0, Vector2(3000, 2.00368), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cntsu"]
 normal = Vector2(1, 0)
@@ -46,6 +51,7 @@ gravity = Vector3(-294, 0, 0)
 [node name="Void" type="Area2D"]
 script = ExtResource("1_cntsu")
 volume_fadeout = SubResource("Curve_dkylo")
+rubberband = SubResource("Curve_hfjwf")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("WorldBoundaryShape2D_cntsu")
