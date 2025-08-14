@@ -10,6 +10,12 @@ var speed: float = 600.0
 var boost_impulse: float = 60
 var boost_duration: float = 0.3
 var is_boosting: bool = false
+
+var invincibility: float = 0.0
+
+var dash_charges_max: int = 3
+var dash_charges: float = dash_charges_max
+
 ## Damping applied to velocity on the boat's broadsides- Aka, "apply extra resistance
 ## to the wide sides of the boat to simulate that boats are not hydrodynamic in
 ## that direction"
@@ -32,6 +38,10 @@ func _physics_process(delta: float) -> void:
 	linear_velocity += transform.x * Input.get_axis(&"down", &"up") * speed * linear_damp * delta
 	if is_boosting:
 		linear_velocity += transform.x * boost_impulse
+
+	if invincibility:
+		invincibility = maxf(invincibility - delta, 0)
+		return
 	for i in get_contact_count():
 		_fail()
 
@@ -60,6 +70,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 func _fail():
 	boat_stability -= 10.0
+	invincibility += 0.1
 
 
 func _boost():
