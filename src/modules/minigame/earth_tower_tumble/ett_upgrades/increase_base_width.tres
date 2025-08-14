@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=11 format=3 uid="uid://u7e4nthgr4cn"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_3bmj3"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_f53vx"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_g4eqq"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_tvc8v"]
+[ext_resource type="Texture2D" uid="uid://mptn1ufu0v0r" path="res://assets/minigames/earth_tower_tumble/icons/upgrade_foundation_size.png" id="4_hclt5"]
+[ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="5_tvc8v"]
+[ext_resource type="Resource" uid="uid://c71162tn5ys2k" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/increase_starting_lives.tres" id="7_hclt5"]
+
+[sub_resource type="Resource" id="Resource_b3eur"]
+script = ExtResource("2_f53vx")
+essence = ExtResource("3_tvc8v")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_ye3ig"]
+script = ExtResource("1_3bmj3")
+earth = 10
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_f53vx")]([SubResource("Resource_b3eur")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_hclt5"]
+script = ExtResource("5_tvc8v")
+type = 5
+metadata/_custom_type_script = "uid://c5sirmi2235ls"
+
+[resource]
+script = ExtResource("2_g4eqq")
+logic = SubResource("Resource_hclt5")
+unlocks_feature = ""
+name = "+ Base Width"
+flavor = ""
+icon = ExtResource("4_hclt5")
+position = Vector2(-960, 1088)
+cost_arr = Array[ExtResource("1_3bmj3")]([SubResource("Resource_ye3ig")])
+effect_modifier_arr = Array[float]([2.0])
+max_level = 1
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level = 1
+unlocks = Array[Resource]([ExtResource("7_hclt5")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1
