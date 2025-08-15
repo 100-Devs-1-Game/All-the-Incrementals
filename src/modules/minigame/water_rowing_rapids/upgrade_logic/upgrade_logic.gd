@@ -13,7 +13,9 @@ enum UpgradeType {
 	## Adds regeneration of stability over time (X stability/sec)
 	STABILITY_REGEN,
 	## Decreases the speed of the void by X%
-	VOID_SPEED
+	VOID_SPEED,
+	## Increases size of spirit magnetism area bt X%
+	SPIRIT_MAGNETISM_AREA,
 }
 
 const BASE_PREFIX: String = "base_"
@@ -46,7 +48,7 @@ static func increase_from_base(object: Object, property: StringName, percentage:
 		not object.has_meta(property),
 		'Attempt to add to unregistered property &"%s" on base %s' % [property, object]
 	)
-	var value = object.get_meta(BASE_PREFIX + property) * percentage
+	var value = object.get_meta(BASE_PREFIX + property) * (1.0 + percentage)
 	print('setting property &"%s" to %s (%.1f%% of base)' % [property, value, percentage * 100])
 	object.set(property, value)
 
@@ -68,4 +70,11 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 		UpgradeType.STABILITY_REGEN:
 			game.player.stability_regen = effect_modifier
 		UpgradeType.VOID_SPEED:
-			increase_from_base(game.chase_void, &"speed", -effect_modifier)
+			increase_from_base(game.chase_void, &"speed_mod", -effect_modifier)
+		UpgradeType.SPIRIT_MAGNETISM_AREA:
+			increase_from_base(
+				game.player.spirit_magnetism_area_collider.shape, &"height", effect_modifier
+			)
+			increase_from_base(
+				game.player.spirit_magnetism_area_collider.shape, &"radius", effect_modifier
+			)

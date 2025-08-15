@@ -27,10 +27,19 @@ var boat_max_stability := 100.0
 var boat_stability := boat_max_stability
 var stability_regen: float = 0.0
 
+@onready var spirit_magnetism_area: Area2D = $SpiritMagnetismArea
+@onready var spirit_magnetism_area_collider: CollisionShape2D = $SpiritMagnetismArea/Collider
+
 
 func _init() -> void:
 	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(
 		self, [&"speed", &"boost_impulse", &"boost_duration"]
+	)
+
+
+func _ready() -> void:
+	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(
+		spirit_magnetism_area_collider.shape, [&"radius", &"height"]
 	)
 
 

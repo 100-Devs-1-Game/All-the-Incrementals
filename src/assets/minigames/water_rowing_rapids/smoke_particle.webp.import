@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b73jxu42imwht"
-path="res://.godot/imported/leaf.webp-13b3ae7cf1e536b20516a58f1fae5e7b.ctex"
+uid="uid://d0xtjk5gxqc07"
+path="res://.godot/imported/smoke_particle.webp-8105705aeb53adc9f30a6a67d2de1a49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/water_rowing_rapids/leaf.webp"
-dest_files=["res://.godot/imported/leaf.webp-13b3ae7cf1e536b20516a58f1fae5e7b.ctex"]
+source_file="res://assets/minigames/water_rowing_rapids/smoke_particle.webp"
+dest_files=["res://.godot/imported/smoke_particle.webp-8105705aeb53adc9f30a6a67d2de1a49.ctex"]
 
 [params]
 

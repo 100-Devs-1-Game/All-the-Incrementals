@@ -42,7 +42,7 @@ monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_x58gl")
-debug_color = Color(0, 0.6, 0.701961, 0)
+debug_color = Color(1, 1, 1, 0)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 1, 0.494118, 1)

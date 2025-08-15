@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cccmrn0cfcn0s"]
+[gd_scene load_steps=18 format=3 uid="uid://cccmrn0cfcn0s"]
 
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
 [ext_resource type="Shader" uid="uid://djcjicqv8phur" path="res://modules/minigame/water_rowing_rapids/water.gdshader" id="2_onqwm"]
+[ext_resource type="Texture2D" uid="uid://dhr2n6nhq3p8w" path="res://assets/minigames/water_rowing_rapids/flow_map.webp" id="3_0gm1p"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_a50qn"]
 [ext_resource type="PackedScene" uid="uid://tofxqtl6im0p" path="res://modules/minigame/water_rowing_rapids/rock/rock.tscn" id="3_i806a"]
 [ext_resource type="Texture2D" uid="uid://dba4g83t4sh84" path="res://assets/minigames/water_rowing_rapids/water_foam.webp" id="3_l3r46"]
@@ -24,6 +25,10 @@ point_count = 27
 shader = ExtResource("2_onqwm")
 shader_parameter/base_drop = Vector2(900, 900)
 shader_parameter/foam = ExtResource("3_l3r46")
+shader_parameter/flow_map = ExtResource("3_0gm1p")
+shader_parameter/flow_map_scale = 14.0
+shader_parameter/flow_speed_scale = 20.0
+shader_parameter/flow_strength = 0.25
 
 [sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_a50qn"]
 
@@ -48,6 +53,7 @@ unique_name_in_owner = true
 texture_repeat = 2
 material = SubResource("ShaderMaterial_bxvkd")
 texture = ExtResource("4_0gm1p")
+polygon = PackedVector2Array(-2815, 27, -6333, 7, -6340, 2045, -2741, 2052)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="River"]
 
@@ -344,19 +350,9 @@ position = Vector2(8840, 1635)
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_i806a")]
 
-[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
-visible = false
-
-[node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
-visible = true
-
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
-visible = false
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
-
-[node name="Pause" parent="MinigameSharedComponents/SharedBaseComponents" index="1"]
-visible = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a50qn")

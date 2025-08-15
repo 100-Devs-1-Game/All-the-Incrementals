@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8jmv0yqj5qvh"]
+[gd_scene load_steps=20 format=3 uid="uid://b8jmv0yqj5qvh"]
 
 [ext_resource type="Script" uid="uid://b48hc7h2lomi0" path="res://modules/minigame/water_rowing_rapids/void/void.gd" id="1_cntsu"]
 [ext_resource type="Script" uid="uid://hwjgdilgstk6" path="res://modules/minigame/water_rowing_rapids/void/zoom_correct_parallax.gd" id="2_k4c0p"]
@@ -21,9 +21,12 @@ normal = Vector2(1, 0)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_auihn"]
 shader = ExtResource("3_auihn")
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hfjwf"]
+light_mode = 1
+
 [sub_resource type="Gradient" id="Gradient_auihn"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.301408)
+offsets = PackedFloat32Array(0, 0.315152)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_dkylo"]
 gradient = SubResource("Gradient_auihn")
@@ -58,6 +61,19 @@ radial_accel_min = -40.0
 radial_accel_max = 40.0
 anim_offset_max = 1.0
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dkylo"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1lrpt"]
+blend_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_ykgne"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_py0pr"]
+gradient = SubResource("Gradient_ykgne")
+
 [node name="Void" type="Area2D"]
 collision_mask = 4
 monitorable = false
@@ -76,20 +92,24 @@ ignore_camera_scroll = true
 script = ExtResource("2_k4c0p")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Parallax2D"]
+self_modulate = Color(1, 1, 1, 0.8)
 material = SubResource("ShaderMaterial_auihn")
 fit_margin = 0.0
 clear_margin = 0.0
 
 [node name="Background" type="TextureRect" parent="Parallax2D/CanvasGroup"]
-offset_right = 100.0
+light_mask = 0
+material = SubResource("CanvasItemMaterial_hfjwf")
+offset_right = 108.0
 offset_bottom = 2000.0
 texture = SubResource("GradientTexture1D_dkylo")
 expand_mode = 1
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Parallax2D/CanvasGroup"]
 modulate = Color(0, 0, 0, 1)
+light_mask = 0
 material = SubResource("CanvasItemMaterial_1jpv1")
-position = Vector2(0, 1000)
+position = Vector2(8, 1000)
 amount = 60
 texture = ExtResource("4_hfjwf")
 lifetime = 1.2
@@ -98,9 +118,18 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_dkylo")
 
 [node name="ColorRect" type="ColorRect" parent="Parallax2D"]
+material = SubResource("CanvasItemMaterial_dkylo")
 offset_left = -6000.0
 offset_bottom = 2000.0
 color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
+modulate = Color(1, 1, 1, 0.13)
+light_mask = 0
+material = SubResource("CanvasItemMaterial_1lrpt")
+offset_right = 706.0
+offset_bottom = 2000.0
+texture = SubResource("GradientTexture1D_py0pr")
 
 [node name="Whispers" type="AudioStreamPlayer" parent="."]
 autoplay = true

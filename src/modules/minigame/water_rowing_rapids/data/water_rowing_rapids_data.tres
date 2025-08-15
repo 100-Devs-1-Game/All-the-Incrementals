@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameData" load_steps=7 format=3 uid="uid://c8wvg65eqyoco"]
+[gd_resource type="Resource" script_class="MinigameData" load_steps=8 format=3 uid="uid://c8wvg65eqyoco"]
 
 [ext_resource type="PackedScene" uid="uid://cccmrn0cfcn0s" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.tscn" id="1_echju"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="2_bpume"]
@@ -6,12 +6,13 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_r2ktw"]
 [ext_resource type="Resource" uid="uid://c5lbw2qtfhfc3" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_speed.tres" id="5_8055a"]
 [ext_resource type="Resource" uid="uid://65qk2n0xv5l8" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_stability.tres" id="6_5tj14"]
+[ext_resource type="Resource" uid="uid://dee8pfyxc0n0p" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_spirit_magnetism_area.tres" id="7_8055a"]
 
 [resource]
 script = ExtResource("2_nvcen")
 display_name = "Rowing Rapids"
 minigame_scene = ExtResource("1_echju")
-upgrade_tree_root_nodes = Array[ExtResource("3_r2ktw")]([ExtResource("5_8055a"), ExtResource("6_5tj14")])
+upgrade_tree_root_nodes = Array[ExtResource("3_r2ktw")]([ExtResource("5_8055a"), ExtResource("6_5tj14"), ExtResource("7_8055a")])
 output_essence = ExtResource("2_bpume")
 currency_conversion_factor = 1.0
 high_scores = Array[int]([])

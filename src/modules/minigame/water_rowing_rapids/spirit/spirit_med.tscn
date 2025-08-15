@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyf4vi3kcgp0i"]
+
+[ext_resource type="PackedScene" uid="uid://bam250ejn756g" path="res://modules/minigame/water_rowing_rapids/spirit/spirit.tscn" id="1_la8c1"]
+
+[node name="SpiritMed" instance=ExtResource("1_la8c1")]
+modulate = Color(0.754167, 0.41, 1, 1)
+scale = Vector2(1.8, 1.8)
+value = 4
+damping = 36.0
+
+[node name="PointLight2D" parent="." index="1"]
+color = Color(0.752941, 0.411765, 1, 1)
