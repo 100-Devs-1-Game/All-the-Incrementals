@@ -5,6 +5,8 @@ extends Control
 
 var minigame: BaseMinigame
 
+@onready var label_score: Label = %"Label Score"
+
 
 func _ready() -> void:
 	tree_exiting.connect(_on_tree_exiting)
@@ -14,6 +16,9 @@ func _ready() -> void:
 func open_menu() -> void:
 	visible = true
 	pause.pause()
+	if minigame.is_game_over():
+		label_score.show()
+		label_score.text = "Score: %d" % minigame.get_score()
 
 
 func _on_play_pressed() -> void:
