@@ -145,12 +145,12 @@ func open_main_menu():
 
 # Call this function when the game ends to re-open the minigame menu.
 func game_over():
-	_minigame_shared_components.minigame_menu.open_menu()
 	Player.add_stack_to_inventory(
 		EssenceStack.new(data.output_essence, int(_score * data.currency_conversion_factor))
 	)
 	Player.update_highscores(_get_key(), get_score())
 	_is_game_over = true
+	_minigame_shared_components.minigame_menu.open_menu()
 
 
 func is_game_over():
