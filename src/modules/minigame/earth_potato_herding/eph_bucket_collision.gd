@@ -47,5 +47,6 @@ func _start_effect():
 
 
 func _ready() -> void:
+	text.text = ""
 	minigame = get_tree().get_first_node_in_group("earth_potato_herding")
 	minigame.game_started.connect(_start_effect)

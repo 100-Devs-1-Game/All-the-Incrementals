@@ -5,7 +5,7 @@ var _pause_stack: int = 0  # number of times paused was issued
 
 
 func pause() -> void:
-	_pause_stack += 1
+	_pause_stack = 1
 	#print("pause stack: " + str(_pause_stack))
 	get_tree().paused = true
 
