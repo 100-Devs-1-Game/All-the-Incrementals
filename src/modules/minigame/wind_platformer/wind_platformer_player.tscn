@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b5gx7hrc8phfj"]
+[gd_scene load_steps=28 format=3 uid="uid://b5gx7hrc8phfj"]
 
 [ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
 [ext_resource type="Texture2D" uid="uid://bg1q5342vtyof" path="res://assets/minigames/wind_platformer/character/dive/000.png" id="2_7xqbe"]
@@ -123,6 +123,14 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="Curve" id="Curve_7xqbe"]
+_data = [Vector2(0, 1), 0.0, -2.67305, 0, 0, Vector2(1, 0.159533), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7xqbe"]
+offsets = PackedFloat32Array(0.00555556, 0.155556, 0.655556, 1)
+colors = PackedColorArray(0.901961, 0, 0, 0, 0.901961, 0, 0, 1, 0.737092, 0.631404, 0.225013, 1, 0, 0, 0, 0)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
 collision_mask = 3
@@ -177,6 +185,24 @@ volume_db = -10.667
 [node name="Run Audio Delay" type="Timer" parent="Audio"]
 wait_time = 0.2
 one_shot = true
+
+[node name="CPUParticles Burning Feet" type="CPUParticles2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(0, 25)
+amount = 40
+lifetime = 0.5
+lifetime_randomness = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(10, 5)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 55.56
+initial_velocity_max = 55.56
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_7xqbe")
+color_ramp = SubResource("Gradient_7xqbe")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_animation_finished"]
