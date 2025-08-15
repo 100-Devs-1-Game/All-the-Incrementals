@@ -39,9 +39,13 @@ func _on_area_entered(other_area: Area2D) -> void:
 	var maybe_fish := other_area.get_parent() as WTFFish
 	if is_instance_valid(maybe_fish) && WTFGlobals.minigame.stats.try_carry():
 		WTFGlobals.minigame.add_score(maybe_fish.data.pickup.score)
-		TextFloatSystem.floating_text(
-			maybe_fish.global_position, "+%d" % maybe_fish.data.pickup.score, WTFGlobals.minigame
+		var ft := TextFloatSystem.floating_text(
+			maybe_fish.global_position + Vector2(randf_range(-200, -170), randf_range(-30, 30)),
+			"+%d" % maybe_fish.data.pickup.score,
+			WTFGlobals.minigame
 		)
+
+		ft.set_font_size(floori(48 / WTFGlobals.camera.zoom.x))
 
 		WTFGlobals.minigame.stats.weight += maybe_fish.data.pickup.weight
 		WTFGlobals.minigame.stats.scroll_faster(maybe_fish.data.pickup.speedboost)
