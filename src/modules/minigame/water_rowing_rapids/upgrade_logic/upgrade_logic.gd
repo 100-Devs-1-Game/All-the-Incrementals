@@ -70,7 +70,7 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 		UpgradeType.STABILITY_REGEN:
 			game.player.stability_regen = effect_modifier
 		UpgradeType.VOID_SPEED:
-			increase_from_base(game.chase_void, &"speed", -effect_modifier)
+			increase_from_base(game.chase_void, &"speed_mod", -effect_modifier)
 		UpgradeType.SPIRIT_MAGNETISM_AREA:
 			increase_from_base(
 				game.player.spirit_magnetism_area_collider.shape, &"height", effect_modifier

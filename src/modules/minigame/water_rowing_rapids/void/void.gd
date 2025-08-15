@@ -6,16 +6,20 @@ const RAY_COVERAGE: float = 100
 @export var volume_fadeout: Curve
 @export var rubberband: Curve
 
-var player: Node2D
+@export var starting_speed: float = 400.0
+@export var acceleration: float = 30.0
 
-var speed: float = 700.0
+var player: Node2D
+## used for upgrades to reduce overall speed
+var speed_mod: float = 1.0
+var current_speed: float = starting_speed
 var drag_strength: float = 400
 
 @onready var whispers: AudioStreamPlayer = $Whispers
 
 
 func _init() -> void:
-	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(self, [&"speed"])
+	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(self, [&"speed_mod"])
 
 
 func _ready() -> void:
@@ -31,9 +35,9 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	var rubberbanded_speed = rubberband.sample_baked(get_distance()) * speed
+	var rubberbanded_speed = rubberband.sample_baked(get_distance()) * current_speed * speed_mod
 	position.x += rubberbanded_speed * delta
-
+	current_speed += acceleration * delta
 	for body in get_overlapping_bodies():
 		body.take_damage(delta * 20.0)
 		_do_grab(body)
