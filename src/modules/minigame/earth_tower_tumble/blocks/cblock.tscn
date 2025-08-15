@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsufcat6nlwmh"]
+[gd_scene load_steps=4 format=3 uid="uid://bsufcat6nlwmh"]
 
 [ext_resource type="Script" uid="uid://wra0uj1sup0u" path="res://modules/minigame/earth_tower_tumble/blocks/block.gd" id="1_b24oo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b24oo"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khl5g"]
+size = Vector2(32, 96)
 
 [node name="Cblock" type="RigidBody2D"]
 script = ExtResource("1_b24oo")
@@ -10,5 +16,13 @@ color = Color(0.178979, 1.79046e-05, 0.732724, 1)
 polygon = PackedVector2Array(-16, -48, -16, 48, 48, 48, 48, 16, 16, 16, 16, -16, 48, -16, 48, -48)
 uv = PackedVector2Array(-136, -51.5, -136, 9.5, -81, 11.5, -83, -51.5)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-16, -48, -16, 48, 48, 48, 48, 16, 16, 16, 16, -16, 48, -16, 48, -48)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, -32)
+shape = SubResource("RectangleShape2D_b24oo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_khl5g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(16, 32)
+shape = SubResource("RectangleShape2D_b24oo")
