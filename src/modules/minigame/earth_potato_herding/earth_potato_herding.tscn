@@ -85,6 +85,7 @@ text = NodePath("../RichTextLabel")
 shape = SubResource("CircleShape2D_2q4j3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Marker2D"]
+visible = false
 offset_left = -345.0
 offset_top = 133.7
 offset_right = 345.0

@@ -68,3 +68,7 @@ func _on_more_potatoes_changed(modifier: float) -> void:
 
 func _start() -> void:
 	game_started.emit()
+
+
+func _game_over() -> void:
+	$Marker2D/RichTextLabel.text = ""

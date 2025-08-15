@@ -78,6 +78,12 @@ func _start():
 	pass
 
 
+## Virtual function for cleaning up the Minigame. Inherited Scripts should
+## implement this if they want to do cleanup at game end
+func _game_over():
+	pass
+
+
 func _get_key() -> StringName:
 	# https://github.com/godotengine/godot/issues/75617
 	# TODO: replace with UID when this is fixed
@@ -150,6 +156,7 @@ func game_over():
 	)
 	Player.update_highscores(_get_key(), get_score())
 	_is_game_over = true
+	_game_over()
 	_minigame_shared_components.minigame_menu.open_menu()
 
 
