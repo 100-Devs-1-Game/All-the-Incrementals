@@ -33,7 +33,7 @@ var fish_can_fly: bool = false
 var spawnable_fish_min_depth_offset: float = 0
 var spawnable_fish_min_distance_offset: float = 0
 
-var spawn_boats: bool = false
+var spawn_boats: bool = true
 var spawn_boats_every_x_pixels: float = 5000
 var spawn_boats_chance: float = 5
 var boats_carry_capacity: int = 5
