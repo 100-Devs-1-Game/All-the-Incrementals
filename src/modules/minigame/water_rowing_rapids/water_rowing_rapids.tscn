@@ -1,10 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://cccmrn0cfcn0s"]
+[gd_scene load_steps=16 format=3 uid="uid://cccmrn0cfcn0s"]
 
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
+[ext_resource type="Shader" uid="uid://djcjicqv8phur" path="res://modules/minigame/water_rowing_rapids/water.gdshader" id="2_onqwm"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_a50qn"]
 [ext_resource type="PackedScene" uid="uid://tofxqtl6im0p" path="res://modules/minigame/water_rowing_rapids/rock/rock.tscn" id="3_i806a"]
+[ext_resource type="Texture2D" uid="uid://dba4g83t4sh84" path="res://assets/minigames/water_rowing_rapids/water_foam.webp" id="3_l3r46"]
 [ext_resource type="PackedScene" uid="uid://bam250ejn756g" path="res://modules/minigame/water_rowing_rapids/spirit/spirit.tscn" id="3_yl50k"]
+[ext_resource type="Texture2D" uid="uid://cn1f37xpjid1p" path="res://assets/minigames/water_rowing_rapids/water_background.webp" id="4_0gm1p"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_yl50k"]
 [ext_resource type="PackedScene" uid="uid://mhrfxqqthuy7" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.tscn" id="5_f4xkx"]
 [ext_resource type="PackedScene" uid="uid://b8jmv0yqj5qvh" path="res://modules/minigame/water_rowing_rapids/void/void.tscn" id="8_yl50k"]
@@ -16,21 +19,10 @@ _data = {
 }
 point_count = 27
 
-[sub_resource type="Gradient" id="Gradient_tk8vt"]
-offsets = PackedFloat32Array(0, 0.422111, 0.743719, 1)
-colors = PackedColorArray(0.389287, 0.389287, 0.389286, 1, 0.521141, 0.521141, 0.521141, 1, 0.687215, 0.687215, 0.687215, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_i806a"]
-frequency = 0.0117
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a50qn"]
-width = 300
-height = 300
-generate_mipmaps = false
-seamless = true
-seamless_blend_skirt = 0.3
-color_ramp = SubResource("Gradient_tk8vt")
-noise = SubResource("FastNoiseLite_i806a")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxvkd"]
+shader = ExtResource("2_onqwm")
+shader_parameter/base_drop = Vector2(900, 900)
+shader_parameter/foam = ExtResource("3_l3r46")
 
 [sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_a50qn"]
 
@@ -40,7 +32,8 @@ glow_enabled = true
 glow_hdr_threshold = 0.9
 glow_hdr_scale = 0.15
 adjustment_enabled = true
-adjustment_contrast = 1.15
+adjustment_brightness = 0.8
+adjustment_contrast = 1.14
 
 [node name="EarthRowingRapids" type="Node2D"]
 script = ExtResource("1_tk8vt")
@@ -52,8 +45,8 @@ curve = SubResource("Curve2D_a50qn")
 [node name="Wadder" type="Polygon2D" parent="River"]
 unique_name_in_owner = true
 texture_repeat = 2
-color = Color(0.123517, 0.23114, 0.186891, 1)
-texture = SubResource("NoiseTexture2D_a50qn")
+material = SubResource("ShaderMaterial_bxvkd")
+texture = ExtResource("4_0gm1p")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="River"]
 
@@ -300,55 +293,58 @@ position = Vector2(23923, 5521)
 
 [node name="Hazzards" type="Node2D" parent="."]
 
-[node name="Polygon2D2" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-3705, 2030)
 
-[node name="Polygon2D3" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock2" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-2702, 732)
 
-[node name="Polygon2D17" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock3" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-2051, 1450)
 
-[node name="Polygon2D4" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock4" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-1144, 830)
 
-[node name="Polygon2D5" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock5" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(83, 1591)
 
-[node name="Polygon2D6" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock6" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(1462, 696)
 
-[node name="Polygon2D7" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock7" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(3199, 1063)
 
-[node name="Polygon2D8" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock8" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(4408, 920)
 
-[node name="Polygon2D9" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock9" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(4927, 1207)
 
-[node name="Polygon2D10" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock10" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(5079, 2111)
 
-[node name="Polygon2D11" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock11" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(6440, 1063)
 
-[node name="Polygon2D12" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock12" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(7416, 1430)
 
-[node name="Polygon2D13" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock13" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(7694, 2048)
 
-[node name="Polygon2D14" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock14" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(6709, 2146)
 
-[node name="Polygon2D15" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock15" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(8545, 543)
 
-[node name="Polygon2D16" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock16" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(8840, 1635)
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_i806a")]
+
+[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
+visible = false
 
 [node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
 visible = true
