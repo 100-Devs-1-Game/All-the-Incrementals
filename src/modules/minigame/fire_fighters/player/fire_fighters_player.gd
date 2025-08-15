@@ -9,12 +9,10 @@ signal changed_tile(tile: Vector2i)
 @export var water_speed: float = 200.0
 @export var water_spread: float = 0.1
 @export var tank_size: float = 5.0
-@export var arc_factor: float = 0.1
 @export var hitpoints: int = 3
 
 var move_speed_factor: float = 1.0
 var water_speed_factor: float = 1.0
-var arc_reduction: float = 1.0
 var water_spread_factor: float = 1.0
 var tank_bonus_size: float = 1.0
 var hitpoint_bonus: int
@@ -114,7 +112,6 @@ func extinguish(flag: bool):
 		extinguisher_offset.global_position,
 		dir * water_speed * water_speed_factor,
 		velocity,
-		arc_factor * arc_reduction,
 		extinguisher.global_transform.x
 	)
 

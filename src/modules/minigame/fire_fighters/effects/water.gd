@@ -2,14 +2,10 @@ class_name FireFightersMinigameWater
 extends Node2D
 
 signal disappear
-signal splash(pos: Vector2)
 
 @export var fade_speed_threshold: float = 50.0
-@export var gravity: float = 10.0
 
 var velocity: Vector2
-var z_velocity: float
-var height: float = 0.0
 var damping: float = 2.0
 var density: float = 1.0
 
@@ -19,21 +15,11 @@ var density: float = 1.0
 
 func _process(delta: float) -> void:
 	position += velocity * delta
-	z_velocity += -gravity * delta
-
-	var prev_height: float = height
-	height = clampf(height + z_velocity * delta, 0, 100)
-	height = max(0, height)
-
-	if height < prev_height and is_zero_approx(height):
-		splash.emit(position)
 
 	var transparency: float = min(1, velocity.length() * 1.0 / fade_speed_threshold)
 	if transparency < 1 and particles.emitting:
 		particles.emitting = false
 	sprite.modulate.a = transparency
-
-	sprite.scale = Vector2.ONE * density * sqrt(height + 1)
 
 
 func _physics_process(delta: float) -> void:
@@ -47,7 +33,3 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() < 0.05:
 		disappear.emit()
 		queue_free()
-
-
-func is_low() -> bool:
-	return is_zero_approx(height)
