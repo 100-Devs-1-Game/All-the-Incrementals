@@ -46,7 +46,7 @@ static func increase_from_base(object: Object, property: StringName, percentage:
 		not object.has_meta(property),
 		'Attempt to add to unregistered property &"%s" on base %s' % [property, object]
 	)
-	var value = object.get_meta(BASE_PREFIX + property) * percentage
+	var value = object.get_meta(BASE_PREFIX + property) * (1.0 + percentage)
 	print('setting property &"%s" to %s (%.1f%% of base)' % [property, value, percentage * 100])
 	object.set(property, value)
 
