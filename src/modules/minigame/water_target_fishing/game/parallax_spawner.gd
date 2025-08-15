@@ -36,6 +36,6 @@ func _spawn() -> bool:
 	var inst := scene.instantiate()
 	inst.global_position = Vector2(WTFGlobals.camera.get_right() + 256, y)
 	target.add_child(inst)
-	reset_physics_interpolation()
+	inst.reset_physics_interpolation()
 
 	return true
