@@ -33,6 +33,8 @@ func set_parts_areas_active(b: bool):
 
 
 func fade():
+	collision_layer = 0
+
 	if fade_tween:
 		return
 	fade_tween = create_tween()
