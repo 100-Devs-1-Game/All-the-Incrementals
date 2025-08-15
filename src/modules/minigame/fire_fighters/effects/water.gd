@@ -30,6 +30,6 @@ func _physics_process(delta: float) -> void:
 
 	velocity *= (1.0 - damping * delta)
 
-	if velocity.length() < 0.05:
+	if velocity.length() < 5:
 		disappear.emit()
 		queue_free()
