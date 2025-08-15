@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b5gx7hrc8phfj"]
+[gd_scene load_steps=31 format=3 uid="uid://b5gx7hrc8phfj"]
 
 [ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
 [ext_resource type="Texture2D" uid="uid://bg1q5342vtyof" path="res://assets/minigames/wind_platformer/character/dive/000.png" id="2_7xqbe"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://cmeopcfcjv6b0" path="res://assets/minigames/wind_platformer/sfx/sfx_walk_cloud_lp_01.ogg" id="13_x8qgx"]
 [ext_resource type="AudioStream" uid="uid://db2amhq563rqf" path="res://assets/minigames/wind_platformer/sfx/sfx_cloud_jump_02.ogg" id="24_hdmq6"]
 [ext_resource type="AudioStream" uid="uid://crdpuwen62s16" path="res://assets/minigames/wind_platformer/sfx/sfx_cloud_land_02.ogg" id="25_uom4x"]
+[ext_resource type="AudioStream" uid="uid://bgr4m8cg5dp5h" path="res://assets/minigames/wind_platformer/sfx/lp_wind_calm_woodz.ogg" id="26_uom4x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkh7d"]
 size = Vector2(32, 48)
@@ -193,6 +194,10 @@ stream = ExtResource("24_hdmq6")
 
 [node name="AudioStreamPlayer Land" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("25_uom4x")
+
+[node name="AudioStreamPlayer Wind" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("26_uom4x")
+autoplay = true
 
 [node name="CPUParticles Burning Feet" type="CPUParticles2D" parent="."]
 visible = false
