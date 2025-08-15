@@ -1,38 +1,74 @@
-[gd_scene load_steps=18 format=3 uid="uid://351eaqu7t6ig"]
+[gd_scene load_steps=27 format=3 uid="uid://351eaqu7t6ig"]
 
-[ext_resource type="Script" uid="uid://lhc3e4w56rm4" path="res://modules/minigame/earth_tower_tumble/earth_tower_tumble.gd" id="1_ovh32"]
-[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0yx17"]
-[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_sfu5h"]
-[ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_46r7c"]
-[ext_resource type="Script" uid="uid://dwtfj2kuufykl" path="res://modules/minigame/earth_tower_tumble/tower_base.gd" id="5_0yx17"]
-[ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="5_wlaab"]
-[ext_resource type="Script" uid="uid://bqkp2jhuqul2q" path="res://modules/minigame/earth_tower_tumble/block_spawner.gd" id="6_sfu5h"]
-[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="7_hwnjf"]
-[ext_resource type="Texture2D" uid="uid://b7o48p71vs2yc" path="res://assets/minigames/earth_tower_tumble/background.png" id="9_e1brv"]
-[ext_resource type="Script" path="res://modules/minigame/earth_tower_tumble/parallax_background.gd" id="9_kc8as"]
-[ext_resource type="Script" uid="uid://bdxiechv2n4ff" path="res://modules/minigame/earth_tower_tumble/player.gd" id="9_yt77r"]
-[ext_resource type="Texture2D" uid="uid://dem6aslg0cdbs" path="res://assets/minigames/earth_tower_tumble/clouds.png" id="10_e1brv"]
-[ext_resource type="Texture2D" uid="uid://c02dayueobaw" path="res://assets/minigames/earth_tower_tumble/hearts_full.png" id="12_hn5om"]
-[ext_resource type="Script" path="res://modules/minigame/earth_tower_tumble/fall_zone.gd" id="14_uvjps"]
+[ext_resource type="Script" uid="uid://lhc3e4w56rm4" path="res://modules/minigame/earth_tower_tumble/earth_tower_tumble.gd" id="1_e1brv"]
+[ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_hn5om"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_wlaab"]
+[ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_uvjps"]
+[ext_resource type="Texture2D" uid="uid://b7o48p71vs2yc" path="res://assets/minigames/earth_tower_tumble/placeholder/background.png" id="5_sn5tp"]
+[ext_resource type="Script" uid="uid://b70epgha4rake" path="res://modules/minigame/earth_tower_tumble/parallax_background.gd" id="6_w41d8"]
+[ext_resource type="Texture2D" uid="uid://dem6aslg0cdbs" path="res://assets/minigames/earth_tower_tumble/placeholder/clouds.png" id="7_6o04t"]
+[ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="8_2fibp"]
+[ext_resource type="Script" uid="uid://cd43dsw3r0dwa" path="res://modules/minigame/earth_tower_tumble/ui_handler.gd" id="9_kuj38"]
+[ext_resource type="Script" uid="uid://b2uxt75i3kcpr" path="res://modules/minigame/earth_tower_tumble/enemy_spawner.gd" id="11_domae"]
+[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="11_uvjps"]
+[ext_resource type="Script" uid="uid://bdxiechv2n4ff" path="res://modules/minigame/earth_tower_tumble/player.gd" id="11_w41d8"]
+[ext_resource type="Script" uid="uid://dwtfj2kuufykl" path="res://modules/minigame/earth_tower_tumble/tower_base.gd" id="11_wlaab"]
+[ext_resource type="Script" uid="uid://bqkp2jhuqul2q" path="res://modules/minigame/earth_tower_tumble/block_spawner.gd" id="12_hn5om"]
+[ext_resource type="PackedScene" uid="uid://e4xemp6bivp1" path="res://modules/minigame/earth_tower_tumble/potato.tscn" id="12_w41d8"]
+[ext_resource type="PackedScene" uid="uid://be8balsm15egw" path="res://modules/minigame/earth_tower_tumble/enemies/ett_evil_spirit.tscn" id="13_uvjps"]
+[ext_resource type="PackedScene" uid="uid://bsufcat6nlwmh" path="res://modules/minigame/earth_tower_tumble/blocks/cblock.tscn" id="19_7s2l2"]
+[ext_resource type="PackedScene" uid="uid://ggnfet5kgg5f" path="res://modules/minigame/earth_tower_tumble/blocks/iblock.tscn" id="20_lykin"]
+[ext_resource type="PackedScene" uid="uid://bx2rqii8v30jv" path="res://modules/minigame/earth_tower_tumble/blocks/lblock.tscn" id="21_s82d1"]
+[ext_resource type="PackedScene" uid="uid://cbuekkkhwxgrg" path="res://modules/minigame/earth_tower_tumble/blocks/square.tscn" id="22_vnft6"]
+[ext_resource type="PackedScene" uid="uid://b6u61n0qylugl" path="res://modules/minigame/earth_tower_tumble/blocks/tblock.tscn" id="23_0pdmm"]
+[ext_resource type="PackedScene" uid="uid://bo3g4621mf23k" path="res://modules/minigame/earth_tower_tumble/blocks/vblock.tscn" id="24_1fo7r"]
+[ext_resource type="PackedScene" uid="uid://bswnge8122ano" path="res://modules/minigame/earth_tower_tumble/blocks/zblock.tscn" id="25_5rto8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uvjps"]
-shader = ExtResource("5_wlaab")
-shader_parameter/lod = 0.788
+shader = ExtResource("8_2fibp")
+shader_parameter/lod = 1.173
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfu5h"]
-size = Vector2(284, 252.277)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk6td"]
+size = Vector2(232, 415)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlaab"]
-size = Vector2(2328, 498)
+[sub_resource type="Curve2D" id="Curve2D_w41d8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 40.765, 223, 0, 0, 0, 0, 1880.79, 223)
+}
+point_count = 2
 
-[node name="EarthTowerTumble" type="Node2D"]
-script = ExtResource("1_ovh32")
+[node name="EarthTowerTumble" type="Node2D" node_paths=PackedStringArray("player", "base", "enemy_spawner", "block_spawner", "game_ui")]
+script = ExtResource("1_e1brv")
+player = NodePath("Game/Player")
+base = NodePath("Game/TowerBase")
+enemy_spawner = NodePath("Game/Camera2D/EnemySpawner")
+block_spawner = NodePath("Game/Camera2D/BlockSpawner")
+game_ui = NodePath("UI/TempUI")
 data_uid = "uid://s7k08dgu5hxn"
 
-[node name="BG" type="CanvasLayer" parent="."]
+[node name="SharedComponents" parent="." instance=ExtResource("2_hn5om")]
+
+[node name="MinigameMenu" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
+visible = true
+
+[node name="DebugPopup" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="2" node_paths=PackedStringArray("functions_node")]
+visible = false
+functions_node = NodePath("../../../..")
+custom_debug_buttons = Array[ExtResource("3_wlaab")]([ExtResource("4_uvjps")])
+
+[node name="Pause" parent="SharedComponents/SharedBaseComponents" index="1"]
+visible = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="CanvasLayer" parent="UI"]
 layer = -100
 
-[node name="TextureRect" type="TextureRect" parent="BG"]
+[node name="TextureRect" type="TextureRect" parent="UI/BG"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -40,140 +76,139 @@ offset_right = 1024.0
 offset_bottom = 1024.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_e1brv")
+texture = ExtResource("5_sn5tp")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="BG"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="UI/BG"]
 
-[node name="Parallax2D" type="Parallax2D" parent="BG/ParallaxBackground"]
+[node name="Parallax2D" type="Parallax2D" parent="UI/BG/ParallaxBackground"]
 scroll_offset = Vector2(1020.84, 596)
-repeat_size = Vector2(1024, 0)
+repeat_size = Vector2(1024, 1033)
 repeat_times = 5
-script = ExtResource("9_kc8as")
+script = ExtResource("6_w41d8")
 
-[node name="Sprite2D" type="Sprite2D" parent="BG/ParallaxBackground/Parallax2D"]
-texture = ExtResource("10_e1brv")
+[node name="Sprite2D" type="Sprite2D" parent="UI/BG/ParallaxBackground/Parallax2D"]
+texture = ExtResource("7_6o04t")
 
-[node name="Blur" type="TextureRect" parent="BG/ParallaxBackground/Parallax2D/Sprite2D"]
+[node name="Blur" type="TextureRect" parent="UI/BG/ParallaxBackground/Parallax2D/Sprite2D"]
 material = SubResource("ShaderMaterial_uvjps")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.16498
-offset_top = -596.0
-offset_right = 3.16504
-offset_bottom = -596.0
+offset_left = -1251.84
+offset_top = -602.0
+offset_right = -1251.84
+offset_bottom = -602.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_e1brv")
+texture = ExtResource("5_sn5tp")
 
-[node name="TowerBase" type="Node2D" parent="."]
-position = Vector2(949, 1078)
-script = ExtResource("5_0yx17")
+[node name="TempUI" type="CanvasLayer" parent="UI" groups=["ui"]]
+script = ExtResource("9_kuj38")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="TowerBase"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerBase/StaticBody2D"]
-position = Vector2(-4, 0.138794)
-shape = SubResource("RectangleShape2D_sfu5h")
-
-[node name="Polygon2D" type="Polygon2D" parent="TowerBase"]
-color = Color(0.386561, 0.258554, 0.0995113, 1)
-
-[node name="BlockSpawner" type="Node2D" parent="."]
-position = Vector2(949, 302)
-script = ExtResource("6_sfu5h")
-
-[node name="Player" type="Sprite2D" parent="."]
-position = Vector2(613, 674)
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("7_hwnjf")
-script = ExtResource("9_yt77r")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(944, 642)
-zoom = Vector2(1.48, 1.48)
-
-[node name="MinigameUI" type="CanvasLayer" parent="."]
-
-[node name="Box" type="HBoxContainer" parent="MinigameUI"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -593.0
-offset_top = -128.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="MinigameUI/Box"]
-layout_mode = 2
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 73
-text = "Lives:"
+[node name="Score" type="Label" parent="UI/TempUI"]
+offset_right = 533.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 84
+text = "Score: N/A"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="hart" type="TextureRect" parent="MinigameUI/Box"]
-layout_mode = 2
-texture = ExtResource("12_hn5om")
-
-[node name="hart2" type="TextureRect" parent="MinigameUI/Box"]
-layout_mode = 2
-texture = ExtResource("12_hn5om")
-
-[node name="hart3" type="TextureRect" parent="MinigameUI/Box"]
-layout_mode = 2
-texture = ExtResource("12_hn5om")
-
-[node name="Win" type="Label" parent="MinigameUI"]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 113.0
-offset_right = 20.0
-offset_bottom = 163.0
-grow_horizontal = 2
-theme_override_constants/outline_size = 26
-theme_override_font_sizes/font_size = 123
-text = "Level Complete!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Rem" type="Label" parent="MinigameUI"]
+[node name="Blocks" type="Label" parent="UI/TempUI"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -117.0
-offset_right = 518.0
+offset_top = -97.0
+offset_right = 621.0
 grow_vertical = 0
-theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 60
-text = "Blocks Remaining: 32"
+theme_override_font_sizes/font_size = 48
+text = "Blocks Remaining: N/A"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FallZone" type="Area2D" parent="."]
-position = Vector2(942, 1303)
-script = ExtResource("14_uvjps")
+[node name="LifeContainer" type="HBoxContainer" parent="UI/TempUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -495.0
+offset_bottom = 78.0
+grow_horizontal = 0
+alignment = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallZone"]
-position = Vector2(0, 239)
-shape = SubResource("RectangleShape2D_wlaab")
+[node name="Lives" type="Label" parent="UI/TempUI/LifeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 57
+text = "Lives:"
 
+[node name="Display" type="Label" parent="UI/TempUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 80
+text = "READY"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0yx17")]
+[node name="Game" type="Node2D" parent="."]
 
-[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1" node_paths=PackedStringArray("functions_node")]
+[node name="TowerBase" type="Node2D" parent="Game" groups=["base"]]
+position = Vector2(970, 1203)
+script = ExtResource("11_wlaab")
 
-functions_node = NodePath("../../../..")
-visible_on_start = true
-custom_debug_buttons = Array[ExtResource("3_sfu5h")]([ExtResource("4_46r7c")])
+[node name="StaticBody2D" type="StaticBody2D" parent="Game/TowerBase"]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/TowerBase/StaticBody2D"]
+shape = SubResource("RectangleShape2D_vk6td")
 
-[node name="Pause" parent="MinigameSharedComponents/SharedBaseComponents" index="1"]
-visible = true
+[node name="Polygon2D" type="Polygon2D" parent="Game/TowerBase"]
+color = Color(0.314316, 0.314316, 0.314316, 1)
 
-[editable path="MinigameSharedComponents"]
-[editable path="MinigameSharedComponents/SharedBaseComponents"]
+[node name="Player" type="Node2D" parent="Game"]
+position = Vector2(474, 568)
+script = ExtResource("11_w41d8")
+potato = ExtResource("12_w41d8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Game/Player"]
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("11_uvjps")
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="Game"]
+position = Vector2(964, 544)
+
+[node name="EnemySpawner" type="Node2D" parent="Game/Camera2D" node_paths=PackedStringArray("left", "right") groups=["enemy spawner"]]
+script = ExtResource("11_domae")
+left = NodePath("Left")
+right = NodePath("Right")
+ett_evil_spirit = ExtResource("13_uvjps")
+
+[node name="Left" type="Marker2D" parent="Game/Camera2D/EnemySpawner"]
+position = Vector2(-1295, 0)
+
+[node name="Right" type="Marker2D" parent="Game/Camera2D/EnemySpawner"]
+position = Vector2(1295, 0)
+
+[node name="BlockSpawner" type="Node2D" parent="Game/Camera2D" groups=["block spawner"]]
+position = Vector2(0, -468)
+script = ExtResource("12_hn5om")
+blocks = Array[PackedScene]([ExtResource("19_7s2l2"), ExtResource("20_lykin"), ExtResource("21_s82d1"), ExtResource("22_vnft6"), ExtResource("23_0pdmm"), ExtResource("24_1fo7r"), ExtResource("25_5rto8")])
+
+[node name="Path2D" type="Path2D" parent="Game"]
+curve = SubResource("Curve2D_w41d8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Game/Path2D"]
+position = Vector2(40.765, 223)
+loop = false
+
+[editable path="SharedComponents"]
+[editable path="SharedComponents/SharedBaseComponents"]

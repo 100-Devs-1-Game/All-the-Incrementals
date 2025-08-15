@@ -10,6 +10,9 @@ var speed: float = 600.0
 var boost_impulse: float = 60
 var boost_duration: float = 0.3
 var is_boosting: bool = false
+
+var invincibility: float = 0.0
+
 ## Damping applied to velocity on the boat's broadsides- Aka, "apply extra resistance
 ## to the wide sides of the boat to simulate that boats are not hydrodynamic in
 ## that direction"
@@ -20,18 +23,35 @@ var rotation_max_speed: float = TAU / 5
 ## Rotation speed minimum
 var rotation_min_speed: float = TAU / 20
 
-var boat_stability := 100.0
 var boat_max_stability := 100.0
+var boat_stability := boat_max_stability
+var stability_regen: float = 0.0
+
+@onready var spirit_magnetism_area: Area2D = $SpiritMagnetismArea
+@onready var spirit_magnetism_area_collider: CollisionShape2D = $SpiritMagnetismArea/Collider
+
+
+func _init() -> void:
+	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(
+		self, [&"speed", &"boost_impulse", &"boost_duration"]
+	)
 
 
 func _ready() -> void:
-	pass
+	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(
+		spirit_magnetism_area_collider.shape, [&"radius", &"height"]
+	)
 
 
 func _physics_process(delta: float) -> void:
+	boat_stability += stability_regen * delta
 	linear_velocity += transform.x * Input.get_axis(&"down", &"up") * speed * linear_damp * delta
 	if is_boosting:
 		linear_velocity += transform.x * boost_impulse
+
+	if invincibility:
+		invincibility = maxf(invincibility - delta, 0)
+		return
 	for i in get_contact_count():
 		_fail()
 
@@ -58,8 +78,13 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	state.linear_velocity -= transform.y * (broadside_speed - broadside_speed * broadside_delta)
 
 
+func take_damage(amount: float):
+	boat_stability -= amount
+
+
 func _fail():
 	boat_stability -= 10.0
+	invincibility += 0.1
 
 
 func _boost():

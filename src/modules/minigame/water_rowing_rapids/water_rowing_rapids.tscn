@@ -1,26 +1,36 @@
-[gd_scene load_steps=12 format=3 uid="uid://cccmrn0cfcn0s"]
+[gd_scene load_steps=18 format=3 uid="uid://cccmrn0cfcn0s"]
 
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
+[ext_resource type="Shader" uid="uid://djcjicqv8phur" path="res://modules/minigame/water_rowing_rapids/water.gdshader" id="2_onqwm"]
+[ext_resource type="Texture2D" uid="uid://dhr2n6nhq3p8w" path="res://assets/minigames/water_rowing_rapids/flow_map.webp" id="3_0gm1p"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_a50qn"]
 [ext_resource type="PackedScene" uid="uid://tofxqtl6im0p" path="res://modules/minigame/water_rowing_rapids/rock/rock.tscn" id="3_i806a"]
+[ext_resource type="Texture2D" uid="uid://dba4g83t4sh84" path="res://assets/minigames/water_rowing_rapids/water_foam.webp" id="3_l3r46"]
 [ext_resource type="PackedScene" uid="uid://bam250ejn756g" path="res://modules/minigame/water_rowing_rapids/spirit/spirit.tscn" id="3_yl50k"]
+[ext_resource type="Texture2D" uid="uid://cn1f37xpjid1p" path="res://assets/minigames/water_rowing_rapids/water_background.webp" id="4_0gm1p"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_yl50k"]
 [ext_resource type="PackedScene" uid="uid://mhrfxqqthuy7" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.tscn" id="5_f4xkx"]
+[ext_resource type="PackedScene" uid="uid://b8jmv0yqj5qvh" path="res://modules/minigame/water_rowing_rapids/void/void.tscn" id="8_yl50k"]
+[ext_resource type="Script" uid="uid://ccisrw8w88dql" path="res://modules/minigame/water_rowing_rapids/soul_spawning.gd" id="12_l3r46"]
 
-[sub_resource type="Gradient" id="Gradient_tk8vt"]
-offsets = PackedFloat32Array(0, 0.422111, 0.743719, 0.884422)
-colors = PackedColorArray(0, 0, 0, 1, 0.204545, 0.204545, 0.204545, 1, 0.533103, 0.533103, 0.533103, 1, 1, 1, 1, 1)
+[sub_resource type="Curve2D" id="Curve2D_a50qn"]
+bake_interval = 300.0
+_data = {
+"points": PackedVector2Array(-258.99, 258.989, 258.99, -258.989, -5870, 427, -618.233, -20.8863, 618.233, 20.8863, -4220, -298, -212.96, -118.459, 212.96, 118.459, -2751, 486, -764.437, 12.5317, 764.437, -12.5317, -909, 649, -789.5, 45.9497, 789.5, -45.9497, 620, 523, -939.881, -162.913, 939.881, 162.913, 3214, 586, -1226.74, 44.7715, 1226.74, -44.7715, 6634, 665, -1584.91, 188.04, 1584.91, -188.04, 11259, -779, -1907.27, -662.619, 1907.27, 662.619, 19603, -112, -88.6005, -267.922, 88.6005, 267.922, 21879, 1575, -127.835, -605.947, 127.835, 605.947, 21810, 2513, -356.924, -181.418, 356.924, 181.418, 23915, 4560, 0, 0, 0, 0, 29438, 4443, 0, 0, 0, 0, 29439, 6880, 728.881, 128.047, -728.881, -128.047, 26248, 6604, 422.738, 64.3296, -422.738, -64.3296, 23882, 5946, 1009.47, 380.19, -1009.47, -380.19, 21095, 5213, 222.87, 694.83, -222.87, -694.83, 18779, 2735, 689.482, 349.218, -689.482, -349.218, 17678, 1043, 2668.38, -170.132, -2668.38, 170.132, 13953, 354, 1755.04, 53.7258, -1755.04, -53.7258, 7022, 2726, 707.39, 259.675, -707.39, -259.675, 3541, 1934, 372.515, -11.1198, -372.515, 11.1198, 1520, 1673, 460.108, -54.7751, -460.108, 54.7751, -884, 2127, 384.307, -12.5317, -384.307, 12.5317, -3202, 2203, 731.019, 534.688, -731.019, -534.688, -5721, 1910, -262.278, 243.566, 262.278, -243.566, -5870, 427)
+}
+point_count = 27
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_i806a"]
-frequency = 0.0117
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxvkd"]
+shader = ExtResource("2_onqwm")
+shader_parameter/base_drop = Vector2(900, 900)
+shader_parameter/foam = ExtResource("3_l3r46")
+shader_parameter/flow_map = ExtResource("3_0gm1p")
+shader_parameter/flow_map_scale = 14.0
+shader_parameter/flow_speed_scale = 20.0
+shader_parameter/flow_strength = 0.25
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a50qn"]
-width = 187
-height = 77
-generate_mipmaps = false
-color_ramp = SubResource("Gradient_tk8vt")
-noise = SubResource("FastNoiseLite_i806a")
+[sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_a50qn"]
 
 [sub_resource type="Environment" id="Environment_a50qn"]
 background_mode = 3
@@ -28,21 +38,28 @@ glow_enabled = true
 glow_hdr_threshold = 0.9
 glow_hdr_scale = 0.15
 adjustment_enabled = true
-adjustment_contrast = 1.15
+adjustment_brightness = 0.8
+adjustment_contrast = 1.14
 
 [node name="EarthRowingRapids" type="Node2D"]
 script = ExtResource("1_tk8vt")
 data_uid = "uid://c7vragnlq8udw"
 
-[node name="Wadder" type="Polygon2D" parent="."]
-color = Color(0.123517, 0.23114, 0.186891, 1)
-texture = SubResource("NoiseTexture2D_a50qn")
-polygon = PackedVector2Array(-1998, 619, -1032, 639, -510, 639, 238, 530, 1066, 511, 2031, 471, 3095, 530, 3656, 619, 4415, 688, 5183, 698, 5793, 649, 6463, 590, 7951, 402, 8601, 156, 9930, -494, 10728, -770, 11684, -868, 12688, -878, 14442, -809, 16663, -683, 17545, -590, 18962, -311, 20588, 107, 21935, 1454, 21801, 2523, 22372, 3380, 24085, 4664, 26861, 4538, 29241, 4458, 29241, 6869, 26204, 6617, 24630, 6139, 22494, 5634, 21089, 5268, 19881, 4257, 18925, 3133, 18532, 2037, 17998, 1250, 16537, 435, 14626, 378, 13108, 435, 11928, 744, 10523, 1418, 9314, 2065, 8022, 2599, 6954, 2711, 5830, 2711, 4453, 2233, 3272, 1868, 2176, 1671, 1052, 1727, 265, 1924, -1168, 2177, -2152, 2233, -3416, 2233, -4540, 2261, -5187, 2205, -5777, 1840, -6058, 1390, -6086, 603, -5889, 294, -4344, -352, -3416, -99, -2770, 435)
-uv = PackedVector2Array(21.6394, 14.8792, 26.7529, 15.078, 29.516, 15.078, 33.4755, 13.9946, 37.8584, 13.8057, 42.9665, 13.4082, 48.5987, 13.9946, 51.5683, 14.8792, 55.586, 15.565, 59.6513, 15.6644, 62.8803, 15.1774, 66.4269, 14.5909, 74.3035, 12.7223, 77.7442, 10.2773, 84.7791, 3.8167, 89.0033, 1.07345, 94.0637, 0.0993933, 99.3783, 0, 108.663, 0.685814, 120.42, 1.93817, 125.088, 2.86253, 132.589, 5.6356, 141.196, 9.79024, 148.326, 23.1785, 147.617, 33.8037, 150.64, 42.3217, 159.707, 55.0838, 174.402, 53.8314, 187, 53.0363, 187, 77, 170.924, 74.4953, 162.592, 69.7443, 151.285, 64.7249, 143.848, 61.0871, 137.454, 51.0385, 132.393, 39.8667, 130.313, 28.9732, 127.486, 21.1509, 119.753, 13.0503, 109.637, 12.4838, 101.602, 13.0503, 95.3553, 16.1216, 87.9181, 22.8207, 81.5184, 29.2515, 74.6793, 34.5591, 69.026, 35.6723, 63.0762, 35.6723, 55.7872, 30.9213, 49.5357, 27.2934, 43.7341, 25.3354, 37.7843, 25.892, 33.6184, 27.85, 26.0329, 30.3647, 20.8242, 30.9213, 14.1334, 30.9213, 8.1836, 31.1996, 4.75877, 30.643, 1.63566, 27.0151, 0.148215, 22.5424, 0, 14.7201, 1.0428, 11.6489, 9.22111, 5.22809, 14.1334, 7.74274, 17.5529, 13.0503)
+[node name="River" type="Path2D" parent="."]
+curve = SubResource("Curve2D_a50qn")
 
-[node name="NotWadder" type="Polygon2D" parent="Wadder"]
-color = Color(0.501417, 0.327795, 0.124571, 1)
-polygon = PackedVector2Array(29251, 4481, 29215, 3479, 31051, 3468, 31194, 8390, 29275, 8390)
+[node name="Wadder" type="Polygon2D" parent="River"]
+unique_name_in_owner = true
+texture_repeat = 2
+material = SubResource("ShaderMaterial_bxvkd")
+texture = ExtResource("4_0gm1p")
+polygon = PackedVector2Array(-2815, 27, -6333, 7, -6340, 2045, -2741, 2052)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="River"]
+
+[node name="RiverCollider" type="CollisionShape2D" parent="River/StaticBody2D"]
+unique_name_in_owner = true
+shape = SubResource("ConcavePolygonShape2D_a50qn")
 
 [node name="RowingPlayer" parent="." instance=ExtResource("5_f4xkx")]
 position = Vector2(-4570, 1007)
@@ -283,75 +300,68 @@ position = Vector2(23923, 5521)
 
 [node name="Hazzards" type="Node2D" parent="."]
 
-[node name="Polygon2D2" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-3705, 2030)
 
-[node name="Polygon2D3" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock2" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-2702, 732)
 
-[node name="Polygon2D17" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock3" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-2051, 1450)
 
-[node name="Polygon2D4" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock4" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-1144, 830)
 
-[node name="Polygon2D5" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock5" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(83, 1591)
 
-[node name="Polygon2D6" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock6" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(1462, 696)
 
-[node name="Polygon2D7" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock7" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(3199, 1063)
 
-[node name="Polygon2D8" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock8" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(4408, 920)
 
-[node name="Polygon2D9" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock9" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(4927, 1207)
 
-[node name="Polygon2D10" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock10" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(5079, 2111)
 
-[node name="Polygon2D11" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock11" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(6440, 1063)
 
-[node name="Polygon2D12" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock12" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(7416, 1430)
 
-[node name="Polygon2D13" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock13" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(7694, 2048)
 
-[node name="Polygon2D14" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock14" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(6709, 2146)
 
-[node name="Polygon2D15" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock15" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(8545, 543)
 
-[node name="Polygon2D16" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock16" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(8840, 1635)
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_i806a")]
 
-[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
-visible = false
-
-[node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
-visible = true
-
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
-visible = false
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
 
-[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
-anchors_preset = 6
-
-[node name="Pause" parent="MinigameSharedComponents/SharedBaseComponents" index="1"]
-visible = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a50qn")
+
+[node name="Void" parent="." instance=ExtResource("8_yl50k")]
+position = Vector2(-7784, 0)
+
+[node name="SoulSpawner" type="Node2D" parent="."]
+script = ExtResource("12_l3r46")
 
 [connection signal="spirit_collected" from="RowingPlayer" to="." method="_on_rowing_player_spirit_collected"]
 

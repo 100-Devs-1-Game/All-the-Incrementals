@@ -1,0 +1,128 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=26 format=3 uid="uid://c71162tn5ys2k"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_cyajx"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_1au76"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_ws5t4"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_svmmm"]
+[ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="4_kn723"]
+[ext_resource type="Texture2D" uid="uid://bdevtygem07rl" path="res://assets/minigames/earth_tower_tumble/icons/upgrade_starting_lives.png" id="4_vc48v"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="5_480ws"]
+[ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="5_svmmm"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="6_1od5v"]
+
+[sub_resource type="Resource" id="Resource_v6ivl"]
+script = ExtResource("2_1au76")
+essence = ExtResource("3_svmmm")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_gyrag"]
+script = ExtResource("2_1au76")
+essence = ExtResource("4_kn723")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_3g4yq"]
+script = ExtResource("2_1au76")
+essence = ExtResource("5_480ws")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_5xy2o"]
+script = ExtResource("2_1au76")
+essence = ExtResource("6_1od5v")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_kn723"]
+script = ExtResource("1_cyajx")
+earth = 10
+fire = 10
+water = 10
+wind = 10
+slots = Array[ExtResource("2_1au76")]([SubResource("Resource_v6ivl"), SubResource("Resource_gyrag"), SubResource("Resource_3g4yq"), SubResource("Resource_5xy2o")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_insv3"]
+script = ExtResource("2_1au76")
+essence = ExtResource("3_svmmm")
+amount = 30
+
+[sub_resource type="Resource" id="Resource_y8pw8"]
+script = ExtResource("2_1au76")
+essence = ExtResource("4_kn723")
+amount = 30
+
+[sub_resource type="Resource" id="Resource_q1aww"]
+script = ExtResource("2_1au76")
+essence = ExtResource("5_480ws")
+amount = 30
+
+[sub_resource type="Resource" id="Resource_a8b04"]
+script = ExtResource("2_1au76")
+essence = ExtResource("6_1od5v")
+amount = 30
+
+[sub_resource type="Resource" id="Resource_1od5v"]
+script = ExtResource("1_cyajx")
+earth = 30
+fire = 30
+water = 30
+wind = 30
+slots = Array[ExtResource("2_1au76")]([SubResource("Resource_insv3"), SubResource("Resource_y8pw8"), SubResource("Resource_q1aww"), SubResource("Resource_a8b04")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_hleu4"]
+script = ExtResource("2_1au76")
+essence = ExtResource("3_svmmm")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_f5b4a"]
+script = ExtResource("2_1au76")
+essence = ExtResource("4_kn723")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_a48kj"]
+script = ExtResource("2_1au76")
+essence = ExtResource("5_480ws")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_p1n7e"]
+script = ExtResource("2_1au76")
+essence = ExtResource("6_1od5v")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_xw7f1"]
+script = ExtResource("1_cyajx")
+earth = 100
+fire = 100
+water = 100
+wind = 100
+slots = Array[ExtResource("2_1au76")]([SubResource("Resource_hleu4"), SubResource("Resource_f5b4a"), SubResource("Resource_a48kj"), SubResource("Resource_p1n7e")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_vc48v"]
+script = ExtResource("5_svmmm")
+type = 6
+metadata/_custom_type_script = "uid://c5sirmi2235ls"
+
+[resource]
+script = ExtResource("2_ws5t4")
+logic = SubResource("Resource_vc48v")
+unlocks_feature = ""
+name = "+ Starting Lives"
+flavor = ""
+icon = ExtResource("4_vc48v")
+position = Vector2(64, 1088)
+cost_arr = Array[ExtResource("1_cyajx")]([SubResource("Resource_kn723"), SubResource("Resource_1od5v"), SubResource("Resource_xw7f1")])
+effect_modifier_arr = Array[float]([1.0, 2.0, 3.0])
+max_level = 3
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

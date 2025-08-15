@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://be8balsm15egw"]
+
+[ext_resource type="Script" uid="uid://bajjrndhniu2e" path="res://modules/minigame/earth_tower_tumble/enemies/ett_evil_spirit.gd" id="1_sru4d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbipw"]
+radius = 21.095
+
+[node name="ett_evil_spirit" type="RigidBody2D"]
+script = ExtResource("1_sru4d")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vbipw")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 0.0392157, 0, 1)
+polygon = PackedVector2Array(-15, -15, -11, -18, -6, -20, -1, -21, 5, -21, 11, -18, 17, -13, 21, -5, 21, 0, 20, 7, 18, 12, 13, 18, 7, 20, 2, 21, -4, 21, -12, 18, -18, 11, -21, 6, -21, 1, -21, -6, -18, -11)
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vbipw")
+disabled = true

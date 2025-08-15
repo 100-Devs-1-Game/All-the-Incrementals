@@ -18,12 +18,13 @@ radius = 29.0
 height = 570.0
 
 [node name="RowingPlayer" type="RigidBody2D" node_paths=PackedStringArray("boost_timer")]
+collision_layer = 4
 physics_material_override = SubResource("PhysicsMaterial_8qkfb")
 gravity_scale = 0.0
 center_of_mass_mode = 1
 can_sleep = false
 contact_monitor = true
-max_contacts_reported = 2
+max_contacts_reported = 1
 linear_damp = 1.0
 angular_damp = 1.0
 script = ExtResource("1_41ocn")

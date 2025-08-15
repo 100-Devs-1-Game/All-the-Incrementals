@@ -132,6 +132,7 @@ Thanks goes to all these wonderful people :heart:
 ### Art (in alphabetical order)
 
 * Axureé
+* Hannah Sekerka
 * JMC-87
 * KLIPNITY
 * Skin
@@ -139,28 +140,45 @@ Thanks goes to all these wonderful people :heart:
 
 ### Code (in alphabetical order)
 
+* AssortedFrogs
 * Cdw849
 * [CodeLitschi](https://github.com/CodeLitschi) (Kevin)
 * Codimon
 * ErnestasK760
 * microlancer
+* [Mouse Potato Does Stuff](https://github.com/MousePotatoDoesStuff)
+* niconorsk
 * Noxalas
 * Rokle
+* [Sarian](https://github.com/SaronTetra)
 * Thaeta-Of-Diamonds
+* UwUMacaroniTime
 * [Zephilinox](https://zephilinox.com/)
+
+### Narrative (in alphabetical order)
+
+* [Chris Smith](christopherrexsmith.com)
+* Nixulus (Lead)
 
 ### Operations (in alphabetical order)
 
+* alienteavend
 * Codimon
 * krova
 * microlancer
 * niconorsk
 * [Zephilinox](https://zephilinox.com/)
 
+### QA (in alphabetical order)
+
+* Duncan
+
 ### Sound (in alphabetical order)
 
 * 4tenmu
-* Fae
+* Ben Thomson
+* Fae (Lead composer)
 * Frog
 
-If anyone is missing from the list, let us know in Discord right away!
+
+If anyone is missing from the list, let us know in [Discord](https://discord.com/channels/1393033395298373643/1398176092082278464) right away!

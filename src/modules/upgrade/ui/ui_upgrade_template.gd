@@ -7,6 +7,7 @@ var name_text: String
 
 
 func init(upgradetree: UpgradeTree, essence_type: String):
+	EventBus.ui_upgrade_bought.connect(reload_base_upgrade_data)
 	upgrade_tree = upgradetree
 	match essence_type:
 		"Wind":
@@ -23,17 +24,29 @@ func init(upgradetree: UpgradeTree, essence_type: String):
 			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/earth_on.webp")
 
 
-func reload_base_upgrade_data() -> void:
+func reload_base_upgrade_data(_upgrade = null) -> void:
 	_set_icon()
 	_set_level_text()
 	_set_cost_text()
 	_set_name_text()
 	_set_description_text()
 	_set_background()
+	if _upgrade == base_upgrade:
+		_on_select()
 
 
 func _set_icon() -> void:
 	$Icon.texture = base_upgrade.icon
+	_resize_texture($Background.texture.get_size())
+
+
+func _resize_texture(target_size: Vector2):
+	if $Icon.texture == null:
+		return
+	var tex_size = $Icon.texture.get_size()
+	if tex_size.x == 0 or tex_size.y == 0:
+		return
+	$Icon.scale = target_size / tex_size
 
 
 func _set_level_text() -> void:

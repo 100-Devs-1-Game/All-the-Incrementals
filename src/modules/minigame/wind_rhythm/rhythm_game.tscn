@@ -12,6 +12,7 @@
 
 [node name="RhythmGame" type="Node2D"]
 script = ExtResource("1_sij3s")
+autoplay_level = 1
 
 [node name="RhythmBackground" type="Sprite2D" parent="."]
 self_modulate = Color(0.597176, 0.597176, 0.597176, 1)

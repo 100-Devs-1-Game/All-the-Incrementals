@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6ar87nw0ggf4"]
+
+[ext_resource type="PackedScene" uid="uid://bam250ejn756g" path="res://modules/minigame/water_rowing_rapids/spirit/spirit.tscn" id="1_qaw4d"]
+[ext_resource type="Shader" uid="uid://d2lkkp2x1pcwd" path="res://modules/minigame/water_rowing_rapids/spirit/spirit.gdshader" id="2_b2coe"]
+
+[sub_resource type="Gradient" id="Gradient_b2coe"]
+offsets = PackedFloat32Array(0, 0.830721, 0.890282, 1)
+colors = PackedColorArray(0.266575, 0.266575, 0.266575, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.366595, 0.366595, 0.366595, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xxyvh"]
+gradient = SubResource("Gradient_b2coe")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xxyvh"]
+shader = ExtResource("2_b2coe")
+shader_parameter/pulse_intensity = 0.09
+shader_parameter/wobble_offset = 22.0
+shader_parameter/radius_offset_intensity = 0.2
+shader_parameter/gradient = SubResource("GradientTexture1D_xxyvh")
+
+[node name="SpiritHuge" instance=ExtResource("1_qaw4d")]
+modulate = Color(1, 0.412, 0.37, 1)
+material = SubResource("ShaderMaterial_xxyvh")
+scale = Vector2(3.2, 3.2)
+value = 64
+damping = 260.0
+
+[node name="PointLight2D" parent="." index="1"]
+color = Color(0.999997, 0.269786, 0.248546, 1)
+energy = 0.8

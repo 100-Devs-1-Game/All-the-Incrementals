@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="WTFFishData" load_steps=9 format=3 uid="uid://w3np62qintaw"]
+
+[ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_c8ust"]
+[ext_resource type="Script" uid="uid://dl0x10lns1e17" path="res://modules/minigame/water_target_fishing/game/fish_data.gd" id="2_8stxh"]
+[ext_resource type="Script" uid="uid://meklva8v881i" path="res://modules/minigame/water_target_fishing/game/spawn_data.gd" id="3_4iy3a"]
+[ext_resource type="Texture2D" uid="uid://cv2s7omc6dcie" path="res://assets/minigames/water_target_fishing/fish/orange_blob_000_skn.png" id="4_8stxh"]
+[ext_resource type="Texture2D" uid="uid://b1c5bl4l423t0" path="res://assets/minigames/water_target_fishing/fish/orange_blob_001_skn.png" id="5_4iy3a"]
+
+[sub_resource type="Resource" id="Resource_k71g5"]
+script = ExtResource("1_c8ust")
+speedboost = 300.0
+weight = 30.0
+score = 10.0
+metadata/_custom_type_script = "uid://hrgdcmm0gruk"
+
+[sub_resource type="Resource" id="Resource_8egcm"]
+script = ExtResource("3_4iy3a")
+spawn_type = 2
+min_spawn_distance = 6000.0
+_min_spawn_depth = 0.0
+_max_spawn_depth = 300.0
+metadata/_custom_type_script = "uid://meklva8v881i"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqh0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8stxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4iy3a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_8stxh")
+player_movement_multiplier = 0.3
+base_speed = 2000.0
+texture = SubResource("SpriteFrames_mqh0r")
+pickup = SubResource("Resource_k71g5")
+spawn = SubResource("Resource_8egcm")
+metadata/_custom_type_script = "uid://dl0x10lns1e17"

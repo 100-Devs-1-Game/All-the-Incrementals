@@ -13,33 +13,53 @@ const WIND_ESSENCE = preload("uid://df7knsfckprdd")
 
 @export var earth: int:
 	set(n):
+		if earth == n:
+			return
+
 		earth = n
 		if Engine.is_editor_hint():
 			_remove_and_add_essence(EARTH_ESSENCE, n)
+
+		emit_changed()
 	get():
 		return get_essence(EARTH_ESSENCE)
 
 @export var fire: int:
 	set(n):
+		if fire == n:
+			return
+
 		fire = n
 		if Engine.is_editor_hint():
 			_remove_and_add_essence(FIRE_ESSENCE, n)
+
+		emit_changed()
 	get():
 		return get_essence(FIRE_ESSENCE)
 
 @export var water: int:
 	set(n):
+		if water == n:
+			return
+
 		water = n
 		if Engine.is_editor_hint():
 			_remove_and_add_essence(WATER_ESSENCE, n)
+
+		emit_changed()
 	get():
 		return get_essence(WATER_ESSENCE)
 
 @export var wind: int:
 	set(n):
+		if wind == n:
+			return
+
 		wind = n
 		if Engine.is_editor_hint():
 			_remove_and_add_essence(WIND_ESSENCE, n)
+
+		emit_changed()
 	get():
 		return get_essence(WIND_ESSENCE)
 
@@ -123,10 +143,15 @@ func has_inventory(other: EssenceInventory) -> bool:
 	return true
 
 
-func sub_stack(stack: EssenceStack, amount: int):  # Removes x amount of essence from a given stack
+func sub_stack(stack: EssenceStack):  # Removes x amount of essence from a given stack
 	for slot in slots:
 		if slot.essence == stack.essence:
-			slot.amount -= amount
+			slot.amount -= stack.amount
 			if slot.amount <= 0:
 				slots.erase(slot)
 			return
+
+
+func sub_inventory(inventory: EssenceInventory):  # Removes all stack amounts from an inventory
+	for stack in inventory.slots:
+		sub_stack(stack)

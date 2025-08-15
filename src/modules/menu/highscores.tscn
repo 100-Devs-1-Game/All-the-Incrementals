@@ -14,6 +14,7 @@ theme = ExtResource("1_fyi5s")
 script = ExtResource("2_xi8kf")
 
 [node name="BackPanel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 729.0
 offset_top = 236.0
 offset_right = 1175.0

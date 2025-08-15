@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="MinigameData" load_steps=5 format=3 uid="uid://s7k08dgu5hxn"]
+[gd_resource type="Resource" script_class="MinigameData" load_steps=7 format=3 uid="uid://s7k08dgu5hxn"]
 
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_ui8ix"]
 [ext_resource type="PackedScene" uid="uid://351eaqu7t6ig" path="res://modules/minigame/earth_tower_tumble/earth_tower_tumble.tscn" id="1_w0vse"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_w0vse"]
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="2_w3tnc"]
+[ext_resource type="Resource" uid="uid://cyxac864dwkj" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/increase_flight_speed.tres" id="5_1kxyy"]
+[ext_resource type="Resource" uid="uid://u7e4nthgr4cn" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/increase_base_width.tres" id="6_j30oj"]
 
 [resource]
 script = ExtResource("1_ui8ix")
 display_name = "earth_towers"
 minigame_scene = ExtResource("1_w0vse")
-upgrade_tree_root_nodes = Array[ExtResource("2_w0vse")]([])
+upgrade_tree_root_nodes = Array[ExtResource("2_w0vse")]([ExtResource("5_1kxyy"), ExtResource("6_j30oj")])
 output_essence = ExtResource("2_w3tnc")
 currency_conversion_factor = 1.0
 high_scores = Array[int]([])

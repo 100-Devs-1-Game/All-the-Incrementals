@@ -1,7 +1,8 @@
 class_name EphYoungling
 extends Td2dCCWithAcceleration
 
-@export var _time_to_grow: float = 10
+const DEFAULT_TIME_TO_GROW: float = 30.0
+
 @export var _state_machine: StateMachine
 
 #region ------------------------ PUBLIC VARS -----------------------------------
@@ -14,7 +15,7 @@ var mini_game: EarthPotatoHerdingMinigame
 #region ------------------------ PRIVATE VARS ----------------------------------
 
 var _time_young: float = 0
-
+var _time_to_grow: float
 #endregion
 
 #region ======================== PUBLIC METHODS ================================
@@ -48,18 +49,18 @@ func despawn() -> void:
 
 func _ready() -> void:
 	mini_game = get_tree().get_first_node_in_group("earth_potato_herding")
+	_time_to_grow = mini_game.get_potato_growth_time()
+	$Sprite.play("default")
 
 
 func _physics_process(delta: float) -> void:
 	super(delta)
 	_time_young += delta
-
 	if _time_young >= _time_to_grow:
 		_state_machine.change_state("grow_up")
 
 
 func _on_youngling_saw_spirit_body_entered(body: Node2D) -> void:
-	body.grab_youngling(self)  #queue_free()
-	#despawn()
+	body.grab_youngling(self)
 
 #endregion

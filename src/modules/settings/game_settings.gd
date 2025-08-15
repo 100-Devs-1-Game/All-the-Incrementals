@@ -5,12 +5,12 @@ extends Node
 # Buttons for rebinding
 var keybinds := {
 	"primary_action": [KEY_SPACE, KEY_Z],
-	"secondary_action": [KEY_E, KEY_X],
+	"secondary_action": [KEY_E, KEY_C],
 	"right": [KEY_D, KEY_RIGHT],
 	"down": [KEY_S, KEY_DOWN],
 	"left": [KEY_A, KEY_LEFT],
 	"up": [KEY_W, KEY_UP],
-	"exit_menu": [KEY_ESCAPE, KEY_C],
+	"exit_menu": [KEY_ESCAPE, KEY_0],
 }
 
 var action_names := {

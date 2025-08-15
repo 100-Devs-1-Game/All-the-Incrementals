@@ -14,13 +14,6 @@ on:
 
   pull_request:
     branches: [ main ]
-    paths:
-      - 'src/**'
-      - '.github/**'
-      - '.hooks/**'
-      - '.pre-commit-config.yaml'
-      - 'export_presets.cfg'
-      - 'project.godot'
 
 jobs:
   build-game:
@@ -28,8 +21,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+
       - name: Checkout LFS objects
         run: git lfs pull
+
       - name: build game
         id: build
         # Use latest version (see releases for all versions)
@@ -64,6 +59,10 @@ jobs:
           else
             ls -R .
           fi
+
+      - name: Test release build size for itch.io
+        run: |
+          python3 ./scripts/test_release_size.py ${{ steps.build.outputs.build_directory }}/web_release
       - name: Upload Windows artifacts
         uses: actions/upload-artifact@v4
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
@@ -72,6 +71,7 @@ jobs:
           path: ${{ steps.build.outputs.archive_directory }}/**/windows.zip
           retention-days: 1
           compression-level: 0
+
       - name: Upload Linux artifacts
         uses: actions/upload-artifact@v4
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
@@ -103,3 +103,55 @@ jobs:
         uses: Ilshidur/action-discord@master
         with:
           args: 'SpiritKeeper ${{ github.ref_name }} has been released to : https://${{ vars.ITCHIO_USERNAME }}.itch.io/${{ vars.ITCHIO_GAME }} Password: ${{ secrets.ITCHIO_PAGE_PASS }}'
+
+  test-linux-build:
+    needs: build-game
+    runs-on: ubuntu-latest
+    if:  ${{ !startsWith(github.ref, 'refs/tags/') }}
+    steps:
+      - name: Download Linux artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: linux-export
+          path: ./linux-build
+
+      - name: Show artifact directory
+        run: |
+          echo Archive: ./linux-build
+          FOLDER_PATH="./linux-build"
+          if [ -d "$FOLDER_PATH" ]; then
+            ls -R "$FOLDER_PATH"
+          else
+            ls -R .
+          fi
+
+      - name: Unzip artifact
+        run: |
+          mkdir ./test_game
+          unzip "$(find ./linux-build -name linux_release.zip)" -d ./test_game
+          chmod +x ./test_game/*
+
+      - name: Run tests
+        run: |
+          set -e
+          set -o pipefail
+
+          TEMP_FILE=/tmp/test_linux_release.log
+          ./test_game/linux_release.x86_64 --headless --render-thread safe --single-threaded-scene --verbose --quit-after 1000 2>&1 | tee $TEMP_FILE
+
+          # This should line up with https://github.com/100-Devs-1-Game/godot-gut-ci/blob/fix/import-gut/init-and-run-tests.sh#L50
+          # Except GUT requires an editor build, so we can't use it in the release? idk
+
+          # Check for any error lines (case-insensitive)
+          # Ignores null time for textures: https://github.com/godotengine/godot/issues/108994
+          FILTERED_ERRORS=$(grep -i "ERROR" "$TEMP_FILE" | grep -v 'ERROR: Parameter "t" is null.') || true
+
+          if [ -n "$FILTERED_ERRORS" ]; then
+            echo "Detected error output in test logs:"
+            echo "$FILTERED_ERRORS"
+            exit 1
+          fi
+
+          echo "ALL GOOD :) :) :)"
+
+          exit 0

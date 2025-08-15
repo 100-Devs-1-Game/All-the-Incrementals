@@ -1,0 +1,136 @@
+[gd_scene load_steps=20 format=3 uid="uid://b8jmv0yqj5qvh"]
+
+[ext_resource type="Script" uid="uid://b48hc7h2lomi0" path="res://modules/minigame/water_rowing_rapids/void/void.gd" id="1_cntsu"]
+[ext_resource type="Script" uid="uid://hwjgdilgstk6" path="res://modules/minigame/water_rowing_rapids/void/zoom_correct_parallax.gd" id="2_k4c0p"]
+[ext_resource type="Shader" uid="uid://baxpqeuchs4ta" path="res://modules/minigame/water_rowing_rapids/void/void.gdshader" id="3_auihn"]
+[ext_resource type="Texture2D" uid="uid://bkl78rfb3w03e" path="res://assets/minigames/earth_potato_herding/hands.webp" id="4_hfjwf"]
+
+[sub_resource type="Curve" id="Curve_dkylo"]
+_limits = [0.0, 1.0, 0.0, 2000.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(2000, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hfjwf"]
+_limits = [1.0, 2.00368, 1000.0, 3000.0]
+_data = [Vector2(1000, 1), 0.0, 0.000101698, 0, 0, Vector2(2000, 1.5), 0.0010835, 0.0010835, 0, 0, Vector2(3000, 2.00368), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cntsu"]
+normal = Vector2(1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_auihn"]
+shader = ExtResource("3_auihn")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hfjwf"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_auihn"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.315152)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dkylo"]
+gradient = SubResource("Gradient_auihn")
+width = 100
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1jpv1"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_1jpv1"]
+_limits = [-6.28, 6.28, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.305223, 0, 0, Vector2(1, 1.047), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1lrpt"]
+curve = SubResource("Curve_1jpv1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dkylo"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 1000, 1)
+angle_min = -30.0
+angle_max = 30.0
+angle_curve = SubResource("CurveTexture_1lrpt")
+spread = 0.0
+initial_velocity_min = 147.0
+initial_velocity_max = 147.0
+gravity = Vector3(-294, 0, 0)
+radial_accel_min = -40.0
+radial_accel_max = 40.0
+anim_offset_max = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dkylo"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1lrpt"]
+blend_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_ykgne"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_py0pr"]
+gradient = SubResource("Gradient_ykgne")
+
+[node name="Void" type="Area2D"]
+collision_mask = 4
+monitorable = false
+linear_damp_space_override = 1
+linear_damp = 0.2
+script = ExtResource("1_cntsu")
+volume_fadeout = SubResource("Curve_dkylo")
+rubberband = SubResource("Curve_hfjwf")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_cntsu")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(0, 2000)
+ignore_camera_scroll = true
+script = ExtResource("2_k4c0p")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax2D"]
+self_modulate = Color(1, 1, 1, 0.8)
+material = SubResource("ShaderMaterial_auihn")
+fit_margin = 0.0
+clear_margin = 0.0
+
+[node name="Background" type="TextureRect" parent="Parallax2D/CanvasGroup"]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_hfjwf")
+offset_right = 108.0
+offset_bottom = 2000.0
+texture = SubResource("GradientTexture1D_dkylo")
+expand_mode = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Parallax2D/CanvasGroup"]
+modulate = Color(0, 0, 0, 1)
+light_mask = 0
+material = SubResource("CanvasItemMaterial_1jpv1")
+position = Vector2(8, 1000)
+amount = 60
+texture = ExtResource("4_hfjwf")
+lifetime = 1.2
+visibility_rect = Rect2(0, -1000, 100, 2000)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_dkylo")
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D"]
+material = SubResource("CanvasItemMaterial_dkylo")
+offset_left = -6000.0
+offset_bottom = 2000.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
+modulate = Color(1, 1, 1, 0.13)
+light_mask = 0
+material = SubResource("CanvasItemMaterial_1lrpt")
+offset_right = 706.0
+offset_bottom = 2000.0
+texture = SubResource("GradientTexture1D_py0pr")
+
+[node name="Whispers" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = &"SFX"

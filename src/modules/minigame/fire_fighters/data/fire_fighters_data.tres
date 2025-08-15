@@ -1,22 +1,18 @@
-[gd_resource type="Resource" script_class="MinigameData" load_steps=12 format=3 uid="uid://bqod1tv5hmpgo"]
+[gd_resource type="Resource" script_class="MinigameData" load_steps=8 format=3 uid="uid://bqod1tv5hmpgo"]
 
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_568i5"]
 [ext_resource type="PackedScene" uid="uid://dwdhfnts10fd0" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.tscn" id="1_wo48d"]
 [ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="2_ga2fn"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_wo48d"]
 [ext_resource type="Resource" uid="uid://puhu64bo33jh" path="res://modules/minigame/fire_fighters/data/upgrades/walk_speed_upgrade.tres" id="4_1lvnb"]
-[ext_resource type="Resource" uid="uid://s83iumd1qkvj" path="res://modules/minigame/fire_fighters/data/upgrades/water_speed_upgrade.tres" id="5_ga2fn"]
-[ext_resource type="Resource" uid="uid://wn7ulnj04odi" path="res://modules/minigame/fire_fighters/data/upgrades/tank_size_upgrade.tres" id="6_362pd"]
-[ext_resource type="Resource" uid="uid://ccp3eews6awic" path="res://modules/minigame/fire_fighters/data/upgrades/water_arc_reduction_upgrade.tres" id="7_5bam1"]
-[ext_resource type="Resource" uid="uid://72ayfvpoxr72" path="res://modules/minigame/fire_fighters/data/upgrades/water_spread_upgrade.tres" id="8_g7bbg"]
-[ext_resource type="Resource" uid="uid://cyu5uj3gwiv2r" path="res://modules/minigame/fire_fighters/data/upgrades/gas_can_upgrade.tres" id="9_ce50f"]
-[ext_resource type="Resource" uid="uid://cxhyrtclfgjie" path="res://modules/minigame/fire_fighters/data/upgrades/oil_barrel_upgrade.tres" id="10_kegxo"]
+[ext_resource type="Resource" uid="uid://b6rju4fadud6p" path="res://modules/minigame/fire_fighters/data/upgrades/more_fires_upgrade.tres" id="6_bxekw"]
+[ext_resource type="Resource" uid="uid://wn7ulnj04odi" path="res://modules/minigame/fire_fighters/data/upgrades/tank_size_upgrade.tres" id="7_3s2tf"]
 
 [resource]
 script = ExtResource("1_568i5")
 display_name = "fire_fighters"
 minigame_scene = ExtResource("1_wo48d")
-upgrade_tree_root_nodes = Array[ExtResource("2_wo48d")]([ExtResource("4_1lvnb"), ExtResource("5_ga2fn"), ExtResource("6_362pd"), ExtResource("7_5bam1"), ExtResource("8_g7bbg"), ExtResource("9_ce50f"), ExtResource("10_kegxo")])
+upgrade_tree_root_nodes = Array[ExtResource("2_wo48d")]([ExtResource("4_1lvnb"), ExtResource("6_bxekw"), ExtResource("7_3s2tf")])
 output_essence = ExtResource("2_ga2fn")
 currency_conversion_factor = 1.0
 high_scores = Array[int]([])

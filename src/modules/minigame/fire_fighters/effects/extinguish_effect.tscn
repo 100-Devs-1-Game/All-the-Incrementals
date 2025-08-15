@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://e5yfcw42tsgi"]
+
+[ext_resource type="AudioStream" uid="uid://bihqu1emgx4de" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_extinguish_01.ogg" id="1_xd2wt"]
+[ext_resource type="AudioStream" uid="uid://qyvj0txi0bmo" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_extinguish_02.ogg" id="2_e6puc"]
+[ext_resource type="AudioStream" uid="uid://s7hbv2heb0yd" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_extinguish_03.ogg" id="3_a5tta"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a4d7v"]
+playback_mode = 1
+streams_count = 3
+stream_0/stream = ExtResource("1_xd2wt")
+stream_1/stream = ExtResource("2_e6puc")
+stream_2/stream = ExtResource("3_a5tta")
+
+[node name="ExtinguishEffect" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_a4d7v")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="queue_free"]
