@@ -37,6 +37,7 @@ var _double_jump_ctr: int
 @onready var run_audio_delay: Timer = $"Audio/Run Audio Delay"
 @onready var audio_jump: AudioStreamPlayer = $"Audio/AudioStreamPlayer Jump"
 @onready var audio_land: AudioStreamPlayer = $"Audio/AudioStreamPlayer Land"
+@onready var audio_wind: AudioStreamPlayer = $"Audio/AudioStreamPlayer Wind"
 
 
 func _ready() -> void:
@@ -52,6 +53,8 @@ func _physics_process(delta: float) -> void:
 
 	if _is_on_ground and not prev_on_ground:
 		audio_land.play()
+
+	audio_wind.volume_linear = 0.3 if _is_on_ground else 1.0
 
 	#if _is_on_ground and not get_last_slide_collision():
 	#push_warning("On ground without slide collision")
