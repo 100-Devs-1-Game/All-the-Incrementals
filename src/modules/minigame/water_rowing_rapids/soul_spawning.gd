@@ -18,7 +18,7 @@ var spawn_points: Array[Vector2] = []
 func _ready() -> void:
 	rng.randomize()
 	poisson_disk_implementation()
-	_draw()
+	#_draw()
 
 
 func poisson_disk_implementation() -> void:
@@ -100,9 +100,8 @@ func is_in_bounds(candidate: Vector2) -> bool:
 		and candidate.y <= sample_size.y
 	)
 
-
-func _draw():
-	# Draw bounding box
-	# Draw points
-	for p in points:
-		draw_circle(p, 3, Color.RED)
+#func _draw():
+## Draw bounding box
+## Draw points
+#for p in points:
+#draw_circle(p, 3, Color.RED)
