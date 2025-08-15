@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbvdwycj4dcgw"]
+[gd_scene load_steps=20 format=3 uid="uid://dbvdwycj4dcgw"]
 
 [ext_resource type="Script" uid="uid://bn8ub2x73bjo5" path="res://modules/minigame/water_target_fishing/water_target_fishing.gd" id="1_8oyae"]
 [ext_resource type="PackedScene" uid="uid://1v03jevu1t0e" path="res://modules/minigame/water_target_fishing/game/entities/player.tscn" id="3_8gbkq"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://0xvvfgkrdmro" path="res://modules/minigame/water_target_fishing/game/entities/cloud.tscn" id="4_m3rs1"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="5_duxhx"]
 [ext_resource type="PackedScene" uid="uid://nq42u721e3vl" path="res://modules/minigame/water_target_fishing/game/entities/jet_cannon.tscn" id="6_0rl8x"]
+[ext_resource type="Script" uid="uid://chxpatcfcuepu" path="res://modules/minigame/water_target_fishing/game/boat_spawner.gd" id="7_ivwkf"]
 [ext_resource type="PackedScene" uid="uid://brvr7tulxw60v" path="res://modules/minigame/water_target_fishing/game/camera2d.tscn" id="7_o5mdu"]
+[ext_resource type="PackedScene" uid="uid://q43oxpsrl0x4" path="res://modules/minigame/water_target_fishing/game/entities/boat.tscn" id="8_oprvm"]
 [ext_resource type="PackedScene" uid="uid://dj70751qtb0ff" path="res://modules/minigame/water_target_fishing/game/components/generic/clear_colour.tscn" id="9_qq2lg"]
 [ext_resource type="Script" uid="uid://bpkdtrhrdt0xr" path="res://modules/minigame/water_target_fishing/game/fish_db.gd" id="10_c8m36"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="11_56cph"]
@@ -40,13 +42,20 @@ data_uid = "uid://c7vragnlq8udw"
 [node name="Clear Colour" parent="Logic" instance=ExtResource("9_qq2lg")]
 clear_colour = Color(0.768627, 0.878431, 0.94902, 1)
 
-[node name="Cloud Spawner" type="Node2D" parent="Logic"]
+[node name="Cloud Spawner" type="Node2D" parent="Logic" node_paths=PackedStringArray("target")]
 script = ExtResource("3_n7mqc")
 scene = ExtResource("4_m3rs1")
+target = NodePath("../../Clouds")
 metadata/_custom_type_script = "uid://drsovvatd2hk1"
 
 [node name="World Parallax" parent="Logic" node_paths=PackedStringArray("target") instance=ExtResource("4_duxhx")]
 target = NodePath("../../World")
+
+[node name="Boat Spawner" type="Node2D" parent="Logic" node_paths=PackedStringArray("target")]
+script = ExtResource("7_ivwkf")
+scene = ExtResource("8_oprvm")
+target = NodePath("../../Boats")
+metadata/_custom_type_script = "uid://chxpatcfcuepu"
 
 [node name="WTFFishDB" type="Node2D" parent="Logic"]
 unique_name_in_owner = true
@@ -59,6 +68,8 @@ unique_name_in_owner = true
 script = ExtResource("11_n7mqc")
 directory_path = "res://modules/minigame/water_target_fishing/game/data/parallax/"
 metadata/_custom_type_script = "uid://rvvogndal0rd"
+
+[node name="Clouds" type="Node2D" parent="."]
 
 [node name="OceanBackground" type="Sprite2D" parent="."]
 modulate = Color(0.282353, 0.596078, 0.807843, 1)
@@ -76,6 +87,8 @@ texture = SubResource("GradientTexture2D_0rl8x")
 
 [node name="WtfParallaxComponent" parent="Terrain/Sprite2D" node_paths=PackedStringArray("target") instance=ExtResource("4_duxhx")]
 target = NodePath("..")
+
+[node name="Boats" type="Node2D" parent="."]
 
 [node name="Props" type="Node2D" parent="."]
 
