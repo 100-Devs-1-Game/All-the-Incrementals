@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=15 format=3 uid="uid://dee8pfyxc0n0p"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_udut8"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_cbhnc"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_rsg88"]
+[ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="2_uejbt"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_wgjjr"]
+
+[sub_resource type="Resource" id="Resource_wgjjr"]
+script = ExtResource("2_rsg88")
+essence = ExtResource("3_wgjjr")
+amount = 12
+
+[sub_resource type="Resource" id="Resource_76bo2"]
+script = ExtResource("1_udut8")
+earth = 0
+fire = 0
+water = 0
+wind = 12
+slots = Array[ExtResource("2_rsg88")]([SubResource("Resource_wgjjr")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_ag81m"]
+script = ExtResource("2_rsg88")
+essence = ExtResource("3_wgjjr")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_dbkx8"]
+script = ExtResource("1_udut8")
+earth = 0
+fire = 0
+water = 0
+wind = 10
+slots = Array[ExtResource("2_rsg88")]([SubResource("Resource_ag81m")])
+
+[sub_resource type="Resource" id="Resource_iahni"]
+script = ExtResource("2_rsg88")
+essence = ExtResource("3_wgjjr")
+amount = 15
+
+[sub_resource type="Resource" id="Resource_iyq2v"]
+script = ExtResource("1_udut8")
+earth = 0
+fire = 0
+water = 0
+wind = 15
+slots = Array[ExtResource("2_rsg88")]([SubResource("Resource_iahni")])
+
+[sub_resource type="Resource" id="Resource_7fvk8"]
+script = ExtResource("2_rsg88")
+essence = ExtResource("3_wgjjr")
+amount = 25
+
+[sub_resource type="Resource" id="Resource_0dvd2"]
+script = ExtResource("1_udut8")
+earth = 0
+fire = 0
+water = 0
+wind = 25
+slots = Array[ExtResource("2_rsg88")]([SubResource("Resource_7fvk8")])
+
+[sub_resource type="Resource" id="Resource_rsg88"]
+script = ExtResource("2_uejbt")
+type = 6
+metadata/_custom_type_script = "uid://cpbg43rac3mxr"
+
+[resource]
+script = ExtResource("2_cbhnc")
+logic = SubResource("Resource_rsg88")
+unlocks_feature = ""
+name = "+10% Spirit Magnetism Area"
+flavor = ""
+position = Vector2(-128, 2304)
+cost_arr = Array[ExtResource("1_udut8")]([SubResource("Resource_dbkx8"), SubResource("Resource_iyq2v"), SubResource("Resource_0dvd2")])
+effect_modifier_arr = Array[float]([0.1, 0.2, 0.3])
+max_level = 3
+base_cost = SubResource("Resource_76bo2")
+base_cost_multiplier = 1.5
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.1
+effect_modifier_multiplier = 0.1
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1
