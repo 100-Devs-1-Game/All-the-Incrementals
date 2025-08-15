@@ -49,26 +49,6 @@ shape = SubResource("CircleShape2D_pbvvr")
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_u0cb5")
 
-[node name="Model" type="Node2D" parent="."]
-visible = false
-scale = Vector2(2, 2)
-
-[node name="Polygon2D" type="Polygon2D" parent="Model"]
-color = Color(0.851769, 0.851769, 0.851769, 1)
-polygon = PackedVector2Array(4, 8, 0, 4, -4, 8, -4, 4, 0, 0, 4, 4)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Model"]
-color = Color(0.851769, 0.851769, 0.851769, 1)
-polygon = PackedVector2Array(0, 0, -8, 0, -8, -4)
-
-[node name="Polygon2D3" type="Polygon2D" parent="Model"]
-color = Color(0.851769, 0.851769, 0.851769, 1)
-polygon = PackedVector2Array(0, 0, 8, 0, 8, -4)
-
-[node name="Polygon2D4" type="Polygon2D" parent="Model"]
-color = Color(0.851769, 0.851769, 0.851769, 1)
-polygon = PackedVector2Array(0, 0, -4, -8, 4, -8)
-
 [node name="Extinguisher" type="Node2D" parent="."]
 rotation = -0.0586266
 
