@@ -1,5 +1,5 @@
 shader_type canvas_item;
-render_mode blend_sub, unshaded;
+render_mode blend_mul, unshaded;
 
 uniform sampler2D screen_tex:hint_screen_texture;
 
