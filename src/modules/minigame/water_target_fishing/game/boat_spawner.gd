@@ -1,9 +1,9 @@
-class_name WTFParallaxSpawner
+class_name WTFBoatSpawner
 extends Node2D
 
 @export var scene: PackedScene
 @export var target: Node
-@export var delay: float = 1
+@export var delay: float = 10
 
 var _next_delay: float
 var _timer: float = 0
@@ -26,15 +26,22 @@ func _physics_process(delta: float) -> void:
 
 
 func _spawn() -> bool:
-	var data: WTFParallaxData = WTFGlobals.minigame.parallax_db.get_data().values().pick_random()
-	var min_y := data.spawn.get_spawn_height_range().x
-	var max_y := data.spawn.get_spawn_height_range().y
-	var y := randf_range(WTFGlobals.camera.get_top(), WTFGlobals.camera.get_bottom())
-	if y < min_y || y > max_y:
+	if !WTFGlobals.minigame.stats.spawn_boats:
+		queue_free()
+		return false
+
+	var min_y := WTFConstants.SEALEVEL - (WTFGlobals.camera.get_visible_rect().size.y * 2)
+	var max_y := WTFConstants.SEALEVEL - 200
+	var y := randf_range(min_y, max_y)
+	if y < WTFGlobals.camera.get_top() || y > WTFGlobals.camera.get_bottom():
 		return false
 
 	var inst := scene.instantiate()
-	inst.global_position = Vector2(WTFGlobals.camera.get_right() + 256, y)
+	inst.global_position = Vector2(
+		WTFGlobals.camera.get_right() + randf_range(0, WTFGlobals.camera.get_visible_rect().size.x),
+		y
+	)
+
 	target.add_child(inst)
 	inst.reset_physics_interpolation()
 

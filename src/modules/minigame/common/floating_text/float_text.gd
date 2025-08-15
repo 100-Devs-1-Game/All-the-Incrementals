@@ -1,3 +1,4 @@
+class_name FloatingText
 extends Node2D
 
 enum AnimationStyle { FLOAT, SCALE, BOUNCE }
@@ -7,6 +8,7 @@ enum AnimationStyle { FLOAT, SCALE, BOUNCE }
 @export var float_distance: float = 40.0
 @export var float_duration: float = 0.6
 @export var animation_style: AnimationStyle = AnimationStyle.FLOAT
+@export var font_size: int = 64
 
 var hue: float = 0.0
 @onready var valuelbl: Label = $ValueLabel
@@ -31,9 +33,14 @@ func show_value(
 		valuelbl.add_theme_font_override("font", set_font)
 	rainbow_text = rainbow
 	valuelbl.add_theme_color_override("font_color", color)
+	valuelbl.add_theme_font_size_override("font_size", font_size)
 	valuelbl.text = str(value)
 	animation_style = style
 	create_animation(animation_style)
+
+
+func set_font_size(size: int) -> void:
+	valuelbl.add_theme_font_size_override("font_size", size)
 
 
 func create_animation(anim: AnimationStyle) -> void:

@@ -14,7 +14,7 @@ static func floating_text(
 	style: AnimationStyle = AnimationStyle.FLOAT,
 	rainbow: bool = false,
 	color: Color = Color.WHITE
-) -> void:
+) -> FloatingText:
 	if parent.get_tree().root == parent:
 		assert(false)  # Don't add to the root; it causes lag & visual issues
 
@@ -23,3 +23,4 @@ static func floating_text(
 	instance.position = position
 	instance.reset_physics_interpolation()
 	instance.show_value(value, style, rainbow, color)
+	return instance
