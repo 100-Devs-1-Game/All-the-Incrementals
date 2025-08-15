@@ -60,9 +60,10 @@ radial_accel_max = 40.0
 anim_offset_max = 1.0
 
 [node name="Void" type="Area2D"]
-collision_layer = 0
 collision_mask = 4
 monitorable = false
+linear_damp_space_override = 1
+linear_damp = 0.8
 script = ExtResource("1_cntsu")
 volume_fadeout = SubResource("Curve_dkylo")
 rubberband = SubResource("Curve_hfjwf")
