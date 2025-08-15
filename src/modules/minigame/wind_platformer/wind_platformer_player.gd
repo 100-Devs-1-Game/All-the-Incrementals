@@ -26,7 +26,7 @@ var double_jump_factor: float = 0.0
 var _is_running: bool = false
 var _is_on_ground: bool = false
 var _can_double_jump: bool = false
-var _is_double_jumping: bool = false
+var _double_jump_ctr: int
 
 @onready var head: Polygon2D = %Head
 @onready var hat: Polygon2D = %Hat
@@ -107,19 +107,20 @@ func _physics_process(delta: float) -> void:
 
 
 func jump_logic():
-	if (_is_on_ground and velocity.y >= 0) or (current_jump_speed > 0 and not _is_double_jumping):
+	if _is_on_ground:
+		_double_jump_ctr = 0
+
+	if (_is_on_ground and velocity.y >= 0) or (current_jump_speed > 0 and _double_jump_ctr == 0):
 		if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed + jump_speed_bonus:
 			velocity.y -= jump_speed_per_frame
 			current_jump_speed += jump_speed_per_frame
-			if double_jump_factor > 0:
-				_can_double_jump = true
 
 			if animated_sprite.animation != "jumping" and animated_sprite.animation != "falling":
 				animated_sprite.play("jumping")
 		else:
 			current_jump_speed = 0
 
-	elif _can_double_jump or current_jump_speed > 0:
+	elif _double_jump_ctr == 1 and (_can_double_jump or current_jump_speed > 0):
 		if (
 			Input.is_action_pressed("up")
 			and current_jump_speed < (max_jump_speed + jump_speed_bonus) * double_jump_factor
@@ -130,15 +131,18 @@ func jump_logic():
 
 			velocity.y -= jump_speed_per_frame
 			current_jump_speed += jump_speed_per_frame
-			_is_double_jumping = true
-			_can_double_jump = false
 		else:
-			_is_double_jumping = false
 			current_jump_speed = 0
 
-	else:
-		_is_double_jumping = false
+	elif not Input.is_action_just_released("up"):
 		current_jump_speed = 0
+
+	if Input.is_action_just_released("up"):
+		_double_jump_ctr += 1
+		if double_jump_factor > 0:
+			_can_double_jump = true
+		else:
+			_can_double_jump = false
 
 
 func animation_and_audio_logic():
