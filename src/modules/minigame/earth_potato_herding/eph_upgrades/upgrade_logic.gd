@@ -33,7 +33,7 @@ var upgrade_type_to_signal: Dictionary[UpgradeType, String] = {
 func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 	var game: EarthPotatoHerdingMinigame = p_game
 	if upgrade.unlocks_feature:
-		game.emit_signal(upgrade_type_to_signal[upgrade_type])
+		game.emit_signal(upgrade_type_to_signal[upgrade_type], true)
 	else:
 		game.emit_signal(
 			upgrade_type_to_signal[upgrade_type], upgrade.get_current_effect_modifier()

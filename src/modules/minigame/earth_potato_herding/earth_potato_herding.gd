@@ -37,8 +37,8 @@ func get_potato_growth_time() -> float:
 func _initialize() -> void:
 	spirit_keeper_brightness.emit(0.0)  # Implemented
 	spirit_keeper_speed.emit(0.0)  # Implemented
-	destroy_dashing_spirits.emit(0.0)
-	destroy_evil_spirits.emit(0.0)
+	destroy_dashing_spirits.emit(false)  # Implemented
+	destroy_evil_spirits.emit(false)  # Implemented
 	slower_spirits.emit(0.0)
 	less_dashing_spirits.emit(0.0)
 	less_evil_spirits.emit(0.0)

@@ -145,7 +145,7 @@ _add_child_to = NodePath("../EvilSpiritSpawnZone")
 _max_spawned_total = -1
 _max_spawned_at_once = 50
 _use_physics_process_to_spawn = true
-_spawn_cooldown = 1.0
+_spawn_cooldown = 2.5
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilSpiritSpawner"]
 polygon = PackedVector2Array(2018, -90, 2040, 1068, 1926, 1061, 1941, -5, -17, -3, -21, 1099, 1978, 1089, 1978, 1158, -90, 1191, -68, -92)
@@ -169,7 +169,7 @@ _spawnable_area = NodePath("spawn_zone")
 _spawnable_area_bounding_box = NodePath("spawn_bounding_box")
 _spawnable_node_scene = ExtResource("11_pp8t6")
 _add_child_to = NodePath("../EvilSpiritSpawnZone")
-_max_spawned_at_once = 5
+_max_spawned_at_once = 50
 _spawn_cooldown = 2.5
 
 [node name="spawn_zone" type="CollisionPolygon2D" parent="EphEvilDashingSpiritSpawner"]
