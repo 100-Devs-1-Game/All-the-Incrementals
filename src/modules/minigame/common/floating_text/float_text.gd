@@ -22,11 +22,15 @@ func _process(delta: float) -> void:
 
 ## Displays the value and starts the animation
 func show_value(
-	value: String, style: AnimationStyle = animation_style, rainbow: bool = false
+	value: String,
+	style: AnimationStyle = animation_style,
+	rainbow: bool = false,
+	color: Color = Color.WHITE
 ) -> void:
 	if set_font:
 		valuelbl.add_theme_font_override("font", set_font)
 	rainbow_text = rainbow
+	valuelbl.add_theme_color_override("font_color", color)
 	valuelbl.text = str(value)
 	animation_style = style
 	create_animation(animation_style)
