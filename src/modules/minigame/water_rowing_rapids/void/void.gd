@@ -52,7 +52,7 @@ func _do_grab(body: RigidBody2D) -> void:
 	var ray_query := PhysicsRayQueryParameters2D.new()
 	ray_query.collision_mask = 0b100
 	ray_query.hit_from_inside = true
-	var average_position: Vector2
+	var average_position: Vector2 = Vector2.ZERO
 	var hits: int = 0
 
 	for i in RAY_POLL_COUNT:
