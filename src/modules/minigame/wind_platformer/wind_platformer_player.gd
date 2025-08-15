@@ -35,6 +35,8 @@ var _double_jump_ctr: int
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_run: AudioStreamPlayer = $"Audio/AudioStreamPlayer Run"
 @onready var run_audio_delay: Timer = $"Audio/Run Audio Delay"
+@onready var audio_jump: AudioStreamPlayer = $"Audio/AudioStreamPlayer Jump"
+@onready var audio_land: AudioStreamPlayer = $"Audio/AudioStreamPlayer Land"
 
 
 func _ready() -> void:
@@ -45,7 +47,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity *= (1 - damping * move_speed_factor * delta)
 
+	var prev_on_ground := _is_on_ground
 	_is_on_ground = is_on_floor()
+
+	if _is_on_ground and not prev_on_ground:
+		audio_land.play()
 
 	#if _is_on_ground and not get_last_slide_collision():
 	#push_warning("On ground without slide collision")
@@ -112,6 +118,9 @@ func jump_logic():
 
 	if (_is_on_ground and velocity.y >= 0) or (current_jump_speed > 0 and _double_jump_ctr == 0):
 		if Input.is_action_pressed("up") and current_jump_speed < max_jump_speed + jump_speed_bonus:
+			if Input.is_action_just_pressed("up"):
+				audio_jump.play()
+
 			velocity.y -= jump_speed_per_frame
 			current_jump_speed += jump_speed_per_frame
 
