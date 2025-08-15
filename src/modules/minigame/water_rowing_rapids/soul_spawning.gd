@@ -1,9 +1,22 @@
+@tool
 # Poisson Disk Sampling (Sebastian Lague-inspired, GDScript port)
 extends Node2D
 
-@export var radius: float = 100  # Minimum distance between points
-@export var sample_size: Vector2 = Vector2(500, 500)  # Area to generate points
-@export var samples: int = 30  # Attempts per spawn point
+## The minimum distance between points
+@export var radius: float = 100
+## Area to generate points within.
+@export var sample_size: Vector2 = Vector2(500, 500):
+	set(new):
+		sample_size = new
+		if Engine.is_editor_hint():
+			points.clear()
+			queue_redraw()
+## Attempts per spawn point
+@export var samples: int = 30
+
+@export_tool_button("Regenerate", "Reload") var _regenerate_poisson: Callable = func():
+	points.clear()
+	poisson_disk_implementation()
 
 var rng := RandomNumberGenerator.new()
 
@@ -18,7 +31,6 @@ var spawn_points: Array[Vector2] = []
 func _ready() -> void:
 	rng.randomize()
 	poisson_disk_implementation()
-	#_draw()
 
 
 func poisson_disk_implementation() -> void:
@@ -68,6 +80,7 @@ func poisson_disk_implementation() -> void:
 
 		if not point_placed:
 			spawn_points.remove_at(spawn_index)
+	queue_redraw()
 
 
 func is_valid(candidate: Vector2) -> bool:
@@ -100,8 +113,10 @@ func is_in_bounds(candidate: Vector2) -> bool:
 		and candidate.y <= sample_size.y
 	)
 
-#func _draw():
-## Draw bounding box
-## Draw points
-#for p in points:
-#draw_circle(p, 3, Color.RED)
+
+func _draw():
+	if not Engine.is_editor_hint():
+		return
+	draw_rect(Rect2(Vector2.ZERO, sample_size), Color.WHITE, false)
+	for p in points:
+		draw_circle(p, 8, Color.RED)
