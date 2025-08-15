@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b48hc7h2lomi0" path="res://modules/minigame/water_rowing_rapids/void/void.gd" id="1_cntsu"]
 [ext_resource type="Script" uid="uid://hwjgdilgstk6" path="res://modules/minigame/water_rowing_rapids/void/zoom_correct_parallax.gd" id="2_k4c0p"]
 [ext_resource type="Shader" uid="uid://baxpqeuchs4ta" path="res://modules/minigame/water_rowing_rapids/void/void.gdshader" id="3_auihn"]
-[ext_resource type="AudioStream" uid="uid://dyaoxwrt37fdt" path="res://assets/minigames/water_rowing_rapids/void_whispers.mp3" id="4_dkylo"]
 [ext_resource type="Texture2D" uid="uid://bkl78rfb3w03e" path="res://assets/minigames/earth_potato_herding/hands.webp" id="4_hfjwf"]
+[ext_resource type="AudioStream" uid="uid://dm7a05guwblm6" path="res://assets/minigames/water_rowing_rapids/void_whispers.ogg" id="5_hfjwf"]
 
 [sub_resource type="Curve" id="Curve_dkylo"]
 _limits = [0.0, 1.0, 0.0, 2000.0]
@@ -104,6 +104,6 @@ offset_bottom = 2000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Whispers" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_dkylo")
+stream = ExtResource("5_hfjwf")
 autoplay = true
 bus = &"SFX"
