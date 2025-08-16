@@ -161,6 +161,9 @@ sample_size = Vector2(2500, 1700)
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
 
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+enable_score_display = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a50qn")
 
