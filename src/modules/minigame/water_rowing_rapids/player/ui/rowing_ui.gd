@@ -11,8 +11,8 @@ var miss_speed_value := 150
 var speed_drain := 55.0
 var updating_ui := false
 
-@onready var point = $Panel/Point
-@onready var target_zone = $Panel/GoodZone
+@onready var point = %Point
+@onready var target_zone = %GoodZone
 
 
 func _ready() -> void:

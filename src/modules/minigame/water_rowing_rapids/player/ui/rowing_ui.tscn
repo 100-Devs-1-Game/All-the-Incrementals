@@ -42,6 +42,7 @@ grow_vertical = 0
 color = Color(0, 0, 0, 0.490196)
 
 [node name="GoodZone" type="ColorRect" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -54,6 +55,7 @@ grow_vertical = 2
 color = Color(0.14902, 1, 0.341176, 1)
 
 [node name="Point" type="ColorRect" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
