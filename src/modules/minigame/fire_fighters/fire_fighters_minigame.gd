@@ -135,7 +135,7 @@ func _tick_fires():
 		var feature: FireFightersMinigameMapFeature = get_map_feature(tile)
 
 		if (not feature or not feature.can_burn()) and not has_oil(tile):
-			fire.size -= 0.01
+			fire.size -= 0.02
 		else:
 			_fire_burn_tick(fire, tile, feature)
 		ctr += 1
@@ -150,8 +150,9 @@ func _fire_burn_tick(
 	if has_oil(tile):
 		fire.size = 10.0
 		_burn_vegetation(tile)
-		if fire.total_burn > 1.5:
+		if fire.total_burn > 3.5:
 			_remove_oil(tile)
+			fire.size = 1.0
 
 	if feature and fire.total_burn > feature.burn_duration and feature.turns_into != null:
 		replace_feature(tile, feature.turns_into)
