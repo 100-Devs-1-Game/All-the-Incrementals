@@ -49,16 +49,17 @@ stretch_mode = 4
 [node name="GoodZone" type="ColorRect" parent="Panel"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = -1
+anchor_left = 0.849
+anchor_right = 0.849
 anchor_bottom = 1.0
-offset_left = -29.0
+offset_left = -50.152
 offset_top = 4.0
-offset_right = 29.0
-offset_bottom = -4.13265
+offset_right = 49.848
+offset_bottom = -4.1326
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(50, 0)
 color = Color(0.14902, 1, 0.341176, 1)
 
 [node name="Point" type="TextureRect" parent="Panel"]
