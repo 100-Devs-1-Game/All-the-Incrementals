@@ -16,6 +16,7 @@ var water_speed_factor: float = 1.0
 var water_spread_factor: float = 1.0
 var tank_bonus_size: float = 1.0
 var hitpoint_bonus: int
+var can_stomp: bool = false
 
 var _last_dir := Vector2(0, 1)
 var _current_item: FireFightersMinigameItem
@@ -38,6 +39,9 @@ var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extin
 @onready var audio_singe: AudioStreamPlayer = $"Audio/AudioStreamPlayer Singe"
 @onready var audio_boulder: AudioStreamPlayer = $"Audio/AudioStreamPlayer Boulder"
 @onready var audio_ambience: AudioStreamPlayer = $"Audio/AudioStreamPlayer Ambience"
+@onready var audio_stomp: AudioStreamPlayer = $"Audio/AudioStreamPlayer Stomp"
+
+@onready var stomp_cooldown: Timer = $"Stomp Cooldown"
 
 
 func _ready() -> void:
@@ -46,6 +50,8 @@ func _ready() -> void:
 
 func init():
 	_hitpoints_left = hitpoints + hitpoint_bonus
+	if can_stomp:
+		stomp_cooldown.start()
 
 
 func _physics_process(delta: float) -> void:
@@ -190,3 +196,8 @@ func get_tile() -> Vector2i:
 func _on_damage_update_timeout() -> void:
 	if game.is_tile_burning(_current_tile):
 		_take_damage()
+
+
+func _on_stomp_cooldown_timeout() -> void:
+	if game.stomp(get_tile()):
+		audio_stomp.play()

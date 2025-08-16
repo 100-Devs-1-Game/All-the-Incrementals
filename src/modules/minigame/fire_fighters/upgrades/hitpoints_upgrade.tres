@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://c1avxl58rbutd"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=31 format=3 uid="uid://c1avxl58rbutd"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_2rebn"]
 [ext_resource type="Script" uid="uid://sbcdkb7hovgy" path="res://modules/minigame/fire_fighters/upgrades/fire_fighters_upgrade_logic.gd" id="2_3nerj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_mbi7f"]
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_t6f3y"]
 [ext_resource type="Texture2D" uid="uid://cyyryp8t623os" path="res://assets/minigames/fire_fighters/icons/more_hitpoints.png" id="4_t6f3y"]
+[ext_resource type="Resource" uid="uid://cgjms0xufwds2" path="res://modules/minigame/fire_fighters/data/upgrades/stomp_upgrade.tres" id="7_qelb8"]
 
 [sub_resource type="Resource" id="Resource_qelb8"]
 script = ExtResource("2_mbi7f")
@@ -163,7 +164,7 @@ unlocks_feature = ""
 name = "More Hitpoints"
 flavor = ""
 icon = ExtResource("4_t6f3y")
-position = Vector2(-640, -128)
+position = Vector2(-640, -256)
 cost_arr = Array[ExtResource("1_2rebn")]([SubResource("Resource_48fyx"), SubResource("Resource_tw3m7"), SubResource("Resource_q0mli"), SubResource("Resource_5aqv2"), SubResource("Resource_7wrtk"), SubResource("Resource_2slfr"), SubResource("Resource_svau3"), SubResource("Resource_prla7"), SubResource("Resource_5144u"), SubResource("Resource_mlxj0")])
 effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0])
 max_level = 10
@@ -174,8 +175,8 @@ round_smoothness = 1.0
 base_effect_modifier = 1.0
 effect_modifier_multiplier = 1.0
 unlocked = false
-unlock_level_index = 0
-unlocks = Array[Resource]([])
+unlock_level = 0
+unlocks = Array[Resource]([ExtResource("7_qelb8")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0

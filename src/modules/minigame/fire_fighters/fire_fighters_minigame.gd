@@ -139,6 +139,8 @@ func _tick_fires():
 	for tile: Vector2i in fires.keys():
 		if ctr % 50 == 0:
 			await get_tree().physics_frame
+		if not fires.has(tile):
+			continue
 
 		var fire: FireFightersMinigameFire = fires[tile]
 		var feature: FireFightersMinigameMapFeature = get_map_feature(tile)
@@ -310,6 +312,13 @@ func play_audio_effect(stream: AudioStream, pos: Vector2):
 func _set_fire_chunk(tile: Vector2i, val: float):
 	var coords: Vector2i = tile / chunk_size
 	_fire_chunks[coords] = max(_fire_chunks[coords], val)
+
+
+func stomp(tile: Vector2i) -> bool:
+	if is_tile_burning(tile):
+		_remove_fire(fires[tile])
+		return true
+	return false
 
 
 func _get_countdown_duration() -> float:
