@@ -266,7 +266,7 @@ offset_bottom = 50.0
 size_flags_vertical = 8
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_4prp1")
-text = "BUY UPGRADE"
+text = "HOLD TO BUY"
 
 [node name="NormalColor" type="ColorRect" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
 layout_mode = 2
