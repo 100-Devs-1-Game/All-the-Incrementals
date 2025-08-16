@@ -69,7 +69,6 @@ func _input(event):
 
 func set_target_width():
 	var min_width: float = 0.3
-	var shrink_amount: float = 0.1
 
 	var scaled: float = (target_zone.scale.x - min_width) * 0.8
 	target_zone.scale.x = scaled + min_width

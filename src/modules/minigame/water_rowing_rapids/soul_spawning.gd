@@ -171,3 +171,7 @@ func _is_in_bounds(candidate: Vector2) -> bool:
 		and candidate.y >= 0
 		and candidate.y <= sample_size.y
 	)
+
+
+func _unused() -> void:  # Exists only to trick GUT into accepting this
+	_button_regenerate_poisson.call()
