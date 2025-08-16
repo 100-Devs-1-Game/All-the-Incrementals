@@ -3,6 +3,7 @@ extends BaseMinigame
 
 @onready var player: RigidBody2D = $RowingPlayer
 @onready var chase_void: Area2D = $Void
+@onready var soul_spawner: WRRSoulSpawner = %SoulSpawner
 
 
 func _initialize():
@@ -13,6 +14,7 @@ func _initialize():
 	water.texture_scale = Vector2.ONE * 537.0 / 1000.0  # don't ask
 	EventBus.request_music.emit(&"rowing_rapids")
 	chase_void.player = player
+	soul_spawner.regenerate_all()
 
 
 func _on_rowing_player_spirit_collected(value: int) -> void:

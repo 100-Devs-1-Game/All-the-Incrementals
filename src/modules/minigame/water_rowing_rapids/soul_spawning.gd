@@ -29,9 +29,9 @@ var _grid_size: Vector2i
 var _spawn_points: Array[Vector2] = []
 
 
-static func _regenerate_all(spawners: Array[Node]) -> void:
+static func _regenerate_all(spawners: Array[Node]) -> int:
 	var regen_one_bound = _regenerate_one.bind(spawners)
-	WorkerThreadPool.add_group_task(regen_one_bound, len(spawners))
+	return WorkerThreadPool.add_group_task(regen_one_bound, len(spawners))
 
 
 static func _regenerate_one(spawners: Array[Node], index: int) -> void:
@@ -44,7 +44,8 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	rng.randomize()
-	generate_poisson()
+	if Engine.is_editor_hint():
+		generate_poisson()
 
 
 func _exit_tree() -> void:
@@ -62,7 +63,9 @@ func _draw() -> void:
 ## Regenerates ALL spawners currently in the tree.
 func regenerate_all() -> void:
 	print("regenerating spawners...")
-	_regenerate_all(get_tree().get_nodes_in_group(SPAWNERS_GROUP))
+	WorkerThreadPool.wait_for_group_task_completion(
+		_regenerate_all(get_tree().get_nodes_in_group(SPAWNERS_GROUP))
+	)
 
 
 ## Regenerates points for this spawner, removing old ones. To not remove old points, see
