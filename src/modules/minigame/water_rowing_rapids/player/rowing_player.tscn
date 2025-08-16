@@ -17,6 +17,10 @@ bounce = 0.5
 _data = [Vector2(0.130435, 0), 0.0, 1.95371, 0, 0, Vector2(0.782609, 0.898876), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qkfb"]
+radius = 200.0
+height = 656.0
+
 [sub_resource type="Curve" id="Curve_vlg0a"]
 _data = [Vector2(0, 0.278622), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -54,10 +58,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qkfb"]
-radius = 200.0
-height = 656.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5ul3"]
 radius = 65.0
 height = 316.0
@@ -75,6 +75,17 @@ angular_damp = 1.0
 script = ExtResource("1_41ocn")
 ripple_intensity_curve = SubResource("Curve_tbkrn")
 boost_timer = NodePath("BoostTimer")
+
+[node name="SpiritMagnetismArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("4_qdgbt")
+
+[node name="Collider" type="CollisionShape2D" parent="SpiritMagnetismArea"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8qkfb")
+debug_color = Color(0.611765, 0.537255, 0, 0.133333)
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(11, -65, 109, -45, 146, -29, 160, -15, 164, 0, 160, 15, 147, 26, 112, 45, 15, 63, -156, 63, -166, 0, -156, -65)
@@ -121,17 +132,6 @@ texture = ExtResource("2_65ad0")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.595, 0.595)
 position_smoothing_enabled = true
-
-[node name="SpiritMagnetismArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("4_qdgbt")
-
-[node name="Collider" type="CollisionShape2D" parent="SpiritMagnetismArea"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_8qkfb")
-debug_color = Color(0.611765, 0.537255, 0, 0.133333)
 
 [node name="SpritCollectionArea" type="Area2D" parent="."]
 collision_layer = 0
