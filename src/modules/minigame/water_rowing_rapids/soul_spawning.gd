@@ -1,42 +1,114 @@
-# Poisson Disk Sampling (Sebastian Lague-inspired, GDScript port)
+@tool
+class_name WRRSoulSpawner
 extends Node2D
+## Poisson Disk Sampling (Sebastian Lague-inspired, GDScript port).
 
-@export var radius: float = 100  # Minimum distance between points
-@export var sample_size: Vector2 = Vector2(500, 500)  # Area to generate points
-@export var samples: int = 30  # Attempts per spawn point
+const SPAWNERS_GROUP := &"__soul_spawners"
+
+static var spawners: Array[Node]
+
+## The minimum distance between points
+@export var radius: float = 100
+## Area to generate points within.
+@export var sample_size: Vector2 = Vector2(500, 500):
+	set(new):
+		sample_size = new
+		if Engine.is_editor_hint():
+			points.clear()
+			queue_redraw()
+## Attempts per spawn point
+@export var samples: int = 30
+
+@export_tool_button("Regenerate", "Reload")
+var _button_regenerate_poisson: Callable = regenerate_poisson
 
 var rng := RandomNumberGenerator.new()
 
+var points: Array[Vector2] = []
 var cell_size: float
 var grid: Array = []
-var grid_width: int
-var grid_height: int
-var points: Array[Vector2] = []
-var spawn_points: Array[Vector2] = []
+var _grid_size: Vector2i
+var _spawn_points: Array[Vector2] = []
+
+
+static func _regenerate_all(p_spawners: Array[Node]) -> int:
+	spawners = p_spawners  # no, binding p_spawners to _regenerate_one does not work.
+	# No errors, it just straight up does not get called.
+	print("Regenerating soul spawners...")
+	print("Spawners to regenerate: ", spawners)
+	var task_id := WorkerThreadPool.add_group_task(_regenerate_one, len(spawners), -1, true)
+	print("Started with task: ", task_id)
+	return task_id
+
+
+static func _regenerate_one(index: int) -> void:
+	spawners[index].regenerate_poisson()
+
+
+func _enter_tree() -> void:
+	add_to_group(SPAWNERS_GROUP)
 
 
 func _ready() -> void:
 	rng.randomize()
-	poisson_disk_implementation()
-	#_draw()
+	if Engine.is_editor_hint():
+		generate_poisson()
 
 
-func poisson_disk_implementation() -> void:
+func _exit_tree() -> void:
+	remove_from_group(SPAWNERS_GROUP)
+
+
+func _draw() -> void:
+	if not Engine.is_editor_hint():
+		return
+	draw_rect(Rect2(Vector2.ZERO, sample_size), Color.WHITE, false)
+	for p in points:
+		draw_circle(p, 8, Color.RED)
+
+
+## Regenerates ALL spawners currently in the tree.
+func regenerate_all() -> void:
+	var nodes := get_tree().get_nodes_in_group(SPAWNERS_GROUP)
+	WorkerThreadPool.wait_for_group_task_completion(_regenerate_all(nodes))
+
+
+## Calls a Callable on EVERY point on ALL spawners. Callable must have parameters
+## [param spawner]:[WRRSoulSpawner], the spawner, and [param point]:[Vector2],
+## The point in local space.
+func on_every_point(callable: Callable) -> void:
+	for spawner: WRRSoulSpawner in get_tree().get_nodes_in_group(SPAWNERS_GROUP):
+		print(spawner)
+		print(spawner.points)
+		for point in spawner.points:
+			callable.call(spawner, point)
+
+
+## Regenerates points for this spawner, removing old ones. To not remove old points, see
+## [member generate_poisson].
+func regenerate_poisson() -> void:
+	points.clear()
+	generate_poisson()
+
+
+## Generate more points for this spawner. Does not remove existing points, instead
+## adding new ones as if the old did not exist. Use [method Array.clear] on [member points] to
+## Remove existing ones, or call [method regenerate_poisson].
+func generate_poisson() -> void:
 	# Calculate grid cell size and dimensions
 	cell_size = radius / sqrt(2)
-	grid_width = ceil(sample_size.x / cell_size)
-	grid_height = ceil(sample_size.y / cell_size)
+	_grid_size = Vector2i((sample_size / cell_size).ceil())
 
 	# Initialize 2D grid
 	grid.clear()
-	for i in range(grid_width):
+	for i in _grid_size.x:
 		grid.append([])
-		for j in range(grid_height):
+		for j in _grid_size.y:
 			grid[i].append(-1)  # -1 means empty
 
 	# Add initial spawn point in the center
 	var center := sample_size / 2
-	spawn_points.append(center)
+	_spawn_points.append(center)
 	points.append(center)
 
 	var center_x := int(center.x / cell_size)
@@ -44,9 +116,9 @@ func poisson_disk_implementation() -> void:
 	grid[center_x][center_y] = 0
 
 	# Main generation loop
-	while spawn_points.size() > 0:
-		var spawn_index = rng.randi_range(0, spawn_points.size() - 1)
-		var spawn_center = spawn_points[spawn_index]
+	while _spawn_points.size() > 0:
+		var spawn_index = rng.randi_range(0, _spawn_points.size() - 1)
+		var spawn_center = _spawn_points[spawn_index]
 		var point_placed = false
 
 		# Try to place a new point around the spawn center
@@ -55,9 +127,9 @@ func poisson_disk_implementation() -> void:
 			var dir = Vector2(cos(angle), sin(angle))
 			var candidate = spawn_center + dir * rng.randf_range(radius, 2 * radius)
 
-			if is_valid(candidate):
+			if _is_valid(candidate):
 				points.append(candidate)
-				spawn_points.append(candidate)
+				_spawn_points.append(candidate)
 
 				var cx = int(candidate.x / cell_size)
 				var cy = int(candidate.y / cell_size)
@@ -67,20 +139,20 @@ func poisson_disk_implementation() -> void:
 				break
 
 		if not point_placed:
-			spawn_points.remove_at(spawn_index)
+			_spawn_points.remove_at(spawn_index)
+	queue_redraw.call_deferred()
 
 
-func is_valid(candidate: Vector2) -> bool:
-	if not is_in_bounds(candidate):
+func _is_valid(candidate: Vector2) -> bool:
+	if not _is_in_bounds(candidate):
 		return false
 
-	var cell_x = int(candidate.x / cell_size)
-	var cell_y = int(candidate.y / cell_size)
+	var cell: Vector2i = Vector2i(candidate / cell_size)
 
-	var start_x = max(0, cell_x - 2)
-	var end_x = min(grid_width - 1, cell_x + 2)
-	var start_y = max(0, cell_y - 2)
-	var end_y = min(grid_height - 1, cell_y + 2)
+	var start_x = max(0, cell.x - 2)
+	var end_x = min(_grid_size.x - 1, cell.x + 2)
+	var start_y = max(0, cell.y - 2)
+	var end_y = min(_grid_size.y - 1, cell.y + 2)
 
 	for i in range(start_x, end_x + 1):
 		for j in range(start_y, end_y + 1):
@@ -92,7 +164,7 @@ func is_valid(candidate: Vector2) -> bool:
 	return true
 
 
-func is_in_bounds(candidate: Vector2) -> bool:
+func _is_in_bounds(candidate: Vector2) -> bool:
 	return (
 		candidate.x >= 0
 		and candidate.x <= sample_size.x
@@ -100,8 +172,6 @@ func is_in_bounds(candidate: Vector2) -> bool:
 		and candidate.y <= sample_size.y
 	)
 
-#func _draw():
-## Draw bounding box
-## Draw points
-#for p in points:
-#draw_circle(p, 3, Color.RED)
+
+func _unused() -> void:  # Exists only to trick GUT into accepting this
+	_button_regenerate_poisson.call()

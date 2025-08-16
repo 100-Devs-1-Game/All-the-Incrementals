@@ -16,6 +16,9 @@ enum UpgradeType {
 	VOID_SPEED,
 	## Increases size of spirit magnetism area bt X%
 	SPIRIT_MAGNETISM_AREA,
+	## Increases the likelyhood of getting better spirits*[br]
+	## (*It also makes it possible in the first place. It's weird.)
+	SPIRIT_VALUE
 }
 
 const BASE_PREFIX: String = "base_"
@@ -29,11 +32,9 @@ static func register_base(object: Object, property: StringName) -> void:
 		property in object,
 		'Attempt to register nonexistent property &"%s" on base %s' % [property, object]
 	)
+	if object.has_meta(BASE_PREFIX + property):
+		return
 	var value: Variant = object.get(property)
-	assert(
-		not object.has_meta(BASE_PREFIX + property),
-		'Object %s has conflicting metadata item &"%s%s"' % [object, BASE_PREFIX, property]
-	)
 	object.set_meta(BASE_PREFIX + property, value)
 
 
@@ -78,3 +79,5 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 			increase_from_base(
 				game.player.spirit_magnetism_area_collider.shape, &"radius", effect_modifier
 			)
+		UpgradeType.SPIRIT_VALUE:
+			game.spirit_value = effect_modifier
