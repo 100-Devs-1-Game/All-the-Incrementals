@@ -1,7 +1,7 @@
 class_name FireFightersMinigame
 extends BaseMinigame
 
-const BURN_TICK_INTERVAL = 10
+const BURN_TICK_INTERVAL = 15
 
 @export var player_scene: PackedScene
 @export var fire_scene: PackedScene
@@ -126,7 +126,11 @@ func add_water(pos: Vector2, vel: Vector2, impulse: Vector2, dir: Vector2):
 
 
 func _tick_fires():
+	var ctr := 0
 	for tile: Vector2i in fires.keys():
+		if ctr % 50 == 0:
+			await get_tree().physics_frame
+
 		var fire: FireFightersMinigameFire = fires[tile]
 		var feature: FireFightersMinigameMapFeature = get_map_feature(tile)
 
@@ -134,6 +138,7 @@ func _tick_fires():
 			fire.size -= 0.01
 		else:
 			_fire_burn_tick(fire, tile, feature)
+		ctr += 1
 
 
 func _fire_burn_tick(
