@@ -36,6 +36,7 @@ var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extin
 @onready var audio_extinguisher_out: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Out"
 @onready var audio_item_pickup: AudioStreamPlayer = $"Audio/AudioStreamPlayer Item Pickup"
 @onready var audio_singe: AudioStreamPlayer = $"Audio/AudioStreamPlayer Singe"
+@onready var audio_boulder: AudioStreamPlayer = $"Audio/AudioStreamPlayer Boulder"
 
 
 func _ready() -> void:
@@ -60,6 +61,11 @@ func _physics_process(delta: float) -> void:
 	var motion := move_dir * move_speed * move_speed_factor
 	velocity = velocity.move_toward(motion, acceleration * delta * move_speed_factor)
 	move_and_slide()
+
+	var coll := get_last_slide_collision()
+	if move_dir and coll and coll.get_collider() is TileMapLayer:
+		if not audio_boulder.playing:
+			audio_boulder.play()
 
 	if move_dir and not is_diagonal(move_dir):
 		_last_dir = move_dir
