@@ -68,6 +68,15 @@ func regenerate_all() -> void:
 	)
 
 
+## Calls a Callable on EVERY point on ALL spawners. Callable must have parameters
+## [param spawner]:[WRRSoulSpawner], the spawner, and [param point]:[Vector2],
+## The point in local space.
+func on_every_point(callable: Callable) -> void:
+	for spawner: WRRSoulSpawner in get_tree().get_nodes_in_group(SPAWNERS_GROUP):
+		for point in spawner.points:
+			callable.call(spawner, point)
+
+
 ## Regenerates points for this spawner, removing old ones. To not remove old points, see
 ## [member generate_poisson].
 func regenerate_poisson() -> void:
