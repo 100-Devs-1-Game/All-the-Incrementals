@@ -49,10 +49,10 @@ func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
 			print(
 				(
 					"WTF - increasing oxygen mult by %s"
-					% (_upgrade.get_current_effect_modifier() * 0.05)
+					% (_upgrade.get_current_effect_modifier() * 0.50)
 				)
 			)
-			stats.oxygen_capacity_multiplier += _upgrade.get_current_effect_modifier() * 0.05
+			stats.oxygen_capacity_multiplier += _upgrade.get_current_effect_modifier() * 0.50
 			print(stats.oxygen_capacity_multiplier)
 		UpgradeType.INCREASE_STARTING_SPEED:
 			print(

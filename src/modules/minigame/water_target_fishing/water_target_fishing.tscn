@@ -74,7 +74,7 @@ metadata/_custom_type_script = "uid://rvvogndal0rd"
 [node name="OceanBackground" type="Sprite2D" parent="."]
 modulate = Color(0.282353, 0.596078, 0.807843, 1)
 position = Vector2(-10000, 0)
-scale = Vector2(200, 200)
+scale = Vector2(2000, 2000)
 texture = SubResource("GradientTexture2D_om2bs")
 centered = false
 
@@ -91,6 +91,7 @@ target = NodePath("..")
 [node name="Boats" type="Node2D" parent="."]
 
 [node name="Props" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Props"]
 modulate = Color(0.552941, 0.458824, 1, 1)
@@ -646,7 +647,7 @@ position = Vector2(480, 390)
 [node name="OceanOverlay" type="Sprite2D" parent="."]
 modulate = Color(0.196078, 0.333333, 1, 0.231373)
 position = Vector2(-10000, 0)
-scale = Vector2(200, 200)
+scale = Vector2(2000, 2000)
 texture = SubResource("GradientTexture2D_om2bs")
 centered = false
 

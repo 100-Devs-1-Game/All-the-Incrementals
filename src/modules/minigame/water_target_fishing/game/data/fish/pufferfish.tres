@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="WTFFishData" load_steps=8 format=3 uid="uid://cbtm0lp2gfkk"]
+
+[ext_resource type="Script" uid="uid://dl0x10lns1e17" path="res://modules/minigame/water_target_fishing/game/fish_data.gd" id="1_l20rj"]
+[ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_nsnh8"]
+[ext_resource type="Script" uid="uid://meklva8v881i" path="res://modules/minigame/water_target_fishing/game/spawn_data.gd" id="3_lhniq"]
+[ext_resource type="Texture2D" uid="uid://mxi1nbjmec5c" path="res://assets/minigames/water_target_fishing/fish/pufferfish.png" id="4_25rwq"]
+
+[sub_resource type="Resource" id="Resource_v2kav"]
+script = ExtResource("1_nsnh8")
+speedboost = 1000.0
+weight = 100.0
+score = 10
+metadata/_custom_type_script = "uid://hrgdcmm0gruk"
+
+[sub_resource type="Resource" id="Resource_rpcn7"]
+script = ExtResource("3_lhniq")
+spawn_type = 2
+min_spawn_distance = 5000.0
+_min_spawn_depth = 500.0
+_max_spawn_depth = 1000.0
+metadata/_custom_type_script = "uid://meklva8v881i"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5r7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_25rwq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_l20rj")
+player_movement_multiplier = 0.6
+base_speed = 300.0
+texture = SubResource("SpriteFrames_s5r7g")
+pickup = SubResource("Resource_v2kav")
+spawn = SubResource("Resource_rpcn7")
+metadata/_custom_type_script = "uid://dl0x10lns1e17"

@@ -1,19 +1,19 @@
 [gd_resource type="Resource" script_class="WTFFishData" load_steps=8 format=3 uid="uid://bcf0rlnnc5h6p"]
 
-[ext_resource type="Script" uid="uid://dl0x10lns1e17" path="res://modules/minigame/water_target_fishing/game/fish_data.gd" id="1_5aihd"]
-[ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_7t1ck"]
-[ext_resource type="Script" uid="uid://meklva8v881i" path="res://modules/minigame/water_target_fishing/game/spawn_data.gd" id="3_k71g5"]
-[ext_resource type="Texture2D" uid="uid://b2plhl0cvlw6p" path="res://assets/minigames/water_target_fishing/fish/dead_fish.png" id="4_k71g5"]
+[ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_thnw1"]
+[ext_resource type="Script" uid="uid://dl0x10lns1e17" path="res://modules/minigame/water_target_fishing/game/fish_data.gd" id="2_uwfxi"]
+[ext_resource type="Script" uid="uid://meklva8v881i" path="res://modules/minigame/water_target_fishing/game/spawn_data.gd" id="3_0l3sy"]
+[ext_resource type="Texture2D" uid="uid://b2plhl0cvlw6p" path="res://assets/minigames/water_target_fishing/fish/dead_fish.png" id="4_sujtq"]
 
 [sub_resource type="Resource" id="Resource_k71g5"]
-script = ExtResource("1_7t1ck")
+script = ExtResource("1_thnw1")
 speedboost = 300.0
 weight = 30.0
 score = 10.0
 metadata/_custom_type_script = "uid://hrgdcmm0gruk"
 
 [sub_resource type="Resource" id="Resource_8egcm"]
-script = ExtResource("3_k71g5")
+script = ExtResource("3_0l3sy")
 spawn_type = 2
 min_spawn_distance = 0.0
 _min_spawn_depth = 0.0
@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://meklva8v881i"
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_k71g5")
+"texture": ExtResource("4_sujtq")
 }],
 "loop": true,
 "name": &"default",
@@ -32,7 +32,7 @@ animations = [{
 }]
 
 [resource]
-script = ExtResource("1_5aihd")
+script = ExtResource("2_uwfxi")
 player_movement_multiplier = 0.2
 base_speed = 0.0
 texture = SubResource("SpriteFrames_k71g5")
