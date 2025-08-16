@@ -49,6 +49,9 @@ func ungrab_youngling() -> void:
 
 func _ready() -> void:
 	$SpriteRotationPoint/AnimatedSprite2D.play("default")
+	var mini_game = get_tree().get_first_node_in_group("earth_potato_herding")
+	mini_game.slower_spirits.connect(_on_slower_spirits)
+	_current_acceleration_multipliers["upgrade"] = 1
 
 
 func _calculate_acceleration() -> Vector2:
@@ -69,5 +72,9 @@ func _move(delta: float, direction: Vector2) -> void:
 		_grabbed_youngling.global_position = _youngling_place.global_position
 
 	_sprite_rotation_point.rotation = Vector2.RIGHT.angle_to(_current_velosity)
+
+
+func _on_slower_spirits(modifier: float):
+	_current_acceleration_multipliers["upgrade"] = 1 - modifier
 
 #endregion
