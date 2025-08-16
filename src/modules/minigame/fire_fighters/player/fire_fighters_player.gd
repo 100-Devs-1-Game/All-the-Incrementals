@@ -30,10 +30,6 @@ var _hitpoints_left: int
 @onready var oil_dropper: FireFightersMinigameOilDropComponent = $"Oil Dropper"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-# helps to keep the extinguisher shooting diagonally after the player has
-# stopped moving ( releasing both keys will let the player face in the direction
-# of the last release key otherwise - if they aren't released perfectly simultaneous )
-
 @onready var audio_extinguisher: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher"
 @onready
 var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Stop"
@@ -68,15 +64,20 @@ func _physics_process(delta: float) -> void:
 	if move_dir and not is_diagonal(move_dir):
 		_last_dir = move_dir
 
+	var animation: String
 	match Vector2i(_last_dir):
 		Vector2i.RIGHT:
-			animated_sprite.frame = 0
+			animation = "right"
 		Vector2i.DOWN:
-			animated_sprite.frame = 1
+			animation = "down"
 		Vector2i.LEFT:
-			animated_sprite.frame = 2
+			animation = "left"
 		Vector2i.UP:
-			animated_sprite.frame = 3
+			animation = "up"
+
+	animation = ("walk_" if move_dir else "stand_") + animation
+
+	animated_sprite.play(animation)
 
 	extinguisher.look_at(position + _last_dir)
 	extinguish(is_extinguishing)

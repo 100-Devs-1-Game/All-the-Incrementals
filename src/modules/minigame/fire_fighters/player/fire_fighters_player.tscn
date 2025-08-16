@@ -1,36 +1,164 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmbhboa0omojg"]
+[gd_scene load_steps=35 format=3 uid="uid://bmbhboa0omojg"]
 
 [ext_resource type="Script" uid="uid://d3gde2qbcgqdg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.gd" id="1_kwj77"]
+[ext_resource type="Texture2D" uid="uid://da2s7sosyhlkq" path="res://assets/minigames/fire_fighters/character/down_idle/000.png" id="2_2uugn"]
 [ext_resource type="Script" uid="uid://byjfedtjqjrpb" path="res://modules/minigame/fire_fighters/player/fire_fighters_oil_drop_component.gd" id="2_a054y"]
-[ext_resource type="Texture2D" uid="uid://u8lymqspkvwj" path="res://assets/minigames/fire_fighters/character/right_01.png" id="2_giabo"]
 [ext_resource type="AudioStream" uid="uid://dns8knkvhb614" path="res://assets/minigames/fire_fighters/sfx/water_hose_spray.ogg" id="2_u0cb5"]
 [ext_resource type="AudioStream" uid="uid://jwwwei2y1m8l" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_hose_stop_01.ogg" id="3_2mmi3"]
-[ext_resource type="Texture2D" uid="uid://bdv75dr4ln3hw" path="res://assets/minigames/fire_fighters/character/down_01.png" id="3_ndivj"]
-[ext_resource type="Texture2D" uid="uid://co2rfbkel1kyc" path="res://assets/minigames/fire_fighters/character/left_01.png" id="4_5beh5"]
+[ext_resource type="Texture2D" uid="uid://o103b1eiw8q8" path="res://assets/minigames/fire_fighters/character/down_idle/001.png" id="3_dqt8g"]
+[ext_resource type="Texture2D" uid="uid://c355jdkf3ojxo" path="res://assets/minigames/fire_fighters/character/left_idle/000.png" id="4_bouhf"]
 [ext_resource type="AudioStream" uid="uid://c1vv4jcunslpi" path="res://assets/minigames/fire_fighters/sfx/sfx_item_pickup_02.ogg" id="4_u0cb5"]
-[ext_resource type="Texture2D" uid="uid://cp2uorwwbsndv" path="res://assets/minigames/fire_fighters/character/up_01.png" id="5_8yk0c"]
+[ext_resource type="Texture2D" uid="uid://uvn3e5e48nt5" path="res://assets/minigames/fire_fighters/character/left_idle/001.png" id="5_a33gg"]
+[ext_resource type="Texture2D" uid="uid://bwr5irjniakij" path="res://assets/minigames/fire_fighters/character/right_idle/001.png" id="6_03lkv"]
+[ext_resource type="Texture2D" uid="uid://cl4mq21s0pfn8" path="res://assets/minigames/fire_fighters/character/right_idle/002.png" id="7_j4wbp"]
+[ext_resource type="Texture2D" uid="uid://dthaawn0d8euy" path="res://assets/minigames/fire_fighters/character/up_idle/001.png" id="8_wkdoe"]
+[ext_resource type="Texture2D" uid="uid://cjjo514dejyib" path="res://assets/minigames/fire_fighters/character/up_idle/002.png" id="9_ewlhx"]
 [ext_resource type="AudioStream" uid="uid://3bgyfrh6ex0c" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_singe_01.ogg" id="9_ndivj"]
+[ext_resource type="Texture2D" uid="uid://cjqm4dwnwfp5f" path="res://assets/minigames/fire_fighters/character/down/000.png" id="10_xqjuj"]
+[ext_resource type="Texture2D" uid="uid://5h531mo6q3t5" path="res://assets/minigames/fire_fighters/character/down/001.png" id="11_y4hyl"]
+[ext_resource type="Texture2D" uid="uid://dsv06vaj88ei7" path="res://assets/minigames/fire_fighters/character/down/002.png" id="12_0yl2k"]
+[ext_resource type="Texture2D" uid="uid://7cx3jfmiipmf" path="res://assets/minigames/fire_fighters/character/left/002.png" id="13_s42lp"]
+[ext_resource type="Texture2D" uid="uid://bfp60vkf3vqi6" path="res://assets/minigames/fire_fighters/character/left/003.png" id="14_83iw0"]
+[ext_resource type="Texture2D" uid="uid://deflacf0qep61" path="res://assets/minigames/fire_fighters/character/left/004.png" id="15_3fckp"]
+[ext_resource type="Texture2D" uid="uid://cvpvhgk53k4fj" path="res://assets/minigames/fire_fighters/character/left/005.png" id="16_xc4t5"]
+[ext_resource type="Texture2D" uid="uid://bqjs2m6top6xj" path="res://assets/minigames/fire_fighters/character/left/006.png" id="17_n26cd"]
+[ext_resource type="Texture2D" uid="uid://bmbebv25rky0t" path="res://assets/minigames/fire_fighters/character/left/007.png" id="18_k6rpj"]
+[ext_resource type="Texture2D" uid="uid://bldjsvxbakc40" path="res://assets/minigames/fire_fighters/character/right/000.png" id="19_4okct"]
+[ext_resource type="Texture2D" uid="uid://b18lk8qnt35r2" path="res://assets/minigames/fire_fighters/character/right/001.png" id="20_ob5tx"]
+[ext_resource type="Texture2D" uid="uid://biwn60vnqy47w" path="res://assets/minigames/fire_fighters/character/right/002.png" id="21_oq41a"]
+[ext_resource type="Texture2D" uid="uid://dftikno21ntx7" path="res://assets/minigames/fire_fighters/character/right/003.png" id="22_pnj0e"]
+[ext_resource type="Texture2D" uid="uid://dadei5lurftob" path="res://assets/minigames/fire_fighters/character/right/004.png" id="23_xol3a"]
+[ext_resource type="Texture2D" uid="uid://bjvwjfilqry1t" path="res://assets/minigames/fire_fighters/character/right/005.png" id="24_c712j"]
+[ext_resource type="Texture2D" uid="uid://d677queetl4f" path="res://assets/minigames/fire_fighters/character/up/000.png" id="25_hvfbb"]
+[ext_resource type="Texture2D" uid="uid://cgp84wax71ycf" path="res://assets/minigames/fire_fighters/character/up/001.png" id="26_gg8sg"]
+[ext_resource type="Texture2D" uid="uid://bdygy4f127v1e" path="res://assets/minigames/fire_fighters/character/up/002.png" id="27_qf6rl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
 radius = 20.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0cb5"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_giabo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ndivj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_5beh5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_8yk0c")
-}],
+"frames": [],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2uugn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dqt8g")
+}],
+"loop": true,
+"name": &"stand_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bouhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a33gg")
+}],
+"loop": true,
+"name": &"stand_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_03lkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j4wbp")
+}],
+"loop": true,
+"name": &"stand_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_wkdoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ewlhx")
+}],
+"loop": true,
+"name": &"stand_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_xqjuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y4hyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0yl2k")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_s42lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_83iw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3fckp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xc4t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_n26cd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_k6rpj")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_4okct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ob5tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_oq41a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_pnj0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xol3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_c712j")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_hvfbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gg8sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qf6rl")
+}],
+"loop": true,
+"name": &"walk_up",
 "speed": 5.0
 }]
 
@@ -46,8 +174,8 @@ hitpoints = 1
 shape = SubResource("CircleShape2D_pbvvr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_u0cb5")
+animation = &"walk_up"
 
 [node name="Extinguisher" type="Node2D" parent="."]
 rotation = -0.0586266
