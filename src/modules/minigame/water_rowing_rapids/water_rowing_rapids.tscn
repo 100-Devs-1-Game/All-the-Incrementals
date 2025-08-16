@@ -49,6 +49,7 @@ curve = SubResource("Curve2D_a50qn")
 
 [node name="Wadder" type="Polygon2D" parent="River"]
 unique_name_in_owner = true
+z_index = -2
 texture_repeat = 2
 material = SubResource("ShaderMaterial_bxvkd")
 texture = ExtResource("4_0gm1p")
