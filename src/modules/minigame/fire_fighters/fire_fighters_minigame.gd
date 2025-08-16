@@ -96,7 +96,14 @@ func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 		# to make sure add_score() keeps supporting subtracting score
 		assert(_score < old_score)
 		saved_tiles.erase(tile)
-		TextFloatSystem.floating_text(get_tile_position(tile), str("-1"), tile_map_terrain)
+		TextFloatSystem.floating_text(
+			get_tile_position(tile),
+			str("-1"),
+			tile_map_terrain,
+			TextFloatSystem.AnimationStyle.FLOAT,
+			false,
+			Color.WEB_PURPLE
+		)
 
 
 func _remove_fire(fire: FireFightersMinigameFire):
@@ -230,7 +237,9 @@ func _vegetation_saved(tile: Vector2i):
 	var effect: Node2D = extinguish_effect_scene.instantiate()
 	effect.position = pos
 	effects_node.add_child(effect)
-	TextFloatSystem.floating_text(pos, str("+1"), tile_map_terrain)
+	TextFloatSystem.floating_text(
+		pos, str("+1"), tile_map_terrain, TextFloatSystem.AnimationStyle.FLOAT, false, Color.YELLOW
+	)
 
 
 func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
