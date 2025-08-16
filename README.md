@@ -157,7 +157,7 @@ Thanks goes to all these wonderful people :heart:
 
 ### Narrative (in alphabetical order)
 
-* [Chris Smith](christopherrexsmith.com)
+* [Chris Smith](https://www.christopherrexsmith.com)
 * Nixulus (Lead)
 
 ### Operations (in alphabetical order)
@@ -177,6 +177,7 @@ Thanks goes to all these wonderful people :heart:
 
 * 4tenmu
 * Ben Thomson
+* Dan Lopes
 * Fae (Lead composer)
 * Frog
 
