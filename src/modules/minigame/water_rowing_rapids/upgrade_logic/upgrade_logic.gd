@@ -16,6 +16,9 @@ enum UpgradeType {
 	VOID_SPEED,
 	## Increases size of spirit magnetism area bt X%
 	SPIRIT_MAGNETISM_AREA,
+	## Increases the likelyhood of getting better spirits*[br]
+	## (*It also makes it possible in the first place. It's weird.)
+	SPIRIT_VALUE
 }
 
 const BASE_PREFIX: String = "base_"
@@ -76,3 +79,5 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 			increase_from_base(
 				game.player.spirit_magnetism_area_collider.shape, &"radius", effect_modifier
 			)
+		UpgradeType.SPIRIT_VALUE:
+			game.spirit_value = effect_modifier
