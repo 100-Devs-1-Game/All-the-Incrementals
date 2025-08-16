@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bmbhboa0omojg"]
+[gd_scene load_steps=37 format=3 uid="uid://bmbhboa0omojg"]
 
 [ext_resource type="Script" uid="uid://d3gde2qbcgqdg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.gd" id="1_kwj77"]
 [ext_resource type="Texture2D" uid="uid://da2s7sosyhlkq" path="res://assets/minigames/fire_fighters/character/down_idle/000.png" id="2_2uugn"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cgp84wax71ycf" path="res://assets/minigames/fire_fighters/character/up/001.png" id="26_gg8sg"]
 [ext_resource type="Texture2D" uid="uid://bdygy4f127v1e" path="res://assets/minigames/fire_fighters/character/up/002.png" id="27_qf6rl"]
 [ext_resource type="AudioStream" uid="uid://bym27517msrru" path="res://assets/minigames/fire_fighters/sfx/sfx_metal_impact_04.ogg" id="32_dqt8g"]
+[ext_resource type="AudioStream" uid="uid://ceco4cmctyfcp" path="res://assets/minigames/fire_fighters/sfx/burning_vegetation.ogg" id="33_bouhf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
 radius = 20.0
@@ -210,6 +211,11 @@ stream = ExtResource("9_ndivj")
 [node name="AudioStreamPlayer Boulder" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("32_dqt8g")
 volume_db = -5.0
+
+[node name="AudioStreamPlayer Ambience" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("33_bouhf")
+volume_db = -40.0
+autoplay = true
 
 [node name="Oil Dropper" type="Node" parent="."]
 script = ExtResource("2_a054y")
