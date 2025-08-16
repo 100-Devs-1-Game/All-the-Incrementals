@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cccmrn0cfcn0s"]
+[gd_scene load_steps=19 format=3 uid="uid://cccmrn0cfcn0s"]
 
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
@@ -31,6 +31,12 @@ shader_parameter/flow_strength = 0.25
 
 [sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_a50qn"]
 
+[sub_resource type="Gradient" id="Gradient_l3r46"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0gm1p"]
+gradient = SubResource("Gradient_l3r46")
+width = 30
+
 [sub_resource type="Environment" id="Environment_a50qn"]
 background_mode = 3
 glow_enabled = true
@@ -60,6 +66,14 @@ polygon = PackedVector2Array(-2815, 27, -6333, 7, -6340, 2045, -2741, 2052)
 [node name="RiverCollider" type="CollisionShape2D" parent="River/StaticBody2D"]
 unique_name_in_owner = true
 shape = SubResource("ConcavePolygonShape2D_a50qn")
+
+[node name="Bank" type="Line2D" parent="River"]
+texture_repeat = 2
+points = PackedVector2Array(-6318, 11, -4406, -351, -2805, 22, -2737, 2042, -3503, 2266, -4961, 2412, -6341, 2016, -6613, 948)
+closed = true
+width = 20.0
+texture = SubResource("GradientTexture1D_0gm1p")
+texture_mode = 1
 
 [node name="RowingPlayer" parent="." instance=ExtResource("5_f4xkx")]
 position = Vector2(-4570, 1007)

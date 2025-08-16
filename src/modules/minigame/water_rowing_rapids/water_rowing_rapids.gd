@@ -10,6 +10,7 @@ const SPIRIT: PackedScene = preload("uid://bam250ejn756g")
 
 func _initialize():
 	var river_polygon: PackedVector2Array = $River.curve.get_baked_points()
+	$River/Bank.points = river_polygon
 	var water: Polygon2D = %Wadder
 	water.polygon = river_polygon
 	%RiverCollider.shape.segments = polyline_to_segments(river_polygon)
