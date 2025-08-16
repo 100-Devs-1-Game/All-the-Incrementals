@@ -23,25 +23,26 @@ func _ready():
 
 
 func spawn_notes():
-	for note in chart.notes:
-		var absolute_beat = note.bar * conductor.notes_in_bar + note.beat + offset
-		var judgment_x = get_node(judgment_line).global_position.x
+	for lane in chart.lanes.keys():
+		for note in chart.lanes[lane]:
+			var absolute_beat = note.bar * conductor.notes_in_bar + note.beat + offset
+			var judgment_x = get_node(judgment_line).global_position.x
 
-		var spawn_x = absolute_beat * scroll_speed * judgment_x / conductor.notes_in_bar
+			var spawn_x = absolute_beat * scroll_speed * judgment_x / conductor.notes_in_bar
 
-		# TODO: Remove hardcoded lanes positions
-		if note.type & NOTE_TYPE.UP:
-			spawn_note(spawn_x, 0, 30, note.copy({"type": NOTE_TYPE.UP}))
-		if note.type & NOTE_TYPE.LEFT:
-			spawn_note(spawn_x, -PI / 2, 77, note.copy({"type": NOTE_TYPE.LEFT}))
-		if note.type & NOTE_TYPE.RIGHT:
-			spawn_note(spawn_x, PI / 2, 125, note.copy({"type": NOTE_TYPE.RIGHT}))
-		if note.type & NOTE_TYPE.DOWN:
-			spawn_note(spawn_x, PI, 175, note.copy({"type": NOTE_TYPE.DOWN}))
-		if note.type & NOTE_TYPE.SPECIAL1:
-			spawn_note(spawn_x, PI / 4, 220, note.copy({"type": NOTE_TYPE.SPECIAL1}))
-		if note.type & NOTE_TYPE.SPECIAL2:
-			spawn_note(spawn_x, -PI / 4, 270, note.copy({"type": NOTE_TYPE.DOWN}))
+			# TODO: Remove hardcoded lanes positions
+			if note.type & NOTE_TYPE.UP:
+				spawn_note(spawn_x, 0, 30, note.copy({"type": NOTE_TYPE.UP}))
+			if note.type & NOTE_TYPE.LEFT:
+				spawn_note(spawn_x, -PI / 2, 77, note.copy({"type": NOTE_TYPE.LEFT}))
+			if note.type & NOTE_TYPE.RIGHT:
+				spawn_note(spawn_x, PI / 2, 125, note.copy({"type": NOTE_TYPE.RIGHT}))
+			if note.type & NOTE_TYPE.DOWN:
+				spawn_note(spawn_x, PI, 175, note.copy({"type": NOTE_TYPE.DOWN}))
+			if note.type & NOTE_TYPE.SPECIAL1:
+				spawn_note(spawn_x, PI / 4, 220, note.copy({"type": NOTE_TYPE.SPECIAL1}))
+			if note.type & NOTE_TYPE.SPECIAL2:
+				spawn_note(spawn_x, -PI / 4, 270, note.copy({"type": NOTE_TYPE.DOWN}))
 
 
 # TODO: Use different arrow sprites instead of rotating

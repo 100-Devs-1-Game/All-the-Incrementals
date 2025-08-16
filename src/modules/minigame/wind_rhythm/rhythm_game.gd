@@ -7,7 +7,7 @@ const JUDGMENT_PATH = "res://modules/minigame/wind_rhythm/chart/judgments.gd"
 const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.gd").NoteType
 const JUDGMENT = preload(JUDGMENT_PATH).Judgment
 
-@export var lanes: Dictionary[int, Array] = {
+@export var lanes: Dictionary[NOTE_TYPE, Array] = {
 	NOTE_TYPE.UP: [],
 	NOTE_TYPE.LEFT: [],
 	NOTE_TYPE.RIGHT: [],

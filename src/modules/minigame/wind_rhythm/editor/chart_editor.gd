@@ -21,6 +21,7 @@ var selected_beat = 0
 var selected_relative_beat = 0
 var selected_lane = 0
 var lane_height
+var is_playing = false
 
 @onready var current_beat = $CurrentBeat
 @onready var default_font = ThemeDB.fallback_font
@@ -31,6 +32,7 @@ func _ready():
 	beats_per_bar = chart.notes_in_bar
 	bpm = chart.bpm
 	lane_height = size.y / lane_count
+	grab_focus()
 
 
 func _process(_delta):
@@ -47,6 +49,8 @@ func _process(_delta):
 	current_beat.text = (
 		"%s | %s / %s" % [selected_lane, int(selected_bar), selected_relative_beat]
 	)
+	if is_playing:
+		queue_redraw()
 
 
 func add_note():
@@ -121,11 +125,9 @@ func _gui_input(event):
 			if event.pressed:
 				remove_note()
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			zoom = clamp(zoom + 1, 10, 1000)
-			queue_redraw()
+			zoom_at_mouse(zoom * 1.1, event.position)
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			zoom = clamp(zoom - 1, 10, 100)
-			queue_redraw()
+			zoom_at_mouse(zoom / 1.1, event.position)
 		if event.button_index == MOUSE_BUTTON_MIDDLE:
 			if event.pressed:
 				is_dragging = true
@@ -138,11 +140,24 @@ func _gui_input(event):
 		pan_x = drag_start_pan + delta_x
 		queue_redraw()
 	if event is InputEventKey:
-		if event.is_action_pressed("primary_action"):
+		if event.is_action_pressed("secondary_action"):
 			triplets = !triplets
 			queue_redraw()
+		if event.is_action_pressed("primary_action"):
+			is_playing = !is_playing
+			if is_playing:
+				play_preview()
+			else:
+				%AudioStreamPlayer.stop()
 	if event is InputEventMouse:
 		queue_redraw()
+
+
+func play_preview():
+	var stream: AudioStreamPlayer = %AudioStreamPlayer
+	stream.stream = chart.audio
+	stream.play()
+	stream.seek(selected_beat * 60.0 / chart.bpm)
 
 
 func _draw():
@@ -150,7 +165,7 @@ func _draw():
 	for i in range(lane_count):
 		draw_line(Vector2(0, i * lane_height), Vector2(size.x, i * lane_height), Color.GRAY)
 
-	for i in range(chart.audio.get_length() * 60.0 / bpm * beats_per_bar):
+	for i in range(chart.audio.get_length() / 60 * bpm):
 		var division = 3 if triplets else 1
 		for j in range(0, beats_per_bar * division):
 			draw_line(
@@ -199,8 +214,30 @@ func _draw():
 		Color.from_hsv(120, 1, 1, 0.5)
 	)
 
+	var preview = %Waveform
+	preview.size.y = lane_height - 25
+	preview.size.x = chart.audio.get_length() / 60 * bpm * zoom
+	preview.position.x = pan_x
+	preview.position.y = size.y - preview.size.y
 
-func _on_load_chart_pressed():
-	var lane_height = size.y / lane_count
-	for note: NoteData in chart.notes:
-		draw_circle(Vector2(size.y / beats_per_bar * note.bar, lane_height * 2), 10, Color.AQUA)
+	if is_playing:
+		var song_position = (
+			%AudioStreamPlayer.get_playback_position()
+			+ AudioServer.get_time_since_last_mix()
+			- AudioServer.get_output_latency()
+		)
+		var play_position = (song_position / 60 * bpm) * zoom + pan_x
+		draw_line(Vector2(play_position, 0), Vector2(play_position, size.y), Color.RED)
+
+
+func zoom_at_mouse(new_zoom: float, mouse_pos: Vector2):
+	var old_zoom = zoom
+	zoom = clamp(new_zoom, 20.0, 500.0)
+	var previous_pos = (mouse_pos.x - pan_x) / old_zoom
+	pan_x = mouse_pos.x - previous_pos * zoom
+	queue_redraw()
+
+
+func _on_save_chart_pressed():
+	chart.calculate_note_times_in_lanes()
+	var error: Error = ResourceSaver.save(chart)
