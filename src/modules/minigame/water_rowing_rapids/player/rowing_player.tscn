@@ -1,16 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://mhrfxqqthuy7"]
+[gd_scene load_steps=16 format=3 uid="uid://mhrfxqqthuy7"]
 
 [ext_resource type="Script" uid="uid://dcd2ff4bobsch" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.gd" id="1_41ocn"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_65ad0"]
 [ext_resource type="Texture2D" uid="uid://ctqy1h05eesep" path="res://assets/minigames/water_rowing_rapids/boat/boat_top.webp" id="2_vomqu"]
 [ext_resource type="Texture2D" uid="uid://buvujc0ivfwqp" path="res://assets/minigames/water_rowing_rapids/boat/boat_water.webp" id="3_1dr7n"]
 [ext_resource type="PackedScene" uid="uid://c83vkptbsgc61" path="res://modules/minigame/water_rowing_rapids/player/ui/rowing_ui.tscn" id="3_8qkfb"]
+[ext_resource type="Script" uid="uid://cbkklsmq1akfo" path="res://modules/minigame/water_rowing_rapids/player/intensity_scaler.gd" id="3_s50fb"]
 [ext_resource type="Texture2D" uid="uid://ccmaw0qrikgit" path="res://assets/minigames/water_rowing_rapids/boat/boost_foam.webp" id="4_ivkry"]
 [ext_resource type="Script" uid="uid://binflulp46bk3" path="res://modules/minigame/water_rowing_rapids/player/sprit_collection_area.gd" id="4_j5ul3"]
 [ext_resource type="Script" uid="uid://5pqtelgggjsh" path="res://modules/minigame/water_rowing_rapids/player/spirit_magnetism_area.gd" id="4_qdgbt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8qkfb"]
 bounce = 0.5
+
+[sub_resource type="Curve" id="Curve_tbkrn"]
+_data = [Vector2(0.130435, 0), 0.0, 1.95371, 0, 0, Vector2(0.782609, 0.898876), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_vlg0a"]
+_data = [Vector2(0, 0.278622), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_s50fb"]
+_data = [Vector2(0.237885, 0), 2.3039, 2.7206, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qkfb"]
 radius = 200.0
@@ -31,6 +44,7 @@ max_contacts_reported = 1
 linear_damp = 1.0
 angular_damp = 1.0
 script = ExtResource("1_41ocn")
+ripple_intensity_curve = SubResource("Curve_tbkrn")
 boost_timer = NodePath("BoostTimer")
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]
@@ -40,17 +54,30 @@ polygon = PackedVector2Array(11, -65, 109, -45, 146, -29, 160, -15, 164, 0, 160,
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("2_vomqu")
 
-[node name="Ripples" type="Sprite2D" parent="BoatSprite"]
-z_index = -1
-position = Vector2(130, 0)
-texture = ExtResource("3_1dr7n")
-offset = Vector2(-50, 0)
+[node name="RippleIntensityScaler" type="Node2D" parent="BoatSprite"]
+unique_name_in_owner = true
+position = Vector2(126.923, 0)
+script = ExtResource("3_s50fb")
+scale_ratio = Vector2(1, 0.7)
+scale_curve = SubResource("Curve_vlg0a")
+alpha_curve = SubResource("Curve_s50fb")
 
-[node name="BoostFoam" type="Sprite2D" parent="BoatSprite"]
-position = Vector2(129.923, 0)
+[node name="BoostFoam" type="Sprite2D" parent="BoatSprite/RippleIntensityScaler"]
+visible = false
+position = Vector2(3.07692, 0)
 texture = ExtResource("4_ivkry")
 offset = Vector2(-20, 0)
 hframes = 3
+
+[node name="Ripples" type="Sprite2D" parent="BoatSprite/RippleIntensityScaler"]
+z_index = -1
+position = Vector2(3.07692, 0)
+texture = ExtResource("3_1dr7n")
+offset = Vector2(-50, 0)
+
+[node name="FoamScaler" type="Node2D" parent="BoatSprite"]
+position = Vector2(130, 0)
+script = ExtResource("3_s50fb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
