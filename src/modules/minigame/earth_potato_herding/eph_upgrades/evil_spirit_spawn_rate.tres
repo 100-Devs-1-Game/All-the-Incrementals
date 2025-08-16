@@ -37,11 +37,11 @@ slots = Array[ExtResource("2_yrjuc")]([SubResource("Resource_qhd6w")])
 [sub_resource type="Resource" id="Resource_h52on"]
 script = ExtResource("2_yrjuc")
 essence = ExtResource("3_0wr5y")
-amount = 100
+amount = 200
 
 [sub_resource type="Resource" id="Resource_on8su"]
 script = ExtResource("1_e37r2")
-earth = 100
+earth = 200
 fire = 0
 water = 0
 wind = 0
@@ -50,11 +50,11 @@ slots = Array[ExtResource("2_yrjuc")]([SubResource("Resource_h52on")])
 [sub_resource type="Resource" id="Resource_pjnr6"]
 script = ExtResource("2_yrjuc")
 essence = ExtResource("3_0wr5y")
-amount = 100
+amount = 400
 
 [sub_resource type="Resource" id="Resource_qge6r"]
 script = ExtResource("1_e37r2")
-earth = 100
+earth = 400
 fire = 0
 water = 0
 wind = 0
@@ -63,11 +63,11 @@ slots = Array[ExtResource("2_yrjuc")]([SubResource("Resource_pjnr6")])
 [sub_resource type="Resource" id="Resource_11d5x"]
 script = ExtResource("2_yrjuc")
 essence = ExtResource("3_0wr5y")
-amount = 100
+amount = 800
 
 [sub_resource type="Resource" id="Resource_nra5y"]
 script = ExtResource("1_e37r2")
-earth = 100
+earth = 800
 fire = 0
 water = 0
 wind = 0
@@ -76,11 +76,11 @@ slots = Array[ExtResource("2_yrjuc")]([SubResource("Resource_11d5x")])
 [sub_resource type="Resource" id="Resource_gw2o2"]
 script = ExtResource("2_yrjuc")
 essence = ExtResource("3_0wr5y")
-amount = 100
+amount = 1500
 
 [sub_resource type="Resource" id="Resource_i8dm2"]
 script = ExtResource("1_e37r2")
-earth = 100
+earth = 1500
 fire = 0
 water = 0
 wind = 0
@@ -100,14 +100,14 @@ flavor = "The spirits are calmer"
 icon = ExtResource("4_0wr5y")
 position = Vector2(384, 384)
 cost_arr = Array[ExtResource("1_e37r2")]([SubResource("Resource_igtmb"), SubResource("Resource_on8su"), SubResource("Resource_qge6r"), SubResource("Resource_nra5y"), SubResource("Resource_i8dm2")])
-effect_modifier_arr = Array[float]([10.0, 20.0, 30.0, 40.0, 50.0])
+effect_modifier_arr = Array[float]([0.3, 0.6, 0.9, 1.2, 1.5])
 max_level = 5
 base_cost = SubResource("Resource_40dq0")
-base_cost_multiplier = 1.0
+base_cost_multiplier = 2.0
 exponential_cost = true
 round_smoothness = 1.0
-base_effect_modifier = 10.0
-effect_modifier_multiplier = 10.0
+base_effect_modifier = 0.3
+effect_modifier_multiplier = 0.3
 unlocked = false
 unlock_level = 3
 unlocks = Array[Resource]([])

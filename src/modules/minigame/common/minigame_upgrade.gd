@@ -9,16 +9,12 @@ extends BaseUpgrade
 @export var unlocks_feature: String
 
 
-func get_max_level() -> int:
-	return 0 if not unlocks_feature.is_empty() else super()
-
-
 func get_description(level: int = -1) -> String:
 	var result: String
 	if unlocks_feature:
 		result = "[Unlocks %s] " % unlocks_feature
 
 	if description_modifier_format == ModifierFormat.UNLOCK:
-		return result
+		return description_prefix
 
 	return result + super(level)

@@ -39,7 +39,7 @@ func _initialize() -> void:
 	spirit_keeper_speed.emit(0.0)  # Implemented
 	destroy_dashing_spirits.emit(false)  # Implemented
 	destroy_evil_spirits.emit(false)  # Implemented
-	slower_spirits.emit(0.0)
+	slower_spirits.emit(0.0)  # Implemented
 	less_dashing_spirits.emit(0.0)
 	less_evil_spirits.emit(0.0)
 
@@ -58,7 +58,7 @@ func _on_nutrition_changed(modifier: float) -> void:
 
 
 func _on_potato_growth_speed_changed(modifier: float) -> void:
-	potato_growth_time = BASE_POTATO_GROWTH_TIME - BASE_POTATO_GROWTH_TIME * modifier / 100
+	potato_growth_time = BASE_POTATO_GROWTH_TIME - BASE_POTATO_GROWTH_TIME * modifier
 
 
 func _on_more_potatoes_changed(modifier: float) -> void:
