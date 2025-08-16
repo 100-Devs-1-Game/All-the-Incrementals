@@ -1,6 +1,9 @@
 @tool
+class_name WRRSoulSpawner
 extends Node2D
 ## Poisson Disk Sampling (Sebastian Lague-inspired, GDScript port).
+
+const SPAWNERS_GROUP := &"__soul_spawners"
 
 ## The minimum distance between points
 @export var radius: float = 100
@@ -26,12 +29,29 @@ var _grid_size: Vector2i
 var _spawn_points: Array[Vector2] = []
 
 
+static func _regenerate_all(spawners: Array[Node]) -> void:
+	var regen_one_bound = _regenerate_one.bind(spawners)
+	WorkerThreadPool.add_group_task(regen_one_bound, len(spawners))
+
+
+static func _regenerate_one(spawners: Array[Node], index: int) -> void:
+	spawners[index].regenerate_poisson()
+
+
+func _enter_tree() -> void:
+	add_to_group(SPAWNERS_GROUP)
+
+
 func _ready() -> void:
 	rng.randomize()
 	generate_poisson()
 
 
-func _draw():
+func _exit_tree() -> void:
+	remove_from_group(SPAWNERS_GROUP)
+
+
+func _draw() -> void:
 	if not Engine.is_editor_hint():
 		return
 	draw_rect(Rect2(Vector2.ZERO, sample_size), Color.WHITE, false)
@@ -39,9 +59,15 @@ func _draw():
 		draw_circle(p, 8, Color.RED)
 
 
+## Regenerates ALL spawners currently in the tree.
+func regenerate_all() -> void:
+	print("regenerating spawners...")
+	_regenerate_all(get_tree().get_nodes_in_group(SPAWNERS_GROUP))
+
+
 ## Regenerates points for this spawner, removing old ones. To not remove old points, see
 ## [member generate_poisson].
-func regenerate_poisson():
+func regenerate_poisson() -> void:
 	points.clear()
 	generate_poisson()
 
