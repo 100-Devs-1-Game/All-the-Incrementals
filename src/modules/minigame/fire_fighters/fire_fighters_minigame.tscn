@@ -93,7 +93,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.356631, 0.732725, 0.357728, 1)
+color = Color(0.350446, 0.720282, 0.350404, 1)
 
 [node name="TileMapLayer Terrain" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_o8gxd")

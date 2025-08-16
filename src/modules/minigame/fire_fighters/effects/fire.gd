@@ -47,3 +47,9 @@ func _process(delta: float) -> void:
 
 func get_animation_frame() -> int:
 	return lerp(0, animation_frames - 1, size)
+
+
+func _on_timer_timeout() -> void:
+	var frame := animated_sprite.frame
+	animated_sprite.animation = "swapped" if animated_sprite.animation == "default" else "default"
+	animated_sprite.frame = frame
