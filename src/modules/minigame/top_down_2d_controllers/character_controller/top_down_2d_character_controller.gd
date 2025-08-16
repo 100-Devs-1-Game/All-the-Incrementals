@@ -78,6 +78,8 @@ func _move(delta: float, direction: Vector2) -> void:
 		elif direction.x < 0:
 			new_animation = "left"
 			$Sprite.flip_h = true
+		elif not _previous_animation:
+			new_animation = "down_idle"
 		elif "idle" not in _previous_animation:
 			new_animation = _previous_animation + "_idle"
 		_previous_animation = new_animation
