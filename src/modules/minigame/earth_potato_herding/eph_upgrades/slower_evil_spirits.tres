@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=21 format=3 uid="uid://dk7ggpotd2nxj"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=22 format=3 uid="uid://dk7ggpotd2nxj"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_40bh4"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_0hqre"]
 [ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="2_4yea6"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_0hqre"]
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_1udwo"]
+[ext_resource type="Texture2D" uid="uid://cqftuw03i1v7u" path="res://assets/minigames/earth_potato_herding/icons/slower_spirits.png" id="4_fg71c"]
 [ext_resource type="Resource" uid="uid://lq11olhqbfn" path="res://modules/minigame/earth_potato_herding/eph_upgrades/evil_spirit_spawn_rate.tres" id="6_1udwo"]
 [ext_resource type="Resource" uid="uid://p5bv7malcdrl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/dashing_spirit_spawn_rate.tres" id="7_u10jq"]
 
@@ -98,6 +99,7 @@ logic = SubResource("Resource_1udwo")
 unlocks_feature = ""
 name = "Slower spirits"
 flavor = "Spirits have gotten lazy"
+icon = ExtResource("4_fg71c")
 position = Vector2(-832, 704)
 cost_arr = Array[ExtResource("1_40bh4")]([SubResource("Resource_r4mrm"), SubResource("Resource_ejfv7"), SubResource("Resource_kbdcn"), SubResource("Resource_qmeha"), SubResource("Resource_8vlqg")])
 effect_modifier_arr = Array[float]([10.0, 20.0, 30.0, 40.0, 50.0])

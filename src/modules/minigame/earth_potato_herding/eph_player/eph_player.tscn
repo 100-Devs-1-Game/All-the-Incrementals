@@ -1,14 +1,35 @@
-[gd_scene load_steps=17 format=3 uid="uid://bu668uskhmtud"]
+[gd_scene load_steps=38 format=3 uid="uid://bu668uskhmtud"]
 
 [ext_resource type="PackedScene" uid="uid://d08u2lgfvmeo7" path="res://modules/minigame/top_down_2d_controllers/character_controller/top_down_2d_character_controller.tscn" id="1_y7bht"]
 [ext_resource type="Script" uid="uid://d221xrf858pj6" path="res://modules/minigame/earth_potato_herding/eph_player/eph_player.gd" id="2_42r0g"]
 [ext_resource type="Script" uid="uid://crcm3yjgpr1fo" path="res://modules/minigame/top_down_2d_controllers/strategies/move_direction_strategy/td_2d_c_mds_input.gd" id="3_xdom8"]
 [ext_resource type="Script" uid="uid://dgxvmcif1cdcd" path="res://modules/minigame/earth_potato_herding/eph_player/states/walk.gd" id="4_kub1s"]
-[ext_resource type="Texture2D" uid="uid://bdv75dr4ln3hw" path="res://assets/minigames/fire_fighters/character/down_01.png" id="5_63sd7"]
 [ext_resource type="Shader" uid="uid://cbdnos7wwo6gl" path="res://modules/minigame/earth_potato_herding/eph_player/circle.gdshader" id="5_hpfm4"]
-[ext_resource type="Texture2D" uid="uid://co2rfbkel1kyc" path="res://assets/minigames/fire_fighters/character/left_01.png" id="6_ntfs8"]
-[ext_resource type="Texture2D" uid="uid://u8lymqspkvwj" path="res://assets/minigames/fire_fighters/character/right_01.png" id="7_8yr16"]
-[ext_resource type="Texture2D" uid="uid://cp2uorwwbsndv" path="res://assets/minigames/fire_fighters/character/up_01.png" id="8_xad13"]
+[ext_resource type="Texture2D" uid="uid://cep6c7tibncl0" path="res://assets/minigames/earth_potato_herding/player/down/000.png" id="5_kqa6g"]
+[ext_resource type="Texture2D" uid="uid://dbuhckvndbi1e" path="res://assets/minigames/earth_potato_herding/player/down/001.png" id="6_ce3p8"]
+[ext_resource type="Texture2D" uid="uid://cind8duds5go0" path="res://assets/minigames/earth_potato_herding/player/down/002.png" id="7_36x0f"]
+[ext_resource type="Texture2D" uid="uid://cp4p18xrfhp7g" path="res://assets/minigames/earth_potato_herding/player/down/003.png" id="8_8i45g"]
+[ext_resource type="Texture2D" uid="uid://c5w3s6qbgo35b" path="res://assets/minigames/earth_potato_herding/player/down_idle/000.png" id="9_em5mn"]
+[ext_resource type="Texture2D" uid="uid://cc4ad41ulefds" path="res://assets/minigames/earth_potato_herding/player/down_idle/001.png" id="10_70goh"]
+[ext_resource type="Texture2D" uid="uid://cmqctnapx1ah7" path="res://assets/minigames/earth_potato_herding/player/down_idle/002.png" id="11_g7xvj"]
+[ext_resource type="Texture2D" uid="uid://dgis05ksybkv1" path="res://assets/minigames/earth_potato_herding/player/down_idle/003.png" id="12_ya0nf"]
+[ext_resource type="Texture2D" uid="uid://cnn3gw6a1r11f" path="res://assets/minigames/earth_potato_herding/player/side/000.png" id="13_y8mky"]
+[ext_resource type="Texture2D" uid="uid://bp4g5slaeetah" path="res://assets/minigames/earth_potato_herding/player/side/001.png" id="14_b64fs"]
+[ext_resource type="Texture2D" uid="uid://qxe87in06j5m" path="res://assets/minigames/earth_potato_herding/player/side/002.png" id="15_ts3si"]
+[ext_resource type="Texture2D" uid="uid://duelyl0tkwlkj" path="res://assets/minigames/earth_potato_herding/player/side/003.png" id="16_7b0yw"]
+[ext_resource type="Texture2D" uid="uid://cxmpp25qjrhyq" path="res://assets/minigames/earth_potato_herding/player/side/004.png" id="17_0p243"]
+[ext_resource type="Texture2D" uid="uid://7tpfly2svenw" path="res://assets/minigames/earth_potato_herding/player/side_idle/000.png" id="18_2iluj"]
+[ext_resource type="Texture2D" uid="uid://b7e0jlu7yctag" path="res://assets/minigames/earth_potato_herding/player/side_idle/001.png" id="19_smb82"]
+[ext_resource type="Texture2D" uid="uid://0ders1g0tg1" path="res://assets/minigames/earth_potato_herding/player/side_idle/002.png" id="20_28hn0"]
+[ext_resource type="Texture2D" uid="uid://b1twavk550bf" path="res://assets/minigames/earth_potato_herding/player/side_idle/003.png" id="21_bqn7h"]
+[ext_resource type="Texture2D" uid="uid://nuh55m2ev6qr" path="res://assets/minigames/earth_potato_herding/player/up/000.png" id="22_wetjx"]
+[ext_resource type="Texture2D" uid="uid://bgb2s8mo3l54s" path="res://assets/minigames/earth_potato_herding/player/up/001.png" id="23_g8eq4"]
+[ext_resource type="Texture2D" uid="uid://danud856wckrp" path="res://assets/minigames/earth_potato_herding/player/up/002.png" id="24_xibuc"]
+[ext_resource type="Texture2D" uid="uid://p0867gbgauci" path="res://assets/minigames/earth_potato_herding/player/up/003.png" id="25_cxa6y"]
+[ext_resource type="Texture2D" uid="uid://fjya28a1kbap" path="res://assets/minigames/earth_potato_herding/player/up_idle/000.png" id="26_fupb5"]
+[ext_resource type="Texture2D" uid="uid://baomeybwrngqs" path="res://assets/minigames/earth_potato_herding/player/up_idle/001.png" id="27_d7y3c"]
+[ext_resource type="Texture2D" uid="uid://cofm6ne3sfgsd" path="res://assets/minigames/earth_potato_herding/player/up_idle/002.png" id="28_qi0pf"]
+[ext_resource type="Texture2D" uid="uid://b3qj51j8xn3yo" path="res://assets/minigames/earth_potato_herding/player/up_idle/003.png" id="29_uv8nd"]
 
 [sub_resource type="Resource" id="Resource_kub1s"]
 script = ExtResource("3_xdom8")
@@ -18,20 +39,145 @@ metadata/_custom_type_script = "uid://crcm3yjgpr1fo"
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_63sd7")
+"texture": ExtResource("5_kqa6g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ntfs8")
+"texture": ExtResource("6_ce3p8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_8yr16")
+"texture": ExtResource("7_36x0f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_xad13")
+"texture": ExtResource("8_8i45g")
 }],
 "loop": true,
-"name": &"default",
+"name": &"down",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_em5mn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_70goh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g7xvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ya0nf")
+}],
+"loop": true,
+"name": &"down_idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_y8mky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b64fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ts3si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7b0yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0p243")
+}],
+"loop": true,
+"name": &"left",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_2iluj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_smb82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_28hn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bqn7h")
+}],
+"loop": true,
+"name": &"left_idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_y8mky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b64fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ts3si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7b0yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0p243")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_2iluj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_smb82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_28hn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bqn7h")
+}],
+"loop": true,
+"name": &"right_idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_wetjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_g8eq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xibuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cxa6y")
+}],
+"loop": true,
+"name": &"up",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_fupb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_d7y3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qi0pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_uv8nd")
+}],
+"loop": true,
+"name": &"up_idle",
+"speed": 4.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kub1s"]
@@ -77,6 +223,7 @@ state_name = "walk"
 [node name="Sprite" parent="." index="2"]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_gfwjq")
+animation = &"left"
 
 [node name="YounglingHerdArea" type="Area2D" parent="." index="3"]
 visible = false
