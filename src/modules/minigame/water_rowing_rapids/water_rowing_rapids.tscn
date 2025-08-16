@@ -132,28 +132,42 @@ position = Vector2(8840, 1635)
 
 [node name="SoulSpawner" type="Node2D" parent="SoulSpawners"]
 unique_name_in_owner = true
-position = Vector2(-3410, 645)
+position = Vector2(-3307, 716)
 script = ExtResource("12_l3r46")
-radius = 500.0
-sample_size = Vector2(3000, 1500)
+radius = 600.0
+sample_size = Vector2(2800, 1300)
 
 [node name="SoulSpawner2" type="Node2D" parent="SoulSpawners"]
-position = Vector2(646, 479)
+position = Vector2(757, 585)
 script = ExtResource("12_l3r46")
-radius = 500.0
-sample_size = Vector2(2500, 1200)
+radius = 550.0
+sample_size = Vector2(2100, 1000)
 
 [node name="SoulSpawner4" type="Node2D" parent="SoulSpawners"]
-position = Vector2(3470, 724)
+position = Vector2(3470, 792)
 script = ExtResource("12_l3r46")
-radius = 500.0
-sample_size = Vector2(1000, 1200)
+radius = 400.0
+sample_size = Vector2(1000, 1000)
 
 [node name="SoulSpawner3" type="Node2D" parent="SoulSpawners"]
-position = Vector2(4821, 724)
+position = Vector2(4821, 815)
 script = ExtResource("12_l3r46")
 radius = 500.0
-sample_size = Vector2(2500, 1700)
+sample_size = Vector2(2500, 1500)
+
+[node name="SoulSpawner5" type="Node2D" parent="SoulSpawners"]
+position = Vector2(7559, 761)
+rotation = -0.399581
+script = ExtResource("12_l3r46")
+radius = 500.0
+sample_size = Vector2(2500, 1500)
+
+[node name="SoulSpawner6" type="Node2D" parent="SoulSpawners"]
+position = Vector2(10183, -308)
+rotation = -0.231689
+script = ExtResource("12_l3r46")
+radius = 500.0
+sample_size = Vector2(2500, 1500)
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_i806a")]
 
