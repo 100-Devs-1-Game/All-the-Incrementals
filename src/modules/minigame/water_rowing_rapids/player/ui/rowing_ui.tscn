@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c83vkptbsgc61"]
+[gd_scene load_steps=9 format=3 uid="uid://c83vkptbsgc61"]
 
 [ext_resource type="Script" uid="uid://cscelbquidnbf" path="res://modules/minigame/water_rowing_rapids/player/ui/rowing_ui.gd" id="1_f7fqh"]
+[ext_resource type="Texture2D" uid="uid://cyeea6ttk73y5" path="res://assets/minigames/water_rowing_rapids/ui/bar.webp" id="2_tlka6"]
+[ext_resource type="Texture2D" uid="uid://dm6ytvwas1y6h" path="res://assets/minigames/water_rowing_rapids/ui/oar.webp" id="3_p77fx"]
+[ext_resource type="Texture2D" uid="uid://bos1gdagen84y" path="res://assets/minigames/water_rowing_rapids/ui/boat_icon.webp" id="4_ye34a"]
 
 [sub_resource type="Gradient" id="Gradient_f7fqh"]
 offsets = PackedFloat32Array(0)
@@ -26,7 +29,7 @@ grow_vertical = 2
 script = ExtResource("1_f7fqh")
 stability_bar = NodePath("StabilityBar")
 
-[node name="Panel" type="ColorRect" parent="."]
+[node name="Panel" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -36,10 +39,12 @@ anchor_bottom = 1.0
 offset_left = -324.0
 offset_top = -120.0
 offset_right = 324.0
-offset_bottom = -80.0
+offset_bottom = -61.8674
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0, 0, 0, 0.490196)
+texture = ExtResource("2_tlka6")
+expand_mode = 5
+stretch_mode = 4
 
 [node name="GoodZone" type="ColorRect" parent="Panel"]
 unique_name_in_owner = true
@@ -49,23 +54,41 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -29.0
+offset_top = 4.0
 offset_right = 29.0
+offset_bottom = -4.13265
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.14902, 1, 0.341176, 1)
 
-[node name="Point" type="ColorRect" parent="Panel"]
+[node name="Point" type="TextureRect" parent="Panel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -10.0
-offset_right = 10.0
+offset_left = -12.0
+offset_top = 3.0
+offset_right = 12.0
+offset_bottom = -3.13265
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0, 0.392157, 1)
+texture = ExtResource("3_p77fx")
+expand_mode = 3
+metadata/_edit_group_ = true
+
+[node name="SizeIndicator" type="ColorRect" parent="Panel/Point"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.364706)
 
 [node name="StabilityBar" type="TextureProgressBar" parent="."]
 layout_mode = 1
@@ -84,3 +107,12 @@ value = 100.0
 nine_patch_stretch = true
 texture_under = SubResource("GradientTexture2D_u0vh0")
 texture_progress = SubResource("GradientTexture2D_uw4na")
+
+[node name="BoatIcon" type="TextureRect" parent="StabilityBar"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -20.0
+offset_right = 30.301
+offset_bottom = 20.0
+texture = ExtResource("4_ye34a")
+expand_mode = 3
