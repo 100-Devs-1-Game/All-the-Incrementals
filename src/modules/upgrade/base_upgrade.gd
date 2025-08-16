@@ -150,9 +150,25 @@ func get_max_level() -> int:
 	return cost_arr.size() - 1
 
 
-func get_description() -> String:
-	# TODO
-	return ""
+func get_description(level: int = -1) -> String:
+	# assumes it should return the description for the next level when
+	# the default argument was used
+	if level == -1:
+		level = get_level() + 1
+	if level > get_max_level():
+		return ""
+
+	var effect: float = get_effect_modifier(level)
+	var val: String
+	match description_modifier_format:
+		ModifierFormat.PERCENTAGE:
+			val = "%d%%" % int(effect * 100)
+		ModifierFormat.ADDITIVE:
+			val = ("+" if effect > 0 else "") + str(effect)
+		ModifierFormat.MULTIPLIER:
+			val = str("x", effect)
+
+	return "%s %s %s" % [description_prefix, val, description_suffix]
 
 
 # 0 = level 1, ...
