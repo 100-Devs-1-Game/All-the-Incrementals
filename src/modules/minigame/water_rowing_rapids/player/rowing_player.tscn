@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://mhrfxqqthuy7"]
+[gd_scene load_steps=12 format=3 uid="uid://mhrfxqqthuy7"]
 
 [ext_resource type="Script" uid="uid://dcd2ff4bobsch" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.gd" id="1_41ocn"]
 [ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_65ad0"]
 [ext_resource type="Texture2D" uid="uid://ctqy1h05eesep" path="res://assets/minigames/water_rowing_rapids/boat/boat_top.webp" id="2_vomqu"]
 [ext_resource type="Texture2D" uid="uid://buvujc0ivfwqp" path="res://assets/minigames/water_rowing_rapids/boat/boat_water.webp" id="3_1dr7n"]
 [ext_resource type="PackedScene" uid="uid://c83vkptbsgc61" path="res://modules/minigame/water_rowing_rapids/player/ui/rowing_ui.tscn" id="3_8qkfb"]
+[ext_resource type="Texture2D" uid="uid://ccmaw0qrikgit" path="res://assets/minigames/water_rowing_rapids/boat/boost_foam.webp" id="4_ivkry"]
 [ext_resource type="Script" uid="uid://binflulp46bk3" path="res://modules/minigame/water_rowing_rapids/player/sprit_collection_area.gd" id="4_j5ul3"]
 [ext_resource type="Script" uid="uid://5pqtelgggjsh" path="res://modules/minigame/water_rowing_rapids/player/spirit_magnetism_area.gd" id="4_qdgbt"]
 
@@ -41,8 +42,15 @@ texture = ExtResource("2_vomqu")
 
 [node name="BoatWater" type="Sprite2D" parent="BoatSprite"]
 z_index = -1
-position = Vector2(79.2308, -5.96046e-08)
+position = Vector2(130, 0)
 texture = ExtResource("3_1dr7n")
+offset = Vector2(-50, 0)
+
+[node name="BoostFoam" type="Sprite2D" parent="BoatSprite"]
+position = Vector2(129.923, 0)
+texture = ExtResource("4_ivkry")
+offset = Vector2(-20, 0)
+hframes = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
