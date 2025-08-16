@@ -1,8 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://dntdim0jjlhy1"]
+[gd_scene load_steps=15 format=3 uid="uid://dntdim0jjlhy1"]
 
 [ext_resource type="Script" uid="uid://drfyahgpyskxs" path="res://modules/upgrade/ui/upgrade_tree.gd" id="1_bc6uk"]
-[ext_resource type="Texture2D" uid="uid://cd5q04o2ysdg5" path="res://assets/ui/upgrade_tree/fire_on.webp" id="4_4prp1"]
-[ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/lineart1.webp" id="5_yvn7f"]
 [ext_resource type="Texture2D" uid="uid://dt2e36f2dyeda" path="res://assets/icons/glowing_wind_skn.png" id="6_ele8a"]
 [ext_resource type="Script" uid="uid://dwlrgoard8eqa" path="res://modules/upgrade/ui/fill_button.gd" id="6_yvn7f"]
 [ext_resource type="PackedScene" uid="uid://yehkf7i1dt50" path="res://component/shared/current_essence.tscn" id="7_vxjcf"]
@@ -220,29 +218,6 @@ text = "[font_size=28]bla bla bla bla bla bla bla bla bla bal bla bla bla bla bl
 "
 scroll_active = false
 
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_top = -50
-theme_override_constants/margin_bottom = -35
-
-[node name="UpgradeBackground" type="TextureRect" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/MarginContainer2"]
-custom_minimum_size = Vector2(300, 300)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-texture = ExtResource("4_4prp1")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="LineArt" type="TextureRect" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/MarginContainer2/UpgradeBackground"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_yvn7f")
-
 [node name="MarginButton" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -266,7 +241,7 @@ offset_bottom = 50.0
 size_flags_vertical = 8
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_4prp1")
-text = "BUY UPGRADE"
+text = "HOLD TO BUY"
 
 [node name="NormalColor" type="ColorRect" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
 layout_mode = 2

@@ -9,7 +9,7 @@ const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.g
 @export var bpm: int
 @export_tool_button("Sort Bars", "Sort") var sort = sort_notes
 @export_tool_button("Calculate note times", "Time") var calculate = calculate_note_times
-@export_tool_button("Rebuild notes array", "Reload") var rebuild = _rebuild_notes_array
+@export_tool_button("Rebuild notes array", "Reload") var rebuild = _rebuild_notes_array_from_lanes
 @export var notes: Array[NoteData]
 @export var notes_in_bar: int = 4
 @export var lanes: Dictionary[NOTE_TYPE, Array] = {
@@ -52,6 +52,34 @@ func _rebuild_notes_array():
 		if note.type & NOTE_TYPE.SPECIAL2:
 			lanes[NOTE_TYPE.SPECIAL2].append(note.copy({"type": NOTE_TYPE.SPECIAL2}))
 
+	calculate_note_times_in_lanes()
+
+	for lane in lanes.keys():
+		lanes[lane].sort_custom(
+			func(a: NoteData, b: NoteData): return a.cached_absolute_beat < b.cached_absolute_beat
+		)
+
+
+func _rebuild_notes_array_from_lanes():
+	notes.clear()
+
+	for lane in lanes.keys():
+		for note: NoteData in lanes[lane]:
+			if note.type & NOTE_TYPE.UP:
+				notes.append(note.copy({"type": NOTE_TYPE.UP}))
+			if note.type & NOTE_TYPE.LEFT:
+				notes.append(note.copy({"type": NOTE_TYPE.LEFT}))
+			if note.type & NOTE_TYPE.RIGHT:
+				notes.append(note.copy({"type": NOTE_TYPE.RIGHT}))
+			if note.type & NOTE_TYPE.DOWN:
+				notes.append(note.copy({"type": NOTE_TYPE.DOWN}))
+			if note.type & NOTE_TYPE.SPECIAL1:
+				notes.append(note.copy({"type": NOTE_TYPE.SPECIAL1}))
+			if note.type & NOTE_TYPE.SPECIAL2:
+				notes.append(note.copy({"type": NOTE_TYPE.SPECIAL2}))
+
+	calculate_note_times_in_lanes()
+
 	for lane in lanes.keys():
 		lanes[lane].sort_custom(
 			func(a: NoteData, b: NoteData): return a.cached_absolute_beat < b.cached_absolute_beat
@@ -66,3 +94,12 @@ func calculate_note_times():
 	if notes != null:
 		for note: NoteData in notes:
 			note.cached_absolute_beat = (note.bar + note.beat / notes_in_bar) * (60.0 / audio.bpm)
+
+
+func calculate_note_times_in_lanes():
+	if lanes != null:
+		for lane in lanes.keys():
+			for note: NoteData in lanes[lane]:
+				note.cached_absolute_beat = (
+					(note.bar + note.beat / notes_in_bar) * (60.0 / audio.bpm)
+				)

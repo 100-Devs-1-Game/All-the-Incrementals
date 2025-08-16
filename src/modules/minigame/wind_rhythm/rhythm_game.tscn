@@ -54,7 +54,7 @@ scroll_speed = 1.0
 conductor_path = NodePath("../Conductor")
 judgment_line = NodePath("../judgment_line")
 rhythm_game = NodePath("..")
-offset = 1.0
+offset = 0.5
 
 [node name="ComboLabel" type="Label" parent="."]
 offset_left = 290.0
