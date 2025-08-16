@@ -122,6 +122,24 @@ script = ExtResource("12_l3r46")
 radius = 500.0
 sample_size = Vector2(3000, 1500)
 
+[node name="SoulSpawner2" type="Node2D" parent="SoulSpawners"]
+position = Vector2(646, 479)
+script = ExtResource("12_l3r46")
+radius = 500.0
+sample_size = Vector2(2500, 1200)
+
+[node name="SoulSpawner4" type="Node2D" parent="SoulSpawners"]
+position = Vector2(3470, 724)
+script = ExtResource("12_l3r46")
+radius = 500.0
+sample_size = Vector2(1000, 1200)
+
+[node name="SoulSpawner3" type="Node2D" parent="SoulSpawners"]
+position = Vector2(4821, 724)
+script = ExtResource("12_l3r46")
+radius = 500.0
+sample_size = Vector2(2500, 1700)
+
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_i806a")]
 
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
