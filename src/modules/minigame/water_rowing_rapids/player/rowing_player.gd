@@ -31,6 +31,7 @@ var stability_regen: float = 0.0
 @onready var spirit_magnetism_area: Area2D = $SpiritMagnetismArea
 @onready var spirit_magnetism_area_collider: CollisionShape2D = $SpiritMagnetismArea/Collider
 @onready var ripple_intensity_scaler: Node2D = %RippleIntensityScaler
+@onready var boost_foam_intensity_scaler: Node2D = %FoamIntensityScaler
 
 
 func _init() -> void:
@@ -61,6 +62,10 @@ func _physics_process(delta: float) -> void:
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var forward_speed := transform.x.dot(state.linear_velocity)
 	ripple_intensity_scaler.intensity = ripple_intensity_curve.sample(forward_speed / speed)
+	boost_foam_intensity_scaler.intensity = ripple_intensity_curve.sample(
+		forward_speed / speed - 1.0
+	)
+
 	var broadside_delta := 1 - state.step * broadside_resistance
 	var angular_intent: float = Input.get_axis(&"left", &"right")
 	var rotation_control: float = (
