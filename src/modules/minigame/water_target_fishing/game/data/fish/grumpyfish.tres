@@ -7,8 +7,8 @@
 
 [sub_resource type="Resource" id="Resource_k71g5"]
 script = ExtResource("1_6gpsr")
-speedboost = 300.0
-weight = 30.0
+speedboost = 1500.0
+weight = 150.0
 score = 10.0
 metadata/_custom_type_script = "uid://hrgdcmm0gruk"
 
