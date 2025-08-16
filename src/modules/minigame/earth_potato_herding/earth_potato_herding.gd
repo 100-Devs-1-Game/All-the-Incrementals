@@ -39,7 +39,7 @@ func _initialize() -> void:
 	spirit_keeper_speed.emit(0.0)  # Implemented
 	destroy_dashing_spirits.emit(false)  # Implemented
 	destroy_evil_spirits.emit(false)  # Implemented
-	slower_spirits.emit(0.0)
+	slower_spirits.emit(0.0)  # Implemented
 	less_dashing_spirits.emit(0.0)
 	less_evil_spirits.emit(0.0)
 
