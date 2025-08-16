@@ -14,8 +14,11 @@ bounce = 0.5
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qkfb"]
 radius = 200.0
 height = 656.0
+height = 656.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5ul3"]
+radius = 65.0
+height = 316.0
 radius = 65.0
 height = 316.0
 
@@ -46,6 +49,7 @@ texture = ExtResource("3_1dr7n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_65ad0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -71,9 +75,16 @@ script = ExtResource("4_j5ul3")
 
 [node name="Collider" type="CollisionShape2D" parent="SpritCollectionArea"]
 position = Vector2(-7, 0)
+position = Vector2(-7, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_j5ul3")
 debug_color = Color(0, 0.537255, 0, 0.247059)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RowingUI" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_8qkfb")]
+player = NodePath("../..")
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
