@@ -145,6 +145,8 @@ func _fire_burn_tick(
 	if has_oil(tile):
 		fire.size = 10.0
 		_burn_vegetation(tile)
+		if fire.total_burn > 1.5:
+			_remove_oil(tile)
 
 	if feature and fire.total_burn > feature.burn_duration and feature.turns_into != null:
 		replace_feature(tile, feature.turns_into)
@@ -206,6 +208,10 @@ func add_oil(tile: Vector2i, counter: int = -1):
 	tile_map_oil.set_cell(tile, 0, Vector2.ZERO)
 	if counter > -1:
 		audio_container_oil.play(counter)
+
+
+func _remove_oil(tile: Vector2i):
+	tile_map_oil.erase_cell(tile)
 
 
 func _spawn_player():
