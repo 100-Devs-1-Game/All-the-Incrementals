@@ -1,54 +1,91 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwrb3svm6p8o7"]
+[gd_scene load_steps=15 format=3 uid="uid://cwrb3svm6p8o7"]
 
-[ext_resource type="Texture2D" uid="uid://dte4yb53pkgrb" path="res://assets/minigames/fire_fighters/placeholder_assets/fire_animation.png" id="1_bouqu"]
 [ext_resource type="Script" uid="uid://vjrxcjxxc86q" path="res://modules/minigame/fire_fighters/effects/fire.gd" id="1_yis8u"]
+[ext_resource type="Texture2D" uid="uid://bs1e7s0kblax1" path="res://assets/minigames/fire_fighters/placeholder_assets/fire_animation_1.png" id="2_fkd0e"]
+[ext_resource type="Texture2D" uid="uid://cvw4kjjfgvgfh" path="res://assets/minigames/fire_fighters/placeholder_assets/fire_animation_2.png" id="3_aj314"]
 [ext_resource type="AudioStream" uid="uid://ceh3vxx55k6m2" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_small_lp_01.ogg" id="3_ie6vx"]
 [ext_resource type="AudioStream" uid="uid://1ve14jrb4fql" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_big_lp_01.ogg" id="3_r231b"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yis8u"]
-atlas = ExtResource("1_bouqu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s8xn"]
+atlas = ExtResource("2_fkd0e")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bu2sk"]
-atlas = ExtResource("1_bouqu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtjo4"]
+atlas = ExtResource("2_fkd0e")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3aarp"]
-atlas = ExtResource("1_bouqu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeo38"]
+atlas = ExtResource("2_fkd0e")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e3gnf"]
-atlas = ExtResource("1_bouqu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gug5g"]
+atlas = ExtResource("2_fkd0e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpq4s"]
+atlas = ExtResource("3_aj314")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svbnu"]
+atlas = ExtResource("3_aj314")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iq2b"]
+atlas = ExtResource("3_aj314")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ujtw"]
+atlas = ExtResource("3_aj314")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_12iut"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yis8u")
+"texture": SubResource("AtlasTexture_5s8xn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bu2sk")
+"texture": SubResource("AtlasTexture_rtjo4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3aarp")
+"texture": SubResource("AtlasTexture_xeo38")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e3gnf")
+"texture": SubResource("AtlasTexture_gug5g")
 }],
 "loop": false,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpq4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svbnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iq2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ujtw")
+}],
+"loop": true,
+"name": &"swapped",
+"speed": 5.0
 }]
 
 [node name="Fire" type="Node2D"]
+z_index = 5
 script = ExtResource("1_yis8u")
 offset = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.827451, 0.482353, 0.207843, 0.52549)
+modulate = Color(1, 1, 1, 0.819608)
 sprite_frames = SubResource("SpriteFrames_12iut")
-frame = 3
+animation = &"swapped"
+frame = 1
+frame_progress = 0.112916
 
 [node name="AudioStreamPlayer2D Fire Small" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ie6vx")
@@ -66,3 +103,9 @@ max_distance = 500.0
 attenuation = 3.36358
 max_polyphony = 10
 panning_strength = 2.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
