@@ -275,7 +275,7 @@ func play_damage_effect():
 
 
 func play_audio_effect(stream: AudioStream, pos: Vector2):
-	var effect: AudioStreamPlayer2D
+	var effect: AudioStreamPlayer2D = audio_effect_scene.instantiate()
 	effect.position = pos
 	effect.init(stream)
 	effects_node.add_child(effect)
