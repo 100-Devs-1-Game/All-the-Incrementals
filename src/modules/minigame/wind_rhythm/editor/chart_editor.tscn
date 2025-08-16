@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://r8cv7m35nnyq"]
+[gd_scene load_steps=5 format=3 uid="uid://r8cv7m35nnyq"]
 
 [ext_resource type="Script" uid="uid://c704p2xgmuwnu" path="res://modules/minigame/wind_rhythm/editor/chart_editor.gd" id="1_gssk8"]
-[ext_resource type="Resource" uid="uid://ovags5pg4rqe" path="res://modules/minigame/wind_rhythm/chart/exotic_house.tres" id="2_b4rfj"]
+[ext_resource type="Resource" uid="uid://bkrgaps0ryayo" path="res://modules/minigame/wind_rhythm/chart/exotic_house.tres" id="2_b4rfj"]
+[ext_resource type="Texture2D" uid="uid://dbkp1x46morhs" path="res://assets/minigames/wind_rhythm/placeholder_assets/waveform.png" id="3_ia6sw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ia6sw"]
 
 [node name="RhythmEditor" type="Control"]
 layout_mode = 3
@@ -14,22 +17,17 @@ focus_mode = 2
 script = ExtResource("1_gssk8")
 chart = ExtResource("2_b4rfj")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 50.0
-mouse_filter = 1
-text = "Chart Editor"
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
+[node name="Waveform" type="TextureRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
+offset_top = -166.0
+offset_right = 1468.0
+grow_vertical = 0
+texture = ExtResource("3_ia6sw")
+expand_mode = 1
 
 [node name="CurrentBeat" type="Label" parent="."]
 layout_mode = 0
@@ -38,11 +36,34 @@ offset_right = 40.0
 offset_bottom = 105.0
 text = "27.0"
 
-[node name="LoadChart" type="Button" parent="."]
+[node name="SaveChart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 252.0
-offset_right = 451.0
+offset_right = 199.0
 offset_bottom = 58.0
-text = "Load Chart"
+focus_mode = 0
+text = "Save Chart"
 
-[connection signal="pressed" from="LoadChart" to="." method="_on_load_chart_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="Info" type="Label" parent="."]
+layout_mode = 0
+offset_left = 266.0
+offset_right = 474.0
+offset_bottom = 101.0
+text = "Left - Add
+Right - Delete
+Space - Play/Pause
+Secondary = Toggle triplets"
+label_settings = SubResource("LabelSettings_ia6sw")
+
+[node name="Info2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_right = 713.0
+offset_bottom = 101.0
+text = "Middle - Pan
+Scroll - Zoom"
+label_settings = SubResource("LabelSettings_ia6sw")
+
+[connection signal="pressed" from="SaveChart" to="." method="_on_save_chart_pressed"]
