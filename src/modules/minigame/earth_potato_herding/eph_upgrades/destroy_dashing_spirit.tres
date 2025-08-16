@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=15 format=3 uid="uid://qfrrjth7hk5o"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=16 format=3 uid="uid://qfrrjth7hk5o"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_1317v"]
 [ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="2_n1roj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_r24d4"]
 [ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="4_410jn"]
 [ext_resource type="Resource" uid="uid://r1ptwenkshfx" path="res://modules/minigame/earth_potato_herding/eph_upgrades/destroy_evil_spirit.tres" id="4_n1roj"]
+[ext_resource type="Texture2D" uid="uid://dgn0u0vads7il" path="res://assets/minigames/earth_potato_herding/icons/destroy_spirit.png" id="5_1c2js"]
 
 [sub_resource type="Resource" id="Resource_ng4e5"]
 script = ExtResource("2_yh5bl")
@@ -27,23 +28,23 @@ wind = 0
 slots = Array[ExtResource("2_yh5bl")]([SubResource("Resource_ng4e5"), SubResource("Resource_5tncc")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_yh5bl"]
+[sub_resource type="Resource" id="Resource_1c2js"]
 script = ExtResource("2_yh5bl")
 essence = ExtResource("3_1c2js")
 amount = 50
 
-[sub_resource type="Resource" id="Resource_1c2js"]
+[sub_resource type="Resource" id="Resource_410jn"]
 script = ExtResource("2_yh5bl")
 essence = ExtResource("4_410jn")
 amount = 10
 
-[sub_resource type="Resource" id="Resource_410jn"]
+[sub_resource type="Resource" id="Resource_rnx50"]
 script = ExtResource("1_1317v")
 earth = 50
 fire = 10
 water = 0
 wind = 0
-slots = Array[ExtResource("2_yh5bl")]([SubResource("Resource_yh5bl"), SubResource("Resource_1c2js")])
+slots = Array[ExtResource("2_yh5bl")]([SubResource("Resource_1c2js"), SubResource("Resource_410jn")])
 
 [sub_resource type="Resource" id="Resource_sw68c"]
 script = ExtResource("2_n1roj")
@@ -56,8 +57,9 @@ logic = SubResource("Resource_sw68c")
 unlocks_feature = "destroy_dashing_spirits"
 name = "Destroy dashing spirits"
 flavor = "Those dashing spirits really hate you!"
+icon = ExtResource("5_1c2js")
 position = Vector2(384, -1664)
-cost_arr = Array[ExtResource("1_1317v")]([SubResource("Resource_410jn")])
+cost_arr = Array[ExtResource("1_1317v")]([SubResource("Resource_rnx50")])
 effect_modifier_arr = Array[float]([1.0])
 max_level = 1
 base_cost = SubResource("Resource_lw7k6")
