@@ -5,6 +5,8 @@ extends Node2D
 
 const SPAWNERS_GROUP := &"__soul_spawners"
 
+static var spawners: Array[Node]
+
 ## The minimum distance between points
 @export var radius: float = 100
 ## Area to generate points within.
@@ -29,12 +31,17 @@ var _grid_size: Vector2i
 var _spawn_points: Array[Vector2] = []
 
 
-static func _regenerate_all(spawners: Array[Node]) -> int:
-	var regen_one_bound = _regenerate_one.bind(spawners)
-	return WorkerThreadPool.add_group_task(regen_one_bound, len(spawners))
+static func _regenerate_all(p_spawners: Array[Node]) -> int:
+	spawners = p_spawners  # no, binding p_spawners to _regenerate_one does not work.
+	# No errors, it just straight up does not get called.
+	print("Regenerating soul spawners...")
+	print("Spawners to regenerate: ", spawners)
+	var task_id := WorkerThreadPool.add_group_task(_regenerate_one, len(spawners), -1, true)
+	print("Started with task: ", task_id)
+	return task_id
 
 
-static func _regenerate_one(spawners: Array[Node], index: int) -> void:
+static func _regenerate_one(index: int) -> void:
 	spawners[index].regenerate_poisson()
 
 
@@ -62,10 +69,8 @@ func _draw() -> void:
 
 ## Regenerates ALL spawners currently in the tree.
 func regenerate_all() -> void:
-	print("regenerating spawners...")
-	WorkerThreadPool.wait_for_group_task_completion(
-		_regenerate_all(get_tree().get_nodes_in_group(SPAWNERS_GROUP))
-	)
+	var nodes := get_tree().get_nodes_in_group(SPAWNERS_GROUP)
+	WorkerThreadPool.wait_for_group_task_completion(_regenerate_all(nodes))
 
 
 ## Calls a Callable on EVERY point on ALL spawners. Callable must have parameters
@@ -73,6 +78,8 @@ func regenerate_all() -> void:
 ## The point in local space.
 func on_every_point(callable: Callable) -> void:
 	for spawner: WRRSoulSpawner in get_tree().get_nodes_in_group(SPAWNERS_GROUP):
+		print(spawner)
+		print(spawner.points)
 		for point in spawner.points:
 			callable.call(spawner, point)
 
@@ -133,7 +140,7 @@ func generate_poisson() -> void:
 
 		if not point_placed:
 			_spawn_points.remove_at(spawn_index)
-	queue_redraw()
+	queue_redraw.call_deferred()
 
 
 func _is_valid(candidate: Vector2) -> bool:

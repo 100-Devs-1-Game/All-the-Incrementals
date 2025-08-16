@@ -1,6 +1,8 @@
 class_name WaterRowingRapidsMinigame
 extends BaseMinigame
 
+const SPIRIT: PackedScene = preload("uid://bam250ejn756g")
+
 @onready var player: RigidBody2D = $RowingPlayer
 @onready var chase_void: Area2D = $Void
 @onready var soul_spawner: WRRSoulSpawner = %SoulSpawner
@@ -14,7 +16,16 @@ func _initialize():
 	water.texture_scale = Vector2.ONE * 537.0 / 1000.0  # don't ask
 	EventBus.request_music.emit(&"rowing_rapids")
 	chase_void.player = player
+
+
+func _start():
 	soul_spawner.regenerate_all()
+	soul_spawner.on_every_point(
+		func(spawner: WRRSoulSpawner, point: Vector2):
+			var spirit_inst := SPIRIT.instantiate()
+			add_child(spirit_inst)
+			spirit_inst.global_position = spawner.to_global(point)
+	)
 
 
 func _on_rowing_player_spirit_collected(value: int) -> void:
