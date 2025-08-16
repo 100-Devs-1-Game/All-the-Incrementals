@@ -12,6 +12,7 @@ const BURN_TICK_INTERVAL = 15
 
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
+@export var chunk_size: int = 5
 
 @export var starting_fires: int = 25
 @export var countdown_duration: float = 10.0
@@ -29,6 +30,7 @@ var fires_bonus: int
 var reduce_map_feature_thresholds: Dictionary
 
 var _damage_effect_tween: Tween
+var _fire_chunks: Dictionary
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
@@ -59,6 +61,7 @@ func _initialize():
 		if feature.spawn_noise:
 			feature.spawn_noise.seed = rng_seed
 
+	_init_chunks()
 	_spawn_player()
 
 
@@ -81,6 +84,12 @@ func _physics_process(_delta: float) -> void:
 	if Engine.get_physics_frames() % BURN_TICK_INTERVAL == 0:
 		_tick_fires()
 	_tick_water()
+
+
+func _init_chunks():
+	for x in map_rect.size.x / chunk_size + 1:
+		for y in map_rect.size.y / chunk_size + 1:
+			_fire_chunks[Vector2i(x, y)] = 0.0
 
 
 func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
@@ -139,6 +148,11 @@ func _tick_fires():
 		else:
 			_fire_burn_tick(fire, tile, feature)
 		ctr += 1
+
+	_init_chunks()
+	for tile: Vector2i in fires.keys():
+		var fire: FireFightersMinigameFire = fires[tile]
+		_set_fire_chunk(tile, clampf(fire.size, 0.0, 1.0))
 
 
 func _fire_burn_tick(
@@ -293,6 +307,11 @@ func play_audio_effect(stream: AudioStream, pos: Vector2):
 	effects_node.add_child(effect)
 
 
+func _set_fire_chunk(tile: Vector2i, val: float):
+	var coords: Vector2i = tile / chunk_size
+	_fire_chunks[coords] = max(_fire_chunks[coords], val)
+
+
 func _get_countdown_duration() -> float:
 	return countdown_duration + countdown_bonus
 
@@ -333,6 +352,27 @@ func is_tile_burning(tile: Vector2i) -> bool:
 
 func has_oil(tile: Vector2i) -> bool:
 	return tile in tile_map_oil.get_used_cells()
+
+
+func get_fire_density(tile: Vector2i) -> float:
+	var result: float = 0.0
+	for x in range(-1, 2):
+		for y in range(-1, 2):
+			var factor: float = 0.5
+			var vec := Vector2i(x, y)
+			if vec == Vector2i.ZERO:
+				factor = 1.0
+			result = max(result, _get_fire_chunk(tile + vec * chunk_size) * factor)
+
+	return result
+
+
+func _get_fire_chunk(tile: Vector2i) -> float:
+	return _fire_chunks[_get_fire_chunk_coords(tile)]
+
+
+func _get_fire_chunk_coords(tile: Vector2i) -> Vector2i:
+	return tile / chunk_size
 
 
 func get_random_tile() -> Vector2i:

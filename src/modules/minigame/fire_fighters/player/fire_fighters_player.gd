@@ -37,6 +37,7 @@ var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extin
 @onready var audio_item_pickup: AudioStreamPlayer = $"Audio/AudioStreamPlayer Item Pickup"
 @onready var audio_singe: AudioStreamPlayer = $"Audio/AudioStreamPlayer Singe"
 @onready var audio_boulder: AudioStreamPlayer = $"Audio/AudioStreamPlayer Boulder"
+@onready var audio_ambience: AudioStreamPlayer = $"Audio/AudioStreamPlayer Ambience"
 
 
 func _ready() -> void:
@@ -91,6 +92,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("secondary_action"):
 		if has_item():
 			use_item()
+
+	var fire_density: float = game.get_fire_density(get_tile())
+	audio_ambience.volume_linear = lerp(audio_ambience.volume_linear, fire_density, delta * 5)
 
 	_update_tile()
 
