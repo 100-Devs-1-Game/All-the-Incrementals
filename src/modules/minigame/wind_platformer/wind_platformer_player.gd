@@ -133,16 +133,17 @@ func jump_logic():
 			current_jump_speed = 0
 
 	elif _double_jump_ctr == 1 and (_can_double_jump or current_jump_speed > 0):
-		if (
-			Input.is_action_pressed("up")
-			and current_jump_speed < (max_jump_speed + jump_speed_bonus) * double_jump_factor
-		):
-			if is_zero_approx(current_jump_speed):
-				if animated_sprite.animation != "jumping":
-					animated_sprite.play("jumping")
+		if Input.is_action_pressed("up"):
+			if current_jump_speed < (max_jump_speed + jump_speed_bonus) * double_jump_factor:
+				if is_zero_approx(current_jump_speed):
+					if animated_sprite.animation != "jumping":
+						animated_sprite.play("jumping")
 
-			velocity.y -= jump_speed_per_frame
-			current_jump_speed += jump_speed_per_frame
+				velocity.y -= jump_speed_per_frame
+				current_jump_speed += jump_speed_per_frame
+			else:
+				_double_jump_ctr = 2
+				current_jump_speed = 0
 		else:
 			current_jump_speed = 0
 
