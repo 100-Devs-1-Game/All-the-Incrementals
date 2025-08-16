@@ -9,6 +9,7 @@ extends CharacterBody2D
 	set = set_move_direction_strategy
 
 var _state_move_direction_strategy_map: Dictionary[String, TD2DCMDSBase]
+var _previous_animation: String = "down_idle"
 
 #endregion
 
@@ -63,6 +64,24 @@ func _get_move_direction() -> Vector2:
 
 
 func _move(delta: float, direction: Vector2) -> void:
+	var new_animation: String
+	if _move_direction_strategy is TD2DCMDSInput:
+		if direction.y > 0:
+			new_animation = "up"
+			$Sprite.flip_h = false
+		elif direction.y < 0:
+			new_animation = "down"
+			$Sprite.flip_h = false
+		elif direction.x > 0:
+			new_animation = "right"
+			$Sprite.flip_h = false
+		elif direction.x < 0:
+			new_animation = "left"
+			$Sprite.flip_h = true
+		elif "idle" not in _previous_animation:
+			new_animation = _previous_animation + "_idle"
+		_previous_animation = new_animation
+		$Sprite.play(new_animation)
 	move_and_collide(delta * _base_speed * direction)
 
 #endregion
