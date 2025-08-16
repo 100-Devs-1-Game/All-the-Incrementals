@@ -29,11 +29,9 @@ static func register_base(object: Object, property: StringName) -> void:
 		property in object,
 		'Attempt to register nonexistent property &"%s" on base %s' % [property, object]
 	)
+	if object.has_meta(BASE_PREFIX + property):
+		return
 	var value: Variant = object.get(property)
-	assert(
-		not object.has_meta(BASE_PREFIX + property),
-		'Object %s has conflicting metadata item &"%s%s"' % [object, BASE_PREFIX, property]
-	)
 	object.set_meta(BASE_PREFIX + property, value)
 
 
