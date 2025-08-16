@@ -39,11 +39,11 @@ slots = Array[ExtResource("2_p7krc")]([SubResource("Resource_a5qgb")])
 [sub_resource type="Resource" id="Resource_y7o2s"]
 script = ExtResource("2_p7krc")
 essence = ExtResource("3_5josk")
-amount = 5
+amount = 10
 
 [sub_resource type="Resource" id="Resource_f74o2"]
 script = ExtResource("1_vdpnp")
-earth = 5
+earth = 10
 fire = 0
 water = 0
 wind = 0
@@ -52,11 +52,11 @@ slots = Array[ExtResource("2_p7krc")]([SubResource("Resource_y7o2s")])
 [sub_resource type="Resource" id="Resource_5jvhh"]
 script = ExtResource("2_p7krc")
 essence = ExtResource("3_5josk")
-amount = 5
+amount = 20
 
 [sub_resource type="Resource" id="Resource_rra8r"]
 script = ExtResource("1_vdpnp")
-earth = 5
+earth = 20
 fire = 0
 water = 0
 wind = 0
@@ -65,11 +65,11 @@ slots = Array[ExtResource("2_p7krc")]([SubResource("Resource_5jvhh")])
 [sub_resource type="Resource" id="Resource_tfk4a"]
 script = ExtResource("2_p7krc")
 essence = ExtResource("3_5josk")
-amount = 5
+amount = 40
 
 [sub_resource type="Resource" id="Resource_thewh"]
 script = ExtResource("1_vdpnp")
-earth = 5
+earth = 40
 fire = 0
 water = 0
 wind = 0
@@ -78,11 +78,11 @@ slots = Array[ExtResource("2_p7krc")]([SubResource("Resource_tfk4a")])
 [sub_resource type="Resource" id="Resource_k4dxy"]
 script = ExtResource("2_p7krc")
 essence = ExtResource("3_5josk")
-amount = 5
+amount = 80
 
 [sub_resource type="Resource" id="Resource_7lat7"]
 script = ExtResource("1_vdpnp")
-earth = 5
+earth = 80
 fire = 0
 water = 0
 wind = 0
@@ -102,19 +102,19 @@ flavor = "YOUR TAKING TOO LONG"
 icon = ExtResource("4_6fhqv")
 position = Vector2(-832, -576)
 cost_arr = Array[ExtResource("1_vdpnp")]([SubResource("Resource_6fhqv"), SubResource("Resource_f74o2"), SubResource("Resource_rra8r"), SubResource("Resource_thewh"), SubResource("Resource_7lat7")])
-effect_modifier_arr = Array[float]([10.0, 20.0, 30.0, 40.0, 50.0])
+effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5])
 max_level = 5
 base_cost = SubResource("Resource_p7krc")
-base_cost_multiplier = 1.0
+base_cost_multiplier = 2.0
 exponential_cost = true
 round_smoothness = 1.0
-base_effect_modifier = 10.0
-effect_modifier_multiplier = 10.0
+base_effect_modifier = 0.1
+effect_modifier_multiplier = 0.1
 unlocked = false
 unlock_level = 3
 unlocks = Array[Resource]([ExtResource("6_p7krc"), ExtResource("7_5josk")])
-description_prefix = "They grow up so fast..."
-description_suffix = ""
+description_prefix = "Potatoes grow up "
+description_suffix = " faster"
 description_modifier_format = 0
 metadata/_tree_editor_version_added = 1
 metadata/_tree_editor_version_saved = 1

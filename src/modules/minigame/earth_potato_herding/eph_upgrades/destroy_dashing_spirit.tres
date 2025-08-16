@@ -54,7 +54,7 @@ metadata/_custom_type_script = "uid://r3iai3luuocl"
 [resource]
 script = ExtResource("3_r24d4")
 logic = SubResource("Resource_sw68c")
-unlocks_feature = "destroy_dashing_spirits"
+unlocks_feature = ""
 name = "Destroy dashing spirits"
 flavor = "Those dashing spirits really hate you!"
 icon = ExtResource("5_1c2js")

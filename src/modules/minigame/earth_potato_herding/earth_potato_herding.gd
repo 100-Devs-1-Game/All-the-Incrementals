@@ -58,7 +58,7 @@ func _on_nutrition_changed(modifier: float) -> void:
 
 
 func _on_potato_growth_speed_changed(modifier: float) -> void:
-	potato_growth_time = BASE_POTATO_GROWTH_TIME - BASE_POTATO_GROWTH_TIME * modifier / 100
+	potato_growth_time = BASE_POTATO_GROWTH_TIME - BASE_POTATO_GROWTH_TIME * modifier
 
 
 func _on_more_potatoes_changed(modifier: float) -> void:

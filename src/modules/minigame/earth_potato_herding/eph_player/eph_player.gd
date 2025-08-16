@@ -35,14 +35,14 @@ func _on_youngling_herd_area_body_exited(body: Node2D) -> void:
 
 func _on_player_speed_changed(modifier: float) -> void:
 	print("Player speed changed %s" % modifier)
-	var perc_scale = 1 + modifier / 100
+	var perc_scale = 1 + modifier
 	_base_speed.x = BASE_PLAYER_SPEED.x * perc_scale
 	_base_speed.y = BASE_PLAYER_SPEED.y * perc_scale
 
 
 func _on_player_brightness_changed(modifier: float) -> void:
 	print("Player brightness changed %s" % modifier)
-	var perc_scale = 1 + modifier / 100
+	var perc_scale = 1 + modifier
 	$EvilSpiritRepelArea/CollisionShape2D.scale = Vector2(perc_scale, perc_scale)
 	$YounglingHerdArea/CollisionShape2D.scale = Vector2(perc_scale, perc_scale)
 	$HerdCircle.material.set_shader_parameter(
