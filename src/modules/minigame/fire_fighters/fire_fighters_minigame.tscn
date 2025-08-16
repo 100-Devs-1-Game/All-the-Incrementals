@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=35 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_ewfdg"]
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.tscn" id="2_jiygg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="6_0qd66"]
 [ext_resource type="PackedScene" uid="uid://d1vt6mwpxr17" path="res://modules/minigame/fire_fighters/effects/explosion_effect.tscn" id="6_jiygg"]
 [ext_resource type="Resource" uid="uid://bsovy80upwnb4" path="res://modules/minigame/fire_fighters/data/map_features/bush.tres" id="7_67ens"]
+[ext_resource type="PackedScene" uid="uid://cd6r0rm1i2s46" path="res://modules/minigame/fire_fighters/effects/audio_effect.tscn" id="7_mtp5r"]
 [ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/map_features/tree.tres" id="8_2aotl"]
 [ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/map_features/burnt_bush.tres" id="9_j5lxn"]
 [ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/map_features/burnt_tree.tres" id="10_8bvf2"]
@@ -77,6 +78,7 @@ fire_scene = ExtResource("3_jxvl4")
 water_scene = ExtResource("4_q2uva")
 extinguish_effect_scene = ExtResource("5_ewfdg")
 explosion_effect_scene = ExtResource("6_jiygg")
+audio_effect_scene = ExtResource("7_mtp5r")
 map_rect = Rect2i(0, 0, 60, 33)
 map_features = Array[ExtResource("6_0qd66")]([ExtResource("7_67ens"), ExtResource("8_2aotl"), ExtResource("9_j5lxn"), ExtResource("10_8bvf2"), ExtResource("11_ftttk")])
 has_countdown = true

@@ -8,6 +8,7 @@ const BURN_TICK_INTERVAL = 10
 @export var water_scene: PackedScene
 @export var extinguish_effect_scene: PackedScene
 @export var explosion_effect_scene: PackedScene
+@export var audio_effect_scene: PackedScene
 
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
@@ -271,6 +272,13 @@ func play_damage_effect():
 	_damage_effect_tween.tween_callback(damage_color_rect.hide)
 
 	damage_color_rect.show()
+
+
+func play_audio_effect(stream: AudioStream, pos: Vector2):
+	var effect: AudioStreamPlayer2D
+	effect.position = pos
+	effect.init(stream)
+	effects_node.add_child(effect)
 
 
 func _get_countdown_duration() -> float:
