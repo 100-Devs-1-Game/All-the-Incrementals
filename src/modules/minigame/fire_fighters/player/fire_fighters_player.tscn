@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bmbhboa0omojg"]
+[gd_scene load_steps=38 format=3 uid="uid://bmbhboa0omojg"]
 
 [ext_resource type="Script" uid="uid://d3gde2qbcgqdg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.gd" id="1_kwj77"]
 [ext_resource type="Texture2D" uid="uid://da2s7sosyhlkq" path="res://assets/minigames/fire_fighters/character/down_idle/000.png" id="2_2uugn"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bdygy4f127v1e" path="res://assets/minigames/fire_fighters/character/up/002.png" id="27_qf6rl"]
 [ext_resource type="AudioStream" uid="uid://bym27517msrru" path="res://assets/minigames/fire_fighters/sfx/sfx_metal_impact_04.ogg" id="32_dqt8g"]
 [ext_resource type="AudioStream" uid="uid://ceco4cmctyfcp" path="res://assets/minigames/fire_fighters/sfx/burning_vegetation.ogg" id="33_bouhf"]
+[ext_resource type="AudioStream" uid="uid://dd7dg0oe2l3hd" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_stomp__v1_01.ogg" id="34_a33gg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
 radius = 20.0
@@ -217,6 +218,9 @@ stream = ExtResource("33_bouhf")
 volume_db = -40.0
 autoplay = true
 
+[node name="AudioStreamPlayer Stomp" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("34_a33gg")
+
 [node name="Oil Dropper" type="Node" parent="."]
 script = ExtResource("2_a054y")
 metadata/_custom_type_script = "uid://byjfedtjqjrpb"
@@ -227,4 +231,8 @@ current = true
 [node name="Damage Update" type="Timer" parent="."]
 autostart = true
 
+[node name="Stomp Cooldown" type="Timer" parent="."]
+wait_time = 0.25
+
 [connection signal="timeout" from="Damage Update" to="." method="_on_damage_update_timeout"]
+[connection signal="timeout" from="Stomp Cooldown" to="." method="_on_stomp_cooldown_timeout"]

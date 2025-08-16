@@ -11,7 +11,8 @@ enum Type {
 	FIRES,
 	BUSHES,
 	TREES,
-	COUNTDOWN
+	COUNTDOWN,
+	STOMP
 }
 
 @export var type: Type
@@ -40,3 +41,5 @@ func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 			my_game.countdown_bonus = int(upgrade.get_current_effect_modifier())
 		Type.HITPOINTS:
 			my_game.player.hitpoint_bonus = int(upgrade.get_current_effect_modifier())
+		Type.STOMP:
+			my_game.player.can_stomp = true
