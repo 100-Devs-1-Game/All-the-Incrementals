@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=9 format=3 uid="uid://b6sq6i7krb11r"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_pjdc3"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_3jtbo"]
+[ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="2_d1he7"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_y6b62"]
+[ext_resource type="Script" uid="uid://rx50mrpj0daj" path="res://modules/overworld/altar/altar_upgrade_logic.gd" id="3_y6b62"]
+
+[sub_resource type="Resource" id="Resource_6opqw"]
+script = ExtResource("2_y6b62")
+essence = ExtResource("2_d1he7")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_md6yp"]
+script = ExtResource("1_pjdc3")
+earth = 0
+fire = 5
+water = 0
+wind = 0
+slots = Array[ExtResource("2_y6b62")]([SubResource("Resource_6opqw")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_kukno"]
+script = ExtResource("3_y6b62")
+essence = ExtResource("2_d1he7")
+type = 0
+metadata/_custom_type_script = "uid://rx50mrpj0daj"
+
+[resource]
+script = ExtResource("2_3jtbo")
+logic = SubResource("Resource_kukno")
+unlocks_feature = ""
+name = "Fire Altar Capacity"
+flavor = ""
+position = Vector2(-2816, -1088)
+cost_arr = Array[ExtResource("1_pjdc3")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 0
+base_cost = SubResource("Resource_md6yp")
+base_cost_multiplier = 2.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 100.0
+effect_modifier_multiplier = 100.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = "Capacity"
+description_suffix = ""
+description_modifier_format = 1
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1
