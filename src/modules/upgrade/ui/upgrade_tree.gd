@@ -18,7 +18,7 @@ func _ready():
 		essence_type = SceneLoader.get_current_minigame().output_essence.name
 		for upgrade_root_node in SceneLoader.get_current_minigame().upgrade_tree_root_nodes:
 			upgrade_root_node.unlocked = true
-			if upgrade_root_node.get_level() + 1 >= upgrade_root_node.unlock_level:
+			if upgrade_root_node.get_level() >= upgrade_root_node.unlock_level:
 				_unlock_children(upgrade_root_node.unlocks)
 	else:
 		_read_upgrade_files()
@@ -65,7 +65,7 @@ func _unlock_children(unlocks: Array[Resource]) -> void:
 		return
 	for child in unlocks:
 		child.unlocked = true
-		if child.get_level() + 1 >= child.unlock_level:
+		if child.get_level() >= child.unlock_level:
 			_unlock_children(child.unlocks)
 
 
