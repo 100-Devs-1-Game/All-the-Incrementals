@@ -50,6 +50,7 @@ func _init() -> void:
 			&"speed",
 			&"boost_impulse",
 			&"boost_duration",
+			&"boat_max_stability",
 			&"rotation_max_speed",
 			&"rotation_min_speed",
 			&"fail_damage",
