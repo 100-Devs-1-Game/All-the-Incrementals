@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dntdim0jjlhy1"]
+[gd_scene load_steps=16 format=3 uid="uid://dntdim0jjlhy1"]
 
 [ext_resource type="Script" uid="uid://drfyahgpyskxs" path="res://modules/upgrade/ui/upgrade_tree.gd" id="1_bc6uk"]
-[ext_resource type="Texture2D" uid="uid://dt2e36f2dyeda" path="res://assets/icons/glowing_wind_skn.png" id="6_ele8a"]
+[ext_resource type="AudioStream" uid="uid://7cub7vrtnwpn" path="res://assets/ui/sfx/sfx_button_deny_01.ogg" id="5_vxjcf"]
+[ext_resource type="AudioStream" uid="uid://bt15inw4hcjr" path="res://assets/ui/sfx/sfx_powerup_01.ogg" id="5_yvn7f"]
 [ext_resource type="Script" uid="uid://dwlrgoard8eqa" path="res://modules/upgrade/ui/fill_button.gd" id="6_yvn7f"]
 [ext_resource type="PackedScene" uid="uid://yehkf7i1dt50" path="res://component/shared/current_essence.tscn" id="7_vxjcf"]
 [ext_resource type="Script" uid="uid://dcajbb2nsjenl" path="res://modules/upgrade/ui/upgrade_tree_camera.gd" id="8_bc6uk"]
@@ -61,7 +62,6 @@ alpha_curve = SubResource("CurveTexture_vxjcf")
 [node name="UpgradeTree" type="Node"]
 script = ExtResource("1_bc6uk")
 upgrade_folder_path = "res://modules/minigame/example/upgrades"
-center_texture = ExtResource("6_ele8a")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.832915, 0.781549, 0.73108, 1)
@@ -265,6 +265,16 @@ explosiveness = 0.9
 randomness = 0.15
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_bc6uk")
+
+[node name="Audio" type="AudioStreamPlayer" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
+stream = ExtResource("5_yvn7f")
+mix_target = 2
+bus = &"SFX"
+
+[node name="DenyAudio" type="AudioStreamPlayer" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
+stream = ExtResource("5_vxjcf")
+mix_target = 2
+bus = &"SFX"
 
 [node name="CurrentEssence" parent="CanvasLayer/UI" instance=ExtResource("7_vxjcf")]
 layout_mode = 1

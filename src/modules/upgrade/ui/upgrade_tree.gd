@@ -2,7 +2,6 @@ class_name UpgradeTree
 extends Node
 ## The folder with all the upgrades.tres files
 @export_dir var upgrade_folder_path: String
-@export var center_texture: Texture2D
 var ui_upgrade_template = preload("res://modules/upgrade/ui/ui_upgrade_template.tscn")
 var upgrades: Array[BaseUpgrade]
 var ui_spacer_scale: float = 0.2
@@ -16,6 +15,10 @@ func _ready():
 	if SceneLoader.has_current_minigame():
 		upgrades = SceneLoader.get_current_minigame().get_all_upgrades()
 		essence_type = SceneLoader.get_current_minigame().output_essence.name
+		for upgrade_root_node in SceneLoader.get_current_minigame().upgrade_tree_root_nodes:
+			upgrade_root_node.unlocked = true
+			if upgrade_root_node.get_level() + 1 >= upgrade_root_node.unlock_level:
+				_unlock_children(upgrade_root_node.unlocks)
 	else:
 		_read_upgrade_files()
 	_load_upgrades()
@@ -42,9 +45,26 @@ func change_display(
 	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer/DescriptionInfo.text = (
 		"[font_size=50]" + description
 	)
-	$CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton/UpgradeButton.disabled = !(
+	$CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton/UpgradeButton.visible = !(
+		current_upgrade.is_maxed_out()
+	)
+	$CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton/NormalColor.visible = !(
+		current_upgrade.is_maxed_out()
+	)
+	$CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton.to_poor = !(
 		current_upgrade.can_afford_next_level()
 	)
+	if !current_upgrade.unlocked:
+		$CanvasLayer/UI/UpgradeInfoContainer.hide()
+
+
+func _unlock_children(unlocks: Array[Resource]) -> void:
+	if unlocks == null || unlocks.is_empty():
+		return
+	for child in unlocks:
+		child.unlocked = true
+		if child.get_level() + 1 >= child.unlock_level:
+			_unlock_children(child.unlocks)
 
 
 func _read_upgrade_files():
@@ -100,5 +120,9 @@ func _on_fill_button_fill_complete(fill_button: FillButton) -> void:
 	if current_upgrade.can_afford_next_level():
 		Player.pay_upgrade_cost(current_upgrade.get_next_level_cost())
 		current_upgrade.level_up()
-		fill_button.trigger_again()
 		EventBus.ui_upgrade_bought.emit(current_upgrade)
+		if !current_upgrade.is_maxed_out():
+			fill_button.trigger_again()
+	else:
+		fill_button.reset()
+		fill_button.to_poor = true
