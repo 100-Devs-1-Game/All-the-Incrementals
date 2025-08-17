@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bj1eoc57ho0mw"]
+
+[ext_resource type="FontFile" uid="uid://i7lsotjgd888" path="res://external/fonts/Gloria_Hallelujah/GloriaHallelujah-Regular.ttf" id="1_55xde"]
+
+[resource]
+base_font = ExtResource("1_55xde")
+spacing_top = -78

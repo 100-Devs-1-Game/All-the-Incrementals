@@ -22,6 +22,7 @@ texture = ExtResource("2_32x2s")
 texture = ExtResource("3_ih5fn")
 
 [node name="Foreground" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(16, 17)
 texture = ExtResource("4_d4a2w")
 

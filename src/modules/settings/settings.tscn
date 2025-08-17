@@ -1,34 +1,18 @@
-[gd_scene load_steps=25 format=3 uid="uid://1m18lfvfkax2"]
+[gd_scene load_steps=23 format=3 uid="uid://1m18lfvfkax2"]
 
 [ext_resource type="Script" uid="uid://d4jpioyg02kt4" path="res://modules/settings/settings.gd" id="1_mpnl8"]
-[ext_resource type="Texture2D" uid="uid://cgp7j8ngwsnht" path="res://assets/icons/basket_skn.png" id="2_8gkc8"]
-[ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="3_yv8js"]
-[ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="4_1ylkm"]
-[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="5_1ylkm"]
 [ext_resource type="Theme" uid="uid://bdm544cuwxbre" path="res://modules/settings/settings_theme.tres" id="5_8f0vb"]
 [ext_resource type="StyleBox" uid="uid://ct6fgr57c8vlo" path="res://modules/menu/common/button_stylebox.tres" id="5_k2ij0"]
-[ext_resource type="StyleBox" uid="uid://ct2goca0ruxhd" path="res://modules/menu/common/back_panel_stylebox.tres" id="7_x2f43"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ylkm"]
-shader = ExtResource("3_yv8js")
-shader_parameter/lod = 2.045
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpnl8"]
-bg_color = Color(0.352941, 0.196078, 0.156863, 1)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2ij0"]
-bg_color = Color(0.996078, 0.960784, 0.85098, 1)
-border_width_left = 3
-border_width_bottom = 11
-border_color = Color(0.917647, 0.823529, 0.65098, 1)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
+[ext_resource type="FontFile" uid="uid://b4sm0lte0jiot" path="res://external/fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="5_nyrux"]
+[ext_resource type="StyleBox" uid="uid://bj7gywpdmq0ba" path="res://modules/settings/settings_button_left.tres" id="5_x2f43"]
+[ext_resource type="StyleBox" uid="uid://b23xklttcekyk" path="res://modules/settings/settings_button_left_hover.tres" id="6_8f0vb"]
+[ext_resource type="StyleBox" uid="uid://jdq4wailwp1h" path="res://modules/settings/settings_button_right.tres" id="7_4sltm"]
+[ext_resource type="FontFile" uid="uid://c5nm8jyd20vtl" path="res://external/fonts/Mansalva/Mansalva-Regular.ttf" id="8_x2f43"]
+[ext_resource type="StyleBox" uid="uid://drhijro5qfqrq" path="res://modules/settings/settings_button_right_hover.tres" id="8_xs5md"]
+[ext_resource type="StyleBox" uid="uid://en5nadtdhxpd" path="res://modules/settings/settings_button_surrounded.tres" id="9_cpxmn"]
+[ext_resource type="StyleBox" uid="uid://pntjc8pmpe54" path="res://modules/settings/settings_button_surrounded_hover.tres" id="10_x3i4w"]
+[ext_resource type="StyleBox" uid="uid://c175wmdqybibw" path="res://modules/settings/settings_button_solo.tres" id="11_u4esm"]
+[ext_resource type="StyleBox" uid="uid://db58mchewupox" path="res://modules/settings/settings_button_solo_hover.tres" id="12_nyrux"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn8de"]
 bg_color = Color(0.937255, 0.384314, 0.309804, 1)
@@ -39,42 +23,6 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xs5md"]
-bg_color = Color(0.745098, 0.556863, 0.384314, 1)
-border_width_left = 4
-border_width_right = 3
-border_width_bottom = 6
-border_color = Color(0.583256, 0.420256, 0.268647, 1)
-corner_radius_top_left = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpxmn"]
-bg_color = Color(0.892978, 0.744041, 0.612584, 1)
-border_width_left = 4
-border_width_right = 3
-border_width_bottom = 6
-border_color = Color(0.583256, 0.420256, 0.268647, 1)
-corner_radius_top_left = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3i4w"]
-bg_color = Color(0.745098, 0.556863, 0.384314, 1)
-border_width_left = 3
-border_width_right = 4
-border_width_bottom = 6
-border_color = Color(0.583256, 0.420256, 0.268647, 1)
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4esm"]
-bg_color = Color(0.892978, 0.744041, 0.612584, 1)
-border_width_left = 3
-border_width_right = 4
-border_width_bottom = 6
-border_color = Color(0.583256, 0.420256, 0.268647, 1)
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpxmn"]
 
@@ -133,6 +81,7 @@ corner_radius_bottom_right = 20
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("5_8f0vb")
 script = ExtResource("1_mpnl8")
 low_button = NodePath("Panel/SettingsContainer/MultiContainer/HBoxContainer/Low")
 medium_button = NodePath("Panel/SettingsContainer/MultiContainer/HBoxContainer/Medium")
@@ -145,41 +94,13 @@ master_slider = NodePath("Panel/SettingsContainer/MultiContainer/Masterlbl/Maste
 music_slider = NodePath("Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider")
 sfx_slider = NodePath("Panel/SettingsContainer/MultiContainer/SFXlbl/SFXSlider")
 
-[node name="CoverBG" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_8gkc8")
-
-[node name="CoverA" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_1ylkm")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -697.0
-offset_top = -324.0
-offset_right = 697.0
-offset_bottom = 358.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_mpnl8")
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1089.0
+color = Color(0, 0, 0, 1)
 
 [node name="Panel" type="Panel" parent="."]
-material = ExtResource("4_1ylkm")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -187,12 +108,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -692.0
-offset_top = -316.0
+offset_top = -290.0
 offset_right = 692.0
-offset_bottom = 350.0
+offset_bottom = 376.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_k2ij0")
 
 [node name="SettingsContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -200,12 +120,13 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
-offset_top = 9.0
-offset_right = -10.0
+offset_top = 43.0
+offset_right = -15.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_8f0vb")
+theme_override_constants/separation = 100
 
 [node name="KeybindContainer" type="VBoxContainer" parent="Panel/SettingsContainer"]
 layout_mode = 2
@@ -217,6 +138,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Controls"
 horizontal_alignment = 1
 
@@ -240,7 +162,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
-text = "Primary Action / Accept:"
+theme_override_fonts/font = ExtResource("5_nyrux")
+text = "Primary / Accept:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer"]
 layout_mode = 2
@@ -253,7 +176,7 @@ theme_override_constants/separation = 2
 [node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/panel = ExtResource("5_x2f43")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
@@ -263,16 +186,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cpxmn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/focus = ExtResource("5_x2f43")
+theme_override_styles/hover = ExtResource("6_8f0vb")
+theme_override_styles/pressed = ExtResource("5_x2f43")
+theme_override_styles/normal = ExtResource("5_x2f43")
 text = "SPACE"
 
 [node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/panel = ExtResource("7_4sltm")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/PrimaryContainer/HBoxContainer/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
@@ -282,15 +205,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u4esm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/focus = ExtResource("7_4sltm")
+theme_override_styles/hover = ExtResource("8_xs5md")
+theme_override_styles/pressed = ExtResource("7_4sltm")
+theme_override_styles/normal = ExtResource("7_4sltm")
 text = "Z"
 
 [node name="SecondaryContainer2" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
+alignment = 2
 
 [node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2"]
 layout_mode = 2
@@ -298,7 +222,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
-text = "Secondary Action / Back:"
+theme_override_fonts/font = ExtResource("5_nyrux")
+text = "Secondary / Back:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2"]
 layout_mode = 2
@@ -307,7 +232,7 @@ theme_override_constants/separation = 2
 [node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/panel = ExtResource("5_x2f43")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
@@ -317,16 +242,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cpxmn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/focus = ExtResource("5_x2f43")
+theme_override_styles/hover = ExtResource("6_8f0vb")
+theme_override_styles/pressed = ExtResource("5_x2f43")
+theme_override_styles/normal = ExtResource("5_x2f43")
 text = "E"
 
 [node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/panel = ExtResource("7_4sltm")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer2/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
@@ -336,15 +261,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u4esm")
+theme_override_styles/focus = ExtResource("7_4sltm")
+theme_override_styles/hover = ExtResource("8_xs5md")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_cpxmn")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cpxmn")
 text = "X"
 
 [node name="SecondaryContainer3" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 13
+alignment = 2
 
 [node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3"]
 layout_mode = 2
@@ -352,16 +278,18 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Move Right:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3"]
 layout_mode = 2
 theme_override_constants/separation = 2
+alignment = 2
 
 [node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/panel = ExtResource("5_x2f43")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
@@ -371,16 +299,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cpxmn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/focus = ExtResource("5_x2f43")
+theme_override_styles/hover = ExtResource("6_8f0vb")
+theme_override_styles/pressed = ExtResource("5_x2f43")
+theme_override_styles/normal = ExtResource("5_x2f43")
 text = "D"
 
 [node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/panel = ExtResource("7_4sltm")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer3/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
@@ -390,15 +318,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u4esm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/focus = ExtResource("7_4sltm")
+theme_override_styles/hover = ExtResource("8_xs5md")
+theme_override_styles/pressed = ExtResource("7_4sltm")
+theme_override_styles/normal = ExtResource("7_4sltm")
 text = "Right"
 
 [node name="SecondaryContainer4" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
 theme_override_constants/separation = 13
+alignment = 2
 
 [node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4"]
 layout_mode = 2
@@ -406,6 +335,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Move Down:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4"]
@@ -415,7 +345,7 @@ theme_override_constants/separation = 2
 [node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/panel = ExtResource("5_x2f43")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
@@ -425,16 +355,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cpxmn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/focus = ExtResource("5_x2f43")
+theme_override_styles/hover = ExtResource("6_8f0vb")
+theme_override_styles/pressed = ExtResource("5_x2f43")
+theme_override_styles/normal = ExtResource("5_x2f43")
 text = "S"
 
 [node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/panel = ExtResource("7_4sltm")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer4/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
@@ -444,15 +374,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u4esm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/focus = ExtResource("7_4sltm")
+theme_override_styles/hover = ExtResource("8_xs5md")
+theme_override_styles/pressed = ExtResource("7_4sltm")
+theme_override_styles/normal = ExtResource("7_4sltm")
 text = "Down"
 
 [node name="SecondaryContainer5" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
-theme_override_constants/separation = 46
+theme_override_constants/separation = 13
+alignment = 2
 
 [node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5"]
 layout_mode = 2
@@ -460,6 +391,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Move Left:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5"]
@@ -469,7 +401,7 @@ theme_override_constants/separation = 2
 [node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/panel = ExtResource("5_x2f43")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
@@ -479,16 +411,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cpxmn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/focus = ExtResource("5_x2f43")
+theme_override_styles/hover = ExtResource("6_8f0vb")
+theme_override_styles/pressed = ExtResource("5_x2f43")
+theme_override_styles/normal = ExtResource("5_x2f43")
 text = "A"
 
 [node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/panel = ExtResource("7_4sltm")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer5/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
@@ -498,15 +430,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u4esm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/focus = ExtResource("7_4sltm")
+theme_override_styles/hover = ExtResource("8_xs5md")
+theme_override_styles/pressed = ExtResource("7_4sltm")
+theme_override_styles/normal = ExtResource("7_4sltm")
 text = "Left"
 
 [node name="SecondaryContainer6" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
-theme_override_constants/separation = 65
+theme_override_constants/separation = 13
+alignment = 2
 
 [node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6"]
 layout_mode = 2
@@ -514,6 +447,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Move Up:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6"]
@@ -523,7 +457,7 @@ theme_override_constants/separation = 2
 [node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/panel = ExtResource("5_x2f43")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
@@ -533,16 +467,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cpxmn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/focus = ExtResource("5_x2f43")
+theme_override_styles/hover = ExtResource("6_8f0vb")
+theme_override_styles/pressed = ExtResource("5_x2f43")
+theme_override_styles/normal = ExtResource("5_x2f43")
 text = "W"
 
 [node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/panel = ExtResource("7_4sltm")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer6/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
@@ -552,15 +486,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u4esm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/focus = ExtResource("7_4sltm")
+theme_override_styles/hover = ExtResource("8_xs5md")
+theme_override_styles/pressed = ExtResource("7_4sltm")
+theme_override_styles/normal = ExtResource("7_4sltm")
 text = "Up"
 
 [node name="SecondaryContainer7" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer"]
 layout_mode = 2
-theme_override_constants/separation = 45
+theme_override_constants/separation = 13
+alignment = 2
 
 [node name="SecondaryBindLabel" type="Label" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7"]
 layout_mode = 2
@@ -568,6 +503,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Exit Menu:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7"]
@@ -577,7 +513,7 @@ theme_override_constants/separation = 2
 [node name="Panel" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/panel = ExtResource("5_x2f43")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer/Panel" groups=["keybind"]]
 layout_mode = 1
@@ -587,16 +523,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cpxmn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xs5md")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xs5md")
+theme_override_styles/focus = ExtResource("5_x2f43")
+theme_override_styles/hover = ExtResource("6_8f0vb")
+theme_override_styles/pressed = ExtResource("5_x2f43")
+theme_override_styles/normal = ExtResource("5_x2f43")
 text = "Esc"
 
 [node name="Panel2" type="Panel" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer"]
 custom_minimum_size = Vector2(121.48, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/panel = ExtResource("7_4sltm")
 
 [node name="Keybind" type="Button" parent="Panel/SettingsContainer/KeybindContainer/SecondaryContainer7/HBoxContainer/Panel2" groups=["keybind"]]
 layout_mode = 1
@@ -606,10 +542,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 29
-theme_override_styles/focus = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/hover = SubResource("StyleBoxFlat_u4esm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_x3i4w")
-theme_override_styles/normal = SubResource("StyleBoxFlat_x3i4w")
+theme_override_styles/focus = ExtResource("7_4sltm")
+theme_override_styles/hover = ExtResource("8_xs5md")
+theme_override_styles/pressed = ExtResource("7_4sltm")
+theme_override_styles/normal = ExtResource("7_4sltm")
 text = "C"
 
 [node name="MultiContainer" type="VBoxContainer" parent="Panel/SettingsContainer"]
@@ -623,6 +559,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Graphics"
 horizontal_alignment = 1
 
@@ -642,13 +579,13 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0.00392157, 0.239216)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "3D Quality: Best"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/SettingsContainer/MultiContainer"]
 layout_mode = 2
-theme_override_constants/separation = 15
 alignment = 1
 
 [node name="Low" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
@@ -656,9 +593,10 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = ExtResource("5_k2ij0")
-theme_override_styles/pressed = ExtResource("5_k2ij0")
-theme_override_styles/normal = ExtResource("5_k2ij0")
+theme_override_styles/focus = ExtResource("5_x2f43")
+theme_override_styles/hover = ExtResource("6_8f0vb")
+theme_override_styles/pressed = ExtResource("6_8f0vb")
+theme_override_styles/normal = ExtResource("5_x2f43")
 text = "Low"
 
 [node name="Medium" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
@@ -666,9 +604,10 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = ExtResource("5_k2ij0")
-theme_override_styles/pressed = ExtResource("5_k2ij0")
-theme_override_styles/normal = ExtResource("5_k2ij0")
+theme_override_styles/focus = ExtResource("9_cpxmn")
+theme_override_styles/hover = ExtResource("10_x3i4w")
+theme_override_styles/pressed = ExtResource("10_x3i4w")
+theme_override_styles/normal = ExtResource("9_cpxmn")
 text = "Medium"
 
 [node name="High" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
@@ -676,9 +615,10 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = ExtResource("5_k2ij0")
-theme_override_styles/pressed = ExtResource("5_k2ij0")
-theme_override_styles/normal = ExtResource("5_k2ij0")
+theme_override_styles/focus = ExtResource("9_cpxmn")
+theme_override_styles/hover = ExtResource("10_x3i4w")
+theme_override_styles/pressed = ExtResource("10_x3i4w")
+theme_override_styles/normal = ExtResource("9_cpxmn")
 text = "High"
 
 [node name="Best" type="Button" parent="Panel/SettingsContainer/MultiContainer/HBoxContainer"]
@@ -686,9 +626,10 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = ExtResource("5_k2ij0")
-theme_override_styles/pressed = ExtResource("5_k2ij0")
-theme_override_styles/normal = ExtResource("5_k2ij0")
+theme_override_styles/focus = ExtResource("7_4sltm")
+theme_override_styles/hover = ExtResource("8_xs5md")
+theme_override_styles/pressed = ExtResource("8_xs5md")
+theme_override_styles/normal = ExtResource("7_4sltm")
 text = "Best"
 
 [node name="FullscreenContainer" type="HBoxContainer" parent="Panel/SettingsContainer/MultiContainer"]
@@ -700,9 +641,10 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = ExtResource("5_k2ij0")
-theme_override_styles/pressed = ExtResource("5_k2ij0")
-theme_override_styles/normal = ExtResource("5_k2ij0")
+theme_override_styles/focus = ExtResource("11_u4esm")
+theme_override_styles/hover = ExtResource("12_nyrux")
+theme_override_styles/pressed = ExtResource("12_nyrux")
+theme_override_styles/normal = ExtResource("11_u4esm")
 text = "Fullscreen: Off"
 
 [node name="AudioLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer"]
@@ -711,6 +653,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Audio"
 horizontal_alignment = 1
 
@@ -730,6 +673,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.203922)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 18
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -781,6 +725,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.203922)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 18
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -832,6 +777,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.203922)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 18
+theme_override_fonts/font = ExtResource("5_nyrux")
 text = "SFX Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -894,33 +840,11 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("8_x2f43")
 theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = ExtResource("5_k2ij0")
 text = "Settings"
 horizontal_alignment = 1
-
-[node name="Backpnl" type="Panel" parent="SettingsLabel"]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("7_x2f43")
-
-[node name="Panel" type="Panel" parent="SettingsLabel"]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("5_1ylkm")
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
