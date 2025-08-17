@@ -16,6 +16,7 @@ script = ExtResource("1_32x2s")
 texture = ExtResource("1_l1bu1")
 
 [node name="BackgroundActive" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_32x2s")
 
 [node name="Icon" type="Sprite2D" parent="."]
