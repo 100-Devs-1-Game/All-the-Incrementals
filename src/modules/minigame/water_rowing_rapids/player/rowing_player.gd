@@ -32,11 +32,19 @@ var stability_regen: float = 0.0
 @onready var spirit_magnetism_area_collider: CollisionShape2D = $SpiritMagnetismArea/Collider
 @onready var ripple_intensity_scaler: Node2D = %RippleIntensityScaler
 @onready var boost_foam_intensity_scaler: Node2D = %FoamIntensityScaler
+@onready var rowing_ui: Control = %RowingUI
 
 
 func _init() -> void:
 	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(
-		self, [&"speed", &"boost_impulse", &"boost_duration"]
+		self,
+		[
+			&"speed",
+			&"boost_impulse",
+			&"boost_duration",
+			&"rotation_max_speed",
+			&"rotation_min_speed"
+		]
 	)
 
 

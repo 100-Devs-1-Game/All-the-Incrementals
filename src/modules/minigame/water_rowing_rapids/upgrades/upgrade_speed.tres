@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=21 format=3 uid="uid://c5lbw2qtfhfc3"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=22 format=3 uid="uid://c5lbw2qtfhfc3"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_mlggy"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_p4312"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="4_tgk6x"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_qjf1b"]
 [ext_resource type="Resource" uid="uid://bysxqlchallc6" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_boost_speed.tres" id="6_lnv4k"]
+[ext_resource type="Resource" uid="uid://sylk0fsa8qbn" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_turn_speed.tres" id="8_pn7tb"]
 
 [sub_resource type="Resource" id="Resource_78vub"]
 script = ExtResource("2_p4312")
@@ -99,7 +100,7 @@ unlocks_feature = ""
 name = "+10% Speed"
 flavor = "Row Speed"
 icon = ExtResource("4_p4312")
-position = Vector2(-64, 0)
+position = Vector2(-64, -1216)
 cost_arr = Array[ExtResource("1_mlggy")]([SubResource("Resource_tgk6x"), SubResource("Resource_lnv4k"), SubResource("Resource_5gk6b"), SubResource("Resource_2b13j"), SubResource("Resource_pdrkq")])
 effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5])
 max_level = 5
@@ -111,7 +112,7 @@ base_effect_modifier = 0.1
 effect_modifier_multiplier = 0.1
 unlocked = false
 unlock_level = 1
-unlocks = Array[Resource]([ExtResource("6_lnv4k")])
+unlocks = Array[Resource]([ExtResource("6_lnv4k"), ExtResource("8_pn7tb")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0

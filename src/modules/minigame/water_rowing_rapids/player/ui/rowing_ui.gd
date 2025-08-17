@@ -2,6 +2,7 @@ extends Control
 
 @export var move_speed := 300.0
 @export var max_speed := 1000.0
+@export var boost_area_base_scale := 1.0
 @export var player: Node
 @export var stability_bar: TextureProgressBar
 
@@ -16,6 +17,7 @@ var updating_ui := false
 
 
 func _ready() -> void:
+	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(self, [&"boost_area_base_scale"])
 	if player == null:
 		print("No player set, selecting parent")
 		player = get_parent()
@@ -33,7 +35,7 @@ func _process(delta):
 	var marker_width = point.size.x
 	if point.position.x + marker_width >= bar_width:
 		point.position.x = 0
-		target_zone.scale.x = 1
+		target_zone.scale.x = boost_area_base_scale
 	if move_speed > 300.0:
 		move_speed -= speed_drain * delta
 	if updating_ui:
@@ -61,7 +63,7 @@ func _input(event):
 		else:
 			print("Miss!")
 			player._fail()
-			target_zone.scale.x = 1
+			target_zone.scale.x = boost_area_base_scale
 			point.position.x = 0
 			move_speed = clampf(move_speed, 300.0, max_speed)
 			move_speed = move_speed - miss_speed_value
