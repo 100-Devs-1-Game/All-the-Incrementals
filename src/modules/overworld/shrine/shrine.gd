@@ -1,4 +1,4 @@
 class_name Shrine
-extends Node3D
+extends OverworldStructure
 
 @export var data: ShrineData
