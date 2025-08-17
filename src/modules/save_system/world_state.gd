@@ -10,6 +10,7 @@ extends Resource
 
 
 func get_altar(essence: Essence):
+	assert(essence)
 	for altar in altars:
 		if essence == altar.essence:
 			return altar
