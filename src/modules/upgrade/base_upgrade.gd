@@ -123,13 +123,22 @@ func get_key() -> StringName:
 
 func level_up() -> void:
 	var current_level = get_level()
+	var new_level = current_level + 1
 	if is_maxed_out():
 		push_error("Tried to level up past max level")
 		return
-	if current_level + 2 == unlock_level:
+
+	if new_level >= unlock_level:
 		for upgrade in unlocks:
 			upgrade.unlocked = true
-	SaveGameManager.world_state.minigame_unlock_levels[get_key()] = (current_level + 1)
+			print(
+				(
+					"'%s' is now level %d which matches the required level of %d to unlock '%s'"
+					% [name, new_level, unlock_level, upgrade.name]
+				)
+			)
+
+	SaveGameManager.world_state.minigame_unlock_levels[get_key()] = new_level
 	SaveGameManager.save()
 
 

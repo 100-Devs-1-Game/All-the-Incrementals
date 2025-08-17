@@ -12,12 +12,13 @@ var essence_type: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$CanvasLayer/UI/UpgradeInfoContainer.hide()
 	if SceneLoader.has_current_minigame():
 		upgrades = SceneLoader.get_current_minigame().get_all_upgrades()
 		essence_type = SceneLoader.get_current_minigame().output_essence.name
 		for upgrade_root_node in SceneLoader.get_current_minigame().upgrade_tree_root_nodes:
 			upgrade_root_node.unlocked = true
-			if upgrade_root_node.get_level() + 1 >= upgrade_root_node.unlock_level:
+			if upgrade_root_node.get_level() >= upgrade_root_node.unlock_level:
 				_unlock_children(upgrade_root_node.unlocks)
 	else:
 		_read_upgrade_files()
@@ -32,6 +33,7 @@ func change_display(
 	description: String
 ) -> void:
 	current_upgrade = upgrade
+	$ClickAudio.play(0.0)
 	$CanvasLayer/UI/UpgradeInfoContainer.show()
 	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer/NameInfo.text = (
 		"[font_size=80]" + name_text
@@ -43,7 +45,7 @@ func change_display(
 		"[font_size=80]" + level_text
 	)
 	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer/DescriptionInfo.text = (
-		"[font_size=50]" + description
+		"[font_size=30]" + description
 	)
 	$CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton/UpgradeButton.visible = !(
 		current_upgrade.is_maxed_out()
@@ -63,7 +65,7 @@ func _unlock_children(unlocks: Array[Resource]) -> void:
 		return
 	for child in unlocks:
 		child.unlocked = true
-		if child.get_level() + 1 >= child.unlock_level:
+		if child.get_level() >= child.unlock_level:
 			_unlock_children(child.unlocks)
 
 

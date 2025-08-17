@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dntdim0jjlhy1"]
+[gd_scene load_steps=23 format=3 uid="uid://dntdim0jjlhy1"]
 
 [ext_resource type="Script" uid="uid://drfyahgpyskxs" path="res://modules/upgrade/ui/upgrade_tree.gd" id="1_bc6uk"]
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="3_lbln1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://yehkf7i1dt50" path="res://component/shared/current_essence.tscn" id="7_vxjcf"]
 [ext_resource type="Script" uid="uid://dcajbb2nsjenl" path="res://modules/upgrade/ui/upgrade_tree_camera.gd" id="8_bc6uk"]
 [ext_resource type="AudioStream" uid="uid://7cub7vrtnwpn" path="res://assets/ui/sfx/sfx_button_deny_01.ogg" id="10_lbln1"]
+[ext_resource type="AudioStream" uid="uid://blqybba64652d" path="res://assets/ui/sfx/sfx_button_click_03.ogg" id="12_lbln1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_48wnc"]
 size = Vector2(500, 500)
@@ -20,12 +21,14 @@ orientation = 2
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ele8a"]
+content_margin_left = 104.0
+content_margin_top = 5.0
 texture = ExtResource("4_48wnc")
-texture_margin_left = 105.565
-texture_margin_top = 50.0
-texture_margin_right = 111.272
-texture_margin_bottom = 50.0
-region_rect = Rect2(0, 5.12466, 949, 1194.88)
+texture_margin_left = 106.0
+texture_margin_top = 124.062
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+region_rect = Rect2(0, 5.125, 949, 1194.88)
 
 [sub_resource type="FontVariation" id="FontVariation_wt0sa"]
 base_font = ExtResource("4_ele8a")
@@ -131,17 +134,22 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="UpgradeInfoContainer" type="MarginContainer" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -361.0
-offset_right = 5.0
+offset_top = -291.5
+offset_right = 3.0
+offset_bottom = -5.5
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
+theme_override_constants/margin_left = 240
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 240
+theme_override_constants/margin_bottom = 15
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UI/UpgradeInfoContainer"]
 layout_mode = 2
@@ -169,22 +177,27 @@ horizontal_alignment = 2
 
 [node name="MC" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer"]
 layout_mode = 2
+theme_override_constants/margin_top = -85
 theme_override_constants/margin_right = 155
 
 [node name="HC" type="HBoxContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC"]
 layout_mode = 2
 
-[node name="Cost" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC"]
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="Cost" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC/Margin"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
 theme = ExtResource("3_lbln1")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/line_separation = -30
 theme_override_fonts/normal_font = ExtResource("5_vxjcf")
 bbcode_enabled = true
-text = "[font_size=50]Cost:
-"
+text = "[font_size=50]Cost:"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -194,11 +207,11 @@ horizontal_alignment = 2
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
+theme_override_constants/line_separation = -55
 theme_override_fonts/normal_font = ExtResource("4_ele8a")
 bbcode_enabled = true
-text = "[font_size=50][img=50]res://assets/icons/glowing_fire_skn.png[/img]500
-"
+text = "[font_size=50][img=50]res://assets/icons/glowing_fire_skn.png[/img]500"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -231,7 +244,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("5_vxjcf")
 bbcode_enabled = true
-text = "[font_size=28]bla bla bla bla bla bla bla bla bla bal bla bla bla bla bla bla bla bla bla bla bla bla bvla fdhgi sdfhgkjdsh fgkjlshdf gkjsdhfgkjsdh fjksdh
+text = "[font_size=30]bla bla bla bla bla bla bla bla bla bal bla bla bla bla bla bla bla bla bla bla bla bla bvla fdhgi sdfhgkjdsh fgkjlshdf gkjsdhfgkjsdh fjksdh
 "
 scroll_active = false
 
@@ -239,9 +252,10 @@ scroll_active = false
 layout_mode = 2
 size_flags_vertical = 8
 mouse_filter = 2
-theme_override_constants/margin_left = 700
-theme_override_constants/margin_right = 600
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 40
 
 [node name="FillButton" type="Control" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton"]
 layout_mode = 2
@@ -256,6 +270,10 @@ offset_right = 420.0
 offset_bottom = 50.0
 size_flags_vertical = 8
 mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_4prp1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4prp1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4prp1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4prp1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4prp1")
 text = "HOLD TO BUY"
 
@@ -294,5 +312,10 @@ bus = &"SFX"
 
 [node name="CurrentEssence" parent="CanvasLayer/UI" instance=ExtResource("7_vxjcf")]
 layout_mode = 1
+
+[node name="ClickAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_lbln1")
+mix_target = 2
+bus = &"SFX"
 
 [connection signal="fill_complete" from="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton" to="." method="_on_fill_button_fill_complete"]
