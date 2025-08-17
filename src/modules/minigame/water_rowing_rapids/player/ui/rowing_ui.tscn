@@ -53,13 +53,13 @@ anchors_preset = -1
 anchor_left = 0.849
 anchor_right = 0.849
 anchor_bottom = 1.0
-offset_left = -50.152
+offset_left = -25.152
 offset_top = 4.0
-offset_right = 49.848
+offset_right = 24.848
 offset_bottom = -4.1326
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(50, 0)
+pivot_offset = Vector2(25, 0)
 color = Color(0.14902, 1, 0.341176, 1)
 
 [node name="Point" type="TextureRect" parent="Panel"]
