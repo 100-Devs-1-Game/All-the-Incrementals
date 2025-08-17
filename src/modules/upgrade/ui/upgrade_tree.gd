@@ -12,6 +12,7 @@ var essence_type: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$CanvasLayer/UI/UpgradeInfoContainer.hide()
 	if SceneLoader.has_current_minigame():
 		upgrades = SceneLoader.get_current_minigame().get_all_upgrades()
 		essence_type = SceneLoader.get_current_minigame().output_essence.name
@@ -43,7 +44,7 @@ func change_display(
 		"[font_size=80]" + level_text
 	)
 	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer/DescriptionInfo.text = (
-		"[font_size=50]" + description
+		"[font_size=30]" + description
 	)
 	$CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton/UpgradeButton.visible = !(
 		current_upgrade.is_maxed_out()

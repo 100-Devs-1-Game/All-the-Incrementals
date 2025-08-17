@@ -61,7 +61,8 @@ func _animate_filler():
 
 
 func reset():
-	tween.kill()
+	if tween != null:
+		tween.kill()
 	filler.size.x = 0
 	if $UpgradeButton.visible == false:
 		return
