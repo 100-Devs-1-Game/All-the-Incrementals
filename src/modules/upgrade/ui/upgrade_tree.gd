@@ -54,8 +54,8 @@ func change_display(
 	$CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton.to_poor = !(
 		current_upgrade.can_afford_next_level()
 	)
-	if !current_upgrade.unlocked:
-		$CanvasLayer/UI/UpgradeInfoContainer.hide()
+	#if !current_upgrade.unlocked:
+	#	$CanvasLayer/UI/UpgradeInfoContainer.hide()
 
 
 func _unlock_children(unlocks: Array[Resource]) -> void:
