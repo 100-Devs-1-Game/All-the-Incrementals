@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_of6py"]
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_xbopm"]
 [ext_resource type="Texture2D" uid="uid://dqtb5enocv703" path="res://assets/minigames/water_rowing_rapids/icons/boat_health_up.png" id="4_knf6s"]
-[ext_resource type="Resource" uid="uid://c3iyqddaxb7ms" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_stability_regen.tres" id="6_xbopm"]
 [ext_resource type="Resource" uid="uid://de5osmx82dyqc" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_void_speed.tres" id="7_8wcmd"]
+[ext_resource type="Resource" uid="uid://b227et2l3jjh0" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_miss_damage.tres" id="8_knf6s"]
 
 [sub_resource type="Resource" id="Resource_8wcmd"]
 script = ExtResource("2_of6py")
@@ -177,7 +177,7 @@ base_effect_modifier = 10.0
 effect_modifier_multiplier = 10.0
 unlocked = false
 unlock_level = 0
-unlocks = Array[Resource]([ExtResource("6_xbopm"), ExtResource("7_8wcmd")])
+unlocks = Array[Resource]([ExtResource("7_8wcmd"), ExtResource("8_knf6s")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0

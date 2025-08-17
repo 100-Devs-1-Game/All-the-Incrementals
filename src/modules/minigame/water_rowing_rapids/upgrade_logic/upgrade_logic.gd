@@ -28,7 +28,9 @@ enum UpgradeType {
 	## Increases spirit area magnetism strength X%
 	SPIRIT_MAGNETISM_STRENGTH,
 	## Unlocks crit boost at values greater than 0 - Increases crit boost bonus
-	CRIT_BOOST
+	CRIT_BOOST,
+	## Decrease damage from misses by X%
+	MISS_DAMAGE,
 }
 
 const BASE_PREFIX: String = "base_"
@@ -105,3 +107,5 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 		UpgradeType.CRIT_BOOST:
 			game.player.rowing_ui.use_crit_zone = true
 			game.player.crit_boost_impulse_mod = effect_modifier
+		UpgradeType.MISS_DAMAGE:
+			increase_from_base(game.player, &"fail_damage", -effect_modifier)

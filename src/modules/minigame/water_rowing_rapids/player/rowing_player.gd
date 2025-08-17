@@ -30,6 +30,7 @@ var rotation_min_speed: float = TAU / 20
 var boat_max_stability := 100.0
 var boat_stability := boat_max_stability
 var stability_regen: float = 0.0
+var fail_damage: float = 10.0
 
 @onready var spirit_magnetism_area: Area2D = $SpiritMagnetismArea
 @onready var spirit_magnetism_area_collider: CollisionShape2D = $SpiritMagnetismArea/Collider
@@ -46,7 +47,8 @@ func _init() -> void:
 			&"boost_impulse",
 			&"boost_duration",
 			&"rotation_max_speed",
-			&"rotation_min_speed"
+			&"rotation_min_speed",
+			&"fail_damage"
 		]
 	)
 
@@ -104,7 +106,7 @@ func take_damage(amount: float):
 
 
 func _fail():
-	boat_stability -= 10.0
+	boat_stability -= fail_damage
 	invincibility += 0.1
 
 
