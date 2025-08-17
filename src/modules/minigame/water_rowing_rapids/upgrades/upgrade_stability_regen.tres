@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=21 format=3 uid="uid://c3iyqddaxb7ms"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=22 format=3 uid="uid://c3iyqddaxb7ms"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_whtph"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_8nac8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_f8ak7"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="4_ocooi"]
 [ext_resource type="Texture2D" uid="uid://q3b2ichv0gfs" path="res://assets/minigames/water_rowing_rapids/icons/boat_health_regeneration.png" id="5_a52yk"]
+[ext_resource type="Resource" uid="uid://be6erugis2w80" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_rock_crusher.tres" id="8_ocooi"]
 
 [sub_resource type="Resource" id="Resource_xim26"]
 script = ExtResource("2_8nac8")
@@ -27,59 +28,59 @@ wind = 0
 slots = Array[ExtResource("2_8nac8")]([SubResource("Resource_xim26"), SubResource("Resource_d28s7")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_a52yk"]
+[sub_resource type="Resource" id="Resource_ocooi"]
 script = ExtResource("2_8nac8")
 essence = ExtResource("3_a52yk")
 amount = 3
 
-[sub_resource type="Resource" id="Resource_ocooi"]
+[sub_resource type="Resource" id="Resource_cgax8"]
 script = ExtResource("2_8nac8")
 essence = ExtResource("4_ocooi")
 amount = 2
 
-[sub_resource type="Resource" id="Resource_cgax8"]
+[sub_resource type="Resource" id="Resource_obl3d"]
 script = ExtResource("1_whtph")
 earth = 3
 fire = 0
 water = 2
 wind = 0
-slots = Array[ExtResource("2_8nac8")]([SubResource("Resource_a52yk"), SubResource("Resource_ocooi")])
+slots = Array[ExtResource("2_8nac8")]([SubResource("Resource_ocooi"), SubResource("Resource_cgax8")])
 
-[sub_resource type="Resource" id="Resource_obl3d"]
+[sub_resource type="Resource" id="Resource_prjru"]
 script = ExtResource("2_8nac8")
 essence = ExtResource("3_a52yk")
 amount = 7
 
-[sub_resource type="Resource" id="Resource_prjru"]
+[sub_resource type="Resource" id="Resource_hgkxs"]
 script = ExtResource("2_8nac8")
 essence = ExtResource("4_ocooi")
 amount = 5
 
-[sub_resource type="Resource" id="Resource_hgkxs"]
+[sub_resource type="Resource" id="Resource_mlf13"]
 script = ExtResource("1_whtph")
 earth = 7
 fire = 0
 water = 5
 wind = 0
-slots = Array[ExtResource("2_8nac8")]([SubResource("Resource_obl3d"), SubResource("Resource_prjru")])
+slots = Array[ExtResource("2_8nac8")]([SubResource("Resource_prjru"), SubResource("Resource_hgkxs")])
 
-[sub_resource type="Resource" id="Resource_mlf13"]
+[sub_resource type="Resource" id="Resource_04qin"]
 script = ExtResource("2_8nac8")
 essence = ExtResource("3_a52yk")
 amount = 15
 
-[sub_resource type="Resource" id="Resource_04qin"]
+[sub_resource type="Resource" id="Resource_w6agq"]
 script = ExtResource("2_8nac8")
 essence = ExtResource("4_ocooi")
 amount = 10
 
-[sub_resource type="Resource" id="Resource_w6agq"]
+[sub_resource type="Resource" id="Resource_hhoby"]
 script = ExtResource("1_whtph")
 earth = 15
 fire = 0
 water = 10
 wind = 0
-slots = Array[ExtResource("2_8nac8")]([SubResource("Resource_mlf13"), SubResource("Resource_04qin")])
+slots = Array[ExtResource("2_8nac8")]([SubResource("Resource_04qin"), SubResource("Resource_w6agq")])
 
 [sub_resource type="Resource" id="Resource_8nac8"]
 script = ExtResource("2_ds17d")
@@ -94,7 +95,7 @@ name = "Stability Regen"
 flavor = ""
 icon = ExtResource("5_a52yk")
 position = Vector2(1600, 1088)
-cost_arr = Array[ExtResource("1_whtph")]([SubResource("Resource_cgax8"), SubResource("Resource_hgkxs"), SubResource("Resource_w6agq")])
+cost_arr = Array[ExtResource("1_whtph")]([SubResource("Resource_obl3d"), SubResource("Resource_mlf13"), SubResource("Resource_hhoby")])
 effect_modifier_arr = Array[float]([0.5, 1.0, 1.5])
 max_level = 3
 base_cost = SubResource("Resource_s2rse")
@@ -105,7 +106,7 @@ base_effect_modifier = 0.5
 effect_modifier_multiplier = 0.5
 unlocked = false
 unlock_level_index = 1
-unlocks = Array[Resource]([])
+unlocks = Array[Resource]([ExtResource("8_ocooi")])
 description_prefix = "Regenerate "
 description_suffix = " stability per second"
 description_modifier_format = 1

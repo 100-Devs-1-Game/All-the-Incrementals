@@ -3,6 +3,8 @@ extends RigidBody2D
 ## Emitted when the player collects a spirit
 signal spirit_collected(value: int)
 
+const CONTACT_MINIMUM_VELOCITY: float = 400
+
 @export var ripple_intensity_curve: Curve
 @export var boost_timer: Timer
 
@@ -14,6 +16,7 @@ var boost_duration: float = 0.3
 # I fucking hate this shit but it's not worth fixing
 var is_boosting: bool = false
 var is_crit_boosting: bool = false
+var rock_crusher: bool = false
 
 var invincibility: float = 0.0
 
@@ -31,6 +34,7 @@ var boat_max_stability := 100.0
 var boat_stability := boat_max_stability
 var stability_regen: float = 0.0
 var fail_damage: float = 10.0
+var crash_damage: float = 10.0
 
 @onready var spirit_magnetism_area: Area2D = $SpiritMagnetismArea
 @onready var spirit_magnetism_area_collider: CollisionShape2D = $SpiritMagnetismArea/Collider
@@ -48,7 +52,8 @@ func _init() -> void:
 			&"boost_duration",
 			&"rotation_max_speed",
 			&"rotation_min_speed",
-			&"fail_damage"
+			&"fail_damage",
+			&"crash_damage"
 		]
 	)
 
@@ -70,8 +75,6 @@ func _physics_process(delta: float) -> void:
 	if invincibility:
 		invincibility = maxf(invincibility - delta, 0)
 		return
-	for i in get_contact_count():
-		_fail()
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -100,14 +103,33 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 	state.linear_velocity -= transform.y * (broadside_speed - broadside_speed * broadside_delta)
 
+	for contact in state.get_contact_count():
+		var contact_speed: float = state.get_contact_local_velocity_at_position(contact).length()
+		if contact_speed < CONTACT_MINIMUM_VELOCITY:
+			continue
+
+		if rock_crusher:
+			print("HAS ROCK CRUSHER")
+			var collider_rid: RID = state.get_contact_collider(contact)
+			print(collider_rid)
+			# rocks exist on layer 4 so we discriminate based on that
+			if PhysicsServer2D.body_get_collision_layer(collider_rid) & 0b1000:
+				(
+					instance_from_id(PhysicsServer2D.body_get_object_instance_id(collider_rid))
+					. queue_free()
+				)
+
+		if invincibility <= 0:
+			take_damage(crash_damage)
+
 
 func take_damage(amount: float):
 	boat_stability -= amount
+	invincibility += 0.1
 
 
 func _fail():
 	boat_stability -= fail_damage
-	invincibility += 0.1
 
 
 func _boost():

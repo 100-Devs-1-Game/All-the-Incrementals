@@ -4,6 +4,8 @@
 
 [node name="Rock" type="StaticBody2D" groups=["hazzard"]]
 scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-23, 29, -25, -11, -10, -20, -8, -40, 16, -45, 31, -27, 23, -8, 28, 13, 13, 34, -3, 38)
