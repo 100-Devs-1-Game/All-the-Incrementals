@@ -6,13 +6,7 @@ extends Resource
 
 @export_storage var player_state: PlayerState
 
-@export var altars: Array[AltarStats]
-
-
-func get_altar(essence: Essence):
-	assert(essence)
-	for altar in altars:
-		if essence == altar.essence:
-			return altar
-	assert(false)
-	return null
+@export var earth_altar: AltarStats
+@export var fire_altar: AltarStats
+@export var water_altar: AltarStats
+@export var wind_altar: AltarStats
