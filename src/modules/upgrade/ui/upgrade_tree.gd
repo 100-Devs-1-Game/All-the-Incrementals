@@ -33,6 +33,7 @@ func change_display(
 	description: String
 ) -> void:
 	current_upgrade = upgrade
+	$ClickAudio.play(0.0)
 	$CanvasLayer/UI/UpgradeInfoContainer.show()
 	$CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer/NameInfo.text = (
 		"[font_size=80]" + name_text
