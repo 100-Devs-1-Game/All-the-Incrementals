@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=29 format=3 uid="uid://chpebtjv4tdue"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://chpebtjv4tdue"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_wwb6w"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_vf45c"]
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_g4saf"]
 [ext_resource type="Script" uid="uid://dw7inpofcgoc" path="res://modules/minigame/wind_platformer/upgrade_logic.gd" id="4_b5hjh"]
+[ext_resource type="Texture2D" uid="uid://b2y1xntsuvkcp" path="res://assets/minigames/fire_fighters/icons/longer_till_game_over.png" id="4_vf45c"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_8iyab"]
 
 [sub_resource type="Resource" id="Resource_lyr44"]
@@ -161,6 +162,7 @@ logic = SubResource("Resource_y6om1")
 unlocks_feature = ""
 name = "Longer Countdown"
 flavor = ""
+icon = ExtResource("4_vf45c")
 position = Vector2(-704, -1024)
 cost_arr = Array[ExtResource("1_wwb6w")]([SubResource("Resource_vf45c"), SubResource("Resource_b5hjh"), SubResource("Resource_3tmcj"), SubResource("Resource_m7x0g"), SubResource("Resource_urtf6"), SubResource("Resource_0meyx"), SubResource("Resource_gspd7"), SubResource("Resource_gq468"), SubResource("Resource_2am32"), SubResource("Resource_sc4nh")])
 effect_modifier_arr = Array[float]([2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0, 18.0, 20.0])

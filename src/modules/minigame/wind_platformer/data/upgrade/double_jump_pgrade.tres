@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=29 format=3 uid="uid://bsip0ecp7kkq3"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://bsip0ecp7kkq3"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_6o2oq"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_yqgvc"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_7wtwm"]
 [ext_resource type="Script" uid="uid://dw7inpofcgoc" path="res://modules/minigame/wind_platformer/upgrade_logic.gd" id="4_br61m"]
+[ext_resource type="Texture2D" uid="uid://b6n6nsdfjwfu2" path="res://assets/minigames/wind_platformer/icons/double_jump.webp" id="4_yqgvc"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_t8wm0"]
 
 [sub_resource type="Resource" id="Resource_83jdx"]
@@ -161,6 +162,7 @@ logic = SubResource("Resource_rsege")
 unlocks_feature = ""
 name = "Double Jump"
 flavor = ""
+icon = ExtResource("4_yqgvc")
 position = Vector2(-704, -320)
 cost_arr = Array[ExtResource("1_6o2oq")]([SubResource("Resource_yqgvc"), SubResource("Resource_br61m"), SubResource("Resource_aqm28"), SubResource("Resource_pb6co"), SubResource("Resource_q5l77"), SubResource("Resource_jmpym"), SubResource("Resource_vqln3"), SubResource("Resource_huqcg"), SubResource("Resource_g6s2b"), SubResource("Resource_j2pxc")])
 effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])

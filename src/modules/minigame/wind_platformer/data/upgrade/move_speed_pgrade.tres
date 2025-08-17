@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=29 format=3 uid="uid://b8s4ipwcfdlxa"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://b8s4ipwcfdlxa"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_pofxq"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_3rppw"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_watec"]
+[ext_resource type="Texture2D" uid="uid://b65lmndmumknf" path="res://assets/minigames/wind_platformer/icons/walk_speed.webp" id="4_3rppw"]
 [ext_resource type="Script" uid="uid://dw7inpofcgoc" path="res://modules/minigame/wind_platformer/upgrade_logic.gd" id="4_f18ee"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_g61wc"]
 
@@ -161,6 +162,7 @@ logic = SubResource("Resource_avslx")
 unlocks_feature = ""
 name = "Move Speed"
 flavor = ""
+icon = ExtResource("4_3rppw")
 position = Vector2(-1728, -1728)
 cost_arr = Array[ExtResource("1_pofxq")]([SubResource("Resource_3rppw"), SubResource("Resource_f18ee"), SubResource("Resource_267ij"), SubResource("Resource_ab3kl"), SubResource("Resource_oahvw"), SubResource("Resource_fomo7"), SubResource("Resource_kgjyn"), SubResource("Resource_ywuwx"), SubResource("Resource_jejup"), SubResource("Resource_tni48")])
 effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])

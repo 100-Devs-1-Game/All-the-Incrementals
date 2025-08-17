@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://b2ifu34javhc3"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=31 format=3 uid="uid://b2ifu34javhc3"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_c7gr4"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_53gia"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_0j6dp"]
+[ext_resource type="Texture2D" uid="uid://bxuwcuf56d3rk" path="res://assets/minigames/wind_platformer/icons/cloud_increase.webp" id="4_0j6dp"]
 [ext_resource type="Script" uid="uid://dw7inpofcgoc" path="res://modules/minigame/wind_platformer/upgrade_logic.gd" id="4_baswy"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_2y21l"]
 [ext_resource type="Resource" uid="uid://cyc8yvxhn34j2" path="res://modules/minigame/wind_platformer/data/upgrade/bonus2x_clouds_pgrade.tres" id="6_53gia"]
@@ -162,6 +163,7 @@ logic = SubResource("Resource_imshc")
 unlocks_feature = ""
 name = "More Clouds"
 flavor = ""
+icon = ExtResource("4_0j6dp")
 position = Vector2(-2752, 512)
 cost_arr = Array[ExtResource("1_c7gr4")]([SubResource("Resource_0j6dp"), SubResource("Resource_2y21l"), SubResource("Resource_dxppa"), SubResource("Resource_4vdwx"), SubResource("Resource_6d45p"), SubResource("Resource_hve7v"), SubResource("Resource_l86qw"), SubResource("Resource_6puun"), SubResource("Resource_nwgn8"), SubResource("Resource_8hx4i")])
 effect_modifier_arr = Array[float]([2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0, 18.0, 20.0])
