@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="AltarUpgrade" load_steps=6 format=3 uid="uid://pbmrkrwj1ybh"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_8d4sj"]
+[ext_resource type="Script" uid="uid://0ljj53yi7c3o" path="res://modules/overworld/altar/altar_upgrade.gd" id="2_aqxoi"]
+[ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="2_sc2d1"]
+[ext_resource type="Script" uid="uid://rx50mrpj0daj" path="res://modules/overworld/altar/altar_upgrade_logic.gd" id="3_lyifb"]
+
+[sub_resource type="Resource" id="Resource_x4qbc"]
+script = ExtResource("3_lyifb")
+type = 0
+metadata/_custom_type_script = "uid://rx50mrpj0daj"
+
+[resource]
+script = ExtResource("2_aqxoi")
+essence = ExtResource("2_sc2d1")
+logic = SubResource("Resource_x4qbc")
+name = ""
+flavor = ""
+position = Vector2(0, 0)
+cost_arr = Array[ExtResource("1_8d4sj")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 0
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_custom_type_script = "uid://0ljj53yi7c3o"
