@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameData" load_steps=7 format=3 uid="uid://dh1qjmvspv4uh"]
+[gd_resource type="Resource" script_class="MinigameData" load_steps=14 format=3 uid="uid://dh1qjmvspv4uh"]
 
 [ext_resource type="PackedScene" uid="uid://bytqv7h0iow3u" path="res://modules/minigame/wind_platformer/wind_platformer_minigame.tscn" id="1_b7r2j"]
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="2_44lnl"]
@@ -6,12 +6,19 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_vw8gv"]
 [ext_resource type="Resource" uid="uid://xrgrlffqjrcf" path="res://modules/minigame/wind_platformer/data/upgrade/jump_height_upgrade.tres" id="5_b7r2j"]
 [ext_resource type="Resource" uid="uid://b2ifu34javhc3" path="res://modules/minigame/wind_platformer/data/upgrade/more_clouds_upgrade.tres" id="5_vw8gv"]
+[ext_resource type="Resource" uid="uid://chpebtjv4tdue" path="res://modules/minigame/wind_platformer/data/upgrade/longer_countdown.tres" id="7_17406"]
+[ext_resource type="Resource" uid="uid://ouq23x8ewxpc" path="res://modules/minigame/wind_platformer/data/upgrade/diving_upgrade.tres" id="8_gain7"]
+[ext_resource type="Resource" uid="uid://bso8bd0ijflav" path="res://modules/minigame/wind_platformer/data/upgrade/air_control_upgrade.tres" id="9_7o05s"]
+[ext_resource type="Resource" uid="uid://b8s4ipwcfdlxa" path="res://modules/minigame/wind_platformer/data/upgrade/move_speed_upgrade.tres" id="10_xjeio"]
+[ext_resource type="Resource" uid="uid://dqbedabauyvux" path="res://modules/minigame/wind_platformer/data/upgrade/bonus5x_clouds_upgrade.tres" id="11_8s2q8"]
+[ext_resource type="Resource" uid="uid://cyc8yvxhn34j2" path="res://modules/minigame/wind_platformer/data/upgrade/bonus2x_clouds_upgrade.tres" id="12_grwor"]
+[ext_resource type="Resource" uid="uid://bsip0ecp7kkq3" path="res://modules/minigame/wind_platformer/data/upgrade/double_jump_upgrade.tres" id="13_x64tj"]
 
 [resource]
 script = ExtResource("2_44lnl")
 display_name = "wind_platformer"
 minigame_scene = ExtResource("1_b7r2j")
-upgrade_tree_root_nodes = Array[ExtResource("3_vw8gv")]([ExtResource("5_b7r2j"), ExtResource("5_vw8gv")])
+upgrade_tree_root_nodes = Array[ExtResource("3_vw8gv")]([ExtResource("5_b7r2j"), ExtResource("5_vw8gv"), ExtResource("7_17406"), ExtResource("8_gain7"), ExtResource("9_7o05s"), ExtResource("10_xjeio"), ExtResource("11_8s2q8"), ExtResource("12_grwor"), ExtResource("13_x64tj")])
 output_essence = ExtResource("2_vw8gv")
 currency_conversion_factor = 1.0
 high_scores = Array[int]([])
