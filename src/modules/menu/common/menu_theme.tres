@@ -1,12 +1,22 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://5wgly2wlncpm"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://5wgly2wlncpm"]
 
-[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="1_c5coo"]
 [ext_resource type="StyleBox" uid="uid://ct6fgr57c8vlo" path="res://modules/menu/common/button_stylebox.tres" id="1_k5h6c"]
+[ext_resource type="FontFile" uid="uid://b4sm0lte0jiot" path="res://external/fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="1_u03aq"]
+[ext_resource type="StyleBox" uid="uid://b57scxlo0r8on" path="res://modules/menu/common/paper_style_box_texture.tres" id="2_k5h6c"]
+[ext_resource type="FontFile" uid="uid://c5nm8jyd20vtl" path="res://external/fonts/Mansalva/Mansalva-Regular.ttf" id="3_giqwk"]
+
+[sub_resource type="FontVariation" id="FontVariation_u03aq"]
+base_font = ExtResource("1_u03aq")
+spacing_glyph = 2
+spacing_space = 5
 
 [resource]
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
-Button/constants/outline_size = 7
+Button/colors/font_color = Color(0.32549, 0.188235, 0.129412, 1)
+Button/colors/font_hover_color = Color(0.709804, 0.262745, 0.215686, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 4
+Button/fonts/font = SubResource("FontVariation_u03aq")
 Button/styles/hover = ExtResource("1_k5h6c")
 Button/styles/normal = ExtResource("1_k5h6c")
 Button/styles/pressed = ExtResource("1_k5h6c")
@@ -15,5 +25,10 @@ Label/colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 25
 Label/font_sizes/font_size = 71
-Label/styles/normal = ExtResource("1_c5coo")
-Panel/styles/panel = ExtResource("1_c5coo")
+Label/fonts/font = ExtResource("3_giqwk")
+Label/styles/normal = ExtResource("1_k5h6c")
+Panel/styles/panel = ExtResource("2_k5h6c")
+RichTextLabel/colors/default_color = Color(0.32549, 0.188235, 0.129412, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
+RichTextLabel/constants/outline_size = 4
+RichTextLabel/fonts/normal_font = null
