@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=12 format=3 uid="uid://daldooqdybmll"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_g04ju"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_1cf1q"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_y80nn"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_dgpwa"]
+[ext_resource type="Texture2D" uid="uid://bq1s81wi6c3nt" path="res://assets/minigames/wind_platformer/icons/screen_borders.png" id="4_5ef1u"]
+[ext_resource type="Script" uid="uid://dw7inpofcgoc" path="res://modules/minigame/wind_platformer/upgrade_logic.gd" id="5_aqvfj"]
+
+[sub_resource type="Resource" id="Resource_2udk4"]
+script = ExtResource("2_1cf1q")
+essence = ExtResource("3_dgpwa")
+amount = 1000
+
+[sub_resource type="Resource" id="Resource_uqwhv"]
+script = ExtResource("1_g04ju")
+earth = 1000
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_1cf1q")]([SubResource("Resource_2udk4")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_i1o16"]
+script = ExtResource("2_1cf1q")
+essence = ExtResource("3_dgpwa")
+amount = 1000
+
+[sub_resource type="Resource" id="Resource_wkxjt"]
+script = ExtResource("1_g04ju")
+earth = 1000
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_1cf1q")]([SubResource("Resource_i1o16")])
+
+[sub_resource type="Resource" id="Resource_vvktb"]
+script = ExtResource("5_aqvfj")
+type = 8
+metadata/_custom_type_script = "uid://dw7inpofcgoc"
+
+[resource]
+script = ExtResource("2_y80nn")
+logic = SubResource("Resource_vvktb")
+unlocks_feature = ""
+name = "Borders"
+flavor = ""
+icon = ExtResource("4_5ef1u")
+position = Vector2(-704, -1728)
+cost_arr = Array[ExtResource("1_g04ju")]([SubResource("Resource_wkxjt")])
+effect_modifier_arr = Array[float]([1.0])
+max_level = 1
+base_cost = SubResource("Resource_uqwhv")
+base_cost_multiplier = 1.0
+exponential_cost = false
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level = 0
+unlocks = Array[Resource]([])
+description_prefix = "Add left & right Screen border"
+description_suffix = ""
+description_modifier_format = 3
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b5gx7hrc8phfj"]
+[gd_scene load_steps=32 format=3 uid="uid://b5gx7hrc8phfj"]
 
 [ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
 [ext_resource type="Texture2D" uid="uid://bg1q5342vtyof" path="res://assets/minigames/wind_platformer/character/dive/000.png" id="2_7xqbe"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://db2amhq563rqf" path="res://assets/minigames/wind_platformer/sfx/sfx_cloud_jump_02.ogg" id="24_hdmq6"]
 [ext_resource type="AudioStream" uid="uid://crdpuwen62s16" path="res://assets/minigames/wind_platformer/sfx/sfx_cloud_land_02.ogg" id="25_uom4x"]
 [ext_resource type="AudioStream" uid="uid://bgr4m8cg5dp5h" path="res://assets/minigames/wind_platformer/sfx/lp_wind_calm_woodz.ogg" id="26_uom4x"]
+[ext_resource type="AudioStream" uid="uid://mdane7hai5e1" path="res://assets/minigames/wind_platformer/sfx/fire_small_lp.ogg" id="27_af6i6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkh7d"]
 size = Vector2(32, 48)
@@ -136,7 +137,7 @@ colors = PackedColorArray(0.901961, 0, 0, 0, 0.901961, 0, 0, 1, 0.737092, 0.6314
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_hjopy")
 acceleration = 1000.0
 wind_impact = 2.0
@@ -199,10 +200,13 @@ stream = ExtResource("25_uom4x")
 stream = ExtResource("26_uom4x")
 autoplay = true
 
+[node name="AudioStreamPlayer Burning Feet" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("27_af6i6")
+
 [node name="CPUParticles Burning Feet" type="CPUParticles2D" parent="."]
-visible = false
 z_index = -1
 position = Vector2(0, 25)
+emitting = false
 amount = 40
 lifetime = 0.5
 lifetime_randomness = 0.3
@@ -217,5 +221,9 @@ scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_7xqbe")
 color_ramp = SubResource("Gradient_7xqbe")
 
+[node name="Timer Burning Feet" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_animation_finished"]
+[connection signal="timeout" from="Timer Burning Feet" to="." method="_on_timer_burning_feet_timeout"]

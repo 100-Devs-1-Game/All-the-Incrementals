@@ -11,7 +11,8 @@ enum Type {
 	BONUS5X,
 	DOUBLE_JUMP,
 	BORDERS,
-	COUNTDOWN
+	COUNTDOWN,
+	BURNING_FEET
 }
 
 @export var type: Type
@@ -42,5 +43,6 @@ func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 		Type.DOUBLE_JUMP:
 			my_game.player.double_jump_factor = upgrade.get_current_effect_modifier()
 		Type.BORDERS:
-			#assert(false, "not implemented")
-			pass
+			my_game.activate_borders()
+		Type.BURNING_FEET:
+			my_game.player.burning_feet_duration = upgrade.get_current_effect_modifier()
