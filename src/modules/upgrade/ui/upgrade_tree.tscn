@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dntdim0jjlhy1"]
+[gd_scene load_steps=23 format=3 uid="uid://dntdim0jjlhy1"]
 
 [ext_resource type="Script" uid="uid://drfyahgpyskxs" path="res://modules/upgrade/ui/upgrade_tree.gd" id="1_bc6uk"]
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="3_lbln1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://yehkf7i1dt50" path="res://component/shared/current_essence.tscn" id="7_vxjcf"]
 [ext_resource type="Script" uid="uid://dcajbb2nsjenl" path="res://modules/upgrade/ui/upgrade_tree_camera.gd" id="8_bc6uk"]
 [ext_resource type="AudioStream" uid="uid://7cub7vrtnwpn" path="res://assets/ui/sfx/sfx_button_deny_01.ogg" id="10_lbln1"]
+[ext_resource type="AudioStream" uid="uid://blqybba64652d" path="res://assets/ui/sfx/sfx_button_click_03.ogg" id="12_lbln1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_48wnc"]
 size = Vector2(500, 500)
@@ -311,5 +312,10 @@ bus = &"SFX"
 
 [node name="CurrentEssence" parent="CanvasLayer/UI" instance=ExtResource("7_vxjcf")]
 layout_mode = 1
+
+[node name="ClickAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_lbln1")
+mix_target = 2
+bus = &"SFX"
 
 [connection signal="fill_complete" from="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton" to="." method="_on_fill_button_fill_complete"]
