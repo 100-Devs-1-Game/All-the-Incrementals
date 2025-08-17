@@ -1,15 +1,14 @@
 extends Control
 
-@export var move_speed := 300.0
-@export var max_speed := 1000.0
+@export var tick_base_move_speed := 300.0
+@export var tick_speed_mod := 1.3
+@export var tick_max_speed := 800.0
 @export var boost_area_base_scale := 1.0
 @export var player: Node
 @export var stability_bar: TextureProgressBar
 
+var tick_move_speed := tick_base_move_speed
 var direction := 1
-var speed_increase := 50.0
-var miss_speed_value := 150
-var speed_drain := 55.0
 var updating_ui := false
 
 @onready var point = %Point
@@ -29,15 +28,13 @@ func _ready() -> void:
 
 
 func _process(delta):
-	point.position.x += move_speed * direction * delta
+	point.position.x += tick_move_speed * direction * delta
 
 	var bar_width = $Panel.size.x
 	var marker_width = point.size.x
 	if point.position.x + marker_width >= bar_width:
 		point.position.x = 0
 		target_zone.scale.x = boost_area_base_scale
-	if move_speed > 300.0:
-		move_speed -= speed_drain * delta
 	if updating_ui:
 		update_ui()
 
@@ -54,8 +51,7 @@ func _input(event):
 
 		if marker_rect.intersects(target_rect):
 			print("Hit!")
-			move_speed = clampf(move_speed, 300.0, max_speed)
-			move_speed += speed_increase
+			tick_move_speed = minf(tick_move_speed * tick_speed_mod, tick_max_speed)
 			point.position.x = 0
 			set_target_width()
 			player._boost()
@@ -65,8 +61,7 @@ func _input(event):
 			player._fail()
 			target_zone.scale.x = boost_area_base_scale
 			point.position.x = 0
-			move_speed = clampf(move_speed, 300.0, max_speed)
-			move_speed = move_speed - miss_speed_value
+			tick_move_speed = tick_base_move_speed
 
 
 func set_target_width():
