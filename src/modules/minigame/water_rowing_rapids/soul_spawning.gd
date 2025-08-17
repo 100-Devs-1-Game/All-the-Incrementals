@@ -62,9 +62,9 @@ func _exit_tree() -> void:
 func _draw() -> void:
 	if not Engine.is_editor_hint():
 		return
-	draw_rect(Rect2(Vector2.ZERO, sample_size), Color.WHITE, false)
+	draw_rect(Rect2(-sample_size / 2.0, sample_size), Color.WHITE, false)
 	for p in points:
-		draw_circle(p, 8, Color.RED)
+		draw_circle(p - sample_size / 2.0, 8, Color.RED)
 
 
 ## Regenerates ALL spawners currently in the tree.
@@ -141,6 +141,10 @@ func generate_poisson() -> void:
 		if not point_placed:
 			_spawn_points.remove_at(spawn_index)
 	queue_redraw.call_deferred()
+
+
+func get_point_global_pos(point: Vector2) -> Vector2:
+	return to_global(point - sample_size / 2.0)
 
 
 func _is_valid(candidate: Vector2) -> bool:

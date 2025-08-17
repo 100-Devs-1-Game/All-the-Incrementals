@@ -33,7 +33,7 @@ func _start():
 		func(spawner: WRRSoulSpawner, point: Vector2):
 			var spirit_inst := SPIRITS[choose_spirit()].instantiate()
 			add_child(spirit_inst)
-			spirit_inst.global_position = spawner.to_global(point)
+			spirit_inst.global_position = spawner.get_point_global_pos(point)
 	)
 
 
