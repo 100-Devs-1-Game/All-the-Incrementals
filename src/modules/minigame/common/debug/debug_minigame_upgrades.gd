@@ -78,7 +78,9 @@ func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
 
 
 func _get_upgrade_button_text(upgrade: BaseUpgrade) -> String:
-	return "%s Lvl %d/%d" % [upgrade.name, upgrade.get_level() + 1, upgrade.get_max_level() + 1]
+	return (
+		"%s Lvl %d/%d" % [upgrade.name, upgrade.get_level_index() + 1, upgrade.get_max_level() + 1]
+	)
 
 
 func _on_upgrade_item_pressed(item: TreeItem, upgrade: BaseUpgrade):

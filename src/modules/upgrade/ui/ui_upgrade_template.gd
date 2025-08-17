@@ -52,7 +52,7 @@ func _resize_texture(target_size: Vector2):
 
 func _set_level_text() -> void:
 	var level: String = ""
-	level += str(base_upgrade.get_level() + 1)
+	level += str(base_upgrade.get_level_index() + 1)
 	level += "/"
 	level += str(base_upgrade.get_max_level() + 1)
 	level_text = level
