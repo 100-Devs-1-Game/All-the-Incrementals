@@ -6,6 +6,7 @@ extends Node2D
 const SPAWNERS_GROUP := &"__soul_spawners"
 
 static var spawners: Array[Node]
+static var density_mod: float = 0.0
 
 ## The minimum distance between points
 @export var radius: float = 100
@@ -95,8 +96,9 @@ func regenerate_poisson() -> void:
 ## adding new ones as if the old did not exist. Use [method Array.clear] on [member points] to
 ## Remove existing ones, or call [method regenerate_poisson].
 func generate_poisson() -> void:
+	var calc_radius := radius * (1.0 - density_mod)
 	# Calculate grid cell size and dimensions
-	cell_size = radius / sqrt(2)
+	cell_size = calc_radius / sqrt(2)
 	_grid_size = Vector2i((sample_size / cell_size).ceil())
 
 	# Initialize 2D grid
@@ -125,7 +127,7 @@ func generate_poisson() -> void:
 		for _i in range(samples):
 			var angle = rng.randf_range(0, TAU)
 			var dir = Vector2(cos(angle), sin(angle))
-			var candidate = spawn_center + dir * rng.randf_range(radius, 2 * radius)
+			var candidate = spawn_center + dir * rng.randf_range(calc_radius, 2 * calc_radius)
 
 			if _is_valid(candidate):
 				points.append(candidate)
@@ -148,6 +150,7 @@ func get_point_global_pos(point: Vector2) -> Vector2:
 
 
 func _is_valid(candidate: Vector2) -> bool:
+	var calc_radius := radius * (1.0 - density_mod)
 	if not _is_in_bounds(candidate):
 		return false
 
@@ -163,7 +166,7 @@ func _is_valid(candidate: Vector2) -> bool:
 			var index = grid[i][j]
 			if index != -1:
 				var dist = candidate.distance_to(points[index])
-				if dist < radius:
+				if dist < calc_radius:
 					return false
 	return true
 

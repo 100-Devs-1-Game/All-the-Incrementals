@@ -33,6 +33,8 @@ enum UpgradeType {
 	MISS_DAMAGE,
 	## Increases amount that void is repelled when a Spirit is picked up
 	VOID_REPELLANT,
+	## Increases the density of spirits by X%
+	SPIRIT_DENSITY
 }
 
 const BASE_PREFIX: String = "base_"
@@ -113,3 +115,5 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 			increase_from_base(game.player, &"fail_damage", -effect_modifier)
 		UpgradeType.VOID_REPELLANT:
 			game.chase_void.repel_strength = effect_modifier
+		UpgradeType.SPIRIT_DENSITY:
+			game.soul_spawner.density_mod = effect_modifier
