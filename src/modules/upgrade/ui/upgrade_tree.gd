@@ -15,6 +15,10 @@ func _ready():
 	if SceneLoader.has_current_minigame():
 		upgrades = SceneLoader.get_current_minigame().get_all_upgrades()
 		essence_type = SceneLoader.get_current_minigame().output_essence.name
+		for upgrade_root_node in SceneLoader.get_current_minigame().upgrade_tree_root_nodes:
+			upgrade_root_node.unlocked = true
+			if upgrade_root_node.get_level() + 1 >= upgrade_root_node.unlock_level:
+				_unlock_children(upgrade_root_node.unlocks)
 	else:
 		_read_upgrade_files()
 	_load_upgrades()
@@ -50,6 +54,17 @@ func change_display(
 	$CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton.to_poor = !(
 		current_upgrade.can_afford_next_level()
 	)
+	if !current_upgrade.unlocked:
+		$CanvasLayer/UI/UpgradeInfoContainer.hide()
+
+
+func _unlock_children(unlocks: Array[Resource]) -> void:
+	if unlocks == null || unlocks.is_empty():
+		return
+	for child in unlocks:
+		child.unlocked = true
+		if child.get_level() + 1 >= child.unlock_level:
+			_unlock_children(child.unlocks)
 
 
 func _read_upgrade_files():

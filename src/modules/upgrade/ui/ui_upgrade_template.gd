@@ -83,8 +83,8 @@ func _set_description_text() -> void:
 
 
 func _set_background() -> void:
-	#if(base_upgrade.flavor)
-	pass  #var texture: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
+	if base_upgrade.is_unlocked():
+		$BackgroundActive.visible = true
 
 
 func _on_select() -> void:
