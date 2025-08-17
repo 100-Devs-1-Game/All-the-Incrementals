@@ -83,8 +83,7 @@ func _set_description_text() -> void:
 
 
 func _set_background() -> void:
-	if base_upgrade.is_unlocked():
-		$BackgroundActive.visible = true
+	pass
 
 
 func _on_select() -> void:
