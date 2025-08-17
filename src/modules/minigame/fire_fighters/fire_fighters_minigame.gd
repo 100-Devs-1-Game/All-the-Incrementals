@@ -87,8 +87,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func _init_chunks():
-	for x in map_rect.size.x / chunk_size + 1:
-		for y in map_rect.size.y / chunk_size + 1:
+	for x in int(map_rect.size.x / float(chunk_size)) + 1:
+		for y in int(map_rect.size.y / float(chunk_size)) + 1:
 			_fire_chunks[Vector2i(x, y)] = 0.0
 
 
