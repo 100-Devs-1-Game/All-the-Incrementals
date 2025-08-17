@@ -7,12 +7,18 @@ extends Control
 @export var player: Node
 @export var stability_bar: TextureProgressBar
 
+var use_crit_zone: bool = false:
+	set(new):
+		use_crit_zone = new
+		crit_zone.visible = use_crit_zone
+
 var tick_move_speed := tick_base_move_speed
 var direction := 1
 var updating_ui := false
 
-@onready var point = %Point
-@onready var target_zone = %GoodZone
+@onready var point: Control = %Point
+@onready var target_zone: Control = %GoodZone
+@onready var crit_zone: Control = %CritZone
 
 
 func _ready() -> void:
@@ -44,10 +50,21 @@ func update_ui():
 	stability_bar.max_value = player.boat_max_stability
 
 
+# Here be DRY violations
 func _input(event):
 	if event.is_action_pressed("primary_action"):
-		var marker_rect = point.get_global_rect()
-		var target_rect = target_zone.get_global_rect()
+		var marker_rect := point.get_global_rect()
+		var target_rect := target_zone.get_global_rect()
+
+		if use_crit_zone:
+			var crit_rect := crit_zone.get_global_rect()
+			if marker_rect.intersects(crit_rect):
+				print("Crit!")
+				tick_move_speed = minf(tick_move_speed * tick_speed_mod, tick_max_speed)
+				point.position.x = 0
+				set_target_width()
+				player._boost()
+				player.is_crit_boosting = true
 
 		if marker_rect.intersects(target_rect):
 			print("Hit!")
