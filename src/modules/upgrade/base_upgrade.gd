@@ -126,9 +126,6 @@ func level_up() -> void:
 	if is_maxed_out():
 		push_error("Tried to level up past max level")
 		return
-	if current_level + 2 == unlock_level:
-		for upgrade: BaseUpgrade in unlocks:
-			upgrade.unlocked = true
 	SaveGameManager.world_state.minigame_unlock_levels[get_key()] = (current_level + 1)
 	SaveGameManager.save()
 
