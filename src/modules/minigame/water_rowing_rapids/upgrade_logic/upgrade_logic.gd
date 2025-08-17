@@ -31,6 +31,8 @@ enum UpgradeType {
 	CRIT_BOOST,
 	## Decrease damage from misses by X%
 	MISS_DAMAGE,
+	## Increases amount that void is repelled when a Spirit is picked up
+	VOID_REPELLANT,
 }
 
 const BASE_PREFIX: String = "base_"
@@ -109,3 +111,5 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 			game.player.crit_boost_impulse_mod = effect_modifier
 		UpgradeType.MISS_DAMAGE:
 			increase_from_base(game.player, &"fail_damage", -effect_modifier)
+		UpgradeType.VOID_REPELLANT:
+			game.chase_void.repel_strength = effect_modifier

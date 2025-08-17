@@ -119,3 +119,7 @@ func _boost():
 func _on_boost_timer_timeout() -> void:
 	is_boosting = false
 	is_crit_boosting = false
+
+
+func _on_sprit_collection_area_spirit_collected(value: int) -> void:
+	spirit_collected.emit(value)

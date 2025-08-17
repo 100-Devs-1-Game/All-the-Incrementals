@@ -46,6 +46,7 @@ func choose_spirit() -> int:
 
 func _on_rowing_player_spirit_collected(value: int) -> void:
 	add_score(value)
+	chase_void.repel()
 
 
 func polyline_to_segments(polyline: PackedVector2Array) -> PackedVector2Array:
