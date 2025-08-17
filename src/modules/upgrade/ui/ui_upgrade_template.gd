@@ -31,6 +31,7 @@ func reload_base_upgrade_data(_upgrade = null) -> void:
 	_set_name_text()
 	_set_description_text()
 	_set_background()
+	_set_foreground()
 	if _upgrade == base_upgrade:
 		_on_select()
 
@@ -85,6 +86,11 @@ func _set_description_text() -> void:
 func _set_background() -> void:
 	if base_upgrade.is_unlocked():
 		$BackgroundActive.visible = true
+
+
+func _set_foreground() -> void:
+	if base_upgrade.is_maxed_out():
+		$Foreground.visible = true
 
 
 func _on_select() -> void:
