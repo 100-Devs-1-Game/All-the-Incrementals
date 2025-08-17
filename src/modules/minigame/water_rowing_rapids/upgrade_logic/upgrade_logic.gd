@@ -4,10 +4,16 @@ extends BaseMinigameUpgradeLogic
 enum UpgradeType {
 	## Increases player regular top speed by X%
 	SPEED,
+	## Increases roration max speed by X%
+	TURN_SPEED,
+	## Increases roration min speed by X%
+	TURN_CONTROL,
 	## Increases speed bonus while boosting by X%
 	BOOST_SPEED,
 	## Increases boost duration by X%
 	BOOST_DURATION,
+	## Increases boost area size by X%
+	BOOST_AREA,
 	## Increases boat maximum stability by +X
 	STABILITY_MAX,
 	## Adds regeneration of stability over time (X stability/sec)
@@ -18,7 +24,11 @@ enum UpgradeType {
 	SPIRIT_MAGNETISM_AREA,
 	## Increases the likelyhood of getting better spirits*[br]
 	## (*It also makes it possible in the first place. It's weird.)
-	SPIRIT_VALUE
+	SPIRIT_VALUE,
+	## Increases spirit area magnetism strength X%
+	SPIRIT_MAGNETISM_STRENGTH,
+	## Unlocks crit boost at values greater than 0 - Increases crit boost bonus
+	CRIT_BOOST
 }
 
 const BASE_PREFIX: String = "base_"
@@ -61,8 +71,15 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 	match type:
 		UpgradeType.SPEED:
 			increase_from_base(game.player, &"speed", effect_modifier)
+		UpgradeType.TURN_SPEED:
+			increase_from_base(game.player, &"rotation_max_speed", effect_modifier)
+		UpgradeType.TURN_CONTROL:
+			increase_from_base(game.player, &"rotation_min_speed", effect_modifier)
 		UpgradeType.BOOST_SPEED:
 			increase_from_base(game.player, &"boost_impulse", effect_modifier)
+		UpgradeType.BOOST_AREA:
+			increase_from_base(game.player.rowing_ui, &"boost_area_base_scale", effect_modifier)
+			game.player.rowing_ui.target_zone.scale.x = game.player.rowing_ui.boost_area_base_scale
 		UpgradeType.BOOST_DURATION:
 			increase_from_base(game.player, &"boost_duration", effect_modifier)
 		UpgradeType.STABILITY_MAX:
@@ -79,5 +96,12 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 			increase_from_base(
 				game.player.spirit_magnetism_area_collider.shape, &"radius", effect_modifier
 			)
+		UpgradeType.SPIRIT_MAGNETISM_STRENGTH:
+			increase_from_base(
+				game.player.spirit_magnetism_area, &"magnetism_strength", effect_modifier
+			)
 		UpgradeType.SPIRIT_VALUE:
 			game.spirit_value = effect_modifier
+		UpgradeType.CRIT_BOOST:
+			game.player.rowing_ui.use_crit_zone = true
+			game.player.crit_boost_impulse_mod = effect_modifier

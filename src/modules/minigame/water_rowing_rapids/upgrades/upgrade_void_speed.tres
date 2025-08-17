@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=15 format=3 uid="uid://de5osmx82dyqc"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=16 format=3 uid="uid://de5osmx82dyqc"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_smr16"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_58hfe"]
 [ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="3_tjid4"]
+[ext_resource type="Texture2D" uid="uid://1hg762d5x4x1" path="res://assets/minigames/water_rowing_rapids/icons/void_speed_down.png" id="4_58hfe"]
 [ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="4_yurdt"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_ybcxk"]
 
@@ -61,7 +62,7 @@ slots = Array[ExtResource("2_58hfe")]([SubResource("Resource_my736")])
 
 [sub_resource type="Resource" id="Resource_g075e"]
 script = ExtResource("4_yurdt")
-type = 5
+type = 8
 metadata/_custom_type_script = "uid://cpbg43rac3mxr"
 
 [resource]
@@ -70,7 +71,8 @@ logic = SubResource("Resource_g075e")
 unlocks_feature = ""
 name = "-2.5% Void Speed"
 flavor = ""
-position = Vector2(768, 1536)
+icon = ExtResource("4_58hfe")
+position = Vector2(768, 1856)
 cost_arr = Array[ExtResource("1_smr16")]([SubResource("Resource_tjid4"), SubResource("Resource_ybcxk"), SubResource("Resource_g5hku")])
 effect_modifier_arr = Array[float]([0.025, 0.05, 0.075])
 max_level = 3

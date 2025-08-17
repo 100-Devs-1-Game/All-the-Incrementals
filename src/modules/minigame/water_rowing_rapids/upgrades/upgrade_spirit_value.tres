@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://cst2d7qra25vx"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=21 format=3 uid="uid://cst2d7qra25vx"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_30p7b"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_i7fh0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_4bp56"]
 [ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="4_4bp56"]
 [ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="4_4k22s"]
+[ext_resource type="Texture2D" uid="uid://3nd2aj2eh4mp" path="res://assets/minigames/water_rowing_rapids/icons/spirit_value.png" id="5_4k22s"]
 
 [sub_resource type="Resource" id="Resource_4k22s"]
 script = ExtResource("2_v6f54")
@@ -26,59 +27,59 @@ wind = 0
 slots = Array[ExtResource("2_v6f54")]([SubResource("Resource_4k22s"), SubResource("Resource_u27cx")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_4bp56"]
+[sub_resource type="Resource" id="Resource_asgb0"]
 script = ExtResource("2_v6f54")
 essence = ExtResource("3_4bp56")
 amount = 9
 
-[sub_resource type="Resource" id="Resource_asgb0"]
+[sub_resource type="Resource" id="Resource_qmbd5"]
 script = ExtResource("2_v6f54")
 essence = ExtResource("4_4bp56")
 amount = 2
 
-[sub_resource type="Resource" id="Resource_qmbd5"]
+[sub_resource type="Resource" id="Resource_7vgj6"]
 script = ExtResource("1_30p7b")
 earth = 9
 fire = 2
 water = 0
 wind = 0
-slots = Array[ExtResource("2_v6f54")]([SubResource("Resource_4bp56"), SubResource("Resource_asgb0")])
+slots = Array[ExtResource("2_v6f54")]([SubResource("Resource_asgb0"), SubResource("Resource_qmbd5")])
 
-[sub_resource type="Resource" id="Resource_7vgj6"]
+[sub_resource type="Resource" id="Resource_06ugw"]
 script = ExtResource("2_v6f54")
 essence = ExtResource("3_4bp56")
 amount = 15
 
-[sub_resource type="Resource" id="Resource_06ugw"]
+[sub_resource type="Resource" id="Resource_wtkyg"]
 script = ExtResource("2_v6f54")
 essence = ExtResource("4_4bp56")
 amount = 3
 
-[sub_resource type="Resource" id="Resource_wtkyg"]
+[sub_resource type="Resource" id="Resource_6yy1j"]
 script = ExtResource("1_30p7b")
 earth = 15
 fire = 3
 water = 0
 wind = 0
-slots = Array[ExtResource("2_v6f54")]([SubResource("Resource_7vgj6"), SubResource("Resource_06ugw")])
+slots = Array[ExtResource("2_v6f54")]([SubResource("Resource_06ugw"), SubResource("Resource_wtkyg")])
 
-[sub_resource type="Resource" id="Resource_6yy1j"]
+[sub_resource type="Resource" id="Resource_at3lk"]
 script = ExtResource("2_v6f54")
 essence = ExtResource("3_4bp56")
 amount = 25
 
-[sub_resource type="Resource" id="Resource_at3lk"]
+[sub_resource type="Resource" id="Resource_xkofa"]
 script = ExtResource("2_v6f54")
 essence = ExtResource("4_4bp56")
 amount = 6
 
-[sub_resource type="Resource" id="Resource_xkofa"]
+[sub_resource type="Resource" id="Resource_gum87"]
 script = ExtResource("1_30p7b")
 earth = 25
 fire = 6
 water = 0
 wind = 0
-slots = Array[ExtResource("2_v6f54")]([SubResource("Resource_6yy1j"), SubResource("Resource_at3lk")])
+slots = Array[ExtResource("2_v6f54")]([SubResource("Resource_at3lk"), SubResource("Resource_xkofa")])
 
 [sub_resource type="Resource" id="Resource_l35kp"]
 script = ExtResource("4_4k22s")
@@ -91,8 +92,9 @@ logic = SubResource("Resource_l35kp")
 unlocks_feature = ""
 name = "Spirit Value +1"
 flavor = ""
-position = Vector2(768, 2304)
-cost_arr = Array[ExtResource("1_30p7b")]([SubResource("Resource_qmbd5"), SubResource("Resource_wtkyg"), SubResource("Resource_xkofa")])
+icon = ExtResource("5_4k22s")
+position = Vector2(768, 2624)
+cost_arr = Array[ExtResource("1_30p7b")]([SubResource("Resource_7vgj6"), SubResource("Resource_6yy1j"), SubResource("Resource_gum87")])
 effect_modifier_arr = Array[float]([2.0, 3.0, 4.0])
 max_level = 3
 base_cost = SubResource("Resource_y7pl2")

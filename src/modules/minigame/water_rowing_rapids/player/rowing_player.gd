@@ -9,8 +9,11 @@ signal spirit_collected(value: int)
 ## Regular paddling topspeed of boat
 var speed: float = 600.0
 var boost_impulse: float = 60
+var crit_boost_impulse_mod: float = 0.0
 var boost_duration: float = 0.3
+# I fucking hate this shit but it's not worth fixing
 var is_boosting: bool = false
+var is_crit_boosting: bool = false
 
 var invincibility: float = 0.0
 
@@ -32,11 +35,19 @@ var stability_regen: float = 0.0
 @onready var spirit_magnetism_area_collider: CollisionShape2D = $SpiritMagnetismArea/Collider
 @onready var ripple_intensity_scaler: Node2D = %RippleIntensityScaler
 @onready var boost_foam_intensity_scaler: Node2D = %FoamIntensityScaler
+@onready var rowing_ui: Control = %RowingUI
 
 
 func _init() -> void:
 	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(
-		self, [&"speed", &"boost_impulse", &"boost_duration"]
+		self,
+		[
+			&"speed",
+			&"boost_impulse",
+			&"boost_duration",
+			&"rotation_max_speed",
+			&"rotation_min_speed"
+		]
 	)
 
 
@@ -51,6 +62,8 @@ func _physics_process(delta: float) -> void:
 	linear_velocity += transform.x * Input.get_axis(&"down", &"up") * speed * linear_damp * delta
 	if is_boosting:
 		linear_velocity += transform.x * boost_impulse
+	if is_crit_boosting:
+		linear_velocity += transform.x * boost_impulse * crit_boost_impulse_mod
 
 	if invincibility:
 		invincibility = maxf(invincibility - delta, 0)
@@ -103,3 +116,4 @@ func _boost():
 
 func _on_boost_timer_timeout() -> void:
 	is_boosting = false
+	is_crit_boosting = false
