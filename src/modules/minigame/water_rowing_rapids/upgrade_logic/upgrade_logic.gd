@@ -85,7 +85,7 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 		UpgradeType.BOOST_DURATION:
 			increase_from_base(game.player, &"boost_duration", effect_modifier)
 		UpgradeType.STABILITY_MAX:
-			game.player.boat_max_stability = effect_modifier
+			increase_from_base(game.player, &"boat_max_stability", effect_modifier)
 			game.player.boat_stability = effect_modifier
 		UpgradeType.STABILITY_REGEN:
 			game.player.stability_regen = effect_modifier
