@@ -63,8 +63,8 @@ const NO_LEVEL = -1
 ## has it been unlocked by a previous upgrade
 @export_storage var unlocked: bool = false
 
-## level required to unlock all further upgrades of this branch
-@export var unlock_level: int
+## the index of the level required to unlock all further upgrades of this branch
+@export var unlock_level_index: int
 
 ## Upgrades that can get unlocked by this one
 @export var unlocks: Array[Resource]
@@ -122,28 +122,30 @@ func get_key() -> StringName:
 
 
 func level_up() -> void:
-	var current_level = get_level()
-	var new_level = current_level + 1
+	var current_level_index = get_level_index()
+	var new_level_index = current_level_index + 1
 	if is_maxed_out():
 		push_error("Tried to level up past max level")
 		return
-
-	if new_level >= unlock_level:
+	if new_level_index >= unlock_level_index:
 		for upgrade in unlocks:
 			upgrade.unlocked = true
 			print(
 				(
-					"'%s' is now level %d which matches the required level of %d to unlock '%s'"
-					% [name, new_level, unlock_level, upgrade.name]
+					"'%s' is now at level index %d which is level %d"
+					% [name, new_level_index, new_level_index + 1]
+				),
+				(
+					" and matches the required level index of %d to unlock '%s'"
+					% [unlock_level_index, upgrade.name]
 				)
 			)
-
-	SaveGameManager.world_state.minigame_unlock_levels[get_key()] = new_level
+	SaveGameManager.world_state.minigame_unlock_levels[get_key()] = (new_level_index)
 	SaveGameManager.save()
 
 
 func level_down() -> void:
-	var current_level = get_level()
+	var current_level = get_level_index()
 	#TODO: this shouldn't need a +1, but it causes an assert elsewhere
 	if current_level <= NO_LEVEL + 1:
 		push_error("Tried to level down past min level")
@@ -153,7 +155,7 @@ func level_down() -> void:
 
 
 # Get level index. 0 = level 1, ...
-func get_level() -> int:
+func get_level_index() -> int:
 	return SaveGameManager.world_state.minigame_unlock_levels.get(get_key(), NO_LEVEL)
 
 
@@ -166,7 +168,7 @@ func get_description(level: int = -1) -> String:
 	# assumes it should return the description for the next level when
 	# the default argument was used
 	if level == -1:
-		level = get_level() + 1
+		level = get_level_index() + 1
 	if level > get_max_level():
 		return ""
 
@@ -198,7 +200,7 @@ func get_effect_modifier(level: int) -> float:
 
 
 func get_current_effect_modifier() -> float:
-	return get_effect_modifier(get_level())
+	return get_effect_modifier(get_level_index())
 
 
 func is_unlocked() -> bool:
@@ -206,13 +208,13 @@ func is_unlocked() -> bool:
 
 
 func is_maxed_out() -> bool:
-	return get_level() == get_max_level()
+	return get_level_index() == get_max_level()
 
 
 func get_next_level_cost() -> EssenceInventory:
 	if is_maxed_out():
 		return null
-	return cost_arr[get_level() + 1]
+	return cost_arr[get_level_index() + 1]
 
 
 func can_afford_next_level() -> bool:
