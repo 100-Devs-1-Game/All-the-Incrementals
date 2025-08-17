@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://bv5hn65wm3ern"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=21 format=3 uid="uid://bv5hn65wm3ern"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_wykc3"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_4f3lg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_4f3lg"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_drk0m"]
 [ext_resource type="Texture2D" uid="uid://bj1oq4k1gp5fr" path="res://assets/minigames/water_rowing_rapids/icons/spirit_attraction_strength_up.png" id="3_umfag"]
+[ext_resource type="Resource" uid="uid://bjbbtd0bec76p" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_spirit_density.tres" id="7_drk0m"]
 
 [sub_resource type="Resource" id="Resource_mddqj"]
 script = ExtResource("2_4f3lg")
@@ -109,8 +110,8 @@ round_smoothness = 1.0
 base_effect_modifier = 0.2
 effect_modifier_multiplier = 0.2
 unlocked = false
-unlock_level = 0
-unlocks = Array[Resource]([])
+unlock_level = 1
+unlocks = Array[Resource]([ExtResource("7_drk0m")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0

@@ -28,7 +28,13 @@ enum UpgradeType {
 	## Increases spirit area magnetism strength X%
 	SPIRIT_MAGNETISM_STRENGTH,
 	## Unlocks crit boost at values greater than 0 - Increases crit boost bonus
-	CRIT_BOOST
+	CRIT_BOOST,
+	## Decrease damage from misses by X%
+	MISS_DAMAGE,
+	## Increases amount that void is repelled when a Spirit is picked up
+	VOID_REPELLANT,
+	## Increases the density of spirits by X%
+	SPIRIT_DENSITY
 }
 
 const BASE_PREFIX: String = "base_"
@@ -83,7 +89,7 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 		UpgradeType.BOOST_DURATION:
 			increase_from_base(game.player, &"boost_duration", effect_modifier)
 		UpgradeType.STABILITY_MAX:
-			game.player.boat_max_stability = effect_modifier
+			increase_from_base(game.player, &"boat_max_stability", effect_modifier)
 			game.player.boat_stability = effect_modifier
 		UpgradeType.STABILITY_REGEN:
 			game.player.stability_regen = effect_modifier
@@ -105,3 +111,9 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 		UpgradeType.CRIT_BOOST:
 			game.player.rowing_ui.use_crit_zone = true
 			game.player.crit_boost_impulse_mod = effect_modifier
+		UpgradeType.MISS_DAMAGE:
+			increase_from_base(game.player, &"fail_damage", -effect_modifier)
+		UpgradeType.VOID_REPELLANT:
+			game.chase_void.repel_strength = effect_modifier
+		UpgradeType.SPIRIT_DENSITY:
+			game.soul_spawner.density_mod = effect_modifier

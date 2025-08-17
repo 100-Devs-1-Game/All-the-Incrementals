@@ -13,6 +13,7 @@ var player: Node2D
 ## used for upgrades to reduce overall speed
 var speed_mod: float = 1.0
 var current_speed: float = starting_speed
+var repel_strength: float = 0.0
 var drag_strength: float = 400
 
 @onready var whispers: AudioStreamPlayer = $Whispers
@@ -41,6 +42,11 @@ func _physics_process(delta: float) -> void:
 	for body in get_overlapping_bodies():
 		body.take_damage(delta * 20.0)
 		_do_grab(body)
+
+
+func repel() -> void:
+	current_speed *= 1.0 - repel_strength
+	print("REPELLED\nREPELLED\nREPELLED\n", current_speed)
 
 
 func get_distance() -> float:

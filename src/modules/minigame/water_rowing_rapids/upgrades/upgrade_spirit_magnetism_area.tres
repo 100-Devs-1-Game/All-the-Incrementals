@@ -64,7 +64,7 @@ slots = Array[ExtResource("2_rsg88")]([SubResource("Resource_lg0ht")])
 
 [sub_resource type="Resource" id="Resource_rsg88"]
 script = ExtResource("2_uejbt")
-type = 6
+type = 9
 metadata/_custom_type_script = "uid://cpbg43rac3mxr"
 
 [resource]
@@ -74,7 +74,7 @@ unlocks_feature = ""
 name = "+10% Spirit Magnetism Area"
 flavor = ""
 icon = ExtResource("4_ag81m")
-position = Vector2(-128, 2624)
+position = Vector2(-128, 3008)
 cost_arr = Array[ExtResource("1_udut8")]([SubResource("Resource_iyq2v"), SubResource("Resource_0dvd2"), SubResource("Resource_seg2t")])
 effect_modifier_arr = Array[float]([0.1, 0.2, 0.3])
 max_level = 3

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=23 format=3 uid="uid://bysxqlchallc6"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=22 format=3 uid="uid://bysxqlchallc6"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_slnb7"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_pmqb0"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_dsfuq"]
 [ext_resource type="Resource" uid="uid://c5ksgxqws5sgv" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_boost_duration.tres" id="6_pmqb0"]
 [ext_resource type="Resource" uid="uid://ds28ewxqx45b4" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_boost_area.tres" id="8_k2qlf"]
-[ext_resource type="Resource" uid="uid://nr4w3kjpph5w" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_crit_boost.tres" id="9_dsfuq"]
 
 [sub_resource type="Resource" id="Resource_8tnbr"]
 script = ExtResource("2_pmqb0")
@@ -24,70 +23,70 @@ wind = 0
 slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_8tnbr")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_dsfuq"]
+[sub_resource type="Resource" id="Resource_k2qlf"]
 script = ExtResource("2_pmqb0")
 essence = ExtResource("3_4i70f")
 amount = 2
 
-[sub_resource type="Resource" id="Resource_f6vhx"]
+[sub_resource type="Resource" id="Resource_dsfuq"]
 script = ExtResource("1_slnb7")
 earth = 0
 fire = 0
 water = 2
 wind = 0
-slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_dsfuq")])
+slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_k2qlf")])
 
-[sub_resource type="Resource" id="Resource_e1v62"]
+[sub_resource type="Resource" id="Resource_f6vhx"]
 script = ExtResource("2_pmqb0")
 essence = ExtResource("3_4i70f")
 amount = 3
 
-[sub_resource type="Resource" id="Resource_iridj"]
+[sub_resource type="Resource" id="Resource_e1v62"]
 script = ExtResource("1_slnb7")
 earth = 0
 fire = 0
 water = 3
 wind = 0
-slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_e1v62")])
+slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_f6vhx")])
 
-[sub_resource type="Resource" id="Resource_qv2jg"]
+[sub_resource type="Resource" id="Resource_iridj"]
 script = ExtResource("2_pmqb0")
 essence = ExtResource("3_4i70f")
 amount = 4
 
-[sub_resource type="Resource" id="Resource_e1y1h"]
+[sub_resource type="Resource" id="Resource_qv2jg"]
 script = ExtResource("1_slnb7")
 earth = 0
 fire = 0
 water = 4
 wind = 0
-slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_qv2jg")])
+slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_iridj")])
 
-[sub_resource type="Resource" id="Resource_qchnr"]
+[sub_resource type="Resource" id="Resource_e1y1h"]
 script = ExtResource("2_pmqb0")
 essence = ExtResource("3_4i70f")
 amount = 6
 
-[sub_resource type="Resource" id="Resource_j5of0"]
+[sub_resource type="Resource" id="Resource_qchnr"]
 script = ExtResource("1_slnb7")
 earth = 0
 fire = 0
 water = 6
 wind = 0
-slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_qchnr")])
+slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_e1y1h")])
 
-[sub_resource type="Resource" id="Resource_rkk7e"]
+[sub_resource type="Resource" id="Resource_j5of0"]
 script = ExtResource("2_pmqb0")
 essence = ExtResource("3_4i70f")
 amount = 10
 
-[sub_resource type="Resource" id="Resource_treg6"]
+[sub_resource type="Resource" id="Resource_rkk7e"]
 script = ExtResource("1_slnb7")
 earth = 0
 fire = 0
 water = 10
 wind = 0
-slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_rkk7e")])
+slots = Array[ExtResource("2_pmqb0")]([SubResource("Resource_j5of0")])
 
 [sub_resource type="Resource" id="Resource_oa8pl"]
 script = ExtResource("4_k2qlf")
@@ -101,8 +100,8 @@ unlocks_feature = ""
 name = "+5% Boost Speed"
 flavor = ""
 icon = ExtResource("4_4i70f")
-position = Vector2(768, -1984)
-cost_arr = Array[ExtResource("1_slnb7")]([SubResource("Resource_f6vhx"), SubResource("Resource_iridj"), SubResource("Resource_e1y1h"), SubResource("Resource_j5of0"), SubResource("Resource_treg6")])
+position = Vector2(768, -832)
+cost_arr = Array[ExtResource("1_slnb7")]([SubResource("Resource_dsfuq"), SubResource("Resource_e1v62"), SubResource("Resource_qv2jg"), SubResource("Resource_qchnr"), SubResource("Resource_rkk7e")])
 effect_modifier_arr = Array[float]([0.05, 0.1, 0.15, 0.2, 0.25])
 max_level = 5
 base_cost = SubResource("Resource_1kqxm")
@@ -112,8 +111,8 @@ round_smoothness = 1.0
 base_effect_modifier = 0.05
 effect_modifier_multiplier = 0.05
 unlocked = false
-unlock_level = 0
-unlocks = Array[Resource]([ExtResource("6_pmqb0"), ExtResource("8_k2qlf"), ExtResource("9_dsfuq")])
+unlock_level = 1
+unlocks = Array[Resource]([ExtResource("6_pmqb0"), ExtResource("8_k2qlf")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0
