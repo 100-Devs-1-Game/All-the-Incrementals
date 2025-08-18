@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dckirr5rpuh2m"
-path.s3tc="res://.godot/imported/spiritkeeper_v6_trl_spiritkeeper_merged.png-c39ac6aa0da560ae2686debe91192093.s3tc.ctex"
+uid="uid://5xrpypb05g0s"
+path.s3tc="res://.godot/imported/spiritkeeper_v7_texture_trl.webp-da40713663787f7e7ed17104db24eea4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "167ae6cde21b4044dea15301ac654cce"
+"md5": "934f4b79c86492c594acfd7877ef0919"
 }
 
 [deps]
 
-source_file="res://assets/overworld/entities/spiritkeeper/spiritkeeper_v6_trl_spiritkeeper_merged.png"
-dest_files=["res://.godot/imported/spiritkeeper_v6_trl_spiritkeeper_merged.png-c39ac6aa0da560ae2686debe91192093.s3tc.ctex"]
+source_file="res://assets/overworld/entities/spiritkeeper/spiritkeeper_v7_texture_trl.webp"
+dest_files=["res://.godot/imported/spiritkeeper_v7_texture_trl.webp-da40713663787f7e7ed17104db24eea4.s3tc.ctex"]
 
 [params]
 
