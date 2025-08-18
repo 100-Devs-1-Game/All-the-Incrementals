@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmu7u4fo2qrmc"]
+[gd_scene load_steps=6 format=3 uid="uid://bmu7u4fo2qrmc"]
 
 [ext_resource type="Script" uid="uid://c1ffa8cvictxh" path="res://modules/overworld/story/journal_page_ui.gd" id="1_2vgpe"]
 [ext_resource type="Texture2D" uid="uid://bqb3wefjrogue" path="res://assets/overworld/story/journal/entry1.png" id="1_c5cqy"]
+[ext_resource type="StyleBox" uid="uid://c175wmdqybibw" path="res://modules/settings/settings_button_solo.tres" id="3_05mlh"]
+[ext_resource type="FontFile" uid="uid://b4sm0lte0jiot" path="res://external/fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="3_270mr"]
+[ext_resource type="StyleBox" uid="uid://db58mchewupox" path="res://modules/settings/settings_button_solo_hover.tres" id="4_t1hp8"]
 
 [node name="JournalPageUI" type="Control"]
 layout_mode = 3
@@ -39,12 +42,18 @@ layout_mode = 2
 texture = ExtResource("1_c5cqy")
 stretch_mode = 4
 
-[node name="Label Page" type="Label" parent="Panel/CenterContainer/HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+
+[node name="Label Page" type="Label" parent="Panel/CenterContainer/HBoxContainer/ScrollContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_270mr")
+theme_override_font_sizes/font_size = 50
 text = "Where did the gods go?
 I can no longer hear the gods songs. Maybe they are resting or went into hiding? The temples they have built still stand, but they do so in silence now. 
 
@@ -67,6 +76,9 @@ offset_top = -58.0
 offset_right = 54.5
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_270mr")
+theme_override_styles/hover = ExtResource("4_t1hp8")
+theme_override_styles/normal = ExtResource("3_05mlh")
 text = "Leave"
 
 [connection signal="pressed" from="Panel/Leave" to="." method="_on_leave_pressed"]

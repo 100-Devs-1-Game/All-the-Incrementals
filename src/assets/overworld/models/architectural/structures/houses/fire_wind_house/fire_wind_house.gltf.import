@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cf2s6r83cnbvq"
+uid="uid://c24skow6n07xg"
 path="res://.godot/imported/fire_wind_house.gltf-42463aa9c7ef04b9a202247d4ff01e21.scn"
 
 [deps]
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"@MATERIAL:0": {
+"use_external/enabled": true,
+"use_external/path": "uid://e2u3jk48qbye"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
