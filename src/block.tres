@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=5 format=3 uid="uid://xdbwa6ht5jkl"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_6pm2v"]
+[ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="2_t4x4o"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_yu2x8"]
+
+[sub_resource type="Resource" id="Resource_i6jsy"]
+script = ExtResource("2_t4x4o")
+type = 6
+metadata/_custom_type_script = "uid://c5sirmi2235ls"
+
+[resource]
+script = ExtResource("3_yu2x8")
+logic = SubResource("Resource_i6jsy")
+unlocks_feature = ""
+name = "New Upgrade"
+flavor = ""
+position = Vector2(704, 1024)
+cost_arr = Array[ExtResource("1_6pm2v")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 3
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1
