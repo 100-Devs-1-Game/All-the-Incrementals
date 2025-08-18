@@ -1,0 +1,118 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://p5bv7malcdrl"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_8f4v0"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_ksepp"]
+[ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="2_ucy4h"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_kek1f"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_ksepp"]
+[ext_resource type="Texture2D" uid="uid://dr04miolxe17c" path="res://assets/minigames/earth_potato_herding/icons/spirits_spawn_less.png" id="4_kek1f"]
+
+[sub_resource type="Resource" id="Resource_niljk"]
+script = ExtResource("2_ksepp")
+essence = ExtResource("3_kek1f")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_81we8"]
+script = ExtResource("1_8f4v0")
+earth = 100
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_ksepp")]([SubResource("Resource_niljk")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_0e4b8"]
+script = ExtResource("2_ksepp")
+essence = ExtResource("3_kek1f")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_u1l72"]
+script = ExtResource("1_8f4v0")
+earth = 100
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_ksepp")]([SubResource("Resource_0e4b8")])
+
+[sub_resource type="Resource" id="Resource_wke0x"]
+script = ExtResource("2_ksepp")
+essence = ExtResource("3_kek1f")
+amount = 200
+
+[sub_resource type="Resource" id="Resource_sl4gf"]
+script = ExtResource("1_8f4v0")
+earth = 200
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_ksepp")]([SubResource("Resource_wke0x")])
+
+[sub_resource type="Resource" id="Resource_o3dn8"]
+script = ExtResource("2_ksepp")
+essence = ExtResource("3_kek1f")
+amount = 400
+
+[sub_resource type="Resource" id="Resource_7dnmj"]
+script = ExtResource("1_8f4v0")
+earth = 400
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_ksepp")]([SubResource("Resource_o3dn8")])
+
+[sub_resource type="Resource" id="Resource_h5rqc"]
+script = ExtResource("2_ksepp")
+essence = ExtResource("3_kek1f")
+amount = 800
+
+[sub_resource type="Resource" id="Resource_442qm"]
+script = ExtResource("1_8f4v0")
+earth = 800
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_ksepp")]([SubResource("Resource_h5rqc")])
+
+[sub_resource type="Resource" id="Resource_qlm1c"]
+script = ExtResource("2_ksepp")
+essence = ExtResource("3_kek1f")
+amount = 1500
+
+[sub_resource type="Resource" id="Resource_xwuk5"]
+script = ExtResource("1_8f4v0")
+earth = 1500
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_ksepp")]([SubResource("Resource_qlm1c")])
+
+[sub_resource type="Resource" id="Resource_kek1f"]
+script = ExtResource("2_ucy4h")
+upgrade_type = 8
+metadata/_custom_type_script = "uid://r3iai3luuocl"
+
+[resource]
+script = ExtResource("3_ksepp")
+logic = SubResource("Resource_kek1f")
+unlocks_feature = ""
+name = "Less dashing spirits"
+flavor = "The spirits are calmer"
+icon = ExtResource("4_kek1f")
+position = Vector2(384, 1152)
+cost_arr = Array[ExtResource("1_8f4v0")]([SubResource("Resource_u1l72"), SubResource("Resource_sl4gf"), SubResource("Resource_7dnmj"), SubResource("Resource_442qm"), SubResource("Resource_xwuk5")])
+effect_modifier_arr = Array[float]([0.3, 0.6, 0.9, 1.2, 1.5])
+max_level = 5
+base_cost = SubResource("Resource_81we8")
+base_cost_multiplier = 2.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.3
+effect_modifier_multiplier = 0.3
+unlocked = false
+unlock_level_index = 3
+unlocks = Array[Resource]([])
+description_prefix = "Dashing spirits spawn"
+description_suffix = "less often"
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

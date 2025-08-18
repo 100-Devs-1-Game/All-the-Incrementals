@@ -1,93 +1,96 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=19 format=3 uid="uid://cgewuml70cd2u"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=22 format=3 uid="uid://cgewuml70cd2u"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_xifid"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_fecey"]
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_7lkrm"]
 [ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="4_b55m6"]
+[ext_resource type="Texture2D" uid="uid://b26t7sow657i4" path="res://assets/minigames/earth_potato_herding/icons/potato_morepoints.webp" id="4_v65a5"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_x3cqj"]
-
-[sub_resource type="Resource" id="Resource_v65a5"]
-script = ExtResource("2_fecey")
-essence = ExtResource("3_7lkrm")
-amount = 10
-
-[sub_resource type="Resource" id="Resource_ydyeb"]
-script = ExtResource("1_xifid")
-earth = 10
-fire = 0
-water = 0
-wind = 0
-slots = Array[ExtResource("2_fecey")]([SubResource("Resource_v65a5")])
-metadata/_custom_type_script = "uid://cjjat8tguw7wt"
-
-[sub_resource type="Resource" id="Resource_vaqat"]
-script = ExtResource("2_fecey")
-essence = ExtResource("3_7lkrm")
-amount = 10
-
-[sub_resource type="Resource" id="Resource_56pjp"]
-script = ExtResource("1_xifid")
-earth = 10
-fire = 0
-water = 0
-wind = 0
-slots = Array[ExtResource("2_fecey")]([SubResource("Resource_vaqat")])
+[ext_resource type="Resource" uid="uid://c4an244wfmth0" path="res://modules/minigame/earth_potato_herding/eph_upgrades/potato_growth_speed.tres" id="7_56pjp"]
+[ext_resource type="Resource" uid="uid://ckm311rtd6ako" path="res://modules/minigame/earth_potato_herding/eph_upgrades/more_initial_potatoes.tres" id="8_l6v5y"]
 
 [sub_resource type="Resource" id="Resource_l6v5y"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 10
+amount = 5
 
-[sub_resource type="Resource" id="Resource_7mlmy"]
+[sub_resource type="Resource" id="Resource_ydyeb"]
 script = ExtResource("1_xifid")
-earth = 10
+earth = 5
 fire = 0
 water = 0
 wind = 0
 slots = Array[ExtResource("2_fecey")]([SubResource("Resource_l6v5y")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_7mlmy"]
+script = ExtResource("2_fecey")
+essence = ExtResource("3_7lkrm")
+amount = 5
 
 [sub_resource type="Resource" id="Resource_wnvnx"]
-script = ExtResource("2_fecey")
-essence = ExtResource("3_7lkrm")
-amount = 10
+script = ExtResource("1_xifid")
+earth = 5
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_fecey")]([SubResource("Resource_7mlmy")])
 
 [sub_resource type="Resource" id="Resource_tr78e"]
-script = ExtResource("1_xifid")
-earth = 10
-fire = 0
-water = 0
-wind = 0
-slots = Array[ExtResource("2_fecey")]([SubResource("Resource_wnvnx")])
+script = ExtResource("2_fecey")
+essence = ExtResource("3_7lkrm")
+amount = 10
 
 [sub_resource type="Resource" id="Resource_acjq0"]
-script = ExtResource("2_fecey")
-essence = ExtResource("3_7lkrm")
-amount = 10
+script = ExtResource("1_xifid")
+earth = 10
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_fecey")]([SubResource("Resource_tr78e")])
 
 [sub_resource type="Resource" id="Resource_oqr42"]
-script = ExtResource("1_xifid")
-earth = 10
-fire = 0
-water = 0
-wind = 0
-slots = Array[ExtResource("2_fecey")]([SubResource("Resource_acjq0")])
-
-[sub_resource type="Resource" id="Resource_b4b16"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 10
+amount = 20
 
-[sub_resource type="Resource" id="Resource_q3agd"]
+[sub_resource type="Resource" id="Resource_b4b16"]
 script = ExtResource("1_xifid")
-earth = 10
+earth = 20
 fire = 0
 water = 0
 wind = 0
-slots = Array[ExtResource("2_fecey")]([SubResource("Resource_b4b16")])
+slots = Array[ExtResource("2_fecey")]([SubResource("Resource_oqr42")])
+
+[sub_resource type="Resource" id="Resource_q3agd"]
+script = ExtResource("2_fecey")
+essence = ExtResource("3_7lkrm")
+amount = 40
+
+[sub_resource type="Resource" id="Resource_r2jfd"]
+script = ExtResource("1_xifid")
+earth = 40
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_fecey")]([SubResource("Resource_q3agd")])
+
+[sub_resource type="Resource" id="Resource_6nvfp"]
+script = ExtResource("2_fecey")
+essence = ExtResource("3_7lkrm")
+amount = 80
+
+[sub_resource type="Resource" id="Resource_1pkgn"]
+script = ExtResource("1_xifid")
+earth = 80
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_fecey")]([SubResource("Resource_6nvfp")])
 
 [sub_resource type="Resource" id="Resource_fl18i"]
 script = ExtResource("4_b55m6")
-upgrade_type = 0
+upgrade_type = 5
 metadata/_custom_type_script = "uid://r3iai3luuocl"
 
 [resource]
@@ -96,19 +99,20 @@ logic = SubResource("Resource_fl18i")
 unlocks_feature = ""
 name = "Nutritious potatoes"
 flavor = "mmm yummy"
-position = Vector2(-448, -512)
-cost_arr = Array[ExtResource("1_xifid")]([SubResource("Resource_56pjp"), SubResource("Resource_7mlmy"), SubResource("Resource_tr78e"), SubResource("Resource_oqr42"), SubResource("Resource_q3agd")])
+icon = ExtResource("4_v65a5")
+position = Vector2(-896, -576)
+cost_arr = Array[ExtResource("1_xifid")]([SubResource("Resource_wnvnx"), SubResource("Resource_acjq0"), SubResource("Resource_b4b16"), SubResource("Resource_r2jfd"), SubResource("Resource_1pkgn")])
 effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0])
 max_level = 5
 base_cost = SubResource("Resource_ydyeb")
-base_cost_multiplier = 1.0
+base_cost_multiplier = 2.0
 exponential_cost = true
 round_smoothness = 1.0
 base_effect_modifier = 1.0
 effect_modifier_multiplier = 1.0
 unlocked = false
-unlock_level = 3
-unlocks = Array[Resource]([])
+unlock_level_index = 3
+unlocks = Array[Resource]([ExtResource("7_56pjp"), ExtResource("8_l6v5y")])
 description_prefix = "Increase potato yield by"
 description_suffix = ""
 description_modifier_format = 1

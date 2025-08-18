@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfgybu1xb5gr0"]
+[gd_scene load_steps=3 format=3 uid="uid://dfgybu1xb5gr0"]
 
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_jupi2"]
 [ext_resource type="Script" uid="uid://c0138l55svl62" path="res://modules/menu/minigame_menu.gd" id="1_oo15i"]
-[ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="2_etsp6"]
-[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="2_j24fc"]
 
 [node name="MinigameMenu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -17,8 +15,7 @@ theme = ExtResource("1_jupi2")
 script = ExtResource("1_oo15i")
 
 [node name="Panel" type="Panel" parent="."]
-material = ExtResource("2_etsp6")
-custom_minimum_size = Vector2(400, 350)
+custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,12 +23,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -150.0
+offset_top = -290.0
 offset_right = 200.0
-offset_bottom = 150.0
+offset_bottom = 210.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("2_j24fc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -46,7 +42,15 @@ offset_right = 87.0
 offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 30
+
+[node name="Label Score" type="Label" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Score: 150"
+horizontal_alignment = 1
 
 [node name="Play" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -63,6 +67,27 @@ text = "High Scores"
 [node name="Exit" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Exit minigame"
+
+[node name="Title" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -491.0
+offset_right = 226.0
+offset_bottom = -371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "Minigame Title"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Panel/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Upgrades" to="." method="_on_upgrades_pressed"]

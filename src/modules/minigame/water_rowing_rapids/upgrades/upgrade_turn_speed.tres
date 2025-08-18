@@ -1,0 +1,150 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=28 format=3 uid="uid://sylk0fsa8qbn"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_8okmr"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_3li1t"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_kdeu4"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_qgv7p"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="4_oy44m"]
+[ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="5_0qk3c"]
+[ext_resource type="Texture2D" uid="uid://cs64q45pedd8g" path="res://assets/minigames/water_rowing_rapids/icons/boat_turn_speed_up.png" id="5_75qsm"]
+[ext_resource type="Resource" uid="uid://c0yuo6rg8k8fj" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_turn_control.tres" id="7_oy44m"]
+
+[sub_resource type="Resource" id="Resource_75qsm"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("3_qgv7p")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_fmxun"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("4_oy44m")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_qeo2h"]
+script = ExtResource("1_8okmr")
+earth = 0
+fire = 0
+water = 2
+wind = 1
+slots = Array[ExtResource("2_3li1t")]([SubResource("Resource_75qsm"), SubResource("Resource_fmxun")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_0qk3c"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("3_qgv7p")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_m23cd"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("4_oy44m")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_1ewi1"]
+script = ExtResource("1_8okmr")
+earth = 0
+fire = 0
+water = 2
+wind = 1
+slots = Array[ExtResource("2_3li1t")]([SubResource("Resource_0qk3c"), SubResource("Resource_m23cd")])
+
+[sub_resource type="Resource" id="Resource_3ukt8"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("3_qgv7p")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_1ossh"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("4_oy44m")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_1vca7"]
+script = ExtResource("1_8okmr")
+earth = 0
+fire = 0
+water = 2
+wind = 1
+slots = Array[ExtResource("2_3li1t")]([SubResource("Resource_3ukt8"), SubResource("Resource_1ossh")])
+
+[sub_resource type="Resource" id="Resource_6juqh"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("3_qgv7p")
+amount = 3
+
+[sub_resource type="Resource" id="Resource_yn4ox"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("4_oy44m")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_76uxt"]
+script = ExtResource("1_8okmr")
+earth = 0
+fire = 0
+water = 3
+wind = 1
+slots = Array[ExtResource("2_3li1t")]([SubResource("Resource_6juqh"), SubResource("Resource_yn4ox")])
+
+[sub_resource type="Resource" id="Resource_o8xv1"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("3_qgv7p")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_csely"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("4_oy44m")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_h66f8"]
+script = ExtResource("1_8okmr")
+earth = 0
+fire = 0
+water = 5
+wind = 2
+slots = Array[ExtResource("2_3li1t")]([SubResource("Resource_o8xv1"), SubResource("Resource_csely")])
+
+[sub_resource type="Resource" id="Resource_2ai8v"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("3_qgv7p")
+amount = 7
+
+[sub_resource type="Resource" id="Resource_x1r83"]
+script = ExtResource("2_3li1t")
+essence = ExtResource("4_oy44m")
+amount = 3
+
+[sub_resource type="Resource" id="Resource_c51l1"]
+script = ExtResource("1_8okmr")
+earth = 0
+fire = 0
+water = 7
+wind = 3
+slots = Array[ExtResource("2_3li1t")]([SubResource("Resource_2ai8v"), SubResource("Resource_x1r83")])
+
+[sub_resource type="Resource" id="Resource_dm5tc"]
+script = ExtResource("5_0qk3c")
+type = 1
+metadata/_custom_type_script = "uid://cpbg43rac3mxr"
+
+[resource]
+script = ExtResource("2_kdeu4")
+logic = SubResource("Resource_dm5tc")
+unlocks_feature = ""
+name = "Lighter Assembley"
+flavor = "Trimming the fat could make turning significantly less cumbersome."
+icon = ExtResource("5_75qsm")
+position = Vector2(768, 320)
+cost_arr = Array[ExtResource("1_8okmr")]([SubResource("Resource_1ewi1"), SubResource("Resource_1vca7"), SubResource("Resource_76uxt"), SubResource("Resource_h66f8"), SubResource("Resource_c51l1")])
+effect_modifier_arr = Array[float]([0.2, 0.4, 0.6, 0.8, 1.0])
+max_level = 5
+base_cost = SubResource("Resource_qeo2h")
+base_cost_multiplier = 1.4
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.2
+effect_modifier_multiplier = 0.2
+unlocked = false
+unlock_level_index = 1
+unlocks = Array[Resource]([ExtResource("7_oy44m")])
+description_prefix = "Increases turn speed by"
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

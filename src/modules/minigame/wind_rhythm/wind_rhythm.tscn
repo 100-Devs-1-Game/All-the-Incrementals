@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0ggpn"]
 [ext_resource type="PackedScene" uid="uid://bwtnwarbhh0up" path="res://modules/minigame/wind_rhythm/rhythm_game.tscn" id="3_top3v"]
 
-[node name="WindRhythm" type="Node2D"]
+[node name="WindRhythmWrapper" type="Node2D"]
 script = ExtResource("1_4gb8k")
 data_uid = "uid://cxrnthj4sdjv4"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
 
-[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="1"]
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
 visible_on_start = true
 
 [node name="RhythmGame" parent="." instance=ExtResource("3_top3v")]

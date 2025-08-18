@@ -27,6 +27,10 @@ func _add_minigame_upgrades_children() -> void:
 		assert(upgrade.logic)
 		_add_upgrade_item(upgrade)
 
+	var max_out_item = _tree_upgrades.create_child()
+	max_out_item.set_text(0, "Max out upgrades")
+	debug_popup.link_callable(max_out_item, _max_out_upgrades)
+
 	var reset_item = _tree_upgrades.create_child()
 	reset_item.set_text(0, "Reset all upgrades")
 	debug_popup.link_callable(reset_item, _reset_upgrades)
@@ -48,6 +52,15 @@ func _reset_upgrades() -> void:
 	SceneLoader.start_minigame(minigame.data)
 
 
+func _max_out_upgrades() -> void:
+	print("Maxing out all upgrades")
+	for upgrade in minigame.data.get_all_upgrades():
+		while not upgrade.is_maxed_out():
+			upgrade.level_up()
+
+	_refresh_minigame_upgrades_branch()
+
+
 func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
 	var new_item = _tree_upgrades.create_child()
 	var label = _get_upgrade_button_text(upgrade)
@@ -65,7 +78,9 @@ func _add_upgrade_item(upgrade: BaseUpgrade) -> void:
 
 
 func _get_upgrade_button_text(upgrade: BaseUpgrade) -> String:
-	return "%s Lvl %d/%d" % [upgrade.name, upgrade.get_level() + 1, upgrade.get_max_level() + 1]
+	return (
+		"%s Lvl %d/%d" % [upgrade.name, upgrade.get_level_index() + 1, upgrade.get_max_level() + 1]
+	)
 
 
 func _on_upgrade_item_pressed(item: TreeItem, upgrade: BaseUpgrade):

@@ -1,39 +1,20 @@
 extends Node2D
 
-signal block_created
-
-var blocks := [
-	preload("res://modules/minigame/earth_tower_tumble/blocks/cblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/iblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/lblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/square.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/tblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/vblock.tscn"),
-	preload("res://modules/minigame/earth_tower_tumble/blocks/zblock.tscn")
-]
+@export var blocks: Array[PackedScene] = []
+@export var game: Node2D
 
 var current_block: PackedScene
-var next_block: PackedScene
-
-@onready var inst = get_parent()
 
 
-func start():
-	current_block = blocks.pick_random()
-	next_block = blocks.pick_random()
-	print(current_block)
-	spawn_block(current_block)
+func _ready() -> void:
+	get_tree().current_scene.connect("game_started", spawn_block)
 
 
-func spawn_block(object):
-	var block = object.instantiate()
-	block.connect("released", spawn_next_block)
-	inst.block_dropped()
-	add_child(block)
-	block.global_position = global_position
-
-
-func spawn_next_block():
-	current_block = next_block
-	spawn_block(current_block)
-	next_block = blocks.pick_random()
+func spawn_block():
+	if game.blocks_remaining > 0:
+		game.blocks_remaining -= 1
+		var choice = blocks.pick_random()
+		var block = choice.instantiate()
+		block.connect("released", spawn_block)
+		add_child(block)
+		block.global_position = global_position

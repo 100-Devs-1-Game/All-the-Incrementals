@@ -1,0 +1,185 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=32 format=3 uid="uid://65qk2n0xv5l8"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_r6s4e"]
+[ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="2_4fbo2"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_cpv6b"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_of6py"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_xbopm"]
+[ext_resource type="Texture2D" uid="uid://dqtb5enocv703" path="res://assets/minigames/water_rowing_rapids/icons/boat_health_up.png" id="4_knf6s"]
+[ext_resource type="Resource" uid="uid://de5osmx82dyqc" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_void_speed.tres" id="7_8wcmd"]
+[ext_resource type="Resource" uid="uid://b227et2l3jjh0" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_miss_damage.tres" id="8_knf6s"]
+
+[sub_resource type="Resource" id="Resource_8wcmd"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_knf6s"]
+script = ExtResource("1_r6s4e")
+earth = 1
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_8wcmd")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_ynqm1"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_tv8kn"]
+script = ExtResource("1_r6s4e")
+earth = 1
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_ynqm1")])
+
+[sub_resource type="Resource" id="Resource_7hbko"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_ikinj"]
+script = ExtResource("1_r6s4e")
+earth = 1
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_7hbko")])
+
+[sub_resource type="Resource" id="Resource_xm1ua"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_1u3vs"]
+script = ExtResource("1_r6s4e")
+earth = 2
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_xm1ua")])
+
+[sub_resource type="Resource" id="Resource_tc5ks"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 3
+
+[sub_resource type="Resource" id="Resource_rxcsi"]
+script = ExtResource("1_r6s4e")
+earth = 3
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_tc5ks")])
+
+[sub_resource type="Resource" id="Resource_as8d4"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_e6dbq"]
+script = ExtResource("1_r6s4e")
+earth = 5
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_as8d4")])
+
+[sub_resource type="Resource" id="Resource_64t0x"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 7
+
+[sub_resource type="Resource" id="Resource_q477n"]
+script = ExtResource("1_r6s4e")
+earth = 7
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_64t0x")])
+
+[sub_resource type="Resource" id="Resource_udii4"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_qfsv8"]
+script = ExtResource("1_r6s4e")
+earth = 10
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_udii4")])
+
+[sub_resource type="Resource" id="Resource_vf0ae"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 15
+
+[sub_resource type="Resource" id="Resource_xihyu"]
+script = ExtResource("1_r6s4e")
+earth = 15
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_vf0ae")])
+
+[sub_resource type="Resource" id="Resource_n8ihc"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 25
+
+[sub_resource type="Resource" id="Resource_jojpr"]
+script = ExtResource("1_r6s4e")
+earth = 25
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_n8ihc")])
+
+[sub_resource type="Resource" id="Resource_f8t1x"]
+script = ExtResource("2_of6py")
+essence = ExtResource("3_xbopm")
+amount = 35
+
+[sub_resource type="Resource" id="Resource_i1nbr"]
+script = ExtResource("1_r6s4e")
+earth = 35
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_of6py")]([SubResource("Resource_f8t1x")])
+
+[sub_resource type="Resource" id="Resource_of6py"]
+script = ExtResource("2_4fbo2")
+type = 6
+metadata/_custom_type_script = "uid://cpbg43rac3mxr"
+
+[resource]
+script = ExtResource("2_cpv6b")
+logic = SubResource("Resource_of6py")
+unlocks_feature = ""
+name = "Sturdy Construction"
+flavor = "A stronger hull to weather the dangers."
+icon = ExtResource("4_knf6s")
+position = Vector2(-64, 1472)
+cost_arr = Array[ExtResource("1_r6s4e")]([SubResource("Resource_tv8kn"), SubResource("Resource_ikinj"), SubResource("Resource_1u3vs"), SubResource("Resource_rxcsi"), SubResource("Resource_e6dbq"), SubResource("Resource_q477n"), SubResource("Resource_qfsv8"), SubResource("Resource_xihyu"), SubResource("Resource_jojpr"), SubResource("Resource_i1nbr")])
+effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+max_level = 10
+base_cost = SubResource("Resource_knf6s")
+base_cost_multiplier = 1.5
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.1
+effect_modifier_multiplier = 0.1
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("7_8wcmd"), ExtResource("8_knf6s")])
+description_prefix = "increases boat max stability by"
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=15 format=3 uid="uid://bytqv7h0iow3u"]
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_j01kc"]
-[ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/player.tscn" id="2_asxaq"]
+[ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/wind_platformer_player.tscn" id="2_asxaq"]
+[ext_resource type="Texture2D" uid="uid://c4r401bs0liq8" path="res://assets/minigames/wind_platformer/skybox_2_skn.png" id="3_asxaq"]
 [ext_resource type="PackedScene" uid="uid://coro8piwlirg2" path="res://modules/minigame/wind_platformer/cloud_spawner.tscn" id="3_h8gjg"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="5_falbm"]
 
@@ -12,6 +13,13 @@ domain_warp_enabled = true
 domain_warp_frequency = 0.205
 domain_warp_fractal_octaves = 3
 
+[sub_resource type="Gradient" id="Gradient_h8gjg"]
+colors = PackedColorArray(3.03224e-06, 0.476617, 0.618364, 1, 0.104315, 0.192576, 0.686322, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j01kc"]
+gradient = SubResource("Gradient_h8gjg")
+width = 512
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_4orxu"]
 size = Vector2(15, 2)
 orientation = 2
@@ -21,27 +29,57 @@ mesh = SubResource("PlaneMesh_4orxu")
 
 [sub_resource type="Gradient" id="Gradient_4orxu"]
 offsets = PackedFloat32Array(0, 0.307018, 1)
-colors = PackedColorArray(0, 0, 0.996078, 0.172549, 0.607843, 0.67451, 1, 0.784314, 1, 1, 1, 1)
+colors = PackedColorArray(0.339606, 0.542632, 1, 0.172549, 0.690459, 0.747382, 1, 0.784314, 0.788235, 0.992157, 0.992157, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cj4w2"]
 gradient = SubResource("Gradient_4orxu")
 width = 64
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j01kc"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_asxaq"]
+normal = Vector2(-1, 0)
+
 [node name="Wind Platformer" type="Node2D"]
 script = ExtResource("1_j01kc")
 wind_noise = SubResource("FastNoiseLite_4orxu")
+has_countdown = true
 data_uid = "uid://dh1qjmvspv4uh"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="CanvasLayer Background" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.32549, 0.32549, 0.905882, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1920.0
+offset_right = 1080.0
+offset_bottom = 840.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_j01kc")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_asxaq")
+expand_mode = 2
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -56,12 +94,29 @@ texture = SubResource("GradientTexture1D_cj4w2")
 
 [node name="Cloud Spawner" parent="." node_paths=PackedStringArray("clouds_node") instance=ExtResource("3_h8gjg")]
 clouds_node = NodePath("../Platforms")
-initial_clouds = 50
+initial_clouds = 20
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("5_falbm")]
 
-[node name="SharedBaseComponents" parent="MinigameSharedComponents" index="1"]
-allow_popup_menu = null
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+anchors_preset = 1
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 40.0
+grow_vertical = 1
+enable_countdown_display = true
+
+[node name="Borders" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+shape = SubResource("WorldBoundaryShape2D_j01kc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1920, 0)
+shape = SubResource("WorldBoundaryShape2D_asxaq")
 
 [connection signal="left_screen" from="Player" to="." method="_on_player_left_screen"]
 

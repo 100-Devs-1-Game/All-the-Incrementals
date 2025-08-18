@@ -7,7 +7,7 @@ const JUDGMENT_PATH = "res://modules/minigame/wind_rhythm/chart/judgments.gd"
 const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.gd").NoteType
 const JUDGMENT = preload(JUDGMENT_PATH).Judgment
 
-@export var lanes: Dictionary[int, Array] = {
+@export var lanes: Dictionary[NOTE_TYPE, Array] = {
 	NOTE_TYPE.UP: [],
 	NOTE_TYPE.LEFT: [],
 	NOTE_TYPE.RIGHT: [],
@@ -23,6 +23,7 @@ const JUDGMENT = preload(JUDGMENT_PATH).Judgment
 @onready var chart: Chart = conductor.chart
 @onready var judgment_label = %JudgmentLabel
 @onready var judgments = preload(JUDGMENT_PATH).new()
+@onready var concentration_bar: ConcentrationBar = $ConcentrationBar
 
 
 func _unhandled_input(event):
@@ -42,6 +43,9 @@ func _unhandled_input(event):
 
 func _ready():
 	lanes = chart.lanes.duplicate(true)
+	concentration_bar.connect("concentration_broken", _on_concentration_broken)
+	connect("note_played", concentration_bar.on_note_played)
+	connect("note_missed", concentration_bar.on_note_missed)
 
 
 func _process(_delta):
@@ -111,3 +115,7 @@ func judge_input(note_type: NOTE_TYPE):
 		%Early_Late.text = "Early" if time > 0 else "Late"
 		note_played.emit(note, JUDGMENT.OKAY)
 		lane.pop_front()
+
+
+func _on_concentration_broken():
+	conductor.stop()

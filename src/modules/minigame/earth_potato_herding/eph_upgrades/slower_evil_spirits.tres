@@ -1,0 +1,120 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=22 format=3 uid="uid://dk7ggpotd2nxj"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_40bh4"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_0hqre"]
+[ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="2_4yea6"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_0hqre"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_1udwo"]
+[ext_resource type="Texture2D" uid="uid://cqftuw03i1v7u" path="res://assets/minigames/earth_potato_herding/icons/slower_spirits.png" id="4_fg71c"]
+[ext_resource type="Resource" uid="uid://lq11olhqbfn" path="res://modules/minigame/earth_potato_herding/eph_upgrades/evil_spirit_spawn_rate.tres" id="6_1udwo"]
+[ext_resource type="Resource" uid="uid://p5bv7malcdrl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/dashing_spirit_spawn_rate.tres" id="7_u10jq"]
+
+[sub_resource type="Resource" id="Resource_u10jq"]
+script = ExtResource("2_0hqre")
+essence = ExtResource("3_1udwo")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_fg71c"]
+script = ExtResource("1_40bh4")
+earth = 5
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_0hqre")]([SubResource("Resource_u10jq")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_yyeg3"]
+script = ExtResource("2_0hqre")
+essence = ExtResource("3_1udwo")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_r4mrm"]
+script = ExtResource("1_40bh4")
+earth = 5
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_0hqre")]([SubResource("Resource_yyeg3")])
+
+[sub_resource type="Resource" id="Resource_0b4u7"]
+script = ExtResource("2_0hqre")
+essence = ExtResource("3_1udwo")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_ejfv7"]
+script = ExtResource("1_40bh4")
+earth = 10
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_0hqre")]([SubResource("Resource_0b4u7")])
+
+[sub_resource type="Resource" id="Resource_w7qvp"]
+script = ExtResource("2_0hqre")
+essence = ExtResource("3_1udwo")
+amount = 20
+
+[sub_resource type="Resource" id="Resource_kbdcn"]
+script = ExtResource("1_40bh4")
+earth = 20
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_0hqre")]([SubResource("Resource_w7qvp")])
+
+[sub_resource type="Resource" id="Resource_fk1gd"]
+script = ExtResource("2_0hqre")
+essence = ExtResource("3_1udwo")
+amount = 40
+
+[sub_resource type="Resource" id="Resource_qmeha"]
+script = ExtResource("1_40bh4")
+earth = 40
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_0hqre")]([SubResource("Resource_fk1gd")])
+
+[sub_resource type="Resource" id="Resource_dagsp"]
+script = ExtResource("2_0hqre")
+essence = ExtResource("3_1udwo")
+amount = 80
+
+[sub_resource type="Resource" id="Resource_8vlqg"]
+script = ExtResource("1_40bh4")
+earth = 80
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_0hqre")]([SubResource("Resource_dagsp")])
+
+[sub_resource type="Resource" id="Resource_1udwo"]
+script = ExtResource("2_4yea6")
+upgrade_type = 7
+metadata/_custom_type_script = "uid://r3iai3luuocl"
+
+[resource]
+script = ExtResource("3_0hqre")
+logic = SubResource("Resource_1udwo")
+unlocks_feature = ""
+name = "Slower spirits"
+flavor = "Spirits have gotten lazy"
+icon = ExtResource("4_fg71c")
+position = Vector2(-832, 704)
+cost_arr = Array[ExtResource("1_40bh4")]([SubResource("Resource_r4mrm"), SubResource("Resource_ejfv7"), SubResource("Resource_kbdcn"), SubResource("Resource_qmeha"), SubResource("Resource_8vlqg")])
+effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5])
+max_level = 5
+base_cost = SubResource("Resource_fg71c")
+base_cost_multiplier = 2.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.1
+effect_modifier_multiplier = 0.1
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("6_1udwo"), ExtResource("7_u10jq")])
+description_prefix = "Slow evil spirit movement speed by "
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

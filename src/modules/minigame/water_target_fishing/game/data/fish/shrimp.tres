@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="WTFFishData" load_steps=8 format=3 uid="uid://knewdxdgnkud"]
+
+[ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_vph0v"]
+[ext_resource type="Script" uid="uid://dl0x10lns1e17" path="res://modules/minigame/water_target_fishing/game/fish_data.gd" id="2_i4wb7"]
+[ext_resource type="Script" uid="uid://meklva8v881i" path="res://modules/minigame/water_target_fishing/game/spawn_data.gd" id="3_i4wb7"]
+[ext_resource type="Texture2D" uid="uid://dlkp6px3xijiv" path="res://assets/minigames/water_target_fishing/fish/shrimp.png" id="4_i4wb7"]
+
+[sub_resource type="Resource" id="Resource_k71g5"]
+script = ExtResource("1_vph0v")
+speedboost = 600.0
+weight = 60.0
+score = 30.0
+metadata/_custom_type_script = "uid://hrgdcmm0gruk"
+
+[sub_resource type="Resource" id="Resource_we70o"]
+script = ExtResource("3_i4wb7")
+spawn_type = 2
+min_spawn_distance = 3000.0
+_min_spawn_depth = 400.0
+_max_spawn_depth = 1000.0
+metadata/_custom_type_script = "uid://meklva8v881i"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4wb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i4wb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_i4wb7")
+player_movement_multiplier = 0.3
+base_speed = 1000.0
+texture = SubResource("SpriteFrames_i4wb7")
+pickup = SubResource("Resource_k71g5")
+spawn = SubResource("Resource_we70o")
+metadata/_custom_type_script = "uid://dl0x10lns1e17"

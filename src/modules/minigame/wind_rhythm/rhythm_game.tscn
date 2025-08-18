@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwtnwarbhh0up"]
+[gd_scene load_steps=9 format=3 uid="uid://bwtnwarbhh0up"]
 
 [ext_resource type="PackedScene" uid="uid://byhlr4ndp885i" path="res://modules/minigame/wind_rhythm/note/note_spawner.tscn" id="1_73mo2"]
 [ext_resource type="Script" uid="uid://b5ygfwh0c0nh" path="res://modules/minigame/wind_rhythm/rhythm_game.gd" id="1_sij3s"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8l4byfcrycg8" path="res://modules/minigame/wind_rhythm/conductor.tscn" id="2_sij3s"]
 [ext_resource type="PackedScene" uid="uid://ev2tmev7hfu1" path="res://modules/minigame/wind_rhythm/board/rhythm_board.tscn" id="3_hxotr"]
 [ext_resource type="Script" uid="uid://bbkocoumc6jas" path="res://modules/minigame/wind_rhythm/rhythm_combo.gd" id="6_fyydw"]
+[ext_resource type="PackedScene" uid="uid://d3jltdnck35he" path="res://modules/minigame/wind_rhythm/concentration_bar.tscn" id="7_2m1yh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sij3s"]
 
@@ -53,7 +54,7 @@ scroll_speed = 1.0
 conductor_path = NodePath("../Conductor")
 judgment_line = NodePath("../judgment_line")
 rhythm_game = NodePath("..")
-offset = 1.0
+offset = 0.5
 
 [node name="ComboLabel" type="Label" parent="."]
 offset_left = 290.0
@@ -62,6 +63,18 @@ offset_right = 330.0
 offset_bottom = 356.0
 text = "0"
 script = ExtResource("6_fyydw")
+
+[node name="ConcentrationBar" parent="." node_paths=PackedStringArray("rhythm_game_node") instance=ExtResource("7_2m1yh")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 49.0
+offset_top = 324.0
+offset_right = 49.0
+offset_bottom = 324.0
+grow_horizontal = 1
+grow_vertical = 1
+rhythm_game_node = NodePath("..")
 
 [connection signal="note_missed" from="." to="ComboLabel" method="_on_rhythm_game_note_missed"]
 [connection signal="note_played" from="." to="ComboLabel" method="_on_rhythm_game_note_played"]

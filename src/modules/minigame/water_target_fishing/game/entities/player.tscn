@@ -1,10 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://1v03jevu1t0e"]
+[gd_scene load_steps=8 format=3 uid="uid://1v03jevu1t0e"]
 
 [ext_resource type="Script" uid="uid://cab80bh8l50p1" path="res://modules/minigame/water_target_fishing/game/entities/player.gd" id="1_qjfmj"]
-[ext_resource type="Texture2D" uid="uid://cgp7j8ngwsnht" path="res://assets/icons/basket_skn.png" id="2_mno2n"]
+[ext_resource type="Texture2D" uid="uid://b4jsvcdktd8vy" path="res://assets/minigames/water_target_fishing/swimmin/000.png" id="2_yq2rv"]
+[ext_resource type="Texture2D" uid="uid://cbi4nbja00f60" path="res://assets/minigames/water_target_fishing/swimmin/001.png" id="3_jwvtb"]
+[ext_resource type="Texture2D" uid="uid://1j2ibafit1xv" path="res://assets/minigames/water_target_fishing/swimmin/002.png" id="4_rpm5g"]
+[ext_resource type="Texture2D" uid="uid://c2jdvl3rykv22" path="res://assets/minigames/water_target_fishing/swimmin/003.png" id="5_q52nl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cqvxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yq2rv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jwvtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rpm5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q52nl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbjem"]
-size = Vector2(225, 46)
+size = Vector2(242, 103)
 
 [node name="WtfPlayer" type="Node2D" groups=["wtf_player"]]
 script = ExtResource("1_qjfmj")
@@ -12,10 +35,10 @@ script = ExtResource("1_qjfmj")
 [node name="Visuals" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
-scale = Vector2(0.5, 0.125)
-texture = ExtResource("2_mno2n")
+sprite_frames = SubResource("SpriteFrames_cqvxu")
+frame_progress = 0.888444
 
 [node name="Area2D" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -24,5 +47,5 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-64.5, 1)
+position = Vector2(-66, 5.5)
 shape = SubResource("RectangleShape2D_gbjem")

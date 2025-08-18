@@ -3,6 +3,7 @@ extends BaseMinigame
 
 @export var wind_noise: FastNoiseLite
 @export var size: Vector2i = Vector2i(2000, 1100)
+@export var countdown_duration: float = 15.0
 
 @export var num_particles: int = 1200
 
@@ -11,10 +12,12 @@ extends BaseMinigame
 
 var wind_arr: Dictionary
 var particles: Array[WindPlatformerMinigameParticle]
+var countdown_bonus: int
 
 @onready var player: WindPlatformerMinigamePlayer = $Player
 @onready var multi_mesh_instance: MultiMeshInstance2D = $MultiMeshInstance2D
 @onready var cloud_spawner: WindPlatformerMinigameCloudSpawner = $"Cloud Spawner"
+@onready var borders: StaticBody2D = $Borders
 
 
 func _initialize() -> void:
@@ -24,6 +27,7 @@ func _initialize() -> void:
 
 
 func _start():
+	cloud_spawner.cloud_spawned.connect(_on_cloud_spawned)
 	cloud_spawner.start()
 
 
@@ -82,11 +86,23 @@ func on_particle_destroyed(particle: WindPlatformerMinigameParticle):
 	spawn_random_particle()
 
 
+func activate_borders():
+	borders.set_collision_layer_value(3, true)
+
+
 func get_force_at(pos: Vector2) -> Vector2:
 	var noise: float = wind_noise.get_noise_2dv(pos)
 	return Vector2.from_angle(wrapf(noise * 10.0, -PI, PI))
 
 
+func _get_countdown_duration() -> float:
+	return countdown_duration + countdown_bonus
+
+
 func _on_player_left_screen() -> void:
 	if not disable_game_over:
 		game_over()
+
+
+func _on_cloud_spawned(cloud: WindPlatformerMinigameCloudPlatform):
+	cloud.removed.connect(add_score)

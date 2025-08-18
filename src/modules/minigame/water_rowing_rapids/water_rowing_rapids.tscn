@@ -1,35 +1,34 @@
-[gd_scene load_steps=14 format=3 uid="uid://cccmrn0cfcn0s"]
+[gd_scene load_steps=18 format=3 uid="uid://cccmrn0cfcn0s"]
 
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
+[ext_resource type="Shader" uid="uid://djcjicqv8phur" path="res://modules/minigame/water_rowing_rapids/water.gdshader" id="2_onqwm"]
+[ext_resource type="Texture2D" uid="uid://dhr2n6nhq3p8w" path="res://assets/minigames/water_rowing_rapids/flow_map.webp" id="3_0gm1p"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_a50qn"]
-[ext_resource type="PackedScene" uid="uid://tofxqtl6im0p" path="res://modules/minigame/water_rowing_rapids/rock/rock.tscn" id="3_i806a"]
-[ext_resource type="PackedScene" uid="uid://bam250ejn756g" path="res://modules/minigame/water_rowing_rapids/spirit/spirit.tscn" id="3_yl50k"]
+[ext_resource type="PackedScene" uid="uid://tofxqtl6im0p" path="res://modules/minigame/water_rowing_rapids/rock/rock_spawner.tscn" id="3_i806a"]
+[ext_resource type="Texture2D" uid="uid://dba4g83t4sh84" path="res://assets/minigames/water_rowing_rapids/water_foam.webp" id="3_l3r46"]
+[ext_resource type="Texture2D" uid="uid://cn1f37xpjid1p" path="res://assets/minigames/water_rowing_rapids/water_background.webp" id="4_0gm1p"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_yl50k"]
 [ext_resource type="PackedScene" uid="uid://mhrfxqqthuy7" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.tscn" id="5_f4xkx"]
+[ext_resource type="Texture2D" uid="uid://dep4t2fllpiro" path="res://assets/minigames/water_rowing_rapids/foam.webp" id="6_0gm1p"]
+[ext_resource type="PackedScene" uid="uid://b8jmv0yqj5qvh" path="res://modules/minigame/water_rowing_rapids/void/void.tscn" id="8_yl50k"]
+[ext_resource type="Script" uid="uid://ccisrw8w88dql" path="res://modules/minigame/water_rowing_rapids/soul_spawning.gd" id="12_l3r46"]
 
 [sub_resource type="Curve2D" id="Curve2D_a50qn"]
 bake_interval = 300.0
 _data = {
-"points": PackedVector2Array(-258.99, 258.989, 258.99, -258.989, -5870, 427, -618.233, -20.8863, 618.233, 20.8863, -4220, -298, -212.96, -118.459, 212.96, 118.459, -2751, 486, -764.437, 12.5317, 764.437, -12.5317, -909, 649, -789.5, 45.9497, 789.5, -45.9497, 620, 523, -939.881, -162.913, 939.881, 162.913, 3214, 586, -1226.74, 44.7715, 1226.74, -44.7715, 6634, 665, -1584.91, 188.04, 1584.91, -188.04, 11259, -779, -1907.27, -662.619, 1907.27, 662.619, 19603, -112, -88.6005, -267.922, 88.6005, 267.922, 21879, 1575, -127.835, -605.947, 127.835, 605.947, 21810, 2513, -356.924, -181.418, 356.924, 181.418, 23915, 4560, 0, 0, 0, 0, 29438, 4443, 0, 0, 0, 0, 29439, 6880, 728.881, 128.047, -728.881, -128.047, 26248, 6604, 422.738, 64.3296, -422.738, -64.3296, 23882, 5946, 1009.47, 380.19, -1009.47, -380.19, 21095, 5213, 222.87, 694.83, -222.87, -694.83, 18779, 2735, 689.482, 349.218, -689.482, -349.218, 17678, 1043, 2668.38, -170.132, -2668.38, 170.132, 13953, 354, 1755.04, 53.7258, -1755.04, -53.7258, 7022, 2726, 707.39, 259.675, -707.39, -259.675, 3541, 1934, 372.515, -11.1198, -372.515, 11.1198, 1520, 1673, 460.108, -54.7751, -460.108, 54.7751, -884, 2127, 384.307, -12.5317, -384.307, 12.5317, -3202, 2203, 731.019, 534.688, -731.019, -534.688, -5721, 1910, -262.278, 243.566, 262.278, -243.566, -5870, 427)
+"points": PackedVector2Array(-258.99, 258.989, 258.99, -258.989, -5870, 427, -618.233, -20.8863, 618.233, 20.8863, -4220, -298, -212.96, -118.459, 212.96, 118.459, -2751, 486, -764.437, 12.5317, 764.437, -12.5317, -909, 649, -789.5, 45.9497, 789.5, -45.9497, 620, 523, -939.881, -162.913, 939.881, 162.913, 3214, 586, -1226.74, 44.7715, 1226.74, -44.7715, 6634, 665, -1584.91, 188.04, 1584.91, -188.04, 11259, -779, -1907.27, -662.619, 1907.27, 662.619, 19603, -112, -88.6005, -267.922, 88.6005, 267.922, 21879, 1575, -127.835, -605.947, 127.835, 605.947, 21810, 2513, -356.924, -181.418, 356.924, 181.418, 23915, 4560, 0, 0, 0, 0, 29438, 4443, -482.472, -638.701, 482.472, 638.701, 30985, 4919, 431.928, -413.548, -431.928, 413.548, 30856, 6564, 0, 0, 0, 0, 29439, 6880, 728.881, 128.047, -728.881, -128.047, 26248, 6604, 422.738, 64.3296, -422.738, -64.3296, 23882, 5946, 1009.47, 380.19, -1009.47, -380.19, 21095, 5213, 222.87, 694.83, -222.87, -694.83, 18779, 2735, 689.482, 349.218, -689.482, -349.218, 17678, 1043, 2668.38, -170.132, -2668.38, 170.132, 13953, 354, 1755.04, 53.7258, -1755.04, -53.7258, 7022, 2726, 707.39, 259.675, -707.39, -259.675, 3541, 1934, 372.515, -11.1198, -372.515, 11.1198, 1520, 1673, 460.108, -54.7751, -460.108, 54.7751, -884, 2127, 384.307, -12.5317, -384.307, 12.5317, -3202, 2203, 731.019, 534.688, -731.019, -534.688, -5721, 1910, -262.278, 243.566, 262.278, -243.566, -5870, 427)
 }
-point_count = 27
+point_count = 29
 
-[sub_resource type="Gradient" id="Gradient_tk8vt"]
-offsets = PackedFloat32Array(0, 0.422111, 0.743719, 1)
-colors = PackedColorArray(0.389287, 0.389287, 0.389286, 1, 0.521141, 0.521141, 0.521141, 1, 0.687215, 0.687215, 0.687215, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_i806a"]
-frequency = 0.0117
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a50qn"]
-width = 300
-height = 300
-generate_mipmaps = false
-seamless = true
-seamless_blend_skirt = 0.3
-color_ramp = SubResource("Gradient_tk8vt")
-noise = SubResource("FastNoiseLite_i806a")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxvkd"]
+shader = ExtResource("2_onqwm")
+shader_parameter/base_drop = Vector2(900, 900)
+shader_parameter/foam = ExtResource("3_l3r46")
+shader_parameter/flow_map = ExtResource("3_0gm1p")
+shader_parameter/flow_map_scale = 14.0
+shader_parameter/flow_speed_scale = 20.0
+shader_parameter/flow_strength = 0.25
 
 [sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_a50qn"]
 
@@ -39,9 +38,10 @@ glow_enabled = true
 glow_hdr_threshold = 0.9
 glow_hdr_scale = 0.15
 adjustment_enabled = true
-adjustment_contrast = 1.15
+adjustment_brightness = 0.8
+adjustment_contrast = 1.14
 
-[node name="EarthRowingRapids" type="Node2D"]
+[node name="EarthRowingRapids" type="Node"]
 script = ExtResource("1_tk8vt")
 data_uid = "uid://c7vragnlq8udw"
 
@@ -50,9 +50,11 @@ curve = SubResource("Curve2D_a50qn")
 
 [node name="Wadder" type="Polygon2D" parent="River"]
 unique_name_in_owner = true
+z_index = -2
 texture_repeat = 2
-color = Color(0.123517, 0.23114, 0.186891, 1)
-texture = SubResource("NoiseTexture2D_a50qn")
+material = SubResource("ShaderMaterial_bxvkd")
+texture = ExtResource("4_0gm1p")
+polygon = PackedVector2Array(-2815, 27, -6333, 7, -6340, 2045, -2741, 2052)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="River"]
 
@@ -60,312 +62,260 @@ texture = SubResource("NoiseTexture2D_a50qn")
 unique_name_in_owner = true
 shape = SubResource("ConcavePolygonShape2D_a50qn")
 
+[node name="Bank" type="Line2D" parent="River"]
+texture_repeat = 2
+points = PackedVector2Array(-6318, 11, -4406, -351, -2805, 22, -2737, 2042, -3503, 2266, -4961, 2412, -6341, 2016, -6613, 948)
+closed = true
+width = 32.0
+default_color = Color(0.93845, 0.93845, 0.93845, 1)
+texture = ExtResource("6_0gm1p")
+texture_mode = 1
+
 [node name="RowingPlayer" parent="." instance=ExtResource("5_f4xkx")]
 position = Vector2(-4570, 1007)
 
-[node name="Enviroment" type="Node2D" parent="."]
-
-[node name="Spirit" parent="Enviroment" instance=ExtResource("3_yl50k")]
-modulate = Color(6, 6, 0.494, 1)
-position = Vector2(-4577, 147)
-
-[node name="Spirit2" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-4308, 428)
-
-[node name="Spirit3" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-3733, 348)
-
-[node name="Spirit4" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-3831, 1388)
-
-[node name="Spirit5" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-3256, 1822)
-
-[node name="Spirit6" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-3176, 1186)
-
-[node name="Spirit7" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-2931, 574)
-
-[node name="Spirit8" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-2179, 849)
-
-[node name="Spirit9" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-2387, 1724)
-
-[node name="Spirit10" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-2448, 1253)
-
-[node name="Spirit11" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-1341, 880)
-
-[node name="Spirit12" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-1225, 1767)
-
-[node name="Spirit13" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(-516, 1088)
-
-[node name="Spirit14" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(102, 660)
-
-[node name="Spirit15" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(218, 1418)
-
-[node name="Spirit16" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(1031, 721)
-
-[node name="Spirit17" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(1429, 1449)
-
-[node name="Spirit18" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(1723, 892)
-
-[node name="Spirit19" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(2328, 782)
-
-[node name="Spirit20" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(2726, 739)
-
-[node name="Spirit21" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(2640, 1387)
-
-[node name="Spirit22" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(2836, 1123)
-
-[node name="Spirit23" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(3711, 872)
-
-[node name="Spirit24" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(3827, 1441)
-
-[node name="Spirit25" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(4616, 1173)
-
-[node name="Spirit26" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(4769, 1778)
-
-[node name="Spirit27" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(5546, 1007)
-
-[node name="Spirit28" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(5540, 1515)
-
-[node name="Spirit29" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(6005, 2127)
-
-[node name="Spirit30" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(6372, 1589)
-
-[node name="Spirit31" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(6977, 2268)
-
-[node name="Spirit32" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(6928, 1497)
-
-[node name="Spirit33" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(7032, 708)
-
-[node name="Spirit34" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(8041, 751)
-
-[node name="Spirit35" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(7900, 1246)
-
-[node name="Spirit36" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(8236, 1864)
-
-[node name="Spirit37" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(9325, 1381)
-
-[node name="Spirit38" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(8695, 1020)
-
-[node name="Spirit39" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(9123, 580)
-
-[node name="Spirit40" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(9172, 164)
-
-[node name="Spirit41" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(9533, -203)
-
-[node name="Spirit42" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(10340, -191)
-
-[node name="Spirit43" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(9588, 96)
-
-[node name="Spirit44" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(10255, 383)
-
-[node name="Spirit45" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(10750, 395)
-
-[node name="Spirit46" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(10089, 762)
-
-[node name="Spirit47" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(11459, 0.00012207)
-
-[node name="Spirit48" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(11918, -520)
-
-[node name="Spirit49" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(12316, -214)
-
-[node name="Spirit50" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(12860, 240)
-
-[node name="Spirit51" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(13306, -482)
-
-[node name="Spirit52" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(14034, -555)
-
-[node name="Spirit53" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(14315, -35.0001)
-
-[node name="Spirit54" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(14872, -408)
-
-[node name="Spirit55" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(15394, -48.0001)
-
-[node name="Spirit56" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(16143, 60)
-
-[node name="Spirit57" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(16724, 208)
-
-[node name="Spirit58" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(17285, -186)
-
-[node name="Spirit59" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(16349, -501)
-
-[node name="Spirit60" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(18240, -58.0001)
-
-[node name="Spirit61" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(19905, 582)
-
-[node name="Spirit62" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(18250, 631)
-
-[node name="Spirit63" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(20535, 1350)
-
-[node name="Spirit64" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(19363, 1803)
-
-[node name="Spirit65" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(19343, 1311)
-
-[node name="Spirit66" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(21431, 2109)
-
-[node name="Spirit67" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(20308, 2661)
-
-[node name="Spirit68" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(19796, 3134)
-
-[node name="Spirit69" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(20220, 2051)
-
-[node name="Spirit70" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(21599, 3735)
-
-[node name="Spirit71" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(21116, 3183)
-
-[node name="Spirit72" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(20505, 4001)
-
-[node name="Spirit73" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(22061, 4858)
-
-[node name="Spirit74" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(22682, 4014)
-
-[node name="Spirit75" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(23096, 5058)
-
-[node name="Spirit76" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(23923, 5521)
-
-[node name="Spirit77" parent="Enviroment" instance=ExtResource("3_yl50k")]
-position = Vector2(23923, 5521)
-
 [node name="Hazzards" type="Node2D" parent="."]
 
-[node name="Polygon2D2" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-3705, 2030)
 
-[node name="Polygon2D3" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock2" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-2702, 732)
 
-[node name="Polygon2D17" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock3" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-2051, 1450)
 
-[node name="Polygon2D4" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock4" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(-1144, 830)
 
-[node name="Polygon2D5" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock5" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(83, 1591)
 
-[node name="Polygon2D6" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock6" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(1462, 696)
 
-[node name="Polygon2D7" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock7" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(3199, 1063)
 
-[node name="Polygon2D8" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock8" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(4408, 920)
 
-[node name="Polygon2D9" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock9" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(4927, 1207)
 
-[node name="Polygon2D10" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock10" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(5079, 2111)
 
-[node name="Polygon2D11" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock11" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(6440, 1063)
+scale = Vector2(1.29885, 1.29885)
 
-[node name="Polygon2D12" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock12" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(7416, 1430)
+scale = Vector2(1.13689, 1.13689)
 
-[node name="Polygon2D13" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock13" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(7694, 2048)
 
-[node name="Polygon2D14" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock14" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(6709, 2146)
 
-[node name="Polygon2D15" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock15" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(8545, 543)
 
-[node name="Polygon2D16" parent="Hazzards" instance=ExtResource("3_i806a")]
+[node name="Rock18" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(13202, -652)
+
+[node name="Rock19" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(14393, 171)
+
+[node name="Rock20" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(15734, -577)
+
+[node name="Rock21" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(17188, 497)
+
+[node name="Rock22" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(18140, -293)
+
+[node name="Rock23" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(18637, 643)
+
+[node name="Rock24" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(19569, 1641)
+
+[node name="Rock25" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(19289, 2339)
+
+[node name="Rock26" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(21114, 1871)
+
+[node name="Rock27" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(20734, 2965)
+
+[node name="Rock39" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(20128, 3732)
+scale = Vector2(1.28015, 1.28015)
+
+[node name="Rock28" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(21191, 4391)
+
+[node name="Rock29" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(22577, 3745)
+
+[node name="Rock30" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(23182, 5064)
+
+[node name="Rock31" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(21890, 5239)
+
+[node name="Rock32" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(25146, 4782)
+
+[node name="Rock33" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(25146, 6053)
+
+[node name="Rock34" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(28046, 4756)
+
+[node name="Rock35" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(23828, 5772)
+
+[node name="Rock38" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(22966, 4237)
+
+[node name="Rock36" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(24635, 4736)
+
+[node name="Rock37" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(24534, 5812)
+scale = Vector2(1.09027, 1.09027)
+
+[node name="Rock17" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(11353, 66)
+scale = Vector2(1.18968, 1.18968)
+
+[node name="Rock16" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(8840, 1635)
+scale = Vector2(1.39403, 1.39403)
+
+[node name="SoulSpawners" type="Node" parent="."]
+
+[node name="SoulSpawner" type="Node2D" parent="SoulSpawners"]
+unique_name_in_owner = true
+position = Vector2(-2256, 1403)
+script = ExtResource("12_l3r46")
+radius = 600.0
+sample_size = Vector2(2800, 1300)
+
+[node name="SoulSpawner2" type="Node2D" parent="SoulSpawners"]
+position = Vector2(959, 1077)
+script = ExtResource("12_l3r46")
+radius = 550.0
+sample_size = Vector2(2100, 1000)
+
+[node name="SoulSpawner4" type="Node2D" parent="SoulSpawners"]
+position = Vector2(3293, 1221)
+rotation = 0.0785398
+script = ExtResource("12_l3r46")
+radius = 400.0
+sample_size = Vector2(1000, 1000)
+
+[node name="SoulSpawner3" type="Node2D" parent="SoulSpawners"]
+position = Vector2(5707, 1670)
+rotation = 0.158825
+script = ExtResource("12_l3r46")
+radius = 500.0
+sample_size = Vector2(2500, 1400)
+
+[node name="SoulSpawner5" type="Node2D" parent="SoulSpawners"]
+position = Vector2(8756, 1086)
+rotation = -0.399581
+script = ExtResource("12_l3r46")
+radius = 500.0
+sample_size = Vector2(2500, 1500)
+
+[node name="SoulSpawner6" type="Node2D" parent="SoulSpawners"]
+position = Vector2(11322, 132)
+rotation = -0.231689
+script = ExtResource("12_l3r46")
+radius = 500.0
+sample_size = Vector2(2500, 1300)
+
+[node name="SoulSpawner7" type="Node2D" parent="SoulSpawners"]
+position = Vector2(13892, -224)
+rotation = -0.0382763
+script = ExtResource("12_l3r46")
+radius = 480.0
+sample_size = Vector2(2300, 1000)
+
+[node name="SoulSpawner8" type="Node2D" parent="SoulSpawners"]
+position = Vector2(16354, -109)
+rotation = 0.12326
+script = ExtResource("12_l3r46")
+radius = 480.0
+sample_size = Vector2(2300, 1000)
+
+[node name="SoulSpawner9" type="Node2D" parent="SoulSpawners"]
+position = Vector2(19322, 851.001)
+rotation = 0.432597
+script = ExtResource("12_l3r46")
+radius = 480.0
+sample_size = Vector2(2300, 1610.67)
+
+[node name="SoulSpawner10" type="Node2D" parent="SoulSpawners"]
+position = Vector2(20557, 2889)
+rotation = -0.47473
+script = ExtResource("12_l3r46")
+radius = 480.0
+sample_size = Vector2(2300, 2400)
+
+[node name="SoulSpawner11" type="Node2D" parent="SoulSpawners"]
+position = Vector2(22730, 4813)
+rotation = 0.408977
+script = ExtResource("12_l3r46")
+radius = 430.0
+sample_size = Vector2(2300, 1000)
+
+[node name="SoulSpawner12" type="Node2D" parent="SoulSpawners"]
+position = Vector2(29395, 5640)
+rotation = 0.000876181
+script = ExtResource("12_l3r46")
+radius = 330.0
+sample_size = Vector2(2300, 1800)
+
+[node name="SoulSpawner13" type="Node2D" parent="SoulSpawners"]
+position = Vector2(26721, 5574)
+rotation = 0.0320837
+script = ExtResource("12_l3r46")
+radius = 420.0
+sample_size = Vector2(2700, 1600)
+
+[node name="SoulSpawner14" type="Node2D" parent="SoulSpawners"]
+position = Vector2(24632, 5346)
+rotation = 0.0320837
+script = ExtResource("12_l3r46")
+radius = 400.0
+sample_size = Vector2(1000, 1000)
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_i806a")]
-
-[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
-visible = false
-
-[node name="MinigameMenu" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="0"]
-visible = true
 
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
 visible = false
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
 
-[node name="Pause" parent="MinigameSharedComponents/SharedBaseComponents" index="1"]
-visible = true
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+visible = false
+enable_score_display = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a50qn")
 
+[node name="Void" parent="." instance=ExtResource("8_yl50k")]
+position = Vector2(-8845, 0)
+
+[connection signal="died" from="RowingPlayer" to="." method="game_over"]
 [connection signal="spirit_collected" from="RowingPlayer" to="." method="_on_rowing_player_spirit_collected"]
 
 [editable path="MinigameSharedComponents"]

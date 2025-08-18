@@ -1,0 +1,149 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=27 format=3 uid="uid://nr4w3kjpph5w"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_8l7rx"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_aka1j"]
+[ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="2_oo71e"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_aka1j"]
+[ext_resource type="Texture2D" uid="uid://dvtmh2omtjmcf" path="res://assets/minigames/water_rowing_rapids/icons/critical_boost.png" id="3_eiy1n"]
+[ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="3_p2puc"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="4_ifeon"]
+
+[sub_resource type="Resource" id="Resource_wv3p2"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("3_p2puc")
+amount = 4
+
+[sub_resource type="Resource" id="Resource_nuoc5"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("4_ifeon")
+amount = 3
+
+[sub_resource type="Resource" id="Resource_p2puc"]
+script = ExtResource("1_8l7rx")
+earth = 0
+fire = 4
+water = 0
+wind = 3
+slots = Array[ExtResource("2_aka1j")]([SubResource("Resource_wv3p2"), SubResource("Resource_nuoc5")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_ifeon"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("3_p2puc")
+amount = 4
+
+[sub_resource type="Resource" id="Resource_ep2gh"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("4_ifeon")
+amount = 3
+
+[sub_resource type="Resource" id="Resource_uha8v"]
+script = ExtResource("1_8l7rx")
+earth = 0
+fire = 4
+water = 0
+wind = 3
+slots = Array[ExtResource("2_aka1j")]([SubResource("Resource_ifeon"), SubResource("Resource_ep2gh")])
+
+[sub_resource type="Resource" id="Resource_18jrj"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("3_p2puc")
+amount = 6
+
+[sub_resource type="Resource" id="Resource_afedv"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("4_ifeon")
+amount = 4
+
+[sub_resource type="Resource" id="Resource_u5jnj"]
+script = ExtResource("1_8l7rx")
+earth = 0
+fire = 6
+water = 0
+wind = 4
+slots = Array[ExtResource("2_aka1j")]([SubResource("Resource_18jrj"), SubResource("Resource_afedv")])
+
+[sub_resource type="Resource" id="Resource_x8cpa"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("3_p2puc")
+amount = 9
+
+[sub_resource type="Resource" id="Resource_srhkx"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("4_ifeon")
+amount = 6
+
+[sub_resource type="Resource" id="Resource_b6o0t"]
+script = ExtResource("1_8l7rx")
+earth = 0
+fire = 9
+water = 0
+wind = 6
+slots = Array[ExtResource("2_aka1j")]([SubResource("Resource_x8cpa"), SubResource("Resource_srhkx")])
+
+[sub_resource type="Resource" id="Resource_2xue0"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("3_p2puc")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_80mfg"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("4_ifeon")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_4v434"]
+script = ExtResource("1_8l7rx")
+earth = 0
+fire = 10
+water = 0
+wind = 10
+slots = Array[ExtResource("2_aka1j")]([SubResource("Resource_2xue0"), SubResource("Resource_80mfg")])
+
+[sub_resource type="Resource" id="Resource_r3fio"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("3_p2puc")
+amount = 20
+
+[sub_resource type="Resource" id="Resource_xm1pu"]
+script = ExtResource("2_aka1j")
+essence = ExtResource("4_ifeon")
+amount = 15
+
+[sub_resource type="Resource" id="Resource_0p22b"]
+script = ExtResource("1_8l7rx")
+earth = 0
+fire = 20
+water = 0
+wind = 15
+slots = Array[ExtResource("2_aka1j")]([SubResource("Resource_r3fio"), SubResource("Resource_xm1pu")])
+
+[sub_resource type="Resource" id="Resource_eiy1n"]
+script = ExtResource("2_oo71e")
+type = 12
+metadata/_custom_type_script = "uid://cpbg43rac3mxr"
+
+[resource]
+script = ExtResource("3_aka1j")
+logic = SubResource("Resource_eiy1n")
+unlocks_feature = "critical boosting"
+name = "Critical Boost"
+flavor = "To go even faster requires intensive training. Perhaps I am ready."
+icon = ExtResource("3_eiy1n")
+position = Vector2(2432, -448)
+cost_arr = Array[ExtResource("1_8l7rx")]([SubResource("Resource_uha8v"), SubResource("Resource_u5jnj"), SubResource("Resource_b6o0t"), SubResource("Resource_4v434"), SubResource("Resource_0p22b")])
+effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5])
+max_level = 5
+base_cost = SubResource("Resource_p2puc")
+base_cost_multiplier = 1.5
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.1
+effect_modifier_multiplier = 0.1
+unlocked = false
+unlock_level_index = 1
+unlocks = Array[Resource]([])
+description_prefix = "Inceases efficay of critical boosts by"
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

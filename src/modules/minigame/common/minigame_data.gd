@@ -33,7 +33,7 @@ func get_all_upgrades(
 		root_nodes.assign(upgrade_tree_root_nodes)
 
 	for upgrade in root_nodes:
-		if unlocked_only and upgrade.get_level() <= -1:
+		if unlocked_only and upgrade.get_level_index() <= -1:
 			continue
 		result.append(upgrade)
 		result.append_array(get_all_upgrades(upgrade, unlocked_only))
@@ -52,5 +52,5 @@ func apply_all_upgrades(minigame: BaseMinigame) -> void:
 
 func reset_all_upgrades() -> void:
 	for upgrade in get_all_upgrades():
-		SaveGameManager.world_state.minigame_unlock_levels[upgrade.get_uid()] = upgrade.NO_LEVEL
+		SaveGameManager.world_state.minigame_unlock_levels[upgrade.get_key()] = upgrade.NO_LEVEL
 	SaveGameManager.save()

@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=23 format=3 uid="uid://u7e4nthgr4cn"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_3bmj3"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_f53vx"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_g4eqq"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_tvc8v"]
+[ext_resource type="Texture2D" uid="uid://mptn1ufu0v0r" path="res://assets/minigames/earth_tower_tumble/icons/upgrade_foundation_size.png" id="4_hclt5"]
+[ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="5_tvc8v"]
+[ext_resource type="Resource" uid="uid://c3dmhnvjhmifn" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/increase_blocks.tres" id="8_b3eur"]
+[ext_resource type="Resource" uid="uid://cyxac864dwkj" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/increase_flight_speed.tres" id="8_ye3ig"]
+[ext_resource type="Resource" uid="uid://bnhs0tt21yheb" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/increase_potato_conjure.tres" id="9_ye3ig"]
+
+[sub_resource type="Resource" id="Resource_b3eur"]
+script = ExtResource("2_f53vx")
+essence = ExtResource("3_tvc8v")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_0wce1"]
+script = ExtResource("1_3bmj3")
+earth = 10
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_f53vx")]([SubResource("Resource_b3eur")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_2r6od"]
+script = ExtResource("2_f53vx")
+essence = ExtResource("3_tvc8v")
+amount = 25
+
+[sub_resource type="Resource" id="Resource_rybe1"]
+script = ExtResource("1_3bmj3")
+earth = 25
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_f53vx")]([SubResource("Resource_2r6od")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_0nqbj"]
+script = ExtResource("2_f53vx")
+essence = ExtResource("3_tvc8v")
+amount = 50
+
+[sub_resource type="Resource" id="Resource_dgb14"]
+script = ExtResource("1_3bmj3")
+earth = 50
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_f53vx")]([SubResource("Resource_0nqbj")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_sdo5a"]
+script = ExtResource("2_f53vx")
+essence = ExtResource("3_tvc8v")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_ye3ig"]
+script = ExtResource("1_3bmj3")
+earth = 100
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_f53vx")]([SubResource("Resource_sdo5a")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_xigry"]
+script = ExtResource("2_f53vx")
+essence = ExtResource("3_tvc8v")
+amount = 120
+
+[sub_resource type="Resource" id="Resource_mw88v"]
+script = ExtResource("1_3bmj3")
+earth = 120
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_f53vx")]([SubResource("Resource_xigry")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_r4cw0"]
+script = ExtResource("2_f53vx")
+essence = ExtResource("3_tvc8v")
+amount = 1250
+
+[sub_resource type="Resource" id="Resource_qt07m"]
+script = ExtResource("1_3bmj3")
+earth = 1250
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_f53vx")]([SubResource("Resource_r4cw0")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_hclt5"]
+script = ExtResource("5_tvc8v")
+type = 5
+metadata/_custom_type_script = "uid://c5sirmi2235ls"
+
+[resource]
+script = ExtResource("2_g4eqq")
+logic = SubResource("Resource_hclt5")
+unlocks_feature = ""
+name = "Foundation Expansion"
+flavor = "The heck is a flavour?"
+icon = ExtResource("4_hclt5")
+position = Vector2(-832, 1536)
+cost_arr = Array[ExtResource("1_3bmj3")]([SubResource("Resource_0wce1"), SubResource("Resource_rybe1"), SubResource("Resource_dgb14"), SubResource("Resource_ye3ig"), SubResource("Resource_mw88v"), SubResource("Resource_qt07m")])
+effect_modifier_arr = Array[float]([128.0, 192.0, 256.0, 320.0, 384.0, 448.0])
+max_level = 0
+base_cost_multiplier = 0.0
+exponential_cost = false
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("8_b3eur"), ExtResource("8_ye3ig"), ExtResource("9_ye3ig")])
+description_prefix = "Makes the base"
+description_suffix = "Points wider."
+description_modifier_format = 1
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

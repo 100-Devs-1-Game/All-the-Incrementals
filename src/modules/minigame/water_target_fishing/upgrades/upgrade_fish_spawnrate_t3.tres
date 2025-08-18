@@ -1,87 +1,88 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=19 format=3 uid="uid://bvnajtf6bhc0m"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://bvnajtf6bhc0m"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_37qlp"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="2_1sljb"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_4eij7"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_4eij7"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_6ford"]
+[ext_resource type="Texture2D" uid="uid://c40kywt5pvqkt" path="res://assets/minigames/water_target_fishing/upgrades/increase_fish_spawn.png" id="4_6ford"]
 
-[sub_resource type="Resource" id="Resource_eifjw"]
+[sub_resource type="Resource" id="Resource_4eij7"]
 script = ExtResource("2_4eij7")
 essence = ExtResource("3_6ford")
-amount = 100
+amount = 600
 
 [sub_resource type="Resource" id="Resource_lk574"]
 script = ExtResource("1_37qlp")
 earth = 0
 fire = 0
-water = 100
+water = 600
 wind = 0
-slots = Array[ExtResource("2_4eij7")]([SubResource("Resource_eifjw")])
+slots = Array[ExtResource("2_4eij7")]([SubResource("Resource_4eij7")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_4eij7"]
+[sub_resource type="Resource" id="Resource_eifjw"]
 script = ExtResource("2_4eij7")
 essence = ExtResource("3_6ford")
-amount = 100
+amount = 600
 
 [sub_resource type="Resource" id="Resource_y5vbl"]
 script = ExtResource("1_37qlp")
 earth = 0
 fire = 0
-water = 100
+water = 600
 wind = 0
-slots = Array[ExtResource("2_4eij7")]([SubResource("Resource_4eij7")])
+slots = Array[ExtResource("2_4eij7")]([SubResource("Resource_eifjw")])
 
 [sub_resource type="Resource" id="Resource_6td7e"]
 script = ExtResource("2_4eij7")
 essence = ExtResource("3_6ford")
-amount = 10000
+amount = 2000
 
 [sub_resource type="Resource" id="Resource_46ev2"]
 script = ExtResource("1_37qlp")
 earth = 0
 fire = 0
-water = 10000
+water = 2000
 wind = 0
 slots = Array[ExtResource("2_4eij7")]([SubResource("Resource_6td7e")])
 
 [sub_resource type="Resource" id="Resource_oojut"]
 script = ExtResource("2_4eij7")
 essence = ExtResource("3_6ford")
-amount = 1000000
+amount = 9000
 
 [sub_resource type="Resource" id="Resource_nbjfy"]
 script = ExtResource("1_37qlp")
 earth = 0
 fire = 0
-water = 1000000
+water = 9000
 wind = 0
 slots = Array[ExtResource("2_4eij7")]([SubResource("Resource_oojut")])
 
 [sub_resource type="Resource" id="Resource_s5wqb"]
 script = ExtResource("2_4eij7")
 essence = ExtResource("3_6ford")
-amount = 100000000
+amount = 38000
 
 [sub_resource type="Resource" id="Resource_fpvlm"]
 script = ExtResource("1_37qlp")
 earth = 0
 fire = 0
-water = 100000000
+water = 38000
 wind = 0
 slots = Array[ExtResource("2_4eij7")]([SubResource("Resource_s5wqb")])
 
 [sub_resource type="Resource" id="Resource_j5piy"]
 script = ExtResource("2_4eij7")
 essence = ExtResource("3_6ford")
-amount = 10000000000
+amount = 153000
 
 [sub_resource type="Resource" id="Resource_exx58"]
 script = ExtResource("1_37qlp")
 earth = 0
 fire = 0
-water = 10000000000
+water = 153000
 wind = 0
 slots = Array[ExtResource("2_4eij7")]([SubResource("Resource_j5piy")])
 
@@ -96,18 +97,19 @@ logic = SubResource("Resource_6ford")
 unlocks_feature = ""
 name = "+++ Fish Spawnrate"
 flavor = ""
+icon = ExtResource("4_6ford")
 position = Vector2(3840, 704)
 cost_arr = Array[ExtResource("1_37qlp")]([SubResource("Resource_y5vbl"), SubResource("Resource_46ev2"), SubResource("Resource_nbjfy"), SubResource("Resource_fpvlm"), SubResource("Resource_exx58")])
 effect_modifier_arr = Array[float]([3.0, 6.0, 9.0, 12.0, 15.0])
 max_level = 5
 base_cost = SubResource("Resource_lk574")
-base_cost_multiplier = 100.0
+base_cost_multiplier = 4.0
 exponential_cost = true
 round_smoothness = 1.0
 base_effect_modifier = 3.0
 effect_modifier_multiplier = 3.0
 unlocked = false
-unlock_level = 0
+unlock_level_index = 0
 unlocks = Array[Resource]([])
 description_prefix = ""
 description_suffix = ""

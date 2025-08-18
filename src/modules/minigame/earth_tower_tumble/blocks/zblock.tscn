@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bswnge8122ano"]
+[gd_scene load_steps=3 format=3 uid="uid://bswnge8122ano"]
 
 [ext_resource type="Script" uid="uid://wra0uj1sup0u" path="res://modules/minigame/earth_tower_tumble/blocks/block.gd" id="1_jnod3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnod3"]
+size = Vector2(64, 32)
 
 [node name="Zblock" type="RigidBody2D"]
 script = ExtResource("1_jnod3")
@@ -10,5 +13,10 @@ color = Color(0.178979, 1.79046e-05, 0.732724, 1)
 polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 48, 80, 48, 80, 16, 48, 16, 48, -16)
 uv = PackedVector2Array(-136, -51.5, -136, 9.5, -81, 11.5, -83, -51.5)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 48, 80, 48, 80, 16, 48, 16, 48, -16)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_jnod3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(48, 32)
+shape = SubResource("RectangleShape2D_jnod3")

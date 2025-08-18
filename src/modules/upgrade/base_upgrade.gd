@@ -2,7 +2,7 @@
 class_name BaseUpgrade
 extends Resource
 
-enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER }
+enum ModifierFormat { PERCENTAGE, ADDITIVE, MULTIPLIER, UNLOCK }
 
 const NO_LEVEL = -1
 
@@ -63,8 +63,8 @@ const NO_LEVEL = -1
 ## has it been unlocked by a previous upgrade
 @export_storage var unlocked: bool = false
 
-## level required to unlock all further upgrades of this branch
-@export var unlock_level: int
+## the index of the level required to unlock all further upgrades of this branch
+@export var unlock_level_index: int
 
 ## Upgrades that can get unlocked by this one
 @export var unlocks: Array[Resource]
@@ -82,12 +82,16 @@ const NO_LEVEL = -1
 @export var description_modifier_format: ModifierFormat
 
 
+func _init() -> void:
+	if base_cost:
+		base_cost.changed.connect(_on_base_cost_changed)
+
+
 func _construct_cost_and_modifier_arrays():
 	if not Engine.is_editor_hint():
 		return
 
 	if max_level <= 0:
-		push_error("failed to calculate costs/effect - max level is not _set")
 		return
 
 	if base_cost && base_cost.slots && base_cost_multiplier > 0:
@@ -111,42 +115,74 @@ func _construct_cost_and_modifier_arrays():
 			effect_modifier_arr.append(base_effect_modifier + (effect_modifier_multiplier * i))
 
 
-func get_uid() -> int:
-	return ResourceLoader.get_resource_uid(resource_path)
+func get_key() -> StringName:
+	# https://github.com/godotengine/godot/issues/75617
+	# TODO: replace with UID when this is fixed
+	return resource_path
 
 
 func level_up() -> void:
-	var current_level = get_level()
+	var current_level_index = get_level_index()
+	var new_level_index = current_level_index + 1
 	if is_maxed_out():
 		push_error("Tried to level up past max level")
 		return
-	SaveGameManager.world_state.minigame_unlock_levels[get_uid()] = (current_level + 1)
+	if new_level_index >= unlock_level_index:
+		for upgrade in unlocks:
+			upgrade.unlocked = true
+			print(
+				(
+					"'%s' is now at level index %d which is level %d"
+					% [name, new_level_index, new_level_index + 1]
+				),
+				(
+					" and matches the required level index of %d to unlock '%s'"
+					% [unlock_level_index, upgrade.name]
+				)
+			)
+	SaveGameManager.world_state.minigame_unlock_levels[get_key()] = (new_level_index)
 	SaveGameManager.save()
 
 
 func level_down() -> void:
-	var current_level = get_level()
+	var current_level = get_level_index()
 	#TODO: this shouldn't need a +1, but it causes an assert elsewhere
 	if current_level <= NO_LEVEL + 1:
 		push_error("Tried to level down past min level")
 		return
-	SaveGameManager.world_state.minigame_unlock_levels[get_uid()] = (current_level - 1)
+	SaveGameManager.world_state.minigame_unlock_levels[get_key()] = (current_level - 1)
 	SaveGameManager.save()
 
 
-# 0 = level 1, ...
-func get_level() -> int:
-	return SaveGameManager.world_state.minigame_unlock_levels.get(get_uid(), NO_LEVEL)
+# Get level index. 0 = level 1, ...
+func get_level_index() -> int:
+	return SaveGameManager.world_state.minigame_unlock_levels.get(get_key(), NO_LEVEL)
 
 
-# 0 = level 1, ...
+# Get max level index. 0 = level 1, ...
 func get_max_level() -> int:
 	return cost_arr.size() - 1
 
 
-func get_description() -> String:
-	# TODO
-	return ""
+func get_description(level: int = -1) -> String:
+	# assumes it should return the description for the next level when
+	# the default argument was used
+	if level == -1:
+		level = get_level_index() + 1
+	if level > get_max_level():
+		return ""
+
+	var effect: float = get_effect_modifier(level)
+	var val: String
+	match description_modifier_format:
+		ModifierFormat.PERCENTAGE:
+			val = "%d%%" % int(effect * 100)
+		ModifierFormat.ADDITIVE:
+			val = ("+" if effect > 0 else "") + str(effect)
+		ModifierFormat.MULTIPLIER:
+			val = str("x", effect)
+
+	return "%s %s %s" % [description_prefix, val, description_suffix]
 
 
 # 0 = level 1, ...
@@ -164,7 +200,7 @@ func get_effect_modifier(level: int) -> float:
 
 
 func get_current_effect_modifier() -> float:
-	return get_effect_modifier(get_level())
+	return get_effect_modifier(get_level_index())
 
 
 func is_unlocked() -> bool:
@@ -172,13 +208,13 @@ func is_unlocked() -> bool:
 
 
 func is_maxed_out() -> bool:
-	return get_level() == get_max_level()
+	return get_level_index() == get_max_level()
 
 
 func get_next_level_cost() -> EssenceInventory:
 	if is_maxed_out():
 		return null
-	return cost_arr[get_level() + 1]
+	return cost_arr[get_level_index() + 1]
 
 
 func can_afford_next_level() -> bool:
@@ -194,9 +230,17 @@ func _set_max_level(level: int):
 
 
 func _set_base_cost(cost: EssenceInventory):
+	if base_cost:
+		base_cost.changed.disconnect(_on_base_cost_changed)
+
 	base_cost = cost
 	if base_cost:
 		_construct_cost_and_modifier_arrays()
+		base_cost.changed.connect(_on_base_cost_changed)
+
+
+func _on_base_cost_changed() -> void:
+	_construct_cost_and_modifier_arrays()
 
 
 func _set_base_cost_multiplier(multiplier: float):

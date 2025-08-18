@@ -1,0 +1,183 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://ckm311rtd6ako"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_ad0dm"]
+[ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="2_26d0w"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_g2onn"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_g2onn"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_vildu"]
+[ext_resource type="Texture2D" uid="uid://c834l0llho72y" path="res://assets/minigames/earth_potato_herding/icons/more_youngling_potatoes.png" id="4_vildu"]
+
+[sub_resource type="Resource" id="Resource_g50hc"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_op3a8"]
+script = ExtResource("1_ad0dm")
+earth = 100
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_g50hc")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_leenn"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_fj6rl"]
+script = ExtResource("1_ad0dm")
+earth = 100
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_leenn")])
+
+[sub_resource type="Resource" id="Resource_6s1t2"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 200
+
+[sub_resource type="Resource" id="Resource_bo8uy"]
+script = ExtResource("1_ad0dm")
+earth = 200
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_6s1t2")])
+
+[sub_resource type="Resource" id="Resource_ohs77"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 400
+
+[sub_resource type="Resource" id="Resource_yeomw"]
+script = ExtResource("1_ad0dm")
+earth = 400
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_ohs77")])
+
+[sub_resource type="Resource" id="Resource_qt5lm"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 800
+
+[sub_resource type="Resource" id="Resource_107yx"]
+script = ExtResource("1_ad0dm")
+earth = 800
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_qt5lm")])
+
+[sub_resource type="Resource" id="Resource_68f8a"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 1500
+
+[sub_resource type="Resource" id="Resource_ein3h"]
+script = ExtResource("1_ad0dm")
+earth = 1500
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_68f8a")])
+
+[sub_resource type="Resource" id="Resource_weh6k"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 3000
+
+[sub_resource type="Resource" id="Resource_xm584"]
+script = ExtResource("1_ad0dm")
+earth = 3000
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_weh6k")])
+
+[sub_resource type="Resource" id="Resource_4e1dm"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 6000
+
+[sub_resource type="Resource" id="Resource_3jk1t"]
+script = ExtResource("1_ad0dm")
+earth = 6000
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_4e1dm")])
+
+[sub_resource type="Resource" id="Resource_2ft24"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 12000
+
+[sub_resource type="Resource" id="Resource_p82ej"]
+script = ExtResource("1_ad0dm")
+earth = 12000
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_2ft24")])
+
+[sub_resource type="Resource" id="Resource_4jx2u"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 25000
+
+[sub_resource type="Resource" id="Resource_jkivr"]
+script = ExtResource("1_ad0dm")
+earth = 25000
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_4jx2u")])
+
+[sub_resource type="Resource" id="Resource_y5xp5"]
+script = ExtResource("2_g2onn")
+essence = ExtResource("3_vildu")
+amount = 51000
+
+[sub_resource type="Resource" id="Resource_5rh72"]
+script = ExtResource("1_ad0dm")
+earth = 51000
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_g2onn")]([SubResource("Resource_y5xp5")])
+
+[sub_resource type="Resource" id="Resource_vildu"]
+script = ExtResource("2_26d0w")
+upgrade_type = 6
+metadata/_custom_type_script = "uid://r3iai3luuocl"
+
+[resource]
+script = ExtResource("3_g2onn")
+logic = SubResource("Resource_vildu")
+unlocks_feature = ""
+name = "More potatoes"
+flavor = "Gotta farm them all"
+icon = ExtResource("4_vildu")
+position = Vector2(384, -1024)
+cost_arr = Array[ExtResource("1_ad0dm")]([SubResource("Resource_fj6rl"), SubResource("Resource_bo8uy"), SubResource("Resource_yeomw"), SubResource("Resource_107yx"), SubResource("Resource_ein3h"), SubResource("Resource_xm584"), SubResource("Resource_3jk1t"), SubResource("Resource_p82ej"), SubResource("Resource_jkivr"), SubResource("Resource_5rh72")])
+effect_modifier_arr = Array[float]([5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0])
+max_level = 10
+base_cost = SubResource("Resource_op3a8")
+base_cost_multiplier = 2.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 5.0
+effect_modifier_multiplier = 5.0
+unlocked = false
+unlock_level_index = 3
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = "additional potatoes at start"
+description_modifier_format = 1
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

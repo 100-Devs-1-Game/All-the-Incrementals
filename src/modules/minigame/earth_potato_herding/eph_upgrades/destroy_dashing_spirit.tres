@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=16 format=3 uid="uid://qfrrjth7hk5o"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_1317v"]
+[ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="2_n1roj"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_yh5bl"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_1c2js"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_r24d4"]
+[ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="4_410jn"]
+[ext_resource type="Resource" uid="uid://r1ptwenkshfx" path="res://modules/minigame/earth_potato_herding/eph_upgrades/destroy_evil_spirit.tres" id="4_n1roj"]
+[ext_resource type="Texture2D" uid="uid://dgn0u0vads7il" path="res://assets/minigames/earth_potato_herding/icons/destroy_spirit.png" id="5_1c2js"]
+
+[sub_resource type="Resource" id="Resource_ng4e5"]
+script = ExtResource("2_yh5bl")
+essence = ExtResource("3_1c2js")
+amount = 50
+
+[sub_resource type="Resource" id="Resource_5tncc"]
+script = ExtResource("2_yh5bl")
+essence = ExtResource("4_410jn")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_lw7k6"]
+script = ExtResource("1_1317v")
+earth = 50
+fire = 10
+water = 0
+wind = 0
+slots = Array[ExtResource("2_yh5bl")]([SubResource("Resource_ng4e5"), SubResource("Resource_5tncc")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_1c2js"]
+script = ExtResource("2_yh5bl")
+essence = ExtResource("3_1c2js")
+amount = 50
+
+[sub_resource type="Resource" id="Resource_410jn"]
+script = ExtResource("2_yh5bl")
+essence = ExtResource("4_410jn")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_rnx50"]
+script = ExtResource("1_1317v")
+earth = 50
+fire = 10
+water = 0
+wind = 0
+slots = Array[ExtResource("2_yh5bl")]([SubResource("Resource_1c2js"), SubResource("Resource_410jn")])
+
+[sub_resource type="Resource" id="Resource_sw68c"]
+script = ExtResource("2_n1roj")
+upgrade_type = 2
+metadata/_custom_type_script = "uid://r3iai3luuocl"
+
+[resource]
+script = ExtResource("3_r24d4")
+logic = SubResource("Resource_sw68c")
+unlocks_feature = ""
+name = "Destroy dashing spirits"
+flavor = "Those dashing spirits really hate you!"
+icon = ExtResource("5_1c2js")
+position = Vector2(384, -1664)
+cost_arr = Array[ExtResource("1_1317v")]([SubResource("Resource_rnx50")])
+effect_modifier_arr = Array[float]([1.0])
+max_level = 1
+base_cost = SubResource("Resource_lw7k6")
+base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("4_n1roj")])
+description_prefix = "Dashing spirits are destroyed by Spirit Keeper"
+description_suffix = ""
+description_modifier_format = 3
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

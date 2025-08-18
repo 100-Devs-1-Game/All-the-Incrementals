@@ -1,7 +1,6 @@
 class_name EphEvilSprit
 extends Td2dCCWithAcceleration
 
-@export var player_instantly_kills := true
 @export var _repel_acceleration_multiplier := 10
 @export var _state_machine: StateMachine
 @export var _sprite_rotation_point: Marker2D
@@ -10,6 +9,7 @@ extends Td2dCCWithAcceleration
 var _near_player: bool = false
 var _grabbed_youngling: EphYoungling
 var _current_acceleration_multipliers = {}
+var _player_instantly_kills: bool
 
 #region ======================== PUBLIC METHODS ================================
 
@@ -37,7 +37,7 @@ func ungrab_youngling() -> void:
 	if _grabbed_youngling != null:
 		_hand.visible = true
 		_grabbed_youngling = null
-	if player_instantly_kills:
+	if _player_instantly_kills:
 		despawn()
 		return
 
@@ -49,6 +49,9 @@ func ungrab_youngling() -> void:
 
 func _ready() -> void:
 	$SpriteRotationPoint/AnimatedSprite2D.play("default")
+	var mini_game = get_tree().get_first_node_in_group("earth_potato_herding")
+	mini_game.slower_spirits.connect(_on_slower_spirits)
+	_current_acceleration_multipliers["upgrade"] = 1
 
 
 func _calculate_acceleration() -> Vector2:
@@ -69,5 +72,9 @@ func _move(delta: float, direction: Vector2) -> void:
 		_grabbed_youngling.global_position = _youngling_place.global_position
 
 	_sprite_rotation_point.rotation = Vector2.RIGHT.angle_to(_current_velosity)
+
+
+func _on_slower_spirits(modifier: float):
+	_current_acceleration_multipliers["upgrade"] = 1 - modifier
 
 #endregion

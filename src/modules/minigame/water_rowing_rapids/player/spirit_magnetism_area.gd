@@ -5,9 +5,12 @@ var magnetism_strength: float = 40
 ## Distance considered the "Maximum"
 var max_distance: float = 800
 
+
+func _ready() -> void:
+	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(self, [&"magnetism_strength"])
+
+
 # Fuck it. hacky solution.
-
-
 func _physics_process(delta: float) -> void:
 	for spirit in get_overlapping_areas():
 		var relative: Vector2 = global_position - spirit.owner.global_position

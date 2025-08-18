@@ -1,37 +1,31 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=19 format=3 uid="uid://by57hxq7wplj1"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=27 format=3 uid="uid://by57hxq7wplj1"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_p4u37"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_cgvsa"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_emyof"]
 [ext_resource type="Script" uid="uid://r3iai3luuocl" path="res://modules/minigame/earth_potato_herding/eph_upgrades/upgrade_logic.gd" id="4_emyof"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="4_ex1b1"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="4_ru56q"]
+[ext_resource type="Texture2D" uid="uid://eoxf13xv50pd" path="res://assets/minigames/earth_potato_herding/icons/increase_spiritkeeper_speed.png" id="5_ru56q"]
 
 [sub_resource type="Resource" id="Resource_s8imr"]
 script = ExtResource("2_cgvsa")
 essence = ExtResource("3_emyof")
 amount = 10
 
+[sub_resource type="Resource" id="Resource_5gc0n"]
+script = ExtResource("2_cgvsa")
+essence = ExtResource("4_ru56q")
+amount = 50
+
 [sub_resource type="Resource" id="Resource_sy70c"]
 script = ExtResource("1_p4u37")
-earth = 0
+earth = 50
 fire = 0
 water = 0
 wind = 10
-slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_s8imr")])
+slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_s8imr"), SubResource("Resource_5gc0n")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
-
-[sub_resource type="Resource" id="Resource_apyuy"]
-script = ExtResource("2_cgvsa")
-essence = ExtResource("3_emyof")
-amount = 10
-
-[sub_resource type="Resource" id="Resource_emyof"]
-script = ExtResource("1_p4u37")
-earth = 0
-fire = 0
-water = 0
-wind = 10
-slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_apyuy")])
 
 [sub_resource type="Resource" id="Resource_4xrnk"]
 script = ExtResource("2_cgvsa")
@@ -39,55 +33,93 @@ essence = ExtResource("3_emyof")
 amount = 10
 
 [sub_resource type="Resource" id="Resource_j6vvf"]
-script = ExtResource("1_p4u37")
-earth = 0
-fire = 0
-water = 0
-wind = 10
-slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_4xrnk")])
+script = ExtResource("2_cgvsa")
+essence = ExtResource("4_ru56q")
+amount = 50
 
 [sub_resource type="Resource" id="Resource_pnwq1"]
-script = ExtResource("2_cgvsa")
-essence = ExtResource("3_emyof")
-amount = 10
-
-[sub_resource type="Resource" id="Resource_xvvmk"]
 script = ExtResource("1_p4u37")
-earth = 0
+earth = 50
 fire = 0
 water = 0
 wind = 10
-slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_pnwq1")])
+slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_4xrnk"), SubResource("Resource_j6vvf")])
+
+[sub_resource type="Resource" id="Resource_xvvmk"]
+script = ExtResource("2_cgvsa")
+essence = ExtResource("3_emyof")
+amount = 20
 
 [sub_resource type="Resource" id="Resource_ooae1"]
 script = ExtResource("2_cgvsa")
-essence = ExtResource("3_emyof")
-amount = 10
+essence = ExtResource("4_ru56q")
+amount = 100
 
 [sub_resource type="Resource" id="Resource_d4k73"]
 script = ExtResource("1_p4u37")
-earth = 0
+earth = 100
 fire = 0
 water = 0
-wind = 10
-slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_ooae1")])
+wind = 20
+slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_xvvmk"), SubResource("Resource_ooae1")])
 
 [sub_resource type="Resource" id="Resource_lgmr6"]
 script = ExtResource("2_cgvsa")
 essence = ExtResource("3_emyof")
-amount = 10
+amount = 40
 
 [sub_resource type="Resource" id="Resource_c3vxk"]
+script = ExtResource("2_cgvsa")
+essence = ExtResource("4_ru56q")
+amount = 200
+
+[sub_resource type="Resource" id="Resource_dt640"]
 script = ExtResource("1_p4u37")
-earth = 0
+earth = 200
 fire = 0
 water = 0
-wind = 10
-slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_lgmr6")])
+wind = 40
+slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_lgmr6"), SubResource("Resource_c3vxk")])
+
+[sub_resource type="Resource" id="Resource_eajke"]
+script = ExtResource("2_cgvsa")
+essence = ExtResource("3_emyof")
+amount = 80
+
+[sub_resource type="Resource" id="Resource_pbpur"]
+script = ExtResource("2_cgvsa")
+essence = ExtResource("4_ru56q")
+amount = 400
+
+[sub_resource type="Resource" id="Resource_bdiy6"]
+script = ExtResource("1_p4u37")
+earth = 400
+fire = 0
+water = 0
+wind = 80
+slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_eajke"), SubResource("Resource_pbpur")])
+
+[sub_resource type="Resource" id="Resource_wril2"]
+script = ExtResource("2_cgvsa")
+essence = ExtResource("3_emyof")
+amount = 150
+
+[sub_resource type="Resource" id="Resource_j8o4s"]
+script = ExtResource("2_cgvsa")
+essence = ExtResource("4_ru56q")
+amount = 800
+
+[sub_resource type="Resource" id="Resource_kslta"]
+script = ExtResource("1_p4u37")
+earth = 800
+fire = 0
+water = 0
+wind = 150
+slots = Array[ExtResource("2_cgvsa")]([SubResource("Resource_wril2"), SubResource("Resource_j8o4s")])
 
 [sub_resource type="Resource" id="Resource_ru56q"]
 script = ExtResource("4_emyof")
-upgrade_type = 2
+upgrade_type = 1
 metadata/_custom_type_script = "uid://r3iai3luuocl"
 
 [resource]
@@ -96,18 +128,19 @@ logic = SubResource("Resource_ru56q")
 unlocks_feature = ""
 name = "Faster spirit keeper"
 flavor = "Gotta go fast!"
-position = Vector2(576, -512)
-cost_arr = Array[ExtResource("1_p4u37")]([SubResource("Resource_emyof"), SubResource("Resource_j6vvf"), SubResource("Resource_xvvmk"), SubResource("Resource_d4k73"), SubResource("Resource_c3vxk")])
-effect_modifier_arr = Array[float]([100.0, 200.0, 300.0, 400.0, 500.0])
+icon = ExtResource("5_ru56q")
+position = Vector2(384, -2368)
+cost_arr = Array[ExtResource("1_p4u37")]([SubResource("Resource_pnwq1"), SubResource("Resource_d4k73"), SubResource("Resource_dt640"), SubResource("Resource_bdiy6"), SubResource("Resource_kslta")])
+effect_modifier_arr = Array[float]([0.25, 0.5, 0.75, 1.0, 1.25])
 max_level = 5
 base_cost = SubResource("Resource_sy70c")
-base_cost_multiplier = 1.1
+base_cost_multiplier = 2.0
 exponential_cost = true
 round_smoothness = 1.0
-base_effect_modifier = 100.0
-effect_modifier_multiplier = 100.0
+base_effect_modifier = 0.25
+effect_modifier_multiplier = 0.25
 unlocked = false
-unlock_level = 3
+unlock_level_index = 3
 unlocks = Array[Resource]([])
 description_prefix = "Increase Spirit Keeper speed by"
 description_suffix = ""

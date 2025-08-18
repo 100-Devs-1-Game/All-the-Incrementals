@@ -1,0 +1,130 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=24 format=3 uid="uid://ddn6dw3ss156b"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_f1aga"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_ouwe1"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_qlj54"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_vpmxa"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="4_crofh"]
+[ext_resource type="Texture2D" uid="uid://bj3m5mnfxny3u" path="res://assets/minigames/earth_tower_tumble/icons/decrease_enemy_speed.png" id="4_oe6r0"]
+[ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="5_vpmxa"]
+[ext_resource type="Resource" uid="uid://2j7jbyldfln6" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/friendly_spirit.tres" id="8_crofh"]
+
+[sub_resource type="Resource" id="Resource_crofh"]
+script = ExtResource("2_qlj54")
+essence = ExtResource("3_vpmxa")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_t3u6l"]
+script = ExtResource("1_f1aga")
+earth = 5
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_qlj54")]([SubResource("Resource_crofh")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_4qbjg"]
+script = ExtResource("2_qlj54")
+essence = ExtResource("3_vpmxa")
+amount = 35
+
+[sub_resource type="Resource" id="Resource_u51qw"]
+script = ExtResource("2_qlj54")
+essence = ExtResource("4_crofh")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_0p8wq"]
+script = ExtResource("1_f1aga")
+earth = 35
+fire = 0
+water = 0
+wind = 5
+slots = Array[ExtResource("2_qlj54")]([SubResource("Resource_4qbjg"), SubResource("Resource_u51qw")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_tk8mn"]
+script = ExtResource("2_qlj54")
+essence = ExtResource("3_vpmxa")
+amount = 60
+
+[sub_resource type="Resource" id="Resource_ntrk6"]
+script = ExtResource("2_qlj54")
+essence = ExtResource("4_crofh")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_4rk1r"]
+script = ExtResource("1_f1aga")
+earth = 60
+fire = 0
+water = 0
+wind = 10
+slots = Array[ExtResource("2_qlj54")]([SubResource("Resource_tk8mn"), SubResource("Resource_ntrk6")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_0510u"]
+script = ExtResource("2_qlj54")
+essence = ExtResource("3_vpmxa")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_bulwh"]
+script = ExtResource("2_qlj54")
+essence = ExtResource("4_crofh")
+amount = 35
+
+[sub_resource type="Resource" id="Resource_8pvo5"]
+script = ExtResource("1_f1aga")
+earth = 100
+fire = 0
+water = 0
+wind = 35
+slots = Array[ExtResource("2_qlj54")]([SubResource("Resource_0510u"), SubResource("Resource_bulwh")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_5xxoq"]
+script = ExtResource("2_qlj54")
+essence = ExtResource("3_vpmxa")
+amount = 235
+
+[sub_resource type="Resource" id="Resource_nfyun"]
+script = ExtResource("2_qlj54")
+essence = ExtResource("4_crofh")
+amount = 40
+
+[sub_resource type="Resource" id="Resource_g3ib2"]
+script = ExtResource("1_f1aga")
+earth = 235
+fire = 0
+water = 0
+wind = 40
+slots = Array[ExtResource("2_qlj54")]([SubResource("Resource_5xxoq"), SubResource("Resource_nfyun")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_oe6r0"]
+script = ExtResource("5_vpmxa")
+type = 4
+metadata/_custom_type_script = "uid://c5sirmi2235ls"
+
+[resource]
+script = ExtResource("2_ouwe1")
+logic = SubResource("Resource_oe6r0")
+unlocks_feature = ""
+name = "Binding Essence"
+flavor = ""
+icon = ExtResource("4_oe6r0")
+position = Vector2(960, 2176)
+cost_arr = Array[ExtResource("1_f1aga")]([SubResource("Resource_t3u6l"), SubResource("Resource_0p8wq"), SubResource("Resource_4rk1r"), SubResource("Resource_8pvo5"), SubResource("Resource_g3ib2")])
+effect_modifier_arr = Array[float]([-10.0, -25.0, -30.0, -45.0, -65.0])
+max_level = 1
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("8_crofh")])
+description_prefix = "Slow enemies speed by"
+description_suffix = ""
+description_modifier_format = 1
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

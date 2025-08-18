@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DebugButton" load_steps=2 format=3 uid="uid://4mflbsko28ct"]
+
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="1_j7s2r"]
+
+[resource]
+script = ExtResource("1_j7s2r")
+func_or_path = "reset_savegame"
+hotkey = ""
+metadata/_custom_type_script = "uid://bniv0kd24eb7w"

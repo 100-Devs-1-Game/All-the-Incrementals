@@ -78,8 +78,16 @@ func _start():
 	pass
 
 
-func _get_uid() -> int:
-	return ResourceLoader.get_resource_uid(data.resource_path)
+## Virtual function for cleaning up the Minigame. Inherited Scripts should
+## implement this if they want to do cleanup at game end
+func _game_over():
+	pass
+
+
+func _get_key() -> StringName:
+	# https://github.com/godotengine/godot/issues/75617
+	# TODO: replace with UID when this is fixed
+	return data.resource_path
 
 
 # This function is called when the Play button on the minigame menu is pressed.
@@ -133,7 +141,7 @@ func open_upgrades():
 # This function is called when the Show highscores button on the minigame menu is
 # pressed.
 func show_highscores():
-	var highscores = Player.get_highscores(_get_uid())
+	var highscores = Player.get_highscores(_get_key())
 	_minigame_shared_components.minigame_highscores.open_menu(highscores)
 
 
@@ -143,12 +151,13 @@ func open_main_menu():
 
 # Call this function when the game ends to re-open the minigame menu.
 func game_over():
-	_minigame_shared_components.minigame_menu.open_menu()
 	Player.add_stack_to_inventory(
 		EssenceStack.new(data.output_essence, int(_score * data.currency_conversion_factor))
 	)
-	Player.update_highscores(_get_uid(), get_score())
+	Player.update_highscores(_get_key(), get_score())
 	_is_game_over = true
+	_game_over()
+	_minigame_shared_components.minigame_menu.open_menu()
 
 
 func is_game_over():
@@ -172,6 +181,20 @@ func exit() -> void:
 # For debugging shortcuts, immediate quit.
 func quit_game() -> void:
 	get_tree().quit()
+
+
+# For debugging
+func cheat_credits() -> void:
+	Player.add_stack_to_inventory(EssenceStack.new(EssenceInventory.EARTH_ESSENCE, 1000))
+	Player.add_stack_to_inventory(EssenceStack.new(EssenceInventory.FIRE_ESSENCE, 1000))
+	Player.add_stack_to_inventory(EssenceStack.new(EssenceInventory.WATER_ESSENCE, 1000))
+	Player.add_stack_to_inventory(EssenceStack.new(EssenceInventory.WIND_ESSENCE, 1000))
+
+
+# For debugging
+func reset_savegame() -> void:
+	SaveGameManager.reset()
+	reload()
 
 
 func save_game() -> void:

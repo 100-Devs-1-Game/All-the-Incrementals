@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="JournalEntryData" load_steps=3 format=3 uid="uid://dfrr2fuk3k1jv"]
+
+[ext_resource type="Script" uid="uid://b8mevt83bhkiu" path="res://modules/overworld/story/journal_entry_data.gd" id="1_b75q1"]
+[ext_resource type="Texture2D" uid="uid://cbhcuqwbf8ds3" path="res://assets/overworld/story/journal/entry2.png" id="1_ktwme"]
+
+[resource]
+script = ExtResource("1_b75q1")
+text = "The Gods’ Departure
+Solvar and Vandr are gone. No farewell. No sign. Only silence where their presence once sang through the skies.
+
+There was a time when the gods walked beside us. They shaped the land, stirred the winds, and breathed balance into every corner of this world. I used to hear their song in the breeze… but now, the wind carries nothing.
+Their shrine still stands, but they grow weaker with each passing day.
+
+So I write this for the next of kin. I will watch over their land, as will you. In case they ever return.
+
+ — Spiritkeeper Tellen, Second in the Line"
+page = ExtResource("1_ktwme")
+metadata/_custom_type_script = "uid://b8mevt83bhkiu"
