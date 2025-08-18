@@ -67,7 +67,7 @@ texture_repeat = 2
 points = PackedVector2Array(-6318, 11, -4406, -351, -2805, 22, -2737, 2042, -3503, 2266, -4961, 2412, -6341, 2016, -6613, 948)
 closed = true
 width = 32.0
-default_color = Color(0.894922, 0.894922, 0.894922, 1)
+default_color = Color(0.93845, 0.93845, 0.93845, 1)
 texture = ExtResource("6_0gm1p")
 texture_mode = 1
 
