@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5xrpypb05g0s"
-path.s3tc="res://.godot/imported/spiritkeeper_v7_trl_V2_texture.webp-cb8f8a81460ac0327aec5cf2a23fa2b4.s3tc.ctex"
+path.s3tc="res://.godot/imported/spiritkeeper_v7_texture_trl.webp-da40713663787f7e7ed17104db24eea4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/overworld/entities/spiritkeeper/spiritkeeper_v7_trl_V2_texture.webp"
-dest_files=["res://.godot/imported/spiritkeeper_v7_trl_V2_texture.webp-cb8f8a81460ac0327aec5cf2a23fa2b4.s3tc.ctex"]
+source_file="res://assets/overworld/entities/spiritkeeper/spiritkeeper_v7_texture_trl.webp"
+dest_files=["res://.godot/imported/spiritkeeper_v7_texture_trl.webp-da40713663787f7e7ed17104db24eea4.s3tc.ctex"]
 
 [params]
 
