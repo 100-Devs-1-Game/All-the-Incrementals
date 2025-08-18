@@ -34,7 +34,9 @@ enum UpgradeType {
 	## Increases amount that void is repelled when a Spirit is picked up
 	VOID_REPELLANT,
 	## Increases the density of spirits by X%
-	SPIRIT_DENSITY
+	SPIRIT_DENSITY,
+	## Crush rocks, reduce damage from crashes by X%
+	ROCK_CRUSHER,
 }
 
 const BASE_PREFIX: String = "base_"
@@ -90,7 +92,7 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 			increase_from_base(game.player, &"boost_duration", effect_modifier)
 		UpgradeType.STABILITY_MAX:
 			increase_from_base(game.player, &"boat_max_stability", effect_modifier)
-			game.player.boat_stability = effect_modifier
+			game.player.boat_stability = game.player.boat_max_stability
 		UpgradeType.STABILITY_REGEN:
 			game.player.stability_regen = effect_modifier
 		UpgradeType.VOID_SPEED:
@@ -117,3 +119,6 @@ func _apply_effect(p_game: BaseMinigame, upgrade: MinigameUpgrade):
 			game.chase_void.repel_strength = effect_modifier
 		UpgradeType.SPIRIT_DENSITY:
 			game.soul_spawner.density_mod = effect_modifier
+		UpgradeType.ROCK_CRUSHER:
+			game.player.rock_crusher = true
+			increase_from_base(game.player, &"crash_damage", -effect_modifier)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b28uf20l4nupc"
-path="res://.godot/imported/000.png-e3d593014150d132d27431d02b872f08.ctex"
+uid="uid://cavjgjn0ccmys"
+path="res://.godot/imported/spirit_density_up.png-11c318e9cb04911ea39ba2fea4f49213.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/wind_platformer/data/upgrade/000.png"
-dest_files=["res://.godot/imported/000.png-e3d593014150d132d27431d02b872f08.ctex"]
+source_file="res://assets/minigames/water_rowing_rapids/icons/spirit_density_up.png"
+dest_files=["res://.godot/imported/spirit_density_up.png-11c318e9cb04911ea39ba2fea4f49213.ctex"]
 
 [params]
 

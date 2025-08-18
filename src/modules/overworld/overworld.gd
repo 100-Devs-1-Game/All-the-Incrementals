@@ -8,6 +8,7 @@ var _current_settlement_data: SettlementData
 @onready var overworld_map: OverworldMapMenu = %OverworldMap
 @onready var player_holder_node: Node3D = %PlayerHolder
 @onready var settlement_scene_holder_node: Node3D = %SceneHolder
+@onready var journal_page_ui: JournalPageUI = %JournalPageUI
 
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _ready() -> void:
 	assert(is_instance_valid(starting_settlement_data), "Starting settlement data must be set.")
 
 	EventBus.wants_to_travel_to.connect(change_to_settlement)
+	EventBus.request_journal_page_display.connect(_on_display_journal_page)
 
 	# Runs when we started somewhere else
 	if SceneLoader.get_current_settlement_data():
@@ -49,3 +51,7 @@ func change_to_settlement(data: SettlementData) -> void:
 		if not exit.exited_settlement.is_connected(open_overworld_map):
 			exit.exited_settlement.connect(open_overworld_map)
 			print("Exit (", exit, ") connected signal to overworld map menu")
+
+
+func _on_display_journal_page(data: JournalEntryData):
+	journal_page_ui.open(data)

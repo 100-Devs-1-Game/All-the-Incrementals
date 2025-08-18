@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="JournalEntryData" load_steps=3 format=3 uid="uid://bjcq0qrbwhpxy"]
+
+[ext_resource type="Script" uid="uid://b8mevt83bhkiu" path="res://modules/overworld/story/journal_entry_data.gd" id="1_j2lhv"]
+[ext_resource type="Texture2D" uid="uid://bi6i3l3j3jppa" path="res://assets/overworld/story/journal/entry6.png" id="1_sofmw"]
+
+[resource]
+script = ExtResource("1_j2lhv")
+text = "Daily note #3
+The spirits are everywhere lately. I speak to them when I can. Most of them don’t make much sense.. It's more half-thoughts but I’ve come to understand one thing clearly: they’re anxious and restless. Like birds startled from a nest.
+
+Without the gods, they don’t know where to go. They drift, drawn to essence as they somehow give them comfort. Makes them feel at home they said. Some are frightened and some are even angry.
+
+I try to listen. That seems to help, even if I don’t have the answers.
+
+— Spiritkeeper Tellen, Third in the Line
+"
+page = ExtResource("1_sofmw")
+metadata/_custom_type_script = "uid://b8mevt83bhkiu"
