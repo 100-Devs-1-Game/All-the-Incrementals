@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmu7u4fo2qrmc"]
+
+[ext_resource type="Script" uid="uid://c1ffa8cvictxh" path="res://modules/overworld/story/journal_page_ui.gd" id="1_2vgpe"]
+[ext_resource type="Texture2D" uid="uid://bqb3wefjrogue" path="res://assets/overworld/story/journal/entry1.png" id="1_c5cqy"]
+
+[node name="JournalPageUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2vgpe")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="TextureRect Page" type="TextureRect" parent="Panel/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_c5cqy")
+stretch_mode = 4
+
+[node name="Label Page" type="Label" parent="Panel/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Where did the gods go?
+I can no longer hear the gods songs. Maybe they are resting or went into hiding? The temples they have built still stand, but they do so in silence now. 
+
+Without their guidance, the spirits has begun to act differently. As if they no longer knows their way. The people hear seem to notice too, they have begun to whisper among themselves. 
+
+I hope the gods wake up soon. 
+
+— Keeper Tellen, Second in the Line "
+autowrap_mode = 3
+
+[node name="Leave" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.95
+anchor_right = 0.55
+anchor_bottom = 0.98
+offset_left = -54.5
+offset_top = -58.0
+offset_right = 54.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Leave"
+
+[connection signal="pressed" from="Panel/Leave" to="." method="_on_leave_pressed"]
