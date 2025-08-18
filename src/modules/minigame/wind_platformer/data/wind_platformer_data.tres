@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("2_44lnl")
-display_name = "wind_platformer"
+display_name = "Cloud Jump"
 minigame_scene = ExtResource("1_b7r2j")
 upgrade_tree_root_nodes = Array[ExtResource("4_b7r2j")]([ExtResource("5_upm7o"), ExtResource("6_5fo0u")])
 output_essence = ExtResource("2_vw8gv")
