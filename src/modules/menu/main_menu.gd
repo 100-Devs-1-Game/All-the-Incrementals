@@ -1,8 +1,11 @@
 extends Control
 
+@onready var background: AnimatedSprite2D = %Background
+
 
 func _ready() -> void:
 	get_tree().paused = false
+	background.play()
 
 
 func quit_game() -> void:
