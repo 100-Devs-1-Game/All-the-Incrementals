@@ -226,14 +226,14 @@ func _cache_bus() -> void:
 	_bus_idx[BUS_SFX] = AudioServer.get_bus_index(BUS_SFX)
 
 
-func _bus_index(name: String) -> int:
+func _bus_index(bus_name: String) -> int:
 	var idx := -1
-	if _bus_idx.has(name):
-		idx = int(_bus_idx[name])
+	if _bus_idx.has(bus_name):
+		idx = int(_bus_idx[bus_name])
 	if idx == -1:
-		idx = AudioServer.get_bus_index(name)
+		idx = AudioServer.get_bus_index(bus_name)
 		if idx != -1:
-			_bus_idx[name] = idx
+			_bus_idx[bus_name] = idx
 	return idx
 
 
