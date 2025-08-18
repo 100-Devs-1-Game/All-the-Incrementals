@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=26 format=3 uid="uid://bjbbtd0bec76p"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=27 format=3 uid="uid://bjbbtd0bec76p"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_c4guu"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_daqgv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_e6e5n"]
 [ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="3_ul4cq"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="4_md2rh"]
+[ext_resource type="Texture2D" uid="uid://cavjgjn0ccmys" path="res://assets/minigames/water_rowing_rapids/icons/spirit_density_up.png" id="5_md2rh"]
 
 [sub_resource type="Resource" id="Resource_87wt7"]
 script = ExtResource("2_rky0t")
@@ -127,6 +128,7 @@ logic = SubResource("Resource_md2rh")
 unlocks_feature = ""
 name = "Spirit Density"
 flavor = ""
+icon = ExtResource("5_md2rh")
 position = Vector2(1600, 3392)
 cost_arr = Array[ExtResource("1_c4guu")]([SubResource("Resource_3am4b"), SubResource("Resource_s1pw5"), SubResource("Resource_ww1rh"), SubResource("Resource_dlrvb"), SubResource("Resource_csb0u")])
 effect_modifier_arr = Array[float]([0.07, 0.14, 0.21, 0.28, 0.35])
