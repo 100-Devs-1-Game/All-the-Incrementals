@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://c5pos323ks1ro"]
+[gd_scene load_steps=75 format=3 uid="uid://c5pos323ks1ro"]
 
 [ext_resource type="PackedScene" uid="uid://cyqvtg6x4rb85" path="res://assets/overworld/models/architectural/column/pillar_01.tscn" id="1_6xidr"]
 [ext_resource type="Script" uid="uid://dhpabklvos1rb" path="res://assets/overworld/scripts/animation_scripts/light_flicker.gd" id="2_4aov3"]

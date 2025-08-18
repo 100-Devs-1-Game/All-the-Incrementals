@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="JournalEntryData" load_steps=3 format=3 uid="uid://dip6l5lcwe45n"]
+
+[ext_resource type="Texture2D" uid="uid://bh2plp15isxv3" path="res://assets/overworld/story/journal/entry5.png" id="1_fqblj"]
+[ext_resource type="Script" uid="uid://b8mevt83bhkiu" path="res://modules/overworld/story/journal_entry_data.gd" id="1_i2y4p"]
+
+[resource]
+script = ExtResource("1_i2y4p")
+text = "The Spiritkeeper
+This book was passed to me by the last Spiritkeeper, something to help ease the weight of this role. So far, I know only this: rare people are \"touched by essence\". We can commune with the spirits where others cannot.
+But... am I not supposed to be able to hear them speak?
+The last Spiritkeeper looked at me strange when I told him. He said he never could and that worries me. I don’t know if something’s wrong with me or if it’s something the world deemed necessary for me to know?
+But if this gift helps me understand the spirits better… maybe it’s what Reach needs now.
+
+— Spiritkeeper Tellen, Third in the Line"
+page = ExtResource("1_fqblj")
+metadata/_custom_type_script = "uid://b8mevt83bhkiu"

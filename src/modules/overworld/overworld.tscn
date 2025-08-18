@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1s2rtgxlns3v"]
+[gd_scene load_steps=6 format=3 uid="uid://d1s2rtgxlns3v"]
 
 [ext_resource type="Script" uid="uid://bfebdhsesmk67" path="res://modules/overworld/overworld.gd" id="1_2wcmw"]
 [ext_resource type="Resource" uid="uid://depjmek44wqwq" path="res://modules/overworld_locations/shrine/shrine.tres" id="2_2wcmw"]
 [ext_resource type="PackedScene" uid="uid://uem0xukdu645" path="res://modules/overworld_character_controller/spiritkeeper_character_controller_3d.tscn" id="3_sx55g"]
 [ext_resource type="PackedScene" uid="uid://dwk76h2iitx0h" path="res://modules/overworld_map/overworld_map.tscn" id="4_bwyud"]
+[ext_resource type="PackedScene" uid="uid://bmu7u4fo2qrmc" path="res://modules/overworld/story/journal_page_ui.tscn" id="5_sx55g"]
 
 [node name="Overworld" type="Node"]
 script = ExtResource("1_2wcmw")
@@ -22,3 +23,7 @@ unique_name_in_owner = true
 
 [node name="OverworldMap" parent="UI" instance=ExtResource("4_bwyud")]
 unique_name_in_owner = true
+
+[node name="JournalPageUI" parent="UI" instance=ExtResource("5_sx55g")]
+unique_name_in_owner = true
+visible = false
