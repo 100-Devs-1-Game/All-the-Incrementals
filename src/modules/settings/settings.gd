@@ -85,7 +85,6 @@ func connect_signals():
 		key.text = OS.get_keycode_string(keycode)
 
 
-
 func _input(event: InputEvent) -> void:
 	if !status_rebinding:
 		if event.is_action_pressed("exit_menu"):
