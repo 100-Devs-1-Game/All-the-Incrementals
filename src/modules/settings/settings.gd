@@ -17,7 +17,10 @@ const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 @export var music_slider: Slider
 @export var sfx_slider: Slider
 
-var action_menu := false
+var status_rebinding := false
+var action_menu := false  #Changes menu for ingame
+var fullscreen := false
+
 var ordered_actions := [
 	"primary_action",
 	"primary_action",
@@ -68,15 +71,17 @@ func connect_signals() -> void:
 	var bind_id := 0
 
 	for button in setting_buttons.keys():
-		button.pressed.connect(_on_button_pressed.bind(setting_buttons[button]))
-
+		if not button.is_connected("pressed", _on_button_pressed):
+			button.pressed.connect(_on_button_pressed.bind(setting_buttons[button]))
 	for slider in audio_sliders.keys():
-		slider.value_changed.connect(_on_volume_changed.bind(audio_sliders[slider]))
+		if not slider.is_connected("value_changed", _on_volume_changed):
+			slider.value_changed.connect(_on_volume_changed.bind(audio_sliders[slider]))
 
 	for key in keybinders:
 		bind_id += 1
 		key.set_meta("bind_id", bind_id)
-		key.pressed.connect(call_rebinder.bind(bind_id, key))
+		if not key.is_connected("pressed", call_rebinder):
+			key.pressed.connect(call_rebinder.bind(bind_id, key))
 		var action = ordered_actions[bind_id - 1]
 		var index := (bind_id - 1) % 2
 		var keycode = GameSettings.keybinds[action][index]
@@ -84,8 +89,9 @@ func connect_signals() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit_menu"):
-		SceneLoader.enter_main_menu()
+	if !status_rebinding:
+		if event.is_action_pressed("exit_menu"):
+			SceneLoader.enter_main_menu()
 
 
 func _on_button_pressed(action: String) -> void:
@@ -98,7 +104,7 @@ func _on_button_pressed(action: String) -> void:
 			SceneLoader.enter_main_menu()
 		"Restore":
 			GameSettings.restore_defaults()
-			_on_button_pressed("Exit")
+			connect_signals()
 	update_ui()
 	GameSettings.save_settings()
 
@@ -110,7 +116,9 @@ func _on_volume_changed(value: float, bus_name: String) -> void:
 	GameSettings.save_settings()
 
 
-func call_rebinder(key_id: int, button) -> void:
+func call_rebinder(key_id: int, button):
+	status_rebinding = true
+	print("Calling rebinder.")
 	var rebinder = REBINDER.instantiate()
 	rebinder.action_id = key_id
 	rebinder.caller = button

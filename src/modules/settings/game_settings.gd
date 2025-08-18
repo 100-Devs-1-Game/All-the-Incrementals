@@ -180,6 +180,7 @@ func restore_defaults() -> void:
 		"up": [KEY_W, KEY_UP],
 		"exit_menu": [KEY_ESCAPE, KEY_C]
 	}
+	apply_new_inputmap()
 	save_settings()
 	_apply_all_audio_to_buses()
 

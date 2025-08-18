@@ -1,15 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://cccmrn0cfcn0s"]
+[gd_scene load_steps=18 format=3 uid="uid://cccmrn0cfcn0s"]
 
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
 [ext_resource type="Shader" uid="uid://djcjicqv8phur" path="res://modules/minigame/water_rowing_rapids/water.gdshader" id="2_onqwm"]
 [ext_resource type="Texture2D" uid="uid://dhr2n6nhq3p8w" path="res://assets/minigames/water_rowing_rapids/flow_map.webp" id="3_0gm1p"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="3_a50qn"]
-[ext_resource type="PackedScene" uid="uid://tofxqtl6im0p" path="res://modules/minigame/water_rowing_rapids/rock/rock.tscn" id="3_i806a"]
+[ext_resource type="PackedScene" uid="uid://tofxqtl6im0p" path="res://modules/minigame/water_rowing_rapids/rock/rock_spawner.tscn" id="3_i806a"]
 [ext_resource type="Texture2D" uid="uid://dba4g83t4sh84" path="res://assets/minigames/water_rowing_rapids/water_foam.webp" id="3_l3r46"]
 [ext_resource type="Texture2D" uid="uid://cn1f37xpjid1p" path="res://assets/minigames/water_rowing_rapids/water_background.webp" id="4_0gm1p"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_yl50k"]
 [ext_resource type="PackedScene" uid="uid://mhrfxqqthuy7" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.tscn" id="5_f4xkx"]
+[ext_resource type="Texture2D" uid="uid://dep4t2fllpiro" path="res://assets/minigames/water_rowing_rapids/foam.webp" id="6_0gm1p"]
 [ext_resource type="PackedScene" uid="uid://b8jmv0yqj5qvh" path="res://modules/minigame/water_rowing_rapids/void/void.tscn" id="8_yl50k"]
 [ext_resource type="Script" uid="uid://ccisrw8w88dql" path="res://modules/minigame/water_rowing_rapids/soul_spawning.gd" id="12_l3r46"]
 
@@ -30,12 +31,6 @@ shader_parameter/flow_speed_scale = 20.0
 shader_parameter/flow_strength = 0.25
 
 [sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_a50qn"]
-
-[sub_resource type="Gradient" id="Gradient_l3r46"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_0gm1p"]
-gradient = SubResource("Gradient_l3r46")
-width = 30
 
 [sub_resource type="Environment" id="Environment_a50qn"]
 background_mode = 3
@@ -71,8 +66,9 @@ shape = SubResource("ConcavePolygonShape2D_a50qn")
 texture_repeat = 2
 points = PackedVector2Array(-6318, 11, -4406, -351, -2805, 22, -2737, 2042, -3503, 2266, -4961, 2412, -6341, 2016, -6613, 948)
 closed = true
-width = 20.0
-texture = SubResource("GradientTexture1D_0gm1p")
+width = 32.0
+default_color = Color(0.894922, 0.894922, 0.894922, 1)
+texture = ExtResource("6_0gm1p")
 texture_mode = 1
 
 [node name="RowingPlayer" parent="." instance=ExtResource("5_f4xkx")]
@@ -112,9 +108,11 @@ position = Vector2(5079, 2111)
 
 [node name="Rock11" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(6440, 1063)
+scale = Vector2(1.29885, 1.29885)
 
 [node name="Rock12" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(7416, 1430)
+scale = Vector2(1.13689, 1.13689)
 
 [node name="Rock13" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(7694, 2048)
@@ -125,8 +123,13 @@ position = Vector2(6709, 2146)
 [node name="Rock15" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(8545, 543)
 
+[node name="Rock17" parent="Hazzards" instance=ExtResource("3_i806a")]
+position = Vector2(11353, 66)
+scale = Vector2(1.18968, 1.18968)
+
 [node name="Rock16" parent="Hazzards" instance=ExtResource("3_i806a")]
 position = Vector2(8840, 1635)
+scale = Vector2(1.39403, 1.39403)
 
 [node name="SoulSpawners" type="Node" parent="."]
 
