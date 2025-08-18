@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://tofxqtl6im0p"]
+[gd_scene load_steps=12 format=3 uid="uid://xxxxx"]
 
 [ext_resource type="Script" uid="uid://mlcfb2pqu5j5" path="res://modules/minigame/water_rowing_rapids/rock/rock.gd" id="1_5xl68"]
 [ext_resource type="Texture2D" uid="uid://ds32na3kw2kk3" path="res://assets/minigames/water_rowing_rapids/rock.webp" id="1_wh7uy"]
