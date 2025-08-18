@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=29 format=3 uid="uid://bnhs0tt21yheb"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://bnhs0tt21yheb"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_e2g8i"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_m4wm5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dhk4rinw8yehe" path="res://assets/minigames/earth_tower_tumble/icons/increase_potato_conjure.png" id="4_8fyq3"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="4_ibix0"]
 [ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="5_5t6wb"]
+[ext_resource type="Resource" uid="uid://2j7jbyldfln6" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/friendly_spirit.tres" id="8_ibix0"]
 
 [sub_resource type="Resource" id="Resource_ibix0"]
 script = ExtResource("2_m4wm5")
@@ -149,22 +150,22 @@ metadata/_custom_type_script = "uid://c5sirmi2235ls"
 script = ExtResource("2_wdhly")
 logic = SubResource("Resource_8fyq3")
 unlocks_feature = ""
-name = "+ Potato Conjure"
+name = "Rapid Conjuring"
 flavor = ""
 icon = ExtResource("4_8fyq3")
-position = Vector2(64, -64)
+position = Vector2(64, 2176)
 cost_arr = Array[ExtResource("1_e2g8i")]([SubResource("Resource_tndxl"), SubResource("Resource_dx4it"), SubResource("Resource_3ltuf"), SubResource("Resource_fw011"), SubResource("Resource_dwts5"), SubResource("Resource_534ab"), SubResource("Resource_50eqk"), SubResource("Resource_7oi07")])
 effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.9])
-max_level = 1
+max_level = 0
 base_cost_multiplier = 0.0
-exponential_cost = true
+exponential_cost = false
 round_smoothness = 1.0
 base_effect_modifier = 0.0
 effect_modifier_multiplier = 0.0
 unlocked = false
 unlock_level_index = 0
-unlocks = Array[Resource]([])
-description_prefix = ""
+unlocks = Array[Resource]([ExtResource("8_ibix0")])
+description_prefix = "Increase potato conjure speed by"
 description_suffix = ""
 description_modifier_format = 0
 metadata/_tree_editor_version_added = 1

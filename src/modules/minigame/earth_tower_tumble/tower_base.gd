@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var base_width_current := 64.0
-@export var upgrade_width_increment := 64.0
 @export var upgrade_speed := 15.0
 @export var snap_threshold := 0.5
 
@@ -45,6 +44,6 @@ func update_polygon():
 	)
 
 
-func upgrade_base():
-	base_width_current += upgrade_width_increment
+func upgrade_base(amount):
+	base_width_current = amount
 	base_upgrading = true

@@ -15,7 +15,7 @@ signal blocks_changed(value)
 var lives := 3
 var build_mode := true
 
-var blocks_remaining := 18:
+var blocks_remaining := 8:
 	set(value):
 		blocks_remaining = value
 		blocks_changed.emit(value)
@@ -58,12 +58,22 @@ func block_penalty():
 
 func player_speed_modifier(modifier):
 	player.direction_speed = player.direction_speed * modifier
-	print("SPEED CHANGED TO: ", player.direction_speed)
 
+func block_amount_modifier(modifier):
+	blocks_remaining = blocks_remaining + int(modifier)
 
 func player_conjure_modifier(modifier):
 	player.shoot_delay = player.shoot_delay - modifier
 
+func starting_life_modifier(modifier):
+	lives = lives + int(modifier)
+	game_ui.setup()
+
+func base_width_modifier(modifier):
+	base.upgrade_base(modifier)
+
+func enemy_speed_modifier(modifier):
+	enemy_spawner.enemy_speed_modifier = modifier
 
 func force_update():
 	blocks_changed.emit(blocks_remaining)
