@@ -117,7 +117,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			if PhysicsServer2D.body_get_collision_layer(collider_rid) & 0b1000:
 				(
 					instance_from_id(PhysicsServer2D.body_get_object_instance_id(collider_rid))
-					. queue_free()
+					. explode()
 				)
 
 		if invincibility <= 0:

@@ -6,5 +6,5 @@ func explode() -> void:
 	explosion_particles.emitting = true
 	$Sprite2D.visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
-	await get_tree().create_timer(explosion_particles.lifetime)
+	await get_tree().create_timer(explosion_particles.lifetime).timeout
 	queue_free()
