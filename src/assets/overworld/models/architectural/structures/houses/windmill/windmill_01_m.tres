@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dv15yckxbmj6c"]
 
-[ext_resource type="Texture2D" uid="uid://b61axic4otvas" path="res://models/architectural/structures/houses/windmill/windmill_01_m.webp" id="1_5g6vk"]
+[ext_resource type="Texture2D" uid="uid://b61axic4otvas" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_01_m.webp" id="1_5g6vk"]
 
 [resource]
 albedo_texture = ExtResource("1_5g6vk")

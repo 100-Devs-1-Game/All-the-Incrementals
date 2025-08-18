@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ob41rgy7c7ey"]
 
-[ext_resource type="Texture2D" uid="uid://cp0vuxncnrm12" path="res://models/architectural/structures/houses/straw_house/straw_house_m.webp" id="1_eamcp"]
+[ext_resource type="Texture2D" uid="uid://cp0vuxncnrm12" path="res://assets/overworld/models/architectural/structures/houses/straw_house/straw_house_m.webp" id="1_eamcp"]
 
 [resource]
 albedo_texture = ExtResource("1_eamcp")
