@@ -65,12 +65,18 @@ hotkey = "e"
 metadata/_custom_type_script = "uid://bniv0kd24eb7w"
 
 [sub_resource type="Environment" id="Environment_cv21q"]
+background_mode = 1
+background_color = Color(0.937255, 0.635294, 0.392157, 1)
+background_energy_multiplier = 1.17
 ambient_light_source = 3
 ambient_light_color = Color(0.370364, 0.370364, 0.370364, 1)
 
-[node name="Gallery" type="Node3D"]
+[node name="Gallery" type="Node3D" node_paths=PackedStringArray("_overlay", "_overlay_bg", "_overlay_image")]
 script = ExtResource("1_c0ilg")
 extras = ExtResource("2_5qctp")
+_overlay = NodePath("FullscreenOverlay")
+_overlay_bg = NodePath("FullscreenOverlay/ColorRect")
+_overlay_image = NodePath("FullscreenOverlay/Image")
 
 [node name="ImageL3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.21353, -0.881678, 3.85394e-08, 0, -6.55671e-08, -1.5, 0.881678, 1.21353, -5.30449e-08, -9.8, 0, -3.9)
@@ -121,6 +127,23 @@ functions_node = NodePath("../..")
 default_debug_buttons = SubResource("Resource_cv21q")
 custom_debug_buttons = Array[ExtResource("4_c0ilg")]([SubResource("Resource_c0ilg"), ExtResource("6_laoyi")])
 
+[node name="Tip" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -419.5
+offset_top = -104.0
+offset_right = 419.5
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 51
+text = "Press Primary Action to Fullscreen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
@@ -133,3 +156,23 @@ spot_angle = 37.0052
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cv21q")
+
+[node name="FullscreenOverlay" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="FullscreenOverlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Image" type="TextureRect" parent="FullscreenOverlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch_mode = 5
