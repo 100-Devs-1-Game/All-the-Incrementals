@@ -13,6 +13,8 @@ var upgrades: Array[BaseUpgrade]
 var ui_spacer_scale: float = 0.2
 var current_upgrade: BaseUpgrade
 var essence_type: String
+var minigame: MinigameData
+
 @onready var line_texture: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
 
 
@@ -22,7 +24,6 @@ func _ready():
 
 	$CanvasLayer/UI/UpgradeInfoContainer.hide()
 
-	var minigame: MinigameData
 	if SceneLoader.has_current_minigame():
 		minigame = SceneLoader.get_current_minigame()
 	else:
@@ -30,7 +31,8 @@ func _ready():
 
 	if minigame:
 		upgrades = minigame.get_all_upgrades()
-		essence_type = minigame.output_essence.name
+		if minigame.output_essence:
+			essence_type = minigame.output_essence.name
 		for upgrade_root_node in minigame.upgrade_tree_root_nodes:
 			upgrade_root_node.unlocked = true
 			if upgrade_root_node.get_level_index() >= upgrade_root_node.unlock_level_index:
@@ -118,6 +120,9 @@ func _load_upgrades():
 		instance.position = upgrade_data.position * Vector2(ui_spacer_scale, ui_spacer_scale)
 		instance.position = Vector2(instance.position.y, -instance.position.x)
 		instance.base_upgrade = upgrade_data
+		if not minigame.output_essence:
+			essence_type = upgrade_data.base_cost.slots[0].essence.name
+
 		instance.init(self, essence_type)
 		instance.reload_base_upgrade_data()
 		#if upgrade_data.icon != null:
