@@ -4,6 +4,8 @@ extends Node2D
 @export var right: Marker2D
 @export var ett_evil_spirit: PackedScene
 
+var enemy_speed_modifier := 0.0
+
 
 func _ready() -> void:
 	var timer := Timer.new()
@@ -16,8 +18,8 @@ func _ready() -> void:
 func spawn_spirit():
 	var spawn_marker = [left, right].pick_random()
 	var offset := Vector2(randf_range(-120.0, 120.0), randf_range(-120.0, 120.0))
-
 	var enemy := ett_evil_spirit.instantiate()
+	enemy.float_speed = enemy.float_speed + enemy_speed_modifier
 	enemy.global_position = spawn_marker.global_position + offset
 	get_tree().current_scene.add_child(enemy)
 
