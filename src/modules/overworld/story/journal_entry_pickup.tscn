@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://sd2uku7ud0tb"]
+
+[ext_resource type="Script" uid="uid://rgsj1fo1fu2o" path="res://modules/overworld/story/journal_entry_pickup.gd" id="1_r11s8"]
+[ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_1su54"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ujin"]
+albedo_color = Color(1, 1, 0.243137, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1wusj"]
+material = SubResource("StandardMaterial3D_0ujin")
+size = Vector2(0.1, 0.1)
+orientation = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1su54"]
+
+[node name="JournalEntryPickup" type="Node3D"]
+script = ExtResource("1_r11s8")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+amount = 50
+lifetime = 0.2
+mesh = SubResource("PlaneMesh_1wusj")
+emission_shape = 2
+emission_sphere_radius = 1.0
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0, 0)
+angular_velocity_max = 6.35
+
+[node name="InteractionComponent3D" type="Area3D" parent="." node_paths=PackedStringArray("object")]
+collision_layer = 0
+monitorable = false
+script = ExtResource("2_1su54")
+object = NodePath("..")
+auto_interact = true
+metadata/_custom_type_script = "uid://7n4knvm4dle5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]
+shape = SubResource("SphereShape3D_1su54")
+
+[connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]

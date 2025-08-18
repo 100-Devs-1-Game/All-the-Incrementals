@@ -1,8 +1,45 @@
-[gd_resource type="Resource" script_class="WorldState" load_steps=2 format=3 uid="uid://dcao50tagyira"]
+[gd_resource type="Resource" script_class="WorldState" load_steps=7 format=3 uid="uid://dcao50tagyira"]
 
+[ext_resource type="Script" uid="uid://bme5dngxb1tht" path="res://modules/overworld/altar/altar_stats.gd" id="1_0m0kv"]
 [ext_resource type="Script" uid="uid://d23i4ukvgjxej" path="res://modules/save_system/world_state.gd" id="2_4m006"]
+
+[sub_resource type="Resource" id="Resource_ghqhr"]
+script = ExtResource("1_0m0kv")
+stored_essence = 0
+capacity = 100
+throughput = 1
+unlocked = false
+metadata/_custom_type_script = "uid://bme5dngxb1tht"
+
+[sub_resource type="Resource" id="Resource_4m006"]
+script = ExtResource("1_0m0kv")
+stored_essence = 0
+capacity = 100
+throughput = 1
+unlocked = false
+metadata/_custom_type_script = "uid://bme5dngxb1tht"
+
+[sub_resource type="Resource" id="Resource_qc65y"]
+script = ExtResource("1_0m0kv")
+stored_essence = 0
+capacity = 100
+throughput = 1
+unlocked = false
+metadata/_custom_type_script = "uid://bme5dngxb1tht"
+
+[sub_resource type="Resource" id="Resource_x6ljn"]
+script = ExtResource("1_0m0kv")
+stored_essence = 0
+capacity = 100
+throughput = 1
+unlocked = false
+metadata/_custom_type_script = "uid://bme5dngxb1tht"
 
 [resource]
 script = ExtResource("2_4m006")
 minigame_unlock_levels = Dictionary[StringName, int]({})
+earth_altar = SubResource("Resource_ghqhr")
+fire_altar = SubResource("Resource_4m006")
+water_altar = SubResource("Resource_qc65y")
+wind_altar = SubResource("Resource_x6ljn")
 metadata/_custom_type_script = "uid://d23i4ukvgjxej"

@@ -1,7 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://mhrfxqqthuy7"]
+[gd_scene load_steps=36 format=3 uid="uid://mhrfxqqthuy7"]
 
 [ext_resource type="Script" uid="uid://dcd2ff4bobsch" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.gd" id="1_41ocn"]
-[ext_resource type="Texture2D" uid="uid://b0578meoknrrg" path="res://assets/icons/basket_in_circle_skn.png" id="2_65ad0"]
 [ext_resource type="Texture2D" uid="uid://ctqy1h05eesep" path="res://assets/minigames/water_rowing_rapids/boat/boat_top.webp" id="2_vomqu"]
 [ext_resource type="Texture2D" uid="uid://buvujc0ivfwqp" path="res://assets/minigames/water_rowing_rapids/boat/boat_water.webp" id="3_1dr7n"]
 [ext_resource type="PackedScene" uid="uid://c83vkptbsgc61" path="res://modules/minigame/water_rowing_rapids/player/ui/rowing_ui.tscn" id="3_8qkfb"]
@@ -9,6 +8,22 @@
 [ext_resource type="Texture2D" uid="uid://ccmaw0qrikgit" path="res://assets/minigames/water_rowing_rapids/boat/boost_foam.webp" id="4_ivkry"]
 [ext_resource type="Script" uid="uid://binflulp46bk3" path="res://modules/minigame/water_rowing_rapids/player/sprit_collection_area.gd" id="4_j5ul3"]
 [ext_resource type="Script" uid="uid://5pqtelgggjsh" path="res://modules/minigame/water_rowing_rapids/player/spirit_magnetism_area.gd" id="4_qdgbt"]
+[ext_resource type="Texture2D" uid="uid://cymohdccfscl7" path="res://assets/minigames/water_rowing_rapids/keeper/hit/000.png" id="7_x1qw3"]
+[ext_resource type="Texture2D" uid="uid://b315x2neao7ww" path="res://assets/minigames/water_rowing_rapids/keeper/hit/001.png" id="8_ojevb"]
+[ext_resource type="Texture2D" uid="uid://bnvh6apfv37u1" path="res://assets/minigames/water_rowing_rapids/keeper/hit/002.png" id="9_xv1x6"]
+[ext_resource type="Texture2D" uid="uid://dbhu35w6eelym" path="res://assets/minigames/water_rowing_rapids/keeper/still/000.png" id="10_qnap3"]
+[ext_resource type="Texture2D" uid="uid://chtil3ur0dexu" path="res://assets/minigames/water_rowing_rapids/keeper/still/001.png" id="11_o5qgv"]
+[ext_resource type="Texture2D" uid="uid://b3h2rtqemrr43" path="res://assets/minigames/water_rowing_rapids/keeper/still/002.png" id="12_jidtc"]
+[ext_resource type="Texture2D" uid="uid://bg5upaeysysgr" path="res://assets/minigames/water_rowing_rapids/keeper/row/000.png" id="13_ijmot"]
+[ext_resource type="Texture2D" uid="uid://mfmsbjamyf5t" path="res://assets/minigames/water_rowing_rapids/keeper/row/001.png" id="14_7l3rn"]
+[ext_resource type="Texture2D" uid="uid://pkc1x6iyllw6" path="res://assets/minigames/water_rowing_rapids/keeper/row/002.png" id="15_5kqkv"]
+[ext_resource type="Texture2D" uid="uid://d1eytvixqqkrb" path="res://assets/minigames/water_rowing_rapids/keeper/row/003.png" id="16_8f1hs"]
+[ext_resource type="Texture2D" uid="uid://d0lxvs14hsuav" path="res://assets/minigames/water_rowing_rapids/keeper/row/004.png" id="17_nyj7i"]
+[ext_resource type="Texture2D" uid="uid://bqjdklnixfene" path="res://assets/minigames/water_rowing_rapids/keeper/row/005.png" id="18_ce5y4"]
+[ext_resource type="Texture2D" uid="uid://bikafiq60ljmh" path="res://assets/minigames/water_rowing_rapids/keeper/row/006.png" id="19_0e4ua"]
+[ext_resource type="Texture2D" uid="uid://bx5jehbuua41m" path="res://assets/minigames/water_rowing_rapids/keeper/row/007.png" id="20_f61x2"]
+[ext_resource type="Texture2D" uid="uid://i6w5tyjo266c" path="res://assets/minigames/water_rowing_rapids/keeper/row/008.png" id="21_tcvix"]
+[ext_resource type="Script" uid="uid://bcrxxcayw323a" path="res://modules/minigame/water_rowing_rapids/player/keeper_sprite.gd" id="22_ojevb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8qkfb"]
 bounce = 0.5
@@ -58,12 +73,85 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vtes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x1qw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ojevb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xv1x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x1qw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ojevb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xv1x6")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qnap3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o5qgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jidtc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ijmot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7l3rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5kqkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8f1hs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nyj7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ce5y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0e4ua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_f61x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tcvix")
+}],
+"loop": false,
+"name": &"row",
+"speed": 12.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5ul3"]
 radius = 65.0
 height = 316.0
 
 [node name="RowingPlayer" type="RigidBody2D" node_paths=PackedStringArray("boost_timer")]
 collision_layer = 4
+collision_mask = 9
 physics_material_override = SubResource("PhysicsMaterial_8qkfb")
 gravity_scale = 0.0
 center_of_mass_mode = 1
@@ -125,9 +213,12 @@ offset = Vector2(-50, 0)
 position = Vector2(130, 0)
 script = ExtResource("3_s50fb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_65ad0")
+[node name="KeeperSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_5vtes")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("22_ojevb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.595, 0.595)
@@ -154,6 +245,7 @@ metadata/_edit_lock_ = true
 
 [node name="BoostTimer" type="Timer" parent="."]
 
+[connection signal="animation_finished" from="KeeperSprite" to="KeeperSprite" method="_on_animation_finished"]
 [connection signal="area_entered" from="SpritCollectionArea" to="SpritCollectionArea" method="_on_area_entered"]
 [connection signal="spirit_collected" from="SpritCollectionArea" to="." method="_on_sprit_collection_area_spirit_collected"]
 [connection signal="timeout" from="BoostTimer" to="." method="_on_boost_timer_timeout"]

@@ -3,6 +3,9 @@ extends Node3D
 enum CARD { L3, L2, L1, C, R1, R2, R3 }
 
 @export var extras: PackedScene
+@export var _overlay: CanvasLayer
+@export var _overlay_bg: ColorRect
+@export var _overlay_image: TextureRect
 
 var _slot_rotations: Dictionary = {}
 var _slot_positions: Dictionary = {}
@@ -45,6 +48,7 @@ func _ready() -> void:
 	_current_position = _random_starting_point
 
 	init_cards()
+	_init_fullscreen_overlay()
 
 
 func init_cards() -> void:
@@ -111,6 +115,48 @@ func _create_card(index: int) -> MeshInstance3D:
 	return new_mesh_instance
 
 
+func _init_fullscreen_overlay() -> void:
+	_overlay.visible = false
+	if not _overlay_bg.is_connected("gui_input", _on_overlay_bg_gui_input):
+		_overlay_bg.gui_input.connect(_on_overlay_bg_gui_input)
+
+
+func fullscreen_art() -> void:
+	if _is_rotating:
+		return
+
+	if _overlay == null or _overlay_image == null or not _card_at_slot.has(CARD.C):
+		return
+
+	var mesh = _card_at_slot[CARD.C]
+	var mat = null
+	var std_mat = null
+
+	if mesh:
+		mat = mesh.get_surface_override_material(0)
+	if mat:
+		std_mat = mat as StandardMaterial3D
+
+	if mesh == null or mat == null or std_mat == null or std_mat.albedo_texture == null:
+		return
+
+	_overlay_image.texture = std_mat.albedo_texture
+	_overlay.visible = true
+
+
+func _close_fullscreen() -> void:
+	if _overlay:
+		_overlay.visible = false
+
+
+func _on_overlay_bg_gui_input(event: InputEvent) -> void:
+	# Close on any mouse click when visible
+	if _overlay and _overlay.visible and event is InputEventMouseButton:
+		var mb = event as InputEventMouseButton
+		if mb.pressed:
+			_close_fullscreen()
+
+
 func rotate_right() -> void:
 	if _is_rotating:
 		return
@@ -150,12 +196,26 @@ func rotate_right() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if _overlay and _overlay.visible:
+		if event.is_action_pressed("exit_menu"):
+			_close_fullscreen()
+			return
+		if event is InputEventMouseButton:
+			var mb = event as InputEventMouseButton
+			if mb.pressed:
+				_close_fullscreen()
+				return
+		return
+
 	if event.is_action_pressed("exit_menu"):
 		SceneLoader.enter_extras()
 	elif event.is_action_pressed("left"):
 		rotate_left()
 	elif event.is_action_pressed("right"):
 		rotate_right()
+	elif event.is_action_pressed("primary_action"):
+		print("Fullscreen image")
+		fullscreen_art()
 
 
 func quit_game() -> void:
