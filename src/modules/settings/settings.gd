@@ -69,17 +69,21 @@ func connect_signals():
 	var keybinders = get_tree().get_nodes_in_group("keybind")
 	var bind_id := 0
 	for button in setting_buttons.keys():
-		button.pressed.connect(_on_button_pressed.bind(setting_buttons[button]))
+		if not button.is_connected("pressed", _on_button_pressed):
+			button.pressed.connect(_on_button_pressed.bind(setting_buttons[button]))
 	for slider in audio_sliders.keys():
-		slider.value_changed.connect(_on_volume_changed.bind(audio_sliders[slider]))
+		if not slider.is_connected("value_changed", _on_volume_changed):
+			slider.value_changed.connect(_on_volume_changed.bind(audio_sliders[slider]))
 	for key in keybinders:
 		bind_id += 1
 		key.set_meta("bind_id", bind_id)
-		key.pressed.connect(call_rebinder.bind(bind_id, key))
+		if not key.is_connected("pressed", call_rebinder):
+			key.pressed.connect(call_rebinder.bind(bind_id, key))
 		var action = ordered_actions[bind_id - 1]
 		var index := (bind_id - 1) % 2
 		var keycode = GameSettings.keybinds[action][index]
 		key.text = OS.get_keycode_string(keycode)
+
 
 
 func _input(event: InputEvent) -> void:
@@ -99,7 +103,7 @@ func _on_button_pressed(action: String) -> void:
 			SceneLoader.enter_main_menu()
 		"Restore":
 			GameSettings.restore_defaults()
-			_on_button_pressed("Exit")
+			connect_signals()
 	update_ui()
 
 
