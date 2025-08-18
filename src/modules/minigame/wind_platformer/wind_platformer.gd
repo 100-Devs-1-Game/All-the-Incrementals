@@ -17,6 +17,7 @@ var countdown_bonus: int
 @onready var player: WindPlatformerMinigamePlayer = $Player
 @onready var multi_mesh_instance: MultiMeshInstance2D = $MultiMeshInstance2D
 @onready var cloud_spawner: WindPlatformerMinigameCloudSpawner = $"Cloud Spawner"
+@onready var borders: StaticBody2D = $Borders
 
 
 func _initialize() -> void:
@@ -83,6 +84,10 @@ func spawn_random_particle():
 func on_particle_destroyed(particle: WindPlatformerMinigameParticle):
 	particles.erase(particle)
 	spawn_random_particle()
+
+
+func activate_borders():
+	borders.set_collision_layer_value(3, true)
 
 
 func get_force_at(pos: Vector2) -> Vector2:
