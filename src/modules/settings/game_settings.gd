@@ -163,7 +163,7 @@ func restore_defaults():
 		"up": [KEY_W, KEY_UP],
 		"exit_menu": [KEY_ESCAPE, KEY_C]
 	}
-	#apply_new_inputmap()
+	apply_new_inputmap()
 	save_settings()
 
 

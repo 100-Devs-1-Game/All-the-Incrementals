@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://y3qdot2pnghb"]
+[gd_scene load_steps=11 format=3 uid="uid://y3qdot2pnghb"]
 
 [ext_resource type="Shader" uid="uid://gck5lcaua5v8" path="res://global/blur.gdshader" id="1_bovhm"]
 [ext_resource type="Script" uid="uid://c2evftqhfy1fl" path="res://modules/settings/rebinding/rebinder.gd" id="1_wvaor"]
@@ -43,6 +43,16 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a758s"]
 bg_color = Color(0.745098, 0.556863, 0.384314, 1)
+border_width_left = 4
+border_width_bottom = 8
+border_color = Color(0.583256, 0.420256, 0.268647, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x50d3"]
+bg_color = Color(0.887914, 0.734442, 0.598703, 1)
 border_width_left = 4
 border_width_bottom = 8
 border_color = Color(0.583256, 0.420256, 0.268647, 1)
@@ -182,25 +192,23 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 14
 text = "Key already in use or Invalid, try anoter key."
 
-[node name="Label" type="Label" parent="."]
+[node name="Cancel" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -273.0
-offset_top = 222.0
-offset_right = 274.0
-offset_bottom = 295.0
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -327.0
+offset_right = 193.0
+offset_bottom = -240.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.258824)
+grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
-theme_override_constants/outline_size = 15
-theme_override_constants/shadow_outline_size = 26
-theme_override_font_sizes/font_size = 53
-text = "Press BACK to cancel."
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 58
+theme_override_styles/hover = SubResource("StyleBoxFlat_x50d3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a758s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a758s")
+text = "Cancel"

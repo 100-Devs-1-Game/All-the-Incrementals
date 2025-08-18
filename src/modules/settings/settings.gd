@@ -17,6 +17,7 @@ const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 @export var music_slider: Slider
 @export var sfx_slider: Slider
 
+var status_rebinding := false
 var action_menu := false  #Changes menu for ingame
 var fullscreen := false
 var ordered_actions := [
@@ -82,8 +83,9 @@ func connect_signals():
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit_menu"):
-		SceneLoader.enter_main_menu()
+	if !status_rebinding:
+		if event.is_action_pressed("exit_menu"):
+			SceneLoader.enter_main_menu()
 
 
 func _on_button_pressed(action: String) -> void:
@@ -115,6 +117,7 @@ func _on_volume_changed(value: float, type: String) -> void:
 
 
 func call_rebinder(key_id: int, button):
+	status_rebinding = true
 	print("Calling rebinder.")
 	var rebinder = REBINDER.instantiate()
 	rebinder.action_id = key_id
