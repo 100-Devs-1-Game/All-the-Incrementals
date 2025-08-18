@@ -46,7 +46,10 @@ func _ready() -> void:
 
 	_random_starting_point = randi() % _art.size()
 	_current_position = _random_starting_point
-
+	$CanvasLayer/Left.pressed.connect(rotate_left)
+	$CanvasLayer/Right.pressed.connect(rotate_right)
+	$CanvasLayer/HBoxContainer/Back.pressed.connect(SceneLoader.enter_extras)
+	$CanvasLayer/HBoxContainer/Full.pressed.connect(fullscreen_art)
 	init_cards()
 	_init_fullscreen_overlay()
 
