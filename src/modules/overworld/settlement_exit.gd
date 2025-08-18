@@ -9,5 +9,5 @@ func _ready() -> void:
 	add_to_group(SETTLEMENT_EXIT_GROUP)
 
 
-func exit_settlement() -> void:
+func exit_settlement(_player: SpiritkeeperCharacterController3D) -> void:
 	exited_settlement.emit()
