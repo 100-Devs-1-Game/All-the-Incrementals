@@ -230,7 +230,6 @@ round_smoothness = 1.0
 base_effect_modifier = 0.1
 effect_modifier_multiplier = 0.1
 unlocked = false
-unlock_level_index = 1
 unlocks = Array[Resource]([])
 description_prefix = "Decrease damage taken from crashes by"
 description_suffix = ""
