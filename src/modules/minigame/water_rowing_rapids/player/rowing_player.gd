@@ -2,6 +2,8 @@ extends RigidBody2D
 
 ## Emitted when the player collects a spirit
 signal spirit_collected(value: int)
+## You'll NEVER guess when this is emitted.
+signal died
 
 const CONTACT_MINIMUM_VELOCITY: float = 400
 
@@ -31,7 +33,11 @@ var rotation_max_speed: float = TAU / 5
 var rotation_min_speed: float = TAU / 20
 
 var boat_max_stability := 100.0
-var boat_stability := boat_max_stability
+var boat_stability := boat_max_stability:
+	set(new):
+		boat_stability = new
+		if boat_stability <= 0:
+			died.emit()
 var stability_regen: float = 0.0
 var fail_damage: float = 10.0
 var crash_damage: float = 10.0
