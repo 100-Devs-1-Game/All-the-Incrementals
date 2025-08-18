@@ -12,6 +12,7 @@ var score_multiplier: int = 1
 @onready var parts: Node2D = $Parts
 @onready var label_multiplier_2x: Label = $"Label Multiplier 2x"
 @onready var label_multiplier_5x: Label = $"Label Multiplier 5x"
+@onready var full_cloud: Sprite2D = $FullCloud
 
 
 func _ready() -> void:
@@ -28,13 +29,21 @@ func _physics_process(delta: float) -> void:
 
 
 func set_parts_areas_active(b: bool):
+	if not parts:
+		return
 	for part: WindPlatformerMinigameCloudPart in parts.get_children():
 		part.active = b
 
 
 func fade():
+	collision_layer = 0
 	if fade_tween:
 		return
+	assert(parts.get_child_count() > 0)
+	set_parts_areas_active(false)
+	parts.queue_free()
+	full_cloud.show()
+
 	fade_tween = create_tween()
 	fade_tween.tween_property(self, "modulate", Color.TRANSPARENT, fade_duration)
 	fade_tween.tween_callback(queue_free)
