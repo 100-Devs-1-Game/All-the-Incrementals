@@ -1,10 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://dntdim0jjlhy1"]
+[gd_scene load_steps=23 format=3 uid="uid://dntdim0jjlhy1"]
 
 [ext_resource type="Script" uid="uid://drfyahgpyskxs" path="res://modules/upgrade/ui/upgrade_tree.gd" id="1_bc6uk"]
-[ext_resource type="Texture2D" uid="uid://dt2e36f2dyeda" path="res://assets/icons/glowing_wind_skn.png" id="6_ele8a"]
+[ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="3_lbln1"]
+[ext_resource type="Texture2D" uid="uid://dwu02f18und58" path="res://assets/ui/menu_bg.webp" id="4_48wnc"]
+[ext_resource type="FontFile" uid="uid://i7lsotjgd888" path="res://external/fonts/Gloria_Hallelujah/GloriaHallelujah-Regular.ttf" id="4_ele8a"]
+[ext_resource type="FontFile" uid="uid://b4sm0lte0jiot" path="res://external/fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="5_vxjcf"]
+[ext_resource type="AudioStream" uid="uid://bt15inw4hcjr" path="res://assets/ui/sfx/sfx_powerup_01.ogg" id="5_yvn7f"]
+[ext_resource type="FontFile" uid="uid://c5nm8jyd20vtl" path="res://external/fonts/Mansalva/Mansalva-Regular.ttf" id="6_bc6uk"]
 [ext_resource type="Script" uid="uid://dwlrgoard8eqa" path="res://modules/upgrade/ui/fill_button.gd" id="6_yvn7f"]
 [ext_resource type="PackedScene" uid="uid://yehkf7i1dt50" path="res://component/shared/current_essence.tscn" id="7_vxjcf"]
 [ext_resource type="Script" uid="uid://dcajbb2nsjenl" path="res://modules/upgrade/ui/upgrade_tree_camera.gd" id="8_bc6uk"]
+[ext_resource type="AudioStream" uid="uid://7cub7vrtnwpn" path="res://assets/ui/sfx/sfx_button_deny_01.ogg" id="10_lbln1"]
+[ext_resource type="AudioStream" uid="uid://blqybba64652d" path="res://assets/ui/sfx/sfx_button_click_03.ogg" id="12_lbln1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_48wnc"]
 size = Vector2(500, 500)
@@ -13,15 +20,19 @@ orientation = 2
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqp8f"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt4jk"]
-bg_color = Color(0.862745, 0.670588, 0.443137, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-corner_detail = 5
-expand_margin_left = 10.0
-expand_margin_right = 10.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ele8a"]
+content_margin_left = 104.0
+content_margin_top = 5.0
+texture = ExtResource("4_48wnc")
+texture_margin_left = 106.0
+texture_margin_top = 124.062
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+region_rect = Rect2(0, 5.125, 949, 1194.88)
+
+[sub_resource type="FontVariation" id="FontVariation_wt0sa"]
+base_font = ExtResource("4_ele8a")
+spacing_top = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4prp1"]
 bg_color = Color(0.909804, 0.168627, 0.0745098, 0)
@@ -61,10 +72,10 @@ alpha_curve = SubResource("CurveTexture_vxjcf")
 [node name="UpgradeTree" type="Node"]
 script = ExtResource("1_bc6uk")
 upgrade_folder_path = "res://modules/minigame/example/upgrades"
-center_texture = ExtResource("6_ele8a")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.832915, 0.781549, 0.73108, 1)
+position = Vector2(2, 42)
 scale = Vector2(500, 500)
 mesh = SubResource("PlaneMesh_48wnc")
 
@@ -86,6 +97,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("3_lbln1")
 
 [node name="HintsContainer" type="MarginContainer" parent="CanvasLayer/UI"]
 layout_mode = 1
@@ -128,28 +140,33 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -320.0
+offset_top = -291.5
+offset_right = 3.0
+offset_bottom = -5.5
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_constants/margin_left = 150
-theme_override_constants/margin_right = 150
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 240
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 240
+theme_override_constants/margin_bottom = 15
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UI/UpgradeInfoContainer"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nt4jk")
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ele8a")
 
 [node name="RContainer" type="VBoxContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_constants/separation = -11
+theme_override_constants/separation = 0
 
 [node name="LevelInfo" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme_override_fonts/normal_font = SubResource("FontVariation_wt0sa")
 bbcode_enabled = true
 text = "[font_size=80]3/5
 "
@@ -166,27 +183,35 @@ theme_override_constants/margin_right = 155
 [node name="HC" type="HBoxContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC"]
 layout_mode = 2
 
-[node name="Cost" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC"]
-custom_minimum_size = Vector2(0, 280)
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="Cost" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC/Margin"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
+theme = ExtResource("3_lbln1")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/line_separation = -30
+theme_override_fonts/normal_font = ExtResource("5_vxjcf")
 bbcode_enabled = true
-text = "[font_size=50]Cost:
-"
+text = "[font_size=50]Cost:"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 2
 
 [node name="CostInfo" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/RContainer/MC/HC"]
-custom_minimum_size = Vector2(250, 280)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 0
+theme_override_constants/line_separation = -55
+theme_override_fonts/normal_font = ExtResource("4_ele8a")
 bbcode_enabled = true
-text = "[font_size=50][img=50]res://assets/icons/glowing_fire_skn.png[/img]500
-"
+text = "[font_size=50][img=50]res://assets/icons/glowing_fire_skn.png[/img]500"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -201,6 +226,10 @@ theme_override_constants/separation = -11
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("6_bc6uk")
 bbcode_enabled = true
 text = "[font_size=80]Speed
 "
@@ -209,12 +238,13 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="DescriptionInfo" type="RichTextLabel" parent="CanvasLayer/UI/UpgradeInfoContainer/PanelContainer/LContainer"]
-custom_minimum_size = Vector2(580, 200)
+custom_minimum_size = Vector2(580, 120)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("5_vxjcf")
 bbcode_enabled = true
-text = "[font_size=28]bla bla bla bla bla bla bla bla bla bal bla bla bla bla bla bla bla bla bla bla bla bla bvla fdhgi sdfhgkjdsh fgkjlshdf gkjsdhfgkjsdh fjksdh
+text = "[font_size=30]bla bla bla bla bla bla bla bla bla bal bla bla bla bla bla bla bla bla bla bla bla bla bvla fdhgi sdfhgkjdsh fgkjlshdf gkjsdhfgkjsdh fjksdh
 "
 scroll_active = false
 
@@ -222,10 +252,10 @@ scroll_active = false
 layout_mode = 2
 size_flags_vertical = 8
 mouse_filter = 2
-theme_override_constants/margin_left = 600
-theme_override_constants/margin_top = -35
-theme_override_constants/margin_right = 600
-theme_override_constants/margin_bottom = 0
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 40
 
 [node name="FillButton" type="Control" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton"]
 layout_mode = 2
@@ -240,6 +270,10 @@ offset_right = 420.0
 offset_bottom = 50.0
 size_flags_vertical = 8
 mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_4prp1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4prp1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4prp1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4prp1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4prp1")
 text = "HOLD TO BUY"
 
@@ -266,7 +300,22 @@ randomness = 0.15
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_bc6uk")
 
+[node name="Audio" type="AudioStreamPlayer" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
+stream = ExtResource("5_yvn7f")
+mix_target = 2
+bus = &"SFX"
+
+[node name="DenyAudio" type="AudioStreamPlayer" parent="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton"]
+stream = ExtResource("10_lbln1")
+mix_target = 2
+bus = &"SFX"
+
 [node name="CurrentEssence" parent="CanvasLayer/UI" instance=ExtResource("7_vxjcf")]
 layout_mode = 1
+
+[node name="ClickAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_lbln1")
+mix_target = 2
+bus = &"SFX"
 
 [connection signal="fill_complete" from="CanvasLayer/UI/UpgradeInfoContainer/MarginButton/FillButton" to="." method="_on_fill_button_fill_complete"]

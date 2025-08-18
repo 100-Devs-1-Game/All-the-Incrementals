@@ -132,50 +132,54 @@ position = Vector2(8840, 1635)
 
 [node name="SoulSpawner" type="Node2D" parent="SoulSpawners"]
 unique_name_in_owner = true
-position = Vector2(-3307, 716)
+position = Vector2(-2256, 1403)
 script = ExtResource("12_l3r46")
 radius = 600.0
 sample_size = Vector2(2800, 1300)
 
 [node name="SoulSpawner2" type="Node2D" parent="SoulSpawners"]
-position = Vector2(757, 585)
+position = Vector2(959, 1077)
 script = ExtResource("12_l3r46")
 radius = 550.0
 sample_size = Vector2(2100, 1000)
 
 [node name="SoulSpawner4" type="Node2D" parent="SoulSpawners"]
-position = Vector2(3470, 792)
+position = Vector2(3293, 1221)
+rotation = 0.0785398
 script = ExtResource("12_l3r46")
 radius = 400.0
 sample_size = Vector2(1000, 1000)
 
 [node name="SoulSpawner3" type="Node2D" parent="SoulSpawners"]
-position = Vector2(4821, 815)
+position = Vector2(5707, 1670)
+rotation = 0.158825
 script = ExtResource("12_l3r46")
 radius = 500.0
-sample_size = Vector2(2500, 1500)
+sample_size = Vector2(2500, 1400)
 
 [node name="SoulSpawner5" type="Node2D" parent="SoulSpawners"]
-position = Vector2(7559, 761)
+position = Vector2(8756, 1086)
 rotation = -0.399581
 script = ExtResource("12_l3r46")
 radius = 500.0
 sample_size = Vector2(2500, 1500)
 
 [node name="SoulSpawner6" type="Node2D" parent="SoulSpawners"]
-position = Vector2(10183, -308)
+position = Vector2(11322, 132)
 rotation = -0.231689
 script = ExtResource("12_l3r46")
 radius = 500.0
-sample_size = Vector2(2500, 1500)
+sample_size = Vector2(2500, 1300)
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_i806a")]
 
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
+visible = false
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
 
 [node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+visible = false
 enable_score_display = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

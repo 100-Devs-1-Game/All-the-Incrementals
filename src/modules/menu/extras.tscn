@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://4sdp3vpsbo5v"]
+[gd_scene load_steps=3 format=3 uid="uid://4sdp3vpsbo5v"]
 
 [ext_resource type="Script" uid="uid://b1uv5hrreamha" path="res://modules/menu/extras.gd" id="1_03ewq"]
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_cues5"]
-[ext_resource type="StyleBox" uid="uid://ct2goca0ruxhd" path="res://modules/menu/common/back_panel_stylebox.tres" id="1_snq8b"]
-[ext_resource type="StyleBox" uid="uid://btqow8w430ddr" path="res://modules/menu/common/off_white_styleboxflat.tres" id="2_03ewq"]
-[ext_resource type="Material" uid="uid://cmqa4wnnm1upl" path="res://modules/menu/common/stylebox_shader.tres" id="5_5y15t"]
 
 [node name="Extras" type="Control"]
 layout_mode = 3
@@ -37,40 +34,7 @@ theme_override_font_sizes/font_size = 71
 text = "Extras"
 horizontal_alignment = 1
 
-[node name="Backpnl" type="Panel" parent="ExtrasLabel"]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("1_snq8b")
-
-[node name="Panel" type="Panel" parent="ExtrasLabel"]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("2_03ewq")
-
-[node name="BackPanel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 599.0
-offset_top = 216.0
-offset_right = 1325.0
-offset_bottom = 898.0
-theme_override_styles/panel = ExtResource("1_snq8b")
-
 [node name="Panel" type="Panel" parent="."]
-material = ExtResource("5_5y15t")
 custom_minimum_size = Vector2(400, 600)
 layout_mode = 1
 anchors_preset = 8
@@ -78,10 +42,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -348.0
-offset_top = -316.0
-offset_right = 364.0
-offset_bottom = 350.0
+offset_left = -356.0
+offset_top = -290.0
+offset_right = 356.0
+offset_bottom = 376.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -92,13 +56,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -230.0
+offset_left = -226.0
 offset_top = -267.0
-offset_right = 201.0
+offset_right = 205.0
 offset_bottom = 301.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 30
 
 [node name="Credits" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2

@@ -6,6 +6,7 @@ extends Node2D
 const SPAWNERS_GROUP := &"__soul_spawners"
 
 static var spawners: Array[Node]
+static var density_mod: float = 0.0
 
 ## The minimum distance between points
 @export var radius: float = 100
@@ -62,9 +63,9 @@ func _exit_tree() -> void:
 func _draw() -> void:
 	if not Engine.is_editor_hint():
 		return
-	draw_rect(Rect2(Vector2.ZERO, sample_size), Color.WHITE, false)
+	draw_rect(Rect2(-sample_size / 2.0, sample_size), Color.WHITE, false)
 	for p in points:
-		draw_circle(p, 8, Color.RED)
+		draw_circle(p - sample_size / 2.0, 8, Color.RED)
 
 
 ## Regenerates ALL spawners currently in the tree.
@@ -95,8 +96,9 @@ func regenerate_poisson() -> void:
 ## adding new ones as if the old did not exist. Use [method Array.clear] on [member points] to
 ## Remove existing ones, or call [method regenerate_poisson].
 func generate_poisson() -> void:
+	var calc_radius := radius * (1.0 - density_mod)
 	# Calculate grid cell size and dimensions
-	cell_size = radius / sqrt(2)
+	cell_size = calc_radius / sqrt(2)
 	_grid_size = Vector2i((sample_size / cell_size).ceil())
 
 	# Initialize 2D grid
@@ -125,7 +127,7 @@ func generate_poisson() -> void:
 		for _i in range(samples):
 			var angle = rng.randf_range(0, TAU)
 			var dir = Vector2(cos(angle), sin(angle))
-			var candidate = spawn_center + dir * rng.randf_range(radius, 2 * radius)
+			var candidate = spawn_center + dir * rng.randf_range(calc_radius, 2 * calc_radius)
 
 			if _is_valid(candidate):
 				points.append(candidate)
@@ -143,7 +145,12 @@ func generate_poisson() -> void:
 	queue_redraw.call_deferred()
 
 
+func get_point_global_pos(point: Vector2) -> Vector2:
+	return to_global(point - sample_size / 2.0)
+
+
 func _is_valid(candidate: Vector2) -> bool:
+	var calc_radius := radius * (1.0 - density_mod)
 	if not _is_in_bounds(candidate):
 		return false
 
@@ -159,7 +166,7 @@ func _is_valid(candidate: Vector2) -> bool:
 			var index = grid[i][j]
 			if index != -1:
 				var dist = candidate.distance_to(points[index])
-				if dist < radius:
+				if dist < calc_radius:
 					return false
 	return true
 

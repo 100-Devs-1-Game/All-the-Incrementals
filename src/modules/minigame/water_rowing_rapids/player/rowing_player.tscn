@@ -148,6 +148,7 @@ debug_color = Color(0, 0.537255, 0, 0.247059)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RowingUI" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_8qkfb")]
+unique_name_in_owner = true
 player = NodePath("../..")
 metadata/_edit_lock_ = true
 

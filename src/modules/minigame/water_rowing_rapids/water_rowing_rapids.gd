@@ -33,7 +33,7 @@ func _start():
 		func(spawner: WRRSoulSpawner, point: Vector2):
 			var spirit_inst := SPIRITS[choose_spirit()].instantiate()
 			add_child(spirit_inst)
-			spirit_inst.global_position = spawner.to_global(point)
+			spirit_inst.global_position = spawner.get_point_global_pos(point)
 	)
 
 
@@ -46,6 +46,7 @@ func choose_spirit() -> int:
 
 func _on_rowing_player_spirit_collected(value: int) -> void:
 	add_score(value)
+	chase_void.repel()
 
 
 func polyline_to_segments(polyline: PackedVector2Array) -> PackedVector2Array:

@@ -1,21 +1,28 @@
 extends Control
 
-@export var move_speed := 300.0
-@export var max_speed := 1000.0
+@export var tick_base_move_speed := 300.0
+@export var tick_speed_mod := 1.3
+@export var tick_max_speed := 800.0
+@export var boost_area_base_scale := 1.0
 @export var player: Node
 @export var stability_bar: TextureProgressBar
 
+var use_crit_zone: bool = false:
+	set(new):
+		use_crit_zone = new
+		crit_zone.visible = use_crit_zone
+
+var tick_move_speed := tick_base_move_speed
 var direction := 1
-var speed_increase := 50.0
-var miss_speed_value := 150
-var speed_drain := 55.0
 var updating_ui := false
 
-@onready var point = %Point
-@onready var target_zone = %GoodZone
+@onready var point: Control = %Point
+@onready var target_zone: Control = %GoodZone
+@onready var crit_zone: Control = %CritZone
 
 
 func _ready() -> void:
+	WaterRowingRapidsMinigameUpgradeLogic.multiregister_base(self, [&"boost_area_base_scale"])
 	if player == null:
 		print("No player set, selecting parent")
 		player = get_parent()
@@ -27,15 +34,13 @@ func _ready() -> void:
 
 
 func _process(delta):
-	point.position.x += move_speed * direction * delta
+	point.position.x += tick_move_speed * direction * delta
 
 	var bar_width = $Panel.size.x
 	var marker_width = point.size.x
 	if point.position.x + marker_width >= bar_width:
 		point.position.x = 0
-		target_zone.scale.x = 1
-	if move_speed > 300.0:
-		move_speed -= speed_drain * delta
+		target_zone.scale.x = boost_area_base_scale
 	if updating_ui:
 		update_ui()
 
@@ -45,15 +50,25 @@ func update_ui():
 	stability_bar.max_value = player.boat_max_stability
 
 
+# Here be DRY violations
 func _input(event):
 	if event.is_action_pressed("primary_action"):
-		var marker_rect = point.get_global_rect()
-		var target_rect = target_zone.get_global_rect()
+		var marker_rect := point.get_global_rect()
+		var target_rect := target_zone.get_global_rect()
+
+		if use_crit_zone:
+			var crit_rect := crit_zone.get_global_rect()
+			if marker_rect.intersects(crit_rect):
+				print("Crit!")
+				tick_move_speed = minf(tick_move_speed * tick_speed_mod, tick_max_speed)
+				point.position.x = 0
+				set_target_width()
+				player._boost()
+				player.is_crit_boosting = true
 
 		if marker_rect.intersects(target_rect):
 			print("Hit!")
-			move_speed = clampf(move_speed, 300.0, max_speed)
-			move_speed += speed_increase
+			tick_move_speed = minf(tick_move_speed * tick_speed_mod, tick_max_speed)
 			point.position.x = 0
 			set_target_width()
 			player._boost()
@@ -61,10 +76,9 @@ func _input(event):
 		else:
 			print("Miss!")
 			player._fail()
-			target_zone.scale.x = 1
+			target_zone.scale.x = boost_area_base_scale
 			point.position.x = 0
-			move_speed = clampf(move_speed, 300.0, max_speed)
-			move_speed = move_speed - miss_speed_value
+			tick_move_speed = tick_base_move_speed
 
 
 func set_target_width():
