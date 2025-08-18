@@ -720,6 +720,7 @@ height = 1.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_njahn"]
 
 [node name="SpiritkeeperBody3D" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "skeleton", "camera", "spring_bone_simulators", "lean_pivot_node", "model_rotation_pivot_node")]
+wall_min_slide_angle = 1.5708
 script = ExtResource("1_cpmd8")
 animation_player = NodePath("Visuals/LeanPivot/RotationPivot/spiritkeeper_v6_trl/AnimationPlayer")
 skeleton = NodePath("Visuals/LeanPivot/RotationPivot/spiritkeeper_v6_trl/root/Skeleton3D")
@@ -735,6 +736,9 @@ model_rotation_pivot_node = NodePath("Visuals/LeanPivot/RotationPivot")
 [node name="RotationPivot" type="Node3D" parent="Visuals/LeanPivot"]
 
 [node name="spiritkeeper_v6_trl" parent="Visuals/LeanPivot/RotationPivot" instance=ExtResource("1_njahn")]
+
+[node name="root" parent="Visuals/LeanPivot/RotationPivot/spiritkeeper_v6_trl" index="0"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.6, 0)
 
 [node name="Skeleton3D" parent="Visuals/LeanPivot/RotationPivot/spiritkeeper_v6_trl/root" index="1"]
 bones/0/position = Vector3(-0.0179139, -0.62046, -0.00895694)

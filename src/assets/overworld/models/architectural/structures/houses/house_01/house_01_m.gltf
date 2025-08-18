@@ -15,12 +15,28 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Fire_Wind_House_01"
+			"name":"House_01",
+			"rotation":[
+				-0.5000001192092896,
+				0.49999985098838806,
+				0.4999999403953552,
+				0.5000000596046448
+			],
+			"scale":[
+				0.030488478019833565,
+				0.030488478019833565,
+				0.03790053352713585
+			],
+			"translation":[
+				0.6128287315368652,
+				2.044975757598877,
+				-0.0626136064529419
+			]
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cylinder.023",
+			"name":"House_01_FantasyAtlas_mat_0.017",
 			"primitives":[
 				{
 					"attributes":{
@@ -37,68 +53,68 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":15184,
+			"count":1761,
 			"max":[
-				4.751250743865967,
-				13.386070251464844,
-				2.648695945739746
+				56.878807067871094,
+				67.45061492919922,
+				56.906166076660156
 			],
 			"min":[
-				-2.762430191040039,
-				-0.002117633819580078,
-				-2.8041324615478516
+				-56.442352294921875,
+				-59.533424377441406,
+				-54.386375427246094
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":15184,
+			"count":1761,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":15184,
+			"count":1761,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":26982,
+			"count":2817,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":182208,
+			"byteLength":21132,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":182208,
-			"byteOffset":182208,
+			"byteLength":21132,
+			"byteOffset":21132,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":121472,
-			"byteOffset":364416,
+			"byteLength":14088,
+			"byteOffset":42264,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":53964,
-			"byteOffset":485888,
+			"byteLength":5634,
+			"byteOffset":56352,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":539852,
-			"uri":"fire_wind_house.bin"
+			"byteLength":61988,
+			"uri":"house_01_m.bin"
 		}
 	]
 }

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp03q08t06pim"]
+
+[ext_resource type="PackedScene" uid="uid://0nu83betuffd" path="res://assets/overworld/models/architectural/structures/houses/house_01/house_01_m.gltf" id="1_w154q"]
+[ext_resource type="Material" uid="uid://bu0u4440bfsel" path="res://assets/overworld/models/architectural/structures/houses/house_01/house_01_m.tres" id="2_cjmnv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6lke4"]
+size = Vector3(4, 4, 3.5)
+
+[node name="BreezekilnHouse" type="Node3D"]
+
+[node name="house_01_m" parent="." instance=ExtResource("1_w154q")]
+
+[node name="House_01" parent="house_01_m" index="0"]
+transform = Transform3D(9.57084e-09, -0.0304885, -1.65668e-09, 0, -1.33269e-09, 0.0379005, -0.0304885, -9.57084e-09, -5.20061e-16, 0.612829, 2.04498, -0.0626136)
+surface_material_override/0 = ExtResource("2_cjmnv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="house_01_m"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="house_01_m/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0)
+shape = SubResource("BoxShape3D_6lke4")
+
+[editable path="house_01_m"]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qsjigak6i083"
-path="res://.godot/imported/bridge_01.gltf-99eb6959722c27a7082e7c26c8091eb6.scn"
+uid="uid://0nu83betuffd"
+path="res://.godot/imported/house_01_m.gltf-ce3fefca2c4a8aeb88e50eb3c9e4fd60.scn"
 
 [deps]
 
-source_file="res://assets/overworld/models/architectural/structures/bridges/bridge_01.gltf"
-dest_files=["res://.godot/imported/bridge_01.gltf-99eb6959722c27a7082e7c26c8091eb6.scn"]
+source_file="res://assets/overworld/models/architectural/structures/houses/house_01/house_01_m.gltf"
+dest_files=["res://.godot/imported/house_01_m.gltf-ce3fefca2c4a8aeb88e50eb3c9e4fd60.scn"]
 
 [params]
 
@@ -32,6 +32,19 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"@MATERIAL:0": {
+"use_external/enabled": true,
+"use_external/path": "uid://bu0u4440bfsel"
+}
+},
+"nodes": {
+"PATH:House_01": {
+"physics/mask": 0,
+"physics/shape_type": 3
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dxdit4a1q86yc"
-path="res://.godot/imported/windmill.gltf-2dd52e9cc7696b90ffa3cac757810c5f.scn"
+uid="uid://dcme0wnpc72d8"
+path="res://.godot/imported/house_02_m.gltf-660d420d64dcffe1bcca3537139663d0.scn"
 
 [deps]
 
-source_file="res://assets/overworld/models/architectural/structures/houses/windmill.gltf"
-dest_files=["res://.godot/imported/windmill.gltf-2dd52e9cc7696b90ffa3cac757810c5f.scn"]
+source_file="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_m.gltf"
+dest_files=["res://.godot/imported/house_02_m.gltf-660d420d64dcffe1bcca3537139663d0.scn"]
 
 [params]
 

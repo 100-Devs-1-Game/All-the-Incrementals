@@ -15,12 +15,28 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Fire_Wind_House_01"
+			"name":"House_02_FantasyAtlas_mat_0.003",
+			"rotation":[
+				-0.5000001192092896,
+				0.49999988079071045,
+				0.5000000596046448,
+				0.5000001192092896
+			],
+			"scale":[
+				0.02963140979409218,
+				0.02963140979409218,
+				0.03683510795235634
+			],
+			"translation":[
+				0.38908854126930237,
+				1.9151384830474854,
+				-0.11703908443450928
+			]
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cylinder.023",
+			"name":"House_02_FantasyAtlas_mat_0.003",
 			"primitives":[
 				{
 					"attributes":{
@@ -37,68 +53,68 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":15184,
+			"count":2547,
 			"max":[
-				4.751250743865967,
-				13.386070251464844,
-				2.648695945739746
+				52.85275650024414,
+				98.87552642822266,
+				65.1746826171875
 			],
 			"min":[
-				-2.762430191040039,
-				-0.002117633819580078,
-				-2.8041324615478516
+				-61.582298278808594,
+				-96.90628814697266,
+				-51.98827362060547
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":15184,
+			"count":2547,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":15184,
+			"count":2547,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":26982,
+			"count":3618,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":182208,
+			"byteLength":30564,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":182208,
-			"byteOffset":182208,
+			"byteLength":30564,
+			"byteOffset":30564,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":121472,
-			"byteOffset":364416,
+			"byteLength":20376,
+			"byteOffset":61128,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":53964,
-			"byteOffset":485888,
+			"byteLength":7236,
+			"byteOffset":81504,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":539852,
-			"uri":"fire_wind_house.bin"
+			"byteLength":88740,
+			"uri":"house_02_m.bin"
 		}
 	]
 }
