@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lkx6vo7fiv2k"
-path.s3tc="res://.godot/imported/house_02_M_256p.webp-8e6ef14cf17c54447398f65fc2f6a104.s3tc.ctex"
+uid="uid://ca6bt5hp34t8r"
+path.s3tc="res://.godot/imported/house_02_256p.webp-8be0eed2454b128db14ca00d15fec0c1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_M_256p.webp"
-dest_files=["res://.godot/imported/house_02_M_256p.webp-8e6ef14cf17c54447398f65fc2f6a104.s3tc.ctex"]
+source_file="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_256p.webp"
+dest_files=["res://.godot/imported/house_02_256p.webp-8be0eed2454b128db14ca00d15fec0c1.s3tc.ctex"]
 
 [params]
 

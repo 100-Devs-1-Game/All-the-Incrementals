@@ -157,19 +157,16 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.3107
 [node name="Blades" type="MeshInstance3D" parent="Islands/Island1/House/HousePair/Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.741478, 7.51343, -8.36203)
 mesh = ExtResource("11_e11l6")
-skeleton = NodePath("../../root/@EditorNode@21273/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Fire Wind Hub/Islands/Island1/House")
 surface_material_override/0 = SubResource("ShaderMaterial_arkhw")
 
 [node name="Blades2" type="MeshInstance3D" parent="Islands/Island1/House/HousePair/Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.71113, 7.51343, -8.36203)
 mesh = ExtResource("11_e11l6")
-skeleton = NodePath("../../root/@EditorNode@21273/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Fire Wind Hub/Islands/Island1/House")
 surface_material_override/0 = SubResource("ShaderMaterial_arkhw")
 
 [node name="Blades3" type="MeshInstance3D" parent="Islands/Island1/House/HousePair/Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12135, 7.51343, -8.36203)
 mesh = ExtResource("11_e11l6")
-skeleton = NodePath("../../root/@EditorNode@21273/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Fire Wind Hub/Islands/Island1/House")
 surface_material_override/0 = SubResource("ShaderMaterial_arkhw")
 
 [node name="BreezekilnHouseChimney" parent="Islands/Island1/House" instance=ExtResource("9_37oxp")]
@@ -355,19 +352,16 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.3107
 [node name="Blades" type="MeshInstance3D" parent="Islands/Island6/HousePair/Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.741478, 7.51343, -8.36203)
 mesh = ExtResource("11_e11l6")
-skeleton = NodePath("../../root/@EditorNode@21273/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Fire Wind Hub/Islands/Island1/House")
 surface_material_override/0 = SubResource("ShaderMaterial_arkhw")
 
 [node name="Blades2" type="MeshInstance3D" parent="Islands/Island6/HousePair/Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.71113, 7.51343, -8.36203)
 mesh = ExtResource("11_e11l6")
-skeleton = NodePath("../../root/@EditorNode@21273/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Fire Wind Hub/Islands/Island1/House")
 surface_material_override/0 = SubResource("ShaderMaterial_arkhw")
 
 [node name="Blades3" type="MeshInstance3D" parent="Islands/Island6/HousePair/Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12135, 7.51343, -8.36203)
 mesh = ExtResource("11_e11l6")
-skeleton = NodePath("../../root/@EditorNode@21273/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Fire Wind Hub/Islands/Island1/House")
 surface_material_override/0 = SubResource("ShaderMaterial_arkhw")
 
 [node name="island_circle_04" parent="Islands/Island6" instance=ExtResource("6_n1hja")]
