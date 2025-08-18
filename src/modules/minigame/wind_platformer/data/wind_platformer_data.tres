@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="2_44lnl"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="2_vw8gv"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_vw8gv"]
-[ext_resource type="Resource" uid="uid://xrgrlffqjrcf" path="res://modules/minigame/wind_platformer/data/upgrade/jump_height_upgrade.tres" id="5_b7r2j"]
-[ext_resource type="Resource" uid="uid://b2ifu34javhc3" path="res://modules/minigame/wind_platformer/data/upgrade/more_clouds_upgrade.tres" id="5_vw8gv"]
+[ext_resource type="Resource" uid="uid://xrgrlffqjrcf" path="res://modules/minigame/wind_platformer/data/upgrade/jump_height_pgrade.tres" id="5_b7r2j"]
+[ext_resource type="Resource" uid="uid://b2ifu34javhc3" path="res://modules/minigame/wind_platformer/data/upgrade/more_clouds_pgrade.tres" id="6_upm7o"]
 
 [resource]
 script = ExtResource("2_44lnl")
 display_name = "wind_platformer"
 minigame_scene = ExtResource("1_b7r2j")
-upgrade_tree_root_nodes = Array[ExtResource("3_vw8gv")]([ExtResource("5_b7r2j"), ExtResource("5_vw8gv")])
+upgrade_tree_root_nodes = Array[ExtResource("3_vw8gv")]([ExtResource("5_b7r2j"), ExtResource("6_upm7o")])
 output_essence = ExtResource("2_vw8gv")
 currency_conversion_factor = 1.0
 high_scores = Array[int]([])

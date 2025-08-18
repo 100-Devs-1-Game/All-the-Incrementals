@@ -56,9 +56,9 @@ func spawn_cloud(rect: Rect2, force_direction: int = 0):
 
 	cloud.speed = randf_range(cloud_velocity_range.x, cloud_velocity_range.y) * dir
 
-	if RngUtils.chance100(multiplier_5x_chance):
+	if RngUtils.chancef(multiplier_5x_chance):
 		cloud.score_multiplier = 5
-	elif RngUtils.chance100(multiplier_2x_chance):
+	elif RngUtils.chancef(multiplier_2x_chance):
 		cloud.score_multiplier = 2
 
 	clouds_node.add_child(cloud)

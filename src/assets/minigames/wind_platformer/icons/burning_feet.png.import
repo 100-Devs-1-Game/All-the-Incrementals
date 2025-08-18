@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b28uf20l4nupc"
-path="res://.godot/imported/000.png-e3d593014150d132d27431d02b872f08.ctex"
+uid="uid://bo76syh68mt1u"
+path="res://.godot/imported/burning_feet.png-3c29fd72da08ddf3d9f1d2c99259fb48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://modules/minigame/wind_platformer/data/upgrade/000.png"
-dest_files=["res://.godot/imported/000.png-e3d593014150d132d27431d02b872f08.ctex"]
+source_file="res://assets/minigames/wind_platformer/icons/burning_feet.png"
+dest_files=["res://.godot/imported/burning_feet.png-3c29fd72da08ddf3d9f1d2c99259fb48.ctex"]
 
 [params]
 
