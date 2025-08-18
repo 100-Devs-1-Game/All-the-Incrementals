@@ -6,8 +6,8 @@ const SETTLEMENT_EXIT_GROUP := &"settlement_exit"
 
 
 func _ready() -> void:
-	add_to_group(SETTLEMENT_EXIT_GROUP)
+    add_to_group(SETTLEMENT_EXIT_GROUP)
 
 
-func exit_settlement() -> void:
-	exited_settlement.emit()
+func exit_settlement(_obj: Node3D) -> void:
+    exited_settlement.emit()
