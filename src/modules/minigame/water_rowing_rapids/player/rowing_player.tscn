@@ -64,6 +64,7 @@ height = 316.0
 
 [node name="RowingPlayer" type="RigidBody2D" node_paths=PackedStringArray("boost_timer")]
 collision_layer = 4
+collision_mask = 9
 physics_material_override = SubResource("PhysicsMaterial_8qkfb")
 gravity_scale = 0.0
 center_of_mass_mode = 1

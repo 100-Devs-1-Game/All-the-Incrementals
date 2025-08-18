@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="JournalEntryData" load_steps=3 format=3 uid="uid://cjpd1q17uxtjn"]
+
+[ext_resource type="Texture2D" uid="uid://cdk56xwhrutuh" path="res://assets/overworld/story/journal/entry3.png" id="1_0iny5"]
+[ext_resource type="Script" uid="uid://b8mevt83bhkiu" path="res://modules/overworld/story/journal_entry_data.gd" id="1_usjtp"]
+
+[resource]
+script = ExtResource("1_usjtp")
+text = "The gods plans?
+It seems the gods had planned this more than I thought. That makes me relieved somehow, know that they left out of free will and nothing bad happened to them.
+
+The gods built great temples atop the veins of essence. I’ve seen them, towering things, still humming with essence even now. There are altars inside, they seem to breath essence into the shrine. I think they built it to fuel the shrine.
+
+But now they flicker... Seems like something is wrong. Maybe the spirits has something to do with this?
+
+— Spiritkeeper Tellen, Second in the Line"
+page = ExtResource("1_0iny5")
+metadata/_custom_type_script = "uid://b8mevt83bhkiu"

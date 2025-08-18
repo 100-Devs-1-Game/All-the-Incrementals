@@ -72,6 +72,14 @@ func move_state() -> void:
 	move_and_slide()
 
 
+func interact_state_enter():
+	animation_player.play(IDLE_ANIMATION_NAME)
+
+
+func interact_state():
+	pass
+
+
 #endregion
 
 
@@ -117,11 +125,14 @@ func _handle_model_orientation(desired_direction: Vector3, delta: float) -> void
 
 #region built-ins
 func _ready() -> void:
+	EventBus.stop_player_interaction.connect(stop_interaction)
+
 	# states
 	state_machine = NoxCallableStateMachine.new()
 
 	state_machine.add_state(idle_state, idle_state_enter)
 	state_machine.add_state(move_state, move_state_enter)
+	state_machine.add_state(interact_state, interact_state_enter)
 
 	state_machine.set_initial_state(idle_state)
 
@@ -138,4 +149,13 @@ func _physics_process(delta: float) -> void:
 		_handle_model_orientation(velocity_xz, delta)
 	_handle_model_lean(delta)
 
+
 #endregion
+
+
+func interact_with(_obj: Node3D):
+	state_machine.change_state(interact_state)
+
+
+func stop_interaction():
+	state_machine.change_state(idle_state)
