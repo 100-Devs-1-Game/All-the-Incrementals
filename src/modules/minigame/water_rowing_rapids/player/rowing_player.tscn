@@ -216,10 +216,8 @@ script = ExtResource("3_s50fb")
 [node name="KeeperSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_5vtes")
-animation = &"hit"
+animation = &"idle"
 autoplay = "idle"
-frame = 5
-frame_progress = 1.0
 script = ExtResource("22_ojevb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
