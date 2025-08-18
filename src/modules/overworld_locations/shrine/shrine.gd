@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 
 
 func _ready() -> void:
@@ -22,3 +22,7 @@ func _debug_force_settlement_data() -> void:
 
 func quit_game() -> void:
 	get_tree().quit()
+
+
+func _on_interaction_component_interacted_with(_player: SpiritkeeperCharacterController3D) -> void:
+	EventBus.request_shrine_ui.emit()

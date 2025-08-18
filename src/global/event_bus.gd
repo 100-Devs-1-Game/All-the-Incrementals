@@ -7,6 +7,7 @@ extends Node
 #region Overworld
 signal wants_to_travel_to(settlement_data: SettlementData)
 signal request_journal_page_display(data: JournalEntryData)
+signal request_shrine_ui
 #endregion
 
 #region Game
