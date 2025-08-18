@@ -4,7 +4,7 @@ extends Node2D
 @export var right: Marker2D
 @export var ett_evil_spirit: PackedScene
 
-var enemy_speed_modifier: = 0.0
+var enemy_speed_modifier := 0.0
 
 
 func _ready() -> void:
