@@ -41,6 +41,7 @@ var crash_damage: float = 10.0
 @onready var ripple_intensity_scaler: Node2D = %RippleIntensityScaler
 @onready var boost_foam_intensity_scaler: Node2D = %FoamIntensityScaler
 @onready var rowing_ui: Control = %RowingUI
+@onready var keeper_sprite: AnimatedSprite2D = %KeeperSprite
 
 
 func _init() -> void:
@@ -67,7 +68,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	boat_stability += stability_regen * delta
-	linear_velocity += transform.x * Input.get_axis(&"down", &"up") * speed * linear_damp * delta
+	var forward_intent := Input.get_axis(&"down", &"up")
+	keeper_sprite.forward_intent = forward_intent
+	linear_velocity += transform.x * forward_intent * speed * linear_damp * delta
 	if is_boosting:
 		linear_velocity += transform.x * boost_impulse
 	if is_crit_boosting:
@@ -119,6 +122,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 					instance_from_id(PhysicsServer2D.body_get_object_instance_id(collider_rid))
 					. explode()
 				)
+		keeper_sprite.play(&"hit")
 
 		if invincibility <= 0:
 			take_damage(crash_damage)
