@@ -1,31 +1,31 @@
 [gd_scene load_steps=7 format=3 uid="uid://beur62xrtffs5"]
 
-[ext_resource type="Script" uid="uid://d0was623er45f" path="res://modules/upgrade/ui/ui_upgrade_template.gd" id="1_32x2s"]
-[ext_resource type="Texture2D" uid="uid://b81yxykydsfti" path="res://assets/ui/upgrade_tree/background_off.webp" id="1_l1bu1"]
-[ext_resource type="Texture2D" uid="uid://cwhycls4e3jy3" path="res://assets/ui/upgrade_tree/background_on.webp" id="2_32x2s"]
-[ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/lineart1.webp" id="3_ih5fn"]
-[ext_resource type="Texture2D" uid="uid://bk2dkao5rcxkf" path="res://assets/ui/upgrade_tree/gold_seal.webp" id="4_d4a2w"]
+[ext_resource type="Script" uid="uid://d0was623er45f" path="res://modules/upgrade/ui/ui_upgrade_template.gd" id="1_286pr"]
+[ext_resource type="Texture2D" uid="uid://b81yxykydsfti" path="res://assets/ui/upgrade_tree/background_off.webp" id="2_bu8qy"]
+[ext_resource type="Texture2D" uid="uid://cwhycls4e3jy3" path="res://assets/ui/upgrade_tree/background_on.webp" id="3_ggw45"]
+[ext_resource type="Texture2D" uid="uid://bhfa221lc44d" path="res://assets/ui/upgrade_tree/lineart1.webp" id="4_p7aeb"]
+[ext_resource type="Texture2D" uid="uid://bk2dkao5rcxkf" path="res://assets/ui/upgrade_tree/gold_seal.webp" id="5_g8ca6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhghn"]
 size = Vector2(47.6152, 49.5702)
 
-[node name="UiUpgradeTemplate" type="Node2D"]
-script = ExtResource("1_32x2s")
+[node name="UiMinigameUpgradeTemplate" type="Node2D"]
+script = ExtResource("1_286pr")
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_l1bu1")
+texture = ExtResource("2_bu8qy")
 
 [node name="BackgroundActive" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_32x2s")
+texture = ExtResource("3_ggw45")
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("3_ih5fn")
+texture = ExtResource("4_p7aeb")
 
 [node name="Foreground" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(16, 17)
-texture = ExtResource("4_d4a2w")
+texture = ExtResource("5_g8ca6")
 
 [node name="Hover" type="Sprite2D" parent="."]
 visible = false
