@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpbxl634kt5sd"]
+[gd_scene load_steps=6 format=3 uid="uid://bpbxl634kt5sd"]
 
 [ext_resource type="Script" uid="uid://bxir423lfn0b" path="res://modules/minigame/wind_platformer/cloud_platform.gd" id="1_f4ja7"]
 [ext_resource type="PackedScene" uid="uid://c3djvftk8ecjn" path="res://modules/minigame/wind_platformer/cloud_part.tscn" id="3_k72l2"]
+[ext_resource type="Texture2D" uid="uid://bvf514u5cm2d7" path="res://assets/minigames/wind_platformer/full_cloud.png" id="3_us7hx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4ja7"]
 size = Vector2(140, 40)
@@ -61,6 +62,13 @@ position = Vector2(17, 14)
 
 [node name="CloudPart14" parent="Parts" instance=ExtResource("3_k72l2")]
 position = Vector2(54, 0)
+
+[node name="FullCloud" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.85098)
+position = Vector2(0, 1)
+scale = Vector2(1.515, 1.515)
+texture = ExtResource("3_us7hx")
 
 [node name="Player Detection Area" type="Area2D" parent="."]
 

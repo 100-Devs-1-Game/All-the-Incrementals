@@ -151,6 +151,7 @@ func load_settings() -> void:
 		return
 
 	fullscreen = config.get_value("video", "fullscreen", fullscreen)
+	set_fullscreen(fullscreen)
 	quality = config.get_value("video", "quality", quality)
 	master_volume = config.get_value("audio", "master_volume", master_volume)
 	music_volume = config.get_value("audio", "music_volume", music_volume)

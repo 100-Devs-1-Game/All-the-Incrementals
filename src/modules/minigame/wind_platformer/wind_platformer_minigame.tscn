@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bytqv7h0iow3u"]
+[gd_scene load_steps=15 format=3 uid="uid://bytqv7h0iow3u"]
 
 [ext_resource type="Script" uid="uid://dd2udc5jvkrq8" path="res://modules/minigame/wind_platformer/wind_platformer.gd" id="1_j01kc"]
 [ext_resource type="PackedScene" uid="uid://b5gx7hrc8phfj" path="res://modules/minigame/wind_platformer/wind_platformer_player.tscn" id="2_asxaq"]
@@ -34,6 +34,12 @@ colors = PackedColorArray(0.339606, 0.542632, 1, 0.172549, 0.690459, 0.747382, 1
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cj4w2"]
 gradient = SubResource("Gradient_4orxu")
 width = 64
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j01kc"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_asxaq"]
+normal = Vector2(-1, 0)
 
 [node name="Wind Platformer" type="Node2D"]
 script = ExtResource("1_j01kc")
@@ -100,6 +106,17 @@ offset_top = 0.0
 offset_bottom = 40.0
 grow_vertical = 1
 enable_countdown_display = true
+
+[node name="Borders" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+shape = SubResource("WorldBoundaryShape2D_j01kc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1920, 0)
+shape = SubResource("WorldBoundaryShape2D_asxaq")
 
 [connection signal="left_screen" from="Player" to="." method="_on_player_left_screen"]
 
