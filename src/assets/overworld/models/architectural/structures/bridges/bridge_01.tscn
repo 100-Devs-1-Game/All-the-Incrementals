@@ -1,5 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd7rw754qx6jy"]
+[gd_scene load_steps=4 format=3 uid="uid://d2apifevmv1qt"]
 
-[ext_resource type="PackedScene" uid="uid://qsjigak6i083" path="res://assets/overworld/models/architectural/structures/bridges/bridge_01.gltf" id="1_amaqw"]
+[ext_resource type="Material" uid="uid://fhjv5ylg01po" path="res://assets/overworld/models/architectural/structures/bridges/bridge_01_material.tres" id="2_6w7bu"]
+[ext_resource type="PackedScene" uid="uid://ddk48nqis3frm" path="res://assets/overworld/models/architectural/structures/bridges/bridge_01_m.gltf" id="3_mcdt8"]
 
-[node name="bridge_01" instance=ExtResource("1_amaqw")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_owur0"]
+size = Vector3(0.436951, 3.51752, 8.32645)
+
+[node name="Bridge01" type="Node3D"]
+
+[node name="bridge_01_m" parent="." instance=ExtResource("3_mcdt8")]
+
+[node name="ArcBridge_114" parent="bridge_01_m" index="0"]
+surface_material_override/0 = ExtResource("2_6w7bu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0187055, 0, 0)
+depth = 2.6
+polygon = PackedVector2Array(2.40731, 1.5276, 0.0533213, 2.07623, -2.3712, 1.58842, -4.02559, 0.812704, 3.96778, 0.838809)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28152, 1.25876, 0.019516)
+shape = SubResource("BoxShape3D_owur0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23154, 1.25876, 0.019516)
+shape = SubResource("BoxShape3D_owur0")
+
+[editable path="bridge_01_m"]

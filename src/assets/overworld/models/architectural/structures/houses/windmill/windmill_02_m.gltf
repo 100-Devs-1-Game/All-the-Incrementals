@@ -15,12 +15,12 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Fire_Wind_House_01"
+			"name":"windmill.004"
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cylinder.023",
+			"name":"Cylinder.033",
 			"primitives":[
 				{
 					"attributes":{
@@ -37,68 +37,68 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":15184,
+			"count":3816,
 			"max":[
-				4.751250743865967,
-				13.386070251464844,
-				2.648695945739746
+				0.2006588578224182,
+				6.829444885253906,
+				6.82944393157959
 			],
 			"min":[
-				-2.762430191040039,
-				-0.002117633819580078,
-				-2.8041324615478516
+				-0.19934147596359253,
+				-6.829437255859375,
+				-6.829443454742432
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":15184,
+			"count":3816,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":15184,
+			"count":3816,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":26982,
+			"count":5748,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":182208,
+			"byteLength":45792,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":182208,
-			"byteOffset":182208,
+			"byteLength":45792,
+			"byteOffset":45792,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":121472,
-			"byteOffset":364416,
+			"byteLength":30528,
+			"byteOffset":91584,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":53964,
-			"byteOffset":485888,
+			"byteLength":11496,
+			"byteOffset":122112,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":539852,
-			"uri":"fire_wind_house.bin"
+			"byteLength":133608,
+			"uri":"windmill_02_m.bin"
 		}
 	]
 }
