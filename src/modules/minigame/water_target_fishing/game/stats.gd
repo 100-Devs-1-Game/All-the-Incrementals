@@ -74,7 +74,7 @@ func scroll_faster(amount: float) -> void:
 
 
 func scroll_slower(amount: float) -> void:
-	scrollspeed.x += amount
+	scrollspeed.x += amount * 0.5
 	scrollspeed.x = min(0, scrollspeed.x)
 
 
