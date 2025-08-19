@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcjwk5lq3xa2k"]
+[gd_scene load_steps=20 format=3 uid="uid://bcjwk5lq3xa2k"]
 
 [ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="1_fp6lq"]
 [ext_resource type="Script" uid="uid://bsimtuhg2ndb3" path="res://modules/overworld_locations/shrine/shrine.gd" id="1_pmksg"]
@@ -31,11 +31,9 @@ radius = 3.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ge6fp"]
 
-[sub_resource type="Resource" id="Resource_7mojr"]
-metadata/__load_path__ = "res://modules/upgrade/ui/ui_upgrade_template.tscn"
-
 [node name="Shrine" type="Node3D"]
 script = ExtResource("1_pmksg")
+upgrade_tree_scene = ExtResource("13_cgpr5")
 
 [node name="InteractionComponent3D" type="Area3D" parent="." node_paths=PackedStringArray("object")]
 collision_layer = 0
@@ -99,9 +97,6 @@ data = ExtResource("6_cgpr5")
 title = "Shrine"
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("5_c0ttc")]([ExtResource("6_c0ttc"), ExtResource("7_ge6fp"), ExtResource("8_ge6fp"), ExtResource("10_ig5i3")])
-
-[node name="UpgradeTree" parent="." instance=ExtResource("13_cgpr5")]
-minigame_upgrade_template = SubResource("Resource_7mojr")
 
 [connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]
 [connection signal="interacted_with" from="Content/SettlementExit/InteractionComponent3D" to="Content/SettlementExit" method="exit_settlement"]
