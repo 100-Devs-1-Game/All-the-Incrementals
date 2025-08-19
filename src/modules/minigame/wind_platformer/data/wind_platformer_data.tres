@@ -4,12 +4,13 @@
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="2_44lnl"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="2_vw8gv"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="4_b7r2j"]
-[ext_resource type="Resource" path="res://modules/minigame/wind_platformer/data/upgrade/more_clouds_upgrade.tres" id="5_upm7o"]
-[ext_resource type="Resource" path="res://modules/minigame/wind_platformer/data/upgrade/jump_height_upgrade.tres" id="6_5fo0u"]
+[ext_resource type="Resource" uid="uid://b2ifu34javhc3" path="res://modules/minigame/wind_platformer/data/upgrade/more_clouds_pgrade.tres" id="5_upm7o"]
+[ext_resource type="Resource" uid="uid://xrgrlffqjrcf" path="res://modules/minigame/wind_platformer/data/upgrade/jump_height_pgrade.tres" id="6_5fo0u"]
 
 [resource]
 script = ExtResource("2_44lnl")
 display_name = "Cloud Jump"
+how_to_play = ""
 minigame_scene = ExtResource("1_b7r2j")
 upgrade_tree_root_nodes = Array[ExtResource("4_b7r2j")]([ExtResource("5_upm7o"), ExtResource("6_5fo0u")])
 output_essence = ExtResource("2_vw8gv")

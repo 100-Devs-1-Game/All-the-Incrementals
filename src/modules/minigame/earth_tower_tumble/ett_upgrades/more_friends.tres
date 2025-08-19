@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=26 format=3 uid="uid://v5r85weodo3l"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=26 format=3 uid="uid://dmh0gpk41ddcl"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_0qqbu"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_fhbmt"]
