@@ -15,7 +15,7 @@ var speedboost_flat: float = 0
 
 var score_multiplier: float = 1
 var score_flat: float = 0
-var weight_multiplier: float = 1
+var weight_multiplier_diff: float = 0
 var weight_initial: float = 100
 var carry_initial: int = 5
 var carry_flat: int = 0
@@ -83,7 +83,7 @@ func total_weight() -> float:
 
 
 func total_added_weight() -> float:
-	return weight * weight_multiplier
+	return weight * (1 - weight_multiplier_diff)
 
 
 func consume_oxygen(seconds: float) -> void:

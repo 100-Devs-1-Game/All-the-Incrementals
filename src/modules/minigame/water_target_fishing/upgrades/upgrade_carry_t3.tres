@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=49 format=3 uid="uid://c1jqf252oopky"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=50 format=3 uid="uid://c1jqf252oopky"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_mt65u"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="2_7m732"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_dm1ih"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_k40gj"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_ng12e"]
+[ext_resource type="Resource" uid="uid://dosjetcb4ojte" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_weight_multiplier_a.tres" id="6_ng12e"]
 
 [sub_resource type="Resource" id="Resource_ng12e"]
 script = ExtResource("2_dm1ih")
@@ -303,7 +304,7 @@ base_effect_modifier = 3.0
 effect_modifier_multiplier = 3.0
 unlocked = false
 unlock_level_index = 0
-unlocks = Array[Resource]([])
+unlocks = Array[Resource]([ExtResource("6_ng12e")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0
