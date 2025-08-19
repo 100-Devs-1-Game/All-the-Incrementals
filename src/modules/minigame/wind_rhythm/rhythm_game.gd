@@ -1,4 +1,4 @@
-class_name RhythmGame extends Node2D
+extends Node2D
 
 signal note_played(note: NoteData, judgment: JUDGMENT)
 signal note_missed(note: NoteData)

@@ -7,7 +7,7 @@ const JUDGMENT = preload("res://modules/minigame/wind_rhythm/chart/judgments.gd"
 @export var scroll_speed: float = 2
 @export var conductor_path: NodePath
 @export var judgment_line: NodePath
-@export var rhythm_game: NodePath
+@export var wind_rhythm: NodePath
 @export var offset: float = 0
 
 var chart: Chart
@@ -18,7 +18,7 @@ var manager: RhythmGame
 func _ready():
 	conductor = get_node(conductor_path)
 	chart = conductor.chart
-	manager = get_node(rhythm_game)
+	manager = get_node(wind_rhythm)
 	spawn_notes()
 
 

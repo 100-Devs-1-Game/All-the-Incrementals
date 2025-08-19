@@ -17,13 +17,13 @@ func _ready():
 	max_notes = conductor.chart.length()
 
 
-func _on_rhythm_game_note_missed(_note):
+func on_rhythm_game_note_missed(_note):
 	combo = 0
 	all_perfect = false
 	text = "%s / %s" % [combo, max_notes]
 
 
-func _on_rhythm_game_note_played(_note: NoteData, judgment: JUDGMENT):
+func on_rhythm_game_note_played(_note: NoteData, judgment: JUDGMENT):
 	combo += 1
 	text = "%s / %s" % [combo, max_notes]
 	if !judgment & JUDGMENT.PERFECT:
