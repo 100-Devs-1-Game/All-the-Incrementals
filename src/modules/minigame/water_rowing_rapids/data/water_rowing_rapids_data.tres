@@ -12,6 +12,7 @@
 script = ExtResource("2_nvcen")
 display_name = "Rowing Rapids"
 how_to_play = ""
+music_track = "rowing_rapids"
 minigame_scene = ExtResource("1_echju")
 upgrade_tree_root_nodes = Array[ExtResource("3_r2ktw")]([ExtResource("5_8055a"), ExtResource("6_5tj14"), ExtResource("7_8055a")])
 output_essence = ExtResource("2_bpume")
