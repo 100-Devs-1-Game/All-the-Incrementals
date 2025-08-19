@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=14 format=3 uid="uid://l3870y376j7x"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_4kes3"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_oa61y"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_a2fq0"]
+[ext_resource type="Texture2D" uid="uid://ch6xx57it5o8b" path="res://assets/minigames/wind_rhythm/upgrade_icons/combo_protection.png" id="4_uod3e"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_oo01j"]
+
+[sub_resource type="Resource" id="Resource_s3uvg"]
+script = ExtResource("2_oa61y")
+essence = ExtResource("3_a2fq0")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_dtaym"]
+script = ExtResource("1_4kes3")
+earth = 0
+fire = 0
+water = 0
+wind = 100
+slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_s3uvg")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_4kes3"]
+script = ExtResource("2_oa61y")
+essence = ExtResource("3_a2fq0")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_oa61y"]
+script = ExtResource("1_4kes3")
+earth = 0
+fire = 0
+water = 0
+wind = 100
+slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_4kes3")])
+
+[sub_resource type="Resource" id="Resource_a2fq0"]
+script = ExtResource("2_oa61y")
+essence = ExtResource("3_a2fq0")
+amount = 500
+
+[sub_resource type="Resource" id="Resource_uod3e"]
+script = ExtResource("1_4kes3")
+earth = 0
+fire = 0
+water = 0
+wind = 500
+slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_a2fq0")])
+
+[sub_resource type="Resource" id="Resource_oo01j"]
+script = ExtResource("2_oa61y")
+essence = ExtResource("3_a2fq0")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_xvtpy"]
+script = ExtResource("1_4kes3")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_oo01j")])
+
+[resource]
+script = ExtResource("5_oo01j")
+unlocks_feature = ""
+name = "Combo Protection"
+flavor = ""
+icon = ExtResource("4_uod3e")
+position = Vector2(640, 704)
+cost_arr = Array[ExtResource("1_4kes3")]([SubResource("Resource_oa61y"), SubResource("Resource_uod3e"), SubResource("Resource_xvtpy")])
+effect_modifier_arr = Array[float]([1.0, 2.0, 3.0])
+max_level = 3
+base_cost = SubResource("Resource_dtaym")
+base_cost_multiplier = 5.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

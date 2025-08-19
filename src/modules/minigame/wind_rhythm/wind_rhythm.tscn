@@ -1,19 +1,161 @@
-[gd_scene load_steps=4 format=3 uid="uid://s0oqlo6ix0fj"]
+[gd_scene load_steps=24 format=3 uid="uid://s0oqlo6ix0fj"]
 
 [ext_resource type="Script" uid="uid://cr1h1t1row22a" path="res://modules/minigame/wind_rhythm/wind_rhythm.gd" id="1_4gb8k"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0ggpn"]
-[ext_resource type="PackedScene" uid="uid://bwtnwarbhh0up" path="res://modules/minigame/wind_rhythm/rhythm_game.tscn" id="3_top3v"]
+[ext_resource type="Texture2D" uid="uid://jsnnw5l5o06j" path="res://assets/minigames/wind_rhythm/placeholder_assets/rhythm_background.png" id="3_m5gb3"]
+[ext_resource type="PackedScene" uid="uid://ev2tmev7hfu1" path="res://modules/minigame/wind_rhythm/board/rhythm_board.tscn" id="4_uq30r"]
+[ext_resource type="PackedScene" uid="uid://c8l4byfcrycg8" path="res://modules/minigame/wind_rhythm/conductor.tscn" id="5_r3uod"]
+[ext_resource type="PackedScene" uid="uid://byhlr4ndp885i" path="res://modules/minigame/wind_rhythm/note/note_spawner.tscn" id="6_vd8gq"]
+[ext_resource type="Script" uid="uid://bbkocoumc6jas" path="res://modules/minigame/wind_rhythm/rhythm_combo.gd" id="7_4ly6s"]
+[ext_resource type="PackedScene" uid="uid://d3jltdnck35he" path="res://modules/minigame/wind_rhythm/concentration_bar.tscn" id="8_3oiir"]
+[ext_resource type="Texture2D" uid="uid://byxstb6oi5ri5" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/000.png" id="9_4qd8c"]
+[ext_resource type="Texture2D" uid="uid://bl8ofr3pfyd82" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/001.png" id="10_hb4ap"]
+[ext_resource type="Texture2D" uid="uid://c5lsbl77showg" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/002.png" id="11_0xbkn"]
+[ext_resource type="Texture2D" uid="uid://chgf3ro1rpr5b" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/003.png" id="12_eqhjo"]
+[ext_resource type="Texture2D" uid="uid://n1j26mrcpr0r" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/004.png" id="13_8er8t"]
+[ext_resource type="Texture2D" uid="uid://d3etsd88ooi2v" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/005.png" id="14_judit"]
+[ext_resource type="Texture2D" uid="uid://cvmsr7qybbhfs" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/000.png" id="15_rckav"]
+[ext_resource type="Texture2D" uid="uid://dib8sfi1enens" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/001.png" id="16_h4iij"]
+[ext_resource type="Texture2D" uid="uid://bqevfpdbpv65i" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/002.png" id="17_dpj6s"]
+[ext_resource type="Texture2D" uid="uid://r2b3idsbny0o" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/003.png" id="18_ninfx"]
+[ext_resource type="Texture2D" uid="uid://d2cbg4fvv8kef" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/004.png" id="19_fa3dc"]
+[ext_resource type="Texture2D" uid="uid://bauyw8gy1pgg1" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/005.png" id="20_udkbg"]
 
-[node name="WindRhythmWrapper" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_03wef"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnsn1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4qd8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hb4ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0xbkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_eqhjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8er8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_judit")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxldb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_rckav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_h4iij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dpj6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ninfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fa3dc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_udkbg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WindRhythm" type="Node2D"]
 script = ExtResource("1_4gb8k")
 data_uid = "uid://cxrnthj4sdjv4"
+metadata/_custom_type_script = "uid://b5ygfwh0c0nh"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
 
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
 visible_on_start = true
 
-[node name="RhythmGame" parent="." instance=ExtResource("3_top3v")]
+[node name="RhythmBackground" type="Sprite2D" parent="."]
+self_modulate = Color(0.597176, 0.597176, 0.597176, 1)
+position = Vector2(908, 541)
+scale = Vector2(1.29686, 1.29686)
+texture = ExtResource("3_m5gb3")
+
+[node name="PanelContainer" parent="." instance=ExtResource("4_uq30r")]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Conductor" parent="." instance=ExtResource("5_r3uod")]
+unique_name_in_owner = true
+
+[node name="judgment_line" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(120, 0)
+gizmo_extents = 400.0
+
+[node name="JudgmentLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 129.0
+offset_top = 306.0
+offset_right = 228.0
+offset_bottom = 356.0
+text = "!Okay"
+
+[node name="Early_Late" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 129.0
+offset_top = 357.0
+offset_right = 215.0
+offset_bottom = 407.0
+text = "!Early"
+label_settings = SubResource("LabelSettings_03wef")
+
+[node name="NoteSpawner" parent="." instance=ExtResource("6_vd8gq")]
+scroll_speed = 1.0
+conductor_path = NodePath("../Conductor")
+judgment_line = NodePath("../judgment_line")
+wind_rhythm = NodePath("..")
+offset = 0.5
+
+[node name="ComboLabel" type="Label" parent="."]
+offset_left = 290.0
+offset_top = 306.0
+offset_right = 330.0
+offset_bottom = 356.0
+text = "0"
+script = ExtResource("7_4ly6s")
+
+[node name="ConcentrationBar" parent="." instance=ExtResource("8_3oiir")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 49.0
+offset_top = 324.0
+offset_right = 49.0
+offset_bottom = 324.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="BandSpiritGroup" type="Node2D" parent="."]
+
+[node name="BassoonSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
+position = Vector2(1243, 432)
+sprite_frames = SubResource("SpriteFrames_nnsn1")
+
+[node name="BrassSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
+position = Vector2(1728, 605)
+sprite_frames = SubResource("SpriteFrames_wxldb")
+frame_progress = 0.548502
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]

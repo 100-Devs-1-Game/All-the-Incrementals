@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=21 format=3 uid="uid://jjvr8pv6bcqe"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_lk1s3"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_d2q3t"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_wkvm6"]
+[ext_resource type="Texture2D" uid="uid://bg2hhpxfi4v2p" path="res://assets/minigames/wind_rhythm/upgrade_icons/concentration_drain_rate.png" id="4_ahy2t"]
+[ext_resource type="Script" uid="uid://cdf23gftlnxqd" path="res://modules/minigame/wind_rhythm/data/upgrade_logic.gd" id="5_lfehk"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="6_1qeyl"]
+[ext_resource type="Resource" uid="uid://owrwp42sfruc" path="res://modules/minigame/wind_rhythm/data/upgrade_resources/concentration_duration.tres" id="7_54t6i"]
+
+[sub_resource type="Resource" id="Resource_qi286"]
+script = ExtResource("2_d2q3t")
+essence = ExtResource("3_wkvm6")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_cmxea"]
+script = ExtResource("1_lk1s3")
+earth = 0
+fire = 0
+water = 0
+wind = 10
+slots = Array[ExtResource("2_d2q3t")]([SubResource("Resource_qi286")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_lk1s3"]
+script = ExtResource("2_d2q3t")
+essence = ExtResource("3_wkvm6")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_d2q3t"]
+script = ExtResource("1_lk1s3")
+earth = 0
+fire = 0
+water = 0
+wind = 10
+slots = Array[ExtResource("2_d2q3t")]([SubResource("Resource_lk1s3")])
+
+[sub_resource type="Resource" id="Resource_wkvm6"]
+script = ExtResource("2_d2q3t")
+essence = ExtResource("3_wkvm6")
+amount = 25
+
+[sub_resource type="Resource" id="Resource_ahy2t"]
+script = ExtResource("1_lk1s3")
+earth = 0
+fire = 0
+water = 0
+wind = 25
+slots = Array[ExtResource("2_d2q3t")]([SubResource("Resource_wkvm6")])
+
+[sub_resource type="Resource" id="Resource_lfehk"]
+script = ExtResource("2_d2q3t")
+essence = ExtResource("3_wkvm6")
+amount = 60
+
+[sub_resource type="Resource" id="Resource_1qeyl"]
+script = ExtResource("1_lk1s3")
+earth = 0
+fire = 0
+water = 0
+wind = 60
+slots = Array[ExtResource("2_d2q3t")]([SubResource("Resource_lfehk")])
+
+[sub_resource type="Resource" id="Resource_54t6i"]
+script = ExtResource("2_d2q3t")
+essence = ExtResource("3_wkvm6")
+amount = 150
+
+[sub_resource type="Resource" id="Resource_8vkta"]
+script = ExtResource("1_lk1s3")
+earth = 0
+fire = 0
+water = 0
+wind = 150
+slots = Array[ExtResource("2_d2q3t")]([SubResource("Resource_54t6i")])
+
+[sub_resource type="Resource" id="Resource_40bkb"]
+script = ExtResource("2_d2q3t")
+essence = ExtResource("3_wkvm6")
+amount = 350
+
+[sub_resource type="Resource" id="Resource_uu80r"]
+script = ExtResource("1_lk1s3")
+earth = 0
+fire = 0
+water = 0
+wind = 350
+slots = Array[ExtResource("2_d2q3t")]([SubResource("Resource_40bkb")])
+
+[sub_resource type="Resource" id="Resource_56dyo"]
+script = ExtResource("5_lfehk")
+upgrade_type = 0
+metadata/_custom_type_script = "uid://cdf23gftlnxqd"
+
+[resource]
+script = ExtResource("6_1qeyl")
+logic = SubResource("Resource_56dyo")
+unlocks_feature = ""
+name = "Concentration Drain Rate"
+flavor = ""
+icon = ExtResource("4_ahy2t")
+position = Vector2(-384, -64)
+cost_arr = Array[ExtResource("1_lk1s3")]([SubResource("Resource_d2q3t"), SubResource("Resource_ahy2t"), SubResource("Resource_1qeyl"), SubResource("Resource_8vkta"), SubResource("Resource_uu80r")])
+effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5])
+max_level = 5
+base_cost = SubResource("Resource_cmxea")
+base_cost_multiplier = 2.5
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.1
+effect_modifier_multiplier = 0.1
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("7_54t6i")])
+description_prefix = "Concentration drains"
+description_suffix = "slower"
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

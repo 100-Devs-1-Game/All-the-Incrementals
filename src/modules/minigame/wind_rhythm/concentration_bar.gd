@@ -6,8 +6,9 @@ signal concentration_broken
 const JUDGMENT = preload("res://modules/minigame/wind_rhythm/chart/judgments.gd").Judgment
 
 @export var drain_speed_base: float = 10
-@export var rhythm_game_node: RhythmGame
 
+var drain_speed_mult: float = 1.0
+var concentration_max_mult: float = 1.0
 var _is_draining: bool = true
 
 @onready var drain_pause_timer: Timer = $DrainPauseTimer
@@ -17,12 +18,15 @@ var _is_draining: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	drain_pause_timer.connect("timeout", _on_timeout)
+	progress_bar.max_value *= concentration_max_mult
+	progress_bar.value = progress_bar.max_value
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if _is_draining:
-		progress_bar.value -= drain_speed_base * delta
+		progress_bar.value -= drain_speed_base * drain_speed_mult * delta
+		print(drain_speed_base * drain_speed_mult * delta)
 	if progress_bar.value <= 0:
 		concentration_broken.emit()
 

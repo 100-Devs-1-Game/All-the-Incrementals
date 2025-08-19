@@ -41,7 +41,7 @@ grow_vertical = 2
 functions_node = NodePath("../../../..")
 visible_on_start = true
 
-[node name="MinigameOverlay" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
+[node name="MinigameOverlay" parent="SharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
 anchors_preset = 1
 anchor_top = 0.0
 anchor_bottom = 0.0

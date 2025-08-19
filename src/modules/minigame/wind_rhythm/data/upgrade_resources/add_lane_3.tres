@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=3 format=3 uid="uid://dd5gt1jud2h7g"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_ipgip"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_8vew1"]
+
+[resource]
+script = ExtResource("2_8vew1")
+unlocks_feature = ""
+name = "New Upgrade"
+flavor = ""
+position = Vector2(1600, 1408)
+cost_arr = Array[ExtResource("1_ipgip")]([])
+effect_modifier_arr = Array[float]([])
+max_level = 1
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1
