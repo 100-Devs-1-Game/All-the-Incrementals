@@ -9,6 +9,7 @@
 [resource]
 script = ExtResource("1_ui8ix")
 display_name = "Tumble Towers"
+how_to_play = ""
 minigame_scene = ExtResource("1_w0vse")
 upgrade_tree_root_nodes = Array[ExtResource("2_w0vse")]([ExtResource("6_j30oj")])
 output_essence = ExtResource("2_w3tnc")

@@ -16,6 +16,7 @@ Button/colors/font_hover_color = Color(0.709804, 0.262745, 0.215686, 1)
 Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 Button/colors/font_outline_color = Color(1, 1, 1, 1)
 Button/constants/outline_size = 4
+Button/font_sizes/font_size = 44
 Button/fonts/font = SubResource("FontVariation_u03aq")
 Button/styles/hover = ExtResource("1_k5h6c")
 Button/styles/normal = ExtResource("1_k5h6c")
