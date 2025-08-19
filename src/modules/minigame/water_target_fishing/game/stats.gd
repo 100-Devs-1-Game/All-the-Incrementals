@@ -69,7 +69,7 @@ func stop_scrolling() -> void:
 
 
 func scroll_faster(amount: float) -> void:
-	scrollspeed.x -= _apply_speedboost(amount) * 0.4
+	scrollspeed.x -= _apply_speedboost(amount) * 0.6
 	scrollspeed.x = min(0, scrollspeed.x)
 
 
