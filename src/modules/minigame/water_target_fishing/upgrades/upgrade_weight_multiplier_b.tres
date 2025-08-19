@@ -1,0 +1,181 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=29 format=3 uid="uid://dmjh1l3r0swsb"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_4tvl4"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_pw604"]
+[ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="2_wtrx8"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_8b86c"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_pw604"]
+
+[sub_resource type="Resource" id="Resource_0hkyo"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_nffsi"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 10
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_0hkyo")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_pw604"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_8b86c"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 10
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_pw604")])
+
+[sub_resource type="Resource" id="Resource_bbeoc"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 20
+
+[sub_resource type="Resource" id="Resource_yvg88"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 20
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_bbeoc")])
+
+[sub_resource type="Resource" id="Resource_fvm4c"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 40
+
+[sub_resource type="Resource" id="Resource_i2a7u"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 40
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_fvm4c")])
+
+[sub_resource type="Resource" id="Resource_g4kkm"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 80
+
+[sub_resource type="Resource" id="Resource_38vwg"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 80
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_g4kkm")])
+
+[sub_resource type="Resource" id="Resource_su540"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 150
+
+[sub_resource type="Resource" id="Resource_hbn50"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 150
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_su540")])
+
+[sub_resource type="Resource" id="Resource_t0wkk"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 300
+
+[sub_resource type="Resource" id="Resource_ohu07"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 300
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_t0wkk")])
+
+[sub_resource type="Resource" id="Resource_l5f1v"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 600
+
+[sub_resource type="Resource" id="Resource_6c1s1"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 600
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_l5f1v")])
+
+[sub_resource type="Resource" id="Resource_coj5s"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 1000
+
+[sub_resource type="Resource" id="Resource_0dwx4"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 1000
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_coj5s")])
+
+[sub_resource type="Resource" id="Resource_jw4kn"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_x1l20"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 2500
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_jw4kn")])
+
+[sub_resource type="Resource" id="Resource_e6v4y"]
+script = ExtResource("2_pw604")
+essence = ExtResource("3_8b86c")
+amount = 5000
+
+[sub_resource type="Resource" id="Resource_2ainb"]
+script = ExtResource("1_4tvl4")
+earth = 0
+fire = 0
+water = 5000
+wind = 0
+slots = Array[ExtResource("2_pw604")]([SubResource("Resource_e6v4y")])
+
+[sub_resource type="Resource" id="Resource_kqv86"]
+script = ExtResource("2_wtrx8")
+type = 10
+metadata/_custom_type_script = "uid://82mjh0pcfce8"
+
+[resource]
+script = ExtResource("3_pw604")
+logic = SubResource("Resource_kqv86")
+unlocks_feature = ""
+name = "+ Strength"
+flavor = ""
+position = Vector2(4608, -1024)
+cost_arr = Array[ExtResource("1_4tvl4")]([SubResource("Resource_8b86c"), SubResource("Resource_yvg88"), SubResource("Resource_i2a7u"), SubResource("Resource_38vwg"), SubResource("Resource_hbn50"), SubResource("Resource_ohu07"), SubResource("Resource_6c1s1"), SubResource("Resource_0dwx4"), SubResource("Resource_x1l20"), SubResource("Resource_2ainb")])
+effect_modifier_arr = Array[float]([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1])
+max_level = 10
+base_cost = SubResource("Resource_nffsi")
+base_cost_multiplier = 2.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.01
+effect_modifier_multiplier = 0.01
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([])
+description_prefix = "Reduces the slowdown from carrying fish by"
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=20 format=3 uid="uid://d2fnkp7cgr4ye"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=21 format=3 uid="uid://d2fnkp7cgr4ye"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_c2eto"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_58yqc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_58yqc"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_pp2j6"]
 [ext_resource type="Texture2D" uid="uid://gb85rnphm0t2" path="res://assets/minigames/water_target_fishing/upgrades/increase_oxygen_capacity_multiplier.png" id="4_pp2j6"]
+[ext_resource type="Resource" uid="uid://dmjh1l3r0swsb" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_weight_multiplier_b.tres" id="7_bhq4p"]
 
 [sub_resource type="Resource" id="Resource_58yqc"]
 script = ExtResource("2_58yqc")
@@ -95,7 +96,7 @@ metadata/_custom_type_script = "uid://82mjh0pcfce8"
 script = ExtResource("3_58yqc")
 logic = SubResource("Resource_pp2j6")
 unlocks_feature = ""
-name = "+15% Oxygen"
+name = "+150% Oxygen"
 flavor = ""
 icon = ExtResource("4_pp2j6")
 position = Vector2(3072, -1024)
@@ -110,7 +111,7 @@ base_effect_modifier = 3.0
 effect_modifier_multiplier = 3.0
 unlocked = false
 unlock_level_index = 0
-unlocks = Array[Resource]([])
+unlocks = Array[Resource]([ExtResource("7_bhq4p")])
 description_prefix = ""
 description_suffix = ""
 description_modifier_format = 0

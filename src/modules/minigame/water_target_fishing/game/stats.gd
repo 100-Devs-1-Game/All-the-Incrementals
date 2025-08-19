@@ -15,7 +15,7 @@ var speedboost_flat: float = 0
 
 var score_multiplier: float = 1
 var score_flat: float = 0
-var weight_multiplier: float = 1
+var weight_multiplier_diff: float = 0
 var weight_initial: float = 100
 var carry_initial: int = 5
 var carry_flat: int = 0
@@ -24,7 +24,7 @@ var oxygen_capacity_seconds: float = 3
 var oxygen_capacity_multiplier: float = 1
 var oxygen_capacity_flat: float = 0
 
-var spawn_fish_every_x_pixels: float = 300
+var spawn_fish_every_x_pixels: float = 1200
 var spawn_x_starting_fish: float = 3
 var fish_movespeed_multiplier: float = 1
 var fish_movespeed_flat: float = 0
@@ -69,12 +69,12 @@ func stop_scrolling() -> void:
 
 
 func scroll_faster(amount: float) -> void:
-	scrollspeed.x -= _apply_speedboost(amount) * 0.4
+	scrollspeed.x -= _apply_speedboost(amount) * 0.6
 	scrollspeed.x = min(0, scrollspeed.x)
 
 
 func scroll_slower(amount: float) -> void:
-	scrollspeed.x += amount
+	scrollspeed.x += amount * 0.5
 	scrollspeed.x = min(0, scrollspeed.x)
 
 
@@ -83,7 +83,7 @@ func total_weight() -> float:
 
 
 func total_added_weight() -> float:
-	return weight * weight_multiplier
+	return weight * (1 - weight_multiplier_diff)
 
 
 func consume_oxygen(seconds: float) -> void:
