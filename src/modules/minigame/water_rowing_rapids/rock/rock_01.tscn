@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://2wcf3ktin40u"]
 
-[ext_resource type="Script" path="res://modules/minigame/water_rowing_rapids/rock/rock.gd" id="1_5xl68"]
+[ext_resource type="Script" uid="uid://mlcfb2pqu5j5" path="res://modules/minigame/water_rowing_rapids/rock/rock.gd" id="1_5xl68"]
 [ext_resource type="Texture2D" uid="uid://ds32na3kw2kk3" path="res://assets/minigames/water_rowing_rapids/rock.webp" id="1_wh7uy"]
 [ext_resource type="Texture2D" uid="uid://c6ng2dml5711c" path="res://assets/minigames/water_rowing_rapids/rock_particles.webp" id="2_5uiyv"]
 [ext_resource type="Texture2D" uid="uid://d0xtjk5gxqc07" path="res://assets/minigames/water_rowing_rapids/smoke_particle.webp" id="4_xa5ut"]
