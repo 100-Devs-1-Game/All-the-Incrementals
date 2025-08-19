@@ -41,7 +41,7 @@ metadata/_custom_type_script = "uid://sbcdkb7hovgy"
 [resource]
 script = ExtResource("2_v0obd")
 logic = SubResource("Resource_layq8")
-unlocks_feature = "Stomp out Fires"
+unlocks_feature = ""
 name = "Stomping"
 flavor = ""
 position = Vector2(-512, 960)
@@ -57,7 +57,7 @@ effect_modifier_multiplier = 0.0
 unlocked = false
 unlock_level = 0
 unlocks = Array[Resource]([])
-description_prefix = ""
+description_prefix = "Stomp out Fires by walking over them"
 description_suffix = ""
 description_modifier_format = 3
 metadata/_tree_editor_version_added = 1

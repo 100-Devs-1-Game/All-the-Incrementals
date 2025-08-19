@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=31 format=3 uid="uid://puhu64bo33jh"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=32 format=3 uid="uid://puhu64bo33jh"]
 
 [ext_resource type="Script" uid="uid://sbcdkb7hovgy" path="res://modules/minigame/fire_fighters/upgrades/fire_fighters_upgrade_logic.gd" id="1_46f17"]
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_80gss"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_0d5kq"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_7vxgd"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_mv6il"]
+[ext_resource type="Texture2D" uid="uid://b65lmndmumknf" path="res://assets/minigames/wind_platformer/icons/walk_speed.webp" id="4_mv6il"]
 [ext_resource type="Resource" uid="uid://daaat4h7tn64i" path="res://modules/minigame/fire_fighters/data/upgrades/longer_countdown_upgrade.tres" id="6_wbpca"]
 [ext_resource type="Resource" uid="uid://c1avxl58rbutd" path="res://modules/minigame/fire_fighters/upgrades/hitpoints_upgrade.tres" id="7_7vxgd"]
 
@@ -161,8 +162,9 @@ metadata/_custom_type_script = "uid://sbcdkb7hovgy"
 script = ExtResource("2_0d5kq")
 logic = SubResource("Resource_0d5kq")
 unlocks_feature = ""
-name = "Walk Speed"
+name = "Move Speed"
 flavor = ""
+icon = ExtResource("4_mv6il")
 position = Vector2(-2752, 960)
 cost_arr = Array[ExtResource("1_80gss")]([SubResource("Resource_mv6il"), SubResource("Resource_ffo2x"), SubResource("Resource_t4ga5"), SubResource("Resource_htuf1"), SubResource("Resource_v4ikc"), SubResource("Resource_aw2i4"), SubResource("Resource_bd7ak"), SubResource("Resource_y0j0c"), SubResource("Resource_oeocl"), SubResource("Resource_6klob")])
 effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
@@ -174,10 +176,10 @@ round_smoothness = 1.0
 base_effect_modifier = 0.1
 effect_modifier_multiplier = 0.1
 unlocked = false
-unlock_level_index = 0
+unlock_level = 5
 unlocks = Array[Resource]([ExtResource("6_wbpca"), ExtResource("7_7vxgd")])
-description_prefix = ""
-description_suffix = ""
+description_prefix = "Move"
+description_suffix = "faster"
 description_modifier_format = 0
 metadata/_custom_type_script = "uid://co4s3tttdeie1"
 metadata/_tree_editor_version_saved = 1
