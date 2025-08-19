@@ -60,7 +60,10 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_boat := other_area.get_parent() as WTFBoat
 	if is_instance_valid(maybe_boat):
-		WTFGlobals.minigame.stats.carrying -= 1
+		#todo replace with nice tween of fish leaving etc.
+		WTFGlobals.minigame.stats.scroll_faster(500)
+		WTFGlobals.minigame.stats.carrying = 0
+		WTFGlobals.minigame.stats.weight = 0
 		other_area.queue_free()
 		return
 
