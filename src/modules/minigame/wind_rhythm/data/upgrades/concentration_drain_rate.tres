@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bg2hhpxfi4v2p" path="res://assets/minigames/wind_rhythm/upgrade_icons/concentration_drain_rate.png" id="4_ahy2t"]
 [ext_resource type="Script" uid="uid://cdf23gftlnxqd" path="res://modules/minigame/wind_rhythm/data/upgrade_logic.gd" id="5_lfehk"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="6_1qeyl"]
-[ext_resource type="Resource" uid="uid://owrwp42sfruc" path="res://modules/minigame/wind_rhythm/data/upgrade_resources/concentration_duration.tres" id="7_54t6i"]
+[ext_resource type="Resource" uid="uid://owrwp42sfruc" path="res://modules/minigame/wind_rhythm/data/upgrades/concentration_duration.tres" id="7_54t6i"]
 
 [sub_resource type="Resource" id="Resource_qi286"]
 script = ExtResource("2_d2q3t")

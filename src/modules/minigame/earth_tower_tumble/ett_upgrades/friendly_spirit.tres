@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="6_63efl"]
 [ext_resource type="Texture2D" uid="uid://bn3j8wl4qyxo0" path="res://assets/minigames/earth_tower_tumble/icons/conjure_friendly_spirit.png" id="7_e8qbq"]
 [ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="8_68ay0"]
-[ext_resource type="Resource" uid="uid://dmh0gpk41ddcl" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/more_friends.tres" id="10_t7oin"]
+[ext_resource type="Resource" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/more_friends.tres" id="10_t7oin"]
 
 [sub_resource type="Resource" id="Resource_wm3cm"]
 script = ExtResource("2_0isxr")
