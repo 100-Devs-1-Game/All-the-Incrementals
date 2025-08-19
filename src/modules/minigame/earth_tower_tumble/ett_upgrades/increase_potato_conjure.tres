@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dhk4rinw8yehe" path="res://assets/minigames/earth_tower_tumble/icons/increase_potato_conjure.png" id="4_8fyq3"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="4_ibix0"]
 [ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="5_5t6wb"]
-[ext_resource type="Resource" uid="uid://2j7jbyldfln6" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/friendly_spirit.tres" id="8_ibix0"]
+[ext_resource type="Resource" uid="uid://ddn6dw3ss156b" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/decrease_spirit_movement.tres" id="8_ibix0"]
 
 [sub_resource type="Resource" id="Resource_ibix0"]
 script = ExtResource("2_m4wm5")
@@ -153,7 +153,7 @@ unlocks_feature = ""
 name = "Rapid Conjuring"
 flavor = ""
 icon = ExtResource("4_8fyq3")
-position = Vector2(64, 2176)
+position = Vector2(64, 2240)
 cost_arr = Array[ExtResource("1_e2g8i")]([SubResource("Resource_tndxl"), SubResource("Resource_dx4it"), SubResource("Resource_3ltuf"), SubResource("Resource_fw011"), SubResource("Resource_dwts5"), SubResource("Resource_534ab"), SubResource("Resource_50eqk"), SubResource("Resource_7oi07")])
 effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.9])
 max_level = 0

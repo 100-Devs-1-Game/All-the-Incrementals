@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=18 format=3 uid="uid://cyxac864dwkj"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=17 format=3 uid="uid://cyxac864dwkj"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_sdaxn"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_b6pa6"]
@@ -6,8 +6,7 @@
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_oyqbv"]
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_m2oj5"]
 [ext_resource type="Texture2D" uid="uid://cpcxaecfo3egs" path="res://assets/minigames/earth_tower_tumble/icons/increase_player_flight_speed.png" id="4_06f7q"]
-[ext_resource type="Resource" uid="uid://ddn6dw3ss156b" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/decrease_spirit_movement.tres" id="7_m2oj5"]
-[ext_resource type="Resource" uid="uid://bnhs0tt21yheb" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/increase_potato_conjure.tres" id="8_06f7q"]
+[ext_resource type="Resource" uid="uid://cbwb6gfp3b5w0" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/block_dot.tres" id="7_m2oj5"]
 
 [sub_resource type="Resource" id="Resource_0reia"]
 script = ExtResource("2_oyqbv")
@@ -88,7 +87,7 @@ base_effect_modifier = 0.0
 effect_modifier_multiplier = 0.0
 unlocked = false
 unlock_level_index = 0
-unlocks = Array[Resource]([ExtResource("8_06f7q"), ExtResource("7_m2oj5")])
+unlocks = Array[Resource]([ExtResource("7_m2oj5")])
 description_prefix = "Fly"
 description_suffix = "points faster."
 description_modifier_format = 1

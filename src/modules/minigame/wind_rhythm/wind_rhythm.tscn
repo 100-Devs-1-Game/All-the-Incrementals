@@ -10,9 +10,6 @@ data_uid = "uid://cxrnthj4sdjv4"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
 
-[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
-visible_on_start = true
-
 [node name="RhythmGame" parent="." instance=ExtResource("3_top3v")]
 
 [editable path="MinigameSharedComponents"]
