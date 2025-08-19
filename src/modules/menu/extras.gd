@@ -2,6 +2,10 @@ class_name Extras
 extends Control
 
 
+func _ready() -> void:
+	$Background.play()
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit_menu"):
 		SceneLoader.enter_main_menu()
