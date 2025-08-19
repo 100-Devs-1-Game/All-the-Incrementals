@@ -7,6 +7,9 @@ extends Resource
 # Short description how to play this game
 @export_multiline var how_to_play: String
 
+# Identifier of the song for this Minigame
+@export var music_track: String
+
 # the game scene of this Minigame
 @export var minigame_scene: PackedScene
 
