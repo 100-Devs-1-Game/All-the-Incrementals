@@ -9,7 +9,7 @@
 script = ExtResource("1_jh7ck")
 speedboost = 2100.0
 weight = 210.0
-score = 10
+score = 70
 metadata/_custom_type_script = "uid://hrgdcmm0gruk"
 
 [sub_resource type="Resource" id="Resource_mxo0x"]

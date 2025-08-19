@@ -9,7 +9,7 @@
 script = ExtResource("1_pyp4c")
 speedboost = 1800.0
 weight = 180.0
-score = 10
+score = 60
 metadata/_custom_type_script = "uid://hrgdcmm0gruk"
 
 [sub_resource type="Resource" id="Resource_han4h"]
