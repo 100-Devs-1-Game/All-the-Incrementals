@@ -1,16 +1,18 @@
 class_name FireFightersMinigame
 extends BaseMinigame
 
-const BURN_TICK_INTERVAL = 10
+const BURN_TICK_INTERVAL = 15
 
 @export var player_scene: PackedScene
 @export var fire_scene: PackedScene
 @export var water_scene: PackedScene
 @export var extinguish_effect_scene: PackedScene
 @export var explosion_effect_scene: PackedScene
+@export var audio_effect_scene: PackedScene
 
 @export var map_rect: Rect2i = Rect2i(0, 0, 50, 50)
 @export var map_features: Array[FireFightersMinigameMapFeature]
+@export var chunk_size: int = 5
 
 @export var starting_fires: int = 25
 @export var countdown_duration: float = 10.0
@@ -28,6 +30,7 @@ var fires_bonus: int
 var reduce_map_feature_thresholds: Dictionary
 
 var _damage_effect_tween: Tween
+var _fire_chunks: Dictionary
 
 @onready var tile_map_terrain: TileMapLayer = $"TileMapLayer Terrain"
 @onready var tile_map_objects: TileMapLayer = $"TileMapLayer Objects"
@@ -58,6 +61,7 @@ func _initialize():
 		if feature.spawn_noise:
 			feature.spawn_noise.seed = rng_seed
 
+	_init_chunks()
 	_spawn_player()
 
 
@@ -82,6 +86,12 @@ func _physics_process(_delta: float) -> void:
 	_tick_water()
 
 
+func _init_chunks():
+	for x in int(map_rect.size.x / float(chunk_size)) + 1:
+		for y in int(map_rect.size.y / float(chunk_size)) + 1:
+			_fire_chunks[Vector2i(x, y)] = 0.0
+
+
 func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 	var fire: FireFightersMinigameFire = fire_scene.instantiate()
 	fires[tile] = fire
@@ -96,7 +106,14 @@ func _add_fire(tile: Vector2i, min_size: float = 0.0, max_size: float = 1.0):
 		# to make sure add_score() keeps supporting subtracting score
 		assert(_score < old_score)
 		saved_tiles.erase(tile)
-		TextFloatSystem.floating_text(get_tile_position(tile), str("-1"), tile_map_terrain)
+		TextFloatSystem.floating_text(
+			get_tile_position(tile),
+			str("-1"),
+			tile_map_terrain,
+			TextFloatSystem.AnimationStyle.FLOAT,
+			false,
+			Color.WEB_PURPLE
+		)
 
 
 func _remove_fire(fire: FireFightersMinigameFire):
@@ -109,25 +126,35 @@ func _remove_fire(fire: FireFightersMinigameFire):
 	fire.queue_free()
 
 
-func add_water(pos: Vector2, vel: Vector2, impulse: Vector2, arc_factor: float, dir: Vector2):
+func add_water(pos: Vector2, vel: Vector2, impulse: Vector2, dir: Vector2):
 	var water: FireFightersMinigameWater = water_scene.instantiate()
 	water.position = pos
 	water.velocity = vel + impulse
-	water.z_velocity = vel.length() * arc_factor
-	water.splash.connect(effects_player.play_water_splash)
 	water_node.add_child(water)
 	water.look_at(water.position + dir)
 
 
 func _tick_fires():
+	var ctr := 0
 	for tile: Vector2i in fires.keys():
+		if ctr % 50 == 0:
+			await get_tree().physics_frame
+		if not fires.has(tile):
+			continue
+
 		var fire: FireFightersMinigameFire = fires[tile]
 		var feature: FireFightersMinigameMapFeature = get_map_feature(tile)
 
 		if (not feature or not feature.can_burn()) and not has_oil(tile):
-			fire.size -= 0.01
+			fire.size -= 0.02
 		else:
 			_fire_burn_tick(fire, tile, feature)
+		ctr += 1
+
+	_init_chunks()
+	for tile: Vector2i in fires.keys():
+		var fire: FireFightersMinigameFire = fires[tile]
+		_set_fire_chunk(tile, clampf(fire.size, 0.0, 1.0))
 
 
 func _fire_burn_tick(
@@ -139,6 +166,9 @@ func _fire_burn_tick(
 	if has_oil(tile):
 		fire.size = 10.0
 		_burn_vegetation(tile)
+		if fire.total_burn > 3.5:
+			_remove_oil(tile)
+			fire.size = 1.0
 
 	if feature and fire.total_burn > feature.burn_duration and feature.turns_into != null:
 		replace_feature(tile, feature.turns_into)
@@ -174,8 +204,6 @@ func _tick_water():
 	for water: FireFightersMinigameWater in water_node.get_children():
 		var tile: Vector2i = get_tile_at(water.position)
 		var fire: FireFightersMinigameFire = get_fire_at(tile)
-		if not water.is_low():
-			continue
 
 		if fire:
 			var epsilon := 0.001
@@ -202,6 +230,10 @@ func add_oil(tile: Vector2i, counter: int = -1):
 	tile_map_oil.set_cell(tile, 0, Vector2.ZERO)
 	if counter > -1:
 		audio_container_oil.play(counter)
+
+
+func _remove_oil(tile: Vector2i):
+	tile_map_oil.erase_cell(tile)
 
 
 func _spawn_player():
@@ -234,7 +266,9 @@ func _vegetation_saved(tile: Vector2i):
 	var effect: Node2D = extinguish_effect_scene.instantiate()
 	effect.position = pos
 	effects_node.add_child(effect)
-	TextFloatSystem.floating_text(pos, str("+1"), tile_map_terrain)
+	TextFloatSystem.floating_text(
+		pos, str("+1"), tile_map_terrain, TextFloatSystem.AnimationStyle.FLOAT, false, Color.YELLOW
+	)
 
 
 func oil_explosion(center_tile: Vector2i, radius: int, on_fire: bool):
@@ -266,6 +300,25 @@ func play_damage_effect():
 	_damage_effect_tween.tween_callback(damage_color_rect.hide)
 
 	damage_color_rect.show()
+
+
+func play_audio_effect(stream: AudioStream, pos: Vector2):
+	var effect: AudioStreamPlayer2D = audio_effect_scene.instantiate()
+	effect.position = pos
+	effect.init(stream)
+	effects_node.add_child(effect)
+
+
+func _set_fire_chunk(tile: Vector2i, val: float):
+	var coords: Vector2i = tile / chunk_size
+	_fire_chunks[coords] = max(_fire_chunks[coords], val)
+
+
+func stomp(tile: Vector2i) -> bool:
+	if is_tile_burning(tile):
+		_remove_fire(fires[tile])
+		return true
+	return false
 
 
 func _get_countdown_duration() -> float:
@@ -308,6 +361,31 @@ func is_tile_burning(tile: Vector2i) -> bool:
 
 func has_oil(tile: Vector2i) -> bool:
 	return tile in tile_map_oil.get_used_cells()
+
+
+func get_fire_density(tile: Vector2i) -> float:
+	var result: float = 0.0
+	for x in range(-1, 2):
+		for y in range(-1, 2):
+			var factor: float = 0.5
+			var vec := Vector2i(x, y)
+			if vec == Vector2i.ZERO:
+				factor = 1.0
+			result = max(result, _get_fire_chunk(tile + vec * chunk_size) * factor)
+
+	return result
+
+
+func _get_fire_chunk(tile: Vector2i) -> float:
+	tile = Vector2i(
+		clampi(tile.x, map_rect.position.x, map_rect.position.x + map_rect.size.x),
+		clampi(tile.y, map_rect.position.y, map_rect.position.y + map_rect.size.y)
+	)
+	return _fire_chunks[_get_fire_chunk_coords(tile)]
+
+
+func _get_fire_chunk_coords(tile: Vector2i) -> Vector2i:
+	return tile / chunk_size
 
 
 func get_random_tile() -> Vector2i:

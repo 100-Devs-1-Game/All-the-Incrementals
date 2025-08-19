@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=34 format=3 uid="uid://b6rju4fadud6p"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=32 format=3 uid="uid://b6rju4fadud6p"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_y3tu1"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_af4hw"]
@@ -6,8 +6,6 @@
 [ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="3_jl5jj"]
 [ext_resource type="Texture2D" uid="uid://blnuj43p2ihnl" path="res://assets/minigames/fire_fighters/icons/more_fires.png" id="4_wi0dl"]
 [ext_resource type="Script" uid="uid://sbcdkb7hovgy" path="res://modules/minigame/fire_fighters/upgrades/fire_fighters_upgrade_logic.gd" id="5_60l7d"]
-[ext_resource type="Resource" uid="uid://cxhyrtclfgjie" path="res://modules/minigame/fire_fighters/data/upgrades/oil_barrel_upgrade.tres" id="6_jl5jj"]
-[ext_resource type="Resource" uid="uid://cyu5uj3gwiv2r" path="res://modules/minigame/fire_fighters/data/upgrades/gas_can_upgrade.tres" id="7_wi0dl"]
 [ext_resource type="Resource" uid="uid://c4innp551p2u0" path="res://modules/minigame/fire_fighters/data/upgrades/more_bushes.tres" id="8_we28e"]
 [ext_resource type="Resource" uid="uid://csnhojcgvgd2l" path="res://modules/minigame/fire_fighters/data/upgrades/more_trees.tres" id="9_wv8bg"]
 
@@ -167,7 +165,7 @@ unlocks_feature = ""
 name = "More Fires"
 flavor = ""
 icon = ExtResource("4_wi0dl")
-position = Vector2(-2752, -448)
+position = Vector2(-512, -704)
 cost_arr = Array[ExtResource("1_y3tu1")]([SubResource("Resource_qsf83"), SubResource("Resource_nus6c"), SubResource("Resource_i20mf"), SubResource("Resource_lc7aa"), SubResource("Resource_0f15r"), SubResource("Resource_wahb8"), SubResource("Resource_kj1gr"), SubResource("Resource_lsepa"), SubResource("Resource_j1lo2"), SubResource("Resource_lwpp3")])
 effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0])
 max_level = 10
@@ -179,9 +177,9 @@ base_effect_modifier = 1.0
 effect_modifier_multiplier = 1.0
 unlocked = false
 unlock_level_index = 0
-unlocks = Array[Resource]([ExtResource("6_jl5jj"), ExtResource("7_wi0dl"), ExtResource("8_we28e"), ExtResource("9_wv8bg")])
-description_prefix = ""
+unlocks = Array[Resource]([ExtResource("8_we28e"), ExtResource("9_wv8bg")])
+description_prefix = "Increase number of fires by "
 description_suffix = ""
-description_modifier_format = 0
+description_modifier_format = 1
 metadata/_tree_editor_version_added = 1
 metadata/_tree_editor_version_saved = 1
