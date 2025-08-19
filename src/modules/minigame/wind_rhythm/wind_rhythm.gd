@@ -27,7 +27,7 @@ var concentration_bar: ConcentrationBar
 
 ## Upgrade Info
 var drain_speed_mult: float = 1.0
-var concentration_max_mult := 1
+var concentration_max_mult: float = 1
 
 
 func _unhandled_input(event):
