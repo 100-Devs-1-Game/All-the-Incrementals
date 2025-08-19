@@ -13,6 +13,7 @@
 script = ExtResource("1_sxeok")
 display_name = "Fish'n dive"
 how_to_play = ""
+music_track = ""
 minigame_scene = ExtResource("1_fbagk")
 upgrade_tree_root_nodes = Array[ExtResource("2_xhtl0")]([ExtResource("5_7fgwq"), ExtResource("7_fiswx"), ExtResource("8_1oiaf"), ExtResource("8_gk50o")])
 output_essence = ExtResource("1_xhtl0")

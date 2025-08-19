@@ -8,6 +8,7 @@
 script = ExtResource("1_3b01r")
 display_name = ""
 how_to_play = ""
+music_track = ""
 upgrade_tree_root_nodes = Array[ExtResource("2_uhrud")]([ExtResource("3_uhrud")])
 currency_conversion_factor = 0.0
 high_scores = Array[int]([])
