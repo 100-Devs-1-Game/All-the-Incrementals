@@ -1,0 +1,92 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=16 format=3 uid="uid://mrm745q5l0w"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_yc4vv"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_vhe8i"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_4rp5v"]
+[ext_resource type="Texture2D" uid="uid://dq46l1614u213" path="res://assets/minigames/wind_rhythm/upgrade_icons/perfect_play_concentration_bonus.png" id="4_kb26p"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_3l1vq"]
+[ext_resource type="Script" uid="uid://cdf23gftlnxqd" path="res://modules/minigame/wind_rhythm/data/upgrade_logic.gd" id="5_vhe8i"]
+
+[sub_resource type="Resource" id="Resource_b8jfn"]
+script = ExtResource("2_vhe8i")
+essence = ExtResource("3_4rp5v")
+amount = 500
+
+[sub_resource type="Resource" id="Resource_a86hm"]
+script = ExtResource("1_yc4vv")
+earth = 500
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_vhe8i")]([SubResource("Resource_b8jfn")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_4rp5v"]
+script = ExtResource("2_vhe8i")
+essence = ExtResource("3_4rp5v")
+amount = 500
+
+[sub_resource type="Resource" id="Resource_kb26p"]
+script = ExtResource("1_yc4vv")
+earth = 500
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_vhe8i")]([SubResource("Resource_4rp5v")])
+
+[sub_resource type="Resource" id="Resource_3l1vq"]
+script = ExtResource("2_vhe8i")
+essence = ExtResource("3_4rp5v")
+amount = 1500
+
+[sub_resource type="Resource" id="Resource_g20eb"]
+script = ExtResource("1_yc4vv")
+earth = 1500
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_vhe8i")]([SubResource("Resource_3l1vq")])
+
+[sub_resource type="Resource" id="Resource_yvkvo"]
+script = ExtResource("2_vhe8i")
+essence = ExtResource("3_4rp5v")
+amount = 4500
+
+[sub_resource type="Resource" id="Resource_3nssh"]
+script = ExtResource("1_yc4vv")
+earth = 4500
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_vhe8i")]([SubResource("Resource_yvkvo")])
+
+[sub_resource type="Resource" id="Resource_sm180"]
+script = ExtResource("5_vhe8i")
+upgrade_type = 0
+metadata/_custom_type_script = "uid://cdf23gftlnxqd"
+
+[resource]
+script = ExtResource("5_3l1vq")
+logic = SubResource("Resource_sm180")
+unlocks_feature = ""
+name = "Perfect Play"
+flavor = ""
+icon = ExtResource("4_kb26p")
+position = Vector2(1664, -64)
+cost_arr = Array[ExtResource("1_yc4vv")]([SubResource("Resource_kb26p"), SubResource("Resource_g20eb"), SubResource("Resource_3nssh")])
+effect_modifier_arr = Array[float]([1.0, 2.0, 3.0])
+max_level = 3
+base_cost = SubResource("Resource_a86hm")
+base_cost_multiplier = 3.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=13 format=3 uid="uid://5yxc4jx8fkti"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_31a8d"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_tp4nu"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_65upn"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_j85v3"]
+[ext_resource type="Resource" uid="uid://dfy4u5m0ocf2t" path="res://modules/minigame/wind_rhythm/data/upgrades/conductor_perfect_4.tres" id="4_3n6wu"]
+[ext_resource type="Texture2D" uid="uid://c7ocxy36oxswk" path="res://assets/minigames/wind_rhythm/upgrade_icons/conductor_great.png" id="4_s0su1"]
+[ext_resource type="Script" uid="uid://cdf23gftlnxqd" path="res://modules/minigame/wind_rhythm/data/upgrade_logic.gd" id="5_65upn"]
+
+[sub_resource type="Resource" id="Resource_wbsce"]
+script = ExtResource("2_tp4nu")
+essence = ExtResource("3_65upn")
+amount = 2000
+
+[sub_resource type="Resource" id="Resource_r0y65"]
+script = ExtResource("1_31a8d")
+earth = 0
+fire = 0
+water = 0
+wind = 2000
+slots = Array[ExtResource("2_tp4nu")]([SubResource("Resource_wbsce")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_s0su1"]
+script = ExtResource("2_tp4nu")
+essence = ExtResource("3_65upn")
+amount = 2000
+
+[sub_resource type="Resource" id="Resource_72ru6"]
+script = ExtResource("1_31a8d")
+earth = 0
+fire = 0
+water = 0
+wind = 2000
+slots = Array[ExtResource("2_tp4nu")]([SubResource("Resource_s0su1")])
+
+[sub_resource type="Resource" id="Resource_ranib"]
+script = ExtResource("5_65upn")
+upgrade_type = 0
+metadata/_custom_type_script = "uid://cdf23gftlnxqd"
+
+[resource]
+script = ExtResource("3_j85v3")
+logic = SubResource("Resource_ranib")
+unlocks_feature = ""
+name = "Great Conductor 4"
+flavor = ""
+icon = ExtResource("4_s0su1")
+position = Vector2(3712, 3200)
+cost_arr = Array[ExtResource("1_31a8d")]([SubResource("Resource_72ru6")])
+effect_modifier_arr = Array[float]([1.0])
+max_level = 1
+base_cost = SubResource("Resource_r0y65")
+base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("4_3n6wu")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

@@ -1,0 +1,184 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=31 format=3 uid="uid://bvaapc2qh0lnp"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_4cng7"]
+[ext_resource type="Texture2D" uid="uid://c7ocxy36oxswk" path="res://assets/minigames/wind_rhythm/upgrade_icons/conductor_great.png" id="2_jsknq"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_sdmwa"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_6hmkh"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_ibwmy"]
+[ext_resource type="Resource" uid="uid://d2oslfgpfsslq" path="res://modules/minigame/wind_rhythm/data/upgrades/conductor_perfect_5.tres" id="4_jsknq"]
+[ext_resource type="Script" uid="uid://cdf23gftlnxqd" path="res://modules/minigame/wind_rhythm/data/upgrade_logic.gd" id="5_ibwmy"]
+
+[sub_resource type="Resource" id="Resource_400uo"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_cd3v1"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_400uo")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_amuo6"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_y0mcs"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_amuo6")])
+
+[sub_resource type="Resource" id="Resource_ktdpe"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_6xvhe"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_ktdpe")])
+
+[sub_resource type="Resource" id="Resource_p85fe"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_voprd"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_p85fe")])
+
+[sub_resource type="Resource" id="Resource_71lu7"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_8pm0y"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_71lu7")])
+
+[sub_resource type="Resource" id="Resource_noxnm"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_q1dho"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_noxnm")])
+
+[sub_resource type="Resource" id="Resource_vp10v"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_hdx58"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_vp10v")])
+
+[sub_resource type="Resource" id="Resource_0u722"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_1jhjf"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_0u722")])
+
+[sub_resource type="Resource" id="Resource_riei7"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_8idat"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_riei7")])
+
+[sub_resource type="Resource" id="Resource_7torq"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_6u008"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_7torq")])
+
+[sub_resource type="Resource" id="Resource_7tuya"]
+script = ExtResource("2_sdmwa")
+essence = ExtResource("3_ibwmy")
+amount = 2500
+
+[sub_resource type="Resource" id="Resource_xiy5w"]
+script = ExtResource("1_4cng7")
+earth = 0
+fire = 0
+water = 0
+wind = 2500
+slots = Array[ExtResource("2_sdmwa")]([SubResource("Resource_7tuya")])
+
+[sub_resource type="Resource" id="Resource_fbove"]
+script = ExtResource("5_ibwmy")
+upgrade_type = 0
+metadata/_custom_type_script = "uid://cdf23gftlnxqd"
+
+[resource]
+script = ExtResource("3_6hmkh")
+logic = SubResource("Resource_fbove")
+unlocks_feature = ""
+name = "Great Conductor 5"
+flavor = ""
+icon = ExtResource("2_jsknq")
+position = Vector2(4736, 3200)
+cost_arr = Array[ExtResource("1_4cng7")]([SubResource("Resource_y0mcs"), SubResource("Resource_6xvhe"), SubResource("Resource_voprd"), SubResource("Resource_8pm0y"), SubResource("Resource_q1dho"), SubResource("Resource_hdx58"), SubResource("Resource_1jhjf"), SubResource("Resource_8idat"), SubResource("Resource_6u008"), SubResource("Resource_xiy5w")])
+effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0])
+max_level = 10
+base_cost = SubResource("Resource_cd3v1")
+base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("4_jsknq")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

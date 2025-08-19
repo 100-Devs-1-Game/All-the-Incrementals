@@ -1,15 +1,19 @@
-[gd_resource type="Resource" script_class="MinigameData" load_steps=5 format=3 uid="uid://cxrnthj4sdjv4"]
+[gd_resource type="Resource" script_class="MinigameData" load_steps=8 format=3 uid="uid://cxrnthj4sdjv4"]
 
 [ext_resource type="PackedScene" uid="uid://s0oqlo6ix0fj" path="res://modules/minigame/wind_rhythm/wind_rhythm.tscn" id="1_pjehh"]
 [ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_uefjm"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="2_fr8qn"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_pjehh"]
+[ext_resource type="Resource" uid="uid://jjvr8pv6bcqe" path="res://modules/minigame/wind_rhythm/data/upgrades/concentration_drain_rate.tres" id="5_5c170"]
+[ext_resource type="Resource" uid="uid://c42c02aco4j28" path="res://modules/minigame/wind_rhythm/data/upgrades/add_lane_1.tres" id="6_vg6sv"]
+[ext_resource type="Resource" uid="uid://kstremr4pbdh" path="res://modules/minigame/wind_rhythm/data/upgrades/combo_multiplier_value.tres" id="7_qby8s"]
 
 [resource]
 script = ExtResource("1_uefjm")
 display_name = "Wind Rhythm"
+how_to_play = ""
 minigame_scene = ExtResource("1_pjehh")
-upgrade_tree_root_nodes = Array[ExtResource("2_pjehh")]([])
+upgrade_tree_root_nodes = Array[ExtResource("2_pjehh")]([ExtResource("5_5c170"), ExtResource("6_vg6sv"), ExtResource("7_qby8s")])
 output_essence = ExtResource("2_fr8qn")
 currency_conversion_factor = 1.0
 high_scores = Array[int]([])

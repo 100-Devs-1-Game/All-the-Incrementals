@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=12 format=3 uid="uid://dfy4u5m0ocf2t"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_jvi1c"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_8sq7s"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_fr6jb"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_4d1ax"]
+[ext_resource type="Texture2D" uid="uid://cmagn5ntsde4p" path="res://assets/minigames/wind_rhythm/upgrade_icons/conductor_perfect.png" id="4_frnwb"]
+[ext_resource type="Script" uid="uid://cdf23gftlnxqd" path="res://modules/minigame/wind_rhythm/data/upgrade_logic.gd" id="5_4d1ax"]
+
+[sub_resource type="Resource" id="Resource_dam1p"]
+script = ExtResource("2_fr6jb")
+essence = ExtResource("3_4d1ax")
+amount = 8500
+
+[sub_resource type="Resource" id="Resource_4hadr"]
+script = ExtResource("1_jvi1c")
+earth = 0
+fire = 0
+water = 0
+wind = 8500
+slots = Array[ExtResource("2_fr6jb")]([SubResource("Resource_dam1p")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_frnwb"]
+script = ExtResource("2_fr6jb")
+essence = ExtResource("3_4d1ax")
+amount = 8000
+
+[sub_resource type="Resource" id="Resource_yqj2p"]
+script = ExtResource("1_jvi1c")
+earth = 0
+fire = 0
+water = 0
+wind = 8000
+slots = Array[ExtResource("2_fr6jb")]([SubResource("Resource_frnwb")])
+
+[sub_resource type="Resource" id="Resource_tlbcv"]
+script = ExtResource("5_4d1ax")
+upgrade_type = 0
+metadata/_custom_type_script = "uid://cdf23gftlnxqd"
+
+[resource]
+script = ExtResource("2_8sq7s")
+logic = SubResource("Resource_tlbcv")
+unlocks_feature = ""
+name = "Perfect Conductor 4"
+flavor = ""
+icon = ExtResource("4_frnwb")
+position = Vector2(4736, 3968)
+cost_arr = Array[ExtResource("1_jvi1c")]([SubResource("Resource_yqj2p")])
+effect_modifier_arr = Array[float]([1.0])
+max_level = 1
+base_cost = SubResource("Resource_4hadr")
+base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1
