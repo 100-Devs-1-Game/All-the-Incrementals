@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=16 format=3 uid="uid://2j7jbyldfln6"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=17 format=3 uid="uid://2j7jbyldfln6"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_g68wh"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_0isxr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="6_63efl"]
 [ext_resource type="Texture2D" uid="uid://bn3j8wl4qyxo0" path="res://assets/minigames/earth_tower_tumble/icons/conjure_friendly_spirit.png" id="7_e8qbq"]
 [ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="8_68ay0"]
+[ext_resource type="Resource" uid="uid://dmh0gpk41ddcl" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/more_friends.tres" id="10_t7oin"]
 
 [sub_resource type="Resource" id="Resource_wm3cm"]
 script = ExtResource("2_0isxr")
@@ -51,7 +52,7 @@ unlocks_feature = ""
 name = "Spectral Aid"
 flavor = ""
 icon = ExtResource("7_e8qbq")
-position = Vector2(1856, 2176)
+position = Vector2(2048, 2240)
 cost_arr = Array[ExtResource("1_g68wh")]([SubResource("Resource_ydh48")])
 effect_modifier_arr = Array[float]([1.0])
 max_level = 0
@@ -62,7 +63,7 @@ base_effect_modifier = 0.0
 effect_modifier_multiplier = 0.0
 unlocked = false
 unlock_level_index = 0
-unlocks = Array[Resource]([])
+unlocks = Array[Resource]([ExtResource("10_t7oin")])
 description_prefix = "Conjure up"
 description_suffix = "friendly spirit to help you."
 description_modifier_format = 1

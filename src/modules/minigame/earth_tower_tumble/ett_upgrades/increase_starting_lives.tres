@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=27 format=3 uid="uid://c71162tn5ys2k"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=26 format=3 uid="uid://c71162tn5ys2k"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_cyajx"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_1au76"]
@@ -9,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="5_480ws"]
 [ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="5_svmmm"]
 [ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="6_1od5v"]
-[ext_resource type="Resource" uid="uid://dkhtkb0uv2uew" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/max_height.tres" id="11_1od5v"]
 
 [sub_resource type="Resource" id="Resource_480ws"]
 script = ExtResource("2_1au76")
@@ -110,7 +109,7 @@ unlocks_feature = ""
 name = "Essence Buffer"
 flavor = ""
 icon = ExtResource("4_vc48v")
-position = Vector2(1856, 896)
+position = Vector2(2048, 640)
 cost_arr = Array[ExtResource("1_cyajx")]([SubResource("Resource_kn723"), SubResource("Resource_1od5v"), SubResource("Resource_xw7f1")])
 effect_modifier_arr = Array[float]([1.0, 2.0, 3.0])
 max_level = 0
@@ -121,7 +120,7 @@ base_effect_modifier = 0.0
 effect_modifier_multiplier = 0.0
 unlocked = false
 unlock_level_index = 0
-unlocks = Array[Resource]([ExtResource("11_1od5v")])
+unlocks = Array[Resource]([])
 description_prefix = "Start with"
 description_suffix = "extra lives."
 description_modifier_format = 1

@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="5_vnrj7"]
 [ext_resource type="Texture2D" uid="uid://dtqdxe8thg7rn" path="res://assets/minigames/earth_tower_tumble/icons/blocks_deal_spirit_dot.png" id="6_hu5my"]
 [ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="7_w641x"]
-[ext_resource type="Resource" uid="uid://c71162tn5ys2k" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/increase_starting_lives.tres" id="9_lvhlo"]
+[ext_resource type="Resource" uid="uid://dkhtkb0uv2uew" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/max_height.tres" id="9_lvhlo"]
 
 [sub_resource type="Resource" id="Resource_llwva"]
 script = ExtResource("2_i6h1v")
