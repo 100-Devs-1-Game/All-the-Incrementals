@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx0pccx6l5bf0"]
+
+[ext_resource type="PackedScene" uid="uid://dcme0wnpc72d8" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_m.gltf" id="1_ttpqr"]
+[ext_resource type="Material" uid="uid://b86sc3v3pdatl" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_m.tres" id="2_cbikm"]
+
+[node name="BreezekilnHouseChimney" type="Node3D"]
+
+[node name="house_02_m" parent="." instance=ExtResource("1_ttpqr")]
+
+[node name="House_02_FantasyAtlas_mat_0_003" parent="house_02_m" index="0"]
+material_override = ExtResource("2_cbikm")
+
+[editable path="house_02_m"]

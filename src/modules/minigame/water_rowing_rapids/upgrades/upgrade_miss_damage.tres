@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://b227et2l3jjh0"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=31 format=3 uid="uid://b227et2l3jjh0"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_2rk6x"]
 [ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="2_70eqt"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_jwrqe"]
 [ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_30yxh"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_jwrqe"]
+[ext_resource type="Texture2D" uid="uid://cp5gmevxlso62" path="res://assets/minigames/water_rowing_rapids/icons/boost_miss_reduction.png" id="4_ooa8f"]
 [ext_resource type="Resource" uid="uid://c3iyqddaxb7ms" path="res://modules/minigame/water_rowing_rapids/upgrades/upgrade_stability_regen.tres" id="6_30yxh"]
 
 [sub_resource type="Resource" id="Resource_jwrqe"]
@@ -161,7 +162,8 @@ script = ExtResource("3_jwrqe")
 logic = SubResource("Resource_30yxh")
 unlocks_feature = ""
 name = "Miss Damage Reduction"
-flavor = "AAAA"
+flavor = "Softer wood for oars and redundant safety measures keep warranties intact."
+icon = ExtResource("4_ooa8f")
 position = Vector2(768, 1088)
 cost_arr = Array[ExtResource("1_2rk6x")]([SubResource("Resource_6f00p"), SubResource("Resource_odppm"), SubResource("Resource_iq828"), SubResource("Resource_hmxyq"), SubResource("Resource_bl36u"), SubResource("Resource_0dftr"), SubResource("Resource_8gygd"), SubResource("Resource_27l3h"), SubResource("Resource_vpnlf"), SubResource("Resource_y5nxs")])
 effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])

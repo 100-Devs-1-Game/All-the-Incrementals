@@ -5,6 +5,10 @@
 [resource]
 content_margin_top = 100.0
 texture = ExtResource("1_433ry")
+texture_margin_left = 108.937
+texture_margin_top = 124.282
+texture_margin_right = 120.255
+texture_margin_bottom = 117.897
 expand_margin_left = 50.0
 expand_margin_top = 50.0
 expand_margin_right = 45.0

@@ -2,8 +2,10 @@ class_name SpiritkeeperCharacterController3D extends CharacterBody3D
 
 const TERMINAL_VELOCITY := 16.0
 
-const IDLE_ANIMATION_NAME := &"imported/idle"
-const WALK_ANIMATION_NAME := &"imported/walk"
+const IDLE_ANIMATION_NAME := &"01_idle"
+const WALK_ANIMATION_NAME := &"02_walk"
+const PLAY_SHAKUHACHI_ANIMATION_NAME := &"03_play_shakuhachi"
+const MAP_ANIMATION_NAME := &"04_open_map"
 
 @export_category("Setup")
 @export var animation_player: AnimationPlayer
@@ -19,6 +21,9 @@ const WALK_ANIMATION_NAME := &"imported/walk"
 @export var is_immobile: bool = false
 
 @export_category("Animation")
+@export var staff: Node3D
+@export var map: Node3D
+@export var shakuhachi: Node3D
 @export var spring_bone_simulators: Array[SpringBoneSimulator3D]
 
 @export_group("Model Lean")
@@ -135,6 +140,10 @@ func _ready() -> void:
 	state_machine.add_state(interact_state, interact_state_enter)
 
 	state_machine.set_initial_state(idle_state)
+
+	# animation
+	map.hide()
+	shakuhachi.hide()
 
 
 func _physics_process(delta: float) -> void:

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://tofxqtl6im0p"]
+
+[ext_resource type="Script" uid="uid://c0ag87q0nmfcr" path="res://modules/minigame/water_rowing_rapids/rock/rock_spawner.gd" id="1_svy0h"]
+
+[node name="RockSpawner" type="Marker2D"]
+script = ExtResource("1_svy0h")
+
+[node name="Rock" parent="." instance_placeholder="res://modules/minigame/water_rowing_rapids/rock/rock_01.tscn"]
