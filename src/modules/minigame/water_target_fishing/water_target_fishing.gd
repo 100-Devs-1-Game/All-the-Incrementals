@@ -70,6 +70,14 @@ func _start() -> void:
 	print("oxygen mult %s" % stats.oxygen_capacity_multiplier)
 	print("oxygen total %s/%s" % [stats.oxygen_remaining(), stats.oxygen_capacity()])
 
+	# setup UI etc before we get paused
+	_process(1.0 / 60.0)
+
+	# wait a second before the game starts
+	get_tree().paused = true
+	await get_tree().create_timer(0.5).timeout
+	get_tree().paused = false
+
 	_started = true
 
 
