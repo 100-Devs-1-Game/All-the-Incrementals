@@ -1,4 +1,8 @@
-extends Node
+extends Node3D
+
+@export var upgrade_tree_scene: PackedScene
+
+var upgrade_tree: UpgradeTree
 
 
 func _ready() -> void:
@@ -22,3 +26,16 @@ func _debug_force_settlement_data() -> void:
 
 func quit_game() -> void:
 	get_tree().quit()
+
+
+func _on_interaction_component_interacted_with(_player: SpiritkeeperCharacterController3D) -> void:
+	upgrade_tree = upgrade_tree_scene.instantiate()
+	upgrade_tree.closed.connect(on_upgrade_tree_closed)
+	add_child(upgrade_tree)
+
+
+func on_upgrade_tree_closed():
+	if not upgrade_tree or not is_instance_valid(upgrade_tree):
+		return
+	upgrade_tree.queue_free()
+	EventBus.stop_player_interaction.emit()

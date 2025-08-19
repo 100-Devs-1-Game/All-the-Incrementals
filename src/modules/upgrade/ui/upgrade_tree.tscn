@@ -1,9 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://dntdim0jjlhy1"]
+[gd_scene load_steps=26 format=3 uid="uid://dntdim0jjlhy1"]
 
 [ext_resource type="Script" uid="uid://drfyahgpyskxs" path="res://modules/upgrade/ui/upgrade_tree.gd" id="1_bc6uk"]
+[ext_resource type="Resource" uid="uid://cpy26wff0l5q5" path="res://modules/overworld/data/shrine_data.tres" id="2_wt0sa"]
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="3_lbln1"]
+[ext_resource type="PackedScene" uid="uid://beur62xrtffs5" path="res://modules/upgrade/ui/ui_minigame_upgrade_template.tscn" id="3_nmd0x"]
 [ext_resource type="Texture2D" uid="uid://dwu02f18und58" path="res://assets/ui/menu_bg.webp" id="4_48wnc"]
 [ext_resource type="FontFile" uid="uid://i7lsotjgd888" path="res://external/fonts/Gloria_Hallelujah/GloriaHallelujah-Regular.ttf" id="4_ele8a"]
+[ext_resource type="PackedScene" uid="uid://clqapgmde8lt" path="res://modules/upgrade/ui/ui_shrine_upgrade_template.tscn" id="4_utix6"]
 [ext_resource type="FontFile" uid="uid://b4sm0lte0jiot" path="res://external/fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="5_vxjcf"]
 [ext_resource type="AudioStream" uid="uid://bt15inw4hcjr" path="res://assets/ui/sfx/sfx_powerup_01.ogg" id="5_yvn7f"]
 [ext_resource type="FontFile" uid="uid://c5nm8jyd20vtl" path="res://external/fonts/Mansalva/Mansalva-Regular.ttf" id="6_bc6uk"]
@@ -72,6 +75,9 @@ alpha_curve = SubResource("CurveTexture_vxjcf")
 [node name="UpgradeTree" type="Node"]
 script = ExtResource("1_bc6uk")
 upgrade_folder_path = "res://modules/minigame/example/upgrades"
+shrine_data = ExtResource("2_wt0sa")
+minigame_upgrade_template = ExtResource("3_nmd0x")
+shrine_upgrade_template = ExtResource("4_utix6")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.832915, 0.781549, 0.73108, 1)

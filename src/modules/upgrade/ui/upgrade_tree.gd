@@ -1,22 +1,42 @@
 class_name UpgradeTree
 extends Node
+
+signal closed
+
 ## The folder with all the upgrades.tres files
 @export_dir var upgrade_folder_path: String
-var ui_upgrade_template = preload("res://modules/upgrade/ui/ui_upgrade_template.tscn")
+
+## hacky way to display overworld upgrades
+@export var shrine_data: MinigameData
+
+@export var minigame_upgrade_template: PackedScene
+@export var shrine_upgrade_template: PackedScene
+
 var upgrades: Array[BaseUpgrade]
 var ui_spacer_scale: float = 0.2
 var current_upgrade: BaseUpgrade
 var essence_type: String
+var minigame: MinigameData
+
 @onready var line_texture: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	assert(shrine_data != null)
+
 	$CanvasLayer/UI/UpgradeInfoContainer.hide()
+
 	if SceneLoader.has_current_minigame():
-		upgrades = SceneLoader.get_current_minigame().get_all_upgrades()
-		essence_type = SceneLoader.get_current_minigame().output_essence.name
-		for upgrade_root_node in SceneLoader.get_current_minigame().upgrade_tree_root_nodes:
+		minigame = SceneLoader.get_current_minigame()
+	else:
+		minigame = shrine_data
+
+	if minigame:
+		upgrades = minigame.get_all_upgrades()
+		if minigame.output_essence:
+			essence_type = minigame.output_essence.name
+		for upgrade_root_node in minigame.upgrade_tree_root_nodes:
 			upgrade_root_node.unlocked = true
 			if upgrade_root_node.get_level_index() >= upgrade_root_node.unlock_level_index:
 				_unlock_children(upgrade_root_node.unlocks)
@@ -86,17 +106,29 @@ func _read_upgrade_files():
 
 
 func _input(event: InputEvent) -> void:
-	if SceneLoader.has_current_minigame() and event.is_action_pressed("exit_menu"):
-		SceneLoader.start_minigame(SceneLoader.get_current_minigame())
+	if event.is_action_pressed("exit_menu"):
+		if SceneLoader.has_current_minigame():
+			SceneLoader.start_minigame(SceneLoader.get_current_minigame())
+		else:
+			closed.emit()
 
 
 func _load_upgrades():
 	for upgrade_data in upgrades:
-		var instance = ui_upgrade_template.instantiate()
+		var template: PackedScene
+		if SceneLoader.has_current_minigame():
+			template = minigame_upgrade_template
+		else:
+			template = shrine_upgrade_template
+
+		var instance = template.instantiate()
 		$Upgrades.add_child(instance)
 		instance.position = upgrade_data.position * Vector2(ui_spacer_scale, ui_spacer_scale)
 		instance.position = Vector2(instance.position.y, -instance.position.x)
 		instance.base_upgrade = upgrade_data
+		if not minigame.output_essence:
+			essence_type = upgrade_data.base_cost.slots[0].essence.name
+
 		instance.init(self, essence_type)
 		instance.reload_base_upgrade_data()
 		#if upgrade_data.icon != null:

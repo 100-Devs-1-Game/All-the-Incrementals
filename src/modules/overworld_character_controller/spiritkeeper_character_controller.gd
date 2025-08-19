@@ -162,8 +162,11 @@ func _physics_process(delta: float) -> void:
 #endregion
 
 
-func interact_with(_obj: Node3D):
+func interact_with(_obj: Node3D) -> bool:
+	if state_machine.current_state_equals(interact_state):
+		return false
 	state_machine.change_state(interact_state)
+	return true
 
 
 func stop_interaction():
