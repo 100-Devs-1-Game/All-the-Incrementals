@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="FireFightersMinigameOilBarrel" load_steps=3 format=3 uid="uid://ch44pnewmrvkb"]
+[gd_resource type="Resource" script_class="FireFightersMinigameOilBarrel" load_steps=4 format=3 uid="uid://ch44pnewmrvkb"]
 
 [ext_resource type="Texture2D" uid="uid://0f3h888gsab7" path="res://assets/minigames/fire_fighters/placeholder_assets/items/oil_barrel.png" id="1_na4hr"]
+[ext_resource type="AudioStream" uid="uid://b1xu0406lvij0" path="res://assets/minigames/fire_fighters/sfx/sfx_barrel_break_01.ogg" id="1_yya0a"]
 [ext_resource type="Script" uid="uid://c4jcftojywdi4" path="res://modules/minigame/fire_fighters/items/fire_fighter_oil_barrel.gd" id="2_iwbbb"]
 
 [resource]
 script = ExtResource("2_iwbbb")
 spill_radius = 4
+break_sound = ExtResource("1_yya0a")
 name = "Oil Barrel"
 type = 1
 icon = ExtResource("1_na4hr")

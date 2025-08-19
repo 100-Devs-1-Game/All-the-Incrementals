@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://1v03jevu1t0e"]
+[gd_scene load_steps=6 format=3 uid="uid://1v03jevu1t0e"]
 
 [ext_resource type="Script" uid="uid://cab80bh8l50p1" path="res://modules/minigame/water_target_fishing/game/entities/player.gd" id="1_qjfmj"]
 [ext_resource type="Texture2D" uid="uid://b4jsvcdktd8vy" path="res://assets/minigames/water_target_fishing/swimmin/000.png" id="2_yq2rv"]
 [ext_resource type="Texture2D" uid="uid://cbi4nbja00f60" path="res://assets/minigames/water_target_fishing/swimmin/001.png" id="3_jwvtb"]
-[ext_resource type="Texture2D" uid="uid://1j2ibafit1xv" path="res://assets/minigames/water_target_fishing/swimmin/002.png" id="4_rpm5g"]
-[ext_resource type="Texture2D" uid="uid://c2jdvl3rykv22" path="res://assets/minigames/water_target_fishing/swimmin/003.png" id="5_q52nl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cqvxu"]
 animations = [{
@@ -14,12 +12,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_jwvtb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_rpm5g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_q52nl")
 }],
 "loop": true,
 "name": &"default",

@@ -9,15 +9,14 @@ signal changed_tile(tile: Vector2i)
 @export var water_speed: float = 200.0
 @export var water_spread: float = 0.1
 @export var tank_size: float = 5.0
-@export var arc_factor: float = 0.1
 @export var hitpoints: int = 3
 
 var move_speed_factor: float = 1.0
 var water_speed_factor: float = 1.0
-var arc_reduction: float = 1.0
 var water_spread_factor: float = 1.0
 var tank_bonus_size: float = 1.0
 var hitpoint_bonus: int
+var can_stomp: bool = false
 
 var _last_dir := Vector2(0, 1)
 var _current_item: FireFightersMinigameItem
@@ -32,16 +31,17 @@ var _hitpoints_left: int
 @onready var oil_dropper: FireFightersMinigameOilDropComponent = $"Oil Dropper"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-# helps to keep the extinguisher shooting diagonally after the player has
-# stopped moving ( releasing both keys will let the player face in the direction
-# of the last release key otherwise - if they aren't released perfectly simultaneous )
-
 @onready var audio_extinguisher: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher"
 @onready
 var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Stop"
 @onready var audio_extinguisher_out: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extinguisher Out"
 @onready var audio_item_pickup: AudioStreamPlayer = $"Audio/AudioStreamPlayer Item Pickup"
 @onready var audio_singe: AudioStreamPlayer = $"Audio/AudioStreamPlayer Singe"
+@onready var audio_boulder: AudioStreamPlayer = $"Audio/AudioStreamPlayer Boulder"
+@onready var audio_ambience: AudioStreamPlayer = $"Audio/AudioStreamPlayer Ambience"
+@onready var audio_stomp: AudioStreamPlayer = $"Audio/AudioStreamPlayer Stomp"
+
+@onready var stomp_cooldown: Timer = $"Stomp Cooldown"
 
 
 func _ready() -> void:
@@ -50,6 +50,8 @@ func _ready() -> void:
 
 func init():
 	_hitpoints_left = hitpoints + hitpoint_bonus
+	if can_stomp:
+		stomp_cooldown.start()
 
 
 func _physics_process(delta: float) -> void:
@@ -67,18 +69,28 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(motion, acceleration * delta * move_speed_factor)
 	move_and_slide()
 
+	var coll := get_last_slide_collision()
+	if move_dir and coll and coll.get_collider() is TileMapLayer:
+		if not audio_boulder.playing:
+			audio_boulder.play()
+
 	if move_dir and not is_diagonal(move_dir):
 		_last_dir = move_dir
 
+	var animation: String
 	match Vector2i(_last_dir):
 		Vector2i.RIGHT:
-			animated_sprite.frame = 0
+			animation = "right"
 		Vector2i.DOWN:
-			animated_sprite.frame = 1
+			animation = "down"
 		Vector2i.LEFT:
-			animated_sprite.frame = 2
+			animation = "left"
 		Vector2i.UP:
-			animated_sprite.frame = 3
+			animation = "up"
+
+	animation = ("walk_" if move_dir else "stand_") + animation
+
+	animated_sprite.play(animation)
 
 	extinguisher.look_at(position + _last_dir)
 	extinguish(is_extinguishing)
@@ -86,6 +98,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("secondary_action"):
 		if has_item():
 			use_item()
+
+	var fire_density: float = game.get_fire_density(get_tile())
+	audio_ambience.volume_linear = lerp(audio_ambience.volume_linear, fire_density, delta * 5)
 
 	_update_tile()
 
@@ -114,7 +129,6 @@ func extinguish(flag: bool):
 		extinguisher_offset.global_position,
 		dir * water_speed * water_speed_factor,
 		velocity,
-		arc_factor * arc_reduction,
 		extinguisher.global_transform.x
 	)
 
@@ -182,3 +196,8 @@ func get_tile() -> Vector2i:
 func _on_damage_update_timeout() -> void:
 	if game.is_tile_burning(_current_tile):
 		_take_damage()
+
+
+func _on_stomp_cooldown_timeout() -> void:
+	if game.stomp(get_tile()):
+		audio_stomp.play()

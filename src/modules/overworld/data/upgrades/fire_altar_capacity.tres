@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=49 format=3 uid="uid://b6sq6i7krb11r"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=50 format=3 uid="uid://b6sq6i7krb11r"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_pjdc3"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_3jtbo"]
 [ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="2_d1he7"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_y6b62"]
 [ext_resource type="Script" uid="uid://rx50mrpj0daj" path="res://modules/overworld/altar/altar_upgrade_logic.gd" id="3_y6b62"]
+[ext_resource type="Texture2D" uid="uid://c7d2udeo7x2ln" path="res://assets/ui/upgrade_tree/shrine/increase_capacity.png" id="4_kukno"]
 
 [sub_resource type="Resource" id="Resource_y6b62"]
 script = ExtResource("2_y6b62")
@@ -292,6 +293,7 @@ logic = SubResource("Resource_kukno")
 unlocks_feature = ""
 name = "Fire Altar Capacity"
 flavor = ""
+icon = ExtResource("4_kukno")
 position = Vector2(-2816, -1088)
 cost_arr = Array[ExtResource("1_pjdc3")]([SubResource("Resource_b7kgf"), SubResource("Resource_60fql"), SubResource("Resource_ikyjw"), SubResource("Resource_682sh"), SubResource("Resource_2eutm"), SubResource("Resource_aimcl"), SubResource("Resource_oyinn"), SubResource("Resource_05ws7"), SubResource("Resource_etai7"), SubResource("Resource_wiiy4"), SubResource("Resource_c1fyy"), SubResource("Resource_kkis6"), SubResource("Resource_ose3y"), SubResource("Resource_p7tq5"), SubResource("Resource_jdgbl"), SubResource("Resource_u178r"), SubResource("Resource_xdgta"), SubResource("Resource_q4l0j"), SubResource("Resource_n7dlt"), SubResource("Resource_mu2nj")])
 effect_modifier_arr = Array[float]([100.0, 200.0, 300.0, 400.0, 500.0, 600.0, 700.0, 800.0, 900.0, 1000.0, 1100.0, 1200.0, 1300.0, 1400.0, 1500.0, 1600.0, 1700.0, 1800.0, 1900.0, 2000.0])
@@ -303,7 +305,7 @@ round_smoothness = 1.0
 base_effect_modifier = 100.0
 effect_modifier_multiplier = 100.0
 unlocked = false
-unlock_level = 0
+unlock_level_index = 0
 unlocks = Array[Resource]([])
 description_prefix = "Capacity"
 description_suffix = ""

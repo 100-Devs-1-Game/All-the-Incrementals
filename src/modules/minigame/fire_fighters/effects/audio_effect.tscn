@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd6r0rm1i2s46"]
+
+[ext_resource type="Script" uid="uid://pcrt54c2md87" path="res://modules/minigame/fire_fighters/effects/audio_effect.gd" id="1_6s6gj"]
+
+[node name="AudioEffect" type="AudioStreamPlayer2D"]
+autoplay = true
+max_distance = 1000.0
+attenuation = 1.41421
+bus = &"SFX"
+script = ExtResource("1_6s6gj")
+
+[connection signal="finished" from="." to="." method="queue_free"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://csnhojcgvgd2l"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=31 format=3 uid="uid://csnhojcgvgd2l"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_swsvy"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_fyd7l"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/map_features/tree.tres" id="4_wwsmb"]
 [ext_resource type="Texture2D" uid="uid://vgkkvkisobl8" path="res://assets/minigames/fire_fighters/icons/more_trees.png" id="4_yq2v4"]
 [ext_resource type="Script" uid="uid://b5o24kn36afg0" path="res://modules/minigame/fire_fighters/upgrades/fire_fighters_map_feature_upgrade_logic.gd" id="5_yq2v4"]
+[ext_resource type="Resource" uid="uid://cxhyrtclfgjie" path="res://modules/minigame/fire_fighters/data/upgrades/oil_barrel_upgrade.tres" id="8_htldv"]
 
 [sub_resource type="Resource" id="Resource_htldv"]
 script = ExtResource("1_swsvy")
@@ -159,7 +160,7 @@ unlocks_feature = ""
 name = "More Trees"
 flavor = ""
 icon = ExtResource("4_yq2v4")
-position = Vector2(320, -832)
+position = Vector2(768, -320)
 cost_arr = Array[ExtResource("1_swsvy")]([SubResource("Resource_yq2v4"), SubResource("Resource_nh1su"), SubResource("Resource_kjri1"), SubResource("Resource_g2wrr"), SubResource("Resource_fp3tt"), SubResource("Resource_l2wfs"), SubResource("Resource_502dj"), SubResource("Resource_ueok7"), SubResource("Resource_f24q6"), SubResource("Resource_8nkld")])
 effect_modifier_arr = Array[float]([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1])
 max_level = 10
@@ -171,8 +172,8 @@ base_effect_modifier = 0.01
 effect_modifier_multiplier = 0.01
 unlocked = false
 unlock_level_index = 0
-unlocks = Array[Resource]([])
-description_prefix = ""
+unlocks = Array[Resource]([ExtResource("8_htldv")])
+description_prefix = "Increase tree spawn chance by"
 description_suffix = ""
 description_modifier_format = 0
 metadata/_tree_editor_version_added = 1

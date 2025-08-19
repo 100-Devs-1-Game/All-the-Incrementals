@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://sd2uku7ud0tb"]
+[gd_scene load_steps=13 format=3 uid="uid://sd2uku7ud0tb"]
 
 [ext_resource type="Script" uid="uid://rgsj1fo1fu2o" path="res://modules/overworld/story/journal_entry_pickup.gd" id="1_r11s8"]
+[ext_resource type="Texture2D" uid="uid://dwu02f18und58" path="res://assets/ui/menu_bg.webp" id="2_0ujin"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_1su54"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ujin"]
@@ -15,12 +16,56 @@ material = SubResource("StandardMaterial3D_0ujin")
 size = Vector2(0.1, 0.1)
 orientation = 2
 
+[sub_resource type="Curve" id="Curve_0ujin"]
+_data = [Vector2(0, 0), 0.0, 3.52727, 0, 0, Vector2(0.726708, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1wusj"]
+curve = SubResource("Curve_0ujin")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gpcwc"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 0.3
+emission_ring_inner_radius = 0.3
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 0, 0)
+spread = 0.0
+angular_velocity_min = 104.0
+angular_velocity_max = 720.0
+orbit_velocity_min = 0.15
+orbit_velocity_max = 0.25
+radial_velocity_min = -0.0500223
+radial_velocity_max = -0.0500223
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -0.150002
+radial_accel_max = -0.100002
+scale_curve = SubResource("CurveTexture_1wusj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jk7kk"]
+specular_mode = 2
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(0.910389, 1, 0.565413, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vrel1"]
+material = SubResource("StandardMaterial3D_jk7kk")
+size = Vector2(0.02, 0.02)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_1su54"]
+
+[sub_resource type="Environment" id="Environment_a74bk"]
+background_mode = 1
+background_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+glow_enabled = true
 
 [node name="JournalEntryPickup" type="Node3D"]
 script = ExtResource("1_r11s8")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+visible = false
 amount = 50
 lifetime = 0.2
 mesh = SubResource("PlaneMesh_1wusj")
@@ -29,6 +74,22 @@ emission_sphere_radius = 1.0
 particle_flag_rotate_y = true
 gravity = Vector3(0, 0, 0)
 angular_velocity_max = 6.35
+
+[node name="HoveringPage" type="Sprite3D" parent="."]
+cast_shadow = 0
+gi_mode = 0
+pixel_size = 0.0007
+billboard = 2
+texture = ExtResource("2_0ujin")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1.6, 0, 0, 0, -6.99382e-08, 1.6, 0, -1.6, -6.99382e-08, 0, 0, 0)
+amount = 36
+explosiveness = 0.19
+local_coords = true
+transform_align = 2
+process_material = SubResource("ParticleProcessMaterial_gpcwc")
+draw_pass_1 = SubResource("QuadMesh_vrel1")
 
 [node name="InteractionComponent3D" type="Area3D" parent="." node_paths=PackedStringArray("object")]
 collision_layer = 0
@@ -40,5 +101,8 @@ metadata/_custom_type_script = "uid://7n4knvm4dle5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]
 shape = SubResource("SphereShape3D_1su54")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a74bk")
 
 [connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]

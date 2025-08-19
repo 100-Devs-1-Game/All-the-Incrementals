@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bcjwk5lq3xa2k"]
+[gd_scene load_steps=20 format=3 uid="uid://bcjwk5lq3xa2k"]
 
 [ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="1_fp6lq"]
 [ext_resource type="Script" uid="uid://bsimtuhg2ndb3" path="res://modules/overworld_locations/shrine/shrine.gd" id="1_pmksg"]
@@ -12,6 +12,10 @@
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="7_ge6fp"]
 [ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="8_ge6fp"]
 [ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="10_ig5i3"]
+[ext_resource type="PackedScene" uid="uid://dntdim0jjlhy1" path="res://modules/upgrade/ui/upgrade_tree.tscn" id="13_cgpr5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mggan"]
+radius = 4.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_tr0ue"]
 size = Vector3(100, 1, 100)
@@ -27,8 +31,19 @@ radius = 3.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ge6fp"]
 
-[node name="Shrine" type="Node"]
+[node name="Shrine" type="Node3D"]
 script = ExtResource("1_pmksg")
+upgrade_tree_scene = ExtResource("13_cgpr5")
+
+[node name="InteractionComponent3D" type="Area3D" parent="." node_paths=PackedStringArray("object")]
+collision_layer = 0
+monitorable = false
+script = ExtResource("2_v8pda")
+object = NodePath("..")
+metadata/_custom_type_script = "uid://7n4knvm4dle5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]
+shape = SubResource("SphereShape3D_mggan")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -52,15 +67,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32481, 1, 0.542374)
 mesh = SubResource("BoxMesh_wuyf8")
 
 [node name="SettlementExit" type="Node3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.3505)
 script = ExtResource("1_fp6lq")
 metadata/_custom_type_script = "uid://cqxo556jptakn"
 
 [node name="InteractionComponent3D" type="Area3D" parent="Content/SettlementExit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 collision_layer = 0
 monitorable = false
 script = ExtResource("2_v8pda")
-auto_interact = null
 metadata/_custom_type_script = "uid://7n4knvm4dle5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/SettlementExit/InteractionComponent3D"]
@@ -84,4 +98,5 @@ title = "Shrine"
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("5_c0ttc")]([ExtResource("6_c0ttc"), ExtResource("7_ge6fp"), ExtResource("8_ge6fp"), ExtResource("10_ig5i3")])
 
+[connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]
 [connection signal="interacted_with" from="Content/SettlementExit/InteractionComponent3D" to="Content/SettlementExit" method="exit_settlement"]
