@@ -96,6 +96,11 @@ func play():
 	_initialize()
 	data.apply_all_upgrades(self)
 	_start()
+
+	if data.music_track:
+		EventBus.request_music.emit(data.music_track, true)
+		EventBus.request_music_volume.emit(0.5)
+
 	if has_countdown:
 		start_countdown()
 
@@ -151,6 +156,8 @@ func open_main_menu():
 
 # Call this function when the game ends to re-open the minigame menu.
 func game_over():
+	EventBus.request_music_volume.emit(1.0)
+
 	Player.add_stack_to_inventory(
 		EssenceStack.new(data.output_essence, int(_score * data.currency_conversion_factor))
 	)

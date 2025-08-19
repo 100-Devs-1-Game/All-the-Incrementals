@@ -19,7 +19,9 @@ signal ui_upgrade_bought(upgrade: BaseUpgrade)
 #endregion
 
 #region Audio
-signal request_music(song: AudioStream)
+signal request_music(song: AudioStream, loop: bool)
+# volume: 0.0 - 1.0
+signal request_music_volume(volume: float)
 #endregion
 
 #region Player

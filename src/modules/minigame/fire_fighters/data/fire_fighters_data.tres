@@ -11,6 +11,7 @@
 script = ExtResource("1_568i5")
 display_name = "Kindling Grounds"
 how_to_play = ""
+music_track = "fire_minigame"
 minigame_scene = ExtResource("1_wo48d")
 upgrade_tree_root_nodes = Array[ExtResource("2_wo48d")]([ExtResource("4_1lvnb"), ExtResource("7_3s2tf")])
 output_essence = ExtResource("2_ga2fn")

@@ -9,6 +9,7 @@
 script = ExtResource("1_4qrl4")
 display_name = "Example Minigame"
 how_to_play = ""
+music_track = ""
 minigame_scene = ExtResource("1_pups6")
 upgrade_tree_root_nodes = Array[ExtResource("2_pups6")]([ExtResource("5_i5wny")])
 currency_conversion_factor = 0.0

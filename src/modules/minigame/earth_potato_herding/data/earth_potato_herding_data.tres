@@ -12,6 +12,7 @@
 script = ExtResource("1_hhm2j")
 display_name = "Potato Herding"
 how_to_play = ""
+music_track = ""
 minigame_scene = ExtResource("1_vneja")
 upgrade_tree_root_nodes = Array[ExtResource("2_kp5bk")]([ExtResource("5_5ky2n"), ExtResource("7_5ky2n"), ExtResource("7_ngahi")])
 output_essence = ExtResource("2_5ky2n")
