@@ -53,6 +53,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func do_interact():
-	player.interact_with(object)
+	if not player.interact_with(object):
+		return
 	interacted_with.emit(player)
 	get_viewport().set_input_as_handled()
