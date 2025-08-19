@@ -37,7 +37,6 @@
 [ext_resource type="AudioStream" uid="uid://dd7dg0oe2l3hd" path="res://assets/minigames/fire_fighters/sfx/sfx_fire_stomp__v1_01.ogg" id="34_a33gg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvvr"]
-radius = 20.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0cb5"]
 animations = [{
