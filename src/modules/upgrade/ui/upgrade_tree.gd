@@ -1,5 +1,8 @@
 class_name UpgradeTree
 extends Node
+
+signal closed
+
 ## The folder with all the upgrades.tres files
 @export_dir var upgrade_folder_path: String
 
@@ -103,8 +106,11 @@ func _read_upgrade_files():
 
 
 func _input(event: InputEvent) -> void:
-	if SceneLoader.has_current_minigame() and event.is_action_pressed("exit_menu"):
-		SceneLoader.start_minigame(SceneLoader.get_current_minigame())
+	if event.is_action_pressed("exit_menu"):
+		if SceneLoader.has_current_minigame():
+			SceneLoader.start_minigame(SceneLoader.get_current_minigame())
+		else:
+			closed.emit()
 
 
 func _load_upgrades():
