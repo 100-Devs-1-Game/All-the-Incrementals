@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bcjwk5lq3xa2k"]
+[gd_scene load_steps=21 format=3 uid="uid://bcjwk5lq3xa2k"]
 
 [ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="1_fp6lq"]
 [ext_resource type="Script" uid="uid://bsimtuhg2ndb3" path="res://modules/overworld_locations/shrine/shrine.gd" id="1_pmksg"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="7_ge6fp"]
 [ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="8_ge6fp"]
 [ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="10_ig5i3"]
+[ext_resource type="PackedScene" uid="uid://dntdim0jjlhy1" path="res://modules/upgrade/ui/upgrade_tree.tscn" id="13_cgpr5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mggan"]
 radius = 4.0
@@ -29,6 +30,9 @@ size = Vector3(1.735, 1, 2.83)
 radius = 3.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ge6fp"]
+
+[sub_resource type="Resource" id="Resource_7mojr"]
+metadata/__load_path__ = "res://modules/upgrade/ui/ui_upgrade_template.tscn"
 
 [node name="Shrine" type="Node3D"]
 script = ExtResource("1_pmksg")
@@ -95,6 +99,9 @@ data = ExtResource("6_cgpr5")
 title = "Shrine"
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("5_c0ttc")]([ExtResource("6_c0ttc"), ExtResource("7_ge6fp"), ExtResource("8_ge6fp"), ExtResource("10_ig5i3")])
+
+[node name="UpgradeTree" parent="." instance=ExtResource("13_cgpr5")]
+minigame_upgrade_template = SubResource("Resource_7mojr")
 
 [connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]
 [connection signal="interacted_with" from="Content/SettlementExit/InteractionComponent3D" to="Content/SettlementExit" method="exit_settlement"]
