@@ -377,6 +377,10 @@ func get_fire_density(tile: Vector2i) -> float:
 
 
 func _get_fire_chunk(tile: Vector2i) -> float:
+	tile = Vector2i(
+		clampi(tile.x, map_rect.position.x, map_rect.position.x + map_rect.size.x),
+		clampi(tile.y, map_rect.position.y, map_rect.position.y + map_rect.size.y)
+	)
 	return _fire_chunks[_get_fire_chunk_coords(tile)]
 
 
