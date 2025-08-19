@@ -18,7 +18,10 @@ func _init() -> void:
 func _ready() -> void:
 	_music_player.stream = stream
 	_music_player.set_bus("Music")
+	_music_player.finished.connect(EventBus.music_stopped_playing.emit)
+
 	EventBus.request_music.connect(_on_music_request_event)
+	EventBus.request_music_volume.connect(_on_music_volume_request_event)
 	_music_player.play()
 
 
@@ -34,3 +37,8 @@ func _on_music_request_event(song: StringName) -> void:
 	if song == stream.get_clip_name(playback.get_current_clip_index()):
 		return
 	playback.switch_to_clip_by_name(song)
+
+
+func _on_music_volume_request_event(volume: float):
+	# TODO tween?
+	_music_player.volume_linear = volume
