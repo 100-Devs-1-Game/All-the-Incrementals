@@ -177,22 +177,18 @@ theme_override_constants/separation = 60
 
 [node name="Start" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 44
 text = "Start / Continue"
 
 [node name="Settings" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 44
 text = "Settings & Controls"
 
 [node name="Extras" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 44
 text = "Extras"
 
 [node name="QuitGame" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 44
 text = "Quit Game"
 
 [node name="Title" type="Label" parent="."]

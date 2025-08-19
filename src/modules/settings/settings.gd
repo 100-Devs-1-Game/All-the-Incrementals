@@ -64,6 +64,7 @@ func setup() -> void:
 		$CoverBG.queue_free()
 	connect_signals()
 	update_ui()
+	$Background.play()
 
 
 func connect_signals() -> void:

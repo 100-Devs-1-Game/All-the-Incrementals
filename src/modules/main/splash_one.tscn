@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ctqwwvmxwjwu0"]
+[gd_scene load_steps=2 format=3 uid="uid://ctqwwvmxwjwu0"]
+
+[ext_resource type="FontFile" uid="uid://c5nm8jyd20vtl" path="res://external/fonts/Mansalva/Mansalva-Regular.ttf" id="1_n5c0n"]
 
 [node name="SplashOne" type="Node2D"]
 
@@ -15,5 +17,10 @@ offset_right = 1124.5
 offset_bottom = 565.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "made in Godot 4"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("1_n5c0n")
+theme_override_font_sizes/font_size = 71
+text = "Made in Godot 4"
 horizontal_alignment = 1

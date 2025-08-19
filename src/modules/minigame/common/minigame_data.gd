@@ -4,6 +4,9 @@ extends Resource
 # Minigame name in-game
 @export var display_name: String
 
+# Short description how to play this game
+@export_multiline var how_to_play: String
+
 # the game scene of this Minigame
 @export var minigame_scene: PackedScene
 

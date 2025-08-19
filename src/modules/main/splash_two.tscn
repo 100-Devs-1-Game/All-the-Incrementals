@@ -1,6 +1,143 @@
-[gd_scene format=3 uid="uid://dir0krer4m444"]
+[gd_scene load_steps=34 format=3 uid="uid://dir0krer4m444"]
+
+[ext_resource type="Texture2D" uid="uid://kv7xoyh4l0cp" path="res://assets/ui/background_frames/000.png" id="1_3mliu"]
+[ext_resource type="FontFile" uid="uid://c5nm8jyd20vtl" path="res://external/fonts/Mansalva/Mansalva-Regular.ttf" id="1_grh71"]
+[ext_resource type="Script" uid="uid://duiwhf8phrwv0" path="res://modules/main/splash_two.gd" id="1_ma8kx"]
+[ext_resource type="Texture2D" uid="uid://bjcp6omel0vm6" path="res://assets/ui/background_frames/001.png" id="2_ma8kx"]
+[ext_resource type="Texture2D" uid="uid://b266s3dvkiwyx" path="res://assets/ui/background_frames/002.png" id="3_do2e3"]
+[ext_resource type="Texture2D" uid="uid://cnwo5h07rb5kn" path="res://assets/ui/background_frames/003.png" id="4_4xrxn"]
+[ext_resource type="Texture2D" uid="uid://by1ruwtj5hx2b" path="res://assets/ui/background_frames/004.png" id="5_fh5fh"]
+[ext_resource type="Texture2D" uid="uid://cbw16ohxqody1" path="res://assets/ui/background_frames/005.png" id="6_74g5q"]
+[ext_resource type="Texture2D" uid="uid://lw7b03gvxpsp" path="res://assets/ui/background_frames/006.png" id="7_p6r7h"]
+[ext_resource type="Texture2D" uid="uid://c0kaiaxpu0iws" path="res://assets/ui/background_frames/007.png" id="8_pl1k7"]
+[ext_resource type="Texture2D" uid="uid://6kti7ixfin1d" path="res://assets/ui/background_frames/008.png" id="9_y2n4y"]
+[ext_resource type="Texture2D" uid="uid://moq6dfco61rx" path="res://assets/ui/background_frames/009.png" id="10_h82x6"]
+[ext_resource type="Texture2D" uid="uid://bwhj307kr2by5" path="res://assets/ui/background_frames/010.png" id="11_nkaam"]
+[ext_resource type="Texture2D" uid="uid://c8qgmiletchm8" path="res://assets/ui/background_frames/011.png" id="12_t4mxg"]
+[ext_resource type="Texture2D" uid="uid://b7yyfekyrdecw" path="res://assets/ui/background_frames/012.png" id="13_880lt"]
+[ext_resource type="Texture2D" uid="uid://dgwtus7x6w4eh" path="res://assets/ui/background_frames/013.png" id="14_kxhtm"]
+[ext_resource type="Texture2D" uid="uid://cs4usd5f1vrh8" path="res://assets/ui/background_frames/014.png" id="15_71n4a"]
+[ext_resource type="Texture2D" uid="uid://cmncq4tqvp4yt" path="res://assets/ui/background_frames/015.png" id="16_ru5up"]
+[ext_resource type="Texture2D" uid="uid://c0jijnuai44fs" path="res://assets/ui/background_frames/016.png" id="17_b32vi"]
+[ext_resource type="Texture2D" uid="uid://d2bxamesyf1dn" path="res://assets/ui/background_frames/017.png" id="18_u2wxt"]
+[ext_resource type="Texture2D" uid="uid://b5nlappkp7jnd" path="res://assets/ui/background_frames/018.png" id="19_dfdmf"]
+[ext_resource type="Texture2D" uid="uid://drj74n5h4wxi8" path="res://assets/ui/background_frames/019.png" id="20_kkh3l"]
+[ext_resource type="Texture2D" uid="uid://b01rjj4ghnn77" path="res://assets/ui/background_frames/020.png" id="21_ykgmb"]
+[ext_resource type="Texture2D" uid="uid://c6wkgnfv3gwjp" path="res://assets/ui/background_frames/021.png" id="22_itisk"]
+[ext_resource type="Texture2D" uid="uid://dl0kxfpik6u4m" path="res://assets/ui/background_frames/022.png" id="23_hqieg"]
+[ext_resource type="Texture2D" uid="uid://ci64rgn7umonw" path="res://assets/ui/background_frames/023.png" id="24_6tfy3"]
+[ext_resource type="Texture2D" uid="uid://rhuan4bvpqri" path="res://assets/ui/background_frames/024.png" id="25_7ygx0"]
+[ext_resource type="Texture2D" uid="uid://c8hvatskh0hss" path="res://assets/ui/background_frames/025.png" id="26_locsd"]
+[ext_resource type="Texture2D" uid="uid://cej1xtnjc47a5" path="res://assets/ui/background_frames/026.png" id="27_1vo06"]
+[ext_resource type="Texture2D" uid="uid://clg3cv3w3l6uc" path="res://assets/ui/background_frames/027.png" id="28_dmjdm"]
+[ext_resource type="Texture2D" uid="uid://cm1y8vuom05l6" path="res://assets/ui/background_frames/028.png" id="29_crx0a"]
+[ext_resource type="Texture2D" uid="uid://ceil4nllfskfj" path="res://assets/ui/background_frames/029.png" id="30_b4bba"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkwxc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3mliu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ma8kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_do2e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4xrxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fh5fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_74g5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p6r7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pl1k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_y2n4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h82x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nkaam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t4mxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_880lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kxhtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_71n4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ru5up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_b32vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u2wxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dfdmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_kkh3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ykgmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_itisk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hqieg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6tfy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7ygx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_locsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1vo06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_dmjdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_crx0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_b4bba")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="SplashTwo" type="Node2D"]
+script = ExtResource("1_ma8kx")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_bkwxc")
+centered = false
 
 [node name="Title" type="Label" parent="."]
 unique_name_in_owner = true
@@ -15,5 +152,10 @@ offset_right = 1224.0
 offset_bottom = 565.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "a 100 Devs 1 Game production"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("1_grh71")
+theme_override_font_sizes/font_size = 71
+text = "A 100 Devs 1 Game production"
 horizontal_alignment = 1
