@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("1_uefjm")
 display_name = "Wind Rhythm"
+how_to_play = ""
 minigame_scene = ExtResource("1_pjehh")
 upgrade_tree_root_nodes = Array[ExtResource("2_pjehh")]([])
 output_essence = ExtResource("2_fr8qn")
