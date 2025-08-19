@@ -44,7 +44,7 @@ func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
 					% (_upgrade.get_current_effect_modifier() * 8)
 				)
 			)
-			stats.spawn_fish_every_x_pixels -= _upgrade.get_current_effect_modifier() * 8
+			stats.spawn_fish_every_x_pixels -= _upgrade.get_current_effect_modifier() * 4
 			print(stats.spawn_fish_every_x_pixels)
 		UpgradeType.INCREASE_OXYGEN_MULT:
 			print(
