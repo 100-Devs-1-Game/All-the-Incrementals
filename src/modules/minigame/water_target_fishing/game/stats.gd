@@ -24,7 +24,7 @@ var oxygen_capacity_seconds: float = 3
 var oxygen_capacity_multiplier: float = 1
 var oxygen_capacity_flat: float = 0
 
-var spawn_fish_every_x_pixels: float = 300
+var spawn_fish_every_x_pixels: float = 1200
 var spawn_x_starting_fish: float = 3
 var fish_movespeed_multiplier: float = 1
 var fish_movespeed_flat: float = 0

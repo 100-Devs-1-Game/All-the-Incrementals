@@ -158,10 +158,9 @@ func _spawn_fish() -> void:
 	if WTFGlobals.camera.get_bottom() <= WTFConstants.SEALEVEL:
 		return
 
-	if $%Entities.get_child_count() > 200:
+	if $%Entities.get_child_count() > 100:
 		return
 
-	var rand_offset_x := randf_range(1, 4) * -stats.scrollspeed.x
 	var min_spawn_y := WTFGlobals.camera.get_top() - 320
 	var max_spawn_y := WTFGlobals.camera.get_bottom() - 320
 
@@ -179,7 +178,7 @@ func _spawn_fish() -> void:
 	if _first_spawn:
 		f.position.x = -stats.scrollspeed.x + randf_range(0, WTFGlobals.camera.get_right() * 2)
 	else:
-		f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + rand_offset_x)
+		f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + 512)
 
 	# somewhere within the valid range and also close to the camera
 	var height_range := f.data.spawn.get_spawn_height_range()
