@@ -23,6 +23,6 @@ func _apply_effect(_game: BaseMinigame, upgrade: MinigameUpgrade):
 
 	match type:
 		Type.CAPACITY:
-			altar.capacity = upgrade.get_current_effect_modifier()
+			altar.capacity = int(upgrade.get_current_effect_modifier())
 		Type.THROUGHPUT:
-			altar.throughput = upgrade.get_current_effect_modifier()
+			altar.throughput = int(upgrade.get_current_effect_modifier())

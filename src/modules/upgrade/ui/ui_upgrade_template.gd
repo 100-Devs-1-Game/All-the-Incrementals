@@ -1,4 +1,8 @@
 extends Node2D
+
+@export_dir var folder: String
+@export var file_type: String
+
 var base_upgrade: BaseUpgrade
 var upgrade_tree: UpgradeTree
 var level_text: String
@@ -11,17 +15,17 @@ func init(upgradetree: UpgradeTree, essence_type: String):
 	upgrade_tree = upgradetree
 	match essence_type:
 		"Wind":
-			$Background.texture = load("res://assets/ui/upgrade_tree/wind_off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/wind_on.webp")
+			$Background.texture = load(folder + "/wind_off." + file_type)
+			$BackgroundActive.texture = load(folder + "/wind_on." + file_type)
 		"Fire":
-			$Background.texture = load("res://assets/ui/upgrade_tree/fire_off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/fire_on.webp")
+			$Background.texture = load(folder + "/fire_off." + file_type)
+			$BackgroundActive.texture = load(folder + "/fire_on." + file_type)
 		"Water":
-			$Background.texture = load("res://assets/ui/upgrade_tree/water_off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/water_on.webp")
+			$Background.texture = load(folder + "/water_off." + file_type)
+			$BackgroundActive.texture = load(folder + "/water_on." + file_type)
 		"Earth":
-			$Background.texture = load("res://assets/ui/upgrade_tree/earth_off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/earth_on.webp")
+			$Background.texture = load(folder + "/earth_off." + file_type)
+			$BackgroundActive.texture = load(folder + "/earth_on." + file_type)
 
 
 func reload_base_upgrade_data(_upgrade = null) -> void:
