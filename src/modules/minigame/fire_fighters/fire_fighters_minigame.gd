@@ -196,7 +196,7 @@ func _try_to_spread_fire(tile: Vector2i):
 	var neighbor_feature: FireFightersMinigameMapFeature = get_map_feature(tile + dir)
 	if neighbor_feature:
 		if RngUtils.chancef(neighbor_feature.flammability):
-			if not RngUtils.chance100(tile_map_water.get_cell_source_id(tile)):
+			if tile_map_water.get_cell_source_id(tile) < 1:
 				_add_fire(neighbor_pos)
 
 
@@ -211,19 +211,14 @@ func _tick_water():
 			var final_water: float = min(max_water, fire.size + epsilon)
 			fire.size -= final_water
 			water.density -= final_water
-		else:
-			if has_map_feature(tile):
-				_soak_tile(tile)
 
-	for tile in tile_map_water.get_used_cells():
-		if RngUtils.chance100(10):
-			tile_map_water.set_cell(tile, tile_map_water.get_cell_source_id(tile) - 1)
+		if has_map_feature(tile):
+			_soak_tile(tile)
 
 
 func _soak_tile(tile: Vector2i):
-	var water_level: int = tile_map_water.get_cell_source_id(tile)
-	if not RngUtils.chance100(water_level):
-		tile_map_water.set_cell(tile, water_level + 1, Vector2.ZERO)
+	tile_map_water.set_cell(tile, 1, Vector2.ZERO)
+	_remove_oil(tile)
 
 
 func add_oil(tile: Vector2i, counter: int = -1):

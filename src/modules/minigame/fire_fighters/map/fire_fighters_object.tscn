@@ -29,5 +29,6 @@ shape = SubResource("CircleShape2D_skffk")
 stream = ExtResource("2_57jpt")
 max_distance = 1000.0
 attenuation = 1.93187
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
