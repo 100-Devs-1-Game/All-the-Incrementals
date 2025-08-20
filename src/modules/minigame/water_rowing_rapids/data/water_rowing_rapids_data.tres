@@ -12,7 +12,7 @@
 script = ExtResource("2_nvcen")
 display_name = "Rowing Rapids"
 how_to_play = "Move down the river and collect lost spirits!
-Use primary action to boost when the marker is within the green area. If you miss, you'll take damage!
+Press {primary_action} to boost when the marker is within the green area. If you miss, you'll take damage!
 Collecting spirits will grant you points."
 music_track = "rowing_rapids"
 minigame_scene = ExtResource("1_echju")
