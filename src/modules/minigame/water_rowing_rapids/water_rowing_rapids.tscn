@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cccmrn0cfcn0s"]
+[gd_scene load_steps=20 format=3 uid="uid://cccmrn0cfcn0s"]
 
 [ext_resource type="Script" uid="uid://doaidalrwr1d7" path="res://modules/minigame/water_rowing_rapids/water_rowing_rapids.gd" id="1_tk8vt"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_i806a"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="4_yl50k"]
 [ext_resource type="PackedScene" uid="uid://mhrfxqqthuy7" path="res://modules/minigame/water_rowing_rapids/player/rowing_player.tscn" id="5_f4xkx"]
 [ext_resource type="Texture2D" uid="uid://dep4t2fllpiro" path="res://assets/minigames/water_rowing_rapids/foam.webp" id="6_0gm1p"]
+[ext_resource type="Shader" uid="uid://boai20mfctx0e" path="res://modules/minigame/water_rowing_rapids/bank.gdshader" id="6_bxvkd"]
 [ext_resource type="PackedScene" uid="uid://b8jmv0yqj5qvh" path="res://modules/minigame/water_rowing_rapids/void/void.tscn" id="8_yl50k"]
 [ext_resource type="Script" uid="uid://ccisrw8w88dql" path="res://modules/minigame/water_rowing_rapids/soul_spawning.gd" id="12_l3r46"]
 
@@ -31,6 +32,14 @@ shader_parameter/flow_speed_scale = 20.0
 shader_parameter/flow_strength = 0.25
 
 [sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_a50qn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1s85a"]
+shader = ExtResource("6_bxvkd")
+shader_parameter/vertical_amplitude = 0.2
+shader_parameter/horizontal_amplitude = 0.013
+shader_parameter/time_scale = 3.0
+shader_parameter/horizontal_time_scale = 1.7
+shader_parameter/horizontal_offset = 6.0
 
 [sub_resource type="Environment" id="Environment_a50qn"]
 background_mode = 3
@@ -64,9 +73,10 @@ shape = SubResource("ConcavePolygonShape2D_a50qn")
 
 [node name="Bank" type="Line2D" parent="River"]
 texture_repeat = 2
+material = SubResource("ShaderMaterial_1s85a")
 points = PackedVector2Array(-6318, 11, -4406, -351, -2805, 22, -2737, 2042, -3503, 2266, -4961, 2412, -6341, 2016, -6613, 948)
 closed = true
-width = 32.0
+width = 48.0
 default_color = Color(0.93845, 0.93845, 0.93845, 1)
 texture = ExtResource("6_0gm1p")
 texture_mode = 1
