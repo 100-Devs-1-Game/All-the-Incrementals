@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=31 format=3 uid="uid://b227et2l3jjh0"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=25 format=3 uid="uid://b227et2l3jjh0"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_2rk6x"]
 [ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="2_70eqt"]
@@ -113,45 +113,6 @@ water = 0
 wind = 0
 slots = Array[ExtResource("2_jwrqe")]([SubResource("Resource_rmtya")])
 
-[sub_resource type="Resource" id="Resource_dqn1t"]
-script = ExtResource("2_jwrqe")
-essence = ExtResource("3_30yxh")
-amount = 15
-
-[sub_resource type="Resource" id="Resource_27l3h"]
-script = ExtResource("1_2rk6x")
-earth = 15
-fire = 0
-water = 0
-wind = 0
-slots = Array[ExtResource("2_jwrqe")]([SubResource("Resource_dqn1t")])
-
-[sub_resource type="Resource" id="Resource_civ2r"]
-script = ExtResource("2_jwrqe")
-essence = ExtResource("3_30yxh")
-amount = 20
-
-[sub_resource type="Resource" id="Resource_vpnlf"]
-script = ExtResource("1_2rk6x")
-earth = 20
-fire = 0
-water = 0
-wind = 0
-slots = Array[ExtResource("2_jwrqe")]([SubResource("Resource_civ2r")])
-
-[sub_resource type="Resource" id="Resource_7oq6m"]
-script = ExtResource("2_jwrqe")
-essence = ExtResource("3_30yxh")
-amount = 30
-
-[sub_resource type="Resource" id="Resource_y5nxs"]
-script = ExtResource("1_2rk6x")
-earth = 30
-fire = 0
-water = 0
-wind = 0
-slots = Array[ExtResource("2_jwrqe")]([SubResource("Resource_7oq6m")])
-
 [sub_resource type="Resource" id="Resource_30yxh"]
 script = ExtResource("2_70eqt")
 type = 13
@@ -165,9 +126,9 @@ name = "Miss Damage Reduction"
 flavor = "Softer wood for oars and redundant safety measures keep warranties intact."
 icon = ExtResource("4_ooa8f")
 position = Vector2(768, 1088)
-cost_arr = Array[ExtResource("1_2rk6x")]([SubResource("Resource_6f00p"), SubResource("Resource_odppm"), SubResource("Resource_iq828"), SubResource("Resource_hmxyq"), SubResource("Resource_bl36u"), SubResource("Resource_0dftr"), SubResource("Resource_8gygd"), SubResource("Resource_27l3h"), SubResource("Resource_vpnlf"), SubResource("Resource_y5nxs")])
-effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
-max_level = 10
+cost_arr = Array[ExtResource("1_2rk6x")]([SubResource("Resource_6f00p"), SubResource("Resource_odppm"), SubResource("Resource_iq828"), SubResource("Resource_hmxyq"), SubResource("Resource_bl36u"), SubResource("Resource_0dftr"), SubResource("Resource_8gygd")])
+effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7])
+max_level = 7
 base_cost = SubResource("Resource_kt53a")
 base_cost_multiplier = 1.3
 exponential_cost = true

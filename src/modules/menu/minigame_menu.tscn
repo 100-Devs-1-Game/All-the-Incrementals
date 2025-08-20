@@ -22,12 +22,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -214.0
-offset_right = 200.0
-offset_bottom = 286.0
+offset_left = -225.0
+offset_top = -250.0
+offset_right = 225.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Help" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 408.0
+offset_top = 434.0
+offset_right = 472.0
+offset_bottom = 503.0
+text = "?"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -89,6 +97,7 @@ theme_override_font_sizes/font_size = 71
 text = "Minigame Title"
 horizontal_alignment = 1
 
+[connection signal="pressed" from="Panel/Help" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Upgrades" to="." method="_on_upgrades_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Highscores" to="." method="_on_highscores_pressed"]

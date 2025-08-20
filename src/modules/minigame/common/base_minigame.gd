@@ -4,6 +4,8 @@
 class_name BaseMinigame
 extends Node
 
+signal playing
+
 ## If this is enabled override `_get_countdown_duration()`
 @export var has_countdown: bool = false
 
@@ -96,6 +98,8 @@ func play():
 	_initialize()
 	data.apply_all_upgrades(self)
 	_start()
+
+	playing.emit()
 
 	if data.music_track:
 		EventBus.request_music.emit(data.music_track, true)

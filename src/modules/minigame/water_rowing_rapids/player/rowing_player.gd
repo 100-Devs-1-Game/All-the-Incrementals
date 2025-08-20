@@ -73,7 +73,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	boat_stability += stability_regen * delta
+	boat_stability = minf(boat_stability + stability_regen * delta, boat_max_stability)
 	var forward_intent := Input.get_axis(&"down", &"up")
 	keeper_sprite.forward_intent = forward_intent
 	linear_velocity += transform.x * forward_intent * speed * linear_damp * delta
