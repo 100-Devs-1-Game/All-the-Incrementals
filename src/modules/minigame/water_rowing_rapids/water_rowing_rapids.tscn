@@ -43,7 +43,7 @@ adjustment_contrast = 1.14
 
 [node name="EarthRowingRapids" type="Node"]
 script = ExtResource("1_tk8vt")
-data_uid = "uid://c7vragnlq8udw"
+data_uid = "uid://c8wvg65eqyoco"
 
 [node name="River" type="Path2D" parent="."]
 curve = SubResource("Curve2D_a50qn")
@@ -303,11 +303,11 @@ sample_size = Vector2(1000, 1000)
 [node name="DebugMinigameUpgrades" parent="MinigameSharedComponents" index="0"]
 visible = false
 
-[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
 visible = false
 custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
 
-[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
 visible = false
 enable_score_display = true
 
