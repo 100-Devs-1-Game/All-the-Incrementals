@@ -11,9 +11,9 @@ extends Resource
 
 
 func tick():
-	var amount: int
+	var amount: int = 0
 	for minigame in minigames:
-		amount += _calc_generated_amount(minigame)
+		amount += calc_generated_amount(minigame)
 
 	var inventory_amount: int = min(amount, throughput)
 	var inventory: EssenceInventory = SaveGameManager.world_state.player_state.inventory
@@ -26,10 +26,12 @@ func tick():
 		stored_essence = min(stored_essence + amount, capacity)
 
 
-func _calc_generated_amount(minigame: MinigameData) -> int:
-	return (
-		SaveGameManager.world_state.player_state.get_average_minigame_highscore(minigame)
-		* minigame.currency_conversion_factor
+func calc_generated_amount(minigame: MinigameData) -> int:
+	return int(
+		(
+			SaveGameManager.world_state.player_state.get_average_minigame_highscore(minigame)
+			* minigame.currency_conversion_factor
+		)
 	)
 
 
