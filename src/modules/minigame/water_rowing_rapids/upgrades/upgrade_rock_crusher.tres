@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=42 format=3 uid="uid://be6erugis2w80"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=33 format=3 uid="uid://be6erugis2w80"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_xhbhu"]
 [ext_resource type="Script" uid="uid://cpbg43rac3mxr" path="res://modules/minigame/water_rowing_rapids/upgrade_logic/upgrade_logic.gd" id="2_mqo6r"]
@@ -153,60 +153,6 @@ water = 0
 wind = 0
 slots = Array[ExtResource("2_qe6a3")]([SubResource("Resource_hduow"), SubResource("Resource_h6k0e")])
 
-[sub_resource type="Resource" id="Resource_ofc04"]
-script = ExtResource("2_qe6a3")
-essence = ExtResource("3_xjcn8")
-amount = 80
-
-[sub_resource type="Resource" id="Resource_vm6d5"]
-script = ExtResource("2_qe6a3")
-essence = ExtResource("4_o5yrc")
-amount = 80
-
-[sub_resource type="Resource" id="Resource_dglmi"]
-script = ExtResource("1_xhbhu")
-earth = 80
-fire = 80
-water = 0
-wind = 0
-slots = Array[ExtResource("2_qe6a3")]([SubResource("Resource_ofc04"), SubResource("Resource_vm6d5")])
-
-[sub_resource type="Resource" id="Resource_wt1ge"]
-script = ExtResource("2_qe6a3")
-essence = ExtResource("3_xjcn8")
-amount = 100
-
-[sub_resource type="Resource" id="Resource_8limb"]
-script = ExtResource("2_qe6a3")
-essence = ExtResource("4_o5yrc")
-amount = 100
-
-[sub_resource type="Resource" id="Resource_tmxrj"]
-script = ExtResource("1_xhbhu")
-earth = 100
-fire = 100
-water = 0
-wind = 0
-slots = Array[ExtResource("2_qe6a3")]([SubResource("Resource_wt1ge"), SubResource("Resource_8limb")])
-
-[sub_resource type="Resource" id="Resource_x5s7a"]
-script = ExtResource("2_qe6a3")
-essence = ExtResource("3_xjcn8")
-amount = 150
-
-[sub_resource type="Resource" id="Resource_jvm3c"]
-script = ExtResource("2_qe6a3")
-essence = ExtResource("4_o5yrc")
-amount = 150
-
-[sub_resource type="Resource" id="Resource_gpuqf"]
-script = ExtResource("1_xhbhu")
-earth = 150
-fire = 150
-water = 0
-wind = 0
-slots = Array[ExtResource("2_qe6a3")]([SubResource("Resource_x5s7a"), SubResource("Resource_jvm3c")])
-
 [sub_resource type="Resource" id="Resource_ixttb"]
 script = ExtResource("2_mqo6r")
 type = 16
@@ -220,9 +166,9 @@ name = "Rock Crusher"
 flavor = "They're getting in the way. Reinforce Everything."
 icon = ExtResource("5_2vq3d")
 position = Vector2(2432, 1088)
-cost_arr = Array[ExtResource("1_xhbhu")]([SubResource("Resource_o5yrc"), SubResource("Resource_logai"), SubResource("Resource_6ce3o"), SubResource("Resource_i77tc"), SubResource("Resource_2ay6w"), SubResource("Resource_w8c4h"), SubResource("Resource_jwk6f"), SubResource("Resource_dglmi"), SubResource("Resource_tmxrj"), SubResource("Resource_gpuqf")])
-effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
-max_level = 10
+cost_arr = Array[ExtResource("1_xhbhu")]([SubResource("Resource_o5yrc"), SubResource("Resource_logai"), SubResource("Resource_6ce3o"), SubResource("Resource_i77tc"), SubResource("Resource_2ay6w"), SubResource("Resource_w8c4h"), SubResource("Resource_jwk6f")])
+effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7])
+max_level = 7
 base_cost = SubResource("Resource_ihrv6")
 base_cost_multiplier = 1.5
 exponential_cost = true
