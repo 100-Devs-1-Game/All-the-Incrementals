@@ -9,6 +9,7 @@ func init(element: Altar.Element):
 
 
 func update(altar: Altar):
+	var player_state: PlayerState = SaveGameManager.world_state.player_state
 	var stats: AltarStats = altar.get_stats()
 
 	%"Label Stored".text = "Stored: %d" % stats.stored_essence
@@ -25,7 +26,7 @@ func update(altar: Altar):
 		grid_container.add_child(label)
 
 		label = Label.new()
-		label.text = "Avg. Score: %.1f" % minigame.get_average_highscore()
+		label.text = "Avg. Score: %.1f" % player_state.get_average_highscore(minigame)
 		grid_container.add_child(label)
 
 		label = Label.new()
