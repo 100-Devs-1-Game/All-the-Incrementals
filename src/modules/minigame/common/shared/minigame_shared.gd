@@ -3,6 +3,7 @@ extends Node
 
 @export var debug_popup: DebugPopup
 @export var minigame_menu: MinigameMenu
+@export var minigame_help: MinigameHelp
 @export var minigame_highscores: HighScores
 @export var minigame_overlay: MinigameOverlay
 @export var debug_minigame_upgrades: DebugMinigameUpgrades
@@ -19,6 +20,20 @@ func _ready():
 	minigame_highscores.minigame = minigame_node
 	debug_minigame_upgrades.minigame = minigame_node
 	minigame_overlay.minigame = minigame_node
+
+	minigame_help.setup(minigame_node)
+
+	minigame_menu.help_pressed.connect(
+		func():
+			minigame_help.visible = true
+			minigame_menu.visible = false
+	)
+
+	minigame_help.help_exited.connect(
+		func():
+			minigame_help.visible = false
+			minigame_menu.visible = true
+	)
 
 
 func _input(event: InputEvent) -> void:
