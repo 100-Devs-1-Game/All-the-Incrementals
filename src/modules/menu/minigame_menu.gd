@@ -1,6 +1,8 @@
 class_name MinigameMenu
 extends Control
 
+signal play_pressed
+
 @export var pause: Pause
 
 var minigame: BaseMinigame
@@ -28,6 +30,8 @@ func _on_play_pressed() -> void:
 	if minigame.is_game_over():
 		SceneLoader.enable_immediate_play()
 		SceneLoader.start_minigame(minigame.data)
+
+	play_pressed.emit()
 
 
 func _on_upgrades_pressed() -> void:

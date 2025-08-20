@@ -24,6 +24,10 @@ var _first_spawn: bool = true
 @onready var ui_distance_value: RichTextLabel = %UIDistanceValue
 @onready var ui_carry_value: RichTextLabel = %UICarryValue
 
+# 100char line limit that gdlint hates and gdformat causes
+@onready
+var mm: MinigameMenu = $MinigameSharedComponents/SharedBaseComponents/CanvasLayer/MinigameMenu
+
 
 func get_pixels_per_second() -> int:
 	return floori(-stats.scrollspeed.x)
@@ -72,12 +76,14 @@ func _start() -> void:
 
 	# setup UI etc before we get paused
 	_process(1.0 / 60.0)
+	try_spawn_fish()
 
-	# wait a second before the game starts
+	# wait a bit before the game starts
+	if !SceneLoader.is_immediate_play():
+		await mm.play_pressed  # wait until the player presses play tho
 	get_tree().paused = true
 	await get_tree().create_timer(0.5).timeout
 	get_tree().paused = false
-
 	_started = true
 
 
@@ -190,6 +196,14 @@ func _spawn_fish() -> void:
 	%Entities.add_child(f)
 
 
+func try_spawn_fish() -> void:
+	#todo replace with good spawning
+	while _distance_since_spawned > stats.spawn_fish_every_x_pixels:
+		_spawn_fish()
+		_distance_since_spawned -= stats.spawn_fish_every_x_pixels
+	_first_spawn = false
+
+
 func _physics_process(delta: float) -> void:
 	var base_slow := (-stats.scrollspeed.x / 1000) * stats.total_weight()
 	if stats.no_oxygen():
@@ -214,9 +228,4 @@ func _physics_process(delta: float) -> void:
 
 	_distance_travelled += -1 * stats.scrollspeed.x * delta
 	_distance_since_spawned += -1 * stats.scrollspeed.x * delta
-
-	#todo replace with good spawning
-	while _distance_since_spawned > stats.spawn_fish_every_x_pixels:
-		_spawn_fish()
-		_distance_since_spawned -= stats.spawn_fish_every_x_pixels
-	_first_spawn = false
+	try_spawn_fish()
