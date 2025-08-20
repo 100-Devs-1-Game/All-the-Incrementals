@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://stbpo1pdof3o"]
+
+[ext_resource type="PackedScene" uid="uid://dnp8p5dwpu15q" path="res://modules/overworld/altar/altar.tscn" id="1_skibo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bdt1"]
+albedo_color = Color(0.576471, 0.411765, 0.172549, 1)
+
+[node name="EarthAltar" instance=ExtResource("1_skibo")]
+
+[node name="MeshInstance3D" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4bdt1")
