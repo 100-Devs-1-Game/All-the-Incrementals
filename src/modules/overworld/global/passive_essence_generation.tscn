@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cabcewvbff05u"]
+
+[ext_resource type="Script" uid="uid://brvwrkcgfelfc" path="res://modules/overworld/global/passive_essence_generation.gd" id="1_ubify"]
+
+[node name="PassiveEssenceGeneration" type="Node"]
+script = ExtResource("1_ubify")
+
+[node name="Tick Interval" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="Tick Interval" to="." method="_on_timer_timeout"]
