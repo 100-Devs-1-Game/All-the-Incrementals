@@ -8,9 +8,8 @@ func init(element: Altar.Element):
 	%"Label Altar".text = str(element, " Altar")
 
 
-func update(altar: Altar):
+func update(stats: AltarStats):
 	var player_state: PlayerState = SaveGameManager.world_state.player_state
-	var stats: AltarStats = altar.get_stats()
 
 	%"Label Stored".text = "Stored: %d" % stats.stored_essence
 	%"Label Capacity".text = "Capacity: %d" % stats.capacity
@@ -20,7 +19,7 @@ func update(altar: Altar):
 		grid_container.remove_child(child)
 		child.queue_free()
 
-	for minigame in altar.minigames:
+	for minigame in stats.minigames:
 		var label := Label.new()
 		label.text = minigame.display_name
 		grid_container.add_child(label)
@@ -34,6 +33,6 @@ func update(altar: Altar):
 		grid_container.add_child(label)
 
 		label = Label.new()
-		var amount: float = altar.calc_generated_amount(minigame)
+		var amount: float = stats.calc_generated_amount(minigame)
 		label.text = "= %d (%.1f)" % [int(amount), amount]
 		grid_container.add_child(label)
