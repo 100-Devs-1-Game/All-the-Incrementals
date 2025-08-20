@@ -10,7 +10,7 @@
 [resource]
 script = ExtResource("1_568i5")
 display_name = "Kindling Grounds"
-how_to_play = "Try to extinguish as many burning bushes and trees as possible before the turn to ash.
+how_to_play = "Try to extinguish as many burning bushes and trees as possible before the turn to ash. Don't stand in the flames for too long or you will die. While spraying water you can strafe using diagonal movement.
 Use SPACE to spray water.
 Press E to use collected items."
 music_track = "fire_minigame"
