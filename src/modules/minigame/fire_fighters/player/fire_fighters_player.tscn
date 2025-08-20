@@ -184,7 +184,7 @@ rotation = -0.0586266
 
 [node name="Cooldown" type="Timer" parent="Extinguisher"]
 unique_name_in_owner = true
-wait_time = 0.05
+wait_time = 0.04
 one_shot = true
 
 [node name="Extinguisher Offset" type="Node2D" parent="Extinguisher"]
