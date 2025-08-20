@@ -159,7 +159,7 @@ metadata/_custom_type_script = "uid://dw7inpofcgoc"
 [resource]
 script = ExtResource("5_3f8er")
 logic = SubResource("Resource_uj15j")
-unlocks_feature = ""
+unlocks_feature = "Press DOWN to dive"
 name = "Diving"
 flavor = ""
 position = Vector2(-1728, -1024)
