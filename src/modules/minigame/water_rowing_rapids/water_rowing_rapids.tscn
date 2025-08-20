@@ -41,7 +41,7 @@ adjustment_enabled = true
 adjustment_brightness = 0.8
 adjustment_contrast = 1.14
 
-[node name="EarthRowingRapids" type="Node"]
+[node name="WaterRowingRapids" type="Node"]
 script = ExtResource("1_tk8vt")
 data_uid = "uid://c8wvg65eqyoco"
 
