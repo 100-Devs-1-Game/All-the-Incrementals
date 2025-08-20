@@ -23,18 +23,18 @@ wind = 200
 slots = Array[ExtResource("2_tfj1c")]([SubResource("Resource_0miau")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_cvorw"]
+[sub_resource type="Resource" id="Resource_tfj1c"]
 script = ExtResource("2_tfj1c")
 essence = ExtResource("3_cvorw")
 amount = 200
 
-[sub_resource type="Resource" id="Resource_6w1yo"]
+[sub_resource type="Resource" id="Resource_cvorw"]
 script = ExtResource("1_8bvhj")
 earth = 0
 fire = 0
 water = 0
 wind = 200
-slots = Array[ExtResource("2_tfj1c")]([SubResource("Resource_cvorw")])
+slots = Array[ExtResource("2_tfj1c")]([SubResource("Resource_tfj1c")])
 
 [sub_resource type="Resource" id="Resource_f4uj6"]
 script = ExtResource("5_tfj1c")
@@ -49,7 +49,7 @@ name = "Add Lane 4"
 flavor = ""
 icon = ExtResource("4_6w1yo")
 position = Vector2(2688, 1408)
-cost_arr = Array[ExtResource("1_8bvhj")]([SubResource("Resource_6w1yo")])
+cost_arr = Array[ExtResource("1_8bvhj")]([SubResource("Resource_cvorw")])
 effect_modifier_arr = Array[float]([1.0])
 max_level = 1
 base_cost = SubResource("Resource_3y888")

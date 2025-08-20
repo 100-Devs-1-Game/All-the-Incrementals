@@ -20,18 +20,18 @@ wind = 10500
 slots = Array[ExtResource("2_6irhn")]([SubResource("Resource_6k8xl")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_au3j1"]
+[sub_resource type="Resource" id="Resource_2p53p"]
 script = ExtResource("2_6irhn")
 essence = ExtResource("3_2p53p")
 amount = 10000
 
-[sub_resource type="Resource" id="Resource_ap32h"]
+[sub_resource type="Resource" id="Resource_au3j1"]
 script = ExtResource("1_hqai4")
 earth = 0
 fire = 0
 water = 0
 wind = 10000
-slots = Array[ExtResource("2_6irhn")]([SubResource("Resource_au3j1")])
+slots = Array[ExtResource("2_6irhn")]([SubResource("Resource_2p53p")])
 
 [sub_resource type="Resource" id="Resource_hjk76"]
 script = ExtResource("4_2p53p")
@@ -45,7 +45,7 @@ unlocks_feature = ""
 name = "New Upgrade"
 flavor = ""
 position = Vector2(5824, 3968)
-cost_arr = Array[ExtResource("1_hqai4")]([SubResource("Resource_ap32h")])
+cost_arr = Array[ExtResource("1_hqai4")]([SubResource("Resource_au3j1")])
 effect_modifier_arr = Array[float]([1.0])
 max_level = 1
 base_cost = SubResource("Resource_l048y")

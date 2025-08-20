@@ -21,44 +21,44 @@ wind = 100
 slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_s3uvg")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_a2fq0"]
+[sub_resource type="Resource" id="Resource_oa61y"]
 script = ExtResource("2_oa61y")
 essence = ExtResource("3_a2fq0")
 amount = 100
 
-[sub_resource type="Resource" id="Resource_uod3e"]
+[sub_resource type="Resource" id="Resource_a2fq0"]
 script = ExtResource("1_4kes3")
 earth = 0
 fire = 0
 water = 0
 wind = 100
-slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_a2fq0")])
+slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_oa61y")])
 
-[sub_resource type="Resource" id="Resource_oo01j"]
+[sub_resource type="Resource" id="Resource_uod3e"]
 script = ExtResource("2_oa61y")
 essence = ExtResource("3_a2fq0")
 amount = 500
 
-[sub_resource type="Resource" id="Resource_xvtpy"]
+[sub_resource type="Resource" id="Resource_oo01j"]
 script = ExtResource("1_4kes3")
 earth = 0
 fire = 0
 water = 0
 wind = 500
-slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_oo01j")])
+slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_uod3e")])
 
-[sub_resource type="Resource" id="Resource_1a2xs"]
+[sub_resource type="Resource" id="Resource_xvtpy"]
 script = ExtResource("2_oa61y")
 essence = ExtResource("3_a2fq0")
 amount = 2500
 
-[sub_resource type="Resource" id="Resource_bu6qe"]
+[sub_resource type="Resource" id="Resource_1a2xs"]
 script = ExtResource("1_4kes3")
 earth = 0
 fire = 0
 water = 0
 wind = 2500
-slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_1a2xs")])
+slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_xvtpy")])
 
 [sub_resource type="Resource" id="Resource_ijl40"]
 script = ExtResource("5_oa61y")
@@ -73,7 +73,7 @@ name = "Combo Protection"
 flavor = ""
 icon = ExtResource("4_uod3e")
 position = Vector2(640, 704)
-cost_arr = Array[ExtResource("1_4kes3")]([SubResource("Resource_uod3e"), SubResource("Resource_xvtpy"), SubResource("Resource_bu6qe")])
+cost_arr = Array[ExtResource("1_4kes3")]([SubResource("Resource_a2fq0"), SubResource("Resource_oo01j"), SubResource("Resource_1a2xs")])
 effect_modifier_arr = Array[float]([1.0, 2.0, 3.0])
 max_level = 3
 base_cost = SubResource("Resource_dtaym")
