@@ -10,3 +10,18 @@ extends Resource
 @export var fire_altar: AltarStats
 @export var water_altar: AltarStats
 @export var wind_altar: AltarStats
+
+
+func get_altar_stats(element: Altar.Element) -> AltarStats:
+	match element:
+		Altar.Element.EARTH:
+			return earth_altar
+		Altar.Element.FIRE:
+			return fire_altar
+		Altar.Element.WATER:
+			return water_altar
+		Altar.Element.WIND:
+			return wind_altar
+
+	assert(false)
+	return null
