@@ -21,18 +21,18 @@ wind = 7500
 slots = Array[ExtResource("2_g1d4c")]([SubResource("Resource_kbnte")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_0g5qu"]
+[sub_resource type="Resource" id="Resource_vcp0t"]
 script = ExtResource("2_g1d4c")
 essence = ExtResource("3_vcp0t")
 amount = 7000
 
-[sub_resource type="Resource" id="Resource_cgpb6"]
+[sub_resource type="Resource" id="Resource_0g5qu"]
 script = ExtResource("1_50384")
 earth = 0
 fire = 0
 water = 0
 wind = 7000
-slots = Array[ExtResource("2_g1d4c")]([SubResource("Resource_0g5qu")])
+slots = Array[ExtResource("2_g1d4c")]([SubResource("Resource_vcp0t")])
 
 [sub_resource type="Resource" id="Resource_p6fyc"]
 script = ExtResource("5_vcp0t")
@@ -47,7 +47,7 @@ name = "Perfect Conductor 2"
 flavor = ""
 icon = ExtResource("4_0g5qu")
 position = Vector2(2688, 3968)
-cost_arr = Array[ExtResource("1_50384")]([SubResource("Resource_cgpb6")])
+cost_arr = Array[ExtResource("1_50384")]([SubResource("Resource_0g5qu")])
 effect_modifier_arr = Array[float]([1.0])
 max_level = 1
 base_cost = SubResource("Resource_7s77c")

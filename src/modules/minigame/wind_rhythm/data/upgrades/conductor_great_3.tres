@@ -22,18 +22,18 @@ wind = 1500
 slots = Array[ExtResource("2_07upq")]([SubResource("Resource_5aoes")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_1b6f1"]
+[sub_resource type="Resource" id="Resource_07upq"]
 script = ExtResource("2_07upq")
 essence = ExtResource("3_1b6f1")
 amount = 1500
 
-[sub_resource type="Resource" id="Resource_lg7u0"]
+[sub_resource type="Resource" id="Resource_1b6f1"]
 script = ExtResource("1_p1h6i")
 earth = 0
 fire = 0
 water = 0
 wind = 1500
-slots = Array[ExtResource("2_07upq")]([SubResource("Resource_1b6f1")])
+slots = Array[ExtResource("2_07upq")]([SubResource("Resource_07upq")])
 
 [sub_resource type="Resource" id="Resource_6pcgq"]
 script = ExtResource("5_07upq")
@@ -48,7 +48,7 @@ name = "Great Conductor 3"
 flavor = ""
 icon = ExtResource("2_b0pe7")
 position = Vector2(2624, 3200)
-cost_arr = Array[ExtResource("1_p1h6i")]([SubResource("Resource_lg7u0")])
+cost_arr = Array[ExtResource("1_p1h6i")]([SubResource("Resource_1b6f1")])
 effect_modifier_arr = Array[float]([1.0])
 max_level = 1
 base_cost = SubResource("Resource_wp648")

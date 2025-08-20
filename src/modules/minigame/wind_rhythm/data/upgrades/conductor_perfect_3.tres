@@ -21,18 +21,18 @@ wind = 8500
 slots = Array[ExtResource("2_63vws")]([SubResource("Resource_bn1df")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_kee58"]
+[sub_resource type="Resource" id="Resource_ngepy"]
 script = ExtResource("2_63vws")
 essence = ExtResource("3_ngepy")
 amount = 8000
 
-[sub_resource type="Resource" id="Resource_v3dex"]
+[sub_resource type="Resource" id="Resource_kee58"]
 script = ExtResource("1_7eba0")
 earth = 0
 fire = 0
 water = 0
 wind = 8000
-slots = Array[ExtResource("2_63vws")]([SubResource("Resource_kee58")])
+slots = Array[ExtResource("2_63vws")]([SubResource("Resource_ngepy")])
 
 [sub_resource type="Resource" id="Resource_gtk7b"]
 script = ExtResource("5_ngepy")
@@ -47,7 +47,7 @@ name = "Perfect Conductor 3"
 flavor = ""
 icon = ExtResource("4_kee58")
 position = Vector2(3712, 3968)
-cost_arr = Array[ExtResource("1_7eba0")]([SubResource("Resource_v3dex")])
+cost_arr = Array[ExtResource("1_7eba0")]([SubResource("Resource_kee58")])
 effect_modifier_arr = Array[float]([1.0])
 max_level = 1
 base_cost = SubResource("Resource_2hhv5")
