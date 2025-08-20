@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnfjvghewkmc2"]
+
+[ext_resource type="Script" uid="uid://bbkocoumc6jas" path="res://modules/minigame/wind_rhythm/rhythm_scorer.gd" id="1_7p88p"]
+
+[node name="Scorer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 50.0
+script = ExtResource("1_7p88p")
+
+[node name="ComboLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 50.0
+text = "0"
+
+[node name="ScoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 221.0
+offset_right = 261.0
+offset_bottom = 50.0
+text = "0"

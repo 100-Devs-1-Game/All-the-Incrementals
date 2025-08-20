@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ev2tmev7hfu1" path="res://modules/minigame/wind_rhythm/board/rhythm_board.tscn" id="4_uq30r"]
 [ext_resource type="PackedScene" uid="uid://c8l4byfcrycg8" path="res://modules/minigame/wind_rhythm/conductor.tscn" id="5_r3uod"]
 [ext_resource type="PackedScene" uid="uid://byhlr4ndp885i" path="res://modules/minigame/wind_rhythm/note/note_spawner.tscn" id="6_vd8gq"]
-[ext_resource type="Script" uid="uid://bbkocoumc6jas" path="res://modules/minigame/wind_rhythm/rhythm_combo.gd" id="7_4ly6s"]
+[ext_resource type="PackedScene" uid="uid://bnfjvghewkmc2" path="res://modules/minigame/wind_rhythm/rhythm_scorer.tscn" id="7_4qd8c"]
 [ext_resource type="PackedScene" uid="uid://d3jltdnck35he" path="res://modules/minigame/wind_rhythm/concentration_bar.tscn" id="8_3oiir"]
 [ext_resource type="Texture2D" uid="uid://byxstb6oi5ri5" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/000.png" id="9_4qd8c"]
 [ext_resource type="Texture2D" uid="uid://bl8ofr3pfyd82" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/001.png" id="10_hb4ap"]
@@ -78,11 +78,10 @@ animations = [{
 [node name="WindRhythm" type="Node2D"]
 script = ExtResource("1_4gb8k")
 data_uid = "uid://cxrnthj4sdjv4"
-metadata/_custom_type_script = "uid://b5ygfwh0c0nh"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
 
-[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
 visible_on_start = true
 
 [node name="RhythmBackground" type="Sprite2D" parent="."]
@@ -127,13 +126,17 @@ judgment_line = NodePath("../judgment_line")
 wind_rhythm = NodePath("..")
 offset = 0.5
 
-[node name="ComboLabel" type="Label" parent="."]
-offset_left = 290.0
-offset_top = 306.0
-offset_right = 330.0
-offset_bottom = 356.0
-text = "0"
-script = ExtResource("7_4ly6s")
+[node name="Scorer" parent="." instance=ExtResource("7_4qd8c")]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 803.0
+offset_top = 312.0
+offset_right = 803.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ConcentrationBar" parent="." instance=ExtResource("8_3oiir")]
 anchors_preset = 0
