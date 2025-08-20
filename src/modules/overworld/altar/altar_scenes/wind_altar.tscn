@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7k72ctp4ikt2"]
+
+[ext_resource type="PackedScene" uid="uid://dnp8p5dwpu15q" path="res://modules/overworld/altar/altar.tscn" id="1_re4te"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38mac"]
+albedo_color = Color(0.224304, 0.224304, 0.224304, 1)
+
+[node name="WindAltar" instance=ExtResource("1_re4te")]
+element = 3
+
+[node name="MeshInstance3D" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_38mac")

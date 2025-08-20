@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcjwk5lq3xa2k"]
+[gd_scene load_steps=24 format=3 uid="uid://bcjwk5lq3xa2k"]
 
 [ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="1_fp6lq"]
 [ext_resource type="Script" uid="uid://bsimtuhg2ndb3" path="res://modules/overworld_locations/shrine/shrine.gd" id="1_pmksg"]
@@ -10,10 +10,13 @@
 [ext_resource type="Resource" uid="uid://bn3py5bvf5ry5" path="res://modules/minigame/common/debug/breezekiln.tres" id="6_c0ttc"]
 [ext_resource type="Resource" uid="uid://bjcq0qrbwhpxy" path="res://modules/overworld/data/journal/entry06.tres" id="6_cgpr5"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="7_ge6fp"]
+[ext_resource type="PackedScene" uid="uid://6wuv0ocbrcb3" path="res://modules/overworld/altar/altar_scenes/fire_altar.tscn" id="8_7mojr"]
 [ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="8_ge6fp"]
+[ext_resource type="PackedScene" uid="uid://stbpo1pdof3o" path="res://modules/overworld/altar/altar_scenes/earth_altar.tscn" id="9_tfabg"]
+[ext_resource type="PackedScene" uid="uid://c7k72ctp4ikt2" path="res://modules/overworld/altar/altar_scenes/wind_altar.tscn" id="10_4cvyn"]
 [ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="10_ig5i3"]
+[ext_resource type="PackedScene" uid="uid://r8lewmdfm4y7" path="res://modules/overworld/altar/altar_scenes/water_altar.tscn" id="11_b1s0l"]
 [ext_resource type="PackedScene" uid="uid://dntdim0jjlhy1" path="res://modules/upgrade/ui/upgrade_tree.tscn" id="13_cgpr5"]
-[ext_resource type="PackedScene" uid="uid://dnp8p5dwpu15q" path="res://modules/overworld/altar/altar.tscn" id="14_7mojr"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mggan"]
 radius = 4.0
@@ -94,13 +97,22 @@ text = "SHRINE"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65858, 1.92051, 0)
 data = ExtResource("6_cgpr5")
 
+[node name="Fire Altar" parent="Content" instance=ExtResource("8_7mojr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74558, 0.585183, -10.5623)
+
+[node name="EarthAltar" parent="Content" instance=ExtResource("9_tfabg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2239, 0.640929, -10.014)
+
+[node name="WindAltar" parent="Content" instance=ExtResource("10_4cvyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7785, 0.615703, -9.63603)
+
+[node name="WaterAltar" parent="Content" instance=ExtResource("11_b1s0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6608, 0.652111, -10.0151)
+
 [node name="DebugPopup" parent="." instance=ExtResource("4_wuyf8")]
 title = "Shrine"
 visible_on_start = true
 custom_debug_buttons = Array[ExtResource("5_c0ttc")]([ExtResource("6_c0ttc"), ExtResource("7_ge6fp"), ExtResource("8_ge6fp"), ExtResource("10_ig5i3")])
-
-[node name="Altar" parent="." instance=ExtResource("14_7mojr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38508, 0.523698, -9.17359)
 
 [connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]
 [connection signal="interacted_with" from="Content/SettlementExit/InteractionComponent3D" to="Content/SettlementExit" method="exit_settlement"]
