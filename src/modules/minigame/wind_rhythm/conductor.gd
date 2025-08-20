@@ -2,6 +2,7 @@ class_name Conductor extends AudioStreamPlayer
 
 signal beat(position)
 signal bar(position)
+signal song_finished
 
 @export var chart: Chart
 
@@ -14,10 +15,13 @@ var notes_in_bar: int = 4
 var last_beat: int = 0
 var current_bar: int = 0
 
+var playback: AudioStreamPlayback
+
 
 func _ready():
 	stream = chart.audio
 	play()
+	playback = get_stream_playback()
 	seconds_per_beat = 60.0 / chart.audio.bpm
 	notes_in_bar = chart.notes_in_bar
 
@@ -28,6 +32,8 @@ func _process(_delta):
 	song_position -= AudioServer.get_output_latency()
 	song_position_in_beats = int(floor(song_position / seconds_per_beat)) + start_offset_in_beats
 	_report_beat()
+	if !playback.is_playing():
+		song_finished.emit()
 
 
 func _report_beat():

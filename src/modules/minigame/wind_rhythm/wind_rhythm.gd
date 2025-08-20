@@ -24,6 +24,7 @@ var chart: Chart
 var judgment_label: Label
 var judgments = preload(JUDGMENT_PATH).new()
 var concentration_bar: ConcentrationBar
+var scorer: RhythmScorer
 
 ## Upgrade Info
 var drain_speed_mult: float = 1.0
@@ -51,11 +52,16 @@ func _start():
 	judgment_label = %JudgmentLabel
 	concentration_bar = $ConcentrationBar
 	lanes = chart.lanes.duplicate(true)
-	concentration_bar.connect("concentration_broken", _on_concentration_broken)
-	connect("note_played", concentration_bar.on_note_played)
-	connect("note_missed", concentration_bar.on_note_missed)
-	connect("note_missed", $ComboLabel.on_rhythm_game_note_missed)
-	connect("note_played", $ComboLabel.on_rhythm_game_note_played)
+	scorer = %Scorer
+	concentration_bar.concentration_broken.connect(_on_concentration_broken)
+	note_played.connect(concentration_bar.on_note_played)
+	note_missed.connect(concentration_bar.on_note_missed)
+
+	note_played.connect(scorer.on_rhythm_game_note_played)
+	note_missed.connect(scorer.on_rhythm_game_note_missed)
+
+	conductor.song_finished.connect(_on_concentration_broken)
+
 	for sprite in $BandSpiritGroup.get_children():
 		sprite.play("default")
 
@@ -135,4 +141,5 @@ func judge_input(note_type: NOTE_TYPE):
 
 func _on_concentration_broken():
 	conductor.stop()
+	scorer.count_final_score()
 	game_over()
