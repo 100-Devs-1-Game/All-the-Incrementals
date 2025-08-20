@@ -70,7 +70,11 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 50
-columns = 4
+columns = 5
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Play >"
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -100,3 +104,5 @@ offset_top = -69.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Leave"
+
+[connection signal="pressed" from="Panel/Leave" to="." method="_on_leave_pressed"]
