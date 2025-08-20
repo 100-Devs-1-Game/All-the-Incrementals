@@ -8,6 +8,7 @@ const RAY_COVERAGE: float = 100
 
 @export var starting_speed: float = 400.0
 @export var acceleration: float = 30.0
+@export var acceleration_acceleration: float = 7.5
 
 var player: Node2D
 ## used for upgrades to reduce overall speed
@@ -39,13 +40,14 @@ func _physics_process(delta: float) -> void:
 	var rubberbanded_speed = rubberband.sample_baked(get_distance()) * current_speed * speed_mod
 	position.x += rubberbanded_speed * delta
 	current_speed += acceleration * delta
+	acceleration += acceleration_acceleration * delta
 	for body in get_overlapping_bodies():
 		body.take_damage(delta * 20.0)
 		_do_grab(body)
 
 
 func repel() -> void:
-	current_speed *= 1.0 - repel_strength
+	current_speed -= repel_strength
 	print("REPELLED\nREPELLED\nREPELLED\n", current_speed)
 
 
