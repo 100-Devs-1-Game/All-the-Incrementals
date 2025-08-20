@@ -84,3 +84,8 @@ func _do_grab(body: RigidBody2D) -> void:
 
 	average_position /= hits
 	body.apply_force(Vector2(-drag_strength, 0.0), average_position - body.global_position)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	# assume this is a spirit
+	area.queue_free()
