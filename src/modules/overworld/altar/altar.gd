@@ -26,24 +26,10 @@ func tick():
 
 
 func _calc_generated_amount(minigame: MinigameData) -> int:
-	var player_state: PlayerState = SaveGameManager.world_state.player_state
-	var key: StringName = minigame.resource_path
-
-	if not player_state.highscores.has(key):
-		return 0
-
-	var all_highscores: Array[int] = player_state.highscores[key]
-
-	if all_highscores.is_empty():
-		return 0
-
-	var highscore_sum: int
-	for highscore in all_highscores:
-		highscore_sum += highscore
-
-	var avg_highscore: float = highscore_sum / float(all_highscores.size())
-
-	return avg_highscore * minigame.currency_conversion_factor
+	return (
+		SaveGameManager.world_state.player_state.get_average_minigame_highscore(minigame)
+		* minigame.currency_conversion_factor
+	)
 
 
 func get_stats() -> AltarStats:
