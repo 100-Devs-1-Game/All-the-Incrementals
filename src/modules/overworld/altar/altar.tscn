@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dd2idytqw7eqi" path="res://modules/overworld/altar/altar_ui.tscn" id="3_n0bjl"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_nq507"]
-radius = 3.5
+radius = 2.8
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mj0t8"]
 top_radius = 1.0
@@ -28,6 +28,11 @@ shape = SubResource("CylinderShape3D_nq507")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("CylinderMesh_mj0t8")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11915, 0)
+text = "ALTAR"
+font_size = 64
 
 [node name="UI" parent="." instance=ExtResource("3_n0bjl")]
 visible = false
