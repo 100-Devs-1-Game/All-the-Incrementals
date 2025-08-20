@@ -2,6 +2,7 @@ class_name MinigameMenu
 extends Control
 
 signal play_pressed
+signal help_pressed
 
 @export var pause: Pause
 
@@ -32,6 +33,10 @@ func _on_play_pressed() -> void:
 		SceneLoader.start_minigame(minigame.data)
 
 	play_pressed.emit()
+
+
+func _on_help_pressed() -> void:
+	help_pressed.emit()
 
 
 func _on_upgrades_pressed() -> void:
