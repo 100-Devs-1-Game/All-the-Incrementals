@@ -45,7 +45,14 @@ shape = SubResource("CircleShape2D_x58gl")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+enabled = false
 color = Color(1, 1, 0.494118, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_6posb")
 texture_scale = 1.5
+
+[node name="VisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-64, -64, 128, 128)
+
+[connection signal="screen_entered" from="VisibilityNotifier" to="." method="_on_visibility_notifier_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_visibility_notifier_screen_exited"]

@@ -77,7 +77,7 @@ gradient = SubResource("Gradient_ykgne")
 
 [node name="Void" type="Area2D"]
 z_index = 2
-collision_mask = 4
+collision_mask = 6
 monitorable = false
 linear_damp_space_override = 1
 linear_damp = 0.2
@@ -137,3 +137,5 @@ texture = SubResource("GradientTexture1D_py0pr")
 stream = ExtResource("5_hfjwf")
 autoplay = true
 bus = &"SFX"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

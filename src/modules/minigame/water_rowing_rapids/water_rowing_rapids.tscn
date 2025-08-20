@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://ccisrw8w88dql" path="res://modules/minigame/water_rowing_rapids/soul_spawning.gd" id="12_l3r46"]
 
 [sub_resource type="Curve2D" id="Curve2D_a50qn"]
-bake_interval = 300.0
+bake_interval = 250.0
 _data = {
 "points": PackedVector2Array(-258.99, 258.989, 258.99, -258.989, -5870, 427, -618.233, -20.8863, 618.233, 20.8863, -4220, -298, -212.96, -118.459, 212.96, 118.459, -2751, 486, -764.437, 12.5317, 764.437, -12.5317, -909, 649, -789.5, 45.9497, 789.5, -45.9497, 620, 523, -939.881, -162.913, 939.881, 162.913, 3214, 586, -1226.74, 44.7715, 1226.74, -44.7715, 6634, 665, -1584.91, 188.04, 1584.91, -188.04, 11259, -779, -1907.27, -662.619, 1907.27, 662.619, 19603, -112, -88.6005, -267.922, 88.6005, 267.922, 21879, 1575, -127.835, -605.947, 127.835, 605.947, 21810, 2513, -356.924, -181.418, 356.924, 181.418, 23915, 4560, 0, 0, 0, 0, 29438, 4443, -482.472, -638.701, 482.472, 638.701, 30985, 4919, 431.928, -413.548, -431.928, 413.548, 30856, 6564, 0, 0, 0, 0, 29439, 6880, 728.881, 128.047, -728.881, -128.047, 26248, 6604, 422.738, 64.3296, -422.738, -64.3296, 23882, 5946, 1009.47, 380.19, -1009.47, -380.19, 21095, 5213, 222.87, 694.83, -222.87, -694.83, 18779, 2735, 689.482, 349.218, -689.482, -349.218, 17678, 1043, 2668.38, -170.132, -2668.38, 170.132, 13953, 354, 1755.04, 53.7258, -1755.04, -53.7258, 7022, 2726, 707.39, 259.675, -707.39, -259.675, 3541, 1934, 372.515, -11.1198, -372.515, 11.1198, 1520, 1673, 460.108, -54.7751, -460.108, 54.7751, -884, 2127, 384.307, -12.5317, -384.307, 12.5317, -3202, 2203, 731.019, 534.688, -731.019, -534.688, -5721, 1910, -262.278, 243.566, 262.278, -243.566, -5870, 427)
 }
@@ -41,9 +41,9 @@ adjustment_enabled = true
 adjustment_brightness = 0.8
 adjustment_contrast = 1.14
 
-[node name="EarthRowingRapids" type="Node"]
+[node name="WaterRowingRapids" type="Node"]
 script = ExtResource("1_tk8vt")
-data_uid = "uid://c7vragnlq8udw"
+data_uid = "uid://c8wvg65eqyoco"
 
 [node name="River" type="Path2D" parent="."]
 curve = SubResource("Curve2D_a50qn")
@@ -203,10 +203,11 @@ scale = Vector2(1.39403, 1.39403)
 
 [node name="SoulSpawner" type="Node2D" parent="SoulSpawners"]
 unique_name_in_owner = true
-position = Vector2(-2256, 1403)
+position = Vector2(-1750, 1359)
+rotation = -0.0338393
 script = ExtResource("12_l3r46")
 radius = 600.0
-sample_size = Vector2(2800, 1300)
+sample_size = Vector2(3000, 1300)
 
 [node name="SoulSpawner2" type="Node2D" parent="SoulSpawners"]
 position = Vector2(959, 1077)
@@ -218,8 +219,8 @@ sample_size = Vector2(2100, 1000)
 position = Vector2(3293, 1221)
 rotation = 0.0785398
 script = ExtResource("12_l3r46")
-radius = 400.0
-sample_size = Vector2(1000, 1000)
+radius = 500.0
+sample_size = Vector2(1900, 1000)
 
 [node name="SoulSpawner3" type="Node2D" parent="SoulSpawners"]
 position = Vector2(5707, 1670)
@@ -303,11 +304,11 @@ sample_size = Vector2(1000, 1000)
 [node name="DebugMinigameUpgrades" parent="MinigameSharedComponents" index="0"]
 visible = false
 
-[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="2"]
+[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
 visible = false
 custom_debug_buttons = Array[ExtResource("3_a50qn")]([ExtResource("4_yl50k")])
 
-[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
 visible = false
 enable_score_display = true
 
