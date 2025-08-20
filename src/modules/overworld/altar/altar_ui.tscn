@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd2idytqw7eqi"]
+
+[ext_resource type="Script" uid="uid://d0o68s5jiye1s" path="res://modules/overworld/altar/altar_ui.gd" id="1_hif4d"]
+[ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="2_18ekh"]
+[ext_resource type="PackedScene" uid="uid://yehkf7i1dt50" path="res://component/shared/current_essence.tscn" id="3_ybokf"]
+
+[node name="AltarUI" type="CanvasLayer"]
+script = ExtResource("1_hif4d")
+
+[node name="Panel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_18ekh")
+
+[node name="CurrentEssence" parent="Panel" instance=ExtResource("3_ybokf")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+grow_vertical = 1
+
+[node name="Label Altar" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 325.0
+offset_bottom = 125.0
+text = "Fire Altar"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label Stored" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stored: 100"
+
+[node name="Label Capacity" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Capacity: 100"
+
+[node name="Label Throughput" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Throughput: 10"
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 50
+columns = 5
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Play >"
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Fire Fighters"
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Avg Score: 8.4"
+
+[node name="Label3" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "* 0.2"
+
+[node name="Label4" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "= 2 (2.16)"
+
+[node name="Leave" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Leave"
+
+[connection signal="pressed" from="Panel/Leave" to="." method="_on_leave_pressed"]

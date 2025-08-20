@@ -5,11 +5,7 @@ const SAVE_PATH = "user://savegame.tres"
 var world_state: WorldState
 
 
-func _ready() -> void:
-	load_game()
-
-
-func load_game():
+func start_game():
 	if not FileAccess.file_exists(SAVE_PATH):
 		world_state = load("res://modules/save_system/default_world_state.tres").duplicate(true)
 		world_state.resource_path = SAVE_PATH
@@ -27,7 +23,7 @@ func reset():
 	if dir.file_exists(SAVE_PATH):
 		var error = dir.remove(SAVE_PATH)
 		assert(error == OK)
-	load_game()
+	start_game()
 
 
 func save():

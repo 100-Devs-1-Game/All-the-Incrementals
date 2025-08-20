@@ -43,6 +43,7 @@ func handle_editor_direct_start() -> void:
 			data = load(data_uid)
 			SceneLoader._current_minigame = data
 			SceneLoader.enable_immediate_play()
+
 	else:
 		data = SceneLoader.get_current_minigame()
 
@@ -50,6 +51,9 @@ func handle_editor_direct_start() -> void:
 		_has_child_minigame_shared_components(),
 		"Couldn't find child class of type MinigameSharedComponents in Minigame scene"
 	)
+
+	if not SaveGameManager.world_state:
+		SaveGameManager.start_game()
 
 
 func _has_child_minigame_shared_components() -> bool:
