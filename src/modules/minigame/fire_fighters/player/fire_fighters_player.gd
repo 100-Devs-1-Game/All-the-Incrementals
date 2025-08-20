@@ -47,6 +47,10 @@ var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extin
 func _ready() -> void:
 	_current_tile = game.get_tile_at(position)
 
+	# hack to avoid resource leak with GuT
+	if DisplayServer.get_name() == "headless":
+		audio_ambience.stop()
+
 
 func init():
 	_hitpoints_left = hitpoints + hitpoint_bonus
