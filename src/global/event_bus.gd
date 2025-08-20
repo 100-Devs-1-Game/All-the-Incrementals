@@ -12,6 +12,7 @@ signal request_journal_page_display(data: JournalEntryData)
 #region Game
 signal game_loaded(world_state: WorldState)
 signal exit_minigame
+signal passive_essence_generation_tick
 #endregion
 
 #region UI
