@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://ouq23x8ewxpc"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=40 format=3 uid="uid://ouq23x8ewxpc"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_vg5av"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_p8soa"]
@@ -151,6 +151,71 @@ water = 0
 wind = 1000
 slots = Array[ExtResource("2_p8soa")]([SubResource("Resource_8vga6")])
 
+[sub_resource type="Resource" id="Resource_v0p0w"]
+script = ExtResource("2_p8soa")
+essence = ExtResource("3_4b44o")
+amount = 2000
+
+[sub_resource type="Resource" id="Resource_bd7l4"]
+script = ExtResource("1_vg5av")
+earth = 0
+fire = 0
+water = 0
+wind = 2000
+slots = Array[ExtResource("2_p8soa")]([SubResource("Resource_v0p0w")])
+
+[sub_resource type="Resource" id="Resource_7wasw"]
+script = ExtResource("2_p8soa")
+essence = ExtResource("3_4b44o")
+amount = 4000
+
+[sub_resource type="Resource" id="Resource_sc7vv"]
+script = ExtResource("1_vg5av")
+earth = 0
+fire = 0
+water = 0
+wind = 4000
+slots = Array[ExtResource("2_p8soa")]([SubResource("Resource_7wasw")])
+
+[sub_resource type="Resource" id="Resource_8hygl"]
+script = ExtResource("2_p8soa")
+essence = ExtResource("3_4b44o")
+amount = 8000
+
+[sub_resource type="Resource" id="Resource_a6k34"]
+script = ExtResource("1_vg5av")
+earth = 0
+fire = 0
+water = 0
+wind = 8000
+slots = Array[ExtResource("2_p8soa")]([SubResource("Resource_8hygl")])
+
+[sub_resource type="Resource" id="Resource_fujvf"]
+script = ExtResource("2_p8soa")
+essence = ExtResource("3_4b44o")
+amount = 16000
+
+[sub_resource type="Resource" id="Resource_hqfwr"]
+script = ExtResource("1_vg5av")
+earth = 0
+fire = 0
+water = 0
+wind = 16000
+slots = Array[ExtResource("2_p8soa")]([SubResource("Resource_fujvf")])
+
+[sub_resource type="Resource" id="Resource_gtbg7"]
+script = ExtResource("2_p8soa")
+essence = ExtResource("3_4b44o")
+amount = 32000
+
+[sub_resource type="Resource" id="Resource_3b03f"]
+script = ExtResource("1_vg5av")
+earth = 0
+fire = 0
+water = 0
+wind = 32000
+slots = Array[ExtResource("2_p8soa")]([SubResource("Resource_gtbg7")])
+
 [sub_resource type="Resource" id="Resource_uj15j"]
 script = ExtResource("4_mygvn")
 type = 2
@@ -159,13 +224,13 @@ metadata/_custom_type_script = "uid://dw7inpofcgoc"
 [resource]
 script = ExtResource("5_3f8er")
 logic = SubResource("Resource_uj15j")
-unlocks_feature = ""
+unlocks_feature = "Press DOWN to dive"
 name = "Diving"
 flavor = ""
 position = Vector2(-1728, -1024)
-cost_arr = Array[ExtResource("1_vg5av")]([SubResource("Resource_4b44o"), SubResource("Resource_3f8er"), SubResource("Resource_etaxe"), SubResource("Resource_pwav1"), SubResource("Resource_7lr7c"), SubResource("Resource_66ew8"), SubResource("Resource_xo8ro"), SubResource("Resource_vnr45"), SubResource("Resource_sel1f"), SubResource("Resource_ysgl0")])
-effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
-max_level = 10
+cost_arr = Array[ExtResource("1_vg5av")]([SubResource("Resource_4b44o"), SubResource("Resource_3f8er"), SubResource("Resource_etaxe"), SubResource("Resource_pwav1"), SubResource("Resource_7lr7c"), SubResource("Resource_66ew8"), SubResource("Resource_xo8ro"), SubResource("Resource_vnr45"), SubResource("Resource_sel1f"), SubResource("Resource_ysgl0"), SubResource("Resource_bd7l4"), SubResource("Resource_sc7vv"), SubResource("Resource_a6k34"), SubResource("Resource_hqfwr"), SubResource("Resource_3b03f")])
+effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5])
+max_level = 15
 base_cost = SubResource("Resource_0kfyi")
 base_cost_multiplier = 2.0
 exponential_cost = true

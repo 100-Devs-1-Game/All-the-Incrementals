@@ -159,7 +159,7 @@ metadata/_custom_type_script = "uid://dw7inpofcgoc"
 [resource]
 script = ExtResource("2_1qmqr")
 logic = SubResource("Resource_6jfrp")
-unlocks_feature = ""
+unlocks_feature = "Press SPACE to ignite feet and DOWN to burn through clouds"
 name = "Burning Feet"
 flavor = ""
 icon = ExtResource("4_fk5i8")
