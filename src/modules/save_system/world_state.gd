@@ -1,6 +1,8 @@
 class_name WorldState
 extends Resource
 
+@export_storage var save_game_version: int = 0
+
 # Dictionary mapping upgrade UIDs to their unlock levels
 @export var minigame_unlock_levels: Dictionary[StringName, int]
 
