@@ -218,6 +218,7 @@ func _tick_water():
 
 func _soak_tile(tile: Vector2i):
 	tile_map_water.set_cell(tile, 1, Vector2.ZERO)
+	_remove_oil(tile)
 
 
 func add_oil(tile: Vector2i, counter: int = -1):
