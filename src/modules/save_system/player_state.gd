@@ -18,7 +18,7 @@ func get_average_minigame_highscore(minigame: MinigameData) -> float:
 	if all_highscores.is_empty():
 		return 0
 
-	var highscore_sum: int
+	var highscore_sum: int = 0
 	for highscore in all_highscores:
 		highscore_sum += highscore
 
