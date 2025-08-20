@@ -28,7 +28,7 @@ func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 		Type.WATER_SPEED:
 			my_game.player.water_speed_factor = upgrade.get_current_effect_modifier() + 1
 		Type.WATER_SPREAD:
-			my_game.player.water_spread_factor = upgrade.get_current_effect_modifier() + 1
+			my_game.player.bonus_water_spread = upgrade.get_current_effect_modifier()
 		Type.WATER_ARC_REDUCTION:
 			assert(false, "feature removed")
 		Type.FIRES:

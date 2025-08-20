@@ -13,7 +13,7 @@ signal changed_tile(tile: Vector2i)
 
 var move_speed_factor: float = 1.0
 var water_speed_factor: float = 1.0
-var water_spread_factor: float = 1.0
+var bonus_water_spread: float = 0.1
 var tank_bonus_size: float = 1.0
 var hitpoint_bonus: int
 var can_stomp: bool = false
@@ -46,6 +46,10 @@ var audio_extinguisher_stop: AudioStreamPlayer = $"Audio/AudioStreamPlayer Extin
 
 func _ready() -> void:
 	_current_tile = game.get_tile_at(position)
+
+	# hack to avoid resource leak with GuT
+	if DisplayServer.get_name() == "headless":
+		audio_ambience.stop()
 
 
 func init():
@@ -121,7 +125,7 @@ func extinguish(flag: bool):
 		return
 
 	var dir: Vector2 = extinguisher.global_transform.x
-	var spread: float = water_spread * water_spread_factor
+	var spread: float = water_spread + bonus_water_spread
 	dir += dir.rotated(PI / 2) * randf_range(-spread, spread)
 	dir = dir.normalized()
 
