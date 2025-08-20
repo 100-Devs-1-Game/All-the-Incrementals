@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnp8p5dwpu15q"]
+
+[ext_resource type="Script" uid="uid://445ct847k57p" path="res://modules/overworld/altar/altar.gd" id="1_nq507"]
+[ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_n0bjl"]
+[ext_resource type="PackedScene" uid="uid://dd2idytqw7eqi" path="res://modules/overworld/altar/altar_ui.tscn" id="3_n0bjl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nq507"]
+radius = 3.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mj0t8"]
+top_radius = 1.0
+bottom_radius = 1.5
+height = 1.0
+
+[node name="Altar" type="Node3D"]
+script = ExtResource("1_nq507")
+
+[node name="InteractionComponent3D" type="Area3D" parent="."]
+collision_layer = 0
+monitorable = false
+script = ExtResource("2_n0bjl")
+metadata/_custom_type_script = "uid://7n4knvm4dle5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_nq507")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_mj0t8")
+
+[node name="UI" parent="." instance=ExtResource("3_n0bjl")]
+
+[connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]
