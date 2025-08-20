@@ -5,10 +5,17 @@ enum Element { EARTH, FIRE, WATER, WIND }
 
 @export var element: Element
 
+@onready var ui: AltarUI = $UI
 
-func get_stats() -> AltarStats:
-	return SaveGameManager.world_state.get_altar_stats(element)
+
+func _ready() -> void:
+	ui.init(get_stats())
 
 
 func _on_interaction_component_interacted_with(_player: SpiritkeeperCharacterController3D) -> void:
-	pass  # Replace with function body.
+	ui.show()
+	ui.update()
+
+
+func get_stats() -> AltarStats:
+	return SaveGameManager.world_state.get_altar_stats(element)
