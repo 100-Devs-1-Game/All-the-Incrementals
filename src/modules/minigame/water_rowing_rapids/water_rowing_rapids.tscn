@@ -203,10 +203,11 @@ scale = Vector2(1.39403, 1.39403)
 
 [node name="SoulSpawner" type="Node2D" parent="SoulSpawners"]
 unique_name_in_owner = true
-position = Vector2(-2256, 1403)
+position = Vector2(-1750, 1359)
+rotation = -0.0338393
 script = ExtResource("12_l3r46")
 radius = 600.0
-sample_size = Vector2(2800, 1300)
+sample_size = Vector2(3000, 1300)
 
 [node name="SoulSpawner2" type="Node2D" parent="SoulSpawners"]
 position = Vector2(959, 1077)
@@ -218,8 +219,8 @@ sample_size = Vector2(2100, 1000)
 position = Vector2(3293, 1221)
 rotation = 0.0785398
 script = ExtResource("12_l3r46")
-radius = 400.0
-sample_size = Vector2(1000, 1000)
+radius = 500.0
+sample_size = Vector2(1900, 1000)
 
 [node name="SoulSpawner3" type="Node2D" parent="SoulSpawners"]
 position = Vector2(5707, 1670)
