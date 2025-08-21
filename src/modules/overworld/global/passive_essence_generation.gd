@@ -11,6 +11,12 @@ func start(_state: WorldState):
 	timer.start()
 
 
+func get_progress() -> float:
+	if timer.is_stopped():
+		return 0
+	return 1.0 - timer.time_left / timer.wait_time
+
+
 func _on_timer_timeout() -> void:
 	var world_state: WorldState = SaveGameManager.world_state
 
