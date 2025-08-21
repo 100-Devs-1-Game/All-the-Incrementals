@@ -13,5 +13,5 @@ background_color = Color(0.698266, 0.900734, 0.912444, 1)
 sky = SubResource("Sky_e45hq")
 ambient_light_source = 2
 ambient_light_color = Color(0.717647, 0.866667, 1, 1)
-ambient_light_energy = 0.5
+ambient_light_energy = 0.2
 tonemap_mode = 2

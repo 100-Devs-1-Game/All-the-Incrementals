@@ -1,94 +1,261 @@
-[gd_scene load_steps=13 format=3 uid="uid://sd2uku7ud0tb"]
+[gd_scene load_steps=18 format=3 uid="uid://sd2uku7ud0tb"]
 
 [ext_resource type="Script" uid="uid://rgsj1fo1fu2o" path="res://modules/overworld/story/journal_entry_pickup.gd" id="1_r11s8"]
-[ext_resource type="Texture2D" uid="uid://dwu02f18und58" path="res://assets/ui/menu_bg.webp" id="2_0ujin"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_1su54"]
+[ext_resource type="Texture2D" uid="uid://ce4vmyt7fgm88" path="res://assets/overworld/materials/textures/item_sparkle.png" id="3_1wusj"]
+[ext_resource type="Shader" uid="uid://cnojtjae3i5sn" path="res://assets/overworld/shaders/item_sparkle.gdshader" id="3_gpcwc"]
+[ext_resource type="Shader" uid="uid://uyv2iv77t42t" path="res://assets/overworld/shaders/journal_page_highlight.gdshader" id="6_jk7kk"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ujin"]
-albedo_color = Color(1, 1, 0.243137, 1)
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vrel1"]
+render_priority = 0
+shader = ExtResource("6_jk7kk")
+shader_parameter/alpha_scissor_threshold = 0.01
+shader_parameter/base_emission = 0.25
+shader_parameter/highlight_band_color = Color(0.5, 0.5, 0.42, 1)
+shader_parameter/highlight_band_period = 3.0
+shader_parameter/highlight_band_width = 0.5
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1wusj"]
-material = SubResource("StandardMaterial3D_0ujin")
-size = Vector2(0.1, 0.1)
-orientation = 2
+[sub_resource type="QuadMesh" id="QuadMesh_a74bk"]
+material = SubResource("ShaderMaterial_vrel1")
+size = Vector2(0.672, 0.832)
 
-[sub_resource type="Curve" id="Curve_0ujin"]
-_data = [Vector2(0, 0), 0.0, 3.52727, 0, 0, Vector2(0.726708, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+[sub_resource type="Curve" id="Curve_gpcwc"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_1wusj"]
-curve = SubResource("Curve_0ujin")
+[sub_resource type="CurveTexture" id="CurveTexture_jk7kk"]
+curve = SubResource("Curve_gpcwc")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gpcwc"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0ujin"]
 particle_flag_disable_z = true
-emission_shape = 6
-emission_ring_axis = Vector3(0, 0, 1)
-emission_ring_height = 0.0
-emission_ring_radius = 0.3
-emission_ring_inner_radius = 0.3
-emission_ring_cone_angle = 90.0
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 0.35, 0.01)
+angle_min = 1.07288e-05
+angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0
-angular_velocity_min = 104.0
-angular_velocity_max = 720.0
-orbit_velocity_min = 0.15
-orbit_velocity_max = 0.25
-radial_velocity_min = -0.0500223
-radial_velocity_max = -0.0500223
-gravity = Vector3(0, 0, 0)
-radial_accel_min = -0.150002
-radial_accel_max = -0.100002
-scale_curve = SubResource("CurveTexture_1wusj")
+angular_velocity_min = 75.0
+angular_velocity_max = 90.0
+gravity = Vector3(0, 0.05, 0)
+alpha_curve = SubResource("CurveTexture_jk7kk")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jk7kk"]
-specular_mode = 2
-vertex_color_use_as_albedo = true
-emission_enabled = true
-emission = Color(0.910389, 1, 0.565413, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk7kk"]
+render_priority = 0
+shader = ExtResource("3_gpcwc")
+shader_parameter/texture_albedo = ExtResource("3_1wusj")
 
 [sub_resource type="QuadMesh" id="QuadMesh_vrel1"]
-material = SubResource("StandardMaterial3D_jk7kk")
-size = Vector2(0.02, 0.02)
+material = SubResource("ShaderMaterial_jk7kk")
+size = Vector2(0.1, 0.1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1su54"]
 
-[sub_resource type="Environment" id="Environment_a74bk"]
-background_mode = 1
-background_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
-glow_enabled = true
+[sub_resource type="Animation" id="Animation_1wusj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HoveringPage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HoveringPage:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoveringPage:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HoveringPage:mesh:material:shader_parameter/base_emission")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.25, -0.2167, 0, 0.2167, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0ujin"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HoveringPage:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 3, 1, 3, 1),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 0.05, -0.25, 0, 0.25, 0, 0, 0, 0, 0, 0, -0.05, -0.25, 0, 0.25, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HoveringPage:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3, 3, 3),
+"points": PackedFloat32Array(0.95, -0.2, 0, 0.2, 0, 1.05, -0.2, 0, 0.2, 0, 0.95, -0.2, 0, 0.2, 0, 1.05, -0.2, 0, 0.2, 0, 0.95, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoveringPage:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3, 3, 3),
+"points": PackedFloat32Array(1.05, -0.2, 0, 0.2, 0, 0.95, -0.2, 0, 0.2, 0, 1.05, -0.2, 0, 0.2, 0, 0.95, -0.2, 0, 0.2, 0, 1.05, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2)
+}
+
+[sub_resource type="Animation" id="Animation_gpcwc"]
+resource_name = "pickup"
+length = 0.4334
+step = 0.0167
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HoveringPage:rotation:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, -0.115, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.115, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.0166667, 0.0333333, 0.05, 0.0666667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HoveringPage:rotation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoveringPage:rotation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.01, 0, 0.01, 0, 0.174, -0.01, 0, 0.01, 0, 0, -0.01, 0, 0.01, 0, -0.174, -0.01, 0, 0.01, 0, 0, -0.01, 0, 0.01, 0),
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1001)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HoveringPage:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(3, 3, 0, 0),
+"points": PackedFloat32Array(1, -0.02, 0, 0.02, 0, 1.1, -0.0113511, -0.0598019, 0.0113511, 0.0598019, 1.1, -0.02, 0, 0.02, 0, 0.75, -0.08, 0, 0.08, 0),
+"times": PackedFloat32Array(0.15, 0.233333, 0.283333, 0.35)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HoveringPage:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 3, 0, 0),
+"points": PackedFloat32Array(1, -0.02, 0, 0.02, 0, 0.9, -0.011, 0.06, 0.011, -0.06, 0.9, -0.02, 0, 0.02, 0, 1.25, -0.08, 0, 0.08, 0),
+"times": PackedFloat32Array(0.15, 0.233333, 0.283333, 0.35)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HoveringPage:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(3, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.02, 0, 0.02, 0, -0.1, -0.011, 0.06, 0.011, -0.06, -0.1, -0.02, 0, 0.02, 0, 4, -0.02, 0, 0.02, 0),
+"times": PackedFloat32Array(0.15, 0.25, 0.283333, 0.366667)
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_page"
+}]
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HoveringPage:mesh:material:shader_parameter/base_emission")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(0.25, -0.0166667, -0.0347235, 0.0166667, 0.0347235, 0.5, -0.0166667, -0.00179914, 0.0166667, 0.00179914, 0.25, -0.025, 0, 0.025, 0),
+"times": PackedFloat32Array(0, 0.05, 0.1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1wusj"]
+_data = {
+&"RESET": SubResource("Animation_1wusj"),
+&"idle": SubResource("Animation_0ujin"),
+&"pickup": SubResource("Animation_gpcwc")
+}
 
 [node name="JournalEntryPickup" type="Node3D"]
 script = ExtResource("1_r11s8")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-visible = false
-amount = 50
-lifetime = 0.2
-mesh = SubResource("PlaneMesh_1wusj")
-emission_shape = 2
-emission_sphere_radius = 1.0
-particle_flag_rotate_y = true
-gravity = Vector3(0, 0, 0)
-angular_velocity_max = 6.35
-
-[node name="HoveringPage" type="Sprite3D" parent="."]
-cast_shadow = 0
-gi_mode = 0
-pixel_size = 0.0007
-billboard = 2
-texture = ExtResource("2_0ujin")
+[node name="HoveringPage" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_a74bk")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1.6, 0, 0, 0, -6.99382e-08, 1.6, 0, -1.6, -6.99382e-08, 0, 0, 0)
-amount = 36
-explosiveness = 0.19
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0325293)
+cast_shadow = 0
+amount = 4
+lifetime = 1.5
+visibility_aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
 local_coords = true
-transform_align = 2
-process_material = SubResource("ParticleProcessMaterial_gpcwc")
+process_material = SubResource("ParticleProcessMaterial_0ujin")
 draw_pass_1 = SubResource("QuadMesh_vrel1")
 
 [node name="InteractionComponent3D" type="Area3D" parent="." node_paths=PackedStringArray("object")]
@@ -102,7 +269,11 @@ metadata/_custom_type_script = "uid://7n4knvm4dle5"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]
 shape = SubResource("SphereShape3D_1su54")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_a74bk")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1wusj")
+}
+autoplay = "idle"
+speed_scale = 0.5
 
 [connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]

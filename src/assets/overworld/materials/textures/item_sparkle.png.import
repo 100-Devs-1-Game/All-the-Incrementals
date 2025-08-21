@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr8k8eur8qe7a"
-path.bptc="res://.godot/imported/entry4.png-8cd6e75b8f85a8726198c3d72050a2f7.bptc.ctex"
+uid="uid://ce4vmyt7fgm88"
+path.s3tc="res://.godot/imported/item_sparkle.png-c29426538eb77f1458f262b0c3491dd0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,22 +11,22 @@ metadata={
 
 [deps]
 
-source_file="res://assets/overworld/story/journal/entry4.png"
-dest_files=["res://.godot/imported/entry4.png-8cd6e75b8f85a8726198c3d72050a2f7.bptc.ctex"]
+source_file="res://assets/overworld/materials/textures/item_sparkle.png"
+dest_files=["res://.godot/imported/item_sparkle.png-c29426538eb77f1458f262b0c3491dd0.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
+compress/normal_map=2
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
