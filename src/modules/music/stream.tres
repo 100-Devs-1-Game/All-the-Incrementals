@@ -1,20 +1,28 @@
-[gd_resource type="AudioStreamInteractive" load_steps=4 format=3 uid="uid://d263hyurubktn"]
+[gd_resource type="AudioStreamInteractive" load_steps=6 format=3 uid="uid://d263hyurubktn"]
 
 [ext_resource type="AudioStream" uid="uid://br5jc2gh7ifjw" path="res://assets/other/empty.mp3" id="1_f66fh"]
-[ext_resource type="AudioStream" uid="uid://dnlbb2meucm37" path="res://assets/minigames/water_rowing_rapids/rowing_rapids.ogg" id="2_qcpy4"]
+[ext_resource type="AudioStream" uid="uid://dnlbb2meucm37" path="res://assets/minigames/water_minigame.ogg" id="2_b5y7q"]
 [ext_resource type="AudioStream" uid="uid://b0xcpb7vo5l8j" path="res://assets/minigames/fire_fighters/fire_minigame.ogg" id="3_f66fh"]
+[ext_resource type="AudioStream" uid="uid://6jfthlospjue" path="res://assets/overworld/music/earth_water_hub_loop.ogg" id="4_m1w37"]
+[ext_resource type="AudioStream" uid="uid://byas3rao0uf2w" path="res://assets/overworld/music/shrine_ambience.ogg" id="5_m1w37"]
 
 [resource]
-clip_count = 3
+clip_count = 5
 clip_0/name = &"null"
 clip_0/stream = ExtResource("1_f66fh")
 clip_0/auto_advance = 0
-clip_1/name = &"rowing_rapids"
-clip_1/stream = ExtResource("2_qcpy4")
+clip_1/name = &"water_minigame"
+clip_1/stream = ExtResource("2_b5y7q")
 clip_1/auto_advance = 0
 clip_2/name = &"fire_minigame"
 clip_2/stream = ExtResource("3_f66fh")
 clip_2/auto_advance = 0
+clip_3/name = &"earth_hub"
+clip_3/stream = ExtResource("4_m1w37")
+clip_3/auto_advance = 0
+clip_4/name = &"shrine"
+clip_4/stream = ExtResource("5_m1w37")
+clip_4/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1.0,
