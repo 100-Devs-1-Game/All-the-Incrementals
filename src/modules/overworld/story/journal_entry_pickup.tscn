@@ -146,6 +146,8 @@ cast_shadow = 0
 gi_mode = 0
 pixel_size = 0.0007
 billboard = 2
+double_sided = false
+alpha_cut = 1
 texture = ExtResource("2_0ujin")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
