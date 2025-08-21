@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb0kxrw6inhx7"
-path="res://.godot/imported/arrow_up.png-c1a8617ee9842bd796137c546ae9a142.ctex"
+uid="uid://8j54ygfmiaev"
+path="res://.godot/imported/arrow_score_background.png-b8322a8dbb0f17b17f7646164ad197ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/wind_rhythm/placeholder_assets/arrow_up.png"
-dest_files=["res://.godot/imported/arrow_up.png-c1a8617ee9842bd796137c546ae9a142.ctex"]
+source_file="res://assets/minigames/wind_rhythm/notes/arrow_score_background.png"
+dest_files=["res://.godot/imported/arrow_score_background.png-b8322a8dbb0f17b17f7646164ad197ac.ctex"]
 
 [params]
 

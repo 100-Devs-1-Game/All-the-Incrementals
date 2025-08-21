@@ -1,18 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf2dwl6k8ly10"]
+[gd_scene load_steps=5 format=3 uid="uid://bf2dwl6k8ly10"]
 
 [ext_resource type="Script" uid="uid://cl13wy1r0o822" path="res://modules/minigame/wind_rhythm/note/note.gd" id="1_db7ty"]
-[ext_resource type="Texture2D" uid="uid://dpiwym3ktxih5" path="res://assets/minigames/wind_rhythm/directional_arrow_base.png" id="2_u6fge"]
+[ext_resource type="Texture2D" uid="uid://c1h8yx55rwmr0" path="res://assets/minigames/wind_rhythm/notes/directional_arrow_base.png" id="2_u6fge"]
 [ext_resource type="Texture2D" uid="uid://b1qv4o4370k4w" path="res://assets/minigames/wind_rhythm/up_arrow.png" id="3_g3a8c"]
+[ext_resource type="Texture2D" uid="uid://ce6ihvdqf0xpr" path="res://assets/minigames/wind_rhythm/notes/up_note_marker.png" id="4_g3a8c"]
 
 [node name="Note2" type="Node2D"]
+scale = Vector2(0.35, 0.35)
 script = ExtResource("1_db7ty")
 
 [node name="Background" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_u6fge")
 
 [node name="Arrow" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_g3a8c")
+
+[node name="ArrowFill" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("4_g3a8c")
+
+[node name="Judgment" type="Sprite2D" parent="."]
+unique_name_in_owner = true

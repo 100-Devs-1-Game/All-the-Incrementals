@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hlwjdop371ma"
-path="res://.godot/imported/note_square.png-6d662dfcd6451130af0ed4b4dd2828d1.ctex"
+uid="uid://cjkjm5i8cvpq6"
+path="res://.godot/imported/secondary_icon.png-4180c0773be37c2c1d915e95c8a840d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/minigames/wind_rhythm/placeholder_assets/note_square.png"
-dest_files=["res://.godot/imported/note_square.png-6d662dfcd6451130af0ed4b4dd2828d1.ctex"]
+source_file="res://assets/minigames/wind_rhythm/notes/secondary_icon.png"
+dest_files=["res://.godot/imported/secondary_icon.png-4180c0773be37c2c1d915e95c8a840d5.ctex"]
 
 [params]
 
