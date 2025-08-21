@@ -88,6 +88,17 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HoveringPage:mesh:material:shader_parameter/base_emission")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.25, -0.2167, 0, 0.2167, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_0ujin"]
 resource_name = "idle"
@@ -211,6 +222,17 @@ tracks/6/keys = {
 "args": [],
 "method": &"display_page"
 }]
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HoveringPage:mesh:material:shader_parameter/base_emission")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(0.25, -0.0166667, -0.0347235, 0.0166667, 0.0347235, 0.5, -0.0166667, -0.00179914, 0.0166667, 0.00179914, 0.25, -0.025, 0, 0.025, 0),
+"times": PackedFloat32Array(0, 0.05, 0.1)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1wusj"]
