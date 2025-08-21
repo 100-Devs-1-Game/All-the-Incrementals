@@ -44,6 +44,7 @@ collision_layer = 0
 monitorable = false
 script = ExtResource("2_v8pda")
 object = NodePath("..")
+action_ui_suffix = "open Shrine"
 metadata/_custom_type_script = "uid://7n4knvm4dle5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]
@@ -79,6 +80,7 @@ metadata/_custom_type_script = "uid://cqxo556jptakn"
 collision_layer = 0
 monitorable = false
 script = ExtResource("2_v8pda")
+action_ui_suffix = "exit Settlement"
 metadata/_custom_type_script = "uid://7n4knvm4dle5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/SettlementExit/InteractionComponent3D"]
