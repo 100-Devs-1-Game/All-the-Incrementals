@@ -185,7 +185,6 @@ text = "SpiritKeeper"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -193,51 +192,35 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -140.0
-offset_top = 35.0
+offset_top = -175.145
 offset_right = 210.0
-offset_bottom = 491.0
+offset_bottom = 280.855
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 60
 
-[node name="Start" type="Button" parent="."]
-layout_mode = 0
-offset_left = 820.0
-offset_top = 647.0
-offset_right = 1170.0
-offset_bottom = 716.0
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 text = "Start / Continue"
 
-[node name="Settings" type="Button" parent="."]
-layout_mode = 0
-offset_left = 820.0
-offset_top = 741.0
-offset_right = 1170.0
-offset_bottom = 810.0
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 text = "Settings & Controls"
 
-[node name="Extras" type="Button" parent="."]
-layout_mode = 0
-offset_left = 820.0
-offset_top = 836.0
-offset_right = 1170.0
-offset_bottom = 905.0
+[node name="Extras" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 text = "Extras"
 
-[node name="QuitGame" type="Button" parent="."]
-layout_mode = 0
-offset_left = 820.0
-offset_top = 930.0
-offset_right = 1170.0
-offset_bottom = 999.0
+[node name="QuitGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 text = "Quit Game"
 
 [node name="title_logo" type="Sprite2D" parent="."]
 position = Vector2(984, 177)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.65, 0.65)
 texture = ExtResource("33_exq6s")
 
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Extras" to="." method="_on_extras_pressed"]
-[connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Extras" to="." method="_on_extras_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]
