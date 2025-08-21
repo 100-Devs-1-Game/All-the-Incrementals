@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dornsg7c2k7lo"]
 
-[ext_resource type="PackedScene" uid="uid://yyxljysddjcc" path="res://assets/overworld/models/architectural/structures/houses/straw_house/straw_house.gltf" id="1_8pr5i"]
-[ext_resource type="ArrayMesh" uid="uid://c285skwaly2or" path="res://assets/overworld/models/architectural/structures/houses/straw_house/straw_house.mesh" id="2_kgbyt"]
+[ext_resource type="PackedScene" uid="uid://yyxljysddjcc" path="res://models/architectural/structures/houses/straw_house/straw_house.gltf" id="1_8pr5i"]
+[ext_resource type="ArrayMesh" uid="uid://c285skwaly2or" path="res://models/architectural/structures/houses/straw_house/straw_house.mesh" id="2_kgbyt"]
 
 [node name="straw_house2" instance=ExtResource("1_8pr5i")]
 

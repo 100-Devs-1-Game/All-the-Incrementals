@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnbkj6wltnym8"]
+
+[ext_resource type="PackedScene" uid="uid://ddk48nqis3frm" path="res://models/architectural/structures/bridges/bridge_01_m/bridge_01_m.gltf" id="1_dflui"]
+[ext_resource type="ArrayMesh" uid="uid://dk7nmp8001eqo" path="res://models/architectural/structures/bridges/bridge_01_m/bridge_01.mesh" id="2_fvhf5"]
+
+[node name="bridge_01_m" instance=ExtResource("1_dflui")]
+
+[node name="ArcBridge_114" parent="." index="0"]
+mesh = ExtResource("2_fvhf5")

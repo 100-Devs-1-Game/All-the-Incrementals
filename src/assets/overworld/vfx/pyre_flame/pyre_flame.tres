@@ -1,61 +1,32 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://b3itxrlohx1"]
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://b3itxrlohx1"]
 
-[ext_resource type="Texture2D" uid="uid://brvf0ld6mmi66" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_blend/01.webp" id="1_uteaw"]
-[ext_resource type="Texture2D" uid="uid://mude82v2mwab" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_blend/02.webp" id="2_frbyp"]
-[ext_resource type="Texture2D" uid="uid://81b1o6vn4xn8" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_blend/03.webp" id="3_4xjng"]
-[ext_resource type="Texture2D" uid="uid://d7cl6tph3au0" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_blend/04.webp" id="4_bkbnh"]
-[ext_resource type="Texture2D" uid="uid://dmqqvxvi8iq15" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_blend/05.webp" id="5_l38mh"]
-[ext_resource type="Texture2D" uid="uid://dal3ymb5jufag" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_blend/06.webp" id="6_1monp"]
-[ext_resource type="Texture2D" uid="uid://j5heuw6gwobd" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_default/01.webp" id="7_fhy5y"]
-[ext_resource type="Texture2D" uid="uid://c37cjq3464mjo" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_default/02.webp" id="8_iy240"]
-[ext_resource type="Texture2D" uid="uid://xwaka0v8faly" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_default/03.webp" id="9_nqycq"]
-[ext_resource type="Texture2D" uid="uid://c5l417tvqpwfv" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_default/04.webp" id="10_whjhr"]
-[ext_resource type="Texture2D" uid="uid://bw3ku2rcch5kp" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_default/05.webp" id="11_fvpfu"]
-[ext_resource type="Texture2D" uid="uid://cvxuuiqdea0f5" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_default/06.webp" id="12_1xdv4"]
+[ext_resource type="Texture2D" uid="uid://cwwghv0s7arjb" path="res://assets/overworld/vfx/pyre_flame/01.webp" id="1_e4jcc"]
+[ext_resource type="Texture2D" uid="uid://bdv8ywt45eatd" path="res://assets/overworld/vfx/pyre_flame/02.webp" id="2_0kqyj"]
+[ext_resource type="Texture2D" uid="uid://vsq70yqbyeqr" path="res://assets/overworld/vfx/pyre_flame/03.webp" id="3_1qd1r"]
+[ext_resource type="Texture2D" uid="uid://y2ycrkdy4a1w" path="res://assets/overworld/vfx/pyre_flame/04.webp" id="4_r168g"]
+[ext_resource type="Texture2D" uid="uid://b343e8olkkm2b" path="res://assets/overworld/vfx/pyre_flame/05.webp" id="5_flflm"]
+[ext_resource type="Texture2D" uid="uid://b5a5jefstnyve" path="res://assets/overworld/vfx/pyre_flame/06.webp" id="6_wxkwe"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_uteaw")
+"texture": ExtResource("1_e4jcc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_frbyp")
+"texture": ExtResource("2_0kqyj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_4xjng")
+"texture": ExtResource("3_1qd1r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_bkbnh")
+"texture": ExtResource("4_r168g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_l38mh")
+"texture": ExtResource("5_flflm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_1monp")
-}],
-"loop": true,
-"name": &"pyre_flame_blend",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_fhy5y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_iy240")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_nqycq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_whjhr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_fvpfu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_1xdv4")
+"texture": ExtResource("6_wxkwe")
 }],
 "loop": true,
 "name": &"pyre_flame_default",

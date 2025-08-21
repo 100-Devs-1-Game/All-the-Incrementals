@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbl6vd6owbgae"]
+[gd_scene load_steps=3 format=3 uid="uid://dbl6vd6owbgae"]
 
-[ext_resource type="PackedScene" uid="uid://bf08tpi716rka" path="res://assets/overworld/models/architectural/arch/arch_01.gltf" id="1_o01er"]
+[ext_resource type="PackedScene" uid="uid://bf08tpi716rka" path="res://models/architectural/arch/arch_01.gltf" id="1_o01er"]
+[ext_resource type="Material" uid="uid://b46ovjaptuq56" path="res://materials/textures/concrete/concrete_02.tres" id="2_gdg3j"]
 
 [node name="arch_012" instance=ExtResource("1_o01er")]
+
+[node name="arch_01" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_gdg3j")

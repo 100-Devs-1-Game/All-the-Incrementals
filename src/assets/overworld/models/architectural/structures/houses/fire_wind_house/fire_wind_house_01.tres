@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b187u622ehk6i"]
+
+[ext_resource type="Texture2D" uid="uid://cvdg4bt8pwvco" path="res://models/architectural/structures/houses/fire_wind_house/fire_wind_house_01_m/Fire_Win_House_01_done.webp" id="1_taags"]
+
+[resource]
+albedo_texture = ExtResource("1_taags")

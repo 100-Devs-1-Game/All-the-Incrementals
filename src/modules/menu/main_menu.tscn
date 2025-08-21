@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://khnsbhc4bqj8"]
+[gd_scene load_steps=35 format=3 uid="uid://khnsbhc4bqj8"]
 
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_e5aks"]
 [ext_resource type="Script" uid="uid://br6m2cbo4864k" path="res://modules/menu/main_menu.gd" id="1_tsonj"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://q625ys18s5mn" path="res://assets/ui/background_frames/027.webp" id="30_pvo1w"]
 [ext_resource type="Texture2D" uid="uid://cqgh21y1v0rmw" path="res://assets/ui/background_frames/028.webp" id="31_718ex"]
 [ext_resource type="Texture2D" uid="uid://d4l3nkomcn1bv" path="res://assets/ui/background_frames/029.webp" id="32_7yv0i"]
+[ext_resource type="Texture2D" uid="uid://ndlswppd650s" path="res://assets/overworld/assets/shared/title_logo.webp" id="33_exq6s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7hscu"]
 animations = [{
@@ -146,6 +147,7 @@ sprite_frames = SubResource("SpriteFrames_7hscu")
 centered = false
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 1
 anchors_preset = 8
@@ -160,38 +162,8 @@ offset_bottom = 336.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -215.0
-offset_top = -226.0
-offset_right = 216.0
-offset_bottom = 342.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 60
-
-[node name="Start" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Start / Continue"
-
-[node name="Settings" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Settings & Controls"
-
-[node name="Extras" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Extras"
-
-[node name="QuitGame" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Quit Game"
-
 [node name="Title" type="Label" parent="."]
+visible = false
 z_index = 2
 layout_mode = 1
 anchors_preset = 8
@@ -212,7 +184,56 @@ theme_override_font_sizes/font_size = 71
 text = "SpiritKeeper"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Extras" to="." method="_on_extras_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 35.0
+offset_right = 210.0
+offset_bottom = 491.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="Start" type="Button" parent="."]
+offset_left = 820.0
+offset_top = 647.0
+offset_right = 1170.0
+offset_bottom = 716.0
+text = "Start / Continue"
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 820.0
+offset_top = 741.0
+offset_right = 1170.0
+offset_bottom = 810.0
+text = "Settings & Controls"
+
+[node name="Extras" type="Button" parent="."]
+offset_left = 820.0
+offset_top = 836.0
+offset_right = 1170.0
+offset_bottom = 905.0
+text = "Extras"
+
+[node name="QuitGame" type="Button" parent="."]
+offset_left = 820.0
+offset_top = 930.0
+offset_right = 1170.0
+offset_bottom = 999.0
+text = "Quit Game"
+
+[node name="title_logo" type="Sprite2D" parent="."]
+position = Vector2(984, 177)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("33_exq6s")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Extras" to="." method="_on_extras_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]

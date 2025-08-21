@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmte7jsh01anp"]
+
+[ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://models/landscapes/island_circle.gltf" id="1_afa67"]
+[ext_resource type="Material" uid="uid://b3phyyymvntfb" path="res://materials/simple/simple/s_beige.tres" id="2_bo3x1"]
+
+[node name="island_circle_beach1" instance=ExtResource("1_afa67")]
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_bo3x1")

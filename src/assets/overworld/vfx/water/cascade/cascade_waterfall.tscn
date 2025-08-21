@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://coxmlipoas6nc"]
+
+[ext_resource type="PackedScene" uid="uid://de7oyaxqh7gx7" path="res://vfx/water/cascade/cascade_waterfall.gltf" id="1_jat31"]
+[ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://scripts/shaders/water_toon.gdshader" id="2_rlogr"]
+[ext_resource type="Texture2D" uid="uid://cfr1esmynt0np" path="res://vfx/water/circular_water/water_blue_alt.webp" id="3_xag5y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rlogr"]
+render_priority = 0
+shader = ExtResource("2_rlogr")
+shader_parameter/time_speed = 1.8
+shader_parameter/swirl_strength = 0.1
+shader_parameter/swirl_freq = 5.0
+shader_parameter/albedo_texture = ExtResource("3_xag5y")
+shader_parameter/normal_strength = 1.0
+shader_parameter/emission_strength = 0.3
+
+[node name="cascade_waterfall" instance=ExtResource("1_jat31")]
+
+[node name="W2_001" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_rlogr")

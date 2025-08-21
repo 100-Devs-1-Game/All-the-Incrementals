@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bwwexoya750av"]
+
+[ext_resource type="Texture2D" uid="uid://bo2cqvjrh8qjd" path="res://materials/textures/ornaments/ornament_03_albedo.webp" id="1_x73a2"]
+[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://materials/textures/shared/canvas_normal.webp" id="2_iy3dp"]
+
+[resource]
+albedo_texture = ExtResource("1_x73a2")
+metallic = 0.92
+roughness = 0.25
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("2_iy3dp")
