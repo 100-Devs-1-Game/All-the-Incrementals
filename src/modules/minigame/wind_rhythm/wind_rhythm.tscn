@@ -209,6 +209,9 @@ data_uid = "uid://cxrnthj4sdjv4"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
 
+[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
+visible = false
+
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
 visible_on_start = true
 
@@ -219,6 +222,7 @@ scale = Vector2(1.29686, 1.29686)
 texture = ExtResource("3_m5gb3")
 
 [node name="PanelContainer" parent="." instance=ExtResource("4_uq30r")]
+visible = false
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
@@ -280,28 +284,28 @@ grow_vertical = 1
 [node name="BandSpiritGroup" type="Node2D" parent="."]
 
 [node name="BassoonSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
-position = Vector2(678, 478)
+position = Vector2(678, 636)
 sprite_frames = SubResource("SpriteFrames_nnsn1")
 
 [node name="BrassSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
-position = Vector2(1290, 730)
+position = Vector2(1290, 790)
 sprite_frames = SubResource("SpriteFrames_wxldb")
 frame_progress = 0.548502
 
 [node name="BassSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
-position = Vector2(1488, 503)
+position = Vector2(1488, 661)
 sprite_frames = SubResource("SpriteFrames_thg2w")
 
 [node name="DrumsSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
-position = Vector2(814, 749)
+position = Vector2(814, 809)
 sprite_frames = SubResource("SpriteFrames_pv5lw")
 
 [node name="GuitarSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
-position = Vector2(1069, 915)
+position = Vector2(1069, 940)
 sprite_frames = SubResource("SpriteFrames_22vyf")
 
 [node name="ShakuhachiSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
-position = Vector2(1062, 529)
+position = Vector2(1062, 687)
 sprite_frames = SubResource("SpriteFrames_oo3bj")
 
 [editable path="MinigameSharedComponents"]
