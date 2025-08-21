@@ -42,7 +42,7 @@ func debug_start_rowing_rapids() -> void:
 # we have the overworld code working, we'll be setting the settlement naturally.
 func _debug_force_settlement_data() -> void:
 	var clayport_data: SettlementData = load(
-		"res://modules/overworld_locations/clayport/clayport_data.tres"
+		"res://modules/overworld_locations/clayport/clayport.tres"
 	)
 	SceneLoader._current_settlement = clayport_data
 
