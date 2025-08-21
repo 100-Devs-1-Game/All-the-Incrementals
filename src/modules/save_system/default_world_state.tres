@@ -52,6 +52,7 @@ metadata/_custom_type_script = "uid://bme5dngxb1tht"
 
 [resource]
 script = ExtResource("2_4m006")
+save_game_version = 0
 minigame_unlock_levels = Dictionary[StringName, int]({})
 earth_altar = SubResource("Resource_ghqhr")
 fire_altar = SubResource("Resource_4m006")
