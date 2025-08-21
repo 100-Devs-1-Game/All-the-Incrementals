@@ -2,6 +2,7 @@ class_name AltarUI
 extends CanvasLayer
 
 var _altar_stats: AltarStats
+var _progess_bars: Array[ProgressBar]
 
 @onready var current_essence_display: CurrentEssenceDisplay = $Panel/CurrentEssence
 @onready var grid_container: GridContainer = %GridContainer
@@ -27,6 +28,8 @@ func update():
 		grid_container.remove_child(child)
 		child.queue_free()
 
+	_progess_bars.clear()
+
 	for minigame in _altar_stats.minigames:
 		var button := Button.new()
 		button.text = "Play >"
@@ -50,6 +53,27 @@ func update():
 		label.text = "= %d (%.1f)" % [int(amount), amount]
 		grid_container.add_child(label)
 
+		var progress_bar := ProgressBar.new()
+		progress_bar.set_anchors_preset(Control.PRESET_FULL_RECT)
+		progress_bar.max_value = 1.0
+		progress_bar.step = 0.001
+		progress_bar.show_percentage = false
+		progress_bar.add_theme_stylebox_override("background", StyleBoxEmpty.new())
+		progress_bar.modulate.a = 0.3
+
+		label.add_child(progress_bar)
+		_progess_bars.append(progress_bar)
+
+
+func _process(_delta: float) -> void:
+	if not visible:
+		return
+
+	for progress_bar in _progess_bars:
+		if not is_instance_valid(progress_bar):
+			continue
+		progress_bar.value = PassiveEssenceGeneration.get_progress()
+
 
 func _on_leave_pressed() -> void:
 	hide()
@@ -61,3 +85,14 @@ func _on_generation_tick():
 		assert(_altar_stats != null)
 		current_essence_display.refresh_labels()
 		update()
+
+
+func _on_take_essence_pressed() -> void:
+	if _altar_stats.stored_essence == 0:
+		return
+
+	var player_inventory: EssenceInventory = SaveGameManager.world_state.player_state.inventory
+	player_inventory.add_essence(_altar_stats.get_essence(), _altar_stats.stored_essence)
+	_altar_stats.stored_essence = 0
+	update()
+	current_essence_display.refresh_labels()
