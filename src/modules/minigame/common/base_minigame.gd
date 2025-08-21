@@ -106,7 +106,7 @@ func play():
 	playing.emit()
 
 	if data.music_track:
-		EventBus.request_music.emit(data.music_track, true)
+		EventBus.request_music.emit(data.music_track)
 		EventBus.request_music_volume.emit(0.5)
 
 	if has_countdown:

@@ -7,4 +7,5 @@
 script = ExtResource("1_jal1b")
 display_name = "Clayport"
 settlement_scene = ExtResource("2_gk2uo")
+music_track = "earth_hub"
 metadata/_custom_type_script = "uid://cbvt5rfiyp1m7"
