@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2exunln5ws47"]
+[gd_scene load_steps=3 format=3 uid="uid://d2exunln5ws47"]
 
-[ext_resource type="PackedScene" uid="uid://c0v7v3nbrmkue" path="res://assets/overworld/models/architectural/ribbon/middle_short_ribbon.gltf" id="1_258b7"]
+[ext_resource type="PackedScene" uid="uid://c0v7v3nbrmkue" path="res://models/architectural/ribbon/middle_short_ribbon.gltf" id="1_258b7"]
+[ext_resource type="Material" uid="uid://dsyp3a8t3vix7" path="res://materials/textures/cloth/cloth_01.tres" id="2_hwxrk"]
 
 [node name="middle_short_ribbon2" instance=ExtResource("1_258b7")]
+
+[node name="middle_short_ribbon" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_hwxrk")

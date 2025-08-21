@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://do8ec7rtyks35"]
+[gd_scene load_steps=4 format=3 uid="uid://do8ec7rtyks35"]
 
-[ext_resource type="PackedScene" uid="uid://7tck87uxkdg2" path="res://assets/overworld/models/props/ornaments/ornament_01.gltf" id="1_namfe"]
-[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://assets/overworld/materials/simple/metallic/metallic_gray.tres" id="2_pqpj7"]
+[ext_resource type="PackedScene" uid="uid://7tck87uxkdg2" path="res://models/props/ornaments/ornament_01.gltf" id="1_namfe"]
+[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://materials/simple/metallic/m_gray.tres" id="2_pqpj7"]
+[ext_resource type="Material" uid="uid://chqynex3x8cry" path="res://materials/simple/metallic/m_blue.tres" id="3_eysvj"]
 
 [node name="ornament_01" instance=ExtResource("1_namfe")]
 
 [node name="5" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_pqpj7")
+
+[node name="5_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_eysvj")

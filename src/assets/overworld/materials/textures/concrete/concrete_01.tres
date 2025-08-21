@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://xxpd0n3a2268"]
+
+[ext_resource type="Texture2D" uid="uid://c7yroy1h7n2km" path="res://materials/textures/concrete/concrete_albedo_01.webp" id="1_6g28a"]
+[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://materials/textures/shared/canvas_normal.webp" id="2_c65pb"]
+
+[resource]
+albedo_texture = ExtResource("1_6g28a")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("2_c65pb")

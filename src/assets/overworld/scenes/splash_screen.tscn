@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmhvblnd0l1wr"]
+
+[ext_resource type="Texture2D" uid="uid://dllgmu2ymxd3x" path="res://assets/overworld/assets/shared/godot_icon.webp" id="1_hsxvm"]
+[ext_resource type="Texture2D" uid="uid://bujvnuifvl2xi" path="res://assets/overworld/assets/shared/extended_arm.webp" id="2_hsxvm"]
+
+[sub_resource type="Animation" id="Animation_hsxvm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(556, 273)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../GodotIcon:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3mj2l"]
+resource_name = "hand_stamp"
+length = 4.0
+step = 0.086
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.79, 0.916667, 1.03, 1.58333, 2.5),
+"transitions": PackedFloat32Array(1.23114, 0.784584, 1.41421, 0.68302, 1, 0.183011),
+"update": 0,
+"values": [Vector2(533, 243), Vector2(533, 267), Vector2(533, 293), Vector2(533, 267), Vector2(533, 267), Vector2(-822.415, 366)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.33333, 2.83333),
+"transitions": PackedFloat32Array(2.21914, 1.8025, 0.420448),
+"update": 0,
+"values": [0.0, 0.0, -0.607375]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../GodotIcon:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
+"transitions": PackedFloat32Array(1.93187, 0.63728, 1.93187, 0.63728, 1.93187, 0.63728, 1.93187, 0.63728, 1.93187, 0.63728, 1.93187, 0.63728, 1.93187),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vbcv6"]
+_data = {
+&"RESET": SubResource("Animation_hsxvm"),
+&"hand_stamp": SubResource("Animation_3mj2l")
+}
+
+[node name="Splash_Screen" type="Node2D"]
+
+[node name="BackgroundRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.051971, 0.051971, 0.051971, 1)
+
+[node name="GodotIcon" type="Sprite2D" parent="."]
+position = Vector2(950, 540)
+texture = ExtResource("1_hsxvm")
+
+[node name="HandStamp" type="Sprite2D" parent="."]
+position = Vector2(556, 273)
+texture = ExtResource("2_hsxvm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HandStamp"]
+libraries = {
+&"": SubResource("AnimationLibrary_vbcv6")
+}
+autoplay = "hand_stamp"
