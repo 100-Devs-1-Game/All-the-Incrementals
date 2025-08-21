@@ -38,6 +38,9 @@ const MAP_ANIMATION_NAME := &"04_open_map"
 var state_machine: NoxCallableStateMachine
 
 var _last_strong_direction: Vector3
+var _possible_interaction: InteractionComponent3D
+
+@onready var label_interaction_hint: Label = %"Label Interaction Hint"
 
 
 #region states
@@ -131,6 +134,8 @@ func _handle_model_orientation(desired_direction: Vector3, delta: float) -> void
 #region built-ins
 func _ready() -> void:
 	EventBus.stop_player_interaction.connect(stop_interaction)
+	EventBus.notify_player_possible_interaction.connect(_on_possible_interaction)
+	EventBus.notify_player_interaction_lost.connect(_on_interaction_lost)
 
 	# states
 	state_machine = NoxCallableStateMachine.new()
@@ -171,3 +176,15 @@ func interact_with(_obj: Node3D) -> bool:
 
 func stop_interaction():
 	state_machine.change_state(idle_state)
+
+
+func _on_possible_interaction(component: InteractionComponent3D):
+	_possible_interaction = component
+	if component.action_ui_suffix:
+		label_interaction_hint.text = "Press SPACE to " + component.action_ui_suffix
+		label_interaction_hint.show()
+
+
+func _on_interaction_lost(component: InteractionComponent3D):
+	if component == _possible_interaction:
+		label_interaction_hint.hide()

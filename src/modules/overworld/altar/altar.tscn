@@ -19,6 +19,7 @@ script = ExtResource("1_nq507")
 collision_layer = 0
 monitorable = false
 script = ExtResource("2_n0bjl")
+action_ui_suffix = "open Altar"
 metadata/_custom_type_script = "uid://7n4knvm4dle5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]

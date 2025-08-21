@@ -27,4 +27,6 @@ signal request_music_volume(volume: float)
 
 #region Player
 signal stop_player_interaction
+signal notify_player_possible_interaction(component: InteractionComponent3D)
+signal notify_player_interaction_lost(component: InteractionComponent3D)
 #endregion

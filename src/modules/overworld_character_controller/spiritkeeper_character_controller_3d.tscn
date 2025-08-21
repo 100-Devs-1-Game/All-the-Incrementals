@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://uem0xukdu645"]
+[gd_scene load_steps=8 format=3 uid="uid://uem0xukdu645"]
 
 [ext_resource type="Script" uid="uid://d0m3rwnddtlu8" path="res://modules/overworld_character_controller/spiritkeeper_character_controller.gd" id="1_cpmd8"]
 [ext_resource type="PackedScene" uid="uid://ccu6edggvltvk" path="res://assets/overworld/entities/spiritkeeper/spiritkeeper_v7_trl.glb" id="2_ikx2s"]
 [ext_resource type="Material" uid="uid://bpaqxlijch4be" path="res://assets/overworld/entities/spiritkeeper/spiritkeeper_material_xray_nox.tres" id="3_ie0o8"]
+[ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="4_scodq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v33t4"]
 height = 1.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_njahn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0x76"]
 
 [node name="SpiritkeeperBody3D" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "skeleton", "camera", "staff", "map", "shakuhachi", "spring_bone_simulators", "lean_pivot_node", "model_rotation_pivot_node")]
 floor_max_angle = 1.0472
@@ -177,5 +180,26 @@ shape = SubResource("SphereShape3D_njahn")
 spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraController/CameraPivot/SpringArm3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label Interaction Hint" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.97
+anchor_right = 0.5
+anchor_bottom = 0.97
+offset_left = -20.0
+offset_top = -113.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_scodq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v0x76")
+text = "Press SPACE to open THING"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="Visuals/LeanPivot/RotationPivot/spiritkeeper_v7_trl"]
