@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://sd2uku7ud0tb"]
+[gd_scene load_steps=17 format=3 uid="uid://sd2uku7ud0tb"]
 
 [ext_resource type="Script" uid="uid://rgsj1fo1fu2o" path="res://modules/overworld/story/journal_entry_pickup.gd" id="1_r11s8"]
 [ext_resource type="Texture2D" uid="uid://dwu02f18und58" path="res://assets/ui/menu_bg.webp" id="2_0ujin"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_1su54"]
+[ext_resource type="Texture2D" uid="uid://ce4vmyt7fgm88" path="res://assets/overworld/materials/textures/item_sparkle.png" id="3_1wusj"]
+[ext_resource type="Shader" uid="uid://cnojtjae3i5sn" path="res://assets/overworld/shaders/item_sparkle.gdshader" id="3_gpcwc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ujin"]
 albedo_color = Color(1, 1, 0.243137, 1)
@@ -16,43 +18,34 @@ material = SubResource("StandardMaterial3D_0ujin")
 size = Vector2(0.1, 0.1)
 orientation = 2
 
-[sub_resource type="Curve" id="Curve_0ujin"]
-_data = [Vector2(0, 0), 0.0, 3.52727, 0, 0, Vector2(0.726708, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+[sub_resource type="Curve" id="Curve_gpcwc"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_1wusj"]
-curve = SubResource("Curve_0ujin")
+[sub_resource type="CurveTexture" id="CurveTexture_jk7kk"]
+curve = SubResource("Curve_gpcwc")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gpcwc"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0ujin"]
 particle_flag_disable_z = true
-emission_shape = 6
-emission_ring_axis = Vector3(0, 0, 1)
-emission_ring_height = 0.0
-emission_ring_radius = 0.3
-emission_ring_inner_radius = 0.3
-emission_ring_cone_angle = 90.0
+emission_shape = 3
+emission_box_extents = Vector3(0.336, 0.416, 0.01)
+angle_min = 1.07288e-05
+angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0
-angular_velocity_min = 104.0
-angular_velocity_max = 720.0
-orbit_velocity_min = 0.15
-orbit_velocity_max = 0.25
-radial_velocity_min = -0.0500223
-radial_velocity_max = -0.0500223
-gravity = Vector3(0, 0, 0)
-radial_accel_min = -0.150002
-radial_accel_max = -0.100002
-scale_curve = SubResource("CurveTexture_1wusj")
+angular_velocity_min = 75.0
+angular_velocity_max = 90.0
+gravity = Vector3(0, 0.1, 0)
+alpha_curve = SubResource("CurveTexture_jk7kk")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jk7kk"]
-specular_mode = 2
-vertex_color_use_as_albedo = true
-emission_enabled = true
-emission = Color(0.910389, 1, 0.565413, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk7kk"]
+render_priority = 0
+shader = ExtResource("3_gpcwc")
+shader_parameter/texture_albedo = ExtResource("3_1wusj")
 
 [sub_resource type="QuadMesh" id="QuadMesh_vrel1"]
-material = SubResource("StandardMaterial3D_jk7kk")
-size = Vector2(0.02, 0.02)
+material = SubResource("ShaderMaterial_jk7kk")
+size = Vector2(0.075, 0.075)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1su54"]
 
@@ -151,12 +144,13 @@ alpha_cut = 1
 texture = ExtResource("2_0ujin")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1.6, 0, 0, 0, -6.99382e-08, 1.6, 0, -1.6, -6.99382e-08, 0, 0, 0)
-amount = 36
-explosiveness = 0.19
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0325293)
+cast_shadow = 0
+amount = 4
+lifetime = 1.5
+visibility_aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
 local_coords = true
-transform_align = 2
-process_material = SubResource("ParticleProcessMaterial_gpcwc")
+process_material = SubResource("ParticleProcessMaterial_0ujin")
 draw_pass_1 = SubResource("QuadMesh_vrel1")
 
 [node name="InteractionComponent3D" type="Area3D" parent="." node_paths=PackedStringArray("object")]
