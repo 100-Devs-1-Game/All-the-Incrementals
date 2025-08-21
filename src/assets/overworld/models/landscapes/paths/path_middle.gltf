@@ -29,6 +29,14 @@
 					"specularFactor":0
 				}
 			},
+			"name":"Dirt_Tile",
+			"pbrMetallicRoughness":{
+				"baseColorTexture":{
+					"index":0
+				},
+				"metallicFactor":0,
+				"roughnessFactor":0.5
+			}
 		}
 	],
 	"meshes":[
@@ -51,6 +59,13 @@
 		{
 			"sampler":0,
 			"source":0
+		}
+	],
+	"images":[
+		{
+			"mimeType":"image/png",
+			"name":"2ab3ec2be88e44d4931fa28786e12856_RGB_Dirt_Tile",
+			"uri":"2ab3ec2be88e44d4931fa28786e12856_RGB_Dirt_Tile.png"
 		}
 	],
 	"accessors":[

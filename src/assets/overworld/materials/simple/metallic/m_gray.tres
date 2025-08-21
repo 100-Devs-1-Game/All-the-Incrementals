@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ba8jgglbbfg5v"]
+
+[resource]
+metallic = 0.92
+roughness = 0.35

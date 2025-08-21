@@ -2,6 +2,7 @@ shader_type spatial;
 
 uniform float fill_level : hint_range(0.0, 1.0) = 1.0;
 uniform vec3 fill_color : source_color = vec3(0.0, 1.0, 0.0);
+uniform vec3 background_color : source_color = vec3(0.0, 0.0, 0.0); // <── added
 uniform float glow_strength : hint_range(0.0, 10.0) = 10.0;
 uniform bool flip_direction = false;
 uniform float gradient_sharpness : hint_range(0.001, 1.0) = 0.025;
@@ -22,7 +23,6 @@ void fragment() {
 
     float gradient = 1.0 - smoothstep(edge_start, edge_end, uv_y);
 
-    vec3 background_color = vec3(0.0);
     vec3 final_color = mix(background_color, fill_color, gradient);
 
     ALBEDO = final_color;
