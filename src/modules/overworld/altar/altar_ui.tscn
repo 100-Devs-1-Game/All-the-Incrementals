@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd2idytqw7eqi"]
+[gd_scene load_steps=5 format=3 uid="uid://dd2idytqw7eqi"]
 
 [ext_resource type="Script" uid="uid://d0o68s5jiye1s" path="res://modules/overworld/altar/altar_ui.gd" id="1_hif4d"]
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="2_18ekh"]
 [ext_resource type="PackedScene" uid="uid://yehkf7i1dt50" path="res://component/shared/current_essence.tscn" id="3_ybokf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18ekh"]
 
 [node name="AltarUI" type="CanvasLayer"]
 script = ExtResource("1_hif4d")
@@ -92,6 +94,27 @@ text = "* 0.2"
 layout_mode = 2
 text = "= 2 (2.16)"
 
+[node name="ProgressBar" type="ProgressBar" parent="Panel/MarginContainer/VBoxContainer/GridContainer/Label4"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_18ekh")
+value = 50.0
+
+[node name="Take Essence" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -69.0
+offset_right = 360.0
+grow_vertical = 0
+text = "Take Stored Essence"
+
 [node name="Leave" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 3
@@ -105,4 +128,5 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Leave"
 
+[connection signal="pressed" from="Panel/Take Essence" to="." method="_on_take_essence_pressed"]
 [connection signal="pressed" from="Panel/Leave" to="." method="_on_leave_pressed"]
