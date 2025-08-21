@@ -38,7 +38,7 @@ func debug_start_wind_rhythm() -> void:
 # we have the overworld code working, we'll be setting the settlement naturally.
 func _debug_force_settlement_data() -> void:
 	var breezekiln_data: SettlementData = load(
-		"res://modules/overworld_locations/breezekiln/breezekiln_data.tres"
+		"res://modules/overworld_locations/breezekiln/breezekiln.tres"
 	)
 	SceneLoader._current_settlement = breezekiln_data
 
