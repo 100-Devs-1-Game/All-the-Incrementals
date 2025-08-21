@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Chart" load_steps=289 format=3 uid="uid://bkrgaps0ryayo"]
+[gd_resource type="Resource" script_class="Chart" load_steps=295 format=3 uid="uid://b16thytvkspkb"]
 
 [ext_resource type="AudioStream" uid="uid://j8xgw0ptbh7o" path="res://assets/minigames/wind_rhythm/placeholder_assets/exotic_house.ogg" id="1_sheqh"]
 [ext_resource type="Script" uid="uid://ddqeb6u7cudik" path="res://modules/minigame/wind_rhythm/chart/chart.gd" id="1_w41xb"]
@@ -996,6 +996,48 @@ script = ExtResource("2_ae6iv")
 bar = 9
 beat = 0.0
 type = 8
+cached_absolute_beat = 4.90909
+
+[sub_resource type="Resource" id="Resource_4qhwt"]
+script = ExtResource("2_ae6iv")
+bar = 6
+beat = 0.0
+type = 16
+cached_absolute_beat = 3.27273
+
+[sub_resource type="Resource" id="Resource_3vjux"]
+script = ExtResource("2_ae6iv")
+bar = 7
+beat = 0.0
+type = 16
+cached_absolute_beat = 3.81818
+
+[sub_resource type="Resource" id="Resource_t8sl1"]
+script = ExtResource("2_ae6iv")
+bar = 8
+beat = 0.0
+type = 16
+cached_absolute_beat = 4.36364
+
+[sub_resource type="Resource" id="Resource_f22rt"]
+script = ExtResource("2_ae6iv")
+bar = 8
+beat = 0.0
+type = 32
+cached_absolute_beat = 4.36364
+
+[sub_resource type="Resource" id="Resource_14nf8"]
+script = ExtResource("2_ae6iv")
+bar = 10
+beat = 0.0
+type = 32
+cached_absolute_beat = 5.45455
+
+[sub_resource type="Resource" id="Resource_klcu5"]
+script = ExtResource("2_ae6iv")
+bar = 9
+beat = 0.0
+type = 32
 cached_absolute_beat = 4.90909
 
 [sub_resource type="Resource" id="Resource_ah0wv"]
@@ -2011,7 +2053,7 @@ lanes = Dictionary[int, Array]({
 2: [SubResource("Resource_1cxdy"), SubResource("Resource_w46el"), SubResource("Resource_lvm3f"), SubResource("Resource_tskpv"), SubResource("Resource_p1shf"), SubResource("Resource_bi20w"), SubResource("Resource_7kfr5"), SubResource("Resource_3vbaw"), SubResource("Resource_4blt7"), SubResource("Resource_cr2gn"), SubResource("Resource_gby42"), SubResource("Resource_lokha"), SubResource("Resource_hm630"), SubResource("Resource_ephs1"), SubResource("Resource_ifo7b"), SubResource("Resource_t75kb"), SubResource("Resource_wmhyi"), SubResource("Resource_do8au"), SubResource("Resource_4jslm"), SubResource("Resource_bl0px"), SubResource("Resource_yoib1"), SubResource("Resource_8wbt1"), SubResource("Resource_j1qo0")],
 4: [SubResource("Resource_4v2pd"), SubResource("Resource_noxcw"), SubResource("Resource_d5572"), SubResource("Resource_7gtuf"), SubResource("Resource_yjb5r"), SubResource("Resource_r335d"), SubResource("Resource_atye4"), SubResource("Resource_bbgn2")],
 8: [SubResource("Resource_p22am"), SubResource("Resource_hmvtj"), SubResource("Resource_x85mc"), SubResource("Resource_u3p75"), SubResource("Resource_m3b8p"), SubResource("Resource_gcnkx"), SubResource("Resource_f5mw0"), SubResource("Resource_3ouk3"), SubResource("Resource_33msc"), SubResource("Resource_nwagw"), SubResource("Resource_pa0wq"), SubResource("Resource_2s0dt"), SubResource("Resource_fuoqw"), SubResource("Resource_vpj1a"), SubResource("Resource_0nux6"), SubResource("Resource_5vxl0"), SubResource("Resource_tv31b"), SubResource("Resource_fog6u"), SubResource("Resource_fvo5r"), SubResource("Resource_gb7h5"), SubResource("Resource_e8pns"), SubResource("Resource_hxo81"), SubResource("Resource_lac85"), SubResource("Resource_cnoly"), SubResource("Resource_hplj3"), SubResource("Resource_0tjcg"), SubResource("Resource_1sb1w"), SubResource("Resource_6u3od"), SubResource("Resource_5qdgd"), SubResource("Resource_labrq"), SubResource("Resource_ux020"), SubResource("Resource_1lu4u"), SubResource("Resource_wwo02"), SubResource("Resource_phd5m"), SubResource("Resource_gwio0"), SubResource("Resource_i3fhp"), SubResource("Resource_msf3n"), SubResource("Resource_o2tqu"), SubResource("Resource_5kxfn"), SubResource("Resource_jo3qa"), SubResource("Resource_0tbgn"), SubResource("Resource_vxkec"), SubResource("Resource_k5gcl"), SubResource("Resource_2c68h"), SubResource("Resource_eqjub"), SubResource("Resource_cngi1"), SubResource("Resource_2h4c5"), SubResource("Resource_isyoy")],
-16: [],
-32: []
+16: [SubResource("Resource_4qhwt"), SubResource("Resource_3vjux"), SubResource("Resource_t8sl1")],
+32: [SubResource("Resource_f22rt"), SubResource("Resource_14nf8"), SubResource("Resource_klcu5")]
 })
 metadata/_custom_type_script = "uid://ddqeb6u7cudik"
