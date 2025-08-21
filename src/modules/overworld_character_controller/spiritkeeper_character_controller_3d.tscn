@@ -10,7 +10,7 @@ height = 1.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_njahn"]
 
 [node name="SpiritkeeperBody3D" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "skeleton", "camera", "staff", "map", "shakuhachi", "spring_bone_simulators", "lean_pivot_node", "model_rotation_pivot_node")]
-wall_min_slide_angle = 1.5708
+floor_max_angle = 1.0472
 script = ExtResource("1_cpmd8")
 animation_player = NodePath("Visuals/LeanPivot/RotationPivot/spiritkeeper_v7_trl/AnimationPlayer")
 skeleton = NodePath("Visuals/LeanPivot/RotationPivot/spiritkeeper_v7_trl/spiritkeeper_armature/Skeleton3D")
