@@ -7,6 +7,9 @@ signal interacted_with(player: SpiritkeeperCharacterController3D)
 @export var auto_interact: bool = false
 @export var action_name: StringName = &"primary_action"
 
+## It will show after "Press SPACE to" when the player is in range
+@export var action_ui_suffix: String = ""
+
 var player: SpiritkeeperCharacterController3D = null
 
 
@@ -32,12 +35,15 @@ func _ready() -> void:
 				if auto_interact:
 					do_interact()
 					player = null
+				else:
+					EventBus.notify_player_possible_interaction.emit(self)
 	)
 
 	body_exited.connect(
 		func(body: Node):
 			if body is SpiritkeeperCharacterController3D:
 				player = null
+				EventBus.notify_player_interaction_lost.emit(self)
 	)
 
 
