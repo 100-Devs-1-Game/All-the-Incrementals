@@ -88,6 +88,9 @@ func _on_generation_tick():
 
 
 func _on_take_essence_pressed() -> void:
+	if _altar_stats.stored_essence == 0:
+		return
+
 	var player_inventory: EssenceInventory = SaveGameManager.world_state.player_state.inventory
 	player_inventory.add_essence(_altar_stats.get_essence(), _altar_stats.stored_essence)
 	_altar_stats.stored_essence = 0
