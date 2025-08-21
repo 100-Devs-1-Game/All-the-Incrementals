@@ -10,7 +10,8 @@
 render_priority = 0
 shader = ExtResource("6_jk7kk")
 shader_parameter/alpha_scissor_threshold = 0.01
-shader_parameter/highlight_band_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/base_emission = 0.25
+shader_parameter/highlight_band_color = Color(0.5, 0.5, 0.42, 1)
 shader_parameter/highlight_band_period = 3.0
 shader_parameter/highlight_band_width = 0.5
 
