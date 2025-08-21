@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://sd2uku7ud0tb"]
+[gd_scene load_steps=15 format=3 uid="uid://sd2uku7ud0tb"]
 
 [ext_resource type="Script" uid="uid://rgsj1fo1fu2o" path="res://modules/overworld/story/journal_entry_pickup.gd" id="1_r11s8"]
 [ext_resource type="Texture2D" uid="uid://dwu02f18und58" path="res://assets/ui/menu_bg.webp" id="2_0ujin"]
@@ -55,11 +55,6 @@ material = SubResource("StandardMaterial3D_jk7kk")
 size = Vector2(0.02, 0.02)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1su54"]
-
-[sub_resource type="Environment" id="Environment_a74bk"]
-background_mode = 1
-background_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
-glow_enabled = true
 
 [sub_resource type="Animation" id="Animation_1wusj"]
 length = 0.001
@@ -172,9 +167,6 @@ metadata/_custom_type_script = "uid://7n4knvm4dle5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]
 shape = SubResource("SphereShape3D_1su54")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_a74bk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
