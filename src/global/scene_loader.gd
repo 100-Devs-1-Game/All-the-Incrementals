@@ -59,6 +59,8 @@ func get_current_minigame() -> MinigameData:
 func enter_settlement(data: SettlementData):
 	get_tree().change_scene_to_packed(OVERWORLD_SCENE)
 	_current_settlement = data
+	EventBus.request_music.emit(data.music_track)
+	EventBus.request_music_volume.emit(1.0)
 
 
 func get_current_settlement_data() -> SettlementData:
