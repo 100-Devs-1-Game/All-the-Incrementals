@@ -28,14 +28,14 @@ curve = SubResource("Curve_gpcwc")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0ujin"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(0.336, 0.416, 0.01)
+emission_box_extents = Vector3(0.3, 0.35, 0.01)
 angle_min = 1.07288e-05
 angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0
 angular_velocity_min = 75.0
 angular_velocity_max = 90.0
-gravity = Vector3(0, 0.1, 0)
+gravity = Vector3(0, 0.05, 0)
 alpha_curve = SubResource("CurveTexture_jk7kk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk7kk"]
@@ -45,7 +45,7 @@ shader_parameter/texture_albedo = ExtResource("3_1wusj")
 
 [sub_resource type="QuadMesh" id="QuadMesh_vrel1"]
 material = SubResource("ShaderMaterial_jk7kk")
-size = Vector2(0.075, 0.075)
+size = Vector2(0.1, 0.1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1su54"]
 
