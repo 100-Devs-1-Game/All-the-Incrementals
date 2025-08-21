@@ -181,6 +181,11 @@ spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraController/CameraPivot/SpringArm3D"]
 
+[node name="RayCast Floor Check" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+enabled = false
+target_position = Vector3(0, -10, 0)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label Interaction Hint" type="Label" parent="CanvasLayer"]

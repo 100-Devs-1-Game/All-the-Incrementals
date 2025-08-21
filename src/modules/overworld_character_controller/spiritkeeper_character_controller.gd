@@ -41,6 +41,7 @@ var _last_strong_direction: Vector3
 var _possible_interaction: InteractionComponent3D
 
 @onready var label_interaction_hint: Label = %"Label Interaction Hint"
+@onready var raycast_floor_check: RayCast3D = $"RayCast Floor Check"
 
 
 #region states
@@ -56,7 +57,7 @@ func idle_state() -> void:
 	if not desired_movement.is_equal_approx(Vector3.ZERO):
 		state_machine.change_state(move_state)
 
-	move_and_slide()
+	move()
 
 
 func move_state_enter() -> void:
@@ -77,7 +78,7 @@ func move_state() -> void:
 		velocity = Vector3.ZERO
 		state_machine.change_state(idle_state)
 
-	move_and_slide()
+	move()
 
 
 func interact_state_enter():
@@ -126,6 +127,29 @@ func _handle_model_orientation(desired_direction: Vector3, delta: float) -> void
 	model_rotation_pivot_node.rotation.y = lerp_angle(
 		model_rotation_pivot_node.rotation.y, rotation_angle, delta * model_rotation_speed
 	)
+
+
+func move():
+	var motion := velocity * get_physics_process_delta_time()
+	motion *= 5.0
+
+	raycast_floor_check.position.x = motion.x
+	raycast_floor_check.position.z = motion.z
+
+	raycast_floor_check.force_raycast_update()
+	var check1 := raycast_floor_check.is_colliding()
+
+	motion *= 2.0
+
+	raycast_floor_check.position.x = motion.x
+	raycast_floor_check.position.z = motion.z
+
+	raycast_floor_check.force_raycast_update()
+	var check2 := raycast_floor_check.is_colliding()
+
+	# use 2 raycasts to avoid stopping at tiny gaps
+	if check1 or check2:
+		move_and_slide()
 
 
 #endregion
