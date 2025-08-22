@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://bcjwk5lq3xa2k"]
+[gd_scene load_steps=94 format=3 uid="uid://bcjwk5lq3xa2k"]
 
 [ext_resource type="Script" uid="uid://bsimtuhg2ndb3" path="res://modules/overworld_locations/shrine/shrine.gd" id="1_pmksg"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_v8pda"]
@@ -63,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://b0giovcp3gygs" path="res://assets/overworld/assets/skybox/sky_day_01.webp" id="54_wrq76"]
 [ext_resource type="PackedScene" uid="uid://dbdlc760ysa1w" path="res://modules/overworld/portal/portal.tscn" id="56_cl6tx"]
 [ext_resource type="Resource" uid="uid://dm8p7uex0orka" path="res://modules/overworld_locations/clayport/clayport.tres" id="57_lsmsp"]
+[ext_resource type="Resource" uid="uid://cdoij41kganvn" path="res://modules/overworld_locations/breezekiln/breezekiln.tres" id="58_lsmsp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mggan"]
 radius = 4.0
@@ -766,9 +767,13 @@ enable_rotation = true
 rotation_speed_deg = 0.45
 rotate_y_axis = true
 
-[node name="Portal" parent="." instance=ExtResource("56_cl6tx")]
+[node name="Portal Clayport" parent="." instance=ExtResource("56_cl6tx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.57088, -1.67907, 0)
 target_settlement = ExtResource("57_lsmsp")
+
+[node name="Portal Breezekiln" parent="." instance=ExtResource("56_cl6tx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.571, -1.679, 0)
+target_settlement = ExtResource("58_lsmsp")
 
 [node name="DebugPopup" parent="." instance=ExtResource("4_wuyf8")]
 title = "Shrine"
