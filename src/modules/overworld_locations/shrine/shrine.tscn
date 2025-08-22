@@ -321,18 +321,18 @@ light_energy = 1.2
 directional_shadow_mode = 1
 
 [node name="Right_Side" type="SpotLight3D" parent="Camera & Lights"]
-transform = Transform3D(0.270987, -0.167151, 0.947959, 0, 0.984808, 0.173648, -0.962583, -0.0470564, 0.26687, 8.394, 2.711, 2.698)
+transform = Transform3D(0.270987, -0.167151, 0.947959, 0, 0.984808, 0.173648, -0.962583, -0.0470564, 0.26687, 8.394, 2.69204, 2.698)
 light_color = Color(0.341176, 0.666667, 1, 1)
 light_energy = 3.56
-spot_range = 15.11
+spot_range = 25.687
 spot_attenuation = 1.81
 spot_angle_attenuation = 0.112656
 
 [node name="Left_Side" type="SpotLight3D" parent="Camera & Lights"]
-transform = Transform3D(0.2706, 0.16717, -0.948066, 0, 0.984808, 0.173648, 0.962692, -0.0469893, 0.266489, -8.394, 2.711, 2.698)
+transform = Transform3D(0.2706, 0.16717, -0.948066, 0, 0.984808, 0.173648, 0.962692, -0.0469893, 0.266489, -8.394, 2.69204, 2.698)
 light_color = Color(0.921569, 0.498039, 0.294118, 1)
 light_energy = 3.56
-spot_range = 15.11
+spot_range = 25.687
 spot_attenuation = 1.81
 spot_angle_attenuation = 0.112656
 
