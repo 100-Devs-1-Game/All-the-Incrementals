@@ -71,15 +71,13 @@ stretch_mode = 5
 unique_name_in_owner = true
 custom_minimum_size = Vector2(720, 0)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -359.0
-offset_top = -484.0
-offset_right = 361.0
-offset_bottom = 503.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = -80.0
+offset_bottom = -80.0004
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -94,6 +92,7 @@ Without their guidance, the spirits has begun to act differently. As if they no 
 I hope the gods wake up soon. 
 
 — Keeper Tellen, Second in the Line "
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Leave" type="Button" parent="Panel"]
