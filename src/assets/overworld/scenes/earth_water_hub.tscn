@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d3mxhlrq3ern4"]
+[gd_scene load_steps=55 format=3 uid="uid://d3mxhlrq3ern4"]
 
 [ext_resource type="Texture2D" uid="uid://xstxlsqpgn7h" path="res://assets/overworld/assets/HDRIs/night.hdr" id="2_dqkb0"]
 [ext_resource type="Texture2D" uid="uid://cvtojgakhortv" path="res://assets/overworld/assets/nature/trees/tree_05.webp" id="5_v8tti"]
@@ -6,13 +6,21 @@
 [ext_resource type="ArrayMesh" uid="uid://bl82s3wnbaib8" path="res://assets/overworld/models/architectural/structures/stall/stall.mesh" id="7_wdwec"]
 [ext_resource type="ArrayMesh" uid="uid://domnhvt4fgacs" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_m.mesh" id="9_77kgr"]
 [ext_resource type="ArrayMesh" uid="uid://c285skwaly2or" path="res://assets/overworld/models/architectural/structures/houses/straw_house/straw_house.mesh" id="10_m8ai3"]
+[ext_resource type="ArrayMesh" uid="uid://bl5nddjgsdeje" path="res://assets/overworld/models/architectural/structures/altar/altar_01_diamond_01.tres" id="11_hnm0w"]
 [ext_resource type="ArrayMesh" uid="uid://cvof3k21ptrqs" path="res://assets/overworld/models/architectural/stair_case/stair_case.mesh" id="11_t4ebe"]
 [ext_resource type="ArrayMesh" uid="uid://dgdgjjyd05j4i" path="res://assets/overworld/models/architectural/structures/platforms/platform_01.mesh" id="12_3kkkr"]
 [ext_resource type="PackedScene" uid="uid://dfr5sx5nr2a4o" path="res://assets/overworld/models/landscapes/island_circles_baked.tscn" id="12_3r5ms"]
+[ext_resource type="Material" uid="uid://dm2g6v4fy7jlb" path="res://assets/overworld/materials/simple/metallic/m_green.tres" id="12_pfmxv"]
+[ext_resource type="ArrayMesh" uid="uid://bnfoawql15cdh" path="res://assets/overworld/models/architectural/structures/altar/altar_01_diamond_02.tres" id="14_e18kg"]
+[ext_resource type="Material" uid="uid://bmxm4xnx1r8ba" path="res://assets/overworld/materials/simple/metallic/m_red.tres" id="15_waec0"]
 [ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="16_5558x"]
+[ext_resource type="ArrayMesh" uid="uid://qwul8fu100wu" path="res://assets/overworld/models/architectural/structures/altar/altar_01_diamond_03.tres" id="16_ohn4l"]
 [ext_resource type="Texture2D" uid="uid://cgkd7wcycsfnf" path="res://assets/overworld/assets/skybox/sky_day_03.webp" id="17_q4jrv"]
+[ext_resource type="Material" uid="uid://chqynex3x8cry" path="res://assets/overworld/materials/simple/metallic/m_blue.tres" id="17_ufhvu"]
 [ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/Klip_Signal.gd" id="18_4w4hg"]
+[ext_resource type="ArrayMesh" uid="uid://dejidtohggvu3" path="res://assets/overworld/models/architectural/structures/altar/altar_01_diamond_04.tres" id="18_ol7ah"]
 [ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://assets/overworld/vfx/water/circular_water/circular_water.obj" id="19_3fr1f"]
+[ext_resource type="Material" uid="uid://bwmu40iba2m2h" path="res://assets/overworld/materials/simple/metallic/m_purple.tres" id="19_d1sn4"]
 [ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://assets/overworld/scripts/shaders/water_toon.gdshader" id="20_7g0lr"]
 [ext_resource type="PackedScene" uid="uid://coxmlipoas6nc" path="res://assets/overworld/vfx/water/cascade/cascade_waterfall.tscn" id="20_vrtvn"]
 [ext_resource type="PackedScene" uid="uid://by2bo8yeg0btq" path="res://assets/overworld/vfx/water/cascade/cascade_rocks.tscn" id="21_8rlvi"]
@@ -456,14 +464,92 @@ multimesh = SubResource("MultiMesh_uhgid")
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, 0, 0, 1, 0.0541382, 5.68075, -0.0565434)
 shape = SubResource("BoxShape3D_jcbcw")
 
-[node name="altar_01" parent="." instance=ExtResource("22_vrtvn")]
-transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, -4.95709, 1.14729, -4.71998)
+[node name="altars" type="Node3D" parent="."]
+transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, -4.95709, 1.14729, 4.11908)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="altar_01"]
+[node name="altar_01" parent="altars" instance=ExtResource("22_vrtvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18182, -1.53404, -12.9591)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="altar_01/StaticBody3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="altars/altar_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="altars/altar_01/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558609, 0)
 shape = SubResource("CylinderShape3D_3r5ms")
+
+[node name="altar_01_diamond_01" type="MeshInstance3D" parent="altars/altar_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0480332, 2.04938, -0.0205939)
+mesh = ExtResource("11_hnm0w")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("12_pfmxv")
+script = ExtResource("18_4w4hg")
+enable_rotation = true
+rotation_speed_deg = 45.0
+rotate_y_axis = true
+enable_bobbing = true
+
+[node name="altar_02" parent="altars" instance=ExtResource("22_vrtvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55064, -0.00526756, 1.44485)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="altars/altar_02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="altars/altar_02/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558609, 0)
+shape = SubResource("CylinderShape3D_3r5ms")
+
+[node name="altar_02_diamond_02" type="MeshInstance3D" parent="altars/altar_02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0480332, 2.04938, -0.0205939)
+mesh = ExtResource("14_e18kg")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("15_waec0")
+script = ExtResource("18_4w4hg")
+enable_rotation = true
+rotation_speed_deg = 45.0
+rotate_y_axis = true
+enable_bobbing = true
+
+[node name="altar_03" parent="altars" instance=ExtResource("22_vrtvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0948, 0.969809, -25.1741)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="altars/altar_03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="altars/altar_03/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558609, 0)
+shape = SubResource("CylinderShape3D_3r5ms")
+
+[node name="altar_03_diamond_03" type="MeshInstance3D" parent="altars/altar_03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0480332, 2.04938, -0.0205939)
+mesh = ExtResource("16_ohn4l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("17_ufhvu")
+script = ExtResource("18_4w4hg")
+enable_rotation = true
+rotation_speed_deg = 45.0
+rotate_y_axis = true
+enable_bobbing = true
+
+[node name="altar_04" parent="altars" instance=ExtResource("22_vrtvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4479, 2.06982, -12.4803)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="altars/altar_04"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="altars/altar_04/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558609, 0)
+shape = SubResource("CylinderShape3D_3r5ms")
+
+[node name="altar_04_diamond_04" type="MeshInstance3D" parent="altars/altar_04"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0480332, 2.04938, -0.0205939)
+mesh = ExtResource("18_ol7ah")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("19_d1sn4")
+script = ExtResource("18_4w4hg")
+enable_rotation = true
+rotation_speed_deg = 45.0
+rotate_y_axis = true
+enable_bobbing = true
 
 [node name="landscapes" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.889, 0.227863, -8.29576)

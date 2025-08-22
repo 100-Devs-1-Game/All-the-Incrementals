@@ -30,7 +30,7 @@
 		},
 		{
 			"mesh":2,
-			"name":"altar_01_baked_chain"
+			"name":"altar_01_baked_chains"
 		}
 	],
 	"meshes":[
@@ -61,7 +61,7 @@
 			]
 		},
 		{
-			"name":"chain_altar_0.004",
+			"name":"chain_altar_0.001",
 			"primitives":[
 				{
 					"attributes":{
