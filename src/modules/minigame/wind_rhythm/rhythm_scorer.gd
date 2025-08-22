@@ -14,6 +14,7 @@ var longest_combo: int = 0
 var all_perfect: bool = true
 var max_notes: int = 0
 var score: float = 0
+var combo_protection_level = 0
 
 @onready var conductor: Conductor = %Conductor
 
@@ -23,9 +24,12 @@ func _ready():
 
 
 func on_rhythm_game_note_missed(_note):
-	combo = 0
-	all_perfect = false
-	combo_broken.emit()
+	if combo_protection_level > 0:
+		combo_protection_level -= 1
+	else:
+		combo = 0
+		all_perfect = false
+		combo_broken.emit()
 	%ComboLabel.text = "%s / %s" % [combo, max_notes]
 
 

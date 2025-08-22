@@ -154,7 +154,7 @@ slots = Array[ExtResource("2_65s2p")]([SubResource("Resource_j0nn6")])
 
 [sub_resource type="Resource" id="Resource_glkp6"]
 script = ExtResource("5_65s2p")
-upgrade_type = 0
+upgrade_type = 2
 metadata/_custom_type_script = "uid://cdf23gftlnxqd"
 
 [resource]
@@ -166,18 +166,18 @@ flavor = ""
 icon = ExtResource("4_ksg8m")
 position = Vector2(-384, 704)
 cost_arr = Array[ExtResource("1_gkmhd")]([SubResource("Resource_q0wlp"), SubResource("Resource_ai68b"), SubResource("Resource_68klm"), SubResource("Resource_hfkum"), SubResource("Resource_i7tdf"), SubResource("Resource_60bxv"), SubResource("Resource_b4e00"), SubResource("Resource_8u3nw"), SubResource("Resource_xkeoe"), SubResource("Resource_c71wy")])
-effect_modifier_arr = Array[float]([1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6, 2.8, 3.0])
+effect_modifier_arr = Array[float]([0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0])
 max_level = 10
 base_cost = SubResource("Resource_qaq6n")
 base_cost_multiplier = 4.0
 exponential_cost = true
 round_smoothness = 1.0
-base_effect_modifier = 1.2
+base_effect_modifier = 0.2
 effect_modifier_multiplier = 0.2
 unlocked = false
 unlock_level_index = 0
 unlocks = Array[Resource]([ExtResource("6_nqvql")])
-description_prefix = ""
+description_prefix = "Increases value of combo by"
 description_suffix = ""
 description_modifier_format = 0
 metadata/_tree_editor_version_added = 1

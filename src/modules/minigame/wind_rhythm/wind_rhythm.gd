@@ -29,6 +29,9 @@ var scorer: RhythmScorer
 ## Upgrade Info
 var drain_speed_mult: float = 1.0
 var concentration_max_mult: float = 1
+var combo_add: float = 0
+var combo_protection_level: int = 0
+var perfect_play_bonus: float = 0
 
 
 func _unhandled_input(event):
@@ -68,6 +71,10 @@ func _start():
 	## Upgrades
 	concentration_bar.drain_speed_mult = drain_speed_mult
 	concentration_bar.concentration_max_mult = concentration_max_mult
+	concentration_bar.perfect_play_bonus = perfect_play_bonus
+
+	scorer.combo_multiplier += combo_add
+	scorer.combo_protection_level = combo_protection_level
 
 
 func _process(_delta):

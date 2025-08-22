@@ -62,7 +62,7 @@ slots = Array[ExtResource("2_oa61y")]([SubResource("Resource_xvtpy")])
 
 [sub_resource type="Resource" id="Resource_ijl40"]
 script = ExtResource("5_oa61y")
-upgrade_type = 0
+upgrade_type = 3
 metadata/_custom_type_script = "uid://cdf23gftlnxqd"
 
 [resource]
@@ -85,8 +85,8 @@ effect_modifier_multiplier = 1.0
 unlocked = false
 unlock_level_index = 0
 unlocks = Array[Resource]([])
-description_prefix = ""
-description_suffix = ""
-description_modifier_format = 0
+description_prefix = "Protects your combo"
+description_suffix = "time/s"
+description_modifier_format = 1
 metadata/_tree_editor_version_added = 1
 metadata/_tree_editor_version_saved = 1
