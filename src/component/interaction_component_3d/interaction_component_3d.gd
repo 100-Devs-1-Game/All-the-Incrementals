@@ -10,6 +10,9 @@ signal interacted_with(player: SpiritkeeperCharacterController3D)
 ## It will show after "Press SPACE to" when the player is in range
 @export var action_ui_suffix: String = ""
 
+@export var initial_sound: AudioStream
+@export var finishing_sound: AudioStream
+
 var player: SpiritkeeperCharacterController3D = null
 
 
@@ -59,7 +62,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func do_interact():
+	assert(player != null)
 	if not player.interact_with(object):
 		return
+	player.set_interaction_sounds(initial_sound, finishing_sound)
 	interacted_with.emit(player)
 	get_viewport().set_input_as_handled()

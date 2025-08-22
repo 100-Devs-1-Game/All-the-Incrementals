@@ -207,4 +207,7 @@ text = "Press SPACE to open THING"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioStreamPlayer Interaction" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
 [editable path="Visuals/LeanPivot/RotationPivot/spiritkeeper_v7_trl"]
