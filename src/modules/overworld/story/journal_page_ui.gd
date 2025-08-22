@@ -3,6 +3,7 @@ extends Control
 
 
 func open(data: JournalEntryData):
+	$AudioStreamPlayer.play()
 	%"TextureRect Page".texture = data.page
 	%"Label Page".text = data.text
 	show()
