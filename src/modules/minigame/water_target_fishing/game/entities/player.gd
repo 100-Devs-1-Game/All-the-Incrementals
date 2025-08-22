@@ -10,6 +10,8 @@ var disabled_input := false
 
 @onready var area2d: Area2D = %Area2D
 @onready var sprite2d: AnimatedSprite2D = %AnimatedSprite2D
+@onready var bubble_shield: AnimatedSprite2D = %BubbleShield
+@onready var bubbles: AnimatedSprite2D = %Bubbles
 
 
 func underwater() -> bool:
@@ -68,6 +70,26 @@ func _on_area_entered(other_area: Area2D) -> void:
 		return
 
 
+func _process(_delta: float) -> void:
+	if WTFGlobals.minigame.stats.oxygen_percentage() > 80:
+		bubble_shield.frame = 1
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 60:
+		bubble_shield.frame = 2
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 40:
+		bubble_shield.frame = 3
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 20:
+		bubble_shield.frame = 4
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 0:
+		bubble_shield.frame = 5
+	else:
+		bubble_shield.frame = 0
+
+	if underwater() && WTFGlobals.minigame.stats.oxygen_percentage() > 0:
+		bubbles.play()
+	else:
+		bubbles.stop()
+
+
 func _physics_process(delta: float) -> void:
 	var input_dir := get_input_direction()
 	if disabled_input:
@@ -108,6 +130,7 @@ func _physics_process(delta: float) -> void:
 
 		if WTFGlobals.minigame.stats.no_oxygen() || disabled_input:
 			velocity.y += -1 * acceleration * delta
+
 	else:
 		if !WTFGlobals.minigame.stats.scrolling():
 			disabled_input = true
