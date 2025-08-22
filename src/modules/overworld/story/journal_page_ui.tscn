@@ -40,8 +40,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_01d8k")
 
-[node name="Fading" type="ScrollContainer" parent="Panel"]
+[node name="Fading" type="Container" parent="Panel"]
 clip_children = 1
+clip_contents = true
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -51,8 +52,6 @@ offset_left = -495.0
 offset_right = 495.0
 grow_horizontal = 2
 grow_vertical = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
 script = ExtResource("7_lfafc")
 gradient = SubResource("GradientTexture2D_l88ks")
 
