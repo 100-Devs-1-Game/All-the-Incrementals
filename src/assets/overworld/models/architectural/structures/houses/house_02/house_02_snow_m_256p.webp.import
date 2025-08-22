@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1pv523dcnbgi"
-path.s3tc="res://.godot/imported/house_02_snow_m_256p.webp-9cc3fc283552862d57c22cc217391ab3.s3tc.ctex"
+path.s3tc="res://.godot/imported/house_02_snow_m_256p.webp-0f40d94c8725853dcdde2e81ec48c9bd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/overworld/models/architectural/structures/houses/house_01/house_02_snow_m_256p.webp"
-dest_files=["res://.godot/imported/house_02_snow_m_256p.webp-9cc3fc283552862d57c22cc217391ab3.s3tc.ctex"]
+source_file="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_snow_m_256p.webp"
+dest_files=["res://.godot/imported/house_02_snow_m_256p.webp-0f40d94c8725853dcdde2e81ec48c9bd.s3tc.ctex"]
 
 [params]
 

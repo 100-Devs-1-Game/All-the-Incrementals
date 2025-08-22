@@ -4,6 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c8akkyljye4o6" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_01_m.mesh" id="5_ai0pt"]
 [ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://assets/overworld/models/landscapes/island_circle.gltf" id="6_n1hja"]
 [ext_resource type="ArrayMesh" uid="uid://dyrh5wy31kesg" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_02_m.mesh" id="7_wjhkt"]
+[ext_resource type="ArrayMesh" uid="uid://b72h3mbxju7tx" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_snow_m.mesh" id="10_dbb50"]
 [ext_resource type="Texture2D" uid="uid://dwh1tajh1hpng" path="res://assets/overworld/assets/nature/trees/tree_05_snow.webp" id="12_algyw"]
 [ext_resource type="ArrayMesh" uid="uid://bkulqu0kxi7ya" path="res://assets/overworld/models/architectural/structures/temples/fire_temple_m/fire_wind_temple.mesh" id="12_dbb50"]
 [ext_resource type="Shader" uid="uid://rg3fl1i082l4" path="res://assets/overworld/scripts/shaders/tri-planar_texture_mapping.gdshader" id="13_onxjb"]
@@ -19,7 +20,6 @@
 [ext_resource type="ArrayMesh" uid="uid://dk7nmp8001eqo" path="res://assets/overworld/models/architectural/structures/bridges/bridge_01_m/bridge_01.mesh" id="24_algyw"]
 [ext_resource type="PackedScene" uid="uid://c5w1nmcxgph1k" path="res://assets/overworld/models/landscapes/paths/path_baked_01.tscn" id="25_algyw"]
 [ext_resource type="Texture2D" uid="uid://catixkt58j5cy" path="res://assets/overworld/materials/textures/ground/ground_albedo_05_snow.webp" id="25_notpo"]
-[ext_resource type="ArrayMesh" uid="uid://domnhvt4fgacs" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_m.mesh" id="26_notpo"]
 [ext_resource type="PackedScene" uid="uid://ckomfk2gpxjrx" path="res://assets/overworld/assets/skybox/skybox_sphere.tscn" id="27_ai0pt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hbxmu"]
@@ -102,7 +102,7 @@ size = Vector3(43.7994, 13.598, 16.1808)
 [sub_resource type="MultiMesh" id="MultiMesh_ai0pt"]
 transform_format = 1
 instance_count = 1
-mesh = ExtResource("26_notpo")
+mesh = ExtResource("10_dbb50")
 buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fxord"]
