@@ -337,7 +337,7 @@ spot_attenuation = 1.81
 spot_angle_attenuation = 0.112656
 
 [node name="Model" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-7.80685e-08, 0, -1.786, 0, 1.786, 0, 1.786, 0, -7.80685e-08, 0, 0, 0)
 
 [node name="Plane_01" type="MeshInstance3D" parent="Model"]
 transform = Transform3D(3.87, 0, 0, 0, 3.315, 0, 0, 0, 2.905, 0, 0, 0)
