@@ -23,6 +23,6 @@ func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 		UpgradeType.COMBO_MULT_ADD:
 			my_game.combo_add = upgrade.get_current_effect_modifier()
 		UpgradeType.COMBO_PROTECTION:
-			my_game.combo_protection_level = upgrade.get_current_effect_modifier()
+			my_game.combo_protection_level = int(upgrade.get_current_effect_modifier())
 		UpgradeType.PERFECT_PLAY_BONUS:
 			my_game.perfect_play_bonus = upgrade.get_current_effect_modifier()
