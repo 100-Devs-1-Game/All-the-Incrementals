@@ -1,11 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmu7u4fo2qrmc"]
+[gd_scene load_steps=11 format=3 uid="uid://bmu7u4fo2qrmc"]
 
 [ext_resource type="Script" uid="uid://c1ffa8cvictxh" path="res://modules/overworld/story/journal_page_ui.gd" id="1_2vgpe"]
-[ext_resource type="Texture2D" uid="uid://bqb3wefjrogue" path="res://assets/overworld/story/journal/entry1.png" id="1_c5cqy"]
 [ext_resource type="StyleBox" uid="uid://c175wmdqybibw" path="res://modules/settings/settings_button_solo.tres" id="3_05mlh"]
 [ext_resource type="FontFile" uid="uid://b4sm0lte0jiot" path="res://external/fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="3_270mr"]
+[ext_resource type="Texture2D" uid="uid://cbhcuqwbf8ds3" path="res://assets/overworld/story/journal/entry2.png" id="3_lfafc"]
 [ext_resource type="StyleBox" uid="uid://db58mchewupox" path="res://modules/settings/settings_button_solo_hover.tres" id="4_t1hp8"]
 [ext_resource type="AudioStream" uid="uid://bpsf3w0cys8e6" path="res://assets/overworld/story/journal/page_collect_reverb.ogg" id="6_01d8k"]
+[ext_resource type="Script" uid="uid://cdxf2qmy8iols" path="res://modules/overworld/story/fading.gd" id="7_lfafc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01d8k"]
+bg_color = Color(0, 0, 0, 0.6)
+
+[sub_resource type="Gradient" id="Gradient_lfafc"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l88ks"]
+gradient = SubResource("Gradient_lfafc")
+width = 1
+height = 256
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
 
 [node name="JournalPageUI" type="Control"]
 layout_mode = 3
@@ -23,34 +37,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_01d8k")
 
-[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+[node name="Fading" type="ScrollContainer" parent="Panel"]
+clip_children = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -415.0
+offset_right = 415.0
+offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_lfafc")
+gradient = SubResource("GradientTexture2D_l88ks")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/CenterContainer"]
-layout_mode = 2
-theme_override_constants/separation = 200
-alignment = 1
-
-[node name="TextureRect Page" type="TextureRect" parent="Panel/CenterContainer/HBoxContainer"]
+[node name="TextureRect Page" type="TextureRect" parent="Panel/Fading"]
 unique_name_in_owner = true
+self_modulate = Color(0.7, 0.7, 0.7, 0.8)
 layout_mode = 2
-texture = ExtResource("1_c5cqy")
-stretch_mode = 4
+size_flags_horizontal = 3
+texture = ExtResource("3_lfafc")
+expand_mode = 5
+stretch_mode = 5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
-
-[node name="Label Page" type="Label" parent="Panel/CenterContainer/HBoxContainer/ScrollContainer"]
+[node name="Label Page" type="Label" parent="Panel/Fading/TextureRect Page"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.5
+offset_top = -493.5
+offset_right = 360.5
+offset_bottom = 493.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("3_270mr")
