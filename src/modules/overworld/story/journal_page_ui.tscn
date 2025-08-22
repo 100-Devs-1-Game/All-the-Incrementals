@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmu7u4fo2qrmc"]
+[gd_scene load_steps=7 format=3 uid="uid://bmu7u4fo2qrmc"]
 
 [ext_resource type="Script" uid="uid://c1ffa8cvictxh" path="res://modules/overworld/story/journal_page_ui.gd" id="1_2vgpe"]
 [ext_resource type="Texture2D" uid="uid://bqb3wefjrogue" path="res://assets/overworld/story/journal/entry1.png" id="1_c5cqy"]
 [ext_resource type="StyleBox" uid="uid://c175wmdqybibw" path="res://modules/settings/settings_button_solo.tres" id="3_05mlh"]
 [ext_resource type="FontFile" uid="uid://b4sm0lte0jiot" path="res://external/fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="3_270mr"]
 [ext_resource type="StyleBox" uid="uid://db58mchewupox" path="res://modules/settings/settings_button_solo_hover.tres" id="4_t1hp8"]
+[ext_resource type="AudioStream" uid="uid://bpsf3w0cys8e6" path="res://assets/overworld/story/journal/page_collect_reverb.ogg" id="6_01d8k"]
 
 [node name="JournalPageUI" type="Control"]
 layout_mode = 3
@@ -80,5 +81,8 @@ theme_override_fonts/font = ExtResource("3_270mr")
 theme_override_styles/hover = ExtResource("4_t1hp8")
 theme_override_styles/normal = ExtResource("3_05mlh")
 text = "Leave"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_01d8k")
 
 [connection signal="pressed" from="Panel/Leave" to="." method="_on_leave_pressed"]
