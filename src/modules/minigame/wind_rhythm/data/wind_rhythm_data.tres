@@ -12,8 +12,8 @@
 script = ExtResource("1_uefjm")
 display_name = "Wind Rhythm"
 how_to_play = "Press the notes at the right time to score points, score as many points as you can before you run out of concentration.
-Single note symbol = Primary action
-Double note symbol = Secondary action
+Single note symbol = {primary_action}
+Double note symbol = {secondary_action}
 Arrows = Directional input"
 music_track = ""
 minigame_scene = ExtResource("1_pjehh")
