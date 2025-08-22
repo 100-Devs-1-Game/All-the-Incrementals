@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c1ffa8cvictxh" path="res://modules/overworld/story/journal_page_ui.gd" id="1_2vgpe"]
 [ext_resource type="StyleBox" uid="uid://c175wmdqybibw" path="res://modules/settings/settings_button_solo.tres" id="3_05mlh"]
 [ext_resource type="FontFile" uid="uid://b4sm0lte0jiot" path="res://external/fonts/Caveat_Brush/CaveatBrush-Regular.ttf" id="3_270mr"]
-[ext_resource type="Texture2D" uid="uid://cbhcuqwbf8ds3" path="res://assets/overworld/story/journal/entry2.png" id="3_lfafc"]
+[ext_resource type="Texture2D" uid="uid://bqb3wefjrogue" path="res://assets/overworld/story/journal/entry1.png" id="3_lfafc"]
 [ext_resource type="StyleBox" uid="uid://db58mchewupox" path="res://modules/settings/settings_button_solo_hover.tres" id="4_t1hp8"]
 [ext_resource type="AudioStream" uid="uid://bpsf3w0cys8e6" path="res://assets/overworld/story/journal/page_collect_reverb.ogg" id="6_01d8k"]
 [ext_resource type="Script" uid="uid://cdxf2qmy8iols" path="res://modules/overworld/story/fading.gd" id="7_lfafc"]
@@ -46,19 +46,25 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -415.0
-offset_right = 415.0
+offset_left = -495.0
+offset_right = 495.0
 offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 13
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 script = ExtResource("7_lfafc")
 gradient = SubResource("GradientTexture2D_l88ks")
 
 [node name="TextureRect Page" type="TextureRect" parent="Panel/Fading"]
 unique_name_in_owner = true
 self_modulate = Color(0.7, 0.7, 0.7, 0.8)
+custom_minimum_size = Vector2(0, 1902)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 texture = ExtResource("3_lfafc")
 expand_mode = 5
 stretch_mode = 5
