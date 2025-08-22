@@ -49,6 +49,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_uf7ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bk1mq")
 }],
 "loop": false,
 "name": &"default",
@@ -78,7 +81,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbjem"]
