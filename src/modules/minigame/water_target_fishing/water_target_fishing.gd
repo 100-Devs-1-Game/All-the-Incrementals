@@ -225,6 +225,7 @@ func _spawn_fish() -> void:
 	# we may eventually deal with floating point imprecision
 	# should instead move all entity children and let them auto-delete, keeping positions sane
 	%Entities.add_child(f)
+	f.reset_physics_interpolation()
 
 
 func try_spawn_fish() -> void:
