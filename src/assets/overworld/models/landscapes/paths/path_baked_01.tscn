@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5w1nmcxgph1k"]
+
+[ext_resource type="PackedScene" uid="uid://dndxinc6a0ig1" path="res://models/landscapes/paths/path_baked_01.gltf" id="1_3ej11"]
+[ext_resource type="Shader" uid="uid://rg3fl1i082l4" path="res://scripts/shaders/tri-planar_texture_mapping.gdshader" id="2_il7lw"]
+[ext_resource type="Texture2D" uid="uid://ccws8x7r8ns4n" path="res://materials/textures/ground/ground_albedo_04.webp" id="3_f3kxv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6eavy"]
+render_priority = 0
+shader = ExtResource("2_il7lw")
+shader_parameter/texture_albedo = ExtResource("3_f3kxv")
+shader_parameter/tile_scale = 1.0
+shader_parameter/blend_sharpness = 4.0
+shader_parameter/rot_max_deg = 25.0
+shader_parameter/rot_seed = 43758.5
+
+[node name="path_baked_01" instance=ExtResource("1_3ej11")]
+
+[node name="middle_part_02" parent="." index="0"]
+transform = Transform3D(-0.10734, 0, -0.43701, 0, 0.45, 0, 0.43701, 0, -0.10734, 0.495284, 0.273903, -9.53804)
+surface_material_override/0 = SubResource("ShaderMaterial_6eavy")

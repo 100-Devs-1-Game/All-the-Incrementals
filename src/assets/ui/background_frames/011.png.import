@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8qgmiletchm8"
-path.s3tc="res://.godot/imported/011.png-5d6504a4373f1c05ff8ce6266e2edf3c.s3tc.ctex"
+uid="uid://b4mcg88ximrmg"
+path="res://.godot/imported/011.png-5d6504a4373f1c05ff8ce6266e2edf3c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/ui/background_frames/011.png"
-dest_files=["res://.godot/imported/011.png-5d6504a4373f1c05ff8ce6266e2edf3c.s3tc.ctex"]
+dest_files=["res://.godot/imported/011.png-5d6504a4373f1c05ff8ce6266e2edf3c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

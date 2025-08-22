@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://catpngsdc6p6a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n32m2"]
+
+[node name="EarthWaterTownWall1_1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(14, 0, 0, 0, 18, 0, 0, 0, 1.6, 0, 0, 0)
+mesh = SubResource("BoxMesh_n32m2")

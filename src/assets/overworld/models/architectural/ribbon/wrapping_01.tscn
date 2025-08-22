@@ -1,5 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqcw72akqxoqa"]
+[gd_scene load_steps=4 format=3 uid="uid://dqcw72akqxoqa"]
 
-[ext_resource type="PackedScene" uid="uid://cjeimmt514yqa" path="res://assets/overworld/models/architectural/ribbon/wrapping_01.gltf" id="1_5qq56"]
+[ext_resource type="PackedScene" uid="uid://cjeimmt514yqa" path="res://models/architectural/ribbon/wrapping_01.gltf" id="1_5qq56"]
+[ext_resource type="ArrayMesh" uid="uid://dg4j6mwtin3of" path="res://models/architectural/ribbon/wrapping_01.mesh" id="2_lfae1"]
+[ext_resource type="Material" uid="uid://dsyp3a8t3vix7" path="res://materials/textures/cloth/cloth_01.tres" id="2_mjj3y"]
 
 [node name="wrapping_012" instance=ExtResource("1_5qq56")]
+
+[node name="wrapping_01" parent="." index="0"]
+mesh = ExtResource("2_lfae1")
+surface_material_override/0 = ExtResource("2_mjj3y")

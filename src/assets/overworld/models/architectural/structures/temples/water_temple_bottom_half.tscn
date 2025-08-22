@@ -1,5 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn17r6cyuvf7u"]
+[gd_scene load_steps=4 format=3 uid="uid://dn17r6cyuvf7u"]
 
-[ext_resource type="PackedScene" uid="uid://dxp30wgv3iun1" path="res://assets/overworld/models/architectural/structures/temples/water_temple_bottom_half.gltf" id="1_3fwbn"]
+[ext_resource type="PackedScene" uid="uid://dxp30wgv3iun1" path="res://models/architectural/structures/temples/water_temple_bottom_half.gltf" id="1_3fwbn"]
+[ext_resource type="Material" uid="uid://chg85pjkrx0dk" path="res://materials/textures/concrete/concrete_03.tres" id="2_p4uru"]
+[ext_resource type="Material" uid="uid://xxpd0n3a2268" path="res://materials/textures/concrete/concrete_01.tres" id="3_ifu2r"]
 
 [node name="water_temple_bottom_half" instance=ExtResource("1_3fwbn")]
+
+[node name="wth" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_p4uru")
+
+[node name="wth_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_ifu2r")
+
+[node name="wth_002" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_p4uru")
