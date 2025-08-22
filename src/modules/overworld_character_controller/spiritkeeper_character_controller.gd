@@ -39,9 +39,11 @@ var state_machine: NoxCallableStateMachine
 
 var _last_strong_direction: Vector3
 var _possible_interaction: InteractionComponent3D
+var _interaction_finished_sound: AudioStream
 
 @onready var label_interaction_hint: Label = %"Label Interaction Hint"
 @onready var raycast_floor_check: RayCast3D = $"RayCast Floor Check"
+@onready var audio_player_interaction: AudioStreamPlayer = $"AudioStreamPlayer Interaction"
 
 
 #region states
@@ -190,6 +192,8 @@ func _physics_process(delta: float) -> void:
 
 #endregion
 
+#region interactions
+
 
 func interact_with(_obj: Node3D) -> bool:
 	if state_machine.current_state_equals(interact_state):
@@ -199,7 +203,17 @@ func interact_with(_obj: Node3D) -> bool:
 
 
 func stop_interaction():
+	if _interaction_finished_sound:
+		audio_player_interaction.stream = _interaction_finished_sound
+		audio_player_interaction.play()
 	state_machine.change_state(idle_state)
+
+
+func set_interaction_sounds(initial_sound: AudioStream, finishing_sound: AudioStream):
+	if initial_sound:
+		audio_player_interaction.stream = initial_sound
+		audio_player_interaction.play()
+	_interaction_finished_sound = finishing_sound
 
 
 func _on_possible_interaction(component: InteractionComponent3D):
@@ -212,3 +226,5 @@ func _on_possible_interaction(component: InteractionComponent3D):
 func _on_interaction_lost(component: InteractionComponent3D):
 	if component == _possible_interaction:
 		label_interaction_hint.hide()
+
+#endregion
