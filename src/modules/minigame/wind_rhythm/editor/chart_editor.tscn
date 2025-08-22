@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://r8cv7m35nnyq"]
 
 [ext_resource type="Script" uid="uid://c704p2xgmuwnu" path="res://modules/minigame/wind_rhythm/editor/chart_editor.gd" id="1_gssk8"]
-[ext_resource type="Resource" uid="uid://b16thytvkspkb" path="res://modules/minigame/wind_rhythm/chart/exotic_house.tres" id="2_b4rfj"]
+[ext_resource type="Resource" uid="uid://csfvju4h4sdsa" path="res://modules/minigame/wind_rhythm/chart/endless/endless_a.tres" id="2_ia6sw"]
 [ext_resource type="Texture2D" uid="uid://dbkp1x46morhs" path="res://assets/minigames/wind_rhythm/placeholder_assets/waveform.png" id="3_ia6sw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ia6sw"]
@@ -15,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
 script = ExtResource("1_gssk8")
-chart = ExtResource("2_b4rfj")
+chart = ExtResource("2_ia6sw")
 
 [node name="Waveform" type="TextureRect" parent="."]
 unique_name_in_owner = true

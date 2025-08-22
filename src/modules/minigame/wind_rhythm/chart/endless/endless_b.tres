@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Chart" load_steps=4 format=3 uid="uid://1wqbmyx7nu5s"]
+
+[ext_resource type="AudioStream" uid="uid://dj4xgk61voq7g" path="res://assets/minigames/wind_rhythm/music/wind_rhythm_153bpm_b_master.ogg" id="1_3p6yl"]
+[ext_resource type="Script" uid="uid://bub503l8yhkxy" path="res://modules/minigame/wind_rhythm/chart/note_data.gd" id="1_qsjxa"]
+[ext_resource type="Script" uid="uid://ddqeb6u7cudik" path="res://modules/minigame/wind_rhythm/chart/chart.gd" id="2_3p6yl"]
+
+[resource]
+script = ExtResource("2_3p6yl")
+name = "Wind Rhythm B"
+audio = ExtResource("1_3p6yl")
+bpm = 153
+notes = Array[ExtResource("1_qsjxa")]([])
+notes_in_bar = 4
+lanes = Dictionary[int, Array]({
+1: [],
+2: [],
+4: [],
+8: [],
+16: [],
+32: []
+})
+metadata/_custom_type_script = "uid://ddqeb6u7cudik"

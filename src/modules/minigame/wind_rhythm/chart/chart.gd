@@ -9,7 +9,7 @@ const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.g
 @export var bpm: int
 @export_tool_button("Sort Bars", "Sort") var sort = sort_notes
 @export_tool_button("Calculate note times", "Time") var calculate = calculate_note_times
-@export_tool_button("Rebuild notes array", "Reload") var rebuild = _rebuild_notes_array_from_lanes
+@export_tool_button("Rebuild notes array", "Reload") var rebuild = rebuild_notes_array_from_lanes
 @export var notes: Array[NoteData]
 @export var notes_in_bar: int = 4
 @export var lanes: Dictionary[NOTE_TYPE, Array] = {
@@ -60,7 +60,7 @@ func _rebuild_notes_array():
 		)
 
 
-func _rebuild_notes_array_from_lanes():
+func rebuild_notes_array_from_lanes():
 	notes.clear()
 
 	for lane in lanes.keys():

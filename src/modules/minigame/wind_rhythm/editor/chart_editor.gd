@@ -10,7 +10,7 @@ var dock: Control
 var beats_per_bar: int
 var bpm: float
 var lane_count: int = 7
-var triplets := false
+var division := 1
 var pan_x: int = 0
 var is_dragging := false
 var drag_start_mouse: Vector2
@@ -22,6 +22,10 @@ var selected_relative_beat = 0
 var selected_lane = 0
 var lane_height
 var is_playing = false
+
+var instruments_lanes: Dictionary[int, String] = {
+	0: "", 1: "flute", 2: "brass", 3: "basoon", 4: "bass", 5: "drums", 6: "guitar"
+}
 
 @onready var current_beat = $CurrentBeat
 @onready var default_font = ThemeDB.fallback_font
@@ -38,7 +42,6 @@ func _ready():
 func _process(_delta):
 	var beat_time = (get_viewport().get_mouse_position().x - pan_x) / zoom
 	selected_bar = snapped(beat_time - 0.5, 1.0)
-	var division = beats_per_bar * 3 if triplets else beats_per_bar
 	selected_beat = snappedf(beat_time, 1.0 / division)
 	selected_lane = (get_viewport().get_mouse_position().y + lane_height / 2) / size.y * lane_count
 	selected_lane = int(selected_lane)
@@ -139,10 +142,38 @@ func _gui_input(event):
 		var delta_x = event.position.x - drag_start_mouse.x
 		pan_x = drag_start_pan + delta_x
 		queue_redraw()
-	if event is InputEventKey:
-		if event.is_action_pressed("secondary_action"):
-			triplets = !triplets
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_1:
+			division = 1
 			queue_redraw()
+		if event.keycode == KEY_2:
+			division = 2
+			queue_redraw()
+		if event.keycode == KEY_3:
+			division = 3
+			queue_redraw()
+		if event.keycode == KEY_4:
+			division = 4
+			queue_redraw()
+		if event.keycode == KEY_5:
+			division = 5
+			queue_redraw()
+		if event.keycode == KEY_6:
+			division = 6
+			queue_redraw()
+		if event.keycode == KEY_7:
+			division = 7
+			queue_redraw()
+		if event.keycode == KEY_8:
+			division = 8
+			queue_redraw()
+		if event.keycode == KEY_9:
+			division = 9
+			queue_redraw()
+		if event.keycode == KEY_0:
+			division = 10
+			queue_redraw()
+
 		if event.is_action_pressed("primary_action"):
 			is_playing = !is_playing
 			if is_playing:
@@ -164,25 +195,34 @@ func _draw():
 	var lane_height = size.y / lane_count
 	for i in range(lane_count):
 		draw_line(Vector2(0, i * lane_height), Vector2(size.x, i * lane_height), Color.GRAY)
+		draw_string(default_font, Vector2(15, i * lane_height - 19), instruments_lanes[i])
 
-	for i in range(chart.audio.get_length() / 60 * bpm):
-		var division = 3 if triplets else 1
+	for i in range(chart.audio.get_length() / 60 * bpm / beats_per_bar):
 		for j in range(0, beats_per_bar * division):
+			var color = Color.DIM_GRAY if j == beats_per_bar else Color.BLACK
 			draw_line(
-				Vector2(i * zoom + j * zoom / beats_per_bar / division + pan_x, 0),
-				Vector2(i * zoom + j * zoom / beats_per_bar / division + pan_x, size.y),
+				Vector2(i * zoom * beats_per_bar + j * zoom / division + pan_x, 0),
+				Vector2(i * zoom * beats_per_bar + j * zoom / division + pan_x, size.y),
 				Color.DIM_GRAY
 			)
 			draw_string(
 				default_font,
 				Vector2(
-					i * zoom + j * zoom / beats_per_bar / division + 10 + pan_x, lane_height + 25
+					i * beats_per_bar * zoom + j * zoom / division + 10 + pan_x, lane_height + 25
 				),
-				str(j)
+				str(j + 1)
 			)
 
-		draw_line(Vector2(i * zoom + pan_x, 0), Vector2(i * zoom + pan_x, size.y), Color.WHITE)
-		draw_string(default_font, Vector2(i * zoom + 10 + pan_x, lane_height - 10), str(i))
+		draw_line(
+			Vector2(i * zoom * beats_per_bar + pan_x, 0),
+			Vector2(i * zoom * beats_per_bar + pan_x, size.y),
+			Color.WHITE
+		)
+		draw_string(
+			default_font,
+			Vector2(i * zoom * beats_per_bar + 10 + pan_x, lane_height - 10),
+			str(i + 1)
+		)
 
 	for lane in chart.lanes:
 		for note: NoteData in chart.lanes[lane]:
@@ -239,5 +279,5 @@ func zoom_at_mouse(new_zoom: float, mouse_pos: Vector2):
 
 
 func _on_save_chart_pressed():
-	chart.calculate_note_times_in_lanes()
+	chart.rebuild_notes_array_from_lanes()
 	var error: Error = ResourceSaver.save(chart)
