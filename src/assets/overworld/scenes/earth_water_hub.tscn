@@ -1,6 +1,5 @@
-[gd_scene load_steps=55 format=3 uid="uid://d3mxhlrq3ern4"]
+[gd_scene load_steps=54 format=3 uid="uid://d3mxhlrq3ern4"]
 
-[ext_resource type="Texture2D" uid="uid://xstxlsqpgn7h" path="res://assets/overworld/assets/HDRIs/night.hdr" id="2_dqkb0"]
 [ext_resource type="Texture2D" uid="uid://cvtojgakhortv" path="res://assets/overworld/assets/nature/trees/tree_05.webp" id="5_v8tti"]
 [ext_resource type="PackedScene" uid="uid://bnep7rw3djdx8" path="res://assets/overworld/models/architectural/structures/temples/water_temple/water_temple.tscn" id="6_d3vjw"]
 [ext_resource type="ArrayMesh" uid="uid://bl82s3wnbaib8" path="res://assets/overworld/models/architectural/structures/stall/stall.mesh" id="7_wdwec"]
@@ -30,7 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://dbuxopqnh45v1" path="res://assets/overworld/models/architectural/structures/altar/altar_01.tscn" id="22_vrtvn"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hbxmu"]
-panorama = ExtResource("2_dqkb0")
 
 [sub_resource type="Sky" id="Sky_s60bt"]
 sky_material = SubResource("PanoramaSkyMaterial_hbxmu")
@@ -471,7 +469,6 @@ transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, -4.95709, 1.14729, 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18182, -1.53404, -12.9591)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="altars/altar_01"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="altars/altar_01/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558609, 0)
@@ -492,7 +489,6 @@ enable_bobbing = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55064, -0.00526756, 1.44485)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="altars/altar_02"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="altars/altar_02/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558609, 0)
@@ -513,7 +509,6 @@ enable_bobbing = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0948, 0.969809, -25.1741)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="altars/altar_03"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="altars/altar_03/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558609, 0)
@@ -534,7 +529,6 @@ enable_bobbing = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4479, 2.06982, -12.4803)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="altars/altar_04"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="altars/altar_04/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558609, 0)
