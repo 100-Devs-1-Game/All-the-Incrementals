@@ -12,4 +12,4 @@ func _ready() -> void:
 func _on_interaction_component_3d_interacted_with(
 	_player: SpiritkeeperCharacterController3D
 ) -> void:
-	SceneLoader.enter_settlement(target_settlement)
+	SceneLoader.enter_settlement.call_deferred(target_settlement)
