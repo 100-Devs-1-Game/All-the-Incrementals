@@ -1,4 +1,4 @@
-extends Node3D
+extends OverworldLocation3D
 
 @export var upgrade_tree_scene: PackedScene
 
