@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsvlmp08rofyx"]
+
+[ext_resource type="PackedScene" uid="uid://dcme0wnpc72d8" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_m.gltf" id="1_8bmoj"]
+[ext_resource type="ArrayMesh" uid="uid://b72h3mbxju7tx" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_snow_m.mesh" id="2_8bmoj"]
+[ext_resource type="Material" uid="uid://b86sc3v3pdatl" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_m.tres" id="3_cef1r"]
+
+[node name="house_02_m" instance=ExtResource("1_8bmoj")]
+
+[node name="House_02_FantasyAtlas_mat_0_003" parent="." index="0"]
+mesh = ExtResource("2_8bmoj")
+surface_material_override/0 = ExtResource("3_cef1r")

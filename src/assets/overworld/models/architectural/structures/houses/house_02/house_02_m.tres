@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b86sc3v3pdatl"]
 
-[ext_resource type="Texture2D" uid="uid://lkx6vo7fiv2k" path="res://models/architectural/structures/houses/house_02/house_02_M_256p.webp" id="1_8il6u"]
+[ext_resource type="Texture2D" uid="uid://b1pv523dcnbgi" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_snow_m_256p.webp" id="1_pjcxj"]
 
 [resource]
-albedo_texture = ExtResource("1_8il6u")
+albedo_texture = ExtResource("1_pjcxj")
