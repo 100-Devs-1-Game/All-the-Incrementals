@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpgwl8ggem1ht"]
 
-[ext_resource type="PackedScene" uid="uid://cym847uyib18j" path="res://models/nature/wood/bonfire/bonfire_01_m.gltf" id="1_vbtrm"]
-[ext_resource type="ArrayMesh" uid="uid://c5wqqhr4n2n1v" path="res://models/nature/wood/bonfire/bonfire_01.mesh" id="2_76lwg"]
+[ext_resource type="PackedScene" uid="uid://cym847uyib18j" path="res://assets/overworld/models/nature/wood/bonfire/bonfire_01_m.gltf" id="1_vbtrm"]
+[ext_resource type="ArrayMesh" uid="uid://c5wqqhr4n2n1v" path="res://assets/overworld/models/nature/wood/bonfire/bonfire_01.mesh" id="2_76lwg"]
 
 [node name="bonfire_01_m" instance=ExtResource("1_vbtrm")]
 

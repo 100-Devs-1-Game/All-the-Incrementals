@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://ch1ur2audgbkq"]
 
-[ext_resource type="PackedScene" uid="uid://cnqp1ioa48i04" path="res://models/architectural/ribbon/long_hanging_ribbon_sub_d.gltf" id="1_m31hu"]
-[ext_resource type="Shader" uid="uid://ce8k8i21t31cp" path="res://scripts/shaders/cloth_sim.gdshader" id="2_4foye"]
+[ext_resource type="PackedScene" uid="uid://cnqp1ioa48i04" path="res://assets/overworld/models/architectural/ribbon/long_hanging_ribbon_sub_d.gltf" id="1_m31hu"]
+[ext_resource type="Shader" uid="uid://ce8k8i21t31cp" path="res://assets/overworld/scripts/shaders/cloth_sim.gdshader" id="2_4foye"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqosx"]
 render_priority = 0
 shader = ExtResource("2_4foye")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/sway_strength = 0.056
 shader_parameter/sway_speed = 0.56
 shader_parameter/y_top = -2.18
 shader_parameter/y_bottom = 0.001
+shader_parameter/alpha_cutoff = 0.1
 
 [node name="long_hanging_ribbon_sub_d" instance=ExtResource("1_m31hu")]
 

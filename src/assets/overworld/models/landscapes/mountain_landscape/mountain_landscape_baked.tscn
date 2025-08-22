@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b20hcfpyh4u8d"]
 
-[ext_resource type="PackedScene" uid="uid://bbmsat30gv3vb" path="res://models/landscapes/mountain_landscape/mountain_landscape_baked.gltf" id="1_3aw1j"]
-[ext_resource type="Material" uid="uid://6o7sv4gqtbqa" path="res://materials/textures/ground/ground_04.tres" id="2_idt1j"]
+[ext_resource type="PackedScene" uid="uid://bbmsat30gv3vb" path="res://assets/overworld/models/landscapes/mountain_landscape/mountain_landscape_baked.gltf" id="1_3aw1j"]
+[ext_resource type="Material" uid="uid://6o7sv4gqtbqa" path="res://assets/overworld/materials/textures/ground/ground_04.tres" id="2_idt1j"]
 
 [node name="mountain_landscape_baked" instance=ExtResource("1_3aw1j")]
 

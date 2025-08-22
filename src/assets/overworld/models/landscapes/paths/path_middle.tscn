@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwkp74mk0myvm"]
 
-[ext_resource type="PackedScene" uid="uid://pk6jkc60435o" path="res://models/landscapes/paths/path_middle.gltf" id="1_4kpr0"]
-[ext_resource type="Material" uid="uid://da248thgeu1o6" path="res://materials/textures/ground/ground_03.tres" id="2_4isd6"]
+[ext_resource type="PackedScene" uid="uid://pk6jkc60435o" path="res://assets/overworld/models/landscapes/paths/path_middle.gltf" id="1_4kpr0"]
+[ext_resource type="Material" uid="uid://da248thgeu1o6" path="res://assets/overworld/materials/textures/ground/ground_03.tres" id="2_4isd6"]
 
 [node name="path_middle" instance=ExtResource("1_4kpr0")]
 

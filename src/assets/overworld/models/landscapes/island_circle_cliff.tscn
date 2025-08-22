@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://tf43hjaihxve"]
 
-[ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://models/landscapes/island_circle.gltf" id="1_r8xtf"]
-[ext_resource type="Material" uid="uid://er48nk76hk6d" path="res://materials/simple/simple/s_peach.tres" id="2_4owgs"]
+[ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://assets/overworld/models/landscapes/island_circle.gltf" id="1_r8xtf"]
+[ext_resource type="Material" uid="uid://er48nk76hk6d" path="res://assets/overworld/materials/simple/simple/s_peach.tres" id="2_4owgs"]
 
 [node name="island_circle_cliff1" instance=ExtResource("1_r8xtf")]
 transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3s6vlq4wy6ic"]
 
-[ext_resource type="PackedScene" uid="uid://dx37205y5pq3y" path="res://models/props/bell/bell_01.gltf" id="1_rodl8"]
-[ext_resource type="Material" uid="uid://bsrilhglpyu26" path="res://materials/simple/metallic/m_yellow.tres" id="2_nhwlx"]
+[ext_resource type="PackedScene" uid="uid://dx37205y5pq3y" path="res://assets/overworld/models/props/bell/bell_01.gltf" id="1_rodl8"]
+[ext_resource type="Material" uid="uid://bsrilhglpyu26" path="res://assets/overworld/materials/simple/metallic/m_yellow.tres" id="2_nhwlx"]
 
 [node name="bell_012" instance=ExtResource("1_rodl8")]
 

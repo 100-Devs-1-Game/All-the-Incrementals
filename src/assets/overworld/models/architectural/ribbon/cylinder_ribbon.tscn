@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvp0l5bbwj43a"]
 
-[ext_resource type="PackedScene" uid="uid://donpqilcv7lv4" path="res://models/architectural/ribbon/cylinder_ribbon.gltf" id="1_rdmqx"]
-[ext_resource type="Material" uid="uid://dsyp3a8t3vix7" path="res://materials/textures/cloth/cloth_01.tres" id="2_uq8tu"]
+[ext_resource type="PackedScene" uid="uid://donpqilcv7lv4" path="res://assets/overworld/models/architectural/ribbon/cylinder_ribbon.gltf" id="1_rdmqx"]
+[ext_resource type="Material" uid="uid://dsyp3a8t3vix7" path="res://assets/overworld/materials/textures/cloth/cloth_01.tres" id="2_uq8tu"]
 
 [node name="cylinder_ribbon2" instance=ExtResource("1_rdmqx")]
 

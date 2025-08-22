@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://14khymasrsh5"]
 
-[ext_resource type="PackedScene" uid="uid://du6q07772y47v" path="res://models/landscapes/mountain_landscape/mountain_landscape.gltf" id="1_kxl42"]
-[ext_resource type="ArrayMesh" uid="uid://brxfdyciopeug" path="res://models/landscapes/mountain_landscape/mountain_landscape.mesh" id="2_monbe"]
-[ext_resource type="Texture2D" uid="uid://catixkt58j5cy" path="res://materials/textures/ground/ground_albedo_05_snow.webp" id="3_1gujk"]
+[ext_resource type="PackedScene" uid="uid://du6q07772y47v" path="res://assets/overworld/models/landscapes/mountain_landscape/mountain_landscape.gltf" id="1_kxl42"]
+[ext_resource type="ArrayMesh" uid="uid://brxfdyciopeug" path="res://assets/overworld/models/landscapes/mountain_landscape/mountain_landscape.mesh" id="2_monbe"]
+[ext_resource type="Texture2D" uid="uid://catixkt58j5cy" path="res://assets/overworld/materials/textures/ground/ground_albedo_05_snow.webp" id="3_1gujk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcxho"]
 albedo_texture = ExtResource("3_1gujk")

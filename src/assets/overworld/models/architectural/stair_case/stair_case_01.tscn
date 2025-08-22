@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxkc37xd0pka0"]
 
-[ext_resource type="PackedScene" uid="uid://q4agjfcfpmrw" path="res://models/architectural/stair_case/stair_case_01.gltf" id="1_xapm4"]
-[ext_resource type="ArrayMesh" uid="uid://cvof3k21ptrqs" path="res://models/architectural/stair_case/stair_case.mesh" id="2_36p00"]
-[ext_resource type="Material" uid="uid://dnhk0y3257esx" path="res://materials/textures/brick/brick_01.tres" id="2_l5y5v"]
+[ext_resource type="PackedScene" uid="uid://q4agjfcfpmrw" path="res://assets/overworld/models/architectural/stair_case/stair_case_01.gltf" id="1_xapm4"]
+[ext_resource type="ArrayMesh" uid="uid://cvof3k21ptrqs" path="res://assets/overworld/models/architectural/stair_case/stair_case.mesh" id="2_36p00"]
+[ext_resource type="Material" uid="uid://dnhk0y3257esx" path="res://assets/overworld/materials/textures/brick/brick_01.tres" id="2_l5y5v"]
 
 [node name="stair_case_012" instance=ExtResource("1_xapm4")]
 

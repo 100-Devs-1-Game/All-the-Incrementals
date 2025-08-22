@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnxu2oowl3ycw"]
 
-[ext_resource type="PackedScene" uid="uid://d252qriacbsyl" path="res://models/architectural/wall/wall_baked.gltf" id="1_1kndn"]
-[ext_resource type="Texture2D" uid="uid://b8jbd57r4aqwk" path="res://models/architectural/wall/wall_01.webp" id="2_qom2l"]
+[ext_resource type="PackedScene" uid="uid://d252qriacbsyl" path="res://assets/overworld/models/architectural/wall/wall_baked.gltf" id="1_1kndn"]
+[ext_resource type="Texture2D" uid="uid://b8jbd57r4aqwk" path="res://assets/overworld/models/architectural/wall/wall_01.webp" id="2_qom2l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prx5x"]
 albedo_texture = ExtResource("2_qom2l")

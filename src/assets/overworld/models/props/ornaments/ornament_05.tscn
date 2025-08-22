@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxf7wr7fkgkx3"]
 
-[ext_resource type="PackedScene" uid="uid://b7fvi1fj5tddk" path="res://models/props/ornaments/ornament_05.gltf" id="1_q6bxl"]
-[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://materials/simple/metallic/m_gray.tres" id="2_okehy"]
-[ext_resource type="Material" uid="uid://bgvf13ebcvf70" path="res://materials/textures/ornaments/ornament_01.tres" id="3_k488x"]
+[ext_resource type="PackedScene" uid="uid://b7fvi1fj5tddk" path="res://assets/overworld/models/props/ornaments/ornament_05.gltf" id="1_q6bxl"]
+[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://assets/overworld/materials/simple/metallic/m_gray.tres" id="2_okehy"]
+[ext_resource type="Material" uid="uid://bgvf13ebcvf70" path="res://assets/overworld/materials/textures/ornaments/ornament_01.tres" id="3_k488x"]
 
 [node name="ornament_05" instance=ExtResource("1_q6bxl")]
 

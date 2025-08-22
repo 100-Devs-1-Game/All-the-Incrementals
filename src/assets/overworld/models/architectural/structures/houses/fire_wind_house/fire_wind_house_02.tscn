@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2ve4o4dxgnfg"]
 
-[ext_resource type="PackedScene" uid="uid://b0hgnqoh5sask" path="res://models/architectural/structures/houses/fire_wind_house/fire_wind_house_01_m/fire_wind_house_02.gltf" id="1_r56bs"]
-[ext_resource type="ArrayMesh" uid="uid://dtd0erxgxceof" path="res://models/architectural/structures/houses/fire_wind_house/fire_wind_house_01_m/fire_wind_house_02.mesh" id="2_wof0m"]
+[ext_resource type="PackedScene" uid="uid://b0hgnqoh5sask" path="res://assets/overworld/models/architectural/structures/houses/fire_wind_house/fire_wind_house_02.gltf" id="1_r56bs"]
+[ext_resource type="ArrayMesh" uid="uid://dtd0erxgxceof" path="res://assets/overworld/models/architectural/structures/houses/fire_wind_house/fire_wind_house_02.mesh" id="2_wof0m"]
 
 [node name="fire_wind_house_02" instance=ExtResource("1_r56bs")]
 

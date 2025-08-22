@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyqvtg6x4rb85"]
 
-[ext_resource type="PackedScene" uid="uid://cgospkeg8w7tf" path="res://models/architectural/pillar/pillar_01.gltf" id="1_ww55g"]
-[ext_resource type="ArrayMesh" uid="uid://cmwartfadf6yk" path="res://models/architectural/pillar/pillar_01.mesh" id="2_a7hmx"]
-[ext_resource type="Material" uid="uid://b46ovjaptuq56" path="res://materials/textures/concrete/concrete_02.tres" id="2_juvff"]
+[ext_resource type="PackedScene" uid="uid://cgospkeg8w7tf" path="res://assets/overworld/models/architectural/pillar/pillar_01.gltf" id="1_ww55g"]
+[ext_resource type="ArrayMesh" uid="uid://cmwartfadf6yk" path="res://assets/overworld/models/architectural/pillar/pillar_01.mesh" id="2_a7hmx"]
+[ext_resource type="Material" uid="uid://b46ovjaptuq56" path="res://assets/overworld/materials/textures/concrete/concrete_02.tres" id="2_juvff"]
 
 [node name="pillar_01" instance=ExtResource("1_ww55g")]
 

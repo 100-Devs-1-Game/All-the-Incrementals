@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cag3xugkayrkb"]
 
-[ext_resource type="PackedScene" uid="uid://c2i2vssefol61" path="res://models/architectural/structures/stall/stall.gltf" id="1_m1yrk"]
-[ext_resource type="ArrayMesh" uid="uid://bl82s3wnbaib8" path="res://models/architectural/structures/stall/stall.mesh" id="2_872gm"]
+[ext_resource type="PackedScene" uid="uid://c2i2vssefol61" path="res://assets/overworld/models/architectural/structures/stall/stall.gltf" id="1_m1yrk"]
+[ext_resource type="ArrayMesh" uid="uid://bl82s3wnbaib8" path="res://assets/overworld/models/architectural/structures/stall/stall.mesh" id="2_872gm"]
 
 [node name="stall2" instance=ExtResource("1_m1yrk")]
 

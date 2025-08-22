@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dox2uuh52nw43"]
 
-[ext_resource type="PackedScene" uid="uid://dafe7l0p7jcsm" path="res://models/kitchen_ware/bowl/bowl_05.gltf" id="1_lyfu3"]
-[ext_resource type="Material" uid="uid://b46ovjaptuq56" path="res://materials/textures/concrete/concrete_02.tres" id="2_l8jgj"]
+[ext_resource type="PackedScene" uid="uid://dafe7l0p7jcsm" path="res://assets/overworld/models/kitchen_ware/bowl/bowl_05.gltf" id="1_lyfu3"]
+[ext_resource type="Material" uid="uid://b46ovjaptuq56" path="res://assets/overworld/materials/textures/concrete/concrete_02.tres" id="2_l8jgj"]
 
 [node name="bowl_05" instance=ExtResource("1_lyfu3")]
 

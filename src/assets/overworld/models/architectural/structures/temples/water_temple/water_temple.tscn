@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnep7rw3djdx8"]
 
-[ext_resource type="PackedScene" uid="uid://dfs4eqc4xquu0" path="res://models/architectural/structures/temples/water_temple/water_temple.gltf" id="1_tqc4d"]
-[ext_resource type="Material" uid="uid://88c2ktvuhli0" path="res://models/architectural/structures/temples/water_temple/water_temple.tres" id="2_scdvu"]
+[ext_resource type="PackedScene" uid="uid://dfs4eqc4xquu0" path="res://assets/overworld/models/architectural/structures/temples/water_temple/water_temple.gltf" id="1_tqc4d"]
+[ext_resource type="Material" uid="uid://88c2ktvuhli0" path="res://assets/overworld/models/architectural/structures/temples/water_temple/water_temple.tres" id="2_scdvu"]
 
 [node name="water_temple2" instance=ExtResource("1_tqc4d")]
 

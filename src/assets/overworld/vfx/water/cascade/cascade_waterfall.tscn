@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://coxmlipoas6nc"]
 
-[ext_resource type="PackedScene" uid="uid://de7oyaxqh7gx7" path="res://vfx/water/cascade/cascade_waterfall.gltf" id="1_jat31"]
-[ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://scripts/shaders/water_toon.gdshader" id="2_rlogr"]
-[ext_resource type="Texture2D" uid="uid://cfr1esmynt0np" path="res://vfx/water/circular_water/water_blue_alt.webp" id="3_xag5y"]
+[ext_resource type="PackedScene" uid="uid://de7oyaxqh7gx7" path="res://assets/overworld/vfx/water/cascade/cascade_waterfall.gltf" id="1_jat31"]
+[ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://assets/overworld/scripts/shaders/water_toon.gdshader" id="2_rlogr"]
+[ext_resource type="Texture2D" uid="uid://cfr1esmynt0np" path="res://assets/overworld/vfx/water/circular_water/water_blue_alt.webp" id="3_xag5y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rlogr"]
 render_priority = 0

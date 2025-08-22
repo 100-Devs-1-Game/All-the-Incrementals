@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpqf8bu1mcc06"]
 
-[ext_resource type="PackedScene" uid="uid://sop6wq0h6863" path="res://models/nature/wood/wood_log_02.gltf" id="1_wmtm7"]
-[ext_resource type="Material" uid="uid://cel6bgwex7mqx" path="res://materials/textures/wood/wood_03.tres" id="2_t2xyq"]
+[ext_resource type="PackedScene" uid="uid://sop6wq0h6863" path="res://assets/overworld/models/nature/wood/wood_log_02.gltf" id="1_wmtm7"]
+[ext_resource type="Material" uid="uid://cel6bgwex7mqx" path="res://assets/overworld/materials/textures/wood/wood_03.tres" id="2_t2xyq"]
 
 [node name="wood_log_02" instance=ExtResource("1_wmtm7")]
 
