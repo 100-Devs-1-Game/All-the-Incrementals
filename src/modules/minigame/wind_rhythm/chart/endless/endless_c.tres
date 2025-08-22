@@ -1,22 +1,7134 @@
-[gd_resource type="Resource" script_class="Chart" load_steps=4 format=3 uid="uid://s3byt45p017r"]
+[gd_resource type="Resource" script_class="Chart" load_steps=1020 format=3 uid="uid://crc3mm8boxfkp"]
 
 [ext_resource type="AudioStream" uid="uid://duwt46nerlh85" path="res://assets/minigames/wind_rhythm/music/wind_rhythm_153bpm_c_master.ogg" id="1_ol6fn"]
 [ext_resource type="Script" uid="uid://bub503l8yhkxy" path="res://modules/minigame/wind_rhythm/chart/note_data.gd" id="1_r4db5"]
 [ext_resource type="Script" uid="uid://ddqeb6u7cudik" path="res://modules/minigame/wind_rhythm/chart/chart.gd" id="2_ol6fn"]
+
+[sub_resource type="Resource" id="Resource_yk0o3"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 0.0
+type = 1
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_wl7e7"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 2.0
+type = 1
+cached_absolute_beat = 0.196078
+
+[sub_resource type="Resource" id="Resource_1xc3f"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 1
+cached_absolute_beat = 0.392157
+
+[sub_resource type="Resource" id="Resource_d44md"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 0.0
+type = 1
+cached_absolute_beat = 0.784314
+
+[sub_resource type="Resource" id="Resource_mv8iv"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 1
+cached_absolute_beat = 1.17647
+
+[sub_resource type="Resource" id="Resource_e5xi1"]
+script = ExtResource("1_r4db5")
+bar = 4
+beat = 0.0
+type = 1
+cached_absolute_beat = 1.56863
+
+[sub_resource type="Resource" id="Resource_hi828"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 1
+cached_absolute_beat = 1.96078
+
+[sub_resource type="Resource" id="Resource_adsad"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 0.0
+type = 1
+cached_absolute_beat = 2.35294
+
+[sub_resource type="Resource" id="Resource_trdi7"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 1
+cached_absolute_beat = 2.7451
+
+[sub_resource type="Resource" id="Resource_1drsw"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 0.0
+type = 1
+cached_absolute_beat = 3.13725
+
+[sub_resource type="Resource" id="Resource_3rw21"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 2.0
+type = 1
+cached_absolute_beat = 3.33333
+
+[sub_resource type="Resource" id="Resource_86krp"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 1
+cached_absolute_beat = 3.52941
+
+[sub_resource type="Resource" id="Resource_wjoe5"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 0.0
+type = 1
+cached_absolute_beat = 3.92157
+
+[sub_resource type="Resource" id="Resource_ibjts"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 1
+cached_absolute_beat = 4.31373
+
+[sub_resource type="Resource" id="Resource_bchsc"]
+script = ExtResource("1_r4db5")
+bar = 12
+beat = 0.0
+type = 1
+cached_absolute_beat = 4.70588
+
+[sub_resource type="Resource" id="Resource_808mj"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 1
+cached_absolute_beat = 5.09804
+
+[sub_resource type="Resource" id="Resource_ygdv5"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 0.0
+type = 1
+cached_absolute_beat = 5.4902
+
+[sub_resource type="Resource" id="Resource_wy4hy"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 1
+cached_absolute_beat = 5.88235
+
+[sub_resource type="Resource" id="Resource_5p6oh"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 0.0
+type = 1
+cached_absolute_beat = 6.27451
+
+[sub_resource type="Resource" id="Resource_yuwi0"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 1
+cached_absolute_beat = 7.45098
+
+[sub_resource type="Resource" id="Resource_sd6vl"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 0.0
+type = 1
+cached_absolute_beat = 8.62745
+
+[sub_resource type="Resource" id="Resource_plrk6"]
+script = ExtResource("1_r4db5")
+bar = 24
+beat = 0.0
+type = 1
+cached_absolute_beat = 9.41176
+
+[sub_resource type="Resource" id="Resource_pw1da"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 0.0
+type = 1
+cached_absolute_beat = 10.1961
+
+[sub_resource type="Resource" id="Resource_03k6d"]
+script = ExtResource("1_r4db5")
+bar = 28
+beat = 0.0
+type = 1
+cached_absolute_beat = 10.9804
+
+[sub_resource type="Resource" id="Resource_hbfpi"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 0.0
+type = 1
+cached_absolute_beat = 11.7647
+
+[sub_resource type="Resource" id="Resource_whuno"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 0.0
+type = 1
+cached_absolute_beat = 12.549
+
+[sub_resource type="Resource" id="Resource_jdaid"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 0.0
+type = 1
+cached_absolute_beat = 15.6863
+
+[sub_resource type="Resource" id="Resource_hk24u"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 1
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_2yydf"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 0.0
+type = 1
+cached_absolute_beat = 21.9608
+
+[sub_resource type="Resource" id="Resource_71b7b"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 0.0
+type = 1
+cached_absolute_beat = 25.098
+
+[sub_resource type="Resource" id="Resource_ssd1v"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 0.0
+type = 2
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_7cxlx"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 2
+cached_absolute_beat = 0.392157
+
+[sub_resource type="Resource" id="Resource_scvap"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 2
+cached_absolute_beat = 1.17647
+
+[sub_resource type="Resource" id="Resource_wqapw"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 2
+cached_absolute_beat = 1.96078
+
+[sub_resource type="Resource" id="Resource_twvu6"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 2
+cached_absolute_beat = 2.7451
+
+[sub_resource type="Resource" id="Resource_cxtjn"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 2
+cached_absolute_beat = 3.52941
+
+[sub_resource type="Resource" id="Resource_cn2eq"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 2
+cached_absolute_beat = 4.31373
+
+[sub_resource type="Resource" id="Resource_j10id"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 2
+cached_absolute_beat = 5.09804
+
+[sub_resource type="Resource" id="Resource_ktotj"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 2
+cached_absolute_beat = 5.88235
+
+[sub_resource type="Resource" id="Resource_w2i2h"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 0.0
+type = 2
+cached_absolute_beat = 6.27451
+
+[sub_resource type="Resource" id="Resource_l7740"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 0.0
+type = 2
+cached_absolute_beat = 6.66667
+
+[sub_resource type="Resource" id="Resource_8m6kp"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 2
+cached_absolute_beat = 7.45098
+
+[sub_resource type="Resource" id="Resource_m1agf"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 0.0
+type = 2
+cached_absolute_beat = 8.23529
+
+[sub_resource type="Resource" id="Resource_aiqr8"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 0.0
+type = 2
+cached_absolute_beat = 9.01961
+
+[sub_resource type="Resource" id="Resource_6u64w"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 0.0
+type = 2
+cached_absolute_beat = 9.80392
+
+[sub_resource type="Resource" id="Resource_a0tkx"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 0.0
+type = 2
+cached_absolute_beat = 10.5882
+
+[sub_resource type="Resource" id="Resource_dwk0v"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 0.0
+type = 2
+cached_absolute_beat = 11.3725
+
+[sub_resource type="Resource" id="Resource_jj305"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 0.0
+type = 2
+cached_absolute_beat = 12.1569
+
+[sub_resource type="Resource" id="Resource_5nbjo"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 0.0
+type = 2
+cached_absolute_beat = 12.549
+
+[sub_resource type="Resource" id="Resource_fn7wn"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 0.0
+type = 2
+cached_absolute_beat = 12.9412
+
+[sub_resource type="Resource" id="Resource_ykutr"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 2
+cached_absolute_beat = 13.7255
+
+[sub_resource type="Resource" id="Resource_7oqsf"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 0.0
+type = 2
+cached_absolute_beat = 14.5098
+
+[sub_resource type="Resource" id="Resource_bmqfo"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 0.0
+type = 2
+cached_absolute_beat = 15.2941
+
+[sub_resource type="Resource" id="Resource_ugo7w"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 0.0
+type = 2
+cached_absolute_beat = 16.0784
+
+[sub_resource type="Resource" id="Resource_wc0u4"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 0.0
+type = 2
+cached_absolute_beat = 16.8627
+
+[sub_resource type="Resource" id="Resource_61shx"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 0.0
+type = 2
+cached_absolute_beat = 17.6471
+
+[sub_resource type="Resource" id="Resource_eec51"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 0.0
+type = 2
+cached_absolute_beat = 18.4314
+
+[sub_resource type="Resource" id="Resource_epm6d"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 2
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_r1oau"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 0.0
+type = 2
+cached_absolute_beat = 19.2157
+
+[sub_resource type="Resource" id="Resource_nhlpu"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 0.0
+type = 2
+cached_absolute_beat = 20.0
+
+[sub_resource type="Resource" id="Resource_csljr"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 0.0
+type = 2
+cached_absolute_beat = 20.7843
+
+[sub_resource type="Resource" id="Resource_s1c1p"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 0.0
+type = 2
+cached_absolute_beat = 21.5686
+
+[sub_resource type="Resource" id="Resource_7ih4c"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 0.0
+type = 2
+cached_absolute_beat = 22.3529
+
+[sub_resource type="Resource" id="Resource_igdjv"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 0.0
+type = 2
+cached_absolute_beat = 23.1373
+
+[sub_resource type="Resource" id="Resource_4gccb"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 0.0
+type = 2
+cached_absolute_beat = 23.9216
+
+[sub_resource type="Resource" id="Resource_s1fej"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 0.0
+type = 2
+cached_absolute_beat = 24.7059
+
+[sub_resource type="Resource" id="Resource_ijbn8"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 0.0
+type = 2
+cached_absolute_beat = 25.098
+
+[sub_resource type="Resource" id="Resource_iow5a"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 0.0
+type = 2
+cached_absolute_beat = 25.4902
+
+[sub_resource type="Resource" id="Resource_rkne3"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 0.0
+type = 2
+cached_absolute_beat = 26.2745
+
+[sub_resource type="Resource" id="Resource_ixu2t"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 0.0
+type = 2
+cached_absolute_beat = 27.0588
+
+[sub_resource type="Resource" id="Resource_6esxk"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 0.0
+type = 2
+cached_absolute_beat = 27.8431
+
+[sub_resource type="Resource" id="Resource_oynjk"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 0.0
+type = 2
+cached_absolute_beat = 28.6275
+
+[sub_resource type="Resource" id="Resource_rlfnl"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 0.0
+type = 2
+cached_absolute_beat = 29.4118
+
+[sub_resource type="Resource" id="Resource_nstao"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 0.0
+type = 2
+cached_absolute_beat = 30.1961
+
+[sub_resource type="Resource" id="Resource_vb8w6"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 0.0
+type = 2
+cached_absolute_beat = 30.9804
+
+[sub_resource type="Resource" id="Resource_fxcw2"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 0.0
+type = 2
+cached_absolute_beat = 31.3725
+
+[sub_resource type="Resource" id="Resource_0nicv"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 0.0
+type = 2
+cached_absolute_beat = 31.7647
+
+[sub_resource type="Resource" id="Resource_w3lbk"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 0.0
+type = 2
+cached_absolute_beat = 32.549
+
+[sub_resource type="Resource" id="Resource_slk8y"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 0.0
+type = 2
+cached_absolute_beat = 33.3333
+
+[sub_resource type="Resource" id="Resource_jpc5x"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 0.0
+type = 2
+cached_absolute_beat = 34.1176
+
+[sub_resource type="Resource" id="Resource_e26n2"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 0.0
+type = 2
+cached_absolute_beat = 34.902
+
+[sub_resource type="Resource" id="Resource_scari"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 0.0
+type = 2
+cached_absolute_beat = 35.6863
+
+[sub_resource type="Resource" id="Resource_hyk31"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 0.0
+type = 2
+cached_absolute_beat = 36.4706
+
+[sub_resource type="Resource" id="Resource_617qo"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 0.0
+type = 2
+cached_absolute_beat = 37.2549
+
+[sub_resource type="Resource" id="Resource_6xrd1"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 4
+cached_absolute_beat = 13.7255
+
+[sub_resource type="Resource" id="Resource_rwgux"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 2.0
+type = 4
+cached_absolute_beat = 13.9216
+
+[sub_resource type="Resource" id="Resource_cikxo"]
+script = ExtResource("1_r4db5")
+bar = 36
+beat = 0.0
+type = 4
+cached_absolute_beat = 14.1176
+
+[sub_resource type="Resource" id="Resource_ulbrs"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 0.0
+type = 4
+cached_absolute_beat = 14.902
+
+[sub_resource type="Resource" id="Resource_23jdc"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 0.0
+type = 4
+cached_absolute_beat = 15.6863
+
+[sub_resource type="Resource" id="Resource_lh2bj"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 0.0
+type = 4
+cached_absolute_beat = 16.4706
+
+[sub_resource type="Resource" id="Resource_t6wd1"]
+script = ExtResource("1_r4db5")
+bar = 44
+beat = 0.0
+type = 4
+cached_absolute_beat = 17.2549
+
+[sub_resource type="Resource" id="Resource_rdkr1"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 0.0
+type = 4
+cached_absolute_beat = 18.0392
+
+[sub_resource type="Resource" id="Resource_q7f35"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 4
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_e72hc"]
+script = ExtResource("1_r4db5")
+bar = 52
+beat = 0.0
+type = 4
+cached_absolute_beat = 20.3922
+
+[sub_resource type="Resource" id="Resource_qqbcn"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 0.0
+type = 4
+cached_absolute_beat = 21.9608
+
+[sub_resource type="Resource" id="Resource_aoupf"]
+script = ExtResource("1_r4db5")
+bar = 60
+beat = 0.0
+type = 4
+cached_absolute_beat = 23.5294
+
+[sub_resource type="Resource" id="Resource_p8ehy"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 0.0
+type = 4
+cached_absolute_beat = 31.3725
+
+[sub_resource type="Resource" id="Resource_v8eoc"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 0.0
+type = 8
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_0kmcl"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 2.0
+type = 8
+cached_absolute_beat = 0.196078
+
+[sub_resource type="Resource" id="Resource_t3xtd"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 8
+cached_absolute_beat = 0.392157
+
+[sub_resource type="Resource" id="Resource_qwnkw"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 2.0
+type = 8
+cached_absolute_beat = 0.588235
+
+[sub_resource type="Resource" id="Resource_bd1kc"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 0.0
+type = 8
+cached_absolute_beat = 0.784314
+
+[sub_resource type="Resource" id="Resource_mbxqm"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 2.0
+type = 8
+cached_absolute_beat = 0.980392
+
+[sub_resource type="Resource" id="Resource_4gdqo"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 8
+cached_absolute_beat = 1.17647
+
+[sub_resource type="Resource" id="Resource_gc4my"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 2.0
+type = 8
+cached_absolute_beat = 1.37255
+
+[sub_resource type="Resource" id="Resource_gn2h4"]
+script = ExtResource("1_r4db5")
+bar = 4
+beat = 0.0
+type = 8
+cached_absolute_beat = 1.56863
+
+[sub_resource type="Resource" id="Resource_w46pw"]
+script = ExtResource("1_r4db5")
+bar = 4
+beat = 2.0
+type = 8
+cached_absolute_beat = 1.76471
+
+[sub_resource type="Resource" id="Resource_33djq"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 8
+cached_absolute_beat = 1.96078
+
+[sub_resource type="Resource" id="Resource_7eekk"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 2.0
+type = 8
+cached_absolute_beat = 2.15686
+
+[sub_resource type="Resource" id="Resource_m8ejs"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 0.0
+type = 8
+cached_absolute_beat = 2.35294
+
+[sub_resource type="Resource" id="Resource_id8fr"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 2.0
+type = 8
+cached_absolute_beat = 2.54902
+
+[sub_resource type="Resource" id="Resource_adqkj"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 8
+cached_absolute_beat = 2.7451
+
+[sub_resource type="Resource" id="Resource_sxmcr"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 2.0
+type = 8
+cached_absolute_beat = 2.94118
+
+[sub_resource type="Resource" id="Resource_0kel5"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 0.0
+type = 8
+cached_absolute_beat = 3.13725
+
+[sub_resource type="Resource" id="Resource_qvv1b"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 2.0
+type = 8
+cached_absolute_beat = 3.33333
+
+[sub_resource type="Resource" id="Resource_6pmr6"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 8
+cached_absolute_beat = 3.52941
+
+[sub_resource type="Resource" id="Resource_rbb5g"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 2.0
+type = 8
+cached_absolute_beat = 3.72549
+
+[sub_resource type="Resource" id="Resource_81mo8"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 0.0
+type = 8
+cached_absolute_beat = 3.92157
+
+[sub_resource type="Resource" id="Resource_4ege4"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 2.0
+type = 8
+cached_absolute_beat = 4.11765
+
+[sub_resource type="Resource" id="Resource_psg26"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 8
+cached_absolute_beat = 4.31373
+
+[sub_resource type="Resource" id="Resource_beoyq"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 2.0
+type = 8
+cached_absolute_beat = 4.5098
+
+[sub_resource type="Resource" id="Resource_bycvt"]
+script = ExtResource("1_r4db5")
+bar = 12
+beat = 0.0
+type = 8
+cached_absolute_beat = 4.70588
+
+[sub_resource type="Resource" id="Resource_exi1b"]
+script = ExtResource("1_r4db5")
+bar = 12
+beat = 2.0
+type = 8
+cached_absolute_beat = 4.90196
+
+[sub_resource type="Resource" id="Resource_fnc3b"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 8
+cached_absolute_beat = 5.09804
+
+[sub_resource type="Resource" id="Resource_o3xwq"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 2.0
+type = 8
+cached_absolute_beat = 5.29412
+
+[sub_resource type="Resource" id="Resource_eq3u3"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 0.0
+type = 8
+cached_absolute_beat = 5.4902
+
+[sub_resource type="Resource" id="Resource_usg0e"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 2.0
+type = 8
+cached_absolute_beat = 5.68627
+
+[sub_resource type="Resource" id="Resource_1s68m"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 8
+cached_absolute_beat = 5.88235
+
+[sub_resource type="Resource" id="Resource_77rfi"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 2.0
+type = 8
+cached_absolute_beat = 6.07843
+
+[sub_resource type="Resource" id="Resource_bol0f"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 0.0
+type = 8
+cached_absolute_beat = 6.27451
+
+[sub_resource type="Resource" id="Resource_3d5bs"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 2.0
+type = 8
+cached_absolute_beat = 6.47059
+
+[sub_resource type="Resource" id="Resource_4w2gm"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 0.0
+type = 8
+cached_absolute_beat = 6.66667
+
+[sub_resource type="Resource" id="Resource_la2ot"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 2.0
+type = 8
+cached_absolute_beat = 6.86275
+
+[sub_resource type="Resource" id="Resource_83s6m"]
+script = ExtResource("1_r4db5")
+bar = 18
+beat = 0.0
+type = 8
+cached_absolute_beat = 7.05882
+
+[sub_resource type="Resource" id="Resource_jhcgv"]
+script = ExtResource("1_r4db5")
+bar = 18
+beat = 2.0
+type = 8
+cached_absolute_beat = 7.2549
+
+[sub_resource type="Resource" id="Resource_5fqh5"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 8
+cached_absolute_beat = 7.45098
+
+[sub_resource type="Resource" id="Resource_d7mre"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 2.0
+type = 8
+cached_absolute_beat = 7.64706
+
+[sub_resource type="Resource" id="Resource_rxuk6"]
+script = ExtResource("1_r4db5")
+bar = 20
+beat = 0.0
+type = 8
+cached_absolute_beat = 7.84314
+
+[sub_resource type="Resource" id="Resource_8e7xa"]
+script = ExtResource("1_r4db5")
+bar = 20
+beat = 2.0
+type = 8
+cached_absolute_beat = 8.03922
+
+[sub_resource type="Resource" id="Resource_7lwbc"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 0.0
+type = 8
+cached_absolute_beat = 8.23529
+
+[sub_resource type="Resource" id="Resource_o2auy"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 2.0
+type = 8
+cached_absolute_beat = 8.43137
+
+[sub_resource type="Resource" id="Resource_wk74x"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 0.0
+type = 8
+cached_absolute_beat = 8.62745
+
+[sub_resource type="Resource" id="Resource_ybpd3"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 2.0
+type = 8
+cached_absolute_beat = 8.82353
+
+[sub_resource type="Resource" id="Resource_je0ic"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 0.0
+type = 8
+cached_absolute_beat = 9.01961
+
+[sub_resource type="Resource" id="Resource_p7kwl"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 2.0
+type = 8
+cached_absolute_beat = 9.21569
+
+[sub_resource type="Resource" id="Resource_yf5fn"]
+script = ExtResource("1_r4db5")
+bar = 24
+beat = 0.0
+type = 8
+cached_absolute_beat = 9.41176
+
+[sub_resource type="Resource" id="Resource_xhpfq"]
+script = ExtResource("1_r4db5")
+bar = 24
+beat = 2.0
+type = 8
+cached_absolute_beat = 9.60784
+
+[sub_resource type="Resource" id="Resource_rxrwf"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 0.0
+type = 8
+cached_absolute_beat = 9.80392
+
+[sub_resource type="Resource" id="Resource_83hmb"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 2.0
+type = 8
+cached_absolute_beat = 10.0
+
+[sub_resource type="Resource" id="Resource_ankaj"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 0.0
+type = 8
+cached_absolute_beat = 10.1961
+
+[sub_resource type="Resource" id="Resource_imeai"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 2.0
+type = 8
+cached_absolute_beat = 10.3922
+
+[sub_resource type="Resource" id="Resource_l22q1"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 0.0
+type = 8
+cached_absolute_beat = 10.5882
+
+[sub_resource type="Resource" id="Resource_3hlcq"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 2.0
+type = 8
+cached_absolute_beat = 10.7843
+
+[sub_resource type="Resource" id="Resource_pbqmo"]
+script = ExtResource("1_r4db5")
+bar = 28
+beat = 0.0
+type = 8
+cached_absolute_beat = 10.9804
+
+[sub_resource type="Resource" id="Resource_oshd8"]
+script = ExtResource("1_r4db5")
+bar = 28
+beat = 2.0
+type = 8
+cached_absolute_beat = 11.1765
+
+[sub_resource type="Resource" id="Resource_uoiq2"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 0.0
+type = 8
+cached_absolute_beat = 11.3725
+
+[sub_resource type="Resource" id="Resource_vbnrl"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 2.0
+type = 8
+cached_absolute_beat = 11.5686
+
+[sub_resource type="Resource" id="Resource_qfrg3"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 0.0
+type = 8
+cached_absolute_beat = 11.7647
+
+[sub_resource type="Resource" id="Resource_jlni8"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 2.0
+type = 8
+cached_absolute_beat = 11.9608
+
+[sub_resource type="Resource" id="Resource_w8g0d"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 0.0
+type = 8
+cached_absolute_beat = 12.1569
+
+[sub_resource type="Resource" id="Resource_xvr2x"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 2.0
+type = 8
+cached_absolute_beat = 12.3529
+
+[sub_resource type="Resource" id="Resource_1bxyc"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 0.0
+type = 8
+cached_absolute_beat = 12.549
+
+[sub_resource type="Resource" id="Resource_1sbm6"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 2.0
+type = 8
+cached_absolute_beat = 12.7451
+
+[sub_resource type="Resource" id="Resource_18d3r"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 0.0
+type = 8
+cached_absolute_beat = 12.9412
+
+[sub_resource type="Resource" id="Resource_ljrk4"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 2.0
+type = 8
+cached_absolute_beat = 13.1373
+
+[sub_resource type="Resource" id="Resource_7ykqh"]
+script = ExtResource("1_r4db5")
+bar = 34
+beat = 0.0
+type = 8
+cached_absolute_beat = 13.3333
+
+[sub_resource type="Resource" id="Resource_ko3ha"]
+script = ExtResource("1_r4db5")
+bar = 34
+beat = 2.0
+type = 8
+cached_absolute_beat = 13.5294
+
+[sub_resource type="Resource" id="Resource_u401t"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 8
+cached_absolute_beat = 13.7255
+
+[sub_resource type="Resource" id="Resource_m1xcf"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 2.0
+type = 8
+cached_absolute_beat = 13.9216
+
+[sub_resource type="Resource" id="Resource_w31sh"]
+script = ExtResource("1_r4db5")
+bar = 36
+beat = 0.0
+type = 8
+cached_absolute_beat = 14.1176
+
+[sub_resource type="Resource" id="Resource_udbyq"]
+script = ExtResource("1_r4db5")
+bar = 36
+beat = 2.0
+type = 8
+cached_absolute_beat = 14.3137
+
+[sub_resource type="Resource" id="Resource_k408p"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 0.0
+type = 8
+cached_absolute_beat = 14.5098
+
+[sub_resource type="Resource" id="Resource_666ry"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 2.0
+type = 8
+cached_absolute_beat = 14.7059
+
+[sub_resource type="Resource" id="Resource_th40o"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 0.0
+type = 8
+cached_absolute_beat = 14.902
+
+[sub_resource type="Resource" id="Resource_gc7wm"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 2.0
+type = 8
+cached_absolute_beat = 15.098
+
+[sub_resource type="Resource" id="Resource_jgwry"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 0.0
+type = 8
+cached_absolute_beat = 15.2941
+
+[sub_resource type="Resource" id="Resource_6k1r5"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 2.0
+type = 8
+cached_absolute_beat = 15.4902
+
+[sub_resource type="Resource" id="Resource_6m1rk"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 0.0
+type = 8
+cached_absolute_beat = 15.6863
+
+[sub_resource type="Resource" id="Resource_a0dak"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 2.0
+type = 8
+cached_absolute_beat = 15.8824
+
+[sub_resource type="Resource" id="Resource_hnl40"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 0.0
+type = 8
+cached_absolute_beat = 16.0784
+
+[sub_resource type="Resource" id="Resource_ngt1j"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 2.0
+type = 8
+cached_absolute_beat = 16.2745
+
+[sub_resource type="Resource" id="Resource_d68vn"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 0.0
+type = 8
+cached_absolute_beat = 16.4706
+
+[sub_resource type="Resource" id="Resource_5g7ui"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 2.0
+type = 8
+cached_absolute_beat = 16.6667
+
+[sub_resource type="Resource" id="Resource_yn1f2"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 0.0
+type = 8
+cached_absolute_beat = 16.8627
+
+[sub_resource type="Resource" id="Resource_576du"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 2.0
+type = 8
+cached_absolute_beat = 17.0588
+
+[sub_resource type="Resource" id="Resource_sbgl3"]
+script = ExtResource("1_r4db5")
+bar = 44
+beat = 0.0
+type = 8
+cached_absolute_beat = 17.2549
+
+[sub_resource type="Resource" id="Resource_8bvtr"]
+script = ExtResource("1_r4db5")
+bar = 44
+beat = 2.0
+type = 8
+cached_absolute_beat = 17.451
+
+[sub_resource type="Resource" id="Resource_sf1yc"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 0.0
+type = 8
+cached_absolute_beat = 17.6471
+
+[sub_resource type="Resource" id="Resource_fk5d3"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 2.0
+type = 8
+cached_absolute_beat = 17.8431
+
+[sub_resource type="Resource" id="Resource_e6tua"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 0.0
+type = 8
+cached_absolute_beat = 18.0392
+
+[sub_resource type="Resource" id="Resource_mdt4u"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 2.0
+type = 8
+cached_absolute_beat = 18.2353
+
+[sub_resource type="Resource" id="Resource_7rxgi"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 0.0
+type = 8
+cached_absolute_beat = 18.4314
+
+[sub_resource type="Resource" id="Resource_p4csc"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 2.0
+type = 8
+cached_absolute_beat = 18.6275
+
+[sub_resource type="Resource" id="Resource_dpbot"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 8
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_my4dj"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 2.0
+type = 8
+cached_absolute_beat = 19.0196
+
+[sub_resource type="Resource" id="Resource_tv8c3"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 0.0
+type = 8
+cached_absolute_beat = 19.2157
+
+[sub_resource type="Resource" id="Resource_1tbvf"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 2.0
+type = 8
+cached_absolute_beat = 19.4118
+
+[sub_resource type="Resource" id="Resource_6uww4"]
+script = ExtResource("1_r4db5")
+bar = 50
+beat = 0.0
+type = 8
+cached_absolute_beat = 19.6078
+
+[sub_resource type="Resource" id="Resource_geqfh"]
+script = ExtResource("1_r4db5")
+bar = 50
+beat = 2.0
+type = 8
+cached_absolute_beat = 19.8039
+
+[sub_resource type="Resource" id="Resource_0d15s"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 0.0
+type = 8
+cached_absolute_beat = 20.0
+
+[sub_resource type="Resource" id="Resource_8bk4v"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 2.0
+type = 8
+cached_absolute_beat = 20.1961
+
+[sub_resource type="Resource" id="Resource_ockgp"]
+script = ExtResource("1_r4db5")
+bar = 52
+beat = 0.0
+type = 8
+cached_absolute_beat = 20.3922
+
+[sub_resource type="Resource" id="Resource_w2pke"]
+script = ExtResource("1_r4db5")
+bar = 52
+beat = 2.0
+type = 8
+cached_absolute_beat = 20.5882
+
+[sub_resource type="Resource" id="Resource_djbc1"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 0.0
+type = 8
+cached_absolute_beat = 20.7843
+
+[sub_resource type="Resource" id="Resource_3l6rv"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 2.0
+type = 8
+cached_absolute_beat = 20.9804
+
+[sub_resource type="Resource" id="Resource_8hahr"]
+script = ExtResource("1_r4db5")
+bar = 54
+beat = 0.0
+type = 8
+cached_absolute_beat = 21.1765
+
+[sub_resource type="Resource" id="Resource_njklb"]
+script = ExtResource("1_r4db5")
+bar = 54
+beat = 2.0
+type = 8
+cached_absolute_beat = 21.3725
+
+[sub_resource type="Resource" id="Resource_2d7yu"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 0.0
+type = 8
+cached_absolute_beat = 21.5686
+
+[sub_resource type="Resource" id="Resource_5h208"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 2.0
+type = 8
+cached_absolute_beat = 21.7647
+
+[sub_resource type="Resource" id="Resource_fvmd1"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 0.0
+type = 8
+cached_absolute_beat = 21.9608
+
+[sub_resource type="Resource" id="Resource_vepve"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 2.0
+type = 8
+cached_absolute_beat = 22.1569
+
+[sub_resource type="Resource" id="Resource_grwag"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 0.0
+type = 8
+cached_absolute_beat = 22.3529
+
+[sub_resource type="Resource" id="Resource_fkjvn"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 2.0
+type = 8
+cached_absolute_beat = 22.549
+
+[sub_resource type="Resource" id="Resource_334eh"]
+script = ExtResource("1_r4db5")
+bar = 58
+beat = 0.0
+type = 8
+cached_absolute_beat = 22.7451
+
+[sub_resource type="Resource" id="Resource_18xp7"]
+script = ExtResource("1_r4db5")
+bar = 58
+beat = 2.0
+type = 8
+cached_absolute_beat = 22.9412
+
+[sub_resource type="Resource" id="Resource_gu6wu"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 0.0
+type = 8
+cached_absolute_beat = 23.1373
+
+[sub_resource type="Resource" id="Resource_jiqiw"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 2.0
+type = 8
+cached_absolute_beat = 23.3333
+
+[sub_resource type="Resource" id="Resource_nyc54"]
+script = ExtResource("1_r4db5")
+bar = 60
+beat = 0.0
+type = 8
+cached_absolute_beat = 23.5294
+
+[sub_resource type="Resource" id="Resource_nmu60"]
+script = ExtResource("1_r4db5")
+bar = 60
+beat = 2.0
+type = 8
+cached_absolute_beat = 23.7255
+
+[sub_resource type="Resource" id="Resource_wcbts"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 0.0
+type = 8
+cached_absolute_beat = 23.9216
+
+[sub_resource type="Resource" id="Resource_rxav2"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 2.0
+type = 8
+cached_absolute_beat = 24.1176
+
+[sub_resource type="Resource" id="Resource_c51ds"]
+script = ExtResource("1_r4db5")
+bar = 62
+beat = 0.0
+type = 8
+cached_absolute_beat = 24.3137
+
+[sub_resource type="Resource" id="Resource_u4mhs"]
+script = ExtResource("1_r4db5")
+bar = 62
+beat = 2.0
+type = 8
+cached_absolute_beat = 24.5098
+
+[sub_resource type="Resource" id="Resource_v8r2j"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 0.0
+type = 8
+cached_absolute_beat = 24.7059
+
+[sub_resource type="Resource" id="Resource_2rqsc"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 2.0
+type = 8
+cached_absolute_beat = 24.902
+
+[sub_resource type="Resource" id="Resource_tij6q"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 0.0
+type = 8
+cached_absolute_beat = 25.098
+
+[sub_resource type="Resource" id="Resource_ipcns"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 2.0
+type = 8
+cached_absolute_beat = 25.2941
+
+[sub_resource type="Resource" id="Resource_rjq5e"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 0.0
+type = 8
+cached_absolute_beat = 25.4902
+
+[sub_resource type="Resource" id="Resource_k3m25"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 2.0
+type = 8
+cached_absolute_beat = 25.6863
+
+[sub_resource type="Resource" id="Resource_hjaj1"]
+script = ExtResource("1_r4db5")
+bar = 66
+beat = 0.0
+type = 8
+cached_absolute_beat = 25.8824
+
+[sub_resource type="Resource" id="Resource_vaa7k"]
+script = ExtResource("1_r4db5")
+bar = 66
+beat = 2.0
+type = 8
+cached_absolute_beat = 26.0784
+
+[sub_resource type="Resource" id="Resource_m1pby"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 0.0
+type = 8
+cached_absolute_beat = 26.2745
+
+[sub_resource type="Resource" id="Resource_3rw5d"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 2.0
+type = 8
+cached_absolute_beat = 26.4706
+
+[sub_resource type="Resource" id="Resource_40pfo"]
+script = ExtResource("1_r4db5")
+bar = 68
+beat = 0.0
+type = 8
+cached_absolute_beat = 26.6667
+
+[sub_resource type="Resource" id="Resource_q2aj4"]
+script = ExtResource("1_r4db5")
+bar = 68
+beat = 2.0
+type = 8
+cached_absolute_beat = 26.8627
+
+[sub_resource type="Resource" id="Resource_lvu0o"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 0.0
+type = 8
+cached_absolute_beat = 27.0588
+
+[sub_resource type="Resource" id="Resource_wja5n"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 2.0
+type = 8
+cached_absolute_beat = 27.2549
+
+[sub_resource type="Resource" id="Resource_hirtr"]
+script = ExtResource("1_r4db5")
+bar = 70
+beat = 0.0
+type = 8
+cached_absolute_beat = 27.451
+
+[sub_resource type="Resource" id="Resource_jch7t"]
+script = ExtResource("1_r4db5")
+bar = 70
+beat = 2.0
+type = 8
+cached_absolute_beat = 27.6471
+
+[sub_resource type="Resource" id="Resource_6dw2n"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 0.0
+type = 8
+cached_absolute_beat = 27.8431
+
+[sub_resource type="Resource" id="Resource_mn2e8"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 2.0
+type = 8
+cached_absolute_beat = 28.0392
+
+[sub_resource type="Resource" id="Resource_kx5xl"]
+script = ExtResource("1_r4db5")
+bar = 72
+beat = 0.0
+type = 8
+cached_absolute_beat = 28.2353
+
+[sub_resource type="Resource" id="Resource_rg5t8"]
+script = ExtResource("1_r4db5")
+bar = 72
+beat = 2.0
+type = 8
+cached_absolute_beat = 28.4314
+
+[sub_resource type="Resource" id="Resource_b0cve"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 0.0
+type = 8
+cached_absolute_beat = 28.6275
+
+[sub_resource type="Resource" id="Resource_vbmlf"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 2.0
+type = 8
+cached_absolute_beat = 28.8235
+
+[sub_resource type="Resource" id="Resource_0st33"]
+script = ExtResource("1_r4db5")
+bar = 74
+beat = 0.0
+type = 8
+cached_absolute_beat = 29.0196
+
+[sub_resource type="Resource" id="Resource_0qagh"]
+script = ExtResource("1_r4db5")
+bar = 74
+beat = 2.0
+type = 8
+cached_absolute_beat = 29.2157
+
+[sub_resource type="Resource" id="Resource_khibk"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 0.0
+type = 8
+cached_absolute_beat = 29.4118
+
+[sub_resource type="Resource" id="Resource_kdutu"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 2.0
+type = 8
+cached_absolute_beat = 29.6078
+
+[sub_resource type="Resource" id="Resource_akwt7"]
+script = ExtResource("1_r4db5")
+bar = 76
+beat = 0.0
+type = 8
+cached_absolute_beat = 29.8039
+
+[sub_resource type="Resource" id="Resource_2cd0t"]
+script = ExtResource("1_r4db5")
+bar = 76
+beat = 2.0
+type = 8
+cached_absolute_beat = 30.0
+
+[sub_resource type="Resource" id="Resource_6lxps"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 0.0
+type = 8
+cached_absolute_beat = 30.1961
+
+[sub_resource type="Resource" id="Resource_7ckm5"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 2.0
+type = 8
+cached_absolute_beat = 30.3922
+
+[sub_resource type="Resource" id="Resource_wadne"]
+script = ExtResource("1_r4db5")
+bar = 78
+beat = 0.0
+type = 8
+cached_absolute_beat = 30.5882
+
+[sub_resource type="Resource" id="Resource_fd16w"]
+script = ExtResource("1_r4db5")
+bar = 78
+beat = 2.0
+type = 8
+cached_absolute_beat = 30.7843
+
+[sub_resource type="Resource" id="Resource_17q3v"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 0.0
+type = 8
+cached_absolute_beat = 30.9804
+
+[sub_resource type="Resource" id="Resource_fpukr"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 2.0
+type = 8
+cached_absolute_beat = 31.1765
+
+[sub_resource type="Resource" id="Resource_s2rqj"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 0.0
+type = 8
+cached_absolute_beat = 31.3725
+
+[sub_resource type="Resource" id="Resource_f0sv1"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 2.0
+type = 8
+cached_absolute_beat = 31.5686
+
+[sub_resource type="Resource" id="Resource_q7o1l"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 0.0
+type = 8
+cached_absolute_beat = 31.7647
+
+[sub_resource type="Resource" id="Resource_4ggn0"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 2.0
+type = 8
+cached_absolute_beat = 31.9608
+
+[sub_resource type="Resource" id="Resource_nwg8n"]
+script = ExtResource("1_r4db5")
+bar = 82
+beat = 0.0
+type = 8
+cached_absolute_beat = 32.1569
+
+[sub_resource type="Resource" id="Resource_yaqcb"]
+script = ExtResource("1_r4db5")
+bar = 82
+beat = 2.0
+type = 8
+cached_absolute_beat = 32.3529
+
+[sub_resource type="Resource" id="Resource_c4n0x"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 0.0
+type = 8
+cached_absolute_beat = 32.549
+
+[sub_resource type="Resource" id="Resource_h4w4q"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 2.0
+type = 8
+cached_absolute_beat = 32.7451
+
+[sub_resource type="Resource" id="Resource_sme7y"]
+script = ExtResource("1_r4db5")
+bar = 84
+beat = 0.0
+type = 8
+cached_absolute_beat = 32.9412
+
+[sub_resource type="Resource" id="Resource_yeaax"]
+script = ExtResource("1_r4db5")
+bar = 84
+beat = 2.0
+type = 8
+cached_absolute_beat = 33.1373
+
+[sub_resource type="Resource" id="Resource_syhr3"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 0.0
+type = 8
+cached_absolute_beat = 33.3333
+
+[sub_resource type="Resource" id="Resource_obpsn"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 2.0
+type = 8
+cached_absolute_beat = 33.5294
+
+[sub_resource type="Resource" id="Resource_cj5y2"]
+script = ExtResource("1_r4db5")
+bar = 86
+beat = 0.0
+type = 8
+cached_absolute_beat = 33.7255
+
+[sub_resource type="Resource" id="Resource_pf6it"]
+script = ExtResource("1_r4db5")
+bar = 86
+beat = 2.0
+type = 8
+cached_absolute_beat = 33.9216
+
+[sub_resource type="Resource" id="Resource_yfl63"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 0.0
+type = 8
+cached_absolute_beat = 34.1176
+
+[sub_resource type="Resource" id="Resource_pfimc"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 2.0
+type = 8
+cached_absolute_beat = 34.3137
+
+[sub_resource type="Resource" id="Resource_hc5b4"]
+script = ExtResource("1_r4db5")
+bar = 88
+beat = 0.0
+type = 8
+cached_absolute_beat = 34.5098
+
+[sub_resource type="Resource" id="Resource_0wxdy"]
+script = ExtResource("1_r4db5")
+bar = 88
+beat = 2.0
+type = 8
+cached_absolute_beat = 34.7059
+
+[sub_resource type="Resource" id="Resource_mv74l"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 0.0
+type = 8
+cached_absolute_beat = 34.902
+
+[sub_resource type="Resource" id="Resource_v6man"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 2.0
+type = 8
+cached_absolute_beat = 35.098
+
+[sub_resource type="Resource" id="Resource_pwoep"]
+script = ExtResource("1_r4db5")
+bar = 90
+beat = 0.0
+type = 8
+cached_absolute_beat = 35.2941
+
+[sub_resource type="Resource" id="Resource_q86be"]
+script = ExtResource("1_r4db5")
+bar = 90
+beat = 2.0
+type = 8
+cached_absolute_beat = 35.4902
+
+[sub_resource type="Resource" id="Resource_warwx"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 0.0
+type = 8
+cached_absolute_beat = 35.6863
+
+[sub_resource type="Resource" id="Resource_h8re7"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 2.0
+type = 8
+cached_absolute_beat = 35.8824
+
+[sub_resource type="Resource" id="Resource_uppdt"]
+script = ExtResource("1_r4db5")
+bar = 92
+beat = 0.0
+type = 8
+cached_absolute_beat = 36.0784
+
+[sub_resource type="Resource" id="Resource_66hyp"]
+script = ExtResource("1_r4db5")
+bar = 92
+beat = 2.0
+type = 8
+cached_absolute_beat = 36.2745
+
+[sub_resource type="Resource" id="Resource_sqprp"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 0.0
+type = 8
+cached_absolute_beat = 36.4706
+
+[sub_resource type="Resource" id="Resource_qc1o8"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 2.0
+type = 8
+cached_absolute_beat = 36.6667
+
+[sub_resource type="Resource" id="Resource_ewiqe"]
+script = ExtResource("1_r4db5")
+bar = 94
+beat = 0.0
+type = 8
+cached_absolute_beat = 36.8627
+
+[sub_resource type="Resource" id="Resource_xvb6r"]
+script = ExtResource("1_r4db5")
+bar = 94
+beat = 2.0
+type = 8
+cached_absolute_beat = 37.0588
+
+[sub_resource type="Resource" id="Resource_g30td"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 0.0
+type = 8
+cached_absolute_beat = 37.2549
+
+[sub_resource type="Resource" id="Resource_h4c00"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 2.0
+type = 8
+cached_absolute_beat = 37.451
+
+[sub_resource type="Resource" id="Resource_31c2x"]
+script = ExtResource("1_r4db5")
+bar = 96
+beat = 0.0
+type = 8
+cached_absolute_beat = 37.6471
+
+[sub_resource type="Resource" id="Resource_ol6fn"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 0.0
+type = 16
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_jkeoh"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 16
+cached_absolute_beat = 0.392157
+
+[sub_resource type="Resource" id="Resource_n5776"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 2.0
+type = 16
+cached_absolute_beat = 0.588235
+
+[sub_resource type="Resource" id="Resource_7h3rp"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 0.0
+type = 16
+cached_absolute_beat = 0.784314
+
+[sub_resource type="Resource" id="Resource_rntg5"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 2.0
+type = 16
+cached_absolute_beat = 0.980392
+
+[sub_resource type="Resource" id="Resource_0odlq"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 16
+cached_absolute_beat = 1.17647
+
+[sub_resource type="Resource" id="Resource_64qt7"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 2.0
+type = 16
+cached_absolute_beat = 1.37255
+
+[sub_resource type="Resource" id="Resource_ssftn"]
+script = ExtResource("1_r4db5")
+bar = 4
+beat = 0.0
+type = 16
+cached_absolute_beat = 1.56863
+
+[sub_resource type="Resource" id="Resource_ih8dm"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 16
+cached_absolute_beat = 1.96078
+
+[sub_resource type="Resource" id="Resource_pg1qe"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 2.0
+type = 16
+cached_absolute_beat = 2.15686
+
+[sub_resource type="Resource" id="Resource_540rx"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 0.0
+type = 16
+cached_absolute_beat = 2.35294
+
+[sub_resource type="Resource" id="Resource_26rnv"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 2.0
+type = 16
+cached_absolute_beat = 2.54902
+
+[sub_resource type="Resource" id="Resource_a1dnw"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 16
+cached_absolute_beat = 2.7451
+
+[sub_resource type="Resource" id="Resource_mp7o2"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 2.0
+type = 16
+cached_absolute_beat = 2.94118
+
+[sub_resource type="Resource" id="Resource_66tbp"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 0.0
+type = 16
+cached_absolute_beat = 3.13725
+
+[sub_resource type="Resource" id="Resource_iahvp"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 16
+cached_absolute_beat = 3.52941
+
+[sub_resource type="Resource" id="Resource_arvof"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 2.0
+type = 16
+cached_absolute_beat = 3.72549
+
+[sub_resource type="Resource" id="Resource_yvgih"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 0.0
+type = 16
+cached_absolute_beat = 3.92157
+
+[sub_resource type="Resource" id="Resource_7v64t"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 2.0
+type = 16
+cached_absolute_beat = 4.11765
+
+[sub_resource type="Resource" id="Resource_88cxv"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 16
+cached_absolute_beat = 4.31373
+
+[sub_resource type="Resource" id="Resource_i5wot"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 2.0
+type = 16
+cached_absolute_beat = 4.5098
+
+[sub_resource type="Resource" id="Resource_jjnla"]
+script = ExtResource("1_r4db5")
+bar = 12
+beat = 0.0
+type = 16
+cached_absolute_beat = 4.70588
+
+[sub_resource type="Resource" id="Resource_uydb7"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 16
+cached_absolute_beat = 5.09804
+
+[sub_resource type="Resource" id="Resource_vwn42"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 2.0
+type = 16
+cached_absolute_beat = 5.29412
+
+[sub_resource type="Resource" id="Resource_y45o4"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 0.0
+type = 16
+cached_absolute_beat = 5.4902
+
+[sub_resource type="Resource" id="Resource_f63pm"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 2.0
+type = 16
+cached_absolute_beat = 5.68627
+
+[sub_resource type="Resource" id="Resource_8chfv"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 16
+cached_absolute_beat = 5.88235
+
+[sub_resource type="Resource" id="Resource_onq7n"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 2.0
+type = 16
+cached_absolute_beat = 6.07843
+
+[sub_resource type="Resource" id="Resource_02l3i"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 0.0
+type = 16
+cached_absolute_beat = 6.27451
+
+[sub_resource type="Resource" id="Resource_d0blk"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 0.0
+type = 16
+cached_absolute_beat = 6.66667
+
+[sub_resource type="Resource" id="Resource_1h1tk"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 2.0
+type = 16
+cached_absolute_beat = 6.86275
+
+[sub_resource type="Resource" id="Resource_3a8gf"]
+script = ExtResource("1_r4db5")
+bar = 18
+beat = 0.0
+type = 16
+cached_absolute_beat = 7.05882
+
+[sub_resource type="Resource" id="Resource_w0q0h"]
+script = ExtResource("1_r4db5")
+bar = 18
+beat = 2.0
+type = 16
+cached_absolute_beat = 7.2549
+
+[sub_resource type="Resource" id="Resource_gjd4v"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 16
+cached_absolute_beat = 7.45098
+
+[sub_resource type="Resource" id="Resource_k35ms"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 2.0
+type = 16
+cached_absolute_beat = 7.64706
+
+[sub_resource type="Resource" id="Resource_fqfo6"]
+script = ExtResource("1_r4db5")
+bar = 20
+beat = 0.0
+type = 16
+cached_absolute_beat = 7.84314
+
+[sub_resource type="Resource" id="Resource_e0f51"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 0.0
+type = 16
+cached_absolute_beat = 8.23529
+
+[sub_resource type="Resource" id="Resource_2yoby"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 2.0
+type = 16
+cached_absolute_beat = 8.43137
+
+[sub_resource type="Resource" id="Resource_ybr3q"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 0.0
+type = 16
+cached_absolute_beat = 8.62745
+
+[sub_resource type="Resource" id="Resource_6nvp2"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 2.0
+type = 16
+cached_absolute_beat = 8.82353
+
+[sub_resource type="Resource" id="Resource_8atxm"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 0.0
+type = 16
+cached_absolute_beat = 9.01961
+
+[sub_resource type="Resource" id="Resource_a04bi"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 2.0
+type = 16
+cached_absolute_beat = 9.21569
+
+[sub_resource type="Resource" id="Resource_4m1de"]
+script = ExtResource("1_r4db5")
+bar = 24
+beat = 0.0
+type = 16
+cached_absolute_beat = 9.41176
+
+[sub_resource type="Resource" id="Resource_ambg3"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 0.0
+type = 16
+cached_absolute_beat = 9.80392
+
+[sub_resource type="Resource" id="Resource_xoiox"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 2.0
+type = 16
+cached_absolute_beat = 10.0
+
+[sub_resource type="Resource" id="Resource_07c13"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 0.0
+type = 16
+cached_absolute_beat = 10.1961
+
+[sub_resource type="Resource" id="Resource_0jcv7"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 2.0
+type = 16
+cached_absolute_beat = 10.3922
+
+[sub_resource type="Resource" id="Resource_ie3ft"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 0.0
+type = 16
+cached_absolute_beat = 10.5882
+
+[sub_resource type="Resource" id="Resource_7ewpn"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 2.0
+type = 16
+cached_absolute_beat = 10.7843
+
+[sub_resource type="Resource" id="Resource_d4hh4"]
+script = ExtResource("1_r4db5")
+bar = 28
+beat = 0.0
+type = 16
+cached_absolute_beat = 10.9804
+
+[sub_resource type="Resource" id="Resource_vluf4"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 0.0
+type = 16
+cached_absolute_beat = 11.3725
+
+[sub_resource type="Resource" id="Resource_ci6hk"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 2.0
+type = 16
+cached_absolute_beat = 11.5686
+
+[sub_resource type="Resource" id="Resource_gupsn"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 0.0
+type = 16
+cached_absolute_beat = 11.7647
+
+[sub_resource type="Resource" id="Resource_sqk6p"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 2.0
+type = 16
+cached_absolute_beat = 11.9608
+
+[sub_resource type="Resource" id="Resource_uban3"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 0.0
+type = 16
+cached_absolute_beat = 12.1569
+
+[sub_resource type="Resource" id="Resource_aj86i"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 2.0
+type = 16
+cached_absolute_beat = 12.3529
+
+[sub_resource type="Resource" id="Resource_gmjtw"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 0.0
+type = 16
+cached_absolute_beat = 12.549
+
+[sub_resource type="Resource" id="Resource_2bbji"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 0.0
+type = 16
+cached_absolute_beat = 12.9412
+
+[sub_resource type="Resource" id="Resource_4whkw"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 2.0
+type = 16
+cached_absolute_beat = 13.1373
+
+[sub_resource type="Resource" id="Resource_ucc4q"]
+script = ExtResource("1_r4db5")
+bar = 34
+beat = 0.0
+type = 16
+cached_absolute_beat = 13.3333
+
+[sub_resource type="Resource" id="Resource_wc02u"]
+script = ExtResource("1_r4db5")
+bar = 34
+beat = 2.0
+type = 16
+cached_absolute_beat = 13.5294
+
+[sub_resource type="Resource" id="Resource_2381r"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 16
+cached_absolute_beat = 13.7255
+
+[sub_resource type="Resource" id="Resource_ty3f4"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 2.0
+type = 16
+cached_absolute_beat = 13.9216
+
+[sub_resource type="Resource" id="Resource_okoa7"]
+script = ExtResource("1_r4db5")
+bar = 36
+beat = 0.0
+type = 16
+cached_absolute_beat = 14.1176
+
+[sub_resource type="Resource" id="Resource_4cy51"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 0.0
+type = 16
+cached_absolute_beat = 14.5098
+
+[sub_resource type="Resource" id="Resource_oys7u"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 2.0
+type = 16
+cached_absolute_beat = 14.7059
+
+[sub_resource type="Resource" id="Resource_d7603"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 0.0
+type = 16
+cached_absolute_beat = 14.902
+
+[sub_resource type="Resource" id="Resource_put35"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 2.0
+type = 16
+cached_absolute_beat = 15.098
+
+[sub_resource type="Resource" id="Resource_uo386"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 0.0
+type = 16
+cached_absolute_beat = 15.2941
+
+[sub_resource type="Resource" id="Resource_0cg2g"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 2.0
+type = 16
+cached_absolute_beat = 15.4902
+
+[sub_resource type="Resource" id="Resource_s20p1"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 0.0
+type = 16
+cached_absolute_beat = 15.6863
+
+[sub_resource type="Resource" id="Resource_kn3dk"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 0.0
+type = 16
+cached_absolute_beat = 16.0784
+
+[sub_resource type="Resource" id="Resource_h3njs"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 2.0
+type = 16
+cached_absolute_beat = 16.2745
+
+[sub_resource type="Resource" id="Resource_rqpm2"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 0.0
+type = 16
+cached_absolute_beat = 16.4706
+
+[sub_resource type="Resource" id="Resource_adlla"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 2.0
+type = 16
+cached_absolute_beat = 16.6667
+
+[sub_resource type="Resource" id="Resource_wdmh0"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 0.0
+type = 16
+cached_absolute_beat = 16.8627
+
+[sub_resource type="Resource" id="Resource_2pv2v"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 2.0
+type = 16
+cached_absolute_beat = 17.0588
+
+[sub_resource type="Resource" id="Resource_346of"]
+script = ExtResource("1_r4db5")
+bar = 44
+beat = 0.0
+type = 16
+cached_absolute_beat = 17.2549
+
+[sub_resource type="Resource" id="Resource_wffpj"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 0.0
+type = 16
+cached_absolute_beat = 17.6471
+
+[sub_resource type="Resource" id="Resource_q2kiw"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 2.0
+type = 16
+cached_absolute_beat = 17.8431
+
+[sub_resource type="Resource" id="Resource_ki2ir"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 0.0
+type = 16
+cached_absolute_beat = 18.0392
+
+[sub_resource type="Resource" id="Resource_mr0xo"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 2.0
+type = 16
+cached_absolute_beat = 18.2353
+
+[sub_resource type="Resource" id="Resource_llyt6"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 0.0
+type = 16
+cached_absolute_beat = 18.4314
+
+[sub_resource type="Resource" id="Resource_3f7mo"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 2.0
+type = 16
+cached_absolute_beat = 18.6275
+
+[sub_resource type="Resource" id="Resource_qq0n2"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 16
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_kq7pa"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 0.0
+type = 16
+cached_absolute_beat = 19.2157
+
+[sub_resource type="Resource" id="Resource_3m2uv"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 2.0
+type = 16
+cached_absolute_beat = 19.4118
+
+[sub_resource type="Resource" id="Resource_yytwa"]
+script = ExtResource("1_r4db5")
+bar = 50
+beat = 0.0
+type = 16
+cached_absolute_beat = 19.6078
+
+[sub_resource type="Resource" id="Resource_x6gpk"]
+script = ExtResource("1_r4db5")
+bar = 50
+beat = 2.0
+type = 16
+cached_absolute_beat = 19.8039
+
+[sub_resource type="Resource" id="Resource_akscj"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 0.0
+type = 16
+cached_absolute_beat = 20.0
+
+[sub_resource type="Resource" id="Resource_8is3i"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 2.0
+type = 16
+cached_absolute_beat = 20.1961
+
+[sub_resource type="Resource" id="Resource_q5dha"]
+script = ExtResource("1_r4db5")
+bar = 52
+beat = 0.0
+type = 16
+cached_absolute_beat = 20.3922
+
+[sub_resource type="Resource" id="Resource_k7q1v"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 0.0
+type = 16
+cached_absolute_beat = 20.7843
+
+[sub_resource type="Resource" id="Resource_myupf"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 2.0
+type = 16
+cached_absolute_beat = 20.9804
+
+[sub_resource type="Resource" id="Resource_gnfep"]
+script = ExtResource("1_r4db5")
+bar = 54
+beat = 0.0
+type = 16
+cached_absolute_beat = 21.1765
+
+[sub_resource type="Resource" id="Resource_q7pqi"]
+script = ExtResource("1_r4db5")
+bar = 54
+beat = 2.0
+type = 16
+cached_absolute_beat = 21.3725
+
+[sub_resource type="Resource" id="Resource_i118r"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 0.0
+type = 16
+cached_absolute_beat = 21.5686
+
+[sub_resource type="Resource" id="Resource_8qs5u"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 2.0
+type = 16
+cached_absolute_beat = 21.7647
+
+[sub_resource type="Resource" id="Resource_5h4ji"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 0.0
+type = 16
+cached_absolute_beat = 21.9608
+
+[sub_resource type="Resource" id="Resource_olo5e"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 0.0
+type = 16
+cached_absolute_beat = 22.3529
+
+[sub_resource type="Resource" id="Resource_xyi82"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 2.0
+type = 16
+cached_absolute_beat = 22.549
+
+[sub_resource type="Resource" id="Resource_votff"]
+script = ExtResource("1_r4db5")
+bar = 58
+beat = 0.0
+type = 16
+cached_absolute_beat = 22.7451
+
+[sub_resource type="Resource" id="Resource_qcej3"]
+script = ExtResource("1_r4db5")
+bar = 58
+beat = 2.0
+type = 16
+cached_absolute_beat = 22.9412
+
+[sub_resource type="Resource" id="Resource_wobi5"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 0.0
+type = 16
+cached_absolute_beat = 23.1373
+
+[sub_resource type="Resource" id="Resource_q1dun"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 2.0
+type = 16
+cached_absolute_beat = 23.3333
+
+[sub_resource type="Resource" id="Resource_mbv0g"]
+script = ExtResource("1_r4db5")
+bar = 60
+beat = 0.0
+type = 16
+cached_absolute_beat = 23.5294
+
+[sub_resource type="Resource" id="Resource_tqidu"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 0.0
+type = 16
+cached_absolute_beat = 23.9216
+
+[sub_resource type="Resource" id="Resource_t700w"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 2.0
+type = 16
+cached_absolute_beat = 24.1176
+
+[sub_resource type="Resource" id="Resource_lbbb7"]
+script = ExtResource("1_r4db5")
+bar = 62
+beat = 0.0
+type = 16
+cached_absolute_beat = 24.3137
+
+[sub_resource type="Resource" id="Resource_0irvb"]
+script = ExtResource("1_r4db5")
+bar = 62
+beat = 2.0
+type = 16
+cached_absolute_beat = 24.5098
+
+[sub_resource type="Resource" id="Resource_04g5p"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 0.0
+type = 16
+cached_absolute_beat = 24.7059
+
+[sub_resource type="Resource" id="Resource_84beh"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 2.0
+type = 16
+cached_absolute_beat = 24.902
+
+[sub_resource type="Resource" id="Resource_od404"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 0.0
+type = 16
+cached_absolute_beat = 25.098
+
+[sub_resource type="Resource" id="Resource_a5mp0"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 0.0
+type = 16
+cached_absolute_beat = 25.4902
+
+[sub_resource type="Resource" id="Resource_0ei0s"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 2.0
+type = 16
+cached_absolute_beat = 25.6863
+
+[sub_resource type="Resource" id="Resource_ctorh"]
+script = ExtResource("1_r4db5")
+bar = 66
+beat = 0.0
+type = 16
+cached_absolute_beat = 25.8824
+
+[sub_resource type="Resource" id="Resource_0b18s"]
+script = ExtResource("1_r4db5")
+bar = 66
+beat = 2.0
+type = 16
+cached_absolute_beat = 26.0784
+
+[sub_resource type="Resource" id="Resource_7pjqf"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 0.0
+type = 16
+cached_absolute_beat = 26.2745
+
+[sub_resource type="Resource" id="Resource_qxrds"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 2.0
+type = 16
+cached_absolute_beat = 26.4706
+
+[sub_resource type="Resource" id="Resource_ps38q"]
+script = ExtResource("1_r4db5")
+bar = 68
+beat = 0.0
+type = 16
+cached_absolute_beat = 26.6667
+
+[sub_resource type="Resource" id="Resource_ugtpn"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 0.0
+type = 16
+cached_absolute_beat = 27.0588
+
+[sub_resource type="Resource" id="Resource_fhfrp"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 2.0
+type = 16
+cached_absolute_beat = 27.2549
+
+[sub_resource type="Resource" id="Resource_08j6v"]
+script = ExtResource("1_r4db5")
+bar = 70
+beat = 0.0
+type = 16
+cached_absolute_beat = 27.451
+
+[sub_resource type="Resource" id="Resource_atspi"]
+script = ExtResource("1_r4db5")
+bar = 70
+beat = 2.0
+type = 16
+cached_absolute_beat = 27.6471
+
+[sub_resource type="Resource" id="Resource_lk4ue"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 0.0
+type = 16
+cached_absolute_beat = 27.8431
+
+[sub_resource type="Resource" id="Resource_yadn2"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 2.0
+type = 16
+cached_absolute_beat = 28.0392
+
+[sub_resource type="Resource" id="Resource_48wix"]
+script = ExtResource("1_r4db5")
+bar = 72
+beat = 0.0
+type = 16
+cached_absolute_beat = 28.2353
+
+[sub_resource type="Resource" id="Resource_y2uw1"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 0.0
+type = 16
+cached_absolute_beat = 28.6275
+
+[sub_resource type="Resource" id="Resource_60fxf"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 2.0
+type = 16
+cached_absolute_beat = 28.8235
+
+[sub_resource type="Resource" id="Resource_rsmoc"]
+script = ExtResource("1_r4db5")
+bar = 74
+beat = 0.0
+type = 16
+cached_absolute_beat = 29.0196
+
+[sub_resource type="Resource" id="Resource_bccc2"]
+script = ExtResource("1_r4db5")
+bar = 74
+beat = 2.0
+type = 16
+cached_absolute_beat = 29.2157
+
+[sub_resource type="Resource" id="Resource_ryc1w"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 0.0
+type = 16
+cached_absolute_beat = 29.4118
+
+[sub_resource type="Resource" id="Resource_acjnt"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 2.0
+type = 16
+cached_absolute_beat = 29.6078
+
+[sub_resource type="Resource" id="Resource_q6v0w"]
+script = ExtResource("1_r4db5")
+bar = 76
+beat = 0.0
+type = 16
+cached_absolute_beat = 29.8039
+
+[sub_resource type="Resource" id="Resource_r088h"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 0.0
+type = 16
+cached_absolute_beat = 30.1961
+
+[sub_resource type="Resource" id="Resource_7e85w"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 2.0
+type = 16
+cached_absolute_beat = 30.3922
+
+[sub_resource type="Resource" id="Resource_xhb1k"]
+script = ExtResource("1_r4db5")
+bar = 78
+beat = 0.0
+type = 16
+cached_absolute_beat = 30.5882
+
+[sub_resource type="Resource" id="Resource_d1i0t"]
+script = ExtResource("1_r4db5")
+bar = 78
+beat = 2.0
+type = 16
+cached_absolute_beat = 30.7843
+
+[sub_resource type="Resource" id="Resource_1x0ne"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 0.0
+type = 16
+cached_absolute_beat = 30.9804
+
+[sub_resource type="Resource" id="Resource_3em0p"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 2.0
+type = 16
+cached_absolute_beat = 31.1765
+
+[sub_resource type="Resource" id="Resource_vthqe"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 0.0
+type = 16
+cached_absolute_beat = 31.3725
+
+[sub_resource type="Resource" id="Resource_imv4l"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 2.0
+type = 16
+cached_absolute_beat = 31.5686
+
+[sub_resource type="Resource" id="Resource_gfrc4"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 0.0
+type = 16
+cached_absolute_beat = 31.7647
+
+[sub_resource type="Resource" id="Resource_dbf82"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 2.0
+type = 16
+cached_absolute_beat = 31.9608
+
+[sub_resource type="Resource" id="Resource_55qho"]
+script = ExtResource("1_r4db5")
+bar = 82
+beat = 0.0
+type = 16
+cached_absolute_beat = 32.1569
+
+[sub_resource type="Resource" id="Resource_4yqaq"]
+script = ExtResource("1_r4db5")
+bar = 82
+beat = 2.0
+type = 16
+cached_absolute_beat = 32.3529
+
+[sub_resource type="Resource" id="Resource_357gl"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 0.0
+type = 16
+cached_absolute_beat = 32.549
+
+[sub_resource type="Resource" id="Resource_w4aq2"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 2.0
+type = 16
+cached_absolute_beat = 32.7451
+
+[sub_resource type="Resource" id="Resource_csxsv"]
+script = ExtResource("1_r4db5")
+bar = 84
+beat = 0.0
+type = 16
+cached_absolute_beat = 32.9412
+
+[sub_resource type="Resource" id="Resource_yu4fe"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 0.0
+type = 16
+cached_absolute_beat = 33.3333
+
+[sub_resource type="Resource" id="Resource_fdseo"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 2.0
+type = 16
+cached_absolute_beat = 33.5294
+
+[sub_resource type="Resource" id="Resource_d8cgo"]
+script = ExtResource("1_r4db5")
+bar = 86
+beat = 0.0
+type = 16
+cached_absolute_beat = 33.7255
+
+[sub_resource type="Resource" id="Resource_c7yl3"]
+script = ExtResource("1_r4db5")
+bar = 86
+beat = 2.0
+type = 16
+cached_absolute_beat = 33.9216
+
+[sub_resource type="Resource" id="Resource_nfy4n"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 0.0
+type = 16
+cached_absolute_beat = 34.1176
+
+[sub_resource type="Resource" id="Resource_l2hcr"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 2.0
+type = 16
+cached_absolute_beat = 34.3137
+
+[sub_resource type="Resource" id="Resource_2l3ga"]
+script = ExtResource("1_r4db5")
+bar = 88
+beat = 0.0
+type = 16
+cached_absolute_beat = 34.5098
+
+[sub_resource type="Resource" id="Resource_vvrg2"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 0.0
+type = 16
+cached_absolute_beat = 34.902
+
+[sub_resource type="Resource" id="Resource_wyhxu"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 2.0
+type = 16
+cached_absolute_beat = 35.098
+
+[sub_resource type="Resource" id="Resource_ktoh7"]
+script = ExtResource("1_r4db5")
+bar = 90
+beat = 0.0
+type = 16
+cached_absolute_beat = 35.2941
+
+[sub_resource type="Resource" id="Resource_1dssq"]
+script = ExtResource("1_r4db5")
+bar = 90
+beat = 2.0
+type = 16
+cached_absolute_beat = 35.4902
+
+[sub_resource type="Resource" id="Resource_5uq07"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 0.0
+type = 16
+cached_absolute_beat = 35.6863
+
+[sub_resource type="Resource" id="Resource_v1aad"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 2.0
+type = 16
+cached_absolute_beat = 35.8824
+
+[sub_resource type="Resource" id="Resource_cjbfs"]
+script = ExtResource("1_r4db5")
+bar = 92
+beat = 0.0
+type = 16
+cached_absolute_beat = 36.0784
+
+[sub_resource type="Resource" id="Resource_3fel1"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 0.0
+type = 16
+cached_absolute_beat = 36.4706
+
+[sub_resource type="Resource" id="Resource_6xpjp"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 2.0
+type = 16
+cached_absolute_beat = 36.6667
+
+[sub_resource type="Resource" id="Resource_vyivr"]
+script = ExtResource("1_r4db5")
+bar = 94
+beat = 0.0
+type = 16
+cached_absolute_beat = 36.8627
+
+[sub_resource type="Resource" id="Resource_kdp4y"]
+script = ExtResource("1_r4db5")
+bar = 94
+beat = 2.0
+type = 16
+cached_absolute_beat = 37.0588
+
+[sub_resource type="Resource" id="Resource_tbjd7"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 0.0
+type = 16
+cached_absolute_beat = 37.2549
+
+[sub_resource type="Resource" id="Resource_yn6wd"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 2.0
+type = 16
+cached_absolute_beat = 37.451
+
+[sub_resource type="Resource" id="Resource_hbync"]
+script = ExtResource("1_r4db5")
+bar = 96
+beat = 0.0
+type = 16
+cached_absolute_beat = 37.6471
+
+[sub_resource type="Resource" id="Resource_kifoc"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.392157
+
+[sub_resource type="Resource" id="Resource_rwjr0"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 32
+cached_absolute_beat = 1.17647
+
+[sub_resource type="Resource" id="Resource_bvk4d"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 32
+cached_absolute_beat = 1.96078
+
+[sub_resource type="Resource" id="Resource_uxoab"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 32
+cached_absolute_beat = 2.7451
+
+[sub_resource type="Resource" id="Resource_lcqsu"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 32
+cached_absolute_beat = 3.52941
+
+[sub_resource type="Resource" id="Resource_q8se0"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 32
+cached_absolute_beat = 4.31373
+
+[sub_resource type="Resource" id="Resource_g0b3u"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 32
+cached_absolute_beat = 5.09804
+
+[sub_resource type="Resource" id="Resource_jcb2y"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 32
+cached_absolute_beat = 5.88235
+
+[sub_resource type="Resource" id="Resource_7d7vb"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 0.0
+type = 32
+cached_absolute_beat = 6.66667
+
+[sub_resource type="Resource" id="Resource_8e4dp"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 32
+cached_absolute_beat = 7.45098
+
+[sub_resource type="Resource" id="Resource_aicuv"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 0.0
+type = 32
+cached_absolute_beat = 8.23529
+
+[sub_resource type="Resource" id="Resource_e0hda"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 0.0
+type = 32
+cached_absolute_beat = 9.01961
+
+[sub_resource type="Resource" id="Resource_b4wdq"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 0.0
+type = 32
+cached_absolute_beat = 9.80392
+
+[sub_resource type="Resource" id="Resource_5bc7p"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 0.0
+type = 32
+cached_absolute_beat = 10.5882
+
+[sub_resource type="Resource" id="Resource_hlrno"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 0.0
+type = 32
+cached_absolute_beat = 11.3725
+
+[sub_resource type="Resource" id="Resource_vjhtl"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 0.0
+type = 32
+cached_absolute_beat = 12.1569
+
+[sub_resource type="Resource" id="Resource_lcdru"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 0.0
+type = 32
+cached_absolute_beat = 12.9412
+
+[sub_resource type="Resource" id="Resource_gaob5"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 32
+cached_absolute_beat = 13.7255
+
+[sub_resource type="Resource" id="Resource_8osed"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 0.0
+type = 32
+cached_absolute_beat = 14.5098
+
+[sub_resource type="Resource" id="Resource_bgolw"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 0.0
+type = 32
+cached_absolute_beat = 15.2941
+
+[sub_resource type="Resource" id="Resource_7fbq0"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 0.0
+type = 32
+cached_absolute_beat = 16.0784
+
+[sub_resource type="Resource" id="Resource_kqkb5"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 0.0
+type = 32
+cached_absolute_beat = 16.8627
+
+[sub_resource type="Resource" id="Resource_j4ioc"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 0.0
+type = 32
+cached_absolute_beat = 17.6471
+
+[sub_resource type="Resource" id="Resource_6cuwq"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 0.0
+type = 32
+cached_absolute_beat = 18.4314
+
+[sub_resource type="Resource" id="Resource_n5jp2"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 0.0
+type = 32
+cached_absolute_beat = 19.2157
+
+[sub_resource type="Resource" id="Resource_5ns61"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 0.0
+type = 32
+cached_absolute_beat = 20.0
+
+[sub_resource type="Resource" id="Resource_bvp5i"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 0.0
+type = 32
+cached_absolute_beat = 20.7843
+
+[sub_resource type="Resource" id="Resource_pisfw"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 0.0
+type = 32
+cached_absolute_beat = 21.5686
+
+[sub_resource type="Resource" id="Resource_y0jd6"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 0.0
+type = 32
+cached_absolute_beat = 22.3529
+
+[sub_resource type="Resource" id="Resource_l5buf"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 0.0
+type = 32
+cached_absolute_beat = 23.1373
+
+[sub_resource type="Resource" id="Resource_bedjn"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 0.0
+type = 32
+cached_absolute_beat = 23.9216
+
+[sub_resource type="Resource" id="Resource_klgj6"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 0.0
+type = 32
+cached_absolute_beat = 24.7059
+
+[sub_resource type="Resource" id="Resource_am77b"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 0.0
+type = 32
+cached_absolute_beat = 25.4902
+
+[sub_resource type="Resource" id="Resource_w7h3d"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 0.0
+type = 32
+cached_absolute_beat = 26.2745
+
+[sub_resource type="Resource" id="Resource_ul6wu"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 0.0
+type = 32
+cached_absolute_beat = 27.0588
+
+[sub_resource type="Resource" id="Resource_c1jlu"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 0.0
+type = 32
+cached_absolute_beat = 27.8431
+
+[sub_resource type="Resource" id="Resource_a5cdo"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 0.0
+type = 32
+cached_absolute_beat = 28.6275
+
+[sub_resource type="Resource" id="Resource_acexq"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 0.0
+type = 32
+cached_absolute_beat = 29.4118
+
+[sub_resource type="Resource" id="Resource_ww26d"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 0.0
+type = 32
+cached_absolute_beat = 30.1961
+
+[sub_resource type="Resource" id="Resource_jcldr"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 0.0
+type = 32
+cached_absolute_beat = 30.9804
+
+[sub_resource type="Resource" id="Resource_ec8tt"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 0.0
+type = 32
+cached_absolute_beat = 31.7647
+
+[sub_resource type="Resource" id="Resource_ufj3o"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 0.0
+type = 32
+cached_absolute_beat = 32.549
+
+[sub_resource type="Resource" id="Resource_3aqmr"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 0.0
+type = 32
+cached_absolute_beat = 33.3333
+
+[sub_resource type="Resource" id="Resource_tdnoi"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 0.0
+type = 32
+cached_absolute_beat = 34.1176
+
+[sub_resource type="Resource" id="Resource_pbgvu"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 0.0
+type = 32
+cached_absolute_beat = 34.902
+
+[sub_resource type="Resource" id="Resource_hvxih"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 0.0
+type = 32
+cached_absolute_beat = 35.6863
+
+[sub_resource type="Resource" id="Resource_47d6m"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 0.0
+type = 32
+cached_absolute_beat = 36.4706
+
+[sub_resource type="Resource" id="Resource_22qxc"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 0.0
+type = 32
+cached_absolute_beat = 37.2549
+
+[sub_resource type="Resource" id="Resource_358ca"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 0.0
+type = 1
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_4ouin"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 2.0
+type = 1
+cached_absolute_beat = 0.196078
+
+[sub_resource type="Resource" id="Resource_tcveq"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 1
+cached_absolute_beat = 0.392157
+
+[sub_resource type="Resource" id="Resource_bwh04"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 0.0
+type = 1
+cached_absolute_beat = 0.784314
+
+[sub_resource type="Resource" id="Resource_qygsj"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 1
+cached_absolute_beat = 1.17647
+
+[sub_resource type="Resource" id="Resource_wsg7f"]
+script = ExtResource("1_r4db5")
+bar = 4
+beat = 0.0
+type = 1
+cached_absolute_beat = 1.56863
+
+[sub_resource type="Resource" id="Resource_5mrvl"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 1
+cached_absolute_beat = 1.96078
+
+[sub_resource type="Resource" id="Resource_flnom"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 0.0
+type = 1
+cached_absolute_beat = 2.35294
+
+[sub_resource type="Resource" id="Resource_tgtaa"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 1
+cached_absolute_beat = 2.7451
+
+[sub_resource type="Resource" id="Resource_452rf"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 0.0
+type = 1
+cached_absolute_beat = 3.13725
+
+[sub_resource type="Resource" id="Resource_ntcfo"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 2.0
+type = 1
+cached_absolute_beat = 3.33333
+
+[sub_resource type="Resource" id="Resource_hx2nu"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 1
+cached_absolute_beat = 3.52941
+
+[sub_resource type="Resource" id="Resource_vn6ji"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 0.0
+type = 1
+cached_absolute_beat = 3.92157
+
+[sub_resource type="Resource" id="Resource_nk4wf"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 1
+cached_absolute_beat = 4.31373
+
+[sub_resource type="Resource" id="Resource_e2utt"]
+script = ExtResource("1_r4db5")
+bar = 12
+beat = 0.0
+type = 1
+cached_absolute_beat = 4.70588
+
+[sub_resource type="Resource" id="Resource_mmegv"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 1
+cached_absolute_beat = 5.09804
+
+[sub_resource type="Resource" id="Resource_d06vo"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 0.0
+type = 1
+cached_absolute_beat = 5.4902
+
+[sub_resource type="Resource" id="Resource_beheu"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 1
+cached_absolute_beat = 5.88235
+
+[sub_resource type="Resource" id="Resource_8otdp"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 0.0
+type = 1
+cached_absolute_beat = 6.27451
+
+[sub_resource type="Resource" id="Resource_xh4tr"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 1
+cached_absolute_beat = 7.45098
+
+[sub_resource type="Resource" id="Resource_plri0"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 0.0
+type = 1
+cached_absolute_beat = 8.62745
+
+[sub_resource type="Resource" id="Resource_nonpl"]
+script = ExtResource("1_r4db5")
+bar = 24
+beat = 0.0
+type = 1
+cached_absolute_beat = 9.41176
+
+[sub_resource type="Resource" id="Resource_kju05"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 0.0
+type = 1
+cached_absolute_beat = 10.1961
+
+[sub_resource type="Resource" id="Resource_ytvop"]
+script = ExtResource("1_r4db5")
+bar = 28
+beat = 0.0
+type = 1
+cached_absolute_beat = 10.9804
+
+[sub_resource type="Resource" id="Resource_iiydw"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 0.0
+type = 1
+cached_absolute_beat = 11.7647
+
+[sub_resource type="Resource" id="Resource_q1j0g"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 0.0
+type = 1
+cached_absolute_beat = 12.549
+
+[sub_resource type="Resource" id="Resource_yis5i"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 0.0
+type = 1
+cached_absolute_beat = 15.6863
+
+[sub_resource type="Resource" id="Resource_poc30"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 1
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_na4sg"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 0.0
+type = 1
+cached_absolute_beat = 21.9608
+
+[sub_resource type="Resource" id="Resource_t81e6"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 0.0
+type = 1
+cached_absolute_beat = 25.098
+
+[sub_resource type="Resource" id="Resource_ywivb"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 0.0
+type = 2
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_eexr7"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 2
+cached_absolute_beat = 0.392157
+
+[sub_resource type="Resource" id="Resource_j04ir"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 2
+cached_absolute_beat = 1.17647
+
+[sub_resource type="Resource" id="Resource_w5hrq"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 2
+cached_absolute_beat = 1.96078
+
+[sub_resource type="Resource" id="Resource_yp71h"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 2
+cached_absolute_beat = 2.7451
+
+[sub_resource type="Resource" id="Resource_pk28h"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 2
+cached_absolute_beat = 3.52941
+
+[sub_resource type="Resource" id="Resource_etk03"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 2
+cached_absolute_beat = 4.31373
+
+[sub_resource type="Resource" id="Resource_rajg0"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 2
+cached_absolute_beat = 5.09804
+
+[sub_resource type="Resource" id="Resource_s07k1"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 2
+cached_absolute_beat = 5.88235
+
+[sub_resource type="Resource" id="Resource_f2l3e"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 0.0
+type = 2
+cached_absolute_beat = 6.27451
+
+[sub_resource type="Resource" id="Resource_xfgsk"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 0.0
+type = 2
+cached_absolute_beat = 6.66667
+
+[sub_resource type="Resource" id="Resource_ujwsf"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 2
+cached_absolute_beat = 7.45098
+
+[sub_resource type="Resource" id="Resource_amymt"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 0.0
+type = 2
+cached_absolute_beat = 8.23529
+
+[sub_resource type="Resource" id="Resource_xq76h"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 0.0
+type = 2
+cached_absolute_beat = 9.01961
+
+[sub_resource type="Resource" id="Resource_25um7"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 0.0
+type = 2
+cached_absolute_beat = 9.80392
+
+[sub_resource type="Resource" id="Resource_611nw"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 0.0
+type = 2
+cached_absolute_beat = 10.5882
+
+[sub_resource type="Resource" id="Resource_sa846"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 0.0
+type = 2
+cached_absolute_beat = 11.3725
+
+[sub_resource type="Resource" id="Resource_xqlco"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 0.0
+type = 2
+cached_absolute_beat = 12.1569
+
+[sub_resource type="Resource" id="Resource_7nyk7"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 0.0
+type = 2
+cached_absolute_beat = 12.549
+
+[sub_resource type="Resource" id="Resource_jum4l"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 0.0
+type = 2
+cached_absolute_beat = 12.9412
+
+[sub_resource type="Resource" id="Resource_x4h0u"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 2
+cached_absolute_beat = 13.7255
+
+[sub_resource type="Resource" id="Resource_bhu4u"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 0.0
+type = 2
+cached_absolute_beat = 14.5098
+
+[sub_resource type="Resource" id="Resource_durh2"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 0.0
+type = 2
+cached_absolute_beat = 15.2941
+
+[sub_resource type="Resource" id="Resource_d0af1"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 0.0
+type = 2
+cached_absolute_beat = 16.0784
+
+[sub_resource type="Resource" id="Resource_srvvb"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 0.0
+type = 2
+cached_absolute_beat = 16.8627
+
+[sub_resource type="Resource" id="Resource_l17tp"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 0.0
+type = 2
+cached_absolute_beat = 17.6471
+
+[sub_resource type="Resource" id="Resource_y21xi"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 0.0
+type = 2
+cached_absolute_beat = 18.4314
+
+[sub_resource type="Resource" id="Resource_vikbe"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 2
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_lobeu"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 0.0
+type = 2
+cached_absolute_beat = 19.2157
+
+[sub_resource type="Resource" id="Resource_1mnml"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 0.0
+type = 2
+cached_absolute_beat = 20.0
+
+[sub_resource type="Resource" id="Resource_1f55q"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 0.0
+type = 2
+cached_absolute_beat = 20.7843
+
+[sub_resource type="Resource" id="Resource_rxcc2"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 0.0
+type = 2
+cached_absolute_beat = 21.5686
+
+[sub_resource type="Resource" id="Resource_ta8xp"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 0.0
+type = 2
+cached_absolute_beat = 22.3529
+
+[sub_resource type="Resource" id="Resource_1mclx"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 0.0
+type = 2
+cached_absolute_beat = 23.1373
+
+[sub_resource type="Resource" id="Resource_1ce0d"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 0.0
+type = 2
+cached_absolute_beat = 23.9216
+
+[sub_resource type="Resource" id="Resource_x88iy"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 0.0
+type = 2
+cached_absolute_beat = 24.7059
+
+[sub_resource type="Resource" id="Resource_0hh6k"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 0.0
+type = 2
+cached_absolute_beat = 25.098
+
+[sub_resource type="Resource" id="Resource_qbm2f"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 0.0
+type = 2
+cached_absolute_beat = 25.4902
+
+[sub_resource type="Resource" id="Resource_t2nol"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 0.0
+type = 2
+cached_absolute_beat = 26.2745
+
+[sub_resource type="Resource" id="Resource_h4ct5"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 0.0
+type = 2
+cached_absolute_beat = 27.0588
+
+[sub_resource type="Resource" id="Resource_ui4lg"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 0.0
+type = 2
+cached_absolute_beat = 27.8431
+
+[sub_resource type="Resource" id="Resource_8tdc2"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 0.0
+type = 2
+cached_absolute_beat = 28.6275
+
+[sub_resource type="Resource" id="Resource_yoich"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 0.0
+type = 2
+cached_absolute_beat = 29.4118
+
+[sub_resource type="Resource" id="Resource_vxdd3"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 0.0
+type = 2
+cached_absolute_beat = 30.1961
+
+[sub_resource type="Resource" id="Resource_s673g"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 0.0
+type = 2
+cached_absolute_beat = 30.9804
+
+[sub_resource type="Resource" id="Resource_kxp78"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 0.0
+type = 2
+cached_absolute_beat = 31.3725
+
+[sub_resource type="Resource" id="Resource_11oth"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 0.0
+type = 2
+cached_absolute_beat = 31.7647
+
+[sub_resource type="Resource" id="Resource_ie4en"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 0.0
+type = 2
+cached_absolute_beat = 32.549
+
+[sub_resource type="Resource" id="Resource_0irk0"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 0.0
+type = 2
+cached_absolute_beat = 33.3333
+
+[sub_resource type="Resource" id="Resource_54lg0"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 0.0
+type = 2
+cached_absolute_beat = 34.1176
+
+[sub_resource type="Resource" id="Resource_3njrq"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 0.0
+type = 2
+cached_absolute_beat = 34.902
+
+[sub_resource type="Resource" id="Resource_oia2h"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 0.0
+type = 2
+cached_absolute_beat = 35.6863
+
+[sub_resource type="Resource" id="Resource_x84dp"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 0.0
+type = 2
+cached_absolute_beat = 36.4706
+
+[sub_resource type="Resource" id="Resource_lmb5a"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 0.0
+type = 2
+cached_absolute_beat = 37.2549
+
+[sub_resource type="Resource" id="Resource_1ro0i"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 4
+cached_absolute_beat = 13.7255
+
+[sub_resource type="Resource" id="Resource_jeijn"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 2.0
+type = 4
+cached_absolute_beat = 13.9216
+
+[sub_resource type="Resource" id="Resource_n02is"]
+script = ExtResource("1_r4db5")
+bar = 36
+beat = 0.0
+type = 4
+cached_absolute_beat = 14.1176
+
+[sub_resource type="Resource" id="Resource_3lgwn"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 0.0
+type = 4
+cached_absolute_beat = 14.902
+
+[sub_resource type="Resource" id="Resource_47ehh"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 0.0
+type = 4
+cached_absolute_beat = 15.6863
+
+[sub_resource type="Resource" id="Resource_ddlfr"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 0.0
+type = 4
+cached_absolute_beat = 16.4706
+
+[sub_resource type="Resource" id="Resource_ecul2"]
+script = ExtResource("1_r4db5")
+bar = 44
+beat = 0.0
+type = 4
+cached_absolute_beat = 17.2549
+
+[sub_resource type="Resource" id="Resource_3muax"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 0.0
+type = 4
+cached_absolute_beat = 18.0392
+
+[sub_resource type="Resource" id="Resource_147x7"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 4
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_m1opr"]
+script = ExtResource("1_r4db5")
+bar = 52
+beat = 0.0
+type = 4
+cached_absolute_beat = 20.3922
+
+[sub_resource type="Resource" id="Resource_frv6t"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 0.0
+type = 4
+cached_absolute_beat = 21.9608
+
+[sub_resource type="Resource" id="Resource_jwk3g"]
+script = ExtResource("1_r4db5")
+bar = 60
+beat = 0.0
+type = 4
+cached_absolute_beat = 23.5294
+
+[sub_resource type="Resource" id="Resource_7tq2a"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 0.0
+type = 4
+cached_absolute_beat = 31.3725
+
+[sub_resource type="Resource" id="Resource_10lvn"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 0.0
+type = 8
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_bcm72"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 2.0
+type = 8
+cached_absolute_beat = 0.196078
+
+[sub_resource type="Resource" id="Resource_x7cyr"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 8
+cached_absolute_beat = 0.392157
+
+[sub_resource type="Resource" id="Resource_haujb"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 2.0
+type = 8
+cached_absolute_beat = 0.588235
+
+[sub_resource type="Resource" id="Resource_n5b88"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 0.0
+type = 8
+cached_absolute_beat = 0.784314
+
+[sub_resource type="Resource" id="Resource_0v4in"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 2.0
+type = 8
+cached_absolute_beat = 0.980392
+
+[sub_resource type="Resource" id="Resource_jr628"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 8
+cached_absolute_beat = 1.17647
+
+[sub_resource type="Resource" id="Resource_cla4b"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 2.0
+type = 8
+cached_absolute_beat = 1.37255
+
+[sub_resource type="Resource" id="Resource_usyi4"]
+script = ExtResource("1_r4db5")
+bar = 4
+beat = 0.0
+type = 8
+cached_absolute_beat = 1.56863
+
+[sub_resource type="Resource" id="Resource_aj1hd"]
+script = ExtResource("1_r4db5")
+bar = 4
+beat = 2.0
+type = 8
+cached_absolute_beat = 1.76471
+
+[sub_resource type="Resource" id="Resource_chm51"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 8
+cached_absolute_beat = 1.96078
+
+[sub_resource type="Resource" id="Resource_qv0jl"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 2.0
+type = 8
+cached_absolute_beat = 2.15686
+
+[sub_resource type="Resource" id="Resource_hx71j"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 0.0
+type = 8
+cached_absolute_beat = 2.35294
+
+[sub_resource type="Resource" id="Resource_yqdac"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 2.0
+type = 8
+cached_absolute_beat = 2.54902
+
+[sub_resource type="Resource" id="Resource_7llwn"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 8
+cached_absolute_beat = 2.7451
+
+[sub_resource type="Resource" id="Resource_e7iuy"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 2.0
+type = 8
+cached_absolute_beat = 2.94118
+
+[sub_resource type="Resource" id="Resource_fsurv"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 0.0
+type = 8
+cached_absolute_beat = 3.13725
+
+[sub_resource type="Resource" id="Resource_aa1yo"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 2.0
+type = 8
+cached_absolute_beat = 3.33333
+
+[sub_resource type="Resource" id="Resource_sm180"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 8
+cached_absolute_beat = 3.52941
+
+[sub_resource type="Resource" id="Resource_myrea"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 2.0
+type = 8
+cached_absolute_beat = 3.72549
+
+[sub_resource type="Resource" id="Resource_urcxc"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 0.0
+type = 8
+cached_absolute_beat = 3.92157
+
+[sub_resource type="Resource" id="Resource_ovvct"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 2.0
+type = 8
+cached_absolute_beat = 4.11765
+
+[sub_resource type="Resource" id="Resource_83f8r"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 8
+cached_absolute_beat = 4.31373
+
+[sub_resource type="Resource" id="Resource_vmib8"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 2.0
+type = 8
+cached_absolute_beat = 4.5098
+
+[sub_resource type="Resource" id="Resource_mavvb"]
+script = ExtResource("1_r4db5")
+bar = 12
+beat = 0.0
+type = 8
+cached_absolute_beat = 4.70588
+
+[sub_resource type="Resource" id="Resource_xatm5"]
+script = ExtResource("1_r4db5")
+bar = 12
+beat = 2.0
+type = 8
+cached_absolute_beat = 4.90196
+
+[sub_resource type="Resource" id="Resource_p0i58"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 8
+cached_absolute_beat = 5.09804
+
+[sub_resource type="Resource" id="Resource_byje0"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 2.0
+type = 8
+cached_absolute_beat = 5.29412
+
+[sub_resource type="Resource" id="Resource_mdava"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 0.0
+type = 8
+cached_absolute_beat = 5.4902
+
+[sub_resource type="Resource" id="Resource_25ryk"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 2.0
+type = 8
+cached_absolute_beat = 5.68627
+
+[sub_resource type="Resource" id="Resource_mjw2y"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 8
+cached_absolute_beat = 5.88235
+
+[sub_resource type="Resource" id="Resource_knjt3"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 2.0
+type = 8
+cached_absolute_beat = 6.07843
+
+[sub_resource type="Resource" id="Resource_faf5q"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 0.0
+type = 8
+cached_absolute_beat = 6.27451
+
+[sub_resource type="Resource" id="Resource_noi1f"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 2.0
+type = 8
+cached_absolute_beat = 6.47059
+
+[sub_resource type="Resource" id="Resource_sdssy"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 0.0
+type = 8
+cached_absolute_beat = 6.66667
+
+[sub_resource type="Resource" id="Resource_apt56"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 2.0
+type = 8
+cached_absolute_beat = 6.86275
+
+[sub_resource type="Resource" id="Resource_uuove"]
+script = ExtResource("1_r4db5")
+bar = 18
+beat = 0.0
+type = 8
+cached_absolute_beat = 7.05882
+
+[sub_resource type="Resource" id="Resource_exs1c"]
+script = ExtResource("1_r4db5")
+bar = 18
+beat = 2.0
+type = 8
+cached_absolute_beat = 7.2549
+
+[sub_resource type="Resource" id="Resource_22jtl"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 8
+cached_absolute_beat = 7.45098
+
+[sub_resource type="Resource" id="Resource_ap8k2"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 2.0
+type = 8
+cached_absolute_beat = 7.64706
+
+[sub_resource type="Resource" id="Resource_lehwa"]
+script = ExtResource("1_r4db5")
+bar = 20
+beat = 0.0
+type = 8
+cached_absolute_beat = 7.84314
+
+[sub_resource type="Resource" id="Resource_lnhpw"]
+script = ExtResource("1_r4db5")
+bar = 20
+beat = 2.0
+type = 8
+cached_absolute_beat = 8.03922
+
+[sub_resource type="Resource" id="Resource_yy6t0"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 0.0
+type = 8
+cached_absolute_beat = 8.23529
+
+[sub_resource type="Resource" id="Resource_0bxhg"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 2.0
+type = 8
+cached_absolute_beat = 8.43137
+
+[sub_resource type="Resource" id="Resource_0yayb"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 0.0
+type = 8
+cached_absolute_beat = 8.62745
+
+[sub_resource type="Resource" id="Resource_0cq1b"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 2.0
+type = 8
+cached_absolute_beat = 8.82353
+
+[sub_resource type="Resource" id="Resource_vj5v8"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 0.0
+type = 8
+cached_absolute_beat = 9.01961
+
+[sub_resource type="Resource" id="Resource_bqbbc"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 2.0
+type = 8
+cached_absolute_beat = 9.21569
+
+[sub_resource type="Resource" id="Resource_k2hm5"]
+script = ExtResource("1_r4db5")
+bar = 24
+beat = 0.0
+type = 8
+cached_absolute_beat = 9.41176
+
+[sub_resource type="Resource" id="Resource_ten2t"]
+script = ExtResource("1_r4db5")
+bar = 24
+beat = 2.0
+type = 8
+cached_absolute_beat = 9.60784
+
+[sub_resource type="Resource" id="Resource_khlgr"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 0.0
+type = 8
+cached_absolute_beat = 9.80392
+
+[sub_resource type="Resource" id="Resource_qns17"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 2.0
+type = 8
+cached_absolute_beat = 10.0
+
+[sub_resource type="Resource" id="Resource_6xyfx"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 0.0
+type = 8
+cached_absolute_beat = 10.1961
+
+[sub_resource type="Resource" id="Resource_r1ub6"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 2.0
+type = 8
+cached_absolute_beat = 10.3922
+
+[sub_resource type="Resource" id="Resource_pu5rq"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 0.0
+type = 8
+cached_absolute_beat = 10.5882
+
+[sub_resource type="Resource" id="Resource_r7s6n"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 2.0
+type = 8
+cached_absolute_beat = 10.7843
+
+[sub_resource type="Resource" id="Resource_4ahio"]
+script = ExtResource("1_r4db5")
+bar = 28
+beat = 0.0
+type = 8
+cached_absolute_beat = 10.9804
+
+[sub_resource type="Resource" id="Resource_a7qyp"]
+script = ExtResource("1_r4db5")
+bar = 28
+beat = 2.0
+type = 8
+cached_absolute_beat = 11.1765
+
+[sub_resource type="Resource" id="Resource_yqtjp"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 0.0
+type = 8
+cached_absolute_beat = 11.3725
+
+[sub_resource type="Resource" id="Resource_dr4b2"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 2.0
+type = 8
+cached_absolute_beat = 11.5686
+
+[sub_resource type="Resource" id="Resource_7fmub"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 0.0
+type = 8
+cached_absolute_beat = 11.7647
+
+[sub_resource type="Resource" id="Resource_q4ia2"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 2.0
+type = 8
+cached_absolute_beat = 11.9608
+
+[sub_resource type="Resource" id="Resource_dda06"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 0.0
+type = 8
+cached_absolute_beat = 12.1569
+
+[sub_resource type="Resource" id="Resource_jxaj8"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 2.0
+type = 8
+cached_absolute_beat = 12.3529
+
+[sub_resource type="Resource" id="Resource_emy0l"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 0.0
+type = 8
+cached_absolute_beat = 12.549
+
+[sub_resource type="Resource" id="Resource_scru8"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 2.0
+type = 8
+cached_absolute_beat = 12.7451
+
+[sub_resource type="Resource" id="Resource_xoa6h"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 0.0
+type = 8
+cached_absolute_beat = 12.9412
+
+[sub_resource type="Resource" id="Resource_dguun"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 2.0
+type = 8
+cached_absolute_beat = 13.1373
+
+[sub_resource type="Resource" id="Resource_jvx11"]
+script = ExtResource("1_r4db5")
+bar = 34
+beat = 0.0
+type = 8
+cached_absolute_beat = 13.3333
+
+[sub_resource type="Resource" id="Resource_b0epp"]
+script = ExtResource("1_r4db5")
+bar = 34
+beat = 2.0
+type = 8
+cached_absolute_beat = 13.5294
+
+[sub_resource type="Resource" id="Resource_2qgos"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 8
+cached_absolute_beat = 13.7255
+
+[sub_resource type="Resource" id="Resource_y7j85"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 2.0
+type = 8
+cached_absolute_beat = 13.9216
+
+[sub_resource type="Resource" id="Resource_2rvcs"]
+script = ExtResource("1_r4db5")
+bar = 36
+beat = 0.0
+type = 8
+cached_absolute_beat = 14.1176
+
+[sub_resource type="Resource" id="Resource_12126"]
+script = ExtResource("1_r4db5")
+bar = 36
+beat = 2.0
+type = 8
+cached_absolute_beat = 14.3137
+
+[sub_resource type="Resource" id="Resource_tsjvf"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 0.0
+type = 8
+cached_absolute_beat = 14.5098
+
+[sub_resource type="Resource" id="Resource_byt66"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 2.0
+type = 8
+cached_absolute_beat = 14.7059
+
+[sub_resource type="Resource" id="Resource_q3ql6"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 0.0
+type = 8
+cached_absolute_beat = 14.902
+
+[sub_resource type="Resource" id="Resource_o7yg3"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 2.0
+type = 8
+cached_absolute_beat = 15.098
+
+[sub_resource type="Resource" id="Resource_1yn1r"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 0.0
+type = 8
+cached_absolute_beat = 15.2941
+
+[sub_resource type="Resource" id="Resource_12jgb"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 2.0
+type = 8
+cached_absolute_beat = 15.4902
+
+[sub_resource type="Resource" id="Resource_8ycm6"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 0.0
+type = 8
+cached_absolute_beat = 15.6863
+
+[sub_resource type="Resource" id="Resource_koemx"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 2.0
+type = 8
+cached_absolute_beat = 15.8824
+
+[sub_resource type="Resource" id="Resource_f5qae"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 0.0
+type = 8
+cached_absolute_beat = 16.0784
+
+[sub_resource type="Resource" id="Resource_qhacr"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 2.0
+type = 8
+cached_absolute_beat = 16.2745
+
+[sub_resource type="Resource" id="Resource_wj3bs"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 0.0
+type = 8
+cached_absolute_beat = 16.4706
+
+[sub_resource type="Resource" id="Resource_rb0pm"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 2.0
+type = 8
+cached_absolute_beat = 16.6667
+
+[sub_resource type="Resource" id="Resource_ua433"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 0.0
+type = 8
+cached_absolute_beat = 16.8627
+
+[sub_resource type="Resource" id="Resource_l5xi0"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 2.0
+type = 8
+cached_absolute_beat = 17.0588
+
+[sub_resource type="Resource" id="Resource_kl3qf"]
+script = ExtResource("1_r4db5")
+bar = 44
+beat = 0.0
+type = 8
+cached_absolute_beat = 17.2549
+
+[sub_resource type="Resource" id="Resource_51dtm"]
+script = ExtResource("1_r4db5")
+bar = 44
+beat = 2.0
+type = 8
+cached_absolute_beat = 17.451
+
+[sub_resource type="Resource" id="Resource_6wccv"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 0.0
+type = 8
+cached_absolute_beat = 17.6471
+
+[sub_resource type="Resource" id="Resource_dd7cw"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 2.0
+type = 8
+cached_absolute_beat = 17.8431
+
+[sub_resource type="Resource" id="Resource_odpmn"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 0.0
+type = 8
+cached_absolute_beat = 18.0392
+
+[sub_resource type="Resource" id="Resource_nm4fc"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 2.0
+type = 8
+cached_absolute_beat = 18.2353
+
+[sub_resource type="Resource" id="Resource_653oq"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 0.0
+type = 8
+cached_absolute_beat = 18.4314
+
+[sub_resource type="Resource" id="Resource_8wfur"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 2.0
+type = 8
+cached_absolute_beat = 18.6275
+
+[sub_resource type="Resource" id="Resource_0ormi"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 8
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_x141y"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 2.0
+type = 8
+cached_absolute_beat = 19.0196
+
+[sub_resource type="Resource" id="Resource_8gm6s"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 0.0
+type = 8
+cached_absolute_beat = 19.2157
+
+[sub_resource type="Resource" id="Resource_oc4pt"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 2.0
+type = 8
+cached_absolute_beat = 19.4118
+
+[sub_resource type="Resource" id="Resource_ub2wm"]
+script = ExtResource("1_r4db5")
+bar = 50
+beat = 0.0
+type = 8
+cached_absolute_beat = 19.6078
+
+[sub_resource type="Resource" id="Resource_f6cdg"]
+script = ExtResource("1_r4db5")
+bar = 50
+beat = 2.0
+type = 8
+cached_absolute_beat = 19.8039
+
+[sub_resource type="Resource" id="Resource_qb2oy"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 0.0
+type = 8
+cached_absolute_beat = 20.0
+
+[sub_resource type="Resource" id="Resource_8rso4"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 2.0
+type = 8
+cached_absolute_beat = 20.1961
+
+[sub_resource type="Resource" id="Resource_1c6yb"]
+script = ExtResource("1_r4db5")
+bar = 52
+beat = 0.0
+type = 8
+cached_absolute_beat = 20.3922
+
+[sub_resource type="Resource" id="Resource_indg2"]
+script = ExtResource("1_r4db5")
+bar = 52
+beat = 2.0
+type = 8
+cached_absolute_beat = 20.5882
+
+[sub_resource type="Resource" id="Resource_2ofks"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 0.0
+type = 8
+cached_absolute_beat = 20.7843
+
+[sub_resource type="Resource" id="Resource_aofaw"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 2.0
+type = 8
+cached_absolute_beat = 20.9804
+
+[sub_resource type="Resource" id="Resource_tb51f"]
+script = ExtResource("1_r4db5")
+bar = 54
+beat = 0.0
+type = 8
+cached_absolute_beat = 21.1765
+
+[sub_resource type="Resource" id="Resource_86wb3"]
+script = ExtResource("1_r4db5")
+bar = 54
+beat = 2.0
+type = 8
+cached_absolute_beat = 21.3725
+
+[sub_resource type="Resource" id="Resource_32yju"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 0.0
+type = 8
+cached_absolute_beat = 21.5686
+
+[sub_resource type="Resource" id="Resource_yvgfx"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 2.0
+type = 8
+cached_absolute_beat = 21.7647
+
+[sub_resource type="Resource" id="Resource_tymld"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 0.0
+type = 8
+cached_absolute_beat = 21.9608
+
+[sub_resource type="Resource" id="Resource_c6w7b"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 2.0
+type = 8
+cached_absolute_beat = 22.1569
+
+[sub_resource type="Resource" id="Resource_svt4h"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 0.0
+type = 8
+cached_absolute_beat = 22.3529
+
+[sub_resource type="Resource" id="Resource_svf6p"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 2.0
+type = 8
+cached_absolute_beat = 22.549
+
+[sub_resource type="Resource" id="Resource_4ugyi"]
+script = ExtResource("1_r4db5")
+bar = 58
+beat = 0.0
+type = 8
+cached_absolute_beat = 22.7451
+
+[sub_resource type="Resource" id="Resource_xjmex"]
+script = ExtResource("1_r4db5")
+bar = 58
+beat = 2.0
+type = 8
+cached_absolute_beat = 22.9412
+
+[sub_resource type="Resource" id="Resource_d235u"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 0.0
+type = 8
+cached_absolute_beat = 23.1373
+
+[sub_resource type="Resource" id="Resource_1p4tn"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 2.0
+type = 8
+cached_absolute_beat = 23.3333
+
+[sub_resource type="Resource" id="Resource_cr000"]
+script = ExtResource("1_r4db5")
+bar = 60
+beat = 0.0
+type = 8
+cached_absolute_beat = 23.5294
+
+[sub_resource type="Resource" id="Resource_167vl"]
+script = ExtResource("1_r4db5")
+bar = 60
+beat = 2.0
+type = 8
+cached_absolute_beat = 23.7255
+
+[sub_resource type="Resource" id="Resource_7hiad"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 0.0
+type = 8
+cached_absolute_beat = 23.9216
+
+[sub_resource type="Resource" id="Resource_jhjvb"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 2.0
+type = 8
+cached_absolute_beat = 24.1176
+
+[sub_resource type="Resource" id="Resource_la3v3"]
+script = ExtResource("1_r4db5")
+bar = 62
+beat = 0.0
+type = 8
+cached_absolute_beat = 24.3137
+
+[sub_resource type="Resource" id="Resource_tcp0u"]
+script = ExtResource("1_r4db5")
+bar = 62
+beat = 2.0
+type = 8
+cached_absolute_beat = 24.5098
+
+[sub_resource type="Resource" id="Resource_amgt3"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 0.0
+type = 8
+cached_absolute_beat = 24.7059
+
+[sub_resource type="Resource" id="Resource_htmy2"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 2.0
+type = 8
+cached_absolute_beat = 24.902
+
+[sub_resource type="Resource" id="Resource_1in2f"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 0.0
+type = 8
+cached_absolute_beat = 25.098
+
+[sub_resource type="Resource" id="Resource_ykiq5"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 2.0
+type = 8
+cached_absolute_beat = 25.2941
+
+[sub_resource type="Resource" id="Resource_wrn3e"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 0.0
+type = 8
+cached_absolute_beat = 25.4902
+
+[sub_resource type="Resource" id="Resource_olxu5"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 2.0
+type = 8
+cached_absolute_beat = 25.6863
+
+[sub_resource type="Resource" id="Resource_uxtnf"]
+script = ExtResource("1_r4db5")
+bar = 66
+beat = 0.0
+type = 8
+cached_absolute_beat = 25.8824
+
+[sub_resource type="Resource" id="Resource_phsoy"]
+script = ExtResource("1_r4db5")
+bar = 66
+beat = 2.0
+type = 8
+cached_absolute_beat = 26.0784
+
+[sub_resource type="Resource" id="Resource_lml0b"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 0.0
+type = 8
+cached_absolute_beat = 26.2745
+
+[sub_resource type="Resource" id="Resource_nny3a"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 2.0
+type = 8
+cached_absolute_beat = 26.4706
+
+[sub_resource type="Resource" id="Resource_8ddbd"]
+script = ExtResource("1_r4db5")
+bar = 68
+beat = 0.0
+type = 8
+cached_absolute_beat = 26.6667
+
+[sub_resource type="Resource" id="Resource_5vl1l"]
+script = ExtResource("1_r4db5")
+bar = 68
+beat = 2.0
+type = 8
+cached_absolute_beat = 26.8627
+
+[sub_resource type="Resource" id="Resource_kb083"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 0.0
+type = 8
+cached_absolute_beat = 27.0588
+
+[sub_resource type="Resource" id="Resource_pksxg"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 2.0
+type = 8
+cached_absolute_beat = 27.2549
+
+[sub_resource type="Resource" id="Resource_gwiu0"]
+script = ExtResource("1_r4db5")
+bar = 70
+beat = 0.0
+type = 8
+cached_absolute_beat = 27.451
+
+[sub_resource type="Resource" id="Resource_88pwa"]
+script = ExtResource("1_r4db5")
+bar = 70
+beat = 2.0
+type = 8
+cached_absolute_beat = 27.6471
+
+[sub_resource type="Resource" id="Resource_q1okr"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 0.0
+type = 8
+cached_absolute_beat = 27.8431
+
+[sub_resource type="Resource" id="Resource_pl74h"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 2.0
+type = 8
+cached_absolute_beat = 28.0392
+
+[sub_resource type="Resource" id="Resource_yejy4"]
+script = ExtResource("1_r4db5")
+bar = 72
+beat = 0.0
+type = 8
+cached_absolute_beat = 28.2353
+
+[sub_resource type="Resource" id="Resource_qy0nr"]
+script = ExtResource("1_r4db5")
+bar = 72
+beat = 2.0
+type = 8
+cached_absolute_beat = 28.4314
+
+[sub_resource type="Resource" id="Resource_207xj"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 0.0
+type = 8
+cached_absolute_beat = 28.6275
+
+[sub_resource type="Resource" id="Resource_6opwf"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 2.0
+type = 8
+cached_absolute_beat = 28.8235
+
+[sub_resource type="Resource" id="Resource_0iw7f"]
+script = ExtResource("1_r4db5")
+bar = 74
+beat = 0.0
+type = 8
+cached_absolute_beat = 29.0196
+
+[sub_resource type="Resource" id="Resource_ffrjy"]
+script = ExtResource("1_r4db5")
+bar = 74
+beat = 2.0
+type = 8
+cached_absolute_beat = 29.2157
+
+[sub_resource type="Resource" id="Resource_qi0kg"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 0.0
+type = 8
+cached_absolute_beat = 29.4118
+
+[sub_resource type="Resource" id="Resource_mhlx1"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 2.0
+type = 8
+cached_absolute_beat = 29.6078
+
+[sub_resource type="Resource" id="Resource_k7ika"]
+script = ExtResource("1_r4db5")
+bar = 76
+beat = 0.0
+type = 8
+cached_absolute_beat = 29.8039
+
+[sub_resource type="Resource" id="Resource_ioxuw"]
+script = ExtResource("1_r4db5")
+bar = 76
+beat = 2.0
+type = 8
+cached_absolute_beat = 30.0
+
+[sub_resource type="Resource" id="Resource_c6i56"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 0.0
+type = 8
+cached_absolute_beat = 30.1961
+
+[sub_resource type="Resource" id="Resource_4frx5"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 2.0
+type = 8
+cached_absolute_beat = 30.3922
+
+[sub_resource type="Resource" id="Resource_4a6ft"]
+script = ExtResource("1_r4db5")
+bar = 78
+beat = 0.0
+type = 8
+cached_absolute_beat = 30.5882
+
+[sub_resource type="Resource" id="Resource_xhcx4"]
+script = ExtResource("1_r4db5")
+bar = 78
+beat = 2.0
+type = 8
+cached_absolute_beat = 30.7843
+
+[sub_resource type="Resource" id="Resource_o40oi"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 0.0
+type = 8
+cached_absolute_beat = 30.9804
+
+[sub_resource type="Resource" id="Resource_0773f"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 2.0
+type = 8
+cached_absolute_beat = 31.1765
+
+[sub_resource type="Resource" id="Resource_yf2rq"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 0.0
+type = 8
+cached_absolute_beat = 31.3725
+
+[sub_resource type="Resource" id="Resource_ye6fu"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 2.0
+type = 8
+cached_absolute_beat = 31.5686
+
+[sub_resource type="Resource" id="Resource_6joml"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 0.0
+type = 8
+cached_absolute_beat = 31.7647
+
+[sub_resource type="Resource" id="Resource_d63cv"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 2.0
+type = 8
+cached_absolute_beat = 31.9608
+
+[sub_resource type="Resource" id="Resource_av6yb"]
+script = ExtResource("1_r4db5")
+bar = 82
+beat = 0.0
+type = 8
+cached_absolute_beat = 32.1569
+
+[sub_resource type="Resource" id="Resource_et8ku"]
+script = ExtResource("1_r4db5")
+bar = 82
+beat = 2.0
+type = 8
+cached_absolute_beat = 32.3529
+
+[sub_resource type="Resource" id="Resource_wnn8e"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 0.0
+type = 8
+cached_absolute_beat = 32.549
+
+[sub_resource type="Resource" id="Resource_yghhq"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 2.0
+type = 8
+cached_absolute_beat = 32.7451
+
+[sub_resource type="Resource" id="Resource_l1kkc"]
+script = ExtResource("1_r4db5")
+bar = 84
+beat = 0.0
+type = 8
+cached_absolute_beat = 32.9412
+
+[sub_resource type="Resource" id="Resource_7fvye"]
+script = ExtResource("1_r4db5")
+bar = 84
+beat = 2.0
+type = 8
+cached_absolute_beat = 33.1373
+
+[sub_resource type="Resource" id="Resource_fnqu0"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 0.0
+type = 8
+cached_absolute_beat = 33.3333
+
+[sub_resource type="Resource" id="Resource_8huw2"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 2.0
+type = 8
+cached_absolute_beat = 33.5294
+
+[sub_resource type="Resource" id="Resource_aredd"]
+script = ExtResource("1_r4db5")
+bar = 86
+beat = 0.0
+type = 8
+cached_absolute_beat = 33.7255
+
+[sub_resource type="Resource" id="Resource_pw6ef"]
+script = ExtResource("1_r4db5")
+bar = 86
+beat = 2.0
+type = 8
+cached_absolute_beat = 33.9216
+
+[sub_resource type="Resource" id="Resource_67h30"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 0.0
+type = 8
+cached_absolute_beat = 34.1176
+
+[sub_resource type="Resource" id="Resource_uwgpo"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 2.0
+type = 8
+cached_absolute_beat = 34.3137
+
+[sub_resource type="Resource" id="Resource_pwsqt"]
+script = ExtResource("1_r4db5")
+bar = 88
+beat = 0.0
+type = 8
+cached_absolute_beat = 34.5098
+
+[sub_resource type="Resource" id="Resource_stvjw"]
+script = ExtResource("1_r4db5")
+bar = 88
+beat = 2.0
+type = 8
+cached_absolute_beat = 34.7059
+
+[sub_resource type="Resource" id="Resource_6qa6b"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 0.0
+type = 8
+cached_absolute_beat = 34.902
+
+[sub_resource type="Resource" id="Resource_fwlmr"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 2.0
+type = 8
+cached_absolute_beat = 35.098
+
+[sub_resource type="Resource" id="Resource_kl5dn"]
+script = ExtResource("1_r4db5")
+bar = 90
+beat = 0.0
+type = 8
+cached_absolute_beat = 35.2941
+
+[sub_resource type="Resource" id="Resource_cqsac"]
+script = ExtResource("1_r4db5")
+bar = 90
+beat = 2.0
+type = 8
+cached_absolute_beat = 35.4902
+
+[sub_resource type="Resource" id="Resource_6lb8c"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 0.0
+type = 8
+cached_absolute_beat = 35.6863
+
+[sub_resource type="Resource" id="Resource_1g7u0"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 2.0
+type = 8
+cached_absolute_beat = 35.8824
+
+[sub_resource type="Resource" id="Resource_3huti"]
+script = ExtResource("1_r4db5")
+bar = 92
+beat = 0.0
+type = 8
+cached_absolute_beat = 36.0784
+
+[sub_resource type="Resource" id="Resource_38ckj"]
+script = ExtResource("1_r4db5")
+bar = 92
+beat = 2.0
+type = 8
+cached_absolute_beat = 36.2745
+
+[sub_resource type="Resource" id="Resource_7k45g"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 0.0
+type = 8
+cached_absolute_beat = 36.4706
+
+[sub_resource type="Resource" id="Resource_ximqo"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 2.0
+type = 8
+cached_absolute_beat = 36.6667
+
+[sub_resource type="Resource" id="Resource_lfxlw"]
+script = ExtResource("1_r4db5")
+bar = 94
+beat = 0.0
+type = 8
+cached_absolute_beat = 36.8627
+
+[sub_resource type="Resource" id="Resource_3jm2e"]
+script = ExtResource("1_r4db5")
+bar = 94
+beat = 2.0
+type = 8
+cached_absolute_beat = 37.0588
+
+[sub_resource type="Resource" id="Resource_gyfvd"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 0.0
+type = 8
+cached_absolute_beat = 37.2549
+
+[sub_resource type="Resource" id="Resource_4q2qt"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 2.0
+type = 8
+cached_absolute_beat = 37.451
+
+[sub_resource type="Resource" id="Resource_gqllc"]
+script = ExtResource("1_r4db5")
+bar = 96
+beat = 0.0
+type = 8
+cached_absolute_beat = 37.6471
+
+[sub_resource type="Resource" id="Resource_msrm0"]
+script = ExtResource("1_r4db5")
+bar = 0
+beat = 0.0
+type = 16
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_76s48"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 16
+cached_absolute_beat = 0.392157
+
+[sub_resource type="Resource" id="Resource_rse1v"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 2.0
+type = 16
+cached_absolute_beat = 0.588235
+
+[sub_resource type="Resource" id="Resource_vtbkk"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 0.0
+type = 16
+cached_absolute_beat = 0.784314
+
+[sub_resource type="Resource" id="Resource_5y8mh"]
+script = ExtResource("1_r4db5")
+bar = 2
+beat = 2.0
+type = 16
+cached_absolute_beat = 0.980392
+
+[sub_resource type="Resource" id="Resource_ifff3"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 16
+cached_absolute_beat = 1.17647
+
+[sub_resource type="Resource" id="Resource_ncnpa"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 2.0
+type = 16
+cached_absolute_beat = 1.37255
+
+[sub_resource type="Resource" id="Resource_avphu"]
+script = ExtResource("1_r4db5")
+bar = 4
+beat = 0.0
+type = 16
+cached_absolute_beat = 1.56863
+
+[sub_resource type="Resource" id="Resource_kd365"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 16
+cached_absolute_beat = 1.96078
+
+[sub_resource type="Resource" id="Resource_sccoi"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 2.0
+type = 16
+cached_absolute_beat = 2.15686
+
+[sub_resource type="Resource" id="Resource_b4lxb"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 0.0
+type = 16
+cached_absolute_beat = 2.35294
+
+[sub_resource type="Resource" id="Resource_8l6ng"]
+script = ExtResource("1_r4db5")
+bar = 6
+beat = 2.0
+type = 16
+cached_absolute_beat = 2.54902
+
+[sub_resource type="Resource" id="Resource_77cqu"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 16
+cached_absolute_beat = 2.7451
+
+[sub_resource type="Resource" id="Resource_h38et"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 2.0
+type = 16
+cached_absolute_beat = 2.94118
+
+[sub_resource type="Resource" id="Resource_xklw7"]
+script = ExtResource("1_r4db5")
+bar = 8
+beat = 0.0
+type = 16
+cached_absolute_beat = 3.13725
+
+[sub_resource type="Resource" id="Resource_a4x33"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 16
+cached_absolute_beat = 3.52941
+
+[sub_resource type="Resource" id="Resource_f572f"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 2.0
+type = 16
+cached_absolute_beat = 3.72549
+
+[sub_resource type="Resource" id="Resource_mtus1"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 0.0
+type = 16
+cached_absolute_beat = 3.92157
+
+[sub_resource type="Resource" id="Resource_cwcy6"]
+script = ExtResource("1_r4db5")
+bar = 10
+beat = 2.0
+type = 16
+cached_absolute_beat = 4.11765
+
+[sub_resource type="Resource" id="Resource_8e66c"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 16
+cached_absolute_beat = 4.31373
+
+[sub_resource type="Resource" id="Resource_08sc5"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 2.0
+type = 16
+cached_absolute_beat = 4.5098
+
+[sub_resource type="Resource" id="Resource_cuu8v"]
+script = ExtResource("1_r4db5")
+bar = 12
+beat = 0.0
+type = 16
+cached_absolute_beat = 4.70588
+
+[sub_resource type="Resource" id="Resource_eih3w"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 16
+cached_absolute_beat = 5.09804
+
+[sub_resource type="Resource" id="Resource_26ila"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 2.0
+type = 16
+cached_absolute_beat = 5.29412
+
+[sub_resource type="Resource" id="Resource_uheio"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 0.0
+type = 16
+cached_absolute_beat = 5.4902
+
+[sub_resource type="Resource" id="Resource_fiqnm"]
+script = ExtResource("1_r4db5")
+bar = 14
+beat = 2.0
+type = 16
+cached_absolute_beat = 5.68627
+
+[sub_resource type="Resource" id="Resource_26l5m"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 16
+cached_absolute_beat = 5.88235
+
+[sub_resource type="Resource" id="Resource_7mbr1"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 2.0
+type = 16
+cached_absolute_beat = 6.07843
+
+[sub_resource type="Resource" id="Resource_c0im6"]
+script = ExtResource("1_r4db5")
+bar = 16
+beat = 0.0
+type = 16
+cached_absolute_beat = 6.27451
+
+[sub_resource type="Resource" id="Resource_dmucj"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 0.0
+type = 16
+cached_absolute_beat = 6.66667
+
+[sub_resource type="Resource" id="Resource_e2jij"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 2.0
+type = 16
+cached_absolute_beat = 6.86275
+
+[sub_resource type="Resource" id="Resource_m6fof"]
+script = ExtResource("1_r4db5")
+bar = 18
+beat = 0.0
+type = 16
+cached_absolute_beat = 7.05882
+
+[sub_resource type="Resource" id="Resource_0ax4c"]
+script = ExtResource("1_r4db5")
+bar = 18
+beat = 2.0
+type = 16
+cached_absolute_beat = 7.2549
+
+[sub_resource type="Resource" id="Resource_uu3k6"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 16
+cached_absolute_beat = 7.45098
+
+[sub_resource type="Resource" id="Resource_tpfao"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 2.0
+type = 16
+cached_absolute_beat = 7.64706
+
+[sub_resource type="Resource" id="Resource_djls0"]
+script = ExtResource("1_r4db5")
+bar = 20
+beat = 0.0
+type = 16
+cached_absolute_beat = 7.84314
+
+[sub_resource type="Resource" id="Resource_nd7io"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 0.0
+type = 16
+cached_absolute_beat = 8.23529
+
+[sub_resource type="Resource" id="Resource_6qpb6"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 2.0
+type = 16
+cached_absolute_beat = 8.43137
+
+[sub_resource type="Resource" id="Resource_qivym"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 0.0
+type = 16
+cached_absolute_beat = 8.62745
+
+[sub_resource type="Resource" id="Resource_on6s1"]
+script = ExtResource("1_r4db5")
+bar = 22
+beat = 2.0
+type = 16
+cached_absolute_beat = 8.82353
+
+[sub_resource type="Resource" id="Resource_2x52o"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 0.0
+type = 16
+cached_absolute_beat = 9.01961
+
+[sub_resource type="Resource" id="Resource_h6ege"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 2.0
+type = 16
+cached_absolute_beat = 9.21569
+
+[sub_resource type="Resource" id="Resource_oxqex"]
+script = ExtResource("1_r4db5")
+bar = 24
+beat = 0.0
+type = 16
+cached_absolute_beat = 9.41176
+
+[sub_resource type="Resource" id="Resource_hrd71"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 0.0
+type = 16
+cached_absolute_beat = 9.80392
+
+[sub_resource type="Resource" id="Resource_rthje"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 2.0
+type = 16
+cached_absolute_beat = 10.0
+
+[sub_resource type="Resource" id="Resource_34elr"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 0.0
+type = 16
+cached_absolute_beat = 10.1961
+
+[sub_resource type="Resource" id="Resource_bogof"]
+script = ExtResource("1_r4db5")
+bar = 26
+beat = 2.0
+type = 16
+cached_absolute_beat = 10.3922
+
+[sub_resource type="Resource" id="Resource_gxvt3"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 0.0
+type = 16
+cached_absolute_beat = 10.5882
+
+[sub_resource type="Resource" id="Resource_wqy6j"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 2.0
+type = 16
+cached_absolute_beat = 10.7843
+
+[sub_resource type="Resource" id="Resource_otgos"]
+script = ExtResource("1_r4db5")
+bar = 28
+beat = 0.0
+type = 16
+cached_absolute_beat = 10.9804
+
+[sub_resource type="Resource" id="Resource_x08xo"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 0.0
+type = 16
+cached_absolute_beat = 11.3725
+
+[sub_resource type="Resource" id="Resource_8cu07"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 2.0
+type = 16
+cached_absolute_beat = 11.5686
+
+[sub_resource type="Resource" id="Resource_06lf5"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 0.0
+type = 16
+cached_absolute_beat = 11.7647
+
+[sub_resource type="Resource" id="Resource_oq3y8"]
+script = ExtResource("1_r4db5")
+bar = 30
+beat = 2.0
+type = 16
+cached_absolute_beat = 11.9608
+
+[sub_resource type="Resource" id="Resource_gbyb2"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 0.0
+type = 16
+cached_absolute_beat = 12.1569
+
+[sub_resource type="Resource" id="Resource_4rub8"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 2.0
+type = 16
+cached_absolute_beat = 12.3529
+
+[sub_resource type="Resource" id="Resource_xb425"]
+script = ExtResource("1_r4db5")
+bar = 32
+beat = 0.0
+type = 16
+cached_absolute_beat = 12.549
+
+[sub_resource type="Resource" id="Resource_d7ncw"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 0.0
+type = 16
+cached_absolute_beat = 12.9412
+
+[sub_resource type="Resource" id="Resource_47kpn"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 2.0
+type = 16
+cached_absolute_beat = 13.1373
+
+[sub_resource type="Resource" id="Resource_bbbtv"]
+script = ExtResource("1_r4db5")
+bar = 34
+beat = 0.0
+type = 16
+cached_absolute_beat = 13.3333
+
+[sub_resource type="Resource" id="Resource_ofdus"]
+script = ExtResource("1_r4db5")
+bar = 34
+beat = 2.0
+type = 16
+cached_absolute_beat = 13.5294
+
+[sub_resource type="Resource" id="Resource_miijr"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 16
+cached_absolute_beat = 13.7255
+
+[sub_resource type="Resource" id="Resource_d8pml"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 2.0
+type = 16
+cached_absolute_beat = 13.9216
+
+[sub_resource type="Resource" id="Resource_kqfjs"]
+script = ExtResource("1_r4db5")
+bar = 36
+beat = 0.0
+type = 16
+cached_absolute_beat = 14.1176
+
+[sub_resource type="Resource" id="Resource_4kfl8"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 0.0
+type = 16
+cached_absolute_beat = 14.5098
+
+[sub_resource type="Resource" id="Resource_q5svb"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 2.0
+type = 16
+cached_absolute_beat = 14.7059
+
+[sub_resource type="Resource" id="Resource_p75jr"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 0.0
+type = 16
+cached_absolute_beat = 14.902
+
+[sub_resource type="Resource" id="Resource_aex6p"]
+script = ExtResource("1_r4db5")
+bar = 38
+beat = 2.0
+type = 16
+cached_absolute_beat = 15.098
+
+[sub_resource type="Resource" id="Resource_0tvbs"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 0.0
+type = 16
+cached_absolute_beat = 15.2941
+
+[sub_resource type="Resource" id="Resource_ivarf"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 2.0
+type = 16
+cached_absolute_beat = 15.4902
+
+[sub_resource type="Resource" id="Resource_gw00a"]
+script = ExtResource("1_r4db5")
+bar = 40
+beat = 0.0
+type = 16
+cached_absolute_beat = 15.6863
+
+[sub_resource type="Resource" id="Resource_b5o1b"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 0.0
+type = 16
+cached_absolute_beat = 16.0784
+
+[sub_resource type="Resource" id="Resource_1bgn1"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 2.0
+type = 16
+cached_absolute_beat = 16.2745
+
+[sub_resource type="Resource" id="Resource_rdhqg"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 0.0
+type = 16
+cached_absolute_beat = 16.4706
+
+[sub_resource type="Resource" id="Resource_p2h6s"]
+script = ExtResource("1_r4db5")
+bar = 42
+beat = 2.0
+type = 16
+cached_absolute_beat = 16.6667
+
+[sub_resource type="Resource" id="Resource_cbwsk"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 0.0
+type = 16
+cached_absolute_beat = 16.8627
+
+[sub_resource type="Resource" id="Resource_io1kk"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 2.0
+type = 16
+cached_absolute_beat = 17.0588
+
+[sub_resource type="Resource" id="Resource_by26u"]
+script = ExtResource("1_r4db5")
+bar = 44
+beat = 0.0
+type = 16
+cached_absolute_beat = 17.2549
+
+[sub_resource type="Resource" id="Resource_lo2vj"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 0.0
+type = 16
+cached_absolute_beat = 17.6471
+
+[sub_resource type="Resource" id="Resource_2j6i3"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 2.0
+type = 16
+cached_absolute_beat = 17.8431
+
+[sub_resource type="Resource" id="Resource_7hbnp"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 0.0
+type = 16
+cached_absolute_beat = 18.0392
+
+[sub_resource type="Resource" id="Resource_yopg2"]
+script = ExtResource("1_r4db5")
+bar = 46
+beat = 2.0
+type = 16
+cached_absolute_beat = 18.2353
+
+[sub_resource type="Resource" id="Resource_20x0y"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 0.0
+type = 16
+cached_absolute_beat = 18.4314
+
+[sub_resource type="Resource" id="Resource_3qcxj"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 2.0
+type = 16
+cached_absolute_beat = 18.6275
+
+[sub_resource type="Resource" id="Resource_3xhum"]
+script = ExtResource("1_r4db5")
+bar = 48
+beat = 0.0
+type = 16
+cached_absolute_beat = 18.8235
+
+[sub_resource type="Resource" id="Resource_ja6my"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 0.0
+type = 16
+cached_absolute_beat = 19.2157
+
+[sub_resource type="Resource" id="Resource_yg67n"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 2.0
+type = 16
+cached_absolute_beat = 19.4118
+
+[sub_resource type="Resource" id="Resource_itrlq"]
+script = ExtResource("1_r4db5")
+bar = 50
+beat = 0.0
+type = 16
+cached_absolute_beat = 19.6078
+
+[sub_resource type="Resource" id="Resource_2rrow"]
+script = ExtResource("1_r4db5")
+bar = 50
+beat = 2.0
+type = 16
+cached_absolute_beat = 19.8039
+
+[sub_resource type="Resource" id="Resource_mf1s6"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 0.0
+type = 16
+cached_absolute_beat = 20.0
+
+[sub_resource type="Resource" id="Resource_fkgaa"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 2.0
+type = 16
+cached_absolute_beat = 20.1961
+
+[sub_resource type="Resource" id="Resource_ushoq"]
+script = ExtResource("1_r4db5")
+bar = 52
+beat = 0.0
+type = 16
+cached_absolute_beat = 20.3922
+
+[sub_resource type="Resource" id="Resource_xnlj4"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 0.0
+type = 16
+cached_absolute_beat = 20.7843
+
+[sub_resource type="Resource" id="Resource_fykp1"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 2.0
+type = 16
+cached_absolute_beat = 20.9804
+
+[sub_resource type="Resource" id="Resource_8cf48"]
+script = ExtResource("1_r4db5")
+bar = 54
+beat = 0.0
+type = 16
+cached_absolute_beat = 21.1765
+
+[sub_resource type="Resource" id="Resource_epc73"]
+script = ExtResource("1_r4db5")
+bar = 54
+beat = 2.0
+type = 16
+cached_absolute_beat = 21.3725
+
+[sub_resource type="Resource" id="Resource_p7dfg"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 0.0
+type = 16
+cached_absolute_beat = 21.5686
+
+[sub_resource type="Resource" id="Resource_h8y31"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 2.0
+type = 16
+cached_absolute_beat = 21.7647
+
+[sub_resource type="Resource" id="Resource_l740x"]
+script = ExtResource("1_r4db5")
+bar = 56
+beat = 0.0
+type = 16
+cached_absolute_beat = 21.9608
+
+[sub_resource type="Resource" id="Resource_cjek3"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 0.0
+type = 16
+cached_absolute_beat = 22.3529
+
+[sub_resource type="Resource" id="Resource_ch6hi"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 2.0
+type = 16
+cached_absolute_beat = 22.549
+
+[sub_resource type="Resource" id="Resource_uqkq1"]
+script = ExtResource("1_r4db5")
+bar = 58
+beat = 0.0
+type = 16
+cached_absolute_beat = 22.7451
+
+[sub_resource type="Resource" id="Resource_s3qbg"]
+script = ExtResource("1_r4db5")
+bar = 58
+beat = 2.0
+type = 16
+cached_absolute_beat = 22.9412
+
+[sub_resource type="Resource" id="Resource_l2cil"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 0.0
+type = 16
+cached_absolute_beat = 23.1373
+
+[sub_resource type="Resource" id="Resource_kwjik"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 2.0
+type = 16
+cached_absolute_beat = 23.3333
+
+[sub_resource type="Resource" id="Resource_8p8ku"]
+script = ExtResource("1_r4db5")
+bar = 60
+beat = 0.0
+type = 16
+cached_absolute_beat = 23.5294
+
+[sub_resource type="Resource" id="Resource_r3qy7"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 0.0
+type = 16
+cached_absolute_beat = 23.9216
+
+[sub_resource type="Resource" id="Resource_qj4tj"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 2.0
+type = 16
+cached_absolute_beat = 24.1176
+
+[sub_resource type="Resource" id="Resource_m7bio"]
+script = ExtResource("1_r4db5")
+bar = 62
+beat = 0.0
+type = 16
+cached_absolute_beat = 24.3137
+
+[sub_resource type="Resource" id="Resource_tp2vv"]
+script = ExtResource("1_r4db5")
+bar = 62
+beat = 2.0
+type = 16
+cached_absolute_beat = 24.5098
+
+[sub_resource type="Resource" id="Resource_xe7hs"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 0.0
+type = 16
+cached_absolute_beat = 24.7059
+
+[sub_resource type="Resource" id="Resource_46gi1"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 2.0
+type = 16
+cached_absolute_beat = 24.902
+
+[sub_resource type="Resource" id="Resource_q48wi"]
+script = ExtResource("1_r4db5")
+bar = 64
+beat = 0.0
+type = 16
+cached_absolute_beat = 25.098
+
+[sub_resource type="Resource" id="Resource_7watv"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 0.0
+type = 16
+cached_absolute_beat = 25.4902
+
+[sub_resource type="Resource" id="Resource_chqew"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 2.0
+type = 16
+cached_absolute_beat = 25.6863
+
+[sub_resource type="Resource" id="Resource_nmy6t"]
+script = ExtResource("1_r4db5")
+bar = 66
+beat = 0.0
+type = 16
+cached_absolute_beat = 25.8824
+
+[sub_resource type="Resource" id="Resource_n161e"]
+script = ExtResource("1_r4db5")
+bar = 66
+beat = 2.0
+type = 16
+cached_absolute_beat = 26.0784
+
+[sub_resource type="Resource" id="Resource_eltsq"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 0.0
+type = 16
+cached_absolute_beat = 26.2745
+
+[sub_resource type="Resource" id="Resource_4jy71"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 2.0
+type = 16
+cached_absolute_beat = 26.4706
+
+[sub_resource type="Resource" id="Resource_kfp7p"]
+script = ExtResource("1_r4db5")
+bar = 68
+beat = 0.0
+type = 16
+cached_absolute_beat = 26.6667
+
+[sub_resource type="Resource" id="Resource_xjnxn"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 0.0
+type = 16
+cached_absolute_beat = 27.0588
+
+[sub_resource type="Resource" id="Resource_4evio"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 2.0
+type = 16
+cached_absolute_beat = 27.2549
+
+[sub_resource type="Resource" id="Resource_0ud8t"]
+script = ExtResource("1_r4db5")
+bar = 70
+beat = 0.0
+type = 16
+cached_absolute_beat = 27.451
+
+[sub_resource type="Resource" id="Resource_6744w"]
+script = ExtResource("1_r4db5")
+bar = 70
+beat = 2.0
+type = 16
+cached_absolute_beat = 27.6471
+
+[sub_resource type="Resource" id="Resource_p5tvb"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 0.0
+type = 16
+cached_absolute_beat = 27.8431
+
+[sub_resource type="Resource" id="Resource_whesd"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 2.0
+type = 16
+cached_absolute_beat = 28.0392
+
+[sub_resource type="Resource" id="Resource_efwh1"]
+script = ExtResource("1_r4db5")
+bar = 72
+beat = 0.0
+type = 16
+cached_absolute_beat = 28.2353
+
+[sub_resource type="Resource" id="Resource_illsf"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 0.0
+type = 16
+cached_absolute_beat = 28.6275
+
+[sub_resource type="Resource" id="Resource_g4wut"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 2.0
+type = 16
+cached_absolute_beat = 28.8235
+
+[sub_resource type="Resource" id="Resource_osm0c"]
+script = ExtResource("1_r4db5")
+bar = 74
+beat = 0.0
+type = 16
+cached_absolute_beat = 29.0196
+
+[sub_resource type="Resource" id="Resource_ckfwy"]
+script = ExtResource("1_r4db5")
+bar = 74
+beat = 2.0
+type = 16
+cached_absolute_beat = 29.2157
+
+[sub_resource type="Resource" id="Resource_xcf55"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 0.0
+type = 16
+cached_absolute_beat = 29.4118
+
+[sub_resource type="Resource" id="Resource_c8fpr"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 2.0
+type = 16
+cached_absolute_beat = 29.6078
+
+[sub_resource type="Resource" id="Resource_gfeuc"]
+script = ExtResource("1_r4db5")
+bar = 76
+beat = 0.0
+type = 16
+cached_absolute_beat = 29.8039
+
+[sub_resource type="Resource" id="Resource_b1ida"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 0.0
+type = 16
+cached_absolute_beat = 30.1961
+
+[sub_resource type="Resource" id="Resource_6eban"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 2.0
+type = 16
+cached_absolute_beat = 30.3922
+
+[sub_resource type="Resource" id="Resource_gsd2e"]
+script = ExtResource("1_r4db5")
+bar = 78
+beat = 0.0
+type = 16
+cached_absolute_beat = 30.5882
+
+[sub_resource type="Resource" id="Resource_j1711"]
+script = ExtResource("1_r4db5")
+bar = 78
+beat = 2.0
+type = 16
+cached_absolute_beat = 30.7843
+
+[sub_resource type="Resource" id="Resource_i7837"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 0.0
+type = 16
+cached_absolute_beat = 30.9804
+
+[sub_resource type="Resource" id="Resource_y3mkc"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 2.0
+type = 16
+cached_absolute_beat = 31.1765
+
+[sub_resource type="Resource" id="Resource_54nu2"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 0.0
+type = 16
+cached_absolute_beat = 31.3725
+
+[sub_resource type="Resource" id="Resource_w0fvd"]
+script = ExtResource("1_r4db5")
+bar = 80
+beat = 2.0
+type = 16
+cached_absolute_beat = 31.5686
+
+[sub_resource type="Resource" id="Resource_of10v"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 0.0
+type = 16
+cached_absolute_beat = 31.7647
+
+[sub_resource type="Resource" id="Resource_iyffk"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 2.0
+type = 16
+cached_absolute_beat = 31.9608
+
+[sub_resource type="Resource" id="Resource_82521"]
+script = ExtResource("1_r4db5")
+bar = 82
+beat = 0.0
+type = 16
+cached_absolute_beat = 32.1569
+
+[sub_resource type="Resource" id="Resource_ec1a4"]
+script = ExtResource("1_r4db5")
+bar = 82
+beat = 2.0
+type = 16
+cached_absolute_beat = 32.3529
+
+[sub_resource type="Resource" id="Resource_em2h3"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 0.0
+type = 16
+cached_absolute_beat = 32.549
+
+[sub_resource type="Resource" id="Resource_u67b2"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 2.0
+type = 16
+cached_absolute_beat = 32.7451
+
+[sub_resource type="Resource" id="Resource_un38p"]
+script = ExtResource("1_r4db5")
+bar = 84
+beat = 0.0
+type = 16
+cached_absolute_beat = 32.9412
+
+[sub_resource type="Resource" id="Resource_c1ltc"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 0.0
+type = 16
+cached_absolute_beat = 33.3333
+
+[sub_resource type="Resource" id="Resource_jpb2x"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 2.0
+type = 16
+cached_absolute_beat = 33.5294
+
+[sub_resource type="Resource" id="Resource_wjheh"]
+script = ExtResource("1_r4db5")
+bar = 86
+beat = 0.0
+type = 16
+cached_absolute_beat = 33.7255
+
+[sub_resource type="Resource" id="Resource_odj5e"]
+script = ExtResource("1_r4db5")
+bar = 86
+beat = 2.0
+type = 16
+cached_absolute_beat = 33.9216
+
+[sub_resource type="Resource" id="Resource_ux5no"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 0.0
+type = 16
+cached_absolute_beat = 34.1176
+
+[sub_resource type="Resource" id="Resource_ibyf0"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 2.0
+type = 16
+cached_absolute_beat = 34.3137
+
+[sub_resource type="Resource" id="Resource_xqwh6"]
+script = ExtResource("1_r4db5")
+bar = 88
+beat = 0.0
+type = 16
+cached_absolute_beat = 34.5098
+
+[sub_resource type="Resource" id="Resource_ngxnp"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 0.0
+type = 16
+cached_absolute_beat = 34.902
+
+[sub_resource type="Resource" id="Resource_lq4rh"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 2.0
+type = 16
+cached_absolute_beat = 35.098
+
+[sub_resource type="Resource" id="Resource_6uv5o"]
+script = ExtResource("1_r4db5")
+bar = 90
+beat = 0.0
+type = 16
+cached_absolute_beat = 35.2941
+
+[sub_resource type="Resource" id="Resource_yj6wm"]
+script = ExtResource("1_r4db5")
+bar = 90
+beat = 2.0
+type = 16
+cached_absolute_beat = 35.4902
+
+[sub_resource type="Resource" id="Resource_ilhxq"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 0.0
+type = 16
+cached_absolute_beat = 35.6863
+
+[sub_resource type="Resource" id="Resource_r4sd7"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 2.0
+type = 16
+cached_absolute_beat = 35.8824
+
+[sub_resource type="Resource" id="Resource_jxv61"]
+script = ExtResource("1_r4db5")
+bar = 92
+beat = 0.0
+type = 16
+cached_absolute_beat = 36.0784
+
+[sub_resource type="Resource" id="Resource_kvs8a"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 0.0
+type = 16
+cached_absolute_beat = 36.4706
+
+[sub_resource type="Resource" id="Resource_bypnf"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 2.0
+type = 16
+cached_absolute_beat = 36.6667
+
+[sub_resource type="Resource" id="Resource_xc61x"]
+script = ExtResource("1_r4db5")
+bar = 94
+beat = 0.0
+type = 16
+cached_absolute_beat = 36.8627
+
+[sub_resource type="Resource" id="Resource_6u2kk"]
+script = ExtResource("1_r4db5")
+bar = 94
+beat = 2.0
+type = 16
+cached_absolute_beat = 37.0588
+
+[sub_resource type="Resource" id="Resource_1opx2"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 0.0
+type = 16
+cached_absolute_beat = 37.2549
+
+[sub_resource type="Resource" id="Resource_jkwt3"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 2.0
+type = 16
+cached_absolute_beat = 37.451
+
+[sub_resource type="Resource" id="Resource_reeat"]
+script = ExtResource("1_r4db5")
+bar = 96
+beat = 0.0
+type = 16
+cached_absolute_beat = 37.6471
+
+[sub_resource type="Resource" id="Resource_uogk8"]
+script = ExtResource("1_r4db5")
+bar = 1
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_55hl8"]
+script = ExtResource("1_r4db5")
+bar = 3
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_hsyyo"]
+script = ExtResource("1_r4db5")
+bar = 5
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_ubdc1"]
+script = ExtResource("1_r4db5")
+bar = 7
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_kg0nb"]
+script = ExtResource("1_r4db5")
+bar = 9
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_npj2u"]
+script = ExtResource("1_r4db5")
+bar = 11
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_2mbmp"]
+script = ExtResource("1_r4db5")
+bar = 13
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_jq4xc"]
+script = ExtResource("1_r4db5")
+bar = 15
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_j6o75"]
+script = ExtResource("1_r4db5")
+bar = 17
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_lu7to"]
+script = ExtResource("1_r4db5")
+bar = 19
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_fbpsr"]
+script = ExtResource("1_r4db5")
+bar = 21
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_dum4a"]
+script = ExtResource("1_r4db5")
+bar = 23
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_wvp13"]
+script = ExtResource("1_r4db5")
+bar = 25
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_31yg2"]
+script = ExtResource("1_r4db5")
+bar = 27
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_py8lu"]
+script = ExtResource("1_r4db5")
+bar = 29
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_tmcps"]
+script = ExtResource("1_r4db5")
+bar = 31
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_ok8d3"]
+script = ExtResource("1_r4db5")
+bar = 33
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_060md"]
+script = ExtResource("1_r4db5")
+bar = 35
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_i0kmi"]
+script = ExtResource("1_r4db5")
+bar = 37
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_7u4dt"]
+script = ExtResource("1_r4db5")
+bar = 39
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_3ol4c"]
+script = ExtResource("1_r4db5")
+bar = 41
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_wlj80"]
+script = ExtResource("1_r4db5")
+bar = 43
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_xr7io"]
+script = ExtResource("1_r4db5")
+bar = 45
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_kxvqk"]
+script = ExtResource("1_r4db5")
+bar = 47
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_rctb5"]
+script = ExtResource("1_r4db5")
+bar = 49
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_ri4c8"]
+script = ExtResource("1_r4db5")
+bar = 51
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_osioa"]
+script = ExtResource("1_r4db5")
+bar = 53
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_dyrgg"]
+script = ExtResource("1_r4db5")
+bar = 55
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_xdkfn"]
+script = ExtResource("1_r4db5")
+bar = 57
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_jmm7l"]
+script = ExtResource("1_r4db5")
+bar = 59
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_phvj6"]
+script = ExtResource("1_r4db5")
+bar = 61
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_vbyle"]
+script = ExtResource("1_r4db5")
+bar = 63
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_phpkx"]
+script = ExtResource("1_r4db5")
+bar = 65
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_y6jcl"]
+script = ExtResource("1_r4db5")
+bar = 67
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_gyh8s"]
+script = ExtResource("1_r4db5")
+bar = 69
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_nhx36"]
+script = ExtResource("1_r4db5")
+bar = 71
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_kbu36"]
+script = ExtResource("1_r4db5")
+bar = 73
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_qum80"]
+script = ExtResource("1_r4db5")
+bar = 75
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_hmhaw"]
+script = ExtResource("1_r4db5")
+bar = 77
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_wgy6n"]
+script = ExtResource("1_r4db5")
+bar = 79
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_k1qur"]
+script = ExtResource("1_r4db5")
+bar = 81
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_ddjl8"]
+script = ExtResource("1_r4db5")
+bar = 83
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_h1ffy"]
+script = ExtResource("1_r4db5")
+bar = 85
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_us3w1"]
+script = ExtResource("1_r4db5")
+bar = 87
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_k0yvm"]
+script = ExtResource("1_r4db5")
+bar = 91
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_ojosa"]
+script = ExtResource("1_r4db5")
+bar = 89
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_vyuq4"]
+script = ExtResource("1_r4db5")
+bar = 93
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
+
+[sub_resource type="Resource" id="Resource_fx14v"]
+script = ExtResource("1_r4db5")
+bar = 95
+beat = 0.0
+type = 32
+cached_absolute_beat = 0.0
 
 [resource]
 script = ExtResource("2_ol6fn")
 name = "Wind Rhythm C"
 audio = ExtResource("1_ol6fn")
 bpm = 153
-notes = Array[ExtResource("1_r4db5")]([])
+notes = Array[ExtResource("1_r4db5")]([SubResource("Resource_358ca"), SubResource("Resource_4ouin"), SubResource("Resource_tcveq"), SubResource("Resource_bwh04"), SubResource("Resource_qygsj"), SubResource("Resource_wsg7f"), SubResource("Resource_5mrvl"), SubResource("Resource_flnom"), SubResource("Resource_tgtaa"), SubResource("Resource_452rf"), SubResource("Resource_ntcfo"), SubResource("Resource_hx2nu"), SubResource("Resource_vn6ji"), SubResource("Resource_nk4wf"), SubResource("Resource_e2utt"), SubResource("Resource_mmegv"), SubResource("Resource_d06vo"), SubResource("Resource_beheu"), SubResource("Resource_8otdp"), SubResource("Resource_xh4tr"), SubResource("Resource_plri0"), SubResource("Resource_nonpl"), SubResource("Resource_kju05"), SubResource("Resource_ytvop"), SubResource("Resource_iiydw"), SubResource("Resource_q1j0g"), SubResource("Resource_yis5i"), SubResource("Resource_poc30"), SubResource("Resource_na4sg"), SubResource("Resource_t81e6"), SubResource("Resource_ywivb"), SubResource("Resource_eexr7"), SubResource("Resource_j04ir"), SubResource("Resource_w5hrq"), SubResource("Resource_yp71h"), SubResource("Resource_pk28h"), SubResource("Resource_etk03"), SubResource("Resource_rajg0"), SubResource("Resource_s07k1"), SubResource("Resource_f2l3e"), SubResource("Resource_xfgsk"), SubResource("Resource_ujwsf"), SubResource("Resource_amymt"), SubResource("Resource_xq76h"), SubResource("Resource_25um7"), SubResource("Resource_611nw"), SubResource("Resource_sa846"), SubResource("Resource_xqlco"), SubResource("Resource_7nyk7"), SubResource("Resource_jum4l"), SubResource("Resource_x4h0u"), SubResource("Resource_bhu4u"), SubResource("Resource_durh2"), SubResource("Resource_d0af1"), SubResource("Resource_srvvb"), SubResource("Resource_l17tp"), SubResource("Resource_y21xi"), SubResource("Resource_vikbe"), SubResource("Resource_lobeu"), SubResource("Resource_1mnml"), SubResource("Resource_1f55q"), SubResource("Resource_rxcc2"), SubResource("Resource_ta8xp"), SubResource("Resource_1mclx"), SubResource("Resource_1ce0d"), SubResource("Resource_x88iy"), SubResource("Resource_0hh6k"), SubResource("Resource_qbm2f"), SubResource("Resource_t2nol"), SubResource("Resource_h4ct5"), SubResource("Resource_ui4lg"), SubResource("Resource_8tdc2"), SubResource("Resource_yoich"), SubResource("Resource_vxdd3"), SubResource("Resource_s673g"), SubResource("Resource_kxp78"), SubResource("Resource_11oth"), SubResource("Resource_ie4en"), SubResource("Resource_0irk0"), SubResource("Resource_54lg0"), SubResource("Resource_3njrq"), SubResource("Resource_oia2h"), SubResource("Resource_x84dp"), SubResource("Resource_lmb5a"), SubResource("Resource_1ro0i"), SubResource("Resource_jeijn"), SubResource("Resource_n02is"), SubResource("Resource_3lgwn"), SubResource("Resource_47ehh"), SubResource("Resource_ddlfr"), SubResource("Resource_ecul2"), SubResource("Resource_3muax"), SubResource("Resource_147x7"), SubResource("Resource_m1opr"), SubResource("Resource_frv6t"), SubResource("Resource_jwk3g"), SubResource("Resource_7tq2a"), SubResource("Resource_10lvn"), SubResource("Resource_bcm72"), SubResource("Resource_x7cyr"), SubResource("Resource_haujb"), SubResource("Resource_n5b88"), SubResource("Resource_0v4in"), SubResource("Resource_jr628"), SubResource("Resource_cla4b"), SubResource("Resource_usyi4"), SubResource("Resource_aj1hd"), SubResource("Resource_chm51"), SubResource("Resource_qv0jl"), SubResource("Resource_hx71j"), SubResource("Resource_yqdac"), SubResource("Resource_7llwn"), SubResource("Resource_e7iuy"), SubResource("Resource_fsurv"), SubResource("Resource_aa1yo"), SubResource("Resource_sm180"), SubResource("Resource_myrea"), SubResource("Resource_urcxc"), SubResource("Resource_ovvct"), SubResource("Resource_83f8r"), SubResource("Resource_vmib8"), SubResource("Resource_mavvb"), SubResource("Resource_xatm5"), SubResource("Resource_p0i58"), SubResource("Resource_byje0"), SubResource("Resource_mdava"), SubResource("Resource_25ryk"), SubResource("Resource_mjw2y"), SubResource("Resource_knjt3"), SubResource("Resource_faf5q"), SubResource("Resource_noi1f"), SubResource("Resource_sdssy"), SubResource("Resource_apt56"), SubResource("Resource_uuove"), SubResource("Resource_exs1c"), SubResource("Resource_22jtl"), SubResource("Resource_ap8k2"), SubResource("Resource_lehwa"), SubResource("Resource_lnhpw"), SubResource("Resource_yy6t0"), SubResource("Resource_0bxhg"), SubResource("Resource_0yayb"), SubResource("Resource_0cq1b"), SubResource("Resource_vj5v8"), SubResource("Resource_bqbbc"), SubResource("Resource_k2hm5"), SubResource("Resource_ten2t"), SubResource("Resource_khlgr"), SubResource("Resource_qns17"), SubResource("Resource_6xyfx"), SubResource("Resource_r1ub6"), SubResource("Resource_pu5rq"), SubResource("Resource_r7s6n"), SubResource("Resource_4ahio"), SubResource("Resource_a7qyp"), SubResource("Resource_yqtjp"), SubResource("Resource_dr4b2"), SubResource("Resource_7fmub"), SubResource("Resource_q4ia2"), SubResource("Resource_dda06"), SubResource("Resource_jxaj8"), SubResource("Resource_emy0l"), SubResource("Resource_scru8"), SubResource("Resource_xoa6h"), SubResource("Resource_dguun"), SubResource("Resource_jvx11"), SubResource("Resource_b0epp"), SubResource("Resource_2qgos"), SubResource("Resource_y7j85"), SubResource("Resource_2rvcs"), SubResource("Resource_12126"), SubResource("Resource_tsjvf"), SubResource("Resource_byt66"), SubResource("Resource_q3ql6"), SubResource("Resource_o7yg3"), SubResource("Resource_1yn1r"), SubResource("Resource_12jgb"), SubResource("Resource_8ycm6"), SubResource("Resource_koemx"), SubResource("Resource_f5qae"), SubResource("Resource_qhacr"), SubResource("Resource_wj3bs"), SubResource("Resource_rb0pm"), SubResource("Resource_ua433"), SubResource("Resource_l5xi0"), SubResource("Resource_kl3qf"), SubResource("Resource_51dtm"), SubResource("Resource_6wccv"), SubResource("Resource_dd7cw"), SubResource("Resource_odpmn"), SubResource("Resource_nm4fc"), SubResource("Resource_653oq"), SubResource("Resource_8wfur"), SubResource("Resource_0ormi"), SubResource("Resource_x141y"), SubResource("Resource_8gm6s"), SubResource("Resource_oc4pt"), SubResource("Resource_ub2wm"), SubResource("Resource_f6cdg"), SubResource("Resource_qb2oy"), SubResource("Resource_8rso4"), SubResource("Resource_1c6yb"), SubResource("Resource_indg2"), SubResource("Resource_2ofks"), SubResource("Resource_aofaw"), SubResource("Resource_tb51f"), SubResource("Resource_86wb3"), SubResource("Resource_32yju"), SubResource("Resource_yvgfx"), SubResource("Resource_tymld"), SubResource("Resource_c6w7b"), SubResource("Resource_svt4h"), SubResource("Resource_svf6p"), SubResource("Resource_4ugyi"), SubResource("Resource_xjmex"), SubResource("Resource_d235u"), SubResource("Resource_1p4tn"), SubResource("Resource_cr000"), SubResource("Resource_167vl"), SubResource("Resource_7hiad"), SubResource("Resource_jhjvb"), SubResource("Resource_la3v3"), SubResource("Resource_tcp0u"), SubResource("Resource_amgt3"), SubResource("Resource_htmy2"), SubResource("Resource_1in2f"), SubResource("Resource_ykiq5"), SubResource("Resource_wrn3e"), SubResource("Resource_olxu5"), SubResource("Resource_uxtnf"), SubResource("Resource_phsoy"), SubResource("Resource_lml0b"), SubResource("Resource_nny3a"), SubResource("Resource_8ddbd"), SubResource("Resource_5vl1l"), SubResource("Resource_kb083"), SubResource("Resource_pksxg"), SubResource("Resource_gwiu0"), SubResource("Resource_88pwa"), SubResource("Resource_q1okr"), SubResource("Resource_pl74h"), SubResource("Resource_yejy4"), SubResource("Resource_qy0nr"), SubResource("Resource_207xj"), SubResource("Resource_6opwf"), SubResource("Resource_0iw7f"), SubResource("Resource_ffrjy"), SubResource("Resource_qi0kg"), SubResource("Resource_mhlx1"), SubResource("Resource_k7ika"), SubResource("Resource_ioxuw"), SubResource("Resource_c6i56"), SubResource("Resource_4frx5"), SubResource("Resource_4a6ft"), SubResource("Resource_xhcx4"), SubResource("Resource_o40oi"), SubResource("Resource_0773f"), SubResource("Resource_yf2rq"), SubResource("Resource_ye6fu"), SubResource("Resource_6joml"), SubResource("Resource_d63cv"), SubResource("Resource_av6yb"), SubResource("Resource_et8ku"), SubResource("Resource_wnn8e"), SubResource("Resource_yghhq"), SubResource("Resource_l1kkc"), SubResource("Resource_7fvye"), SubResource("Resource_fnqu0"), SubResource("Resource_8huw2"), SubResource("Resource_aredd"), SubResource("Resource_pw6ef"), SubResource("Resource_67h30"), SubResource("Resource_uwgpo"), SubResource("Resource_pwsqt"), SubResource("Resource_stvjw"), SubResource("Resource_6qa6b"), SubResource("Resource_fwlmr"), SubResource("Resource_kl5dn"), SubResource("Resource_cqsac"), SubResource("Resource_6lb8c"), SubResource("Resource_1g7u0"), SubResource("Resource_3huti"), SubResource("Resource_38ckj"), SubResource("Resource_7k45g"), SubResource("Resource_ximqo"), SubResource("Resource_lfxlw"), SubResource("Resource_3jm2e"), SubResource("Resource_gyfvd"), SubResource("Resource_4q2qt"), SubResource("Resource_gqllc"), SubResource("Resource_msrm0"), SubResource("Resource_76s48"), SubResource("Resource_rse1v"), SubResource("Resource_vtbkk"), SubResource("Resource_5y8mh"), SubResource("Resource_ifff3"), SubResource("Resource_ncnpa"), SubResource("Resource_avphu"), SubResource("Resource_kd365"), SubResource("Resource_sccoi"), SubResource("Resource_b4lxb"), SubResource("Resource_8l6ng"), SubResource("Resource_77cqu"), SubResource("Resource_h38et"), SubResource("Resource_xklw7"), SubResource("Resource_a4x33"), SubResource("Resource_f572f"), SubResource("Resource_mtus1"), SubResource("Resource_cwcy6"), SubResource("Resource_8e66c"), SubResource("Resource_08sc5"), SubResource("Resource_cuu8v"), SubResource("Resource_eih3w"), SubResource("Resource_26ila"), SubResource("Resource_uheio"), SubResource("Resource_fiqnm"), SubResource("Resource_26l5m"), SubResource("Resource_7mbr1"), SubResource("Resource_c0im6"), SubResource("Resource_dmucj"), SubResource("Resource_e2jij"), SubResource("Resource_m6fof"), SubResource("Resource_0ax4c"), SubResource("Resource_uu3k6"), SubResource("Resource_tpfao"), SubResource("Resource_djls0"), SubResource("Resource_nd7io"), SubResource("Resource_6qpb6"), SubResource("Resource_qivym"), SubResource("Resource_on6s1"), SubResource("Resource_2x52o"), SubResource("Resource_h6ege"), SubResource("Resource_oxqex"), SubResource("Resource_hrd71"), SubResource("Resource_rthje"), SubResource("Resource_34elr"), SubResource("Resource_bogof"), SubResource("Resource_gxvt3"), SubResource("Resource_wqy6j"), SubResource("Resource_otgos"), SubResource("Resource_x08xo"), SubResource("Resource_8cu07"), SubResource("Resource_06lf5"), SubResource("Resource_oq3y8"), SubResource("Resource_gbyb2"), SubResource("Resource_4rub8"), SubResource("Resource_xb425"), SubResource("Resource_d7ncw"), SubResource("Resource_47kpn"), SubResource("Resource_bbbtv"), SubResource("Resource_ofdus"), SubResource("Resource_miijr"), SubResource("Resource_d8pml"), SubResource("Resource_kqfjs"), SubResource("Resource_4kfl8"), SubResource("Resource_q5svb"), SubResource("Resource_p75jr"), SubResource("Resource_aex6p"), SubResource("Resource_0tvbs"), SubResource("Resource_ivarf"), SubResource("Resource_gw00a"), SubResource("Resource_b5o1b"), SubResource("Resource_1bgn1"), SubResource("Resource_rdhqg"), SubResource("Resource_p2h6s"), SubResource("Resource_cbwsk"), SubResource("Resource_io1kk"), SubResource("Resource_by26u"), SubResource("Resource_lo2vj"), SubResource("Resource_2j6i3"), SubResource("Resource_7hbnp"), SubResource("Resource_yopg2"), SubResource("Resource_20x0y"), SubResource("Resource_3qcxj"), SubResource("Resource_3xhum"), SubResource("Resource_ja6my"), SubResource("Resource_yg67n"), SubResource("Resource_itrlq"), SubResource("Resource_2rrow"), SubResource("Resource_mf1s6"), SubResource("Resource_fkgaa"), SubResource("Resource_ushoq"), SubResource("Resource_xnlj4"), SubResource("Resource_fykp1"), SubResource("Resource_8cf48"), SubResource("Resource_epc73"), SubResource("Resource_p7dfg"), SubResource("Resource_h8y31"), SubResource("Resource_l740x"), SubResource("Resource_cjek3"), SubResource("Resource_ch6hi"), SubResource("Resource_uqkq1"), SubResource("Resource_s3qbg"), SubResource("Resource_l2cil"), SubResource("Resource_kwjik"), SubResource("Resource_8p8ku"), SubResource("Resource_r3qy7"), SubResource("Resource_qj4tj"), SubResource("Resource_m7bio"), SubResource("Resource_tp2vv"), SubResource("Resource_xe7hs"), SubResource("Resource_46gi1"), SubResource("Resource_q48wi"), SubResource("Resource_7watv"), SubResource("Resource_chqew"), SubResource("Resource_nmy6t"), SubResource("Resource_n161e"), SubResource("Resource_eltsq"), SubResource("Resource_4jy71"), SubResource("Resource_kfp7p"), SubResource("Resource_xjnxn"), SubResource("Resource_4evio"), SubResource("Resource_0ud8t"), SubResource("Resource_6744w"), SubResource("Resource_p5tvb"), SubResource("Resource_whesd"), SubResource("Resource_efwh1"), SubResource("Resource_illsf"), SubResource("Resource_g4wut"), SubResource("Resource_osm0c"), SubResource("Resource_ckfwy"), SubResource("Resource_xcf55"), SubResource("Resource_c8fpr"), SubResource("Resource_gfeuc"), SubResource("Resource_b1ida"), SubResource("Resource_6eban"), SubResource("Resource_gsd2e"), SubResource("Resource_j1711"), SubResource("Resource_i7837"), SubResource("Resource_y3mkc"), SubResource("Resource_54nu2"), SubResource("Resource_w0fvd"), SubResource("Resource_of10v"), SubResource("Resource_iyffk"), SubResource("Resource_82521"), SubResource("Resource_ec1a4"), SubResource("Resource_em2h3"), SubResource("Resource_u67b2"), SubResource("Resource_un38p"), SubResource("Resource_c1ltc"), SubResource("Resource_jpb2x"), SubResource("Resource_wjheh"), SubResource("Resource_odj5e"), SubResource("Resource_ux5no"), SubResource("Resource_ibyf0"), SubResource("Resource_xqwh6"), SubResource("Resource_ngxnp"), SubResource("Resource_lq4rh"), SubResource("Resource_6uv5o"), SubResource("Resource_yj6wm"), SubResource("Resource_ilhxq"), SubResource("Resource_r4sd7"), SubResource("Resource_jxv61"), SubResource("Resource_kvs8a"), SubResource("Resource_bypnf"), SubResource("Resource_xc61x"), SubResource("Resource_6u2kk"), SubResource("Resource_1opx2"), SubResource("Resource_jkwt3"), SubResource("Resource_reeat"), SubResource("Resource_uogk8"), SubResource("Resource_55hl8"), SubResource("Resource_hsyyo"), SubResource("Resource_ubdc1"), SubResource("Resource_kg0nb"), SubResource("Resource_npj2u"), SubResource("Resource_2mbmp"), SubResource("Resource_jq4xc"), SubResource("Resource_j6o75"), SubResource("Resource_lu7to"), SubResource("Resource_fbpsr"), SubResource("Resource_dum4a"), SubResource("Resource_wvp13"), SubResource("Resource_31yg2"), SubResource("Resource_py8lu"), SubResource("Resource_tmcps"), SubResource("Resource_ok8d3"), SubResource("Resource_060md"), SubResource("Resource_i0kmi"), SubResource("Resource_7u4dt"), SubResource("Resource_3ol4c"), SubResource("Resource_wlj80"), SubResource("Resource_xr7io"), SubResource("Resource_kxvqk"), SubResource("Resource_rctb5"), SubResource("Resource_ri4c8"), SubResource("Resource_osioa"), SubResource("Resource_dyrgg"), SubResource("Resource_xdkfn"), SubResource("Resource_jmm7l"), SubResource("Resource_phvj6"), SubResource("Resource_vbyle"), SubResource("Resource_phpkx"), SubResource("Resource_y6jcl"), SubResource("Resource_gyh8s"), SubResource("Resource_nhx36"), SubResource("Resource_kbu36"), SubResource("Resource_qum80"), SubResource("Resource_hmhaw"), SubResource("Resource_wgy6n"), SubResource("Resource_k1qur"), SubResource("Resource_ddjl8"), SubResource("Resource_h1ffy"), SubResource("Resource_us3w1"), SubResource("Resource_k0yvm"), SubResource("Resource_ojosa"), SubResource("Resource_vyuq4"), SubResource("Resource_fx14v")])
 notes_in_bar = 4
 lanes = Dictionary[int, Array]({
-1: [],
-2: [],
-4: [],
-8: [],
-16: [],
-32: []
+1: [SubResource("Resource_yk0o3"), SubResource("Resource_wl7e7"), SubResource("Resource_1xc3f"), SubResource("Resource_d44md"), SubResource("Resource_mv8iv"), SubResource("Resource_e5xi1"), SubResource("Resource_hi828"), SubResource("Resource_adsad"), SubResource("Resource_trdi7"), SubResource("Resource_1drsw"), SubResource("Resource_3rw21"), SubResource("Resource_86krp"), SubResource("Resource_wjoe5"), SubResource("Resource_ibjts"), SubResource("Resource_bchsc"), SubResource("Resource_808mj"), SubResource("Resource_ygdv5"), SubResource("Resource_wy4hy"), SubResource("Resource_5p6oh"), SubResource("Resource_yuwi0"), SubResource("Resource_sd6vl"), SubResource("Resource_plrk6"), SubResource("Resource_pw1da"), SubResource("Resource_03k6d"), SubResource("Resource_hbfpi"), SubResource("Resource_whuno"), SubResource("Resource_jdaid"), SubResource("Resource_hk24u"), SubResource("Resource_2yydf"), SubResource("Resource_71b7b")],
+2: [SubResource("Resource_ssd1v"), SubResource("Resource_7cxlx"), SubResource("Resource_scvap"), SubResource("Resource_wqapw"), SubResource("Resource_twvu6"), SubResource("Resource_cxtjn"), SubResource("Resource_cn2eq"), SubResource("Resource_j10id"), SubResource("Resource_ktotj"), SubResource("Resource_w2i2h"), SubResource("Resource_l7740"), SubResource("Resource_8m6kp"), SubResource("Resource_m1agf"), SubResource("Resource_aiqr8"), SubResource("Resource_6u64w"), SubResource("Resource_a0tkx"), SubResource("Resource_dwk0v"), SubResource("Resource_jj305"), SubResource("Resource_5nbjo"), SubResource("Resource_fn7wn"), SubResource("Resource_ykutr"), SubResource("Resource_7oqsf"), SubResource("Resource_bmqfo"), SubResource("Resource_ugo7w"), SubResource("Resource_wc0u4"), SubResource("Resource_61shx"), SubResource("Resource_eec51"), SubResource("Resource_epm6d"), SubResource("Resource_r1oau"), SubResource("Resource_nhlpu"), SubResource("Resource_csljr"), SubResource("Resource_s1c1p"), SubResource("Resource_7ih4c"), SubResource("Resource_igdjv"), SubResource("Resource_4gccb"), SubResource("Resource_s1fej"), SubResource("Resource_ijbn8"), SubResource("Resource_iow5a"), SubResource("Resource_rkne3"), SubResource("Resource_ixu2t"), SubResource("Resource_6esxk"), SubResource("Resource_oynjk"), SubResource("Resource_rlfnl"), SubResource("Resource_nstao"), SubResource("Resource_vb8w6"), SubResource("Resource_fxcw2"), SubResource("Resource_0nicv"), SubResource("Resource_w3lbk"), SubResource("Resource_slk8y"), SubResource("Resource_jpc5x"), SubResource("Resource_e26n2"), SubResource("Resource_scari"), SubResource("Resource_hyk31"), SubResource("Resource_617qo")],
+4: [SubResource("Resource_6xrd1"), SubResource("Resource_rwgux"), SubResource("Resource_cikxo"), SubResource("Resource_ulbrs"), SubResource("Resource_23jdc"), SubResource("Resource_lh2bj"), SubResource("Resource_t6wd1"), SubResource("Resource_rdkr1"), SubResource("Resource_q7f35"), SubResource("Resource_e72hc"), SubResource("Resource_qqbcn"), SubResource("Resource_aoupf"), SubResource("Resource_p8ehy")],
+8: [SubResource("Resource_v8eoc"), SubResource("Resource_0kmcl"), SubResource("Resource_t3xtd"), SubResource("Resource_qwnkw"), SubResource("Resource_bd1kc"), SubResource("Resource_mbxqm"), SubResource("Resource_4gdqo"), SubResource("Resource_gc4my"), SubResource("Resource_gn2h4"), SubResource("Resource_w46pw"), SubResource("Resource_33djq"), SubResource("Resource_7eekk"), SubResource("Resource_m8ejs"), SubResource("Resource_id8fr"), SubResource("Resource_adqkj"), SubResource("Resource_sxmcr"), SubResource("Resource_0kel5"), SubResource("Resource_qvv1b"), SubResource("Resource_6pmr6"), SubResource("Resource_rbb5g"), SubResource("Resource_81mo8"), SubResource("Resource_4ege4"), SubResource("Resource_psg26"), SubResource("Resource_beoyq"), SubResource("Resource_bycvt"), SubResource("Resource_exi1b"), SubResource("Resource_fnc3b"), SubResource("Resource_o3xwq"), SubResource("Resource_eq3u3"), SubResource("Resource_usg0e"), SubResource("Resource_1s68m"), SubResource("Resource_77rfi"), SubResource("Resource_bol0f"), SubResource("Resource_3d5bs"), SubResource("Resource_4w2gm"), SubResource("Resource_la2ot"), SubResource("Resource_83s6m"), SubResource("Resource_jhcgv"), SubResource("Resource_5fqh5"), SubResource("Resource_d7mre"), SubResource("Resource_rxuk6"), SubResource("Resource_8e7xa"), SubResource("Resource_7lwbc"), SubResource("Resource_o2auy"), SubResource("Resource_wk74x"), SubResource("Resource_ybpd3"), SubResource("Resource_je0ic"), SubResource("Resource_p7kwl"), SubResource("Resource_yf5fn"), SubResource("Resource_xhpfq"), SubResource("Resource_rxrwf"), SubResource("Resource_83hmb"), SubResource("Resource_ankaj"), SubResource("Resource_imeai"), SubResource("Resource_l22q1"), SubResource("Resource_3hlcq"), SubResource("Resource_pbqmo"), SubResource("Resource_oshd8"), SubResource("Resource_uoiq2"), SubResource("Resource_vbnrl"), SubResource("Resource_qfrg3"), SubResource("Resource_jlni8"), SubResource("Resource_w8g0d"), SubResource("Resource_xvr2x"), SubResource("Resource_1bxyc"), SubResource("Resource_1sbm6"), SubResource("Resource_18d3r"), SubResource("Resource_ljrk4"), SubResource("Resource_7ykqh"), SubResource("Resource_ko3ha"), SubResource("Resource_u401t"), SubResource("Resource_m1xcf"), SubResource("Resource_w31sh"), SubResource("Resource_udbyq"), SubResource("Resource_k408p"), SubResource("Resource_666ry"), SubResource("Resource_th40o"), SubResource("Resource_gc7wm"), SubResource("Resource_jgwry"), SubResource("Resource_6k1r5"), SubResource("Resource_6m1rk"), SubResource("Resource_a0dak"), SubResource("Resource_hnl40"), SubResource("Resource_ngt1j"), SubResource("Resource_d68vn"), SubResource("Resource_5g7ui"), SubResource("Resource_yn1f2"), SubResource("Resource_576du"), SubResource("Resource_sbgl3"), SubResource("Resource_8bvtr"), SubResource("Resource_sf1yc"), SubResource("Resource_fk5d3"), SubResource("Resource_e6tua"), SubResource("Resource_mdt4u"), SubResource("Resource_7rxgi"), SubResource("Resource_p4csc"), SubResource("Resource_dpbot"), SubResource("Resource_my4dj"), SubResource("Resource_tv8c3"), SubResource("Resource_1tbvf"), SubResource("Resource_6uww4"), SubResource("Resource_geqfh"), SubResource("Resource_0d15s"), SubResource("Resource_8bk4v"), SubResource("Resource_ockgp"), SubResource("Resource_w2pke"), SubResource("Resource_djbc1"), SubResource("Resource_3l6rv"), SubResource("Resource_8hahr"), SubResource("Resource_njklb"), SubResource("Resource_2d7yu"), SubResource("Resource_5h208"), SubResource("Resource_fvmd1"), SubResource("Resource_vepve"), SubResource("Resource_grwag"), SubResource("Resource_fkjvn"), SubResource("Resource_334eh"), SubResource("Resource_18xp7"), SubResource("Resource_gu6wu"), SubResource("Resource_jiqiw"), SubResource("Resource_nyc54"), SubResource("Resource_nmu60"), SubResource("Resource_wcbts"), SubResource("Resource_rxav2"), SubResource("Resource_c51ds"), SubResource("Resource_u4mhs"), SubResource("Resource_v8r2j"), SubResource("Resource_2rqsc"), SubResource("Resource_tij6q"), SubResource("Resource_ipcns"), SubResource("Resource_rjq5e"), SubResource("Resource_k3m25"), SubResource("Resource_hjaj1"), SubResource("Resource_vaa7k"), SubResource("Resource_m1pby"), SubResource("Resource_3rw5d"), SubResource("Resource_40pfo"), SubResource("Resource_q2aj4"), SubResource("Resource_lvu0o"), SubResource("Resource_wja5n"), SubResource("Resource_hirtr"), SubResource("Resource_jch7t"), SubResource("Resource_6dw2n"), SubResource("Resource_mn2e8"), SubResource("Resource_kx5xl"), SubResource("Resource_rg5t8"), SubResource("Resource_b0cve"), SubResource("Resource_vbmlf"), SubResource("Resource_0st33"), SubResource("Resource_0qagh"), SubResource("Resource_khibk"), SubResource("Resource_kdutu"), SubResource("Resource_akwt7"), SubResource("Resource_2cd0t"), SubResource("Resource_6lxps"), SubResource("Resource_7ckm5"), SubResource("Resource_wadne"), SubResource("Resource_fd16w"), SubResource("Resource_17q3v"), SubResource("Resource_fpukr"), SubResource("Resource_s2rqj"), SubResource("Resource_f0sv1"), SubResource("Resource_q7o1l"), SubResource("Resource_4ggn0"), SubResource("Resource_nwg8n"), SubResource("Resource_yaqcb"), SubResource("Resource_c4n0x"), SubResource("Resource_h4w4q"), SubResource("Resource_sme7y"), SubResource("Resource_yeaax"), SubResource("Resource_syhr3"), SubResource("Resource_obpsn"), SubResource("Resource_cj5y2"), SubResource("Resource_pf6it"), SubResource("Resource_yfl63"), SubResource("Resource_pfimc"), SubResource("Resource_hc5b4"), SubResource("Resource_0wxdy"), SubResource("Resource_mv74l"), SubResource("Resource_v6man"), SubResource("Resource_pwoep"), SubResource("Resource_q86be"), SubResource("Resource_warwx"), SubResource("Resource_h8re7"), SubResource("Resource_uppdt"), SubResource("Resource_66hyp"), SubResource("Resource_sqprp"), SubResource("Resource_qc1o8"), SubResource("Resource_ewiqe"), SubResource("Resource_xvb6r"), SubResource("Resource_g30td"), SubResource("Resource_h4c00"), SubResource("Resource_31c2x")],
+16: [SubResource("Resource_ol6fn"), SubResource("Resource_jkeoh"), SubResource("Resource_n5776"), SubResource("Resource_7h3rp"), SubResource("Resource_rntg5"), SubResource("Resource_0odlq"), SubResource("Resource_64qt7"), SubResource("Resource_ssftn"), SubResource("Resource_ih8dm"), SubResource("Resource_pg1qe"), SubResource("Resource_540rx"), SubResource("Resource_26rnv"), SubResource("Resource_a1dnw"), SubResource("Resource_mp7o2"), SubResource("Resource_66tbp"), SubResource("Resource_iahvp"), SubResource("Resource_arvof"), SubResource("Resource_yvgih"), SubResource("Resource_7v64t"), SubResource("Resource_88cxv"), SubResource("Resource_i5wot"), SubResource("Resource_jjnla"), SubResource("Resource_uydb7"), SubResource("Resource_vwn42"), SubResource("Resource_y45o4"), SubResource("Resource_f63pm"), SubResource("Resource_8chfv"), SubResource("Resource_onq7n"), SubResource("Resource_02l3i"), SubResource("Resource_d0blk"), SubResource("Resource_1h1tk"), SubResource("Resource_3a8gf"), SubResource("Resource_w0q0h"), SubResource("Resource_gjd4v"), SubResource("Resource_k35ms"), SubResource("Resource_fqfo6"), SubResource("Resource_e0f51"), SubResource("Resource_2yoby"), SubResource("Resource_ybr3q"), SubResource("Resource_6nvp2"), SubResource("Resource_8atxm"), SubResource("Resource_a04bi"), SubResource("Resource_4m1de"), SubResource("Resource_ambg3"), SubResource("Resource_xoiox"), SubResource("Resource_07c13"), SubResource("Resource_0jcv7"), SubResource("Resource_ie3ft"), SubResource("Resource_7ewpn"), SubResource("Resource_d4hh4"), SubResource("Resource_vluf4"), SubResource("Resource_ci6hk"), SubResource("Resource_gupsn"), SubResource("Resource_sqk6p"), SubResource("Resource_uban3"), SubResource("Resource_aj86i"), SubResource("Resource_gmjtw"), SubResource("Resource_2bbji"), SubResource("Resource_4whkw"), SubResource("Resource_ucc4q"), SubResource("Resource_wc02u"), SubResource("Resource_2381r"), SubResource("Resource_ty3f4"), SubResource("Resource_okoa7"), SubResource("Resource_4cy51"), SubResource("Resource_oys7u"), SubResource("Resource_d7603"), SubResource("Resource_put35"), SubResource("Resource_uo386"), SubResource("Resource_0cg2g"), SubResource("Resource_s20p1"), SubResource("Resource_kn3dk"), SubResource("Resource_h3njs"), SubResource("Resource_rqpm2"), SubResource("Resource_adlla"), SubResource("Resource_wdmh0"), SubResource("Resource_2pv2v"), SubResource("Resource_346of"), SubResource("Resource_wffpj"), SubResource("Resource_q2kiw"), SubResource("Resource_ki2ir"), SubResource("Resource_mr0xo"), SubResource("Resource_llyt6"), SubResource("Resource_3f7mo"), SubResource("Resource_qq0n2"), SubResource("Resource_kq7pa"), SubResource("Resource_3m2uv"), SubResource("Resource_yytwa"), SubResource("Resource_x6gpk"), SubResource("Resource_akscj"), SubResource("Resource_8is3i"), SubResource("Resource_q5dha"), SubResource("Resource_k7q1v"), SubResource("Resource_myupf"), SubResource("Resource_gnfep"), SubResource("Resource_q7pqi"), SubResource("Resource_i118r"), SubResource("Resource_8qs5u"), SubResource("Resource_5h4ji"), SubResource("Resource_olo5e"), SubResource("Resource_xyi82"), SubResource("Resource_votff"), SubResource("Resource_qcej3"), SubResource("Resource_wobi5"), SubResource("Resource_q1dun"), SubResource("Resource_mbv0g"), SubResource("Resource_tqidu"), SubResource("Resource_t700w"), SubResource("Resource_lbbb7"), SubResource("Resource_0irvb"), SubResource("Resource_04g5p"), SubResource("Resource_84beh"), SubResource("Resource_od404"), SubResource("Resource_a5mp0"), SubResource("Resource_0ei0s"), SubResource("Resource_ctorh"), SubResource("Resource_0b18s"), SubResource("Resource_7pjqf"), SubResource("Resource_qxrds"), SubResource("Resource_ps38q"), SubResource("Resource_ugtpn"), SubResource("Resource_fhfrp"), SubResource("Resource_08j6v"), SubResource("Resource_atspi"), SubResource("Resource_lk4ue"), SubResource("Resource_yadn2"), SubResource("Resource_48wix"), SubResource("Resource_y2uw1"), SubResource("Resource_60fxf"), SubResource("Resource_rsmoc"), SubResource("Resource_bccc2"), SubResource("Resource_ryc1w"), SubResource("Resource_acjnt"), SubResource("Resource_q6v0w"), SubResource("Resource_r088h"), SubResource("Resource_7e85w"), SubResource("Resource_xhb1k"), SubResource("Resource_d1i0t"), SubResource("Resource_1x0ne"), SubResource("Resource_3em0p"), SubResource("Resource_vthqe"), SubResource("Resource_imv4l"), SubResource("Resource_gfrc4"), SubResource("Resource_dbf82"), SubResource("Resource_55qho"), SubResource("Resource_4yqaq"), SubResource("Resource_357gl"), SubResource("Resource_w4aq2"), SubResource("Resource_csxsv"), SubResource("Resource_yu4fe"), SubResource("Resource_fdseo"), SubResource("Resource_d8cgo"), SubResource("Resource_c7yl3"), SubResource("Resource_nfy4n"), SubResource("Resource_l2hcr"), SubResource("Resource_2l3ga"), SubResource("Resource_vvrg2"), SubResource("Resource_wyhxu"), SubResource("Resource_ktoh7"), SubResource("Resource_1dssq"), SubResource("Resource_5uq07"), SubResource("Resource_v1aad"), SubResource("Resource_cjbfs"), SubResource("Resource_3fel1"), SubResource("Resource_6xpjp"), SubResource("Resource_vyivr"), SubResource("Resource_kdp4y"), SubResource("Resource_tbjd7"), SubResource("Resource_yn6wd"), SubResource("Resource_hbync")],
+32: [SubResource("Resource_kifoc"), SubResource("Resource_rwjr0"), SubResource("Resource_bvk4d"), SubResource("Resource_uxoab"), SubResource("Resource_lcqsu"), SubResource("Resource_q8se0"), SubResource("Resource_g0b3u"), SubResource("Resource_jcb2y"), SubResource("Resource_7d7vb"), SubResource("Resource_8e4dp"), SubResource("Resource_aicuv"), SubResource("Resource_e0hda"), SubResource("Resource_b4wdq"), SubResource("Resource_5bc7p"), SubResource("Resource_hlrno"), SubResource("Resource_vjhtl"), SubResource("Resource_lcdru"), SubResource("Resource_gaob5"), SubResource("Resource_8osed"), SubResource("Resource_bgolw"), SubResource("Resource_7fbq0"), SubResource("Resource_kqkb5"), SubResource("Resource_j4ioc"), SubResource("Resource_6cuwq"), SubResource("Resource_n5jp2"), SubResource("Resource_5ns61"), SubResource("Resource_bvp5i"), SubResource("Resource_pisfw"), SubResource("Resource_y0jd6"), SubResource("Resource_l5buf"), SubResource("Resource_bedjn"), SubResource("Resource_klgj6"), SubResource("Resource_am77b"), SubResource("Resource_w7h3d"), SubResource("Resource_ul6wu"), SubResource("Resource_c1jlu"), SubResource("Resource_a5cdo"), SubResource("Resource_acexq"), SubResource("Resource_ww26d"), SubResource("Resource_jcldr"), SubResource("Resource_ec8tt"), SubResource("Resource_ufj3o"), SubResource("Resource_3aqmr"), SubResource("Resource_tdnoi"), SubResource("Resource_pbgvu"), SubResource("Resource_hvxih"), SubResource("Resource_47d6m"), SubResource("Resource_22qxc")]
 })
 metadata/_custom_type_script = "uid://ddqeb6u7cudik"
