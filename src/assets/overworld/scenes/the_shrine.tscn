@@ -1,6 +1,5 @@
-[gd_scene load_steps=83 format=3 uid="uid://c5pos323ks1ro"]
+[gd_scene load_steps=82 format=3 uid="uid://c5pos323ks1ro"]
 
-[ext_resource type="Texture2D" uid="uid://c6t333jbfefng" path="res://assets/overworld/assets/HDRIs/day.hdr" id="1_qqenq"]
 [ext_resource type="PackedScene" uid="uid://cxkc37xd0pka0" path="res://assets/overworld/models/architectural/stair_case/stair_case_01.tscn" id="2_tpa10"]
 [ext_resource type="PackedScene" uid="uid://dbl6vd6owbgae" path="res://assets/overworld/models/architectural/arch/arch_01.tscn" id="3_yaebv"]
 [ext_resource type="Material" uid="uid://hk3dsg83qw1l" path="res://assets/overworld/materials/textures/brick/brick_03.tres" id="4_e8tmd"]
@@ -31,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://ckosq1frycwik" path="res://assets/overworld/assets/elements/fire_bloom.webp" id="26_ul5nb"]
 [ext_resource type="Texture2D" uid="uid://cjox17oqo8kjx" path="res://assets/overworld/assets/elements/water_bloom.webp" id="28_dt1ag"]
 [ext_resource type="PackedScene" uid="uid://dox2uuh52nw43" path="res://assets/overworld/models/kitchen_ware/bowl/bowl_05.tscn" id="28_imijt"]
-[ext_resource type="ArrayMesh" uid="uid://cxyhsx2s6ve63" path="res://assets/overworld/models/UI/pill/pill.obj" id="28_serno"]
+[ext_resource type="ArrayMesh" uid="uid://cxyhsx2s6ve63" path="res://assets/overworld/models/ui/pill/pill.obj" id="28_serno"]
 [ext_resource type="Shader" uid="uid://6wy8y15n7vk0" path="res://assets/overworld/scripts/shaders/amount_bar.gdshader" id="29_4aov3"]
 [ext_resource type="Texture2D" uid="uid://drgfx7qw272bv" path="res://assets/overworld/assets/elements/earth_bloom.webp" id="30_n2scs"]
 [ext_resource type="Material" uid="uid://chg85pjkrx0dk" path="res://assets/overworld/materials/textures/concrete/concrete_03.tres" id="31_e8tmd"]
@@ -52,14 +51,13 @@
 [ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="52_sl2ur"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1yun8"]
-panorama = ExtResource("1_qqenq")
 
-[sub_resource type="Sky" id="Sky_de3hw"]
+[sub_resource type="Sky" id="Sky_xdf8c"]
 sky_material = SubResource("PanoramaSkyMaterial_1yun8")
 
 [sub_resource type="Environment" id="Environment_s7c67"]
 background_mode = 2
-sky = SubResource("Sky_de3hw")
+sky = SubResource("Sky_xdf8c")
 tonemap_exposure = 1.25
 glow_enabled = true
 glow_intensity = 1.5
@@ -271,7 +269,7 @@ shader_parameter/albedo_texture = ExtResource("47_qqenq")
 shader_parameter/normal_strength = 1.0
 shader_parameter/emission_strength = 0.3
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2y5yr"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ao4aq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e8tmd"]
 render_priority = 0
@@ -282,7 +280,7 @@ shader_parameter/swirl_freq = 1.0
 shader_parameter/emission_strength = 0.0
 shader_parameter/bottom_color = Color(1, 0.3, 0, 1)
 shader_parameter/top_color = Color(1, 1, 0.2, 1)
-shader_parameter/albedo_texture = SubResource("CompressedTexture2D_2y5yr")
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_ao4aq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mstb5"]
 albedo_texture = ExtResource("50_qqenq")
