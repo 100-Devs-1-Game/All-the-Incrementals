@@ -29,6 +29,15 @@ var _first_spawn: bool = true
 var mm: MinigameMenu = $MinigameSharedComponents/SharedBaseComponents/CanvasLayer/MinigameMenu
 
 
+func play_audio(p_stream: AudioStream):
+	var effect := AudioStreamPlayer.new()
+	effect.autoplay = true
+	effect.bus = "SFX"
+	effect.stream = p_stream
+
+	add_child(effect)
+
+
 func get_pixels_per_second() -> int:
 	return floori(-stats.scrollspeed.x)
 

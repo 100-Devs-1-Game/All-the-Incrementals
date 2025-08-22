@@ -1,6 +1,10 @@
 class_name WTFPlayer
 extends Node2D
 
+const BROKEN_OXYGEN_SOUND := preload(
+	"res://assets/minigames/fire_fighters/sfx/sfx_barrel_break_01.ogg"
+)
+
 @export var max_speed: float = 400.0
 @export var acceleration: float = 2000.0
 @export var friction: float = 600.0
@@ -82,6 +86,8 @@ func _process(_delta: float) -> void:
 	elif WTFGlobals.minigame.stats.oxygen_percentage() > 0:
 		bubble_shield.frame = 5
 	else:
+		if bubble_shield.frame != 0:
+			WTFGlobals.minigame.play_audio(BROKEN_OXYGEN_SOUND)
 		bubble_shield.frame = 0
 
 	if underwater() && WTFGlobals.minigame.stats.oxygen_percentage() > 0:
