@@ -1,8 +1,12 @@
 class_name OverworldScene extends Node
 
+const PLAYER_CHARACTER_SCENE = preload(
+	"res://modules/overworld_character_controller/spiritkeeper_character_controller_3d.tscn"
+)
+
 @export var starting_settlement_data: SettlementData
 
-var _current_settlement: Node
+var _current_settlement: OverworldLocation3D
 var _current_settlement_data: SettlementData
 
 @onready var overworld_map: OverworldMapMenu = %OverworldMap
@@ -35,6 +39,7 @@ func change_to_settlement(data: SettlementData) -> void:
 		_current_settlement.queue_free()
 
 	var new_settlement = data.settlement_scene.instantiate()
+	assert(new_settlement is OverworldLocation3D)
 	settlement_scene_holder_node.add_child(new_settlement)
 
 	#TODO: Figure out context of where the player is coming from (other settlement/minigame),
@@ -51,6 +56,10 @@ func change_to_settlement(data: SettlementData) -> void:
 		if not exit.exited_settlement.is_connected(open_overworld_map):
 			exit.exited_settlement.connect(open_overworld_map)
 			print("Exit (", exit, ") connected signal to overworld map menu")
+
+	var player: SpiritkeeperCharacterController3D = PLAYER_CHARACTER_SCENE.instantiate()
+	player.transform = _current_settlement.character_spawner.global_transform
+	player_holder_node.add_child(player)
 
 
 func _on_display_journal_page(data: JournalEntryData):
