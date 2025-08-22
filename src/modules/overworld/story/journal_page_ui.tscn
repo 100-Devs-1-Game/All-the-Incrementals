@@ -51,7 +51,6 @@ offset_left = -495.0
 offset_right = 495.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_default_cursor_shape = 13
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 script = ExtResource("7_lfafc")
