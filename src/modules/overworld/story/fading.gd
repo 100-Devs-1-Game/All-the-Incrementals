@@ -16,10 +16,22 @@ func _draw() -> void:
 	if not gradient:
 		return
 	var gradient_height: int = gradient.get_height()
-	draw_texture_rect(gradient, Rect2(Vector2.ZERO, Vector2(size.x, gradient_height)), false)
+	var scroll: VScrollBar = get_v_scroll_bar()
+	var unreserved_space: Vector2 = Vector2(0, size.y)
+	if scroll.value > 0:
+		draw_texture_rect(gradient, Rect2(Vector2.ZERO, Vector2(size.x, gradient_height)), false)
+		unreserved_space[0] += gradient_height
+	if (scroll.value + scroll.page) < scroll.max_value:
+		draw_set_transform(Vector2.ZERO, 0, Vector2(1, -1))
+		draw_texture_rect(
+			gradient, Rect2(Vector2(0, -size.y), Vector2(size.x, gradient_height)), false
+		)
+		unreserved_space[1] -= gradient_height
+	draw_set_transform(Vector2.ZERO)
 	draw_rect(
-		Rect2(Vector2(0, gradient_height), Vector2(size.x, size.y - gradient_height * 2)),
+		Rect2(
+			Vector2(0, unreserved_space[0]),
+			Vector2(size.x, unreserved_space[1] - unreserved_space[0])
+		),
 		Color.WHITE
 	)
-	draw_set_transform(Vector2.ZERO, 0, Vector2(1, -1))
-	draw_texture_rect(gradient, Rect2(Vector2(0, -size.y), Vector2(size.x, gradient_height)), false)
