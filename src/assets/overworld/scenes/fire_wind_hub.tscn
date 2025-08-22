@@ -1,6 +1,5 @@
-[gd_scene load_steps=57 format=3 uid="uid://dilv53e8hkijq"]
+[gd_scene load_steps=56 format=3 uid="uid://dilv53e8hkijq"]
 
-[ext_resource type="Texture2D" uid="uid://c6t333jbfefng" path="res://assets/overworld/assets/HDRIs/day.hdr" id="1_hbxmu"]
 [ext_resource type="ArrayMesh" uid="uid://c8akkyljye4o6" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_01_m.mesh" id="5_ai0pt"]
 [ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://assets/overworld/models/landscapes/island_circle.gltf" id="6_n1hja"]
 [ext_resource type="ArrayMesh" uid="uid://dyrh5wy31kesg" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_02_m.mesh" id="7_wjhkt"]
@@ -23,14 +22,13 @@
 [ext_resource type="PackedScene" uid="uid://ckomfk2gpxjrx" path="res://assets/overworld/assets/skybox/skybox_sphere.tscn" id="27_ai0pt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hbxmu"]
-panorama = ExtResource("1_hbxmu")
 
-[sub_resource type="Sky" id="Sky_s60bt"]
+[sub_resource type="Sky" id="Sky_e11l6"]
 sky_material = SubResource("PanoramaSkyMaterial_hbxmu")
 
 [sub_resource type="Environment" id="Environment_w3twe"]
 background_mode = 2
-sky = SubResource("Sky_s60bt")
+sky = SubResource("Sky_e11l6")
 tonemap_exposure = 1.25
 glow_enabled = true
 glow_intensity = 1.5
