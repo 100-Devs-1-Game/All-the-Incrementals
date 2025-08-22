@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwf7mhn0xl3mb"]
+
+[ext_resource type="Script" uid="uid://c1jd55dsdp1qc" path="res://modules/overworld_character_controller/character_spawner.gd" id="1_xxai5"]
+
+[node name="CharacterSpawner" type="Node3D"]
+script = ExtResource("1_xxai5")
