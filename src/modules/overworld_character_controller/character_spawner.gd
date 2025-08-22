@@ -1,0 +1,2 @@
+class_name CharacterSpawner
+extends Node3D

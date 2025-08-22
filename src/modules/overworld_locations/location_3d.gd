@@ -1,3 +1,8 @@
-class_name OverworldLocation3D extends Node3D
+class_name OverworldLocation3D
+extends Node3D
 
-@export var settlement_data: SettlementData
+@export var character_spawner: CharacterSpawner
+
+
+func _ready() -> void:
+	assert(character_spawner != null)
