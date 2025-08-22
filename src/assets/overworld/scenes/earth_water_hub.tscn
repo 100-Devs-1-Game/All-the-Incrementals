@@ -153,13 +153,6 @@ light_color = Color(0.965902, 0.902276, 0.82478, 1)
 light_energy = 0.89
 light_angular_distance = 45.15
 
-[node name="Camera3D" type="Camera3D" parent="Cameras & Lights"]
-transform = Transform3D(0.99956, 0.00817712, -0.0285171, 0, 0.961262, 0.275637, 0.0296663, -0.275516, 0.960839, 11.38, 21.86, 29.465)
-current = true
-fov = 56.5
-size = 1.82
-far = 9999.0
-
 [node name="player_reference" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.29675, -0.344167, 5.25048)
 visible = false
