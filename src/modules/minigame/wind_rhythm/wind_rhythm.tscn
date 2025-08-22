@@ -209,9 +209,6 @@ data_uid = "uid://cxrnthj4sdjv4"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
 
-[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
-visible = false
-
 [node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
 visible_on_start = true
 
