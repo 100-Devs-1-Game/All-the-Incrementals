@@ -50,13 +50,6 @@ func change_to_settlement(data: SettlementData) -> void:
 
 	print("Settlement: ", data.display_name, " loaded.")
 
-	var exits := get_tree().get_nodes_in_group(SettlementExit.SETTLEMENT_EXIT_GROUP)
-	for exit in exits:
-		exit = exit as SettlementExit
-		if not exit.exited_settlement.is_connected(open_overworld_map):
-			exit.exited_settlement.connect(open_overworld_map)
-			print("Exit (", exit, ") connected signal to overworld map menu")
-
 	var player: SpiritkeeperCharacterController3D = PLAYER_CHARACTER_SCENE.instantiate()
 	player.transform = _current_settlement.character_spawner.global_transform
 	player_holder_node.add_child(player)
