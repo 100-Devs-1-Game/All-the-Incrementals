@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cxyhsx2s6ve63"
-path="res://.godot/imported/pill.obj-493395da90133cd83ece7c3eaaea3630.mesh"
+path="res://.godot/imported/pill.obj-fc4f8897608615f852fde4053facc280.mesh"
 
 [deps]
 
-files=["res://.godot/imported/pill.obj-493395da90133cd83ece7c3eaaea3630.mesh"]
+files=["res://.godot/imported/pill.obj-fc4f8897608615f852fde4053facc280.mesh"]
 
-source_file="res://assets/overworld/models/UI/pill/pill.obj"
-dest_files=["res://.godot/imported/pill.obj-493395da90133cd83ece7c3eaaea3630.mesh", "res://.godot/imported/pill.obj-493395da90133cd83ece7c3eaaea3630.mesh"]
+source_file="res://assets/overworld/models/ui/pill/pill.obj"
+dest_files=["res://.godot/imported/pill.obj-fc4f8897608615f852fde4053facc280.mesh", "res://.godot/imported/pill.obj-fc4f8897608615f852fde4053facc280.mesh"]
 
 [params]
 
