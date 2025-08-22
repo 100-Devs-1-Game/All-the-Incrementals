@@ -1,4 +1,4 @@
-extends Node
+extends OverworldLocation3D
 
 @export var earth_potato_herding_data: MinigameData
 @export var earth_towers_data: MinigameData
