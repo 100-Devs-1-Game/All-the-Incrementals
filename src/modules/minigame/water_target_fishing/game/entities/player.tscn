@@ -1,8 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://1v03jevu1t0e"]
+[gd_scene load_steps=19 format=3 uid="uid://1v03jevu1t0e"]
 
 [ext_resource type="Script" uid="uid://cab80bh8l50p1" path="res://modules/minigame/water_target_fishing/game/entities/player.gd" id="1_qjfmj"]
 [ext_resource type="Texture2D" uid="uid://b4jsvcdktd8vy" path="res://assets/minigames/water_target_fishing/swimmin/000.png" id="2_yq2rv"]
 [ext_resource type="Texture2D" uid="uid://cbi4nbja00f60" path="res://assets/minigames/water_target_fishing/swimmin/001.png" id="3_jwvtb"]
+[ext_resource type="Texture2D" uid="uid://cw32r0t1pkj8t" path="res://assets/minigames/water_target_fishing/swimmin/bubble1.png" id="4_q52nl"]
+[ext_resource type="Texture2D" uid="uid://d2kaslbho3tnt" path="res://assets/minigames/water_target_fishing/swimmin/bubble2.png" id="5_cqvxu"]
+[ext_resource type="Texture2D" uid="uid://b1e0rfgkm38jq" path="res://assets/minigames/water_target_fishing/swimmin/bubble3.png" id="6_acmhv"]
+[ext_resource type="Texture2D" uid="uid://cta8n0sxqs4rn" path="res://assets/minigames/water_target_fishing/swimmin/bubble4.png" id="7_48hsm"]
+[ext_resource type="Texture2D" uid="uid://pw3orogi6hl" path="res://assets/minigames/water_target_fishing/swimmin/bubble5.png" id="8_uf7ry"]
+[ext_resource type="Texture2D" uid="uid://bg6nxu3sn10je" path="res://assets/minigames/water_target_fishing/swimmin/bubble_float1.png" id="9_48hsm"]
+[ext_resource type="Texture2D" uid="uid://c3yh6n62ktj6y" path="res://assets/minigames/water_target_fishing/swimmin/bubble_float0.png" id="9_bk1mq"]
+[ext_resource type="Texture2D" uid="uid://wfvcaowtuvsg" path="res://assets/minigames/water_target_fishing/swimmin/bubble_float2.png" id="10_uf7ry"]
+[ext_resource type="Texture2D" uid="uid://ifponf7wqgvf" path="res://assets/minigames/water_target_fishing/swimmin/bubble_float3.png" id="11_b7gyv"]
+[ext_resource type="Texture2D" uid="uid://357plwqetgl7" path="res://assets/minigames/water_target_fishing/swimmin/bubble_float4.png" id="13_ms6rp"]
+[ext_resource type="Texture2D" uid="uid://un0kj71alg2n" path="res://assets/minigames/water_target_fishing/swimmin/bubble_float5.png" id="14_fpk4g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cqvxu"]
 animations = [{
@@ -18,6 +29,61 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7gyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bk1mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q52nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cqvxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_acmhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_48hsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uf7ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bk1mq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bk1mq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bk1mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_48hsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uf7ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b7gyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ms6rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fpk4g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbjem"]
 size = Vector2(242, 103)
 
@@ -31,6 +97,17 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_cqvxu")
 frame_progress = 0.888444
+
+[node name="BubbleShield" type="AnimatedSprite2D" parent="Visuals"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_b7gyv")
+frame = 4
+frame_progress = 1.0
+
+[node name="Bubbles" type="AnimatedSprite2D" parent="Visuals"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_bk1mq")
+frame_progress = 0.847165
 
 [node name="Area2D" type="Area2D" parent="."]
 unique_name_in_owner = true

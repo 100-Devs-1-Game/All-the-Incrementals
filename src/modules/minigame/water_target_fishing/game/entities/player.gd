@@ -1,6 +1,16 @@
 class_name WTFPlayer
 extends Node2D
 
+const BROKEN_OXYGEN_SOUND := preload(
+	"res://assets/minigames/fire_fighters/sfx/sfx_barrel_break_01.ogg"
+)
+
+const BREAKING_OXYGEN_SOUND := preload(
+	"res://assets/minigames/fire_fighters/sfx/sfx_metal_impact_04.ogg"
+)
+
+const PICKUP_SOUND := preload("res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_05.ogg")
+
 @export var max_speed: float = 400.0
 @export var acceleration: float = 2000.0
 @export var friction: float = 600.0
@@ -10,6 +20,8 @@ var disabled_input := false
 
 @onready var area2d: Area2D = %Area2D
 @onready var sprite2d: AnimatedSprite2D = %AnimatedSprite2D
+@onready var bubble_shield: AnimatedSprite2D = %BubbleShield
+@onready var bubbles: AnimatedSprite2D = %Bubbles
 
 
 func underwater() -> bool:
@@ -29,6 +41,7 @@ func _exit_tree() -> void:
 func _ready() -> void:
 	area2d.area_entered.connect(_on_area_entered)
 	sprite2d.play("default")
+	bubble_shield.frame = 6
 
 
 func _on_area_entered(other_area: Area2D) -> void:
@@ -38,6 +51,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_fish := other_area.get_parent() as WTFFish
 	if is_instance_valid(maybe_fish) && WTFGlobals.minigame.stats.try_carry():
+		WTFGlobals.minigame.play_audio(PICKUP_SOUND)
 		WTFGlobals.minigame.add_score(maybe_fish.data.pickup.score)
 		var ft := TextFloatSystem.floating_text(
 			maybe_fish.global_position + Vector2(randf_range(-200, -170), randf_range(-30, 30)),
@@ -54,18 +68,52 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_cannon := other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
+		WTFGlobals.minigame.play_audio(PICKUP_SOUND)
 		WTFGlobals.minigame.stats.scroll_faster(maybe_cannon.pickup.speedboost)
 		other_area.queue_free()
 		return
 
 	var maybe_boat := other_area.get_parent() as WTFBoat
 	if is_instance_valid(maybe_boat):
+		WTFGlobals.minigame.play_audio(PICKUP_SOUND)
 		#todo replace with nice tween of fish leaving etc.
 		WTFGlobals.minigame.stats.scroll_faster(500)
 		WTFGlobals.minigame.stats.carrying = 0
 		WTFGlobals.minigame.stats.weight = 0
 		other_area.queue_free()
 		return
+
+
+func _process(_delta: float) -> void:
+	if WTFGlobals.minigame.stats.oxygen_percentage() > 80:
+		if bubble_shield.frame == 6:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 1
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 60:
+		if bubble_shield.frame < 2:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 2
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 40:
+		if bubble_shield.frame < 3:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 3
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 20:
+		if bubble_shield.frame < 4:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 4
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 0:
+		if bubble_shield.frame < 5:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 5
+	else:
+		if bubble_shield.frame != 6:
+			WTFGlobals.minigame.play_audio(BROKEN_OXYGEN_SOUND)
+		bubble_shield.frame = 6
+
+	if underwater() && WTFGlobals.minigame.stats.oxygen_percentage() > 0:
+		bubbles.play()
+	else:
+		bubbles.stop()
 
 
 func _physics_process(delta: float) -> void:
@@ -108,6 +156,7 @@ func _physics_process(delta: float) -> void:
 
 		if WTFGlobals.minigame.stats.no_oxygen() || disabled_input:
 			velocity.y += -1 * acceleration * delta
+
 	else:
 		if !WTFGlobals.minigame.stats.scrolling():
 			disabled_input = true
