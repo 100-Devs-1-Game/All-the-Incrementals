@@ -59,7 +59,7 @@ gradient = SubResource("GradientTexture2D_l88ks")
 
 [node name="TextureRect Page" type="TextureRect" parent="Panel/Fading"]
 unique_name_in_owner = true
-self_modulate = Color(0.7, 0.7, 0.7, 0.8)
+self_modulate = Color(0.5, 0.5, 0.5, 0.95)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
