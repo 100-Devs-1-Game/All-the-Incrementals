@@ -22,6 +22,12 @@ repos:
   # Local repo
   - repo: local
     hooks:
+      - id: check-snake-paths
+        name: Check snake_case directory and file names
+        entry: ./.hooks/check_snake_paths.py
+        language: python
+        language_version: python3
+        exclude: '^\.github/|src/external/|src/addons/|README\.md$|LICENSE$|^.pre-commit-config.yaml$'
       - id: helpful-hints
         name: Display helpful hints
         entry: ./.hooks/helpful_hints.py
@@ -29,11 +35,5 @@ repos:
         language_version: python3
         pass_filenames: false
         verbose: true
-      - id: check-snake-paths
-        name: Check snake_case directory and file names
-        entry: ./.hooks/check_snake_paths.py
-        language: python
-        language_version: python3
-        exclude: '^\.github/|src/external/|src/addons/|README\.md$|LICENSE$|^.pre-commit-config.yaml$'
 
 exclude: '^src/addons/'
