@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhlhupc517m6d"]
+
+[ext_resource type="PackedScene" uid="uid://cm3rghkvel2l2" path="res://models/architectural/structures/graveyard/graveyard.gltf" id="1_lh3oq"]
+[ext_resource type="Texture2D" uid="uid://c60572rnv3a7y" path="res://models/architectural/structures/graveyard/graveyard.webp" id="2_w80ny"]
+[ext_resource type="Texture2D" uid="uid://bdqivymooblgt" path="res://models/architectural/structures/graveyard/graveyard_gate.webp" id="3_clkrf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8wdd"]
+albedo_texture = ExtResource("2_w80ny")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbnjr"]
+albedo_texture = ExtResource("3_clkrf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwcoa"]
+albedo_texture = ExtResource("3_clkrf")
+
+[node name="graveyard" instance=ExtResource("1_lh3oq")]
+
+[node name="graveyard" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m8wdd")
+
+[node name="gate_R" parent="." index="1"]
+transform = Transform3D(0.234425, 0, -1.32949, 0, 1.35, 0, 1.32949, 0, 0.234425, 0.279984, 0.0938371, -0.999335)
+surface_material_override/0 = SubResource("StandardMaterial3D_mbnjr")
+
+[node name="gate_L" parent="." index="2"]
+transform = Transform3D(0.234425, 0, 1.32949, 0, 1.35, 0, -1.32949, 0, 0.234425, -0.248709, 0.0938887, -1.02874)
+surface_material_override/0 = SubResource("StandardMaterial3D_dwcoa")
