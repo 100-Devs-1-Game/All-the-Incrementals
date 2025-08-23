@@ -42,7 +42,7 @@ var _possible_interaction: InteractionComponent3D
 var _interaction_finished_sound: AudioStream
 
 @onready var label_interaction_hint: Label = %"Label Interaction Hint"
-@onready var raycast_floor_check: RayCast3D = $"RayCast Floor Check"
+@onready var shapecast_floor_check: ShapeCast3D = %"ShapeCast3D Floor Check"
 @onready var audio_player_interaction: AudioStreamPlayer = $"AudioStreamPlayer Interaction"
 
 
@@ -132,26 +132,17 @@ func _handle_model_orientation(desired_direction: Vector3, delta: float) -> void
 
 
 func move():
-	var motion := velocity * get_physics_process_delta_time()
-	motion *= 5.0
+	#var motion := velocity * get_physics_process_delta_time()
+	#motion *= 10.0
+#
+	#shapecast_floor_check.position.x = motion.x
+	#shapecast_floor_check.position.z = motion.z
 
-	raycast_floor_check.position.x = motion.x
-	raycast_floor_check.position.z = motion.z
+	shapecast_floor_check.force_shapecast_update()
 
-	raycast_floor_check.force_raycast_update()
-	var check1 := raycast_floor_check.is_colliding()
-
-	motion *= 2.0
-
-	raycast_floor_check.position.x = motion.x
-	raycast_floor_check.position.z = motion.z
-
-	raycast_floor_check.force_raycast_update()
-	var check2 := raycast_floor_check.is_colliding()
-
-	# use 2 raycasts to avoid stopping at tiny gaps
-	if check1 or check2:
+	if shapecast_floor_check.is_colliding():
 		move_and_slide()
+		apply_floor_snap()
 
 
 #endregion
@@ -175,6 +166,9 @@ func _ready() -> void:
 	# animation
 	map.hide()
 	shakuhachi.hide()
+
+	# misc
+	shapecast_floor_check.add_exception_rid(get_rid())
 
 
 func _physics_process(delta: float) -> void:
