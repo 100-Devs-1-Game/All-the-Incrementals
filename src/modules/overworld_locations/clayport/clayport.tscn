@@ -634,9 +634,7 @@ shape = SubResource("BoxShape3D_e5ygp")
 [node name="cascade_waterfall" parent="Model/VFX/Cascade" instance=ExtResource("32_xvfut")]
 transform = Transform3D(0.482658, 0, 0.315638, 0, 1.7301, 0, -0.110568, 0, 0.169076, -0.756199, -0.478611, 0.0516527)
 
-[node name="DebugPopup" parent="." node_paths=PackedStringArray("functions_node") instance=ExtResource("9_4eabd")]
+[node name="DebugPopup" parent="." instance=ExtResource("9_4eabd")]
 title = "Clayport"
-functions_node = NodePath("")
-visible_on_start = true
 default_debug_buttons = SubResource("Resource_ojauw")
 custom_debug_buttons = Array[ExtResource("10_0icjx")]([ExtResource("12_i6g11"), ExtResource("13_jn4u6"), ExtResource("14_jn4u6")])

@@ -1446,10 +1446,8 @@ rotate_y_axis = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="DebugPopup" parent="CanvasLayer" node_paths=PackedStringArray("functions_node") instance=ExtResource("8_0bjiu")]
+[node name="DebugPopup" parent="CanvasLayer" instance=ExtResource("8_0bjiu")]
 title = "Breezekiln Debug"
-functions_node = NodePath("")
-visible_on_start = true
 default_debug_buttons = SubResource("Resource_6bqf2")
 custom_debug_buttons = Array[ExtResource("9_hefpd")]([ExtResource("12_5ylet"), ExtResource("13_2pg8g"), ExtResource("14_2pg8g")])
 

@@ -777,7 +777,6 @@ target_settlement = ExtResource("58_lsmsp")
 
 [node name="DebugPopup" parent="." instance=ExtResource("4_wuyf8")]
 title = "Shrine"
-visible_on_start = true
 custom_debug_buttons = Array[ExtResource("5_c0ttc")]([ExtResource("6_c0ttc"), ExtResource("7_ge6fp"), ExtResource("8_ge6fp"), ExtResource("10_ig5i3")])
 
 [connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]
