@@ -43,6 +43,7 @@ var _interaction_finished_sound: AudioStream
 
 @onready var label_interaction_hint: Label = %"Label Interaction Hint"
 @onready var shapecast_floor_check: ShapeCast3D = %"ShapeCast3D Floor Check"
+@onready var raycast_ground_contact: RayCast3D = $"RayCast3D Ground Contact"
 @onready var audio_player_interaction: AudioStreamPlayer = $"AudioStreamPlayer Interaction"
 
 
@@ -138,10 +139,10 @@ func move():
 	#shapecast_floor_check.position.x = motion.x
 	#shapecast_floor_check.position.z = motion.z
 
-	shapecast_floor_check.force_shapecast_update()
-
 	if shapecast_floor_check.is_colliding():
 		move_and_slide()
+
+	if not raycast_ground_contact.is_colliding():
 		apply_floor_snap()
 
 

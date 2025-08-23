@@ -43,7 +43,6 @@ model_rotation_pivot_node = NodePath("Visuals/LeanPivot/RotationPivot")
 [node name="ShapeCast3D Floor Check" type="ShapeCast3D" parent="Visuals/LeanPivot/RotationPivot"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
-enabled = false
 shape = SubResource("CylinderShape3D_scodq")
 target_position = Vector3(0, -2, 0.5)
 max_results = 1
@@ -203,6 +202,11 @@ shape = SubResource("SphereShape3D_njahn")
 spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraController/CameraPivot/SpringArm3D"]
+
+[node name="RayCast3D Ground Contact" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+target_position = Vector3(0, -0.3, 0)
+collision_mask = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
