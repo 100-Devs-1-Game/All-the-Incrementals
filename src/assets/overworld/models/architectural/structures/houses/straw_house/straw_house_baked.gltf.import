@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://yyxljysddjcc"
-path="res://.godot/imported/straw_house.gltf-75f381946a01454e9155bafadababdff.scn"
+uid="uid://f2v663d1w2sl"
+path="res://.godot/imported/straw_house_baked.gltf-354b86388c561796231e47942807da81.scn"
 
 [deps]
 
-source_file="res://assets/overworld/models/architectural/structures/houses/straw_house/straw_house.gltf"
-dest_files=["res://.godot/imported/straw_house.gltf-75f381946a01454e9155bafadababdff.scn"]
+source_file="res://models/architectural/structures/houses/straw_house/straw_house_baked.gltf"
+dest_files=["res://.godot/imported/straw_house_baked.gltf-354b86388c561796231e47942807da81.scn"]
 
 [params]
 

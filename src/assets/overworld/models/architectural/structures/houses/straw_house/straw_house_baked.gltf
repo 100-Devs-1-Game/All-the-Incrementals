@@ -15,17 +15,12 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"straw_house",
-			"translation":[
-				0.06067599356174469,
-				4.911742687225342,
-				0.0015259254723787308
-			]
+			"name":"Cone"
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cylinder.034",
+			"name":"Cone.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -42,68 +37,68 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":12534,
+			"count":1482,
 			"max":[
-				2.5922396183013916,
-				3.4285988807678223,
-				2.6422922611236572
+				2.6378231048583984,
+				8.340341567993164,
+				2.6438183784484863
 			],
 			"min":[
-				-2.963876724243164,
-				-4.911742687225342,
-				-2.641721487045288
+				-2.918292999267578,
+				0,
+				-2.640195369720459
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":12534,
+			"count":1482,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":12534,
+			"count":1482,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":19674,
+			"count":3048,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":150408,
+			"byteLength":17784,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":150408,
-			"byteOffset":150408,
+			"byteLength":17784,
+			"byteOffset":17784,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":100272,
-			"byteOffset":300816,
+			"byteLength":11856,
+			"byteOffset":35568,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":39348,
-			"byteOffset":401088,
+			"byteLength":6096,
+			"byteOffset":47424,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":440436,
-			"uri":"straw_house.bin"
+			"byteLength":53520,
+			"uri":"straw_house_baked.bin"
 		}
 	]
 }
