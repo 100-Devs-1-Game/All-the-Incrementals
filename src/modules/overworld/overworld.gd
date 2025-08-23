@@ -56,6 +56,9 @@ func change_to_settlement(data: SettlementData) -> void:
 
 	var player: SpiritkeeperCharacterController3D = PLAYER_CHARACTER_SCENE.instantiate()
 	player.transform = _current_settlement.character_spawner.global_transform
+	player.enable_dynamic_spring_arm_length = (
+		_current_settlement.character_spawner.enable_dynamic_spring_arm
+	)
 	player_holder_node.add_child(player)
 
 
