@@ -11,7 +11,9 @@
 [resource]
 script = ExtResource("1_hhm2j")
 display_name = "Potato Herding"
-how_to_play = ""
+how_to_play = "Protect the youngling potatoes from the evil spirits so they can grow in to adulthood.
+
+The spirits are afraid of the SpiritKeeper!"
 music_track = "earth_hub"
 minigame_scene = ExtResource("1_vneja")
 upgrade_tree_root_nodes = Array[ExtResource("2_kp5bk")]([ExtResource("5_5ky2n"), ExtResource("7_5ky2n"), ExtResource("7_ngahi")])
