@@ -11,7 +11,7 @@ const CREDITS_SCENE := preload("res://modules/credits/credits.tscn")
 const GALLERY_SCENE := preload("res://modules/gallery/gallery.tscn")
 
 # this is necessary to maintain my sanity
-#const SHRINE_SETTLEMENT_DATA := preload("res://modules/overworld_locations/shrine/shrine.tres")
+const SHRINE_SETTLEMENT_DATA := preload("res://modules/overworld_locations/shrine/shrine.tres")
 #const BREEZEKILN_SETTLEMENT_DATA := preload(
 #"res://modules/overworld_locations/breezekiln/breezekiln.tres"
 #)
@@ -73,8 +73,7 @@ func return_to_overworld():
 
 
 func enter_shrine():
-	assert(false)
-	#enter_settlement(SHRINE_SETTLEMENT_DATA)
+	enter_settlement(SHRINE_SETTLEMENT_DATA)
 
 
 func enter_breezekiln():
