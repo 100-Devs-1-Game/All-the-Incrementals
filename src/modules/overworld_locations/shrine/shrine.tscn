@@ -767,12 +767,14 @@ enable_rotation = true
 rotation_speed_deg = 0.45
 rotate_y_axis = true
 
-[node name="Portal Clayport" parent="." instance=ExtResource("56_cl6tx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 0, 6)
+[node name="portals" type="Node3D" parent="Content"]
+
+[node name="Portal Clayport" parent="Content/portals" instance=ExtResource("56_cl6tx")]
+transform = Transform3D(-2.44744e-08, 0, 0.55991, 0, 0.55991, 0, -0.55991, 0, -2.44744e-08, 3.35946, 0, 1.8477)
 target_settlement = ExtResource("57_lsmsp")
 
-[node name="Portal Breezekiln" parent="." instance=ExtResource("56_cl6tx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0, 6)
+[node name="Portal Breezekiln" parent="Content/portals" instance=ExtResource("56_cl6tx")]
+transform = Transform3D(-2.44744e-08, 0, 0.55991, 0, 0.55991, 0, -0.55991, 0, -2.44744e-08, 3.35946, 0, -1.8477)
 target_settlement = ExtResource("58_lsmsp")
 
 [node name="DebugPopup" parent="." instance=ExtResource("4_wuyf8")]
