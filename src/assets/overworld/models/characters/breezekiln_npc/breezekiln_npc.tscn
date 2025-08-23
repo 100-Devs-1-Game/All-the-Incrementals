@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cya0g2mjgrubk"]
+
+[ext_resource type="PackedScene" uid="uid://db7tdkdv1bau6" path="res://models/characters/breezekiln_NPC/breezekiln_NPC.gltf" id="1_jgr11"]
+[ext_resource type="Material" uid="uid://don51ubfutap4" path="res://materials/simple/metallic/m_black.tres" id="2_wat7j"]
+[ext_resource type="Material" uid="uid://cjphlci2apl5t" path="res://materials/emissive/e_brown.tres" id="3_wlv5v"]
+
+[node name="breezekiln_NPC" instance=ExtResource("1_jgr11")]
+
+[node name="hat_snow_001" parent="spiritkeeper_armature_001/Skeleton3D" index="5"]
+surface_material_override/0 = ExtResource("2_wat7j")
+
+[node name="hat_snow_002" parent="spiritkeeper_armature_001/Skeleton3D" index="6"]
+surface_material_override/0 = ExtResource("3_wlv5v")

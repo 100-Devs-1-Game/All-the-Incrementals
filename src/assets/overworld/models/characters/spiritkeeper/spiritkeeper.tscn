@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=3 uid="uid://ddutk8tp25kob"]
+
+[ext_resource type="PackedScene" uid="uid://dcsyjfr3p0qen" path="res://models/characters/spiritkeeper/spiritkeeper.gltf" id="1_8hffn"]
+[ext_resource type="Texture2D" uid="uid://dxpfldlvkain6" path="res://models/characters/spiritkeeper/spiritkeeper.webp" id="2_cugus"]
+[ext_resource type="Material" uid="uid://don51ubfutap4" path="res://materials/simple/metallic/m_black.tres" id="3_6vibe"]
+[ext_resource type="Material" uid="uid://bsrilhglpyu26" path="res://materials/simple/metallic/m_yellow.tres" id="4_i4grt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yltuv"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgblp"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sfaxj"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5ggm"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yd7c7"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_by3wu"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mk7ab"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4hxo"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6an2"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_te7tb"]
+albedo_texture = ExtResource("2_cugus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pjhx"]
+albedo_texture = ExtResource("2_cugus")
+
+[node name="spiritkeeper" instance=ExtResource("1_8hffn")]
+
+[node name="backpack_spiritkeeper" parent="spiritkeeper_armature_003/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yltuv")
+
+[node name="body_002" parent="spiritkeeper_armature_003/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wgblp")
+
+[node name="feet_001" parent="spiritkeeper_armature_003/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sfaxj")
+
+[node name="glasses" parent="spiritkeeper_armature_003/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("3_6vibe")
+
+[node name="hat_spiritkeeper" parent="spiritkeeper_armature_003/Skeleton3D" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i5ggm")
+
+[node name="head_002" parent="spiritkeeper_armature_003/Skeleton3D" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yd7c7")
+
+[node name="lock" parent="spiritkeeper_armature_003/Skeleton3D" index="6"]
+surface_material_override/0 = ExtResource("4_i4grt")
+
+[node name="lock_001" parent="spiritkeeper_armature_003/Skeleton3D" index="7"]
+surface_material_override/0 = ExtResource("4_i4grt")
+
+[node name="lock_002" parent="spiritkeeper_armature_003/Skeleton3D" index="8"]
+surface_material_override/0 = ExtResource("4_i4grt")
+
+[node name="map" parent="spiritkeeper_armature_003/Skeleton3D" index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_by3wu")
+
+[node name="scarf_001" parent="spiritkeeper_armature_003/Skeleton3D" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mk7ab")
+
+[node name="shakuhachi" parent="spiritkeeper_armature_003/Skeleton3D" index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_d4hxo")
+
+[node name="spirit" parent="spiritkeeper_armature_003/Skeleton3D" index="12"]
+surface_material_override/0 = SubResource("StandardMaterial3D_g6an2")
+
+[node name="staff_spiritkeeper" parent="spiritkeeper_armature_003/Skeleton3D" index="13"]
+surface_material_override/0 = SubResource("StandardMaterial3D_te7tb")
+
+[node name="tail_003" parent="spiritkeeper_armature_003/Skeleton3D" index="14"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0pjhx")
