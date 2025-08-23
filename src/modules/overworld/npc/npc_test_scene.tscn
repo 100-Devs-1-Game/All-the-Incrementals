@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj8i2yidfv1yn"]
+
+[ext_resource type="Script" uid="uid://58x2hf2xh6a0" path="res://modules/overworld/npc/npc.gd" id="1_wutss"]
+[ext_resource type="Script" uid="uid://o5qj3tmy4ife" path="res://modules/overworld/dialog/npc_dialog.gd" id="2_nsk4d"]
+[ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="3_mx3hi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u1v1n"]
+
+[sub_resource type="Resource" id="Resource_6nwod"]
+script = ExtResource("2_nsk4d")
+npc_name = "Otto"
+initial_dialog = "Hi
+What's up
+Nothing"
+metadata/_custom_type_script = "uid://o5qj3tmy4ife"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tmpq0"]
+radius = 2.0
+
+[node name="NPC" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_u1v1n")
+script = ExtResource("1_wutss")
+dialog = SubResource("Resource_6nwod")
+
+[node name="InteractionComponent3D" type="Area3D" parent="." node_paths=PackedStringArray("object")]
+collision_layer = 0
+monitorable = false
+script = ExtResource("3_mx3hi")
+object = NodePath("..")
+action_ui_suffix = "NPC"
+metadata/_custom_type_script = "uid://7n4knvm4dle5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]
+shape = SubResource("SphereShape3D_tmpq0")
+
+[connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interacted_with"]
