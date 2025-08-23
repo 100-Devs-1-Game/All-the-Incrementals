@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbdlc760ysa1w"]
+[gd_scene load_steps=6 format=3 uid="uid://dbdlc760ysa1w"]
 
 [ext_resource type="Script" uid="uid://b815e5ijpvic4" path="res://modules/overworld/portal/portal.gd" id="1_a66a1"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_ffdhy"]
+[ext_resource type="PackedScene" uid="uid://b8alupdkd68l7" path="res://assets/overworld/vfx/portal/portal_flat_plane.tscn" id="3_ffdhy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hedal"]
 radius = 2.0
@@ -25,7 +26,10 @@ shape = SubResource("SphereShape3D_hedal")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.5, 0)
+visible = false
 radius = 1.0
 material = SubResource("StandardMaterial3D_mqy75")
+
+[node name="PortalFlatPlane" parent="." instance=ExtResource("3_ffdhy")]
 
 [connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_3d_interacted_with"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8alupdkd68l7"]
+
+[ext_resource type="Shader" uid="uid://be5ptb7c6ttvv" path="res://assets/overworld/vfx/portal/portal.gdshader" id="1_7yiur"]
+[ext_resource type="Texture2D" uid="uid://bajmr3h18we2" path="res://assets/overworld/vfx/portal/portal_interior.webp" id="2_o13o7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a4ajq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ohs53"]
+render_priority = 0
+shader = ExtResource("1_7yiur")
+shader_parameter/size = 0.5
+shader_parameter/size_inner = 0.2
+shader_parameter/inner = ExtResource("2_o13o7")
+shader_parameter/portalFrameColor = Color(0.670588, 0.819608, 0.921569, 1)
+shader_parameter/portalHighlightColor = Color(0.321569, 0.027451, 0.145098, 1)
+shader_parameter/distortion_strength = 0.1
+shader_parameter/distortion_speed = 1.0
+shader_parameter/spin_axis = 0
+shader_parameter/spin_speed = 0.0
+shader_parameter/noise_scale = 20.0
+shader_parameter/noise_speed = 1.56
+shader_parameter/noise_octaves = 5.56
+
+[node name="PortalFlatPlane" type="Node3D"]
+
+[node name="portal_flat_plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+mesh = SubResource("PlaneMesh_a4ajq")
+surface_material_override/0 = SubResource("ShaderMaterial_ohs53")
