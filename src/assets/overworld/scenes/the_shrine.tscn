@@ -44,7 +44,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://assets/overworld/vfx/water/circular_water/circular_water.obj" id="46_qqenq"]
 [ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://assets/overworld/scripts/shaders/water_toon.gdshader" id="47_e8tmd"]
 [ext_resource type="Texture2D" uid="uid://dfvfmidfq5gmd" path="res://assets/overworld/vfx/water/circular_water/water_blue.webp" id="47_qqenq"]
-[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/Klip_Signal.gd" id="50_jomy3"]
+[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/altar_diamond.gd" id="50_jomy3"]
 [ext_resource type="Texture2D" uid="uid://b0giovcp3gygs" path="res://assets/overworld/assets/skybox/sky_day_01.webp" id="50_qqenq"]
 [ext_resource type="SpriteFrames" uid="uid://jt2bd2rgdu5t" path="res://assets/overworld/vfx/elements_anim/fire/elements_fire_anim.tres" id="52_0eu76"]
 [ext_resource type="SpriteFrames" uid="uid://bvva1qjrsfn36" path="res://assets/overworld/vfx/elements_anim/earth/elements_earth_anim.tres" id="52_61tad"]

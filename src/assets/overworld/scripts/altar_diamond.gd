@@ -20,7 +20,7 @@ extends Node3D
 @export var rotate_x_axis := false
 @export var rotate_y_axis := false
 @export var rotate_z_axis := false
-@export var custom_axis := Vector3.ZERO   # optional; if non-zero, overrides the booleans
+@export var custom_axis := Vector3.ZERO  # optional; if non-zero, overrides the booleans
 
 # ─────────────────────────────────────
 # ▌ Scale
@@ -49,7 +49,7 @@ extends Node3D
 # ─────────────────────────────────────
 @export_group("Sway")
 @export var enable_sway := false
-@export var sway_amount := 5.0   # degrees peak
+@export var sway_amount := 5.0  # degrees peak
 @export var sway_speed := 0.5
 
 # ─────────────────────────────────────
@@ -70,20 +70,21 @@ extends Node3D
 @export var wave_y_top := 1.0
 @export var wave_y_bottom := -1.0
 
-var _time := 0.0
-var _sway_t := 0.0
-var _angle := 0.0
-
-var _t0: Transform3D                # original transform
-var _b0: Basis                      # original orthonormal basis (rotation only)
-var _s0: Vector3                    # original local scale
-var _p0: Vector3                    # original local position
-
 var initial_rotation_degrees: Vector3
 var noise := FastNoiseLite.new()
 
 var base_mesh: ArrayMesh
 var base_vertices: PackedVector3Array = PackedVector3Array()
+
+var _time := 0.0
+var _sway_t := 0.0
+var _angle := 0.0
+
+var _t0: Transform3D  # original transform
+var _b0: Basis  # original orthonormal basis (rotation only)
+var _s0: Vector3  # original local scale
+var _p0: Vector3  # original local position
+
 
 func _ready():
 	_t0 = transform
@@ -103,6 +104,7 @@ func _ready():
 		else:
 			push_warning("Wave: no valid mesh/surface found.")
 
+
 func _physics_process(delta: float) -> void:
 	_time += delta
 
@@ -111,15 +113,15 @@ func _physics_process(delta: float) -> void:
 	var rot_basis := _b0
 	if enable_rotation:
 		_angle = wrapf(_angle + deg_to_rad(rotation_speed_deg) * delta, 0.0, TAU)
-		var R := Basis(axis, _angle)      # rotate around local axis
-		rot_basis = R * _b0               # apply on top of original rotation
+		var r := Basis(axis, _angle)  # rotate around local axis
+		rot_basis = r * _b0  # apply on top of original rotation
 
 	# 2) Optional sway (small extra rotation around local X)
 	if enable_sway:
 		_sway_t += delta * sway_speed
 		var sway_deg := noise.get_noise_1d(_sway_t) * sway_amount
-		var sway_R := Basis(Vector3.RIGHT, deg_to_rad(sway_deg))
-		rot_basis = sway_R * rot_basis
+		var sway_r := Basis(Vector3.RIGHT, deg_to_rad(sway_deg))
+		rot_basis = sway_r * rot_basis
 
 	# 3) Start with original position
 	var pos := _p0
@@ -131,9 +133,12 @@ func _physics_process(delta: float) -> void:
 	# 5) Sinusoidal position offsets per-axis
 	if enable_position:
 		var pos_offset := sin(_time * position_speed) * position_amplitude
-		if position_axis_x: pos.x += pos_offset
-		if position_axis_y: pos.y += pos_offset
-		if position_axis_z: pos.z += pos_offset
+		if position_axis_x:
+			pos.x += pos_offset
+		if position_axis_y:
+			pos.y += pos_offset
+		if position_axis_z:
+			pos.z += pos_offset
 
 	# 6) Scale (relative to original scale)
 	var scl := _s0
@@ -142,9 +147,12 @@ func _physics_process(delta: float) -> void:
 		if scale_uniform:
 			scl = _s0 * f
 		else:
-			if scale_axis_x: scl.x = _s0.x * f
-			if scale_axis_y: scl.y = _s0.y * f
-			if scale_axis_z: scl.z = _s0.z * f
+			if scale_axis_x:
+				scl.x = _s0.x * f
+			if scale_axis_y:
+				scl.y = _s0.y * f
+			if scale_axis_z:
+				scl.z = _s0.z * f
 
 	# 7) Compose final transform from original pieces (no incremental drift)
 	var final_basis := rot_basis.scaled(scl)
@@ -176,6 +184,7 @@ func _physics_process(delta: float) -> void:
 		var updated := ArrayMesh.new()
 		updated.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 		self.set("mesh", updated)
+
 
 func _pick_axis() -> Vector3:
 	if custom_axis != Vector3.ZERO:

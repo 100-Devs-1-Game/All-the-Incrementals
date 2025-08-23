@@ -48,7 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://cgmrvaxocqvut" path="res://assets/overworld/models/architectural/ribbon/arch_ribbon_02.tscn" id="39_har01"]
 [ext_resource type="ArrayMesh" uid="uid://byqwraxgefyr3" path="res://assets/overworld/models/architectural/ribbon/long_hanging_ribbon.obj" id="40_rgyrm"]
 [ext_resource type="Shader" uid="uid://ce8k8i21t31cp" path="res://assets/overworld/scripts/shaders/cloth_sim.gdshader" id="41_xglwi"]
-[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/Klip_Signal.gd" id="42_kwt8i"]
+[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/altar_diamond.gd" id="42_kwt8i"]
 [ext_resource type="SpriteFrames" uid="uid://bvva1qjrsfn36" path="res://assets/overworld/vfx/elements_anim/earth/elements_earth_anim.tres" id="43_vqipi"]
 [ext_resource type="SpriteFrames" uid="uid://jt2bd2rgdu5t" path="res://assets/overworld/vfx/elements_anim/fire/elements_fire_anim.tres" id="44_bsvjb"]
 [ext_resource type="SpriteFrames" uid="uid://c1pcfko77da5i" path="res://assets/overworld/vfx/elements_anim/water/elements_water_anim.tres" id="45_cpc5h"]

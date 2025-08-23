@@ -1,21 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnp8p5dwpu15q"]
+[gd_scene load_steps=15 format=3 uid="uid://dnp8p5dwpu15q"]
 
 [ext_resource type="Script" uid="uid://445ct847k57p" path="res://modules/overworld/altar/altar.gd" id="1_nq507"]
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="2_n0bjl"]
 [ext_resource type="PackedScene" uid="uid://dd2idytqw7eqi" path="res://modules/overworld/altar/altar_ui.tscn" id="3_n0bjl"]
 [ext_resource type="AudioStream" uid="uid://cxe6igo3p11ru" path="res://assets/ui/sfx/open_ui.ogg" id="3_prhne"]
+[ext_resource type="Material" uid="uid://bmxm4xnx1r8ba" path="res://assets/overworld/materials/simple/metallic/m_red.tres" id="3_ryqf0"]
+[ext_resource type="Material" uid="uid://chqynex3x8cry" path="res://assets/overworld/materials/simple/metallic/m_blue.tres" id="4_fodwy"]
 [ext_resource type="AudioStream" uid="uid://vmdpnylykvg8" path="res://assets/ui/sfx/close_ui.ogg" id="4_n1r1q"]
+[ext_resource type="Material" uid="uid://bwmu40iba2m2h" path="res://assets/overworld/materials/simple/metallic/m_purple.tres" id="5_jod46"]
+[ext_resource type="PackedScene" uid="uid://dbuxopqnh45v1" path="res://assets/overworld/models/architectural/structures/altar/altar_01.tscn" id="5_v1teg"]
+[ext_resource type="ArrayMesh" uid="uid://bl5nddjgsdeje" path="res://assets/overworld/models/architectural/structures/altar/altar_01_diamond_01.tres" id="6_o1w8r"]
+[ext_resource type="Material" uid="uid://dm2g6v4fy7jlb" path="res://assets/overworld/materials/simple/metallic/m_green.tres" id="7_m235q"]
+[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/altar_diamond.gd" id="8_ryqf0"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_nq507"]
 radius = 2.8
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_mj0t8"]
-top_radius = 1.0
-bottom_radius = 1.5
-height = 1.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fodwy"]
+height = 1.0856
+radius = 1.14258
 
 [node name="Altar" type="Node3D"]
 script = ExtResource("1_nq507")
+earth_material = ExtResource("7_m235q")
+fire_material = ExtResource("3_ryqf0")
+water_material = ExtResource("4_fodwy")
+wind_material = ExtResource("5_jod46")
 
 [node name="InteractionComponent3D" type="Area3D" parent="."]
 collision_layer = 0
@@ -30,14 +40,24 @@ metadata/_custom_type_script = "uid://7n4knvm4dle5"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_nq507")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("CylinderMesh_mj0t8")
+[node name="altar_01" parent="." instance=ExtResource("5_v1teg")]
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11915, 0)
-text = "ALTAR"
-font_size = 64
+[node name="StaticBody3D" type="StaticBody3D" parent="altar_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="altar_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558609, 0)
+shape = SubResource("CylinderShape3D_fodwy")
+
+[node name="Diamond" type="MeshInstance3D" parent="altar_01"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0480332, 2.04938, -0.0205939)
+mesh = ExtResource("6_o1w8r")
+skeleton = NodePath("../../../..")
+script = ExtResource("8_ryqf0")
+enable_rotation = true
+rotation_speed_deg = 45.0
+rotate_y_axis = true
+enable_bobbing = true
 
 [node name="UI" parent="." instance=ExtResource("3_n0bjl")]
 visible = false
