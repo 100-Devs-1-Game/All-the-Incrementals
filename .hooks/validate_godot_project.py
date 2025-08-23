@@ -244,6 +244,10 @@ class GodotValidator:
         for match in self.res_path_pattern.finditer(content):
             res_path = match.group(1)
 
+            # TODO: make ignoring certain files configurable :3 match the .gitignore?
+            if res_path == "res://override.cfg":
+                continue
+
             # Skip paths that look like they're constructed dynamically
             if any(marker in res_path for marker in ['{', '}', '%s', '%d', '%f']):
                 continue
