@@ -1145,7 +1145,7 @@ transform = Transform3D(1, 1.67638e-07, -9.44361e-07, 2.14204e-08, 1, 5.5549e-07
 shape = SubResource("ConcavePolygonShape3D_3l0gy")
 
 [node name="bridge_01_mmi3d_04" type="MultiMeshInstance3D" parent="Content/bridges"]
-transform = Transform3D(0.945001, 0.0114602, -0.354327, 1.84511e-10, 1.00339, 0.037831, 0.327069, -0.0331119, 1.02376, -36.1988, 7.80152, -25.0235)
+transform = Transform3D(0.945001, 0.0114602, -0.354327, 1.84511e-10, 1.00339, 0.037831, 0.327069, -0.0331119, 1.02376, -36.1988, 7.43291, -25.0235)
 multimesh = SubResource("MultiMesh_nxmvj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/bridges/bridge_01_mmi3d_04"]
