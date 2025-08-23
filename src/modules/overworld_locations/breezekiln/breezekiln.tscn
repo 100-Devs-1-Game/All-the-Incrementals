@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bl4s8xuvuf3xb"]
+[gd_scene load_steps=71 format=3 uid="uid://bl4s8xuvuf3xb"]
 
 [ext_resource type="Script" uid="uid://ou1teugr01v8" path="res://modules/overworld_locations/breezekiln/breezekiln.gd" id="1_82p5n"]
 [ext_resource type="Resource" uid="uid://bseyt0iuwnq5m" path="res://modules/minigame/fire_cooking/data/fire_cooking_data.tres" id="2_oivh7"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://ckomfk2gpxjrx" path="res://assets/overworld/assets/skybox/skybox_sphere.tscn" id="23_vwep7"]
 [ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="24_v34jr"]
 [ext_resource type="Texture2D" uid="uid://cgkd7wcycsfnf" path="res://assets/overworld/assets/skybox/sky_day_03.webp" id="25_d0jwi"]
+[ext_resource type="PackedScene" uid="uid://dbdlc760ysa1w" path="res://modules/overworld/portal/portal.tscn" id="28_ffxn8"]
 [ext_resource type="PackedScene" uid="uid://dnp8p5dwpu15q" path="res://modules/overworld/altar/altar.tscn" id="33_amf67"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_knmtx"]
@@ -1454,6 +1455,11 @@ element = 1
 [node name="Altar Wind" parent="Content/altars" instance=ExtResource("33_amf67")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69241, 0.263302, -25.8863)
 element = 3
+
+[node name="portals" type="Node3D" parent="Content"]
+
+[node name="Portal" parent="Content/portals" instance=ExtResource("28_ffxn8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0155, 6.42988, -33.3069)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

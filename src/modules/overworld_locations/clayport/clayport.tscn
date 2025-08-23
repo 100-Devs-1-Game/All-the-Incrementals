@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=63 format=3 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="Script" uid="uid://eiutp4wmfx4t" path="res://modules/overworld_locations/clayport/clayport.gd" id="1_q21dp"]
 [ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_piane"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dnxu2oowl3ycw" path="res://assets/overworld/models/architectural/wall/wall_baked.tscn" id="24_fild6"]
 [ext_resource type="PackedScene" uid="uid://dfr5sx5nr2a4o" path="res://assets/overworld/models/landscapes/island_circles_baked.tscn" id="25_y6jcw"]
 [ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="26_akwx3"]
+[ext_resource type="PackedScene" uid="uid://dbdlc760ysa1w" path="res://modules/overworld/portal/portal.tscn" id="26_uhny2"]
 [ext_resource type="Texture2D" uid="uid://cgkd7wcycsfnf" path="res://assets/overworld/assets/skybox/sky_day_03.webp" id="27_hi7m4"]
 [ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://assets/overworld/vfx/water/circular_water/circular_water.obj" id="28_f0kp8"]
 [ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://assets/overworld/scripts/shaders/water_toon.gdshader" id="29_2nf4n"]
@@ -179,7 +180,7 @@ water_target_fishing_data = ExtResource("5_2h4su")
 character_spawner = NodePath("CharacterSpawner")
 
 [node name="CharacterSpawner" parent="." instance=ExtResource("6_m4e12")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.376736, -0.934443, 12.1577)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53634, -0.934443, 12.1577)
 
 [node name="Cameras & Lights" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.62, 1.5, 0)
@@ -548,6 +549,11 @@ shape = SubResource("BoxShape3D_e5ygp")
 
 [node name="cascade_waterfall" parent="Content/VFX/Cascade" instance=ExtResource("32_xvfut")]
 transform = Transform3D(0.482658, 0, 0.315638, 0, 1.7301, 0, -0.110568, 0, 0.169076, -0.756199, -0.478611, 0.0516527)
+
+[node name="portals" type="Node3D" parent="Content"]
+
+[node name="Portal" parent="Content/portals" instance=ExtResource("26_uhny2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.4829, -0.849879, 0.999437)
 
 [node name="DebugPopup" parent="." instance=ExtResource("9_4eabd")]
 title = "Clayport"

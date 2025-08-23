@@ -310,7 +310,7 @@ metadata/_custom_type_script = "uid://7n4knvm4dle5"
 shape = SubResource("SphereShape3D_mggan")
 
 [node name="CharacterSpawner" parent="." instance=ExtResource("6_0n3fe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8183, 0.0184742, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="Camera & Lights" type="Node3D" parent="."]
 
