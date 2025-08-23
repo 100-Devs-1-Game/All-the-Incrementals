@@ -139,19 +139,39 @@ jobs:
           TEMP_FILE=/tmp/test_linux_release.log
           ./test_game/linux_release.x86_64 --headless --render-thread safe --single-threaded-scene --verbose --quit-after 1000 2>&1 | tee $TEMP_FILE
 
-          # This should line up with https://github.com/100-Devs-1-Game/godot-gut-ci/blob/fix/import-gut/init-and-run-tests.sh#L50
+          # This should line up with whatever branch of https://github.com/100-Devs-1-Game/godot-gut-ci/ that we're using
           # Except GUT requires an editor build, so we can't use it in the release? idk
+
+          echo ""
+          echo "#####################"
+          echo "       RESULTS       "
+          echo "#####################"
+
+          FAILED=0
 
           # Check for any error lines (case-insensitive)
           # Ignores null time for textures: https://github.com/godotengine/godot/issues/108994
-          FILTERED_ERRORS=$(grep -i "ERROR" "$TEMP_FILE" | grep -v 'ERROR: Parameter "t" is null.') || true
+          FILTERED_ERRORS=$(grep "ERROR" "$TEMP_FILE" | grep -v 'ERROR: Parameter "t" is null.') || true
 
           if [ -n "$FILTERED_ERRORS" ]; then
-            echo "Detected error output in test logs:"
+            echo "CI FAILED BECAUSE OF GODOT ERRORS"
             echo "$FILTERED_ERRORS"
-            exit 1
+            echo ""
+            FAILED=1
           fi
 
-          echo "ALL GOOD :) :) :)"
+          # Check for invalid UID warnings which will cause problems for other people
+          FILTERED_WARNINGS=$(grep "WARNING" "$TEMP_FILE" | grep 'invalid UID:') || true
 
-          exit 0
+          if [ -n "$FILTERED_WARNINGS" ]; then
+            echo "CI FAILED BECAUSE OF GODOT UID WARNINGS"
+            echo "$FILTERED_WARNINGS"
+            echo ""
+            FAILED=1
+          fi
+
+          if [ "$FAILED" -eq 0 ]; then
+            echo "ALL GOOD :) :) :)"
+          fi
+
+          exit $FAILED
