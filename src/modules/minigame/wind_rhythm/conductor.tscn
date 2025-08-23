@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8l4byfcrycg8"]
 
 [ext_resource type="Script" uid="uid://bi2msqduevumu" path="res://modules/minigame/wind_rhythm/conductor.gd" id="1_h5sur"]
-[ext_resource type="Resource" uid="uid://bkrgaps0ryayo" path="res://modules/minigame/wind_rhythm/chart/exotic_house.tres" id="2_0lpnu"]
+[ext_resource type="Resource" uid="uid://b16thytvkspkb" path="res://modules/minigame/wind_rhythm/chart/exotic_house.tres" id="2_0lpnu"]
 
 [node name="Conductor" type="AudioStreamPlayer"]
 script = ExtResource("1_h5sur")

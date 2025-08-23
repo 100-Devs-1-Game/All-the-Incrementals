@@ -11,7 +11,10 @@
 [resource]
 script = ExtResource("1_uefjm")
 display_name = "Wind Rhythm"
-how_to_play = ""
+how_to_play = "Press the notes at the right time to score points, score as many points as you can before you run out of concentration.
+Single note symbol = {primary_action}
+Double note symbol = {secondary_action}
+Arrows = Directional input"
 music_track = ""
 minigame_scene = ExtResource("1_pjehh")
 upgrade_tree_root_nodes = Array[ExtResource("2_pjehh")]([ExtResource("5_5c170"), ExtResource("6_vg6sv"), ExtResource("7_qby8s")])

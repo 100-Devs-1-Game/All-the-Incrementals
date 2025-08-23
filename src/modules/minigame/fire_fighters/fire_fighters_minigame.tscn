@@ -129,7 +129,7 @@ sequence = ExtResource("22_mtp5r")
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
 
-[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
 anchors_preset = 1
 anchor_top = 0.0
 anchor_bottom = 0.0

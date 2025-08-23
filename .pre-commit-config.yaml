@@ -8,6 +8,9 @@ repos:
     - id: check-merge-conflict
       args: [--assume-in-merge]
     - id: check-added-large-files
+      args: ['--maxkb=1024', '--enforce-all']
+      exclude: '\.(tres|tscn)$'
+      always_run: true
 
   # GDScript Toolkit
   - repo: https://github.com/Scony/godot-gdscript-toolkit

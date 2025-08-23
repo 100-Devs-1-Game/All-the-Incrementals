@@ -29,6 +29,16 @@ var _first_spawn: bool = true
 var mm: MinigameMenu = $MinigameSharedComponents/SharedBaseComponents/CanvasLayer/MinigameMenu
 
 
+func play_audio(p_stream: AudioStream):
+	var effect := AudioStreamPlayer.new()
+	effect.autoplay = true
+	effect.bus = "SFX"
+	effect.stream = p_stream
+	effect.pitch_scale = randf_range(0.9, 1.1)
+
+	add_child(effect)
+
+
 func get_pixels_per_second() -> int:
 	return floori(-stats.scrollspeed.x)
 
@@ -90,10 +100,31 @@ func _start() -> void:
 func _process(_delta: float) -> void:
 	ui_speed_value.text = str(get_pixels_per_second())
 	ui_score_value.text = str(get_score())
-	ui_oxygen_value.text = str(WTFGlobals.minigame.stats.oxygen_percentage()) + "%"
+
+	ui_oxygen_value.text = ""
+	var oxygen_str := str(stats.oxygen_percentage()) + "%"
+	if stats.oxygen_percentage() > 80:
+		ui_oxygen_value.append_text("[color=white]%s[/color]" % oxygen_str)
+	elif stats.oxygen_percentage() > 60:
+		ui_oxygen_value.append_text("[color=#FFFF99]%s[/color]" % oxygen_str)
+	elif stats.oxygen_percentage() > 40:
+		ui_oxygen_value.append_text("[color=orange]%s[/color]" % oxygen_str)
+	elif stats.oxygen_percentage() > 20:
+		ui_oxygen_value.append_text("[color=orangered]%s[/color]" % oxygen_str)
+	elif stats.oxygen_percentage() > 0:
+		ui_oxygen_value.append_text("[color=red]%s[/color]" % oxygen_str)
+	else:
+		ui_oxygen_value.append_text("[color=black]%s[/color]" % oxygen_str)
+
 	ui_weight_value.text = str(floori(stats.total_added_weight()))
 	ui_distance_value.text = str(floori(_distance_travelled))
-	ui_carry_value.text = "%s/%s" % [floori(stats.carrying), floori(stats.carry_capacity())]
+	if stats.carry_remaining() <= 0:
+		ui_carry_value.text = ""
+		ui_carry_value.append_text(
+			"[color=red]%s/%s[/color]" % [floori(stats.carrying), floori(stats.carry_capacity())]
+		)
+	else:
+		ui_carry_value.text = "%s/%s" % [floori(stats.carrying), floori(stats.carry_capacity())]
 
 
 func random_spawnable_fish(
@@ -194,6 +225,7 @@ func _spawn_fish() -> void:
 	# we may eventually deal with floating point imprecision
 	# should instead move all entity children and let them auto-delete, keeping positions sane
 	%Entities.add_child(f)
+	f.reset_physics_interpolation()
 
 
 func try_spawn_fish() -> void:
