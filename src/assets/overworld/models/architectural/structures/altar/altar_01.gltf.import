@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bkjd77fn1frsf"
-path="res://.godot/imported/altar_01.gltf-19a7d9490db14e4bfe6850783efe4203.scn"
+path="res://.godot/imported/altar_01.gltf-dd6f13539e8c1aba4488d3d115fcc0d5.scn"
 
 [deps]
 
-source_file="res://assets/overworld/models/architectural/structures/altar/altar_01.gltf"
-dest_files=["res://.godot/imported/altar_01.gltf-19a7d9490db14e4bfe6850783efe4203.scn"]
+source_file="res://models/architectural/structures/altar/altar_01.gltf"
+dest_files=["res://.godot/imported/altar_01.gltf-dd6f13539e8c1aba4488d3d115fcc0d5.scn"]
 
 [params]
 

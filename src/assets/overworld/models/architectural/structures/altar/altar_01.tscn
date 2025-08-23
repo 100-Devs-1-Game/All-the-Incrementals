@@ -1,21 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbuxopqnh45v1"]
+[gd_scene load_steps=5 format=3 uid="uid://dbuxopqnh45v1"]
 
-[ext_resource type="PackedScene" uid="uid://bkjd77fn1frsf" path="res://assets/overworld/models/architectural/structures/altar/altar_01.gltf" id="1_cr860"]
-[ext_resource type="Texture2D" uid="uid://56y50akb6nqc" path="res://assets/overworld/models/architectural/structures/altar/altar_01.webp" id="2_acte2"]
-[ext_resource type="ArrayMesh" uid="uid://dejidtohggvu3" path="res://assets/overworld/models/architectural/structures/altar/altar_01_diamond_04.tres" id="2_qujth"]
-[ext_resource type="Material" uid="uid://bsrilhglpyu26" path="res://assets/overworld/materials/simple/metallic/m_yellow.tres" id="4_unjir"]
+[ext_resource type="PackedScene" uid="uid://bkjd77fn1frsf" path="res://models/architectural/structures/altar/altar_01.gltf" id="1_cr860"]
+[ext_resource type="Texture2D" uid="uid://56y50akb6nqc" path="res://models/architectural/structures/altar/altar_01.webp" id="2_acte2"]
+[ext_resource type="Material" uid="uid://bsrilhglpyu26" path="res://materials/simple/metallic/m_yellow.tres" id="4_unjir"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a01uc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ha6lw"]
 albedo_texture = ExtResource("2_acte2")
 
 [node name="altar_01" instance=ExtResource("1_cr860")]
 
 [node name="altar_01_baked_diamond" parent="." index="0"]
 visible = false
-mesh = ExtResource("2_qujth")
 
 [node name="altar_01_baked_base" parent="." index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_a01uc")
+surface_material_override/0 = SubResource("StandardMaterial3D_ha6lw")
 
 [node name="altar_01_baked_chains" parent="." index="2"]
 surface_material_override/0 = ExtResource("4_unjir")
