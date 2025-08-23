@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dj4os1ofe42ov" path="res://modules/overworld_locations/breezekiln/bridges.tscn" id="16_ffxn8"]
 [ext_resource type="PackedScene" uid="uid://c5w1nmcxgph1k" path="res://assets/overworld/models/landscapes/paths/path_baked_01.tscn" id="17_gbdyy"]
 [ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://assets/overworld/models/landscapes/island_circle.gltf" id="18_8aa78"]
-[ext_resource type="Shader" uid="uid://rg3fl1i082l4" path="res://assets/overworld/scripts/shaders/tri-planar_texture_mapping.gdshader" id="19_pvtxs"]
+[ext_resource type="Shader" uid="uid://rg3fl1i082l4" path="res://assets/overworld/scripts/shaders/tri_planar_texture_mapping.gdshader" id="19_pvtxs"]
 [ext_resource type="Texture2D" uid="uid://catixkt58j5cy" path="res://assets/overworld/materials/textures/ground/ground_albedo_05_snow.webp" id="20_se1cq"]
 [ext_resource type="PackedScene" uid="uid://b20hcfpyh4u8d" path="res://assets/overworld/models/landscapes/mountain_landscape/mountain_landscape_baked.tscn" id="21_2iplg"]
 [ext_resource type="SpriteFrames" uid="uid://b3itxrlohx1" path="res://assets/overworld/vfx/pyre_flame/pyre_flame.tres" id="22_4g73v"]
