@@ -38,6 +38,10 @@ func change_to_settlement(data: SettlementData) -> void:
 	if is_instance_valid(_current_settlement):
 		_current_settlement.queue_free()
 
+	# to appease GuT tests
+	if not SaveGameManager.world_state:
+		SaveGameManager.start_game()
+
 	var new_settlement = data.settlement_scene.instantiate()
 	assert(new_settlement is OverworldLocation3D)
 	settlement_scene_holder_node.add_child(new_settlement)
