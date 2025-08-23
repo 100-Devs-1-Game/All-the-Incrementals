@@ -441,7 +441,7 @@ transform = Transform3D(0.994818, 0, 0.101664, 0, 0.999999, 0, -0.101664, 0, 0.9
 shape = SubResource("CylinderShape3D_prpfr")
 
 [node name="staircase" type="Node3D" parent="Content"]
-transform = Transform3D(-0.0715025, 0, 1.05689, 0, 1, 0, -0.993136, 0, -0.0760929, 2.79463, -1.17857, 0)
+transform = Transform3D(-0.0718108, 0, 0.997418, 0, 1, 0, -0.997418, 0, -0.0718108, 2.79463, -1.17857, 0)
 
 [node name="staircase_mmi3d_01" type="MultiMeshInstance3D" parent="Content/staircase"]
 transform = Transform3D(0.999758, -0.0217536, 0.00315347, 0.0217536, 0.958601, -0.283919, 0.00315341, 0.283919, 0.958843, 0.0494034, -0.457556, -0.64868)
@@ -495,13 +495,12 @@ transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, 0, 0, 1, 0.0541382, 5.68075,
 shape = SubResource("BoxShape3D_ky4uq")
 
 [node name="altars" type="Node3D" parent="Content"]
-transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, 0, 0, 0)
 
 [node name="Altar Earth" parent="Content/altars" instance=ExtResource("15_fw474")]
-transform = Transform3D(-3.01458e-08, 0, 0.689655, 0, 0.689655, 0, -0.689655, 0, -3.01458e-08, -6.74541, 0.785376, 4.33813)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.78084, 1.1388, 6.29029)
 
 [node name="Altar Water" parent="Content/altars" instance=ExtResource("15_fw474")]
-transform = Transform3D(-3.01458e-08, 0, 0.689655, 0, 0.689655, 0, -0.689655, 0, -3.01458e-08, -15.7366, 0.785376, -21.4642)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.8181, 1.1388, -31.1231)
 element = 2
 
 [node name="landscapes" type="Node3D" parent="Content"]
