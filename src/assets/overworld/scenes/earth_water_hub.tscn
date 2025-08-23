@@ -1,8 +1,9 @@
-[gd_scene load_steps=67 format=4 uid="uid://d3mxhlrq3ern4"]
+[gd_scene load_steps=68 format=4 uid="uid://d3mxhlrq3ern4"]
 
 [ext_resource type="Texture2D" uid="uid://xstxlsqpgn7h" path="res://assets/HDRIs/night.hdr" id="2_dqkb0"]
 [ext_resource type="Texture2D" uid="uid://cvtojgakhortv" path="res://assets/nature/trees/tree_05.webp" id="5_v8tti"]
 [ext_resource type="PackedScene" uid="uid://bnep7rw3djdx8" path="res://models/architectural/structures/temples/water_temple/water_temple.tscn" id="6_d3vjw"]
+[ext_resource type="Script" path="res://scripts/klip_signal.gd" id="6_y02r3"]
 [ext_resource type="ArrayMesh" uid="uid://bl82s3wnbaib8" path="res://models/architectural/structures/stall/stall.mesh" id="7_wdwec"]
 [ext_resource type="ArrayMesh" uid="uid://c452na5eaoqfc" path="res://models/architectural/structures/houses/house_01/house_01_m.mesh" id="8_y02r3"]
 [ext_resource type="ArrayMesh" uid="uid://domnhvt4fgacs" path="res://models/architectural/structures/houses/house_02/house_02_m.mesh" id="9_77kgr"]
@@ -422,7 +423,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94658, 0, -0.954626)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102234, 1.96187, 0.00528836)
 mesh = ExtResource("24_v8tti")
 skeleton = NodePath("../../..")
-script = ExtResource("18_4w4hg")
+script = ExtResource("6_y02r3")
 enable_rotation = true
 rotation_speed_deg = 45.0
 rotate_y_axis = true
@@ -440,7 +441,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4624, 1.7515, -26.7064)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102234, 1.96187, 0.00528836)
 mesh = ExtResource("25_v8tti")
 skeleton = NodePath("../../..")
-script = ExtResource("18_4w4hg")
+script = ExtResource("6_y02r3")
 enable_rotation = true
 rotation_speed_deg = -45.0
 
@@ -457,7 +458,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.057, 3.75952, 2.82105)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102234, 1.96187, 0.00528836)
 mesh = ExtResource("26_v8tti")
 skeleton = NodePath("../../..")
-script = ExtResource("18_4w4hg")
+script = ExtResource("6_y02r3")
 enable_rotation = true
 rotation_speed_deg = 45.0
 
@@ -474,7 +475,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.538, 3.75952, -24.2553)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102234, 1.96187, 0.00528812)
 mesh = ExtResource("27_wdwec")
 surface_material_override/0 = ExtResource("27_d3vjw")
-script = ExtResource("18_4w4hg")
+script = ExtResource("6_y02r3")
 enable_rotation = true
 rotation_speed_deg = -45.0
 

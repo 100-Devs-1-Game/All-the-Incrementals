@@ -1,6 +1,7 @@
-[gd_scene load_steps=57 format=3 uid="uid://dilv53e8hkijq"]
+[gd_scene load_steps=58 format=3 uid="uid://dilv53e8hkijq"]
 
 [ext_resource type="Texture2D" uid="uid://c6t333jbfefng" path="res://assets/HDRIs/day.hdr" id="1_hbxmu"]
+[ext_resource type="Script" path="res://scripts/klip_signal.gd" id="4_w3twe"]
 [ext_resource type="ArrayMesh" uid="uid://c8akkyljye4o6" path="res://models/architectural/structures/houses/windmill/windmill_01_m.mesh" id="5_ai0pt"]
 [ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://models/landscapes/island_circle.gltf" id="6_n1hja"]
 [ext_resource type="ArrayMesh" uid="uid://dyrh5wy31kesg" path="res://models/architectural/structures/houses/windmill/windmill_02_m.mesh" id="7_wjhkt"]
@@ -214,7 +215,7 @@ transform = Transform3D(0.837719, 0, 0.546102, 0, 1, 0, -0.546102, 0, 0.837719, 
 [node name="windmill_02_mmi3d_01" type="MultiMeshInstance3D" parent="windmill/Pivot_01"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.106531, 0.00389194, -0.120996)
 multimesh = SubResource("MultiMesh_aevtt")
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_rotation = true
 rotation_speed_deg = 6.56
 rotate_x_axis = true
@@ -236,7 +237,7 @@ transform = Transform3D(0.771625, 0, 0.636078, 0, 1, 0, -0.636078, 0, 0.771625, 
 [node name="windmill_02_mmi3d_01" type="MultiMeshInstance3D" parent="windmill/Pivot_02"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0302353, 0.0134869, -0.00486755)
 multimesh = SubResource("MultiMesh_aevtt")
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_rotation = true
 rotation_speed_deg = -4.56
 rotate_x_axis = true
@@ -257,7 +258,7 @@ transform = Transform3D(0.969872, 0, 0.243615, 0, 1, 0, -0.243615, 0, 0.969872, 
 [node name="windmill_02_mmi3d_01" type="MultiMeshInstance3D" parent="windmill/Pivot_03"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0373306, 0.0989304, 0.0019455)
 multimesh = SubResource("MultiMesh_aevtt")
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_rotation = true
 rotation_speed_deg = 3.56
 rotate_x_axis = true
@@ -916,7 +917,7 @@ shape = SubResource("CylinderShape3D_hbxmu")
 [node name="fire_wind_house_02_mmi3d_01" type="MultiMeshInstance3D" parent="fire_wind_house"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13282, 7.25999, -0.0952263)
 multimesh = SubResource("MultiMesh_algyw")
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_rotation = true
 rotation_speed_deg = 25.0
 rotate_x_axis = true
@@ -924,7 +925,7 @@ rotate_x_axis = true
 [node name="fire_wind_house_02_mmi3d_02" type="MultiMeshInstance3D" parent="fire_wind_house"]
 transform = Transform3D(0.743565, 0, -0.668664, 0, 1, 0, 0.668664, 0, 0.743565, -13.3556, 13.3826, -53.086)
 multimesh = SubResource("MultiMesh_algyw")
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_rotation = true
 rotation_speed_deg = -15.0
 rotate_x_axis = true
@@ -1261,7 +1262,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1304,14 +1305,14 @@ animation = &"pyre_flame_default"
 autoplay = "pyre_flame_default"
 
 [node name="top_flame_light2" type="OmniLight3D" parent="VFX/pyre_flames"]
-transform = Transform3D(1.01232, 0, -0.149667, 0, 1.02333, 0, 0.149667, 0, 1.01232, 39.8104, -6.10356, 40.0451)
+transform = Transform3D(0.989247, 0, -0.146256, 0, 1, 0, 0.146256, 0, 0.989247, 39.8104, -6.10356, 40.0451)
 light_color = Color(0.990316, 0.478857, 0.402522, 1)
 light_energy = 0.25
 light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1326,7 +1327,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 6.057
 omni_attenuation = 0.438
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1348,7 +1349,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1363,7 +1364,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1385,7 +1386,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("21_k0uuy")
+script = ExtResource("4_w3twe")
 enable_light_flicker = true
 base_energy = 5.56
 flicker_amplitude = 0.1
