@@ -19,7 +19,7 @@ text = "0"
 [node name="ScoreLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 221.0
-offset_right = 261.0
-offset_bottom = 50.0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 100.0
 text = "0"
