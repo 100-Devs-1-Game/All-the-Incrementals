@@ -45,7 +45,7 @@ class GodotValidator:
         self.import_uid_pattern = re.compile(r'^uid="(uid://[^"]*)"', re.MULTILINE)
 
         # Patterns for static paths only (not dynamically constructed)
-        self.res_path_pattern = re.compile(r'"(res://[^"{}%]*)"')  # Exclude paths with format strings
+        self.res_path_pattern = re.compile(r'"(res://(?!\.godot)[^"{}%]*)"')  # Exclude paths with format strings
         self.uid_path_pattern = re.compile(r'"(uid://[^"]*)"')
 
         # External resources must have a valid UID and path
