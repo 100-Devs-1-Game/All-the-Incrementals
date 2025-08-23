@@ -3,12 +3,21 @@ class_name FormatOnSave extends EditorPlugin
 
 const SUCCESS: int = 0
 const AUTO_RELOAD_SETTING: String = "text_editor/behavior/files/auto_reload_scripts_on_external_change"
+const ENABLED_SETTING: String = "plugins/format_on_save/enabled"
+const GDFORMAT_PATH_SETTING: String = "plugins/format_on_save/path"
 var original_auto_reload_setting: bool
 
 
 # LIFECYCLE EVENTS
 func _enter_tree():
 	activate_auto_reload_setting()
+	var editor_settings = EditorInterface.get_editor_settings()
+	var is_enabled = editor_settings.get_setting(ENABLED_SETTING)
+	if is_enabled == null:
+		editor_settings.set_setting(ENABLED_SETTING, true)
+	var gdformat_path = editor_settings.get_setting(GDFORMAT_PATH_SETTING)
+	if gdformat_path == null:
+		editor_settings.set_setting(GDFORMAT_PATH_SETTING, "gdformat")
 	resource_saved.connect(on_resource_saved)
 
 
@@ -19,7 +28,9 @@ func _exit_tree():
 
 # CALLED WHEN A SCRIPT IS SAVED
 func on_resource_saved(resource: Resource):
-	if resource is Script:
+	var editor_settings = EditorInterface.get_editor_settings()
+	var is_enabled = editor_settings.get_setting(ENABLED_SETTING)
+	if resource is Script and is_enabled:
 		var script: Script = resource
 		var current_script = get_editor_interface().get_script_editor().get_current_script()
 		var text_edit: CodeEdit = (
@@ -29,9 +40,9 @@ func on_resource_saved(resource: Resource):
 		# Prevents other unsaved scripts from overwriting the active one
 		if current_script == script:
 			var filepath: String = ProjectSettings.globalize_path(resource.resource_path)
-
+			var gdformat_path = editor_settings.get_setting(GDFORMAT_PATH_SETTING)
 			# Run gdformat
-			var exit_code = OS.execute("gdformat", [filepath])
+			var exit_code = OS.execute(gdformat_path, [filepath])
 
 			# Replace source_code with formatted source_code
 			if exit_code == SUCCESS:
