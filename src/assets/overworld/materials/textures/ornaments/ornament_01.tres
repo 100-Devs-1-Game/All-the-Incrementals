@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bgvf13ebcvf70"]
 
-[ext_resource type="Texture2D" uid="uid://b58fe4s8fpd70" path="res://materials/textures/ornaments/ornament_01_albedo.webp" id="1_b8mmn"]
-[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://materials/textures/shared/canvas_normal.webp" id="2_cbywf"]
+[ext_resource type="Texture2D" uid="uid://b58fe4s8fpd70" path="res://assets/overworld/materials/textures/ornaments/ornament_01_albedo.webp" id="1_b8mmn"]
+[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://assets/overworld/materials/textures/shared/canvas_normal.webp" id="2_cbywf"]
 
 [resource]
 albedo_texture = ExtResource("1_b8mmn")

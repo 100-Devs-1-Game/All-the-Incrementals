@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dsyp3a8t3vix7"]
 
-[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://materials/textures/shared/canvas_normal.webp" id="2_01p87"]
+[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://assets/overworld/materials/textures/shared/canvas_normal.webp" id="2_01p87"]
 
 [resource]
 albedo_color = Color(0.862745, 0.12549, 0.129412, 1)

@@ -1,14 +1,14 @@
 [gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cv2fqxxq0ujke"]
 
-[ext_resource type="Texture2D" uid="uid://bq2k0r4pif7sj" path="res://vfx/elements_anim/wind/000.webp" id="1_4f301"]
-[ext_resource type="Texture2D" uid="uid://ddo32rv7onudl" path="res://vfx/elements_anim/wind/001.webp" id="2_0w30h"]
-[ext_resource type="Texture2D" uid="uid://dggj7dvslm0ef" path="res://vfx/elements_anim/wind/002.webp" id="3_xm6rr"]
-[ext_resource type="Texture2D" uid="uid://ft2xsacm6i2s" path="res://vfx/elements_anim/wind/003.webp" id="4_s1wdl"]
-[ext_resource type="Texture2D" uid="uid://cr2yup8eqfps7" path="res://vfx/elements_anim/wind/004.webp" id="5_55qcj"]
-[ext_resource type="Texture2D" uid="uid://05impcg0otpm" path="res://vfx/elements_anim/wind/005.webp" id="6_ra8lh"]
-[ext_resource type="Texture2D" uid="uid://dly5n71uhfxu3" path="res://vfx/elements_anim/wind/006.webp" id="7_iet1x"]
-[ext_resource type="Texture2D" uid="uid://brcw5imwwx61w" path="res://vfx/elements_anim/wind/007.webp" id="8_e07y1"]
-[ext_resource type="Texture2D" uid="uid://c8reilqs8w1fa" path="res://vfx/elements_anim/wind/008.webp" id="9_yo83q"]
+[ext_resource type="Texture2D" uid="uid://bq2k0r4pif7sj" path="res://assets/overworld/vfx/elements_anim/wind/000.webp" id="1_4f301"]
+[ext_resource type="Texture2D" uid="uid://ddo32rv7onudl" path="res://assets/overworld/vfx/elements_anim/wind/001.webp" id="2_0w30h"]
+[ext_resource type="Texture2D" uid="uid://dggj7dvslm0ef" path="res://assets/overworld/vfx/elements_anim/wind/002.webp" id="3_xm6rr"]
+[ext_resource type="Texture2D" uid="uid://ft2xsacm6i2s" path="res://assets/overworld/vfx/elements_anim/wind/003.webp" id="4_s1wdl"]
+[ext_resource type="Texture2D" uid="uid://cr2yup8eqfps7" path="res://assets/overworld/vfx/elements_anim/wind/004.webp" id="5_55qcj"]
+[ext_resource type="Texture2D" uid="uid://05impcg0otpm" path="res://assets/overworld/vfx/elements_anim/wind/005.webp" id="6_ra8lh"]
+[ext_resource type="Texture2D" uid="uid://dly5n71uhfxu3" path="res://assets/overworld/vfx/elements_anim/wind/006.webp" id="7_iet1x"]
+[ext_resource type="Texture2D" uid="uid://brcw5imwwx61w" path="res://assets/overworld/vfx/elements_anim/wind/007.webp" id="8_e07y1"]
+[ext_resource type="Texture2D" uid="uid://c8reilqs8w1fa" path="res://assets/overworld/vfx/elements_anim/wind/008.webp" id="9_yo83q"]
 
 [resource]
 animations = [{

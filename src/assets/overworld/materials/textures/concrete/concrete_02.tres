@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b46ovjaptuq56"]
 
-[ext_resource type="Texture2D" uid="uid://b141t1wnrstqc" path="res://materials/textures/concrete/concrete_albedo_02.webp" id="1_6j274"]
-[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://materials/textures/shared/canvas_normal.webp" id="2_w7o58"]
+[ext_resource type="Texture2D" uid="uid://b141t1wnrstqc" path="res://assets/overworld/materials/textures/concrete/concrete_albedo_02.webp" id="1_6j274"]
+[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://assets/overworld/materials/textures/shared/canvas_normal.webp" id="2_w7o58"]
 
 [resource]
 albedo_texture = ExtResource("1_6j274")

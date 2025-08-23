@@ -1,13 +1,13 @@
 [gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://jt2bd2rgdu5t"]
 
-[ext_resource type="Texture2D" uid="uid://d0ad46jibjnl0" path="res://vfx/elements_anim/fire/000.webp" id="1_6ploh"]
-[ext_resource type="Texture2D" uid="uid://bxqohlp5h2st3" path="res://vfx/elements_anim/fire/001.webp" id="2_5barl"]
-[ext_resource type="Texture2D" uid="uid://o62ybinvjd3j" path="res://vfx/elements_anim/fire/002.webp" id="3_xwktx"]
-[ext_resource type="Texture2D" uid="uid://ncnl8es2bvdf" path="res://vfx/elements_anim/fire/003.webp" id="4_xtesf"]
-[ext_resource type="Texture2D" uid="uid://do5j40udgrsak" path="res://vfx/elements_anim/fire/004.webp" id="5_73d0m"]
-[ext_resource type="Texture2D" uid="uid://bbe1ppv0c2toh" path="res://vfx/elements_anim/fire/005.webp" id="6_c773b"]
-[ext_resource type="Texture2D" uid="uid://d0lhiov2mut67" path="res://vfx/elements_anim/fire/006.webp" id="7_bgfli"]
-[ext_resource type="Texture2D" uid="uid://ojaj1s0wpuag" path="res://vfx/elements_anim/fire/007.webp" id="8_v1114"]
+[ext_resource type="Texture2D" uid="uid://d0ad46jibjnl0" path="res://assets/overworld/vfx/elements_anim/fire/000.webp" id="1_6ploh"]
+[ext_resource type="Texture2D" uid="uid://bxqohlp5h2st3" path="res://assets/overworld/vfx/elements_anim/fire/001.webp" id="2_5barl"]
+[ext_resource type="Texture2D" uid="uid://o62ybinvjd3j" path="res://assets/overworld/vfx/elements_anim/fire/002.webp" id="3_xwktx"]
+[ext_resource type="Texture2D" uid="uid://ncnl8es2bvdf" path="res://assets/overworld/vfx/elements_anim/fire/003.webp" id="4_xtesf"]
+[ext_resource type="Texture2D" uid="uid://do5j40udgrsak" path="res://assets/overworld/vfx/elements_anim/fire/004.webp" id="5_73d0m"]
+[ext_resource type="Texture2D" uid="uid://bbe1ppv0c2toh" path="res://assets/overworld/vfx/elements_anim/fire/005.webp" id="6_c773b"]
+[ext_resource type="Texture2D" uid="uid://d0lhiov2mut67" path="res://assets/overworld/vfx/elements_anim/fire/006.webp" id="7_bgfli"]
+[ext_resource type="Texture2D" uid="uid://ojaj1s0wpuag" path="res://assets/overworld/vfx/elements_anim/fire/007.webp" id="8_v1114"]
 
 [resource]
 animations = [{

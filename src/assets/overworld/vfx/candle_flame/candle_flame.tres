@@ -1,11 +1,11 @@
 [gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bvxn6etk1px5h"]
 
-[ext_resource type="Texture2D" uid="uid://df4gnqsmysfxt" path="res://vfx/candle_flame/01.webp" id="1_qqsb5"]
-[ext_resource type="Texture2D" uid="uid://b2asrapk34m8o" path="res://vfx/candle_flame/02.webp" id="2_0chn5"]
-[ext_resource type="Texture2D" uid="uid://d0wkll05oqmti" path="res://vfx/candle_flame/03.webp" id="3_lilod"]
-[ext_resource type="Texture2D" uid="uid://33rhgqr6w5y8" path="res://vfx/candle_flame/04.webp" id="4_217ve"]
-[ext_resource type="Texture2D" uid="uid://bnrlgaxtqtsh5" path="res://vfx/candle_flame/05.webp" id="5_ptcxr"]
-[ext_resource type="Texture2D" uid="uid://b5t8b82f7dpq7" path="res://vfx/candle_flame/06.webp" id="6_qwi6n"]
+[ext_resource type="Texture2D" uid="uid://df4gnqsmysfxt" path="res://assets/overworld/vfx/candle_flame/01.webp" id="1_qqsb5"]
+[ext_resource type="Texture2D" uid="uid://b2asrapk34m8o" path="res://assets/overworld/vfx/candle_flame/02.webp" id="2_0chn5"]
+[ext_resource type="Texture2D" uid="uid://d0wkll05oqmti" path="res://assets/overworld/vfx/candle_flame/03.webp" id="3_lilod"]
+[ext_resource type="Texture2D" uid="uid://33rhgqr6w5y8" path="res://assets/overworld/vfx/candle_flame/04.webp" id="4_217ve"]
+[ext_resource type="Texture2D" uid="uid://bnrlgaxtqtsh5" path="res://assets/overworld/vfx/candle_flame/05.webp" id="5_ptcxr"]
+[ext_resource type="Texture2D" uid="uid://b5t8b82f7dpq7" path="res://assets/overworld/vfx/candle_flame/06.webp" id="6_qwi6n"]
 
 [resource]
 animations = [{
