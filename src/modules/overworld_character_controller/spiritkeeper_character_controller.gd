@@ -36,6 +36,7 @@ const MAP_ANIMATION_NAME := &"04_open_map"
 @export var model_rotation_speed: float = 10.0
 
 var state_machine: NoxCallableStateMachine
+var enable_dynamic_spring_arm_length: bool = true
 
 var _last_strong_direction: Vector3
 var _possible_interaction: InteractionComponent3D
@@ -45,6 +46,8 @@ var _interaction_finished_sound: AudioStream
 @onready var shapecast_floor_check: ShapeCast3D = %"ShapeCast3D Floor Check"
 @onready var raycast_ground_contact: RayCast3D = $"RayCast3D Ground Contact"
 @onready var audio_player_interaction: AudioStreamPlayer = $"AudioStreamPlayer Interaction"
+@onready var camera_spring_arm: SpringArm3D = $CameraController/CameraPivot/SpringArm3D
+@onready var orig_spring_arm_length: float = camera_spring_arm.spring_length
 
 
 #region states
@@ -133,11 +136,24 @@ func _handle_model_orientation(desired_direction: Vector3, delta: float) -> void
 
 
 func move():
+	if enable_dynamic_spring_arm_length:
+		adjust_spring_arm()
+
 	if shapecast_floor_check.is_colliding():
 		move_and_slide()
 
 	if not raycast_ground_contact.is_colliding():
 		apply_floor_snap()
+
+
+func adjust_spring_arm():
+	var dot: float = velocity.normalized().dot(global_position.direction_to(camera.global_position))
+	var target_length: float = lerp(
+		orig_spring_arm_length, orig_spring_arm_length * 2, clampf(dot, 0.0, 1.0)
+	)
+	camera_spring_arm.spring_length = lerp(
+		camera_spring_arm.spring_length, target_length, get_physics_process_delta_time()
+	)
 
 
 #endregion
