@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyiwot1clf0pd"]
+
+[ext_resource type="PackedScene" uid="uid://b5yktg263aqqu" path="res://assets/overworld/models/nature/wood/wood_log_03.gltf" id="1_1vc1f"]
+[ext_resource type="Material" uid="uid://b7f4285ubs3g6" path="res://assets/overworld/materials/textures/wood/wood_02.tres" id="2_3e2d5"]
+
+[node name="wood_log_032" instance=ExtResource("1_1vc1f")]
+
+[node name="wood_log_03" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3e2d5")

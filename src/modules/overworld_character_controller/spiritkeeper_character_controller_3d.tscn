@@ -13,7 +13,9 @@ height = 1.5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0x76"]
 
 [node name="SpiritkeeperBody3D" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "skeleton", "camera", "staff", "map", "shakuhachi", "spring_bone_simulators", "lean_pivot_node", "model_rotation_pivot_node")]
-floor_max_angle = 1.0472
+collision_mask = 3
+floor_max_angle = 1.13446
+floor_snap_length = 1.0
 script = ExtResource("1_cpmd8")
 animation_player = NodePath("Visuals/LeanPivot/RotationPivot/spiritkeeper_v7_trl/AnimationPlayer")
 skeleton = NodePath("Visuals/LeanPivot/RotationPivot/spiritkeeper_v7_trl/spiritkeeper_armature/Skeleton3D")
@@ -185,6 +187,7 @@ spring_length = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 enabled = false
 target_position = Vector3(0, -10, 0)
+collision_mask = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ds7e8orok8ok7"]
+
+[ext_resource type="Texture2D" uid="uid://bcusejgbuhjih" path="res://assets/overworld/materials/textures/roof/roof_albedo_02.webp" id="1_7n4re"]
+[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://assets/overworld/materials/textures/shared/canvas_normal.webp" id="2_dlb3d"]
+
+[resource]
+albedo_texture = ExtResource("1_7n4re")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("2_dlb3d")

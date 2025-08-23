@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ofisak4d8ub"]
+
+[ext_resource type="PackedScene" uid="uid://cywinoy43js5a" path="res://assets/overworld/models/nature/rock/rock_01.gltf" id="1_cwnct"]
+[ext_resource type="ArrayMesh" uid="uid://dqbx7wiek0m0o" path="res://assets/overworld/models/nature/rock/rock_01.mesh" id="2_e631b"]
+
+[node name="rock_01" instance=ExtResource("1_cwnct")]
+
+[node name="cgaxis_rocks_03_01" parent="." index="0"]
+mesh = ExtResource("2_e631b")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm20ynvf6crtk"]
+
+[ext_resource type="PackedScene" uid="uid://c0khwmyt6q7rn" path="res://assets/overworld/models/nature/mushroom/mushroom_02.gltf" id="1_d27n2"]
+[ext_resource type="Material" uid="uid://dps5ies2cradj" path="res://assets/overworld/models/nature/mushroom/mushroom_02.tres" id="2_vat3l"]
+
+[node name="mushroom_02" instance=ExtResource("1_d27n2")]
+
+[node name="tVFX_OB_FU_MuS_012" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_vat3l")

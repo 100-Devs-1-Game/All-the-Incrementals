@@ -32,19 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"@MATERIAL:0": {
-"use_external/enabled": true,
-"use_external/path": "uid://bu0u4440bfsel"
-}
-},
-"nodes": {
-"PATH:House_01": {
-"physics/mask": 0,
-"physics/shape_type": 3
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

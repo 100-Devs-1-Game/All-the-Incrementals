@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://uqq3rdp62jto"]
+
+[ext_resource type="PackedScene" uid="uid://dkybp5sldf0w4" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_01_m.gltf" id="1_24vlr"]
+[ext_resource type="ArrayMesh" uid="uid://c8akkyljye4o6" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_01_m.mesh" id="2_2yflg"]
+
+[node name="windmill_01_m" instance=ExtResource("1_24vlr")]
+
+[node name="windmill" parent="." index="0"]
+mesh = ExtResource("2_2yflg")

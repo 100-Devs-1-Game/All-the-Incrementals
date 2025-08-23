@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://02207aeg1w3y"]
+
+[ext_resource type="Texture2D" uid="uid://c03237t0rt1nu" path="res://assets/overworld/materials/textures/cloth/cloth_albedo_03.webp" id="1_8nhsm"]
+[ext_resource type="Texture2D" uid="uid://bivl5u4o3m7tk" path="res://assets/overworld/materials/textures/shared/canvas_normal.webp" id="2_oyygo"]
+
+[resource]
+albedo_texture = ExtResource("1_8nhsm")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("2_oyygo")

@@ -1,4 +1,4 @@
-extends Node
+extends OverworldLocation3D
 
 @export var fire_cooking_data: MinigameData
 @export var fire_fighters_data: MinigameData

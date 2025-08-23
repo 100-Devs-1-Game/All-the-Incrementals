@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgmrvaxocqvut"]
+[gd_scene load_steps=3 format=3 uid="uid://cgmrvaxocqvut"]
 
 [ext_resource type="PackedScene" uid="uid://bygpg2g30h3iw" path="res://assets/overworld/models/architectural/ribbon/arch_ribbon_02.gltf" id="1_vkpoc"]
+[ext_resource type="Material" uid="uid://dsyp3a8t3vix7" path="res://assets/overworld/materials/textures/cloth/cloth_01.tres" id="2_abdr4"]
 
 [node name="arch_ribbon_022" instance=ExtResource("1_vkpoc")]
+
+[node name="arch_ribbon_02" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_abdr4")

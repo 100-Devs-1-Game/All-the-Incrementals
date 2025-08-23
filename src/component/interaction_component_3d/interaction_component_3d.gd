@@ -66,5 +66,5 @@ func do_interact():
 	if not player.interact_with(object):
 		return
 	player.set_interaction_sounds(initial_sound, finishing_sound)
-	interacted_with.emit(player)
 	get_viewport().set_input_as_handled()
+	interacted_with.emit(player)

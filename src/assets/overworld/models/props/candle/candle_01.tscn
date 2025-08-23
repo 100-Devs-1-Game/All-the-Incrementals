@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b66drvaba8u41"]
+[gd_scene load_steps=3 format=3 uid="uid://b66drvaba8u41"]
 
 [ext_resource type="PackedScene" uid="uid://csdkj6of032wl" path="res://assets/overworld/models/props/candle/candle_01.gltf" id="1_01eef"]
+[ext_resource type="Material" uid="uid://da248thgeu1o6" path="res://assets/overworld/materials/textures/ground/ground_03.tres" id="2_l78nh"]
 
 [node name="candle_012" instance=ExtResource("1_01eef")]
+
+[node name="candle_01" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_l78nh")

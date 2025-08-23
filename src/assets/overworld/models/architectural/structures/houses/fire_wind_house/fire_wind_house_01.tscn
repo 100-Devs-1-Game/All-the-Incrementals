@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cms8g64t4sjkm"]
+
+[ext_resource type="PackedScene" uid="uid://c24skow6n07xg" path="res://assets/overworld/models/architectural/structures/houses/fire_wind_house/fire_wind_house_01.gltf" id="1_fggv8"]
+
+[sub_resource type="Resource" id="Resource_0nhcm"]
+metadata/__load_path__ = "res://models/architectural/structures/houses/fire_wind_house/fire_wind_house_01_m/fire_wind_house_01.mesh"
+
+[node name="fire_wind_house_01" instance=ExtResource("1_fggv8")]
+
+[node name="Fire_Wind_House_01" parent="." index="0"]
+mesh = SubResource("Resource_0nhcm")

@@ -52,6 +52,7 @@ func handle_editor_direct_start() -> void:
 		"Couldn't find child class of type MinigameSharedComponents in Minigame scene"
 	)
 
+	# to appease GuT tests
 	if not SaveGameManager.world_state:
 		SaveGameManager.start_game()
 

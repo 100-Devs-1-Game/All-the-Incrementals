@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1mgvpejyy5uc"]
+
+[ext_resource type="PackedScene" uid="uid://0nu83betuffd" path="res://assets/overworld/models/architectural/structures/houses/house_01/house_01_m.gltf" id="1_gn3w1"]
+[ext_resource type="ArrayMesh" uid="uid://doyammdd6ombg" path="res://assets/overworld/models/architectural/structures/houses/house_01/house_01_earth_m.tres" id="2_8uags"]
+
+[node name="house_01_m" instance=ExtResource("1_gn3w1")]
+
+[node name="House_01" parent="." index="0"]
+mesh = ExtResource("2_8uags")

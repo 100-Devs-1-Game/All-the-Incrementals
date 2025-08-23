@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dtpi0ch35u6dj"]
+
+[ext_resource type="Texture2D" uid="uid://da54n736slrip" path="res://assets/overworld/models/architectural/structures/bridges/bridge_01_m/bridge_01_m.webp" id="1_2ax34"]
+
+[resource]
+albedo_texture = ExtResource("1_2ax34")
