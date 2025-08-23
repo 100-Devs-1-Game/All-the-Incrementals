@@ -40,4 +40,4 @@ func _to_string():
 		text += "! "
 	else:
 		text += "  "
-	return text + str(cached_absolute_beat)
+	return "%s - %s/%s (%s)" % [text, beat, bar, cached_absolute_beat]

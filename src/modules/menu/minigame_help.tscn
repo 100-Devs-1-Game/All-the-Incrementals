@@ -36,8 +36,8 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_left = 82.0
 offset_top = -2.0
-offset_right = -28.0
-offset_bottom = 448.0
+offset_right = -10.0
+offset_bottom = 434.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -55,9 +55,30 @@ asd"
 [node name="Exit" type="Button" parent="Panel"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 802.0
-offset_top = 471.0
-offset_right = 976.0
-offset_bottom = 540.0
+offset_left = 779.0
+offset_top = 452.0
+offset_right = 953.0
+offset_bottom = 521.0
 size_flags_vertical = 10
 text = "Back"
+
+[node name="Title" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -491.0
+offset_right = 226.0
+offset_bottom = -371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "How to Play"
+horizontal_alignment = 1

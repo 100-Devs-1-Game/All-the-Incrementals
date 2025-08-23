@@ -1,12 +1,14 @@
-[gd_scene load_steps=52 format=3 uid="uid://s0oqlo6ix0fj"]
+[gd_scene load_steps=54 format=3 uid="uid://s0oqlo6ix0fj"]
 
 [ext_resource type="Script" uid="uid://cr1h1t1row22a" path="res://modules/minigame/wind_rhythm/wind_rhythm.gd" id="1_4gb8k"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0ggpn"]
-[ext_resource type="Texture2D" uid="uid://jsnnw5l5o06j" path="res://assets/minigames/wind_rhythm/placeholder_assets/rhythm_background.png" id="3_m5gb3"]
+[ext_resource type="Texture2D" uid="uid://drxt3drk65g2x" path="res://assets/minigames/wind_rhythm/placeholder_assets/rhythm_bg.png" id="3_thg2w"]
 [ext_resource type="PackedScene" uid="uid://ev2tmev7hfu1" path="res://modules/minigame/wind_rhythm/board/rhythm_board.tscn" id="4_uq30r"]
 [ext_resource type="PackedScene" uid="uid://c8l4byfcrycg8" path="res://modules/minigame/wind_rhythm/conductor.tscn" id="5_r3uod"]
+[ext_resource type="Resource" uid="uid://d4c2bl4wx51nd" path="res://modules/minigame/wind_rhythm/chart/endless/endless_f.tres" id="6_8ecnv"]
 [ext_resource type="PackedScene" uid="uid://byhlr4ndp885i" path="res://modules/minigame/wind_rhythm/note/note_spawner.tscn" id="6_vd8gq"]
 [ext_resource type="PackedScene" uid="uid://bnfjvghewkmc2" path="res://modules/minigame/wind_rhythm/rhythm_scorer.tscn" id="7_4qd8c"]
+[ext_resource type="Theme" uid="uid://sbbn1spr2jvx" path="res://global/theme.tres" id="7_8ecnv"]
 [ext_resource type="PackedScene" uid="uid://d3jltdnck35he" path="res://modules/minigame/wind_rhythm/concentration_bar.tscn" id="8_3oiir"]
 [ext_resource type="Texture2D" uid="uid://byxstb6oi5ri5" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/000.png" id="9_4qd8c"]
 [ext_resource type="Texture2D" uid="uid://bl8ofr3pfyd82" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/001.png" id="10_hb4ap"]
@@ -205,18 +207,17 @@ animations = [{
 
 [node name="WindRhythm" type="Node2D"]
 script = ExtResource("1_4gb8k")
+autoplay = 24
+autoplay_level = 1
 data_uid = "uid://cxrnthj4sdjv4"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
-
-[node name="DebugPopup" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
-visible_on_start = true
 
 [node name="RhythmBackground" type="Sprite2D" parent="."]
 self_modulate = Color(0.597176, 0.597176, 0.597176, 1)
 position = Vector2(908, 541)
 scale = Vector2(1.29686, 1.29686)
-texture = ExtResource("3_m5gb3")
+texture = ExtResource("3_thg2w")
 
 [node name="PanelContainer" parent="." instance=ExtResource("4_uq30r")]
 visible = false
@@ -225,6 +226,7 @@ size_flags_vertical = 0
 
 [node name="Conductor" parent="." instance=ExtResource("5_r3uod")]
 unique_name_in_owner = true
+chart = ExtResource("6_8ecnv")
 
 [node name="judgment_line" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -233,37 +235,37 @@ gizmo_extents = 400.0
 
 [node name="JudgmentLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 129.0
-offset_top = 306.0
-offset_right = 228.0
-offset_bottom = 356.0
+offset_left = 49.0
+offset_top = 590.0
+offset_right = 148.0
+offset_bottom = 640.0
+theme = ExtResource("7_8ecnv")
 text = "!Okay"
 
 [node name="Early_Late" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 129.0
-offset_top = 357.0
-offset_right = 215.0
-offset_bottom = 407.0
+offset_left = 49.0
+offset_top = 641.0
+offset_right = 135.0
+offset_bottom = 691.0
 text = "!Early"
 label_settings = SubResource("LabelSettings_03wef")
 
 [node name="NoteSpawner" parent="." instance=ExtResource("6_vd8gq")]
-scroll_speed = 1.0
 conductor_path = NodePath("../Conductor")
 judgment_line = NodePath("../judgment_line")
 wind_rhythm = NodePath("..")
-offset = 0.5
+offset = 0.25
 
 [node name="Scorer" parent="." instance=ExtResource("7_4qd8c")]
 unique_name_in_owner = true
 anchors_preset = -1
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 803.0
-offset_top = 312.0
-offset_right = 803.0
-offset_bottom = 312.0
+offset_left = 49.0
+offset_top = 659.0
+offset_right = 49.0
+offset_bottom = 659.0
 grow_horizontal = 2
 grow_vertical = 2
 
