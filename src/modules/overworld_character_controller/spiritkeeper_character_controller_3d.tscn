@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://uem0xukdu645"]
+[gd_scene load_steps=10 format=3 uid="uid://uem0xukdu645"]
 
 [ext_resource type="Script" uid="uid://d0m3rwnddtlu8" path="res://modules/overworld_character_controller/spiritkeeper_character_controller.gd" id="1_cpmd8"]
 [ext_resource type="PackedScene" uid="uid://ccu6edggvltvk" path="res://assets/overworld/entities/spiritkeeper/spiritkeeper_v7_trl.glb" id="2_ikx2s"]
 [ext_resource type="Material" uid="uid://bpaqxlijch4be" path="res://assets/overworld/entities/spiritkeeper/spiritkeeper_material_xray_nox.tres" id="3_ie0o8"]
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="4_scodq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_scodq"]
+height = 0.1
+radius = 0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_scodq"]
+size = Vector3(0.2, 8, 0.2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v33t4"]
 height = 1.5
@@ -14,6 +21,7 @@ height = 1.5
 
 [node name="SpiritkeeperBody3D" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "skeleton", "camera", "staff", "map", "shakuhachi", "spring_bone_simulators", "lean_pivot_node", "model_rotation_pivot_node")]
 collision_mask = 3
+floor_constant_speed = true
 floor_max_angle = 1.13446
 floor_snap_length = 1.0
 script = ExtResource("1_cpmd8")
@@ -32,6 +40,19 @@ model_rotation_pivot_node = NodePath("Visuals/LeanPivot/RotationPivot")
 [node name="LeanPivot" type="Node3D" parent="Visuals"]
 
 [node name="RotationPivot" type="Node3D" parent="Visuals/LeanPivot"]
+
+[node name="ShapeCast3D Floor Check" type="ShapeCast3D" parent="Visuals/LeanPivot/RotationPivot"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
+shape = SubResource("CylinderShape3D_scodq")
+target_position = Vector3(0, -2, 0.5)
+max_results = 1
+collision_mask = 3
+
+[node name="MeshInstance3D Debug" type="MeshInstance3D" parent="Visuals/LeanPivot/RotationPivot/ShapeCast3D Floor Check"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.5)
+visible = false
+mesh = SubResource("BoxMesh_scodq")
 
 [node name="spiritkeeper_v7_trl" parent="Visuals/LeanPivot/RotationPivot" instance=ExtResource("2_ikx2s")]
 
@@ -183,10 +204,9 @@ spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraController/CameraPivot/SpringArm3D"]
 
-[node name="RayCast Floor Check" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-enabled = false
-target_position = Vector3(0, -10, 0)
+[node name="RayCast3D Ground Contact" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+target_position = Vector3(0, -0.3, 0)
 collision_mask = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
