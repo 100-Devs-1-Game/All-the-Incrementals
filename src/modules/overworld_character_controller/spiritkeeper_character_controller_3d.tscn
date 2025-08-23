@@ -21,6 +21,7 @@ height = 1.5
 
 [node name="SpiritkeeperBody3D" type="CharacterBody3D" node_paths=PackedStringArray("animation_player", "skeleton", "camera", "staff", "map", "shakuhachi", "spring_bone_simulators", "lean_pivot_node", "model_rotation_pivot_node")]
 collision_mask = 3
+floor_constant_speed = true
 floor_max_angle = 1.13446
 floor_snap_length = 1.0
 script = ExtResource("1_cpmd8")
