@@ -41,6 +41,7 @@ var enable_dynamic_spring_arm_length: bool = true
 var _last_strong_direction: Vector3
 var _possible_interaction: InteractionComponent3D
 var _interaction_finished_sound: AudioStream
+var _current_dialog: NPCDialog
 
 @onready var label_interaction_hint: Label = %"Label Interaction Hint"
 @onready var shapecast_floor_check: ShapeCast3D = %"ShapeCast3D Floor Check"
@@ -48,6 +49,8 @@ var _interaction_finished_sound: AudioStream
 @onready var audio_player_interaction: AudioStreamPlayer = $"AudioStreamPlayer Interaction"
 @onready var camera_spring_arm: SpringArm3D = $CameraController/CameraPivot/SpringArm3D
 @onready var orig_spring_arm_length: float = camera_spring_arm.spring_length
+@onready var dialog_parent: MarginContainer = %"MarginContainer Dialog"
+@onready var dialog_vbox: VBoxContainer = %"VBoxContainer Dialog"
 
 
 #region states
@@ -93,6 +96,19 @@ func interact_state_enter():
 
 func interact_state():
 	pass
+
+
+func dialog_state_enter():
+	_current_dialog.state.current_index = 0
+	display_dialog()
+
+
+func dialog_state():
+	if Input.is_action_just_pressed("primary_action"):
+		display_dialog()
+
+	if Input.is_action_just_pressed("exit_menu"):
+		end_dialog()
 
 
 #endregion
@@ -171,6 +187,7 @@ func _ready() -> void:
 	state_machine.add_state(idle_state, idle_state_enter)
 	state_machine.add_state(move_state, move_state_enter)
 	state_machine.add_state(interact_state, interact_state_enter)
+	state_machine.add_state(dialog_state, dialog_state_enter)
 
 	state_machine.set_initial_state(idle_state)
 
@@ -231,5 +248,44 @@ func _on_possible_interaction(component: InteractionComponent3D):
 func _on_interaction_lost(component: InteractionComponent3D):
 	if component == _possible_interaction:
 		label_interaction_hint.hide()
+
+
+#endregion
+
+#region dialog
+
+
+func start_dialog(dialog: NPCDialog):
+	assert(not _current_dialog)
+	_current_dialog = dialog
+	if not _current_dialog.state:
+		_current_dialog.state = NPCDialogState.new()
+	state_machine.change_state(dialog_state)
+
+
+func display_dialog():
+	clear_dialog()
+	add_dialog_labels(_current_dialog.get_next_lines())
+	dialog_parent.show()
+
+
+func add_dialog_labels(arr: Array[String]):
+	for text in arr:
+		var label := Label.new()
+		label.text = text
+		dialog_vbox.add_child(label)
+
+
+func end_dialog():
+	clear_dialog()
+	dialog_parent.hide()
+	_current_dialog = null
+	state_machine.change_state(idle_state)
+
+
+func clear_dialog():
+	for child in dialog_vbox.get_children():
+		dialog_vbox.remove_child(child)
+		dialog_vbox.queue_free()
 
 #endregion
