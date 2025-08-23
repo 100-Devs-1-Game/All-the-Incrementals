@@ -154,7 +154,7 @@ jobs:
           FILTERED_ERRORS=$(grep "ERROR" "$TEMP_FILE" | grep -v 'ERROR: Parameter "t" is null.') || true
 
           if [ -n "$FILTERED_ERRORS" ]; then
-            echo "CI FAILED BECAUSE OF GODOT ERRORS"
+            echo "CI FAILED BECAUSE OF THESE GODOT ERRORS"
             echo "$FILTERED_ERRORS"
             echo ""
             FAILED=1
@@ -164,7 +164,7 @@ jobs:
           FILTERED_WARNINGS=$(grep "WARNING" "$TEMP_FILE" | grep 'invalid UID:') || true
 
           if [ -n "$FILTERED_WARNINGS" ]; then
-            echo "CI FAILED BECAUSE OF GODOT UID WARNINGS"
+            echo "CI FAILED BECAUSE OF THESE GODOT WARNINGS"
             echo "$FILTERED_WARNINGS"
             echo ""
             FAILED=1
