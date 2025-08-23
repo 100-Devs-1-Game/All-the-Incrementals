@@ -31,7 +31,7 @@ jobs:
         run: git lfs pull
 
       - name: Git Diff Pre-Test
-        run: /
+        run: |
           git status
           git diff
 
@@ -43,6 +43,6 @@ jobs:
           project_path: src
 
       - name: Git Diff Post-Test
-        run: /
+        run: |
           git status
           git diff
