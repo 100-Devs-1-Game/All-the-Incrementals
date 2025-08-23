@@ -12,12 +12,12 @@ const GALLERY_SCENE := preload("res://modules/gallery/gallery.tscn")
 
 # this is necessary to maintain my sanity
 const SHRINE_SETTLEMENT_DATA := preload("res://modules/overworld_locations/shrine/shrine.tres")
-#const BREEZEKILN_SETTLEMENT_DATA := preload(
-#"res://modules/overworld_locations/breezekiln/breezekiln.tres"
-#)
-#const CLAYPORT_SETTLEMENT_DATA := preload(
-#"res://modules/overworld_locations/clayport/clayport.tres"
-#)
+const BREEZEKILN_SETTLEMENT_DATA := preload(
+	"res://modules/overworld_locations/breezekiln/breezekiln.tres"
+)
+const CLAYPORT_SETTLEMENT_DATA := preload(
+	"res://modules/overworld_locations/clayport/clayport.tres"
+)
 
 var _current_settlement: SettlementData
 var _current_minigame: MinigameData
@@ -77,13 +77,11 @@ func enter_shrine():
 
 
 func enter_breezekiln():
-	assert(false)
-	#enter_settlement(BREEZEKILN_SETTLEMENT_DATA)
+	enter_settlement(BREEZEKILN_SETTLEMENT_DATA)
 
 
 func enter_clayport():
-	assert(false)
-	#enter_settlement(CLAYPORT_SETTLEMENT_DATA)
+	enter_settlement(CLAYPORT_SETTLEMENT_DATA)
 
 
 func enter_credits():
