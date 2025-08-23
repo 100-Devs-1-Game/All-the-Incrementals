@@ -218,6 +218,7 @@ func _physics_process(delta: float) -> void:
 
 
 func interact_with(_obj: Node3D) -> bool:
+	label_interaction_hint.hide()
 	if state_machine.current_state_equals(interact_state):
 		return false
 	state_machine.change_state(interact_state)
