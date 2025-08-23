@@ -133,12 +133,6 @@ func _handle_model_orientation(desired_direction: Vector3, delta: float) -> void
 
 
 func move():
-	#var motion := velocity * get_physics_process_delta_time()
-	#motion *= 10.0
-#
-	#shapecast_floor_check.position.x = motion.x
-	#shapecast_floor_check.position.z = motion.z
-
 	if shapecast_floor_check.is_colliding():
 		move_and_slide()
 
