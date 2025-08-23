@@ -1115,6 +1115,7 @@ transform = Transform3D(1.00405, 0, 0.0586843, 0, 1, 0, -0.0574536, 0, 1.02555, 
 multimesh = SubResource("MultiMesh_nxmvj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/bridges/bridge_01_mmi3d_01"]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/bridges/bridge_01_mmi3d_01/StaticBody3D"]
 transform = Transform3D(1, 0, -4.32134e-07, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
@@ -1126,6 +1127,7 @@ multimesh = SubResource("MultiMesh_nxmvj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/bridges/bridge_01_mmi3d_02"]
 transform = Transform3D(1, 1.49012e-08, 2.98023e-08, -1.49012e-08, 1, 3.72529e-09, 2.98023e-08, 4.47035e-08, 1, 0, 0, 0)
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/bridges/bridge_01_mmi3d_02/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 1.49012e-08, 1, -7.45058e-09, 0, -2.23517e-08, 1, 0, 0, 0)
@@ -1136,6 +1138,7 @@ transform = Transform3D(-0.217128, 0.403928, 1.00739, 6.87127e-09, 0.954631, -0.
 multimesh = SubResource("MultiMesh_nxmvj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/bridges/bridge_01_mmi3d_03"]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/bridges/bridge_01_mmi3d_03/StaticBody3D"]
 transform = Transform3D(1, 1.67638e-07, -9.44361e-07, 2.14204e-08, 1, 5.5549e-07, 4.65661e-08, 1.30967e-09, 1, 0, 0, 0)
@@ -1146,6 +1149,7 @@ transform = Transform3D(0.945001, 0.0114602, -0.354327, 1.84511e-10, 1.00339, 0.
 multimesh = SubResource("MultiMesh_nxmvj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/bridges/bridge_01_mmi3d_04"]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/bridges/bridge_01_mmi3d_04/StaticBody3D"]
 transform = Transform3D(1, -2.70084e-08, -6.85453e-07, 0, 1, 8.9407e-08, 2.98023e-08, -1.86265e-09, 1, 0, 0, 0)
@@ -1156,6 +1160,7 @@ transform = Transform3D(0.175092, -0.0344978, 1.0666, 0, 1.00339, 0.037831, -0.9
 multimesh = SubResource("MultiMesh_nxmvj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/bridges/bridge_01_mmi3d_05"]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/bridges/bridge_01_mmi3d_05/StaticBody3D"]
 transform = Transform3D(1, 5.58794e-09, 9.53674e-07, 1.86265e-09, 1, -1.45286e-07, -2.98023e-08, 4.19095e-09, 1, 0, 0, 0)
@@ -1166,6 +1171,7 @@ transform = Transform3D(-0.869513, -0.0173062, 0.535074, -1.57211e-09, 1.00339, 
 multimesh = SubResource("MultiMesh_nxmvj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/bridges/bridge_01_mmi3d_06"]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/bridges/bridge_01_mmi3d_06/StaticBody3D"]
 transform = Transform3D(1, -2.42144e-08, 1.37091e-06, -1.86265e-09, 1, -2.79397e-08, 5.96046e-08, -1.86265e-09, 1, 0, 0, 0)
