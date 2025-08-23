@@ -5,6 +5,7 @@ const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.g
 
 @export var chart: Chart
 @export var zoom: int = 100.0
+@export var display_beat_offset: int = 0
 var dock: Control
 
 var beats_per_bar: int
@@ -36,6 +37,7 @@ func _ready():
 	beats_per_bar = chart.notes_in_bar
 	bpm = chart.bpm
 	lane_height = size.y / lane_count
+	$ChartName.text = chart.name
 	grab_focus()
 
 
@@ -50,7 +52,8 @@ func _process(_delta):
 		selected_bar += 1
 		selected_relative_beat -= 1.0
 	current_beat.text = (
-		"%s | %s / %s" % [selected_lane, int(selected_bar), selected_relative_beat]
+		"%s | %s / %s"
+		% [selected_lane, int(selected_bar + display_beat_offset), selected_relative_beat]
 	)
 	if is_playing:
 		queue_redraw()
@@ -221,7 +224,7 @@ func _draw():
 		draw_string(
 			default_font,
 			Vector2(i * zoom * beats_per_bar + 10 + pan_x, lane_height - 10),
-			str(i + 1)
+			str(i + display_beat_offset)
 		)
 
 	for lane in chart.lanes:
