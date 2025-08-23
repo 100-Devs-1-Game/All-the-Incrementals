@@ -193,329 +193,329 @@ light_color = Color(0.965902, 0.902276, 0.82478, 1)
 light_energy = 0.89
 light_angular_distance = 45.15
 
-[node name="Model" type="Node3D" parent="."]
+[node name="Content" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="nature" type="Node3D" parent="Model"]
+[node name="nature" type="Node3D" parent="Content"]
 
-[node name="tree_05" type="Node3D" parent="Model/nature"]
+[node name="tree_05" type="Node3D" parent="Content/nature"]
 
-[node name="tree_05_green_01" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_01" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -6.076, 3.796, 9.717)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_01/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0338135, -0.411499, -0.0180683)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_02" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_02" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 0.183748, 3.796, 5.18204)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_02"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_02"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_02/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_02/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0251245, -0.411499, -0.0167739)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_03" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_03" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -3.30433, 3.796, -12.7927)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_03"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_03"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_03/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_03/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0636175, -0.411499, 0.00493908)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_04" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_04" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -11.5551, 3.796, -26.7542)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_04"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_04"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_04/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_04/StaticBody3D"]
 transform = Transform3D(0.869831, 0, 0.49335, 0, 1, 0, -0.49335, 0, 0.869831, 0.023602, -0.411499, 0.0120869)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_05" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_05" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -23.6909, 3.796, -39.9176)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_05"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_05"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_05/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_05/StaticBody3D"]
 transform = Transform3D(0.869831, 0, 0.49335, 0, 1, 0, -0.49335, 0, 0.869831, -0.00801182, -0.411499, 0.0304928)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_06" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_06" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -35.359, 5.174, -39.918)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_06"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_06"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_06/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_06/StaticBody3D"]
 transform = Transform3D(0.869831, 0, 0.49335, 0, 1, 0, -0.49335, 0, 0.869831, -0.179543, -0.430892, 0.0306835)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_07" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_07" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -35.359, 4.94626, -21.7512)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_07"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_07"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_07/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_07/StaticBody3D"]
 transform = Transform3D(1, 0, -6.98137e-05, 0, 1, 0, 6.98137e-05, 0, 1, -0.0573921, -0.430892, -0.0232506)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_08" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_08" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -23.7958, 5.174, -0.180479)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_08"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_08"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_08/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_08/StaticBody3D"]
 transform = Transform3D(0.965536, 0, -0.260269, 0, 1, 0, 0.260269, 0, 0.965536, -0.0542736, -0.432589, -0.027491)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_09" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_09" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -42.952, 6.776, 1.031)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_09"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_09"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_09/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_09/StaticBody3D"]
 transform = Transform3D(0.965536, 0, -0.260269, 0, 1, 0, 0.260269, 0, 0.965536, -0.120729, -0.429824, -0.0419028)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_10" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_10" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -45.674, 6.791, -45.5469)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_10"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_10"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_10/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_10/StaticBody3D"]
 transform = Transform3D(0.965536, 0, -0.260269, 0, 1, 0, 0.260269, 0, 0.965536, -0.122013, -0.43698, -0.0554466)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="tree_05_green_11" type="Sprite3D" parent="Model/nature/tree_05"]
+[node name="tree_05_green_11" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -52.3998, 6.791, -55.3608)
 billboard = 2
 texture = ExtResource("6_sckh8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/nature/tree_05/tree_05_green_11"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_green_11"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/nature/tree_05/tree_05_green_11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_green_11/StaticBody3D"]
 transform = Transform3D(0.965536, 0, -0.260269, 0, 1, 0, 0.260269, 0, 0.965536, -0.00650597, -0.43698, -0.0174141)
 shape = SubResource("BoxShape3D_qqu61")
 
-[node name="water_temple" parent="Model" instance=ExtResource("7_m4e12")]
+[node name="water_temple" parent="Content" instance=ExtResource("7_m4e12")]
 transform = Transform3D(-0.0798532, 0, -0.614836, 0, 0.62, 0, 0.614836, 0, -0.0798532, -75.3182, 4.54224, 0.534995)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/water_temple"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/water_temple"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/water_temple/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/water_temple/StaticBody3D"]
 shape = SubResource("SphereShape3D_0dhkr")
 
-[node name="stalls" type="Node3D" parent="Model"]
+[node name="stalls" type="Node3D" parent="Content"]
 transform = Transform3D(0.817024, 0, -0.576604, 0, 1, 0, 0.576604, 0, 0.817024, -16.8545, 1.12613, -7.3338)
 
-[node name="stall_mmi3d_01" type="MultiMeshInstance3D" parent="Model/stalls"]
+[node name="stall_mmi3d_01" type="MultiMeshInstance3D" parent="Content/stalls"]
 transform = Transform3D(0.740895, 0, 1.00676, 0, 1.25, 0, -1.00676, 0, 0.740895, 5.71869, 0, 8.10315)
 multimesh = SubResource("MultiMesh_e5cpc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/stalls/stall_mmi3d_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/stalls/stall_mmi3d_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/stalls/stall_mmi3d_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/stalls/stall_mmi3d_01/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00580788, 0.812454, 0.00882173)
 shape = SubResource("BoxShape3D_emvpi")
 
-[node name="stall_mmi3d_02" type="MultiMeshInstance3D" parent="Model/stalls"]
+[node name="stall_mmi3d_02" type="MultiMeshInstance3D" parent="Content/stalls"]
 transform = Transform3D(1.01638, 0, 0.727654, 0, 1.25, 0, -0.727654, 0, 1.01638, 2.809, 0, 3.98025)
 multimesh = SubResource("MultiMesh_e5cpc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/stalls/stall_mmi3d_02"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/stalls/stall_mmi3d_02"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/stalls/stall_mmi3d_02/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/stalls/stall_mmi3d_02/StaticBody3D"]
 transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, -0.0023613, 0.812454, -0.0524075)
 shape = SubResource("BoxShape3D_emvpi")
 
-[node name="stall_mmi3d_03" type="MultiMeshInstance3D" parent="Model/stalls"]
+[node name="stall_mmi3d_03" type="MultiMeshInstance3D" parent="Content/stalls"]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 multimesh = SubResource("MultiMesh_e5cpc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/stalls/stall_mmi3d_03"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/stalls/stall_mmi3d_03"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/stalls/stall_mmi3d_03/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/stalls/stall_mmi3d_03/StaticBody3D"]
 transform = Transform3D(0.999974, 0, -0.00689581, 0, 1, 0, 0.00689581, 0, 0.999974, -0.0454369, 0.812454, -0.0596647)
 shape = SubResource("BoxShape3D_emvpi")
 
-[node name="houses" type="Node3D" parent="Model"]
+[node name="houses" type="Node3D" parent="Content"]
 transform = Transform3D(-0.625556, 0, -0.780179, 0, 1, 0, 0.780179, 0, -0.625556, 7.54298, 0.26366, -36.3464)
 
-[node name="house_01_m" type="Node3D" parent="Model/houses"]
+[node name="house_01_m" type="Node3D" parent="Content/houses"]
 transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 3.8147e-06, 0, 3.8147e-06)
 
-[node name="house_02_mmi3d_01" type="MultiMeshInstance3D" parent="Model/houses/house_01_m"]
+[node name="house_02_mmi3d_01" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
 transform = Transform3D(-0.00999305, 0.0314506, 1.37475e-09, 8.35414e-17, -1.44248e-09, 0.033, 0.0314506, 0.00999305, 4.36811e-10, 16.344, 0.435516, 1.62751)
 multimesh = SubResource("MultiMesh_3agqm")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/houses/house_01_m/house_02_mmi3d_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_02_mmi3d_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/houses/house_01_m/house_02_mmi3d_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_02_mmi3d_01/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-08, -2.29328e-12, 2.98023e-08, 1, 1.52589e-12, 1.41043e-12, 3.17613e-12, 1, -4.1228, 10.4891, -24.4436)
 shape = SubResource("BoxShape3D_kkmsk")
 
-[node name="house_01_earth_mmi3d" type="MultiMeshInstance3D" parent="Model/houses/house_01_m"]
+[node name="house_01_earth_mmi3d" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
 transform = Transform3D(-0.00614511, 0.0324228, 1.41725e-09, 0, -1.44248e-09, 0.033, 0.0324228, 0.00614511, 2.68612e-10, 15.056, 0.513328, 7.90749)
 multimesh = SubResource("MultiMesh_xwrgo")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/houses/house_01_m/house_01_earth_mmi3d"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_01_earth_mmi3d"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/houses/house_01_m/house_01_earth_mmi3d/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_earth_mmi3d/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-08, -1.77636e-15, 2.98023e-08, 1, 0, 0, -2.66454e-14, 1, 0.667053, 9.89926, -15.4729)
 shape = SubResource("BoxShape3D_r4ht0")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Model/houses/house_01_m/house_01_earth_mmi3d/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_earth_mmi3d/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-08, -1.77636e-15, 2.98023e-08, 1, 0, 0, -2.66454e-14, 1, -17.1907, -45.8658, -47.9099)
 shape = SubResource("BoxShape3D_dqw1m")
 
-[node name="house_02_earth_mmi3d" type="MultiMeshInstance3D" parent="Model/houses/house_01_m"]
+[node name="house_02_earth_mmi3d" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
 transform = Transform3D(-0.00850986, 0.0318839, 1.39369e-09, 0, -1.44248e-09, 0.033, 0.0318839, 0.00850986, 3.71978e-10, 20.1262, 0.505784, -3.32145)
 multimesh = SubResource("MultiMesh_xwrgo")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/houses/house_01_m/house_02_earth_mmi3d"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_02_earth_mmi3d"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/houses/house_01_m/house_02_earth_mmi3d/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_02_earth_mmi3d/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-08, -1.77636e-15, 2.98023e-08, 1, 0, 0, -2.66454e-14, 1, 0.667053, 9.89926, -15.4729)
 shape = SubResource("BoxShape3D_r4ht0")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Model/houses/house_01_m/house_02_earth_mmi3d/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Content/houses/house_01_m/house_02_earth_mmi3d/StaticBody3D"]
 transform = Transform3D(1, -2.98023e-08, -1.77636e-15, 2.98023e-08, 1, 0, 0, -2.66454e-14, 1, -17.1907, -45.8658, -47.9099)
 shape = SubResource("BoxShape3D_dqw1m")
 
-[node name="straw_house" type="Node3D" parent="Model/houses"]
+[node name="straw_house" type="Node3D" parent="Content/houses"]
 transform = Transform3D(-0.201614, 0, 0.575719, 0, 0.454, 0, -0.575719, 0, -0.201614, -8.612, 0.877, 34.966)
 
-[node name="straw_house_mmi3d_01" type="MultiMeshInstance3D" parent="Model/houses/straw_house"]
+[node name="straw_house_mmi3d_01" type="MultiMeshInstance3D" parent="Content/houses/straw_house"]
 transform = Transform3D(0.987783, 0, 0.155831, 0, 1, 0, -0.155831, 0, 0.987783, 14.8579, 0, 25.7476)
 multimesh = SubResource("MultiMesh_mrxcy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/houses/straw_house/straw_house_mmi3d_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/straw_house/straw_house_mmi3d_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/houses/straw_house/straw_house_mmi3d_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/straw_house/straw_house_mmi3d_01/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9718, 0)
 shape = SubResource("CylinderShape3D_prpfr")
 
-[node name="straw_house_mmi3d_02" type="MultiMeshInstance3D" parent="Model/houses/straw_house"]
+[node name="straw_house_mmi3d_02" type="MultiMeshInstance3D" parent="Content/houses/straw_house"]
 transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, 8.07843, 0, 18.4623)
 multimesh = SubResource("MultiMesh_mrxcy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/houses/straw_house/straw_house_mmi3d_02"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/straw_house/straw_house_mmi3d_02"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/houses/straw_house/straw_house_mmi3d_02/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/straw_house/straw_house_mmi3d_02/StaticBody3D"]
 transform = Transform3D(0.987783, 0, 0.155831, 0, 0.999999, 0, -0.155831, 0, 0.987783, -0.0151024, -1.9718, 0.00674438)
 shape = SubResource("CylinderShape3D_prpfr")
 
-[node name="straw_house_mmi3d_03" type="MultiMeshInstance3D" parent="Model/houses/straw_house"]
+[node name="straw_house_mmi3d_03" type="MultiMeshInstance3D" parent="Content/houses/straw_house"]
 transform = Transform3D(0.998508, 0, 0.0546017, 0, 1, 0, -0.0546017, 0, 0.998508, 11.293, 0, 10.688)
 multimesh = SubResource("MultiMesh_mrxcy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/houses/straw_house/straw_house_mmi3d_03"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/straw_house/straw_house_mmi3d_03"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/houses/straw_house/straw_house_mmi3d_03/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/straw_house/straw_house_mmi3d_03/StaticBody3D"]
 transform = Transform3D(0.994818, 0, 0.101664, 0, 0.999999, 0, -0.101664, 0, 0.994818, -0.0795937, -1.9718, 0.123199)
 shape = SubResource("CylinderShape3D_prpfr")
 
-[node name="staircase" type="Node3D" parent="Model"]
+[node name="staircase" type="Node3D" parent="Content"]
 transform = Transform3D(-0.0715025, 0, 1.05689, 0, 1, 0, -0.993136, 0, -0.0760929, 2.79463, -1.17857, 0)
 
-[node name="staircase_mmi3d_01" type="MultiMeshInstance3D" parent="Model/staircase"]
+[node name="staircase_mmi3d_01" type="MultiMeshInstance3D" parent="Content/staircase"]
 transform = Transform3D(0.999758, -0.0217536, 0.00315347, 0.0217536, 0.958601, -0.283919, 0.00315341, 0.283919, 0.958843, 0.0494034, -0.457556, -0.64868)
 multimesh = SubResource("MultiMesh_w8486")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/staircase/staircase_mmi3d_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/staircase/staircase_mmi3d_01"]
 transform = Transform3D(1, -1.10241e-10, 0, 0, 1, 1.9616e-08, 7.45058e-09, 2.53601e-08, 1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/staircase/staircase_mmi3d_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/staircase/staircase_mmi3d_01/StaticBody3D"]
 transform = Transform3D(1, 0.000121867, -0.000283811, -0.000121772, 1, 0.000334979, 0.000283852, -0.000334944, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_0w15g")
 
-[node name="staircase_mmi3d_02" type="MultiMeshInstance3D" parent="Model/staircase"]
+[node name="staircase_mmi3d_02" type="MultiMeshInstance3D" parent="Content/staircase"]
 transform = Transform3D(0.965663, 0, 0.259797, 0, 1, 0, -0.259797, 0, 0.965663, 22.3113, 1.37191, -23.7471)
 multimesh = SubResource("MultiMesh_w8486")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/staircase/staircase_mmi3d_02"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/staircase/staircase_mmi3d_02"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/staircase/staircase_mmi3d_02/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/staircase/staircase_mmi3d_02/StaticBody3D"]
 transform = Transform3D(1, 0, -2.98013e-08, 0, 1, 0, 2.98013e-08, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_0w15g")
 
-[node name="staircase_mmi3d_03" type="MultiMeshInstance3D" parent="Model/staircase"]
+[node name="staircase_mmi3d_03" type="MultiMeshInstance3D" parent="Content/staircase"]
 transform = Transform3D(0.738732, -0.0619093, -0.393794, 0.0095385, 0.990766, -0.142909, 0.300794, 0.120627, 0.971666, 6.45325, 2.77722, -38.4572)
 multimesh = SubResource("MultiMesh_w8486")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/staircase/staircase_mmi3d_03"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/staircase/staircase_mmi3d_03"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/staircase/staircase_mmi3d_03/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/staircase/staircase_mmi3d_03/StaticBody3D"]
 transform = Transform3D(1, 7.45058e-09, 4.47618e-08, -7.45058e-09, 1, -1.67469e-08, -4.47618e-08, 1.67469e-08, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_nrtup")
 
-[node name="platform_mmi3d_01" type="MultiMeshInstance3D" parent="Model/staircase"]
+[node name="platform_mmi3d_01" type="MultiMeshInstance3D" parent="Content/staircase"]
 transform = Transform3D(0.542681, 0, -0.131038, 0, 0.56, 0, 0.138195, 0, 0.514577, -29.5853, -3.37705, -11.7959)
 multimesh = SubResource("MultiMesh_bj1td")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/staircase/platform_mmi3d_01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/staircase/platform_mmi3d_01"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/staircase/platform_mmi3d_01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/staircase/platform_mmi3d_01/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 5.96046e-08, 0, 1, -0.159603, 3.19238, 0.0838127)
 shape = SubResource("BoxShape3D_uipne")
 
-[node name="platform_mmi3d_02" type="MultiMeshInstance3D" parent="Model/staircase"]
+[node name="platform_mmi3d_02" type="MultiMeshInstance3D" parent="Content/staircase"]
 transform = Transform3D(0.424403, 0, -0.346432, 0, 0.56, 0, 0.365352, 0, 0.402425, -20.7581, -3.37705, -31.3229)
 multimesh = SubResource("MultiMesh_bj1td")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/staircase/platform_mmi3d_02"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/staircase/platform_mmi3d_02"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/staircase/platform_mmi3d_02/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/staircase/platform_mmi3d_02/StaticBody3D"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, 0, 0, 1, 0.0541382, 5.68075, -0.0565434)
 shape = SubResource("BoxShape3D_ky4uq")
 
-[node name="altars" type="Node3D" parent="Model"]
+[node name="altars" type="Node3D" parent="Content"]
 transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, 0, 0, 0)
 
-[node name="Altar Earth" parent="Model/altars" instance=ExtResource("15_fw474")]
+[node name="Altar Earth" parent="Content/altars" instance=ExtResource("15_fw474")]
 transform = Transform3D(-3.01458e-08, 0, 0.689655, 0, 0.689655, 0, -0.689655, 0, -3.01458e-08, -6.74541, 0.785376, 4.33813)
 
-[node name="Altar Water" parent="Model/altars" instance=ExtResource("15_fw474")]
+[node name="Altar Water" parent="Content/altars" instance=ExtResource("15_fw474")]
 transform = Transform3D(-3.01458e-08, 0, 0.689655, 0, 0.689655, 0, -0.689655, 0, -3.01458e-08, -15.7366, 0.785376, -21.4642)
 element = 2
 
-[node name="landscapes" type="Node3D" parent="Model"]
+[node name="landscapes" type="Node3D" parent="Content"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.889, 0.227863, -8.29576)
 
-[node name="wall_baked" parent="Model/landscapes" instance=ExtResource("24_fild6")]
+[node name="wall_baked" parent="Content/landscapes" instance=ExtResource("24_fild6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.889, -0.227863, 8.29576)
 
-[node name="island_circles_baked" parent="Model/landscapes" instance=ExtResource("25_y6jcw")]
+[node name="island_circles_baked" parent="Content/landscapes" instance=ExtResource("25_y6jcw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.99414, -0.227863, 8.43657)
 
-[node name="VFX" type="Node3D" parent="Model"]
+[node name="VFX" type="Node3D" parent="Content"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.889, 0.227863, -8.29576)
 
-[node name="SkyboxSphere" type="MeshInstance3D" parent="Model/VFX"]
+[node name="SkyboxSphere" type="MeshInstance3D" parent="Content/VFX"]
 transform = Transform3D(95.5, 0, 0, 0, 95.5, 0, 0, 0, 95.5, -32.83, 1.035, -24.59)
 mesh = ExtResource("26_akwx3")
 surface_material_override/0 = SubResource("StandardMaterial3D_syeie")
@@ -524,29 +524,29 @@ enable_rotation = true
 rotation_speed_deg = 0.45
 rotate_y_axis = true
 
-[node name="circular_water" type="MeshInstance3D" parent="Model/VFX"]
+[node name="circular_water" type="MeshInstance3D" parent="Content/VFX"]
 transform = Transform3D(25.845, 0, 0, 0, 25.845, 0, 0, 0, 25.845, -3.93452, -1.545, 4.69489)
 mesh = ExtResource("28_f0kp8")
 surface_material_override/0 = SubResource("ShaderMaterial_heomc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/VFX/circular_water"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/VFX/circular_water"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/VFX/circular_water/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/VFX/circular_water/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_k1h20")
 
-[node name="Cascade" type="Node3D" parent="Model/VFX"]
+[node name="Cascade" type="Node3D" parent="Content/VFX"]
 transform = Transform3D(-1.47635, 0, -2.59623, 0, 0.578, 0, 0.909468, 0, -4.21451, -53.3849, 5.3094, 28.6141)
 
-[node name="cascade_rocks" parent="Model/VFX/Cascade" instance=ExtResource("31_ltokd")]
+[node name="cascade_rocks" parent="Content/VFX/Cascade" instance=ExtResource("31_ltokd")]
 transform = Transform3D(-0.490257, 0, -0.3037, 0, 1.7301, 0, 0.106386, 0, -0.171738, 1.3204, -4.11859, 0.25665)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model/VFX/Cascade/cascade_rocks"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/VFX/Cascade/cascade_rocks"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/VFX/Cascade/cascade_rocks/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/VFX/Cascade/cascade_rocks/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42793, 1.48248, -1.1283)
 shape = SubResource("BoxShape3D_e5ygp")
 
-[node name="cascade_waterfall" parent="Model/VFX/Cascade" instance=ExtResource("32_xvfut")]
+[node name="cascade_waterfall" parent="Content/VFX/Cascade" instance=ExtResource("32_xvfut")]
 transform = Transform3D(0.482658, 0, 0.315638, 0, 1.7301, 0, -0.110568, 0, 0.169076, -0.756199, -0.478611, 0.0516527)
 
 [node name="DebugPopup" parent="." instance=ExtResource("9_4eabd")]
