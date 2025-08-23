@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8xidene61u7x"]
+
+[ext_resource type="PackedScene" uid="uid://cn1limo8v0o3i" path="res://models/landscapes/islands_surface.gltf" id="1_o4pk2"]
+[ext_resource type="Material" uid="uid://2hybpmvwe5y2" path="res://materials/simple/simple/s_dark_moose_green.tres" id="2_xqgom"]
+
+[node name="islands_surface" instance=ExtResource("1_o4pk2")]
+
+[node name="landscape_surface_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_xqgom")
