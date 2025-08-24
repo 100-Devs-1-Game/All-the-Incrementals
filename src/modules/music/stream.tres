@@ -1,13 +1,14 @@
-[gd_resource type="AudioStreamInteractive" load_steps=6 format=3 uid="uid://d263hyurubktn"]
+[gd_resource type="AudioStreamInteractive" load_steps=7 format=3 uid="uid://d263hyurubktn"]
 
 [ext_resource type="AudioStream" uid="uid://br5jc2gh7ifjw" path="res://assets/other/empty.mp3" id="1_f66fh"]
 [ext_resource type="AudioStream" uid="uid://dnlbb2meucm37" path="res://assets/minigames/water_minigame.ogg" id="2_b5y7q"]
 [ext_resource type="AudioStream" uid="uid://b0xcpb7vo5l8j" path="res://assets/minigames/fire_fighters/fire_minigame.ogg" id="3_f66fh"]
 [ext_resource type="AudioStream" uid="uid://6jfthlospjue" path="res://assets/overworld/music/earth_water_hub_loop.ogg" id="4_m1w37"]
 [ext_resource type="AudioStream" uid="uid://byas3rao0uf2w" path="res://assets/overworld/music/shrine_ambience.ogg" id="5_m1w37"]
+[ext_resource type="AudioStream" uid="uid://madc0hhyyv4n" path="res://assets/minigames/earth_potato_herding/earth_minigame.ogg" id="6_0ux5c"]
 
 [resource]
-clip_count = 5
+clip_count = 6
 clip_0/name = &"null"
 clip_0/stream = ExtResource("1_f66fh")
 clip_0/auto_advance = 0
@@ -23,6 +24,9 @@ clip_3/auto_advance = 0
 clip_4/name = &"shrine"
 clip_4/stream = ExtResource("5_m1w37")
 clip_4/auto_advance = 0
+clip_5/name = &"earth_potato_herding"
+clip_5/stream = ExtResource("6_0ux5c")
+clip_5/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1.0,
