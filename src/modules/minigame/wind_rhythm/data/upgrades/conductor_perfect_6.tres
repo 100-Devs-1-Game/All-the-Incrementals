@@ -36,7 +36,7 @@ slots = Array[ExtResource("2_pniio")]([SubResource("Resource_80uxw")])
 
 [sub_resource type="Resource" id="Resource_qo50c"]
 script = ExtResource("5_80uxw")
-upgrade_type = 0
+upgrade_type = 22
 metadata/_custom_type_script = "uid://cdf23gftlnxqd"
 
 [resource]
