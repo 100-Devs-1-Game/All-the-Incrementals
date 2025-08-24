@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func refresh_labels(_upgrade = null) -> void:
 	var inventory = Player.data.inventory
-	$Panel/HBoxContainer/WaterLabel.text = "%4d" % inventory.water
-	$Panel/HBoxContainer/EarthLabel.text = "%4d" % inventory.earth
-	$Panel/HBoxContainer/FireLabel.text = "%4d" % inventory.fire
-	$Panel/HBoxContainer/WindLabel.text = "%4d" % inventory.wind
+	$Panel/HBoxContainer/WaterLabel.text = "%5d" % inventory.water
+	$Panel/HBoxContainer/EarthLabel.text = "%5d" % inventory.earth
+	$Panel/HBoxContainer/FireLabel.text = "%5d" % inventory.fire
+	$Panel/HBoxContainer/WindLabel.text = "%5d" % inventory.wind
