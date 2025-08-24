@@ -210,12 +210,17 @@ class GodotValidator:
                     f"Missing path for ext_resource '{match.group()}'"
                 )
 
-            # We don't need to validate that the UID is real because that is done in a later step
             if not uid:
                 self.errors.append(
                     f"{file_path.relative_to(self.project_root).as_posix()}:{line_number}: "
                     f"Missing UID for ext_resource '{match.group()}'"
                 )
+
+            # hack... can't read compressed binary file
+            # so if there's a mesh path with a uid, register and trust it
+            # at least we can get uid mismatches
+            if uid and os.path.splitext(path)[-1] in ['.mesh']:
+                self._add_uid_mapping(uid, path, str(file_path.as_posix()))
 
             # Validate that the UID->path mapping is consistent
             if uid and path and uid in self.uid_to_path:
@@ -315,9 +320,7 @@ class GodotValidator:
         with open(file_path, "rb") as f:
             header = f.read(4)
             if header == b"RSCC":
-                compressed = f.read()
-                dctx = zstd.ZstdDecompressor()
-                data = dctx.decompress(compressed)
+                raise ValueError("Can't decompress Godot binary resource files.")
             elif header == b"RSRC":
                 data = f.read()
             else:
