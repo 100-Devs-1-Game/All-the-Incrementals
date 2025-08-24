@@ -242,9 +242,9 @@ func _physics_process(delta: float) -> void:
 		base_slow *= 8
 
 	if stats.carry_remaining() <= 0:
-		base_slow *= 2
+		base_slow *= 8
 
-	if stats.scrollspeed.x > -300:
+	if stats.scrollspeed.x > -1000:
 		base_slow *= 2
 		base_slow += 100
 
