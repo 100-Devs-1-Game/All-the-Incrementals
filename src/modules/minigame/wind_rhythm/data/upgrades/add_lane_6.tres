@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=13 format=3 uid="uid://dpysxke4is27p"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_mi523"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_na0s8"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_denjl"]
+[ext_resource type="Texture2D" uid="uid://cflyxsx1tbxrk" path="res://assets/minigames/wind_rhythm/upgrade_icons/lane_add_5.png" id="4_3ldwu"]
+[ext_resource type="Script" uid="uid://cdf23gftlnxqd" path="res://modules/minigame/wind_rhythm/data/upgrade_logic.gd" id="5_fesy0"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="6_xup6t"]
+[ext_resource type="Resource" uid="uid://e003m5hl6gfj" path="res://modules/minigame/wind_rhythm/data/upgrades/conductor_6.tres" id="7_srfjo"]
+
+[sub_resource type="Resource" id="Resource_sow43"]
+script = ExtResource("2_na0s8")
+essence = ExtResource("3_denjl")
+amount = 275
+
+[sub_resource type="Resource" id="Resource_66fi7"]
+script = ExtResource("1_mi523")
+earth = 0
+fire = 0
+water = 0
+wind = 275
+slots = Array[ExtResource("2_na0s8")]([SubResource("Resource_sow43")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_mi523"]
+script = ExtResource("2_na0s8")
+essence = ExtResource("3_denjl")
+amount = 250
+
+[sub_resource type="Resource" id="Resource_na0s8"]
+script = ExtResource("1_mi523")
+earth = 0
+fire = 0
+water = 0
+wind = 250
+slots = Array[ExtResource("2_na0s8")]([SubResource("Resource_mi523")])
+
+[sub_resource type="Resource" id="Resource_0oseu"]
+script = ExtResource("5_fesy0")
+upgrade_type = 28
+metadata/_custom_type_script = "uid://cdf23gftlnxqd"
+
+[resource]
+script = ExtResource("6_xup6t")
+logic = SubResource("Resource_0oseu")
+unlocks_feature = ""
+name = "Add Lane 6"
+flavor = ""
+icon = ExtResource("4_3ldwu")
+position = Vector2(3712, 1408)
+cost_arr = Array[ExtResource("1_mi523")]([SubResource("Resource_na0s8")])
+effect_modifier_arr = Array[float]([1.0])
+max_level = 1
+base_cost = SubResource("Resource_66fi7")
+base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("7_srfjo")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

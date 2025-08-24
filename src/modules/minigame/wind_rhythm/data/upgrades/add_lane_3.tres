@@ -38,14 +38,14 @@ slots = Array[ExtResource("2_5echl")]([SubResource("Resource_5echl")])
 
 [sub_resource type="Resource" id="Resource_xyw4x"]
 script = ExtResource("5_5echl")
-upgrade_type = 0
+upgrade_type = 26
 metadata/_custom_type_script = "uid://cdf23gftlnxqd"
 
 [resource]
 script = ExtResource("5_xyw4x")
 logic = SubResource("Resource_xyw4x")
 unlocks_feature = ""
-name = "Add Lane 3"
+name = "Add 4th lane"
 flavor = ""
 icon = ExtResource("4_2q4dk")
 position = Vector2(1664, 1408)

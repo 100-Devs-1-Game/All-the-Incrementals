@@ -285,6 +285,7 @@ text = "!Early"
 label_settings = SubResource("LabelSettings_03wef")
 
 [node name="NoteSpawner" parent="." instance=ExtResource("6_vd8gq")]
+unique_name_in_owner = true
 conductor_path = NodePath("../Conductor")
 judgment_line = NodePath("../judgment_line")
 wind_rhythm = NodePath("..")

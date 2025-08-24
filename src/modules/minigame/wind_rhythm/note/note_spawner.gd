@@ -9,6 +9,14 @@ const JUDGMENT = preload("res://modules/minigame/wind_rhythm/chart/judgments.gd"
 @export var judgment_line: NodePath
 @export var wind_rhythm: NodePath
 @export var offset: float = 0
+@export var active_lanes: Dictionary[NOTE_TYPE, bool] = {
+	NOTE_TYPE.UP: true,
+	NOTE_TYPE.LEFT: false,
+	NOTE_TYPE.RIGHT: false,
+	NOTE_TYPE.DOWN: false,
+	NOTE_TYPE.SPECIAL1: false,
+	NOTE_TYPE.SPECIAL2: false,
+}
 
 var chart: Chart
 var conductor: Conductor
@@ -29,10 +37,12 @@ var arrow_sprite: Dictionary[NOTE_TYPE, CompressedTexture2D] = {
 }
 
 
-func _ready():
+func start():
 	conductor = get_node(conductor_path)
 	chart = conductor.chart
 	manager = get_node(wind_rhythm)
+	active_lanes = manager.active_lanes
+	print(active_lanes)
 	spawn_markers()
 	spawn_notes()
 
@@ -69,8 +79,11 @@ func spawn_note(new_x_position: float, lane_position: int, note: NoteData):
 
 	note_instance.note_time = note.cached_absolute_beat
 	note_instance.type = note.type
+	note_instance.active = active_lanes[note.type]
+
 	manager.note_missed.connect(note_instance.on_miss)
 	manager.note_played.connect(note_instance.on_hit)
+
 	add_child(note_instance)
 
 

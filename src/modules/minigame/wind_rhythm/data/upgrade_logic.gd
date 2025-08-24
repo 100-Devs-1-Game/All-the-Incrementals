@@ -25,6 +25,12 @@ enum UpgradeType {
 	CONDUCTOR_4_PERFECT,
 	CONDUCTOR_5_PERFECT,
 	CONDUCTOR_6_PERFECT,
+	ADD_LANE_1,
+	ADD_LANE_2,
+	ADD_LANE_3,
+	ADD_LANE_4,
+	ADD_LANE_5,
+	ADD_LANE_6,
 }
 
 const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.gd").NoteType
@@ -85,3 +91,16 @@ func _apply_effect(game: BaseMinigame, upgrade: MinigameUpgrade):
 			my_game.autoplay[NOTE_TYPE.SPECIAL1] = JUDGMENT.PERFECT
 		UpgradeType.CONDUCTOR_6_PERFECT:
 			my_game.autoplay[NOTE_TYPE.SPECIAL2] = JUDGMENT.PERFECT
+
+		UpgradeType.ADD_LANE_1:
+			my_game.active_lanes[NOTE_TYPE.UP] = true
+		UpgradeType.ADD_LANE_2:
+			my_game.active_lanes[NOTE_TYPE.LEFT] = true
+		UpgradeType.ADD_LANE_3:
+			my_game.active_lanes[NOTE_TYPE.RIGHT] = true
+		UpgradeType.ADD_LANE_4:
+			my_game.active_lanes[NOTE_TYPE.DOWN] = true
+		UpgradeType.ADD_LANE_5:
+			my_game.active_lanes[NOTE_TYPE.SPECIAL1] = true
+		UpgradeType.ADD_LANE_6:
+			my_game.active_lanes[NOTE_TYPE.SPECIAL2] = true

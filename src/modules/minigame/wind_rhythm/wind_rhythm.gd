@@ -16,6 +16,15 @@ const JUDGMENT = preload(JUDGMENT_PATH).Judgment
 	NOTE_TYPE.SPECIAL2: JUDGMENT.MISS,
 }
 
+@export var active_lanes: Dictionary[NOTE_TYPE, bool] = {
+	NOTE_TYPE.UP: true,
+	NOTE_TYPE.LEFT: false,
+	NOTE_TYPE.RIGHT: false,
+	NOTE_TYPE.DOWN: false,
+	NOTE_TYPE.SPECIAL1: false,
+	NOTE_TYPE.SPECIAL2: false,
+}
+
 @export var lanes: Dictionary[NOTE_TYPE, Array] = {
 	NOTE_TYPE.UP: [],
 	NOTE_TYPE.LEFT: [],
@@ -62,6 +71,9 @@ func _start():
 	concentration_bar = $ConcentrationBar
 	lanes = chart.lanes.duplicate(true)
 	scorer = %Scorer
+	%NoteSpawner.start()
+	scorer.active_lanes = active_lanes
+	scorer.start()
 	concentration_bar.concentration_broken.connect(_on_concentration_broken)
 	note_played.connect(concentration_bar.on_note_played)
 	note_missed.connect(concentration_bar.on_note_missed)
@@ -90,7 +102,7 @@ func _process(_delta):
 
 
 func _check_for_missed_notes():
-	for lane in lanes.keys():
+	for lane in lanes.keys().filter(func(lane): return active_lanes[lane]):
 		var notes = lanes[lane]
 		if notes.is_empty():
 			continue
