@@ -684,7 +684,7 @@ cast_shadow = 0
 texture = ExtResource("46_2fe8b")
 
 [node name="SkyboxSphere" type="MeshInstance3D" parent="Content/VFX"]
-transform = Transform3D(11.585, 0, 0, 0, 11.585, 0, 0, 0, 11.585, -1.64992, 1.035, 0)
+transform = Transform3D(11.585, 0, 0, 0, 11.585, 0, 0, 0, 11.585, 1.96005, -1.91668, -1.57797e-07)
 mesh = ExtResource("52_sl2ur")
 surface_material_override/0 = SubResource("StandardMaterial3D_mstb5")
 
