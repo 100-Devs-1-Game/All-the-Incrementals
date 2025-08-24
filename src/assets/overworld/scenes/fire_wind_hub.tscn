@@ -1,30 +1,27 @@
-[gd_scene load_steps=58 format=3 uid="uid://dilv53e8hkijq"]
+[gd_scene load_steps=67 format=3 uid="uid://dilv53e8hkijq"]
 
-[ext_resource type="Texture2D" uid="uid://c6t333jbfefng" path="res://assets/HDRIs/day.hdr" id="1_hbxmu"]
-[ext_resource type="Script" path="res://scripts/klip_signal.gd" id="4_w3twe"]
-[ext_resource type="ArrayMesh" uid="uid://c8akkyljye4o6" path="res://models/architectural/structures/houses/windmill/windmill_01_m.mesh" id="5_ai0pt"]
-[ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://models/landscapes/island_circle.gltf" id="6_n1hja"]
-[ext_resource type="ArrayMesh" uid="uid://dyrh5wy31kesg" path="res://models/architectural/structures/houses/windmill/windmill_02_m.mesh" id="7_wjhkt"]
-[ext_resource type="Texture2D" uid="uid://dwh1tajh1hpng" path="res://assets/nature/trees/tree_05_snow.webp" id="12_algyw"]
-[ext_resource type="Shader" uid="uid://rg3fl1i082l4" path="res://scripts/shaders/tri-planar_texture_mapping.gdshader" id="13_onxjb"]
-[ext_resource type="ArrayMesh" uid="uid://c452na5eaoqfc" path="res://models/architectural/structures/houses/house_01/house_01_m.mesh" id="14_notpo"]
-[ext_resource type="ArrayMesh" uid="uid://c5wqqhr4n2n1v" path="res://models/nature/wood/bonfire/bonfire_01.mesh" id="15_k2yam"]
-[ext_resource type="SpriteFrames" uid="uid://b3itxrlohx1" path="res://vfx/pyre_flame/pyre_flame.tres" id="16_7rcla"]
-[ext_resource type="ArrayMesh" uid="uid://bg8djpxioaf75" path="res://models/architectural/structures/houses/fire_wind_house/fire_wind_house_01.mesh" id="16_aevtt"]
-[ext_resource type="ArrayMesh" uid="uid://dtd0erxgxceof" path="res://models/architectural/structures/houses/fire_wind_house/fire_wind_house_02.mesh" id="17_k2yam"]
-[ext_resource type="PackedScene" uid="uid://b20hcfpyh4u8d" path="res://models/landscapes/mountain_landscape/mountain_landscape_baked.tscn" id="17_ob56f"]
-[ext_resource type="PackedScene" uid="uid://b8y22hwb00oya" path="res://models/architectural/structures/temples/fire_temple_m/fire_wind_temple_m.tscn" id="17_onxjb"]
-[ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/skybox/skybox_sphere.obj" id="20_w3twe"]
-[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://scripts/Klip_Signal.gd" id="21_k0uuy"]
-[ext_resource type="Texture2D" uid="uid://cgkd7wcycsfnf" path="res://assets/skybox/sky_day_03.webp" id="21_onxjb"]
-[ext_resource type="ArrayMesh" uid="uid://dk7nmp8001eqo" path="res://models/architectural/structures/bridges/bridge_01_m/bridge_01.mesh" id="24_algyw"]
-[ext_resource type="PackedScene" uid="uid://c5w1nmcxgph1k" path="res://models/landscapes/paths/path_baked_01.tscn" id="25_algyw"]
-[ext_resource type="Texture2D" uid="uid://catixkt58j5cy" path="res://materials/textures/ground/ground_albedo_05_snow.webp" id="25_notpo"]
-[ext_resource type="ArrayMesh" uid="uid://domnhvt4fgacs" path="res://models/architectural/structures/houses/house_02/house_02_m.mesh" id="26_notpo"]
-[ext_resource type="PackedScene" uid="uid://ckomfk2gpxjrx" path="res://assets/skybox/skybox_sphere.tscn" id="27_ai0pt"]
+[ext_resource type="ArrayMesh" uid="uid://c8akkyljye4o6" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_01_m.mesh" id="5_ai0pt"]
+[ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://assets/overworld/models/landscapes/island_circle.gltf" id="6_n1hja"]
+[ext_resource type="ArrayMesh" uid="uid://dyrh5wy31kesg" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_02_m.mesh" id="7_wjhkt"]
+[ext_resource type="Texture2D" uid="uid://dwh1tajh1hpng" path="res://assets/overworld/assets/nature/trees/tree_05_snow.webp" id="12_algyw"]
+[ext_resource type="Shader" uid="uid://rg3fl1i082l4" path="res://assets/overworld/scripts/shaders/tri_planar_texture_mapping.gdshader" id="13_onxjb"]
+[ext_resource type="ArrayMesh" uid="uid://c452na5eaoqfc" path="res://assets/overworld/models/architectural/structures/houses/house_01/house_01_m.mesh" id="14_notpo"]
+[ext_resource type="ArrayMesh" uid="uid://c5wqqhr4n2n1v" path="res://assets/overworld/models/nature/wood/bonfire/bonfire_01.mesh" id="15_k2yam"]
+[ext_resource type="SpriteFrames" uid="uid://b3itxrlohx1" path="res://assets/overworld/vfx/pyre_flame/pyre_flame.tres" id="16_7rcla"]
+[ext_resource type="ArrayMesh" uid="uid://bg8djpxioaf75" path="res://assets/overworld/models/architectural/structures/houses/fire_wind_house/fire_wind_house_01.mesh" id="16_aevtt"]
+[ext_resource type="ArrayMesh" uid="uid://dtd0erxgxceof" path="res://assets/overworld/models/architectural/structures/houses/fire_wind_house/fire_wind_house_02.mesh" id="17_k2yam"]
+[ext_resource type="PackedScene" uid="uid://b20hcfpyh4u8d" path="res://assets/overworld/models/landscapes/mountain_landscape/mountain_landscape_baked.tscn" id="17_ob56f"]
+[ext_resource type="PackedScene" uid="uid://b8y22hwb00oya" path="res://assets/overworld/models/architectural/structures/temples/fire_temple_m/fire_wind_temple_m.tscn" id="17_onxjb"]
+[ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="20_w3twe"]
+[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/altar_diamond.gd" id="21_k0uuy"]
+[ext_resource type="Texture2D" uid="uid://cgkd7wcycsfnf" path="res://assets/overworld/assets/skybox/sky_day_03.webp" id="21_onxjb"]
+[ext_resource type="ArrayMesh" uid="uid://dk7nmp8001eqo" path="res://assets/overworld/models/architectural/structures/bridges/bridge_01_m/bridge_01.mesh" id="24_algyw"]
+[ext_resource type="PackedScene" uid="uid://c5w1nmcxgph1k" path="res://assets/overworld/models/landscapes/paths/path_baked_01.tscn" id="25_algyw"]
+[ext_resource type="Texture2D" uid="uid://catixkt58j5cy" path="res://assets/overworld/materials/textures/ground/ground_albedo_05_snow.webp" id="25_notpo"]
+[ext_resource type="ArrayMesh" uid="uid://domnhvt4fgacs" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_m.mesh" id="26_notpo"]
+[ext_resource type="PackedScene" uid="uid://ckomfk2gpxjrx" path="res://assets/overworld/assets/skybox/skybox_sphere.tscn" id="27_ai0pt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hbxmu"]
-panorama = ExtResource("1_hbxmu")
 
 [sub_resource type="Sky" id="Sky_s60bt"]
 sky_material = SubResource("PanoramaSkyMaterial_hbxmu")
@@ -59,6 +56,15 @@ instance_count = 1
 mesh = ExtResource("7_wjhkt")
 buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
 
+[sub_resource type="Resource" id="Resource_e11l6"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_dbb50"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_arkhw"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
 [sub_resource type="MultiMesh" id="MultiMesh_gx6tl"]
 transform_format = 1
 instance_count = 1
@@ -87,6 +93,12 @@ transform_format = 1
 instance_count = 1
 mesh = ExtResource("17_k2yam")
 buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="Resource" id="Resource_oqohx"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_eqbqv"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
 
 [sub_resource type="MultiMesh" id="MultiMesh_wjhkt"]
 transform_format = 1
@@ -167,6 +179,24 @@ points = PackedVector3Array(-0.00346565, -0.263302, -17.7037, -1.7364, -0.263302
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sgfq1"]
 points = PackedVector3Array(-0.00346565, -0.263302, -17.7037, -1.7364, -0.263302, -17.6205, -0.00346565, 0.263302, -17.7037, 1.73294, -0.263302, -17.6205, -1.7364, 0.263302, -17.6205, -3.45548, -0.263302, -17.364, 1.73294, 0.263302, -17.6205, 3.45201, -0.263302, -17.364, -3.45548, 0.263302, -17.364, -5.13989, -0.263302, -16.9447, 3.45201, 0.263302, -17.364, 5.13643, -0.263302, -16.9447, -5.13989, 0.263302, -16.9447, -6.77579, -0.263302, -16.3589, 5.13643, 0.263302, -16.9447, 6.77232, -0.263302, -16.3589, -6.77579, 0.263302, -16.3589, -8.34583, -0.263302, -15.6138, 6.77232, 0.263302, -16.3589, 8.34237, -0.263302, -15.6138, -8.34583, 0.263302, -15.6138, -9.83616, -0.263302, -14.723, 8.34237, 0.263302, -15.6138, 9.83269, -0.263302, -14.723, -9.83616, 0.263302, -14.723, -11.2329, -0.263302, -13.6867, 9.83269, 0.263302, -14.723, 11.2294, -0.263302, -13.6867, -11.2329, 0.263302, -13.6867, -12.5187, -0.263302, -12.5187, 11.2294, 0.263302, -13.6867, 12.5153, -0.263302, -12.5187, -12.5187, 0.263302, -12.5187, -13.6867, -0.263302, -11.2329, 12.5153, 0.263302, -12.5187, 13.6833, -0.263302, -11.2329, -13.6867, 0.263302, -11.2329, -14.723, -0.263302, -9.83616, 13.6833, 0.263302, -11.2329, 14.7196, -0.263302, -9.83616, -14.723, 0.263302, -9.83616, -15.6138, -0.263302, -8.34583, 14.7196, 0.263302, -9.83616, 15.6103, -0.263302, -8.34583, -15.6138, 0.263302, -8.34583, -16.3589, -0.263302, -6.77579, 15.6103, 0.263302, -8.34583, 16.3555, -0.263302, -6.77579, -16.3589, 0.263302, -6.77579, -16.9447, -0.263302, -5.13989, 16.3555, 0.263302, -6.77579, 16.9412, -0.263302, -5.13989, -16.9447, 0.263302, -5.13989, -17.364, -0.263302, -3.45548, 16.9412, 0.263302, -5.13989, 17.3606, -0.263302, -3.45548, -17.364, 0.263302, -3.45548, -17.6205, -0.263302, -1.7364, 17.3606, 0.263302, -3.45548, 17.617, -0.263302, -1.7364, -17.6205, 0.263302, -1.7364, -17.7037, -0.263302, -0.00346565, 17.617, 0.263302, -1.7364, 17.7002, -0.263302, -0.00346565, -17.7037, 0.263302, -0.00346565, -17.6205, -0.263302, 1.73294, 17.7002, 0.263302, -0.00346565, 17.617, -0.263302, 1.73294, -17.6205, 0.263302, 1.73294, -17.364, -0.263302, 3.45201, 17.617, 0.263302, 1.73294, 17.3606, -0.263302, 3.45201, -17.364, 0.263302, 3.45201, -16.9447, -0.263302, 5.13643, 17.3606, 0.263302, 3.45201, 16.9412, -0.263302, 5.13643, -16.9447, 0.263302, 5.13643, -16.3589, -0.263302, 6.77232, 16.9412, 0.263302, 5.13643, 16.3555, -0.263302, 6.77232, -16.3589, 0.263302, 6.77232, -15.6138, -0.263302, 8.34237, 16.3555, 0.263302, 6.77232, 15.6103, -0.263302, 8.34237, -15.6138, 0.263302, 8.34237, -14.723, -0.263302, 9.83269, 15.6103, 0.263302, 8.34237, 14.7196, -0.263302, 9.83269, -14.723, 0.263302, 9.83269, -13.6867, -0.263302, 11.2294, 14.7196, 0.263302, 9.83269, 13.6833, -0.263302, 11.2294, -13.6867, 0.263302, 11.2294, -12.5187, -0.263302, 12.5153, 13.6833, 0.263302, 11.2294, 12.5153, -0.263302, 12.5153, -12.5187, 0.263302, 12.5153, -11.2329, -0.263302, 13.6833, 12.5153, 0.263302, 12.5153, 11.2294, -0.263302, 13.6833, -11.2329, 0.263302, 13.6833, -9.83616, -0.263302, 14.7196, 11.2294, 0.263302, 13.6833, 9.83269, -0.263302, 14.7196, -9.83616, 0.263302, 14.7196, -8.34583, -0.263302, 15.6103, 9.83269, 0.263302, 14.7196, 8.34237, -0.263302, 15.6103, -8.34583, 0.263302, 15.6103, -6.77579, -0.263302, 16.3555, 8.34237, 0.263302, 15.6103, 6.77232, -0.263302, 16.3555, -6.77579, 0.263302, 16.3555, -5.13989, -0.263302, 16.9412, 6.77232, 0.263302, 16.3555, 5.13643, -0.263302, 16.9412, -5.13989, 0.263302, 16.9412, -3.45548, -0.263302, 17.3606, 5.13643, 0.263302, 16.9412, 3.45201, -0.263302, 17.3606, -3.45548, 0.263302, 17.3606, -1.7364, -0.263302, 17.617, 3.45201, 0.263302, 17.3606, 1.73294, -0.263302, 17.617, -1.7364, 0.263302, 17.617, -0.00346565, -0.263302, 17.7002, 1.73294, 0.263302, 17.617, -0.00346565, 0.263302, 17.7002)
 
+[sub_resource type="Resource" id="Resource_6313s"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_apis3"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_ljri7"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_dg6mn"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_0dwiv"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_88lb6"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfaiq"]
 albedo_texture = ExtResource("21_onxjb")
 
@@ -215,7 +245,7 @@ transform = Transform3D(0.837719, 0, 0.546102, 0, 1, 0, -0.546102, 0, 0.837719, 
 [node name="windmill_02_mmi3d_01" type="MultiMeshInstance3D" parent="windmill/Pivot_01"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.106531, 0.00389194, -0.120996)
 multimesh = SubResource("MultiMesh_aevtt")
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_e11l6")
 enable_rotation = true
 rotation_speed_deg = 6.56
 rotate_x_axis = true
@@ -237,7 +267,7 @@ transform = Transform3D(0.771625, 0, 0.636078, 0, 1, 0, -0.636078, 0, 0.771625, 
 [node name="windmill_02_mmi3d_01" type="MultiMeshInstance3D" parent="windmill/Pivot_02"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0302353, 0.0134869, -0.00486755)
 multimesh = SubResource("MultiMesh_aevtt")
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_dbb50")
 enable_rotation = true
 rotation_speed_deg = -4.56
 rotate_x_axis = true
@@ -258,7 +288,7 @@ transform = Transform3D(0.969872, 0, 0.243615, 0, 1, 0, -0.243615, 0, 0.969872, 
 [node name="windmill_02_mmi3d_01" type="MultiMeshInstance3D" parent="windmill/Pivot_03"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0373306, 0.0989304, 0.0019455)
 multimesh = SubResource("MultiMesh_aevtt")
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_arkhw")
 enable_rotation = true
 rotation_speed_deg = 3.56
 rotate_x_axis = true
@@ -917,7 +947,7 @@ shape = SubResource("CylinderShape3D_hbxmu")
 [node name="fire_wind_house_02_mmi3d_01" type="MultiMeshInstance3D" parent="fire_wind_house"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13282, 7.25999, -0.0952263)
 multimesh = SubResource("MultiMesh_algyw")
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_oqohx")
 enable_rotation = true
 rotation_speed_deg = 25.0
 rotate_x_axis = true
@@ -925,7 +955,7 @@ rotate_x_axis = true
 [node name="fire_wind_house_02_mmi3d_02" type="MultiMeshInstance3D" parent="fire_wind_house"]
 transform = Transform3D(0.743565, 0, -0.668664, 0, 1, 0, 0.668664, 0, 0.743565, -13.3556, 13.3826, -53.086)
 multimesh = SubResource("MultiMesh_algyw")
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_eqbqv")
 enable_rotation = true
 rotation_speed_deg = -15.0
 rotate_x_axis = true
@@ -1262,7 +1292,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_6313s")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1312,7 +1342,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_apis3")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1327,7 +1357,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 6.057
 omni_attenuation = 0.438
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_ljri7")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1349,7 +1379,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_dg6mn")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1364,7 +1394,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_0dwiv")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -1386,7 +1416,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = 0.438
-script = ExtResource("4_w3twe")
+script = SubResource("Resource_88lb6")
 enable_light_flicker = true
 base_energy = 5.56
 flicker_amplitude = 0.1

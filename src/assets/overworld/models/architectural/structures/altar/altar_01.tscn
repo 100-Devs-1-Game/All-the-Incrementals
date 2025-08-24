@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbuxopqnh45v1"]
 
-[ext_resource type="PackedScene" uid="uid://bkjd77fn1frsf" path="res://models/architectural/structures/altar/altar_01.gltf" id="1_cr860"]
-[ext_resource type="Texture2D" uid="uid://56y50akb6nqc" path="res://models/architectural/structures/altar/altar_01.webp" id="2_acte2"]
-[ext_resource type="Material" uid="uid://bsrilhglpyu26" path="res://materials/simple/metallic/m_yellow.tres" id="4_unjir"]
+[ext_resource type="PackedScene" uid="uid://bkjd77fn1frsf" path="res://assets/overworld/models/architectural/structures/altar/altar_01.gltf" id="1_cr860"]
+[ext_resource type="Texture2D" uid="uid://56y50akb6nqc" path="res://assets/overworld/models/architectural/structures/altar/altar_01.webp" id="2_acte2"]
+[ext_resource type="Material" uid="uid://bsrilhglpyu26" path="res://assets/overworld/materials/simple/metallic/m_yellow.tres" id="4_unjir"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ha6lw"]
 albedo_texture = ExtResource("2_acte2")

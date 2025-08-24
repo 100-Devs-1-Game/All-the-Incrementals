@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=62 format=3 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="Script" uid="uid://eiutp4wmfx4t" path="res://modules/overworld_locations/clayport/clayport.gd" id="1_q21dp"]
 [ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_piane"]
@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="10_0icjx"]
 [ext_resource type="ArrayMesh" uid="uid://doyammdd6ombg" path="res://assets/overworld/models/architectural/structures/houses/house_01/house_01_earth_m.tres" id="10_we0hr"]
 [ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="11_dt5ik"]
-[ext_resource type="ArrayMesh" uid="uid://c285skwaly2or" path="res://assets/overworld/models/architectural/structures/houses/straw_house/straw_house.mesh" id="11_gxyks"]
 [ext_resource type="Resource" uid="uid://bn3py5bvf5ry5" path="res://modules/minigame/common/debug/breezekiln.tres" id="12_i6g11"]
 [ext_resource type="ArrayMesh" uid="uid://cvof3k21ptrqs" path="res://assets/overworld/models/architectural/stair_case/stair_case.mesh" id="12_t5wtc"]
 [ext_resource type="ArrayMesh" uid="uid://dgdgjjyd05j4i" path="res://assets/overworld/models/architectural/structures/platforms/platform_01.mesh" id="13_dopgo"]
@@ -86,7 +85,6 @@ size = Vector3(53.7981, 26.3955, 13.0395)
 [sub_resource type="MultiMesh" id="MultiMesh_mrxcy"]
 transform_format = 1
 instance_count = 1
-mesh = ExtResource("11_gxyks")
 buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_prpfr"]

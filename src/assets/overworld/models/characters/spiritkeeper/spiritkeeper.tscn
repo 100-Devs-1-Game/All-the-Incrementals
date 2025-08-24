@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://ddutk8tp25kob"]
 
-[ext_resource type="PackedScene" uid="uid://dcsyjfr3p0qen" path="res://models/characters/spiritkeeper/spiritkeeper.gltf" id="1_8hffn"]
-[ext_resource type="Texture2D" uid="uid://dxpfldlvkain6" path="res://models/characters/spiritkeeper/spiritkeeper.webp" id="2_cugus"]
-[ext_resource type="Material" uid="uid://don51ubfutap4" path="res://materials/simple/metallic/m_black.tres" id="3_6vibe"]
-[ext_resource type="Material" uid="uid://bsrilhglpyu26" path="res://materials/simple/metallic/m_yellow.tres" id="4_i4grt"]
+[ext_resource type="PackedScene" uid="uid://dcsyjfr3p0qen" path="res://assets/overworld/models/characters/spiritkeeper/spiritkeeper.gltf" id="1_8hffn"]
+[ext_resource type="Texture2D" uid="uid://dxpfldlvkain6" path="res://assets/overworld/models/characters/spiritkeeper/spiritkeeper.webp" id="2_cugus"]
+[ext_resource type="Material" uid="uid://don51ubfutap4" path="res://assets/overworld/materials/simple/metallic/m_black.tres" id="3_6vibe"]
+[ext_resource type="Material" uid="uid://bsrilhglpyu26" path="res://assets/overworld/materials/simple/metallic/m_yellow.tres" id="4_i4grt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yltuv"]
 albedo_texture = ExtResource("2_cugus")

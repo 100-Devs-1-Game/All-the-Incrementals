@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://utprbtjecrlu"]
 
-[ext_resource type="PackedScene" uid="uid://bgpfkah3np8y2" path="res://models/characters/breezekiln_leader/breezekiln_leader.gltf" id="1_q77hu"]
-[ext_resource type="Texture2D" uid="uid://bbx434phsq5fy" path="res://models/characters/breezekiln_leader/breezekiln_leader.webp" id="2_b65cp"]
-[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://materials/simple/metallic/m_gray.tres" id="3_toeda"]
-[ext_resource type="Material" uid="uid://cjphlci2apl5t" path="res://materials/emissive/e_brown.tres" id="4_toeda"]
+[ext_resource type="PackedScene" uid="uid://bgpfkah3np8y2" path="res://assets/overworld/models/characters/breezekiln_leader/breezekiln_leader.gltf" id="1_q77hu"]
+[ext_resource type="Texture2D" uid="uid://bbx434phsq5fy" path="res://assets/overworld/models/characters/breezekiln_leader/breezekiln_leader.webp" id="2_b65cp"]
+[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://assets/overworld/materials/simple/metallic/m_gray.tres" id="3_toeda"]
+[ext_resource type="Material" uid="uid://cjphlci2apl5t" path="res://assets/overworld/materials/emissive/e_brown.tres" id="4_toeda"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucm35"]
 albedo_texture = ExtResource("2_b65cp")

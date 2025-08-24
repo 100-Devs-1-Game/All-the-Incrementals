@@ -1,58 +1,55 @@
-[gd_scene load_steps=83 format=3 uid="uid://c5pos323ks1ro"]
+[gd_scene load_steps=85 format=3 uid="uid://c5pos323ks1ro"]
 
-[ext_resource type="Texture2D" uid="uid://c6t333jbfefng" path="res://assets/HDRIs/day.hdr" id="1_qqenq"]
-[ext_resource type="PackedScene" uid="uid://cxkc37xd0pka0" path="res://models/architectural/stair_case/stair_case_01.tscn" id="2_tpa10"]
-[ext_resource type="PackedScene" uid="uid://dbl6vd6owbgae" path="res://models/architectural/arch/arch_01.tscn" id="3_yaebv"]
-[ext_resource type="Material" uid="uid://hk3dsg83qw1l" path="res://materials/textures/brick/brick_03.tres" id="4_e8tmd"]
-[ext_resource type="PackedScene" uid="uid://dn17r6cyuvf7u" path="res://models/architectural/structures/temples/water_temple_bottom_half.tscn" id="4_e13ul"]
-[ext_resource type="PackedScene" uid="uid://corlpgtayffvx" path="res://models/architectural/bars/bar_01.tscn" id="4_vugxr"]
-[ext_resource type="Material" uid="uid://dnhk0y3257esx" path="res://materials/textures/brick/brick_01.tres" id="5_e8tmd"]
-[ext_resource type="ArrayMesh" uid="uid://cmwartfadf6yk" path="res://models/architectural/pillar/pillar_01.mesh" id="5_qqenq"]
-[ext_resource type="PackedScene" uid="uid://d3s6vlq4wy6ic" path="res://models/props/bell/bell_01.tscn" id="5_rlloo"]
-[ext_resource type="PackedScene" uid="uid://dxf7wr7fkgkx3" path="res://models/props/ornaments/ornament_05.tscn" id="12_2fe8b"]
-[ext_resource type="PackedScene" uid="uid://cfr1bhdfmu6ir" path="res://models/architectural/ribbon/arch_ribbon_01.tscn" id="12_rjxdq"]
-[ext_resource type="PackedScene" uid="uid://cgmrvaxocqvut" path="res://models/architectural/ribbon/arch_ribbon_02.tscn" id="13_dtfrw"]
-[ext_resource type="PackedScene" uid="uid://d2exunln5ws47" path="res://models/architectural/ribbon/middle_short_ribbon.tscn" id="14_mwuvr"]
-[ext_resource type="PackedScene" uid="uid://bs4dj4hx788c" path="res://models/props/ornaments/ornament_02.tscn" id="15_m0502"]
-[ext_resource type="PackedScene" uid="uid://c2fqfhyrr6qwf" path="res://models/props/ornaments/ornament_04.tscn" id="16_bt3vu"]
-[ext_resource type="PackedScene" uid="uid://do8ec7rtyks35" path="res://models/props/ornaments/ornament_01.tscn" id="17_sgsr3"]
-[ext_resource type="PackedScene" uid="uid://bhor2w8x1nede" path="res://models/props/ornaments/ornament_03.tscn" id="18_sgsr3"]
-[ext_resource type="PackedScene" uid="uid://hf0wgh6wa7s5" path="res://models/props/ornaments/ornament_06.tscn" id="19_naivd"]
-[ext_resource type="PackedScene" uid="uid://dfja1f2kdxjsq" path="res://models/props/candle/candle_holder.tscn" id="21_xjdxk"]
-[ext_resource type="PackedScene" uid="uid://b66drvaba8u41" path="res://models/props/candle/candle_01.tscn" id="22_54pkv"]
-[ext_resource type="Shader" uid="uid://cwj8raehobu8p" path="res://scripts/shaders/flag_like.gdshader" id="23_agukd"]
-[ext_resource type="Texture2D" uid="uid://cad1jnopkegts" path="res://assets/elements/wind.webp" id="23_snqu8"]
-[ext_resource type="SpriteFrames" uid="uid://bvxn6etk1px5h" path="res://vfx/candle_flame/candle_flame.tres" id="23_tbivr"]
-[ext_resource type="Texture2D" uid="uid://bq86j6fg4r8pf" path="res://assets/elements/fire.webp" id="24_agukd"]
-[ext_resource type="Texture2D" uid="uid://cgmr2lwkxdu65" path="res://assets/elements/wind_bloom.webp" id="24_dr8tf"]
-[ext_resource type="PackedScene" uid="uid://cvp0l5bbwj43a" path="res://models/architectural/ribbon/cylinder_ribbon.tscn" id="24_lh4a5"]
-[ext_resource type="Texture2D" uid="uid://c2rbbd1enbesy" path="res://assets/elements/water.webp" id="25_4aov3"]
-[ext_resource type="Texture2D" uid="uid://qb3vdu25rkjl" path="res://assets/elements/earth.webp" id="26_serno"]
-[ext_resource type="Texture2D" uid="uid://ckosq1frycwik" path="res://assets/elements/fire_bloom.webp" id="26_ul5nb"]
-[ext_resource type="Texture2D" uid="uid://cjox17oqo8kjx" path="res://assets/elements/water_bloom.webp" id="28_dt1ag"]
-[ext_resource type="PackedScene" uid="uid://dox2uuh52nw43" path="res://models/kitchen_ware/bowl/bowl_05.tscn" id="28_imijt"]
-[ext_resource type="ArrayMesh" uid="uid://cxyhsx2s6ve63" path="res://models/UI/pill/pill.obj" id="28_serno"]
-[ext_resource type="Shader" uid="uid://6wy8y15n7vk0" path="res://scripts/shaders/amount_bar.gdshader" id="29_4aov3"]
-[ext_resource type="Texture2D" uid="uid://drgfx7qw272bv" path="res://assets/elements/earth_bloom.webp" id="30_n2scs"]
-[ext_resource type="Material" uid="uid://chg85pjkrx0dk" path="res://materials/textures/concrete/concrete_03.tres" id="31_e8tmd"]
-[ext_resource type="SpriteFrames" uid="uid://b3itxrlohx1" path="res://vfx/pyre_flame/pyre_flame.tres" id="32_8dlsp"]
-[ext_resource type="ArrayMesh" uid="uid://dg4j6mwtin3of" path="res://models/architectural/ribbon/wrapping_01.mesh" id="33_2y5yr"]
-[ext_resource type="ArrayMesh" uid="uid://byqwraxgefyr3" path="res://models/architectural/ribbon/long_hanging_ribbon.obj" id="36_dt1ag"]
-[ext_resource type="Shader" uid="uid://ce8k8i21t31cp" path="res://scripts/shaders/cloth_sim.gdshader" id="37_n2scs"]
-[ext_resource type="Script" path="res://scripts/klip_signal.gd" id="38_qqenq"]
-[ext_resource type="SpriteFrames" uid="uid://c1pcfko77da5i" path="res://vfx/elements_anim/water/elements_water_anim.tres" id="44_n6057"]
-[ext_resource type="Texture2D" uid="uid://fj5wqi66t65e" path="res://assets/skybox/sky_night_01.webp" id="46_2fe8b"]
-[ext_resource type="SpriteFrames" uid="uid://cv2fqxxq0ujke" path="res://vfx/elements_anim/wind/elements_wind_anim.tres" id="46_mstb5"]
-[ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://vfx/water/circular_water/circular_water.obj" id="46_qqenq"]
-[ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://scripts/shaders/water_toon.gdshader" id="47_e8tmd"]
-[ext_resource type="Texture2D" uid="uid://dfvfmidfq5gmd" path="res://vfx/water/circular_water/water_blue.webp" id="47_qqenq"]
-[ext_resource type="Texture2D" uid="uid://b0giovcp3gygs" path="res://assets/skybox/sky_day_01.webp" id="50_qqenq"]
-[ext_resource type="SpriteFrames" uid="uid://jt2bd2rgdu5t" path="res://vfx/elements_anim/fire/elements_fire_anim.tres" id="52_0eu76"]
-[ext_resource type="SpriteFrames" uid="uid://bvva1qjrsfn36" path="res://vfx/elements_anim/earth/elements_earth_anim.tres" id="52_61tad"]
-[ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/skybox/skybox_sphere.obj" id="52_sl2ur"]
+[ext_resource type="PackedScene" uid="uid://cxkc37xd0pka0" path="res://assets/overworld/models/architectural/stair_case/stair_case_01.tscn" id="2_tpa10"]
+[ext_resource type="PackedScene" uid="uid://dbl6vd6owbgae" path="res://assets/overworld/models/architectural/arch/arch_01.tscn" id="3_yaebv"]
+[ext_resource type="Material" uid="uid://hk3dsg83qw1l" path="res://assets/overworld/materials/textures/brick/brick_03.tres" id="4_e8tmd"]
+[ext_resource type="PackedScene" uid="uid://dn17r6cyuvf7u" path="res://assets/overworld/models/architectural/structures/temples/water_temple_bottom_half.tscn" id="4_e13ul"]
+[ext_resource type="PackedScene" uid="uid://corlpgtayffvx" path="res://assets/overworld/models/architectural/bars/bar_01.tscn" id="4_vugxr"]
+[ext_resource type="Material" uid="uid://dnhk0y3257esx" path="res://assets/overworld/materials/textures/brick/brick_01.tres" id="5_e8tmd"]
+[ext_resource type="ArrayMesh" uid="uid://cmwartfadf6yk" path="res://assets/overworld/models/architectural/pillar/pillar_01.mesh" id="5_qqenq"]
+[ext_resource type="PackedScene" uid="uid://d3s6vlq4wy6ic" path="res://assets/overworld/models/props/bell/bell_01.tscn" id="5_rlloo"]
+[ext_resource type="PackedScene" uid="uid://dxf7wr7fkgkx3" path="res://assets/overworld/models/props/ornaments/ornament_05.tscn" id="12_2fe8b"]
+[ext_resource type="PackedScene" uid="uid://cfr1bhdfmu6ir" path="res://assets/overworld/models/architectural/ribbon/arch_ribbon_01.tscn" id="12_rjxdq"]
+[ext_resource type="PackedScene" uid="uid://cgmrvaxocqvut" path="res://assets/overworld/models/architectural/ribbon/arch_ribbon_02.tscn" id="13_dtfrw"]
+[ext_resource type="PackedScene" uid="uid://d2exunln5ws47" path="res://assets/overworld/models/architectural/ribbon/middle_short_ribbon.tscn" id="14_mwuvr"]
+[ext_resource type="PackedScene" uid="uid://bs4dj4hx788c" path="res://assets/overworld/models/props/ornaments/ornament_02.tscn" id="15_m0502"]
+[ext_resource type="PackedScene" uid="uid://c2fqfhyrr6qwf" path="res://assets/overworld/models/props/ornaments/ornament_04.tscn" id="16_bt3vu"]
+[ext_resource type="PackedScene" uid="uid://do8ec7rtyks35" path="res://assets/overworld/models/props/ornaments/ornament_01.tscn" id="17_sgsr3"]
+[ext_resource type="PackedScene" uid="uid://bhor2w8x1nede" path="res://assets/overworld/models/props/ornaments/ornament_03.tscn" id="18_sgsr3"]
+[ext_resource type="PackedScene" uid="uid://hf0wgh6wa7s5" path="res://assets/overworld/models/props/ornaments/ornament_06.tscn" id="19_naivd"]
+[ext_resource type="PackedScene" uid="uid://dfja1f2kdxjsq" path="res://assets/overworld/models/props/candle/candle_holder.tscn" id="21_xjdxk"]
+[ext_resource type="PackedScene" uid="uid://b66drvaba8u41" path="res://assets/overworld/models/props/candle/candle_01.tscn" id="22_54pkv"]
+[ext_resource type="Shader" uid="uid://cwj8raehobu8p" path="res://assets/overworld/scripts/shaders/flag_like.gdshader" id="23_agukd"]
+[ext_resource type="Texture2D" uid="uid://cad1jnopkegts" path="res://assets/overworld/assets/elements/wind.webp" id="23_snqu8"]
+[ext_resource type="SpriteFrames" uid="uid://bvxn6etk1px5h" path="res://assets/overworld/vfx/candle_flame/candle_flame.tres" id="23_tbivr"]
+[ext_resource type="Texture2D" uid="uid://bq86j6fg4r8pf" path="res://assets/overworld/assets/elements/fire.webp" id="24_agukd"]
+[ext_resource type="Texture2D" uid="uid://cgmr2lwkxdu65" path="res://assets/overworld/assets/elements/wind_bloom.webp" id="24_dr8tf"]
+[ext_resource type="PackedScene" uid="uid://cvp0l5bbwj43a" path="res://assets/overworld/models/architectural/ribbon/cylinder_ribbon.tscn" id="24_lh4a5"]
+[ext_resource type="Texture2D" uid="uid://c2rbbd1enbesy" path="res://assets/overworld/assets/elements/water.webp" id="25_4aov3"]
+[ext_resource type="Texture2D" uid="uid://qb3vdu25rkjl" path="res://assets/overworld/assets/elements/earth.webp" id="26_serno"]
+[ext_resource type="Texture2D" uid="uid://ckosq1frycwik" path="res://assets/overworld/assets/elements/fire_bloom.webp" id="26_ul5nb"]
+[ext_resource type="Texture2D" uid="uid://cjox17oqo8kjx" path="res://assets/overworld/assets/elements/water_bloom.webp" id="28_dt1ag"]
+[ext_resource type="PackedScene" uid="uid://dox2uuh52nw43" path="res://assets/overworld/models/kitchen_ware/bowl/bowl_05.tscn" id="28_imijt"]
+[ext_resource type="ArrayMesh" uid="uid://cxyhsx2s6ve63" path="res://assets/overworld/models/ui/pill/pill.obj" id="28_serno"]
+[ext_resource type="Shader" uid="uid://6wy8y15n7vk0" path="res://assets/overworld/scripts/shaders/amount_bar.gdshader" id="29_4aov3"]
+[ext_resource type="Texture2D" uid="uid://drgfx7qw272bv" path="res://assets/overworld/assets/elements/earth_bloom.webp" id="30_n2scs"]
+[ext_resource type="Material" uid="uid://chg85pjkrx0dk" path="res://assets/overworld/materials/textures/concrete/concrete_03.tres" id="31_e8tmd"]
+[ext_resource type="SpriteFrames" uid="uid://b3itxrlohx1" path="res://assets/overworld/vfx/pyre_flame/pyre_flame.tres" id="32_8dlsp"]
+[ext_resource type="ArrayMesh" uid="uid://dg4j6mwtin3of" path="res://assets/overworld/models/architectural/ribbon/wrapping_01.mesh" id="33_2y5yr"]
+[ext_resource type="ArrayMesh" uid="uid://byqwraxgefyr3" path="res://assets/overworld/models/architectural/ribbon/long_hanging_ribbon.obj" id="36_dt1ag"]
+[ext_resource type="Shader" uid="uid://ce8k8i21t31cp" path="res://assets/overworld/scripts/shaders/cloth_sim.gdshader" id="37_n2scs"]
+[ext_resource type="SpriteFrames" uid="uid://c1pcfko77da5i" path="res://assets/overworld/vfx/elements_anim/water/elements_water_anim.tres" id="44_n6057"]
+[ext_resource type="Texture2D" uid="uid://fj5wqi66t65e" path="res://assets/overworld/assets/skybox/sky_night_01.webp" id="46_2fe8b"]
+[ext_resource type="SpriteFrames" uid="uid://cv2fqxxq0ujke" path="res://assets/overworld/vfx/elements_anim/wind/elements_wind_anim.tres" id="46_mstb5"]
+[ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://assets/overworld/vfx/water/circular_water/circular_water.obj" id="46_qqenq"]
+[ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://assets/overworld/scripts/shaders/water_toon.gdshader" id="47_e8tmd"]
+[ext_resource type="Texture2D" uid="uid://dfvfmidfq5gmd" path="res://assets/overworld/vfx/water/circular_water/water_blue.webp" id="47_qqenq"]
+[ext_resource type="Texture2D" uid="uid://b0giovcp3gygs" path="res://assets/overworld/assets/skybox/sky_day_01.webp" id="50_qqenq"]
+[ext_resource type="SpriteFrames" uid="uid://jt2bd2rgdu5t" path="res://assets/overworld/vfx/elements_anim/fire/elements_fire_anim.tres" id="52_0eu76"]
+[ext_resource type="SpriteFrames" uid="uid://bvva1qjrsfn36" path="res://assets/overworld/vfx/elements_anim/earth/elements_earth_anim.tres" id="52_61tad"]
+[ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="52_sl2ur"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1yun8"]
-panorama = ExtResource("1_qqenq")
 
 [sub_resource type="Sky" id="Sky_de3hw"]
 sky_material = SubResource("PanoramaSkyMaterial_1yun8")
@@ -261,6 +258,12 @@ shader_parameter/y_top = -2.18
 shader_parameter/y_bottom = 2.18
 shader_parameter/alpha_cutoff = 0.1
 
+[sub_resource type="Resource" id="Resource_kbb1h"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_xdf8c"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sl2ur"]
 render_priority = 0
 shader = ExtResource("47_e8tmd")
@@ -270,6 +273,9 @@ shader_parameter/swirl_freq = 5.0
 shader_parameter/albedo_texture = ExtResource("47_qqenq")
 shader_parameter/normal_strength = 1.0
 shader_parameter/emission_strength = 0.3
+
+[sub_resource type="Resource" id="Resource_ao4aq"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2y5yr"]
 
@@ -286,6 +292,9 @@ shader_parameter/albedo_texture = SubResource("CompressedTexture2D_2y5yr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mstb5"]
 albedo_texture = ExtResource("50_qqenq")
+
+[sub_resource type="Resource" id="Resource_vftwj"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
 
 [node name="The Shrine" type="Node3D"]
 
@@ -667,7 +676,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 1.522
 omni_attenuation = 0.438
-script = ExtResource("38_qqenq")
+script = SubResource("Resource_kbb1h")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -680,7 +689,7 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = -0.991
-script = ExtResource("38_qqenq")
+script = SubResource("Resource_xdf8c")
 enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
@@ -765,7 +774,7 @@ transform = Transform3D(4.87, 0, 0, 0, 4.87, 0, 0, 0, 4.87, 0, -1.545, 0)
 mesh = ExtResource("46_qqenq")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_sl2ur")
-script = ExtResource("38_qqenq")
+script = SubResource("Resource_ao4aq")
 enable_rotation = true
 rotation_speed_deg = 0.56
 rotate_y_axis = true
@@ -784,7 +793,7 @@ texture = ExtResource("46_2fe8b")
 transform = Transform3D(11.585, 0, 0, 0, 11.585, 0, 0, 0, 11.585, -1.64992, 1.035, 0)
 mesh = ExtResource("52_sl2ur")
 surface_material_override/0 = SubResource("StandardMaterial3D_mstb5")
-script = ExtResource("38_qqenq")
+script = SubResource("Resource_vftwj")
 enable_rotation = true
 rotation_speed_deg = 0.45
 rotate_y_axis = true

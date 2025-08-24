@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cya0g2mjgrubk"]
 
-[ext_resource type="PackedScene" uid="uid://db7tdkdv1bau6" path="res://models/characters/breezekiln_NPC/breezekiln_NPC.gltf" id="1_jgr11"]
-[ext_resource type="Material" uid="uid://don51ubfutap4" path="res://materials/simple/metallic/m_black.tres" id="2_wat7j"]
-[ext_resource type="Material" uid="uid://cjphlci2apl5t" path="res://materials/emissive/e_brown.tres" id="3_wlv5v"]
+[ext_resource type="PackedScene" uid="uid://db7tdkdv1bau6" path="res://assets/overworld/models/characters/breezekiln_npc/breezekiln_npc.gltf" id="1_jgr11"]
+[ext_resource type="Material" uid="uid://don51ubfutap4" path="res://assets/overworld/materials/simple/metallic/m_black.tres" id="2_wat7j"]
+[ext_resource type="Material" uid="uid://cjphlci2apl5t" path="res://assets/overworld/materials/emissive/e_brown.tres" id="3_wlv5v"]
 
 [node name="breezekiln_NPC" instance=ExtResource("1_jgr11")]
 

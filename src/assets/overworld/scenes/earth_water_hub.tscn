@@ -1,39 +1,36 @@
-[gd_scene load_steps=68 format=4 uid="uid://d3mxhlrq3ern4"]
+[gd_scene load_steps=70 format=4 uid="uid://d3mxhlrq3ern4"]
 
-[ext_resource type="Texture2D" uid="uid://xstxlsqpgn7h" path="res://assets/HDRIs/night.hdr" id="2_dqkb0"]
-[ext_resource type="Texture2D" uid="uid://cvtojgakhortv" path="res://assets/nature/trees/tree_05.webp" id="5_v8tti"]
-[ext_resource type="PackedScene" uid="uid://bnep7rw3djdx8" path="res://models/architectural/structures/temples/water_temple/water_temple.tscn" id="6_d3vjw"]
-[ext_resource type="Script" path="res://scripts/klip_signal.gd" id="6_y02r3"]
-[ext_resource type="ArrayMesh" uid="uid://bl82s3wnbaib8" path="res://models/architectural/structures/stall/stall.mesh" id="7_wdwec"]
-[ext_resource type="ArrayMesh" uid="uid://c452na5eaoqfc" path="res://models/architectural/structures/houses/house_01/house_01_m.mesh" id="8_y02r3"]
-[ext_resource type="ArrayMesh" uid="uid://domnhvt4fgacs" path="res://models/architectural/structures/houses/house_02/house_02_m.mesh" id="9_77kgr"]
-[ext_resource type="ArrayMesh" uid="uid://cvof3k21ptrqs" path="res://models/architectural/stair_case/stair_case.mesh" id="11_t4ebe"]
-[ext_resource type="ArrayMesh" uid="uid://dgdgjjyd05j4i" path="res://models/architectural/structures/platforms/platform_01.mesh" id="12_3kkkr"]
-[ext_resource type="PackedScene" uid="uid://dfr5sx5nr2a4o" path="res://models/landscapes/island_circles_baked.tscn" id="12_3r5ms"]
-[ext_resource type="PackedScene" uid="uid://deqn20hbm638v" path="res://models/landscapes/islands_plot.tscn" id="13_8rlvi"]
-[ext_resource type="Material" uid="uid://cfv5eawkqvqb6" path="res://materials/textures/ground/ground_02.tres" id="13_wdwec"]
-[ext_resource type="PackedScene" uid="uid://bfvl4gl6ndsrq" path="res://models/landscapes/earth_path_baked.tscn" id="14_vrtvn"]
-[ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/skybox/skybox_sphere.obj" id="16_5558x"]
-[ext_resource type="Texture2D" uid="uid://cgkd7wcycsfnf" path="res://assets/skybox/sky_day_03.webp" id="17_q4jrv"]
-[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://scripts/Klip_Signal.gd" id="18_4w4hg"]
-[ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://vfx/water/circular_water/circular_water.obj" id="19_3fr1f"]
-[ext_resource type="PackedScene" uid="uid://b8xidene61u7x" path="res://models/landscapes/islands_surface.tscn" id="20_3r5ms"]
-[ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://scripts/shaders/water_toon.gdshader" id="20_7g0lr"]
-[ext_resource type="PackedScene" uid="uid://coxmlipoas6nc" path="res://vfx/water/cascade/cascade_waterfall.tscn" id="20_vrtvn"]
-[ext_resource type="PackedScene" uid="uid://by2bo8yeg0btq" path="res://vfx/water/cascade/cascade_rocks.tscn" id="21_8rlvi"]
-[ext_resource type="PackedScene" uid="uid://dnxu2oowl3ycw" path="res://models/architectural/wall/wall_baked.tscn" id="21_n7xpe"]
-[ext_resource type="Texture2D" uid="uid://dfvfmidfq5gmd" path="res://vfx/water/circular_water/water_blue.webp" id="22_48pxt"]
-[ext_resource type="Texture2D" uid="uid://jmg2fkfafbbo" path="res://models/architectural/structures/houses/straw_house/straw_house_baked.webp" id="22_vrtvn"]
-[ext_resource type="PackedScene" uid="uid://dbuxopqnh45v1" path="res://models/architectural/structures/altar/altar_01.tscn" id="23_48pxt"]
-[ext_resource type="ArrayMesh" uid="uid://dimoqe12t88oy" path="res://models/architectural/structures/altar/altar_crystal_01.mesh" id="24_v8tti"]
-[ext_resource type="ArrayMesh" uid="uid://dalbrtlm25ugj" path="res://models/architectural/structures/altar/altar_crystal_02.mesh" id="25_v8tti"]
-[ext_resource type="ArrayMesh" uid="uid://cx6fnitdwsufv" path="res://models/architectural/structures/altar/altar_crystal_03.mesh" id="26_v8tti"]
-[ext_resource type="Material" uid="uid://bwmu40iba2m2h" path="res://materials/simple/metallic/m_purple.tres" id="27_d3vjw"]
-[ext_resource type="ArrayMesh" uid="uid://dwmjg2n6yijb8" path="res://models/architectural/structures/altar/altar_crystal_04.mesh" id="27_wdwec"]
-[ext_resource type="PackedScene" uid="uid://dhlhupc517m6d" path="res://models/architectural/structures/graveyard/graveyard.tscn" id="29_d3vjw"]
+[ext_resource type="Texture2D" uid="uid://cvtojgakhortv" path="res://assets/overworld/assets/nature/trees/tree_05.webp" id="5_v8tti"]
+[ext_resource type="PackedScene" uid="uid://bnep7rw3djdx8" path="res://assets/overworld/models/architectural/structures/temples/water_temple/water_temple.tscn" id="6_d3vjw"]
+[ext_resource type="ArrayMesh" uid="uid://bl82s3wnbaib8" path="res://assets/overworld/models/architectural/structures/stall/stall.mesh" id="7_wdwec"]
+[ext_resource type="ArrayMesh" uid="uid://c452na5eaoqfc" path="res://assets/overworld/models/architectural/structures/houses/house_01/house_01_m.mesh" id="8_y02r3"]
+[ext_resource type="ArrayMesh" uid="uid://domnhvt4fgacs" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_m.mesh" id="9_77kgr"]
+[ext_resource type="ArrayMesh" uid="uid://cvof3k21ptrqs" path="res://assets/overworld/models/architectural/stair_case/stair_case.mesh" id="11_t4ebe"]
+[ext_resource type="ArrayMesh" uid="uid://dgdgjjyd05j4i" path="res://assets/overworld/models/architectural/structures/platforms/platform_01.mesh" id="12_3kkkr"]
+[ext_resource type="PackedScene" uid="uid://dfr5sx5nr2a4o" path="res://assets/overworld/models/landscapes/island_circles_baked.tscn" id="12_3r5ms"]
+[ext_resource type="PackedScene" uid="uid://deqn20hbm638v" path="res://assets/overworld/models/landscapes/islands_plot.tscn" id="13_8rlvi"]
+[ext_resource type="Material" uid="uid://cfv5eawkqvqb6" path="res://assets/overworld/materials/textures/ground/ground_02.tres" id="13_wdwec"]
+[ext_resource type="PackedScene" uid="uid://bfvl4gl6ndsrq" path="res://assets/overworld/models/landscapes/earth_path_baked.tscn" id="14_vrtvn"]
+[ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="16_5558x"]
+[ext_resource type="Texture2D" uid="uid://cgkd7wcycsfnf" path="res://assets/overworld/assets/skybox/sky_day_03.webp" id="17_q4jrv"]
+[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/altar_diamond.gd" id="18_4w4hg"]
+[ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://assets/overworld/vfx/water/circular_water/circular_water.obj" id="19_3fr1f"]
+[ext_resource type="PackedScene" uid="uid://b8xidene61u7x" path="res://assets/overworld/models/landscapes/islands_surface.tscn" id="20_3r5ms"]
+[ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://assets/overworld/scripts/shaders/water_toon.gdshader" id="20_7g0lr"]
+[ext_resource type="PackedScene" uid="uid://coxmlipoas6nc" path="res://assets/overworld/vfx/water/cascade/cascade_waterfall.tscn" id="20_vrtvn"]
+[ext_resource type="PackedScene" uid="uid://by2bo8yeg0btq" path="res://assets/overworld/vfx/water/cascade/cascade_rocks.tscn" id="21_8rlvi"]
+[ext_resource type="PackedScene" uid="uid://dnxu2oowl3ycw" path="res://assets/overworld/models/architectural/wall/wall_baked.tscn" id="21_n7xpe"]
+[ext_resource type="Texture2D" uid="uid://dfvfmidfq5gmd" path="res://assets/overworld/vfx/water/circular_water/water_blue.webp" id="22_48pxt"]
+[ext_resource type="Texture2D" uid="uid://jmg2fkfafbbo" path="res://assets/overworld/models/architectural/structures/houses/straw_house/straw_house_baked.webp" id="22_vrtvn"]
+[ext_resource type="PackedScene" uid="uid://dbuxopqnh45v1" path="res://assets/overworld/models/architectural/structures/altar/altar_01.tscn" id="23_48pxt"]
+[ext_resource type="ArrayMesh" uid="uid://dimoqe12t88oy" path="res://assets/overworld/models/architectural/structures/altar/altar_crystal_01.mesh" id="24_v8tti"]
+[ext_resource type="ArrayMesh" uid="uid://dalbrtlm25ugj" path="res://assets/overworld/models/architectural/structures/altar/altar_crystal_02.mesh" id="25_v8tti"]
+[ext_resource type="ArrayMesh" uid="uid://cx6fnitdwsufv" path="res://assets/overworld/models/architectural/structures/altar/altar_crystal_03.mesh" id="26_v8tti"]
+[ext_resource type="Material" uid="uid://bwmu40iba2m2h" path="res://assets/overworld/materials/simple/metallic/m_purple.tres" id="27_d3vjw"]
+[ext_resource type="ArrayMesh" uid="uid://dwmjg2n6yijb8" path="res://assets/overworld/models/architectural/structures/altar/altar_crystal_04.mesh" id="27_wdwec"]
+[ext_resource type="PackedScene" uid="uid://dhlhupc517m6d" path="res://assets/overworld/models/architectural/structures/graveyard/graveyard.tscn" id="29_d3vjw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hbxmu"]
-panorama = ExtResource("2_dqkb0")
 
 [sub_resource type="Sky" id="Sky_s60bt"]
 sky_material = SubResource("PanoramaSkyMaterial_hbxmu")
@@ -57,9 +54,21 @@ size = Vector3(0.812744, 1.63501, 0.586426)
 [sub_resource type="SphereShape3D" id="SphereShape3D_3r5ms"]
 radius = 16.5508
 
+[sub_resource type="Resource" id="Resource_waec0"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jcbcw"]
 height = 1.09796
 radius = 1.16943
+
+[sub_resource type="Resource" id="Resource_ohn4l"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_ufhvu"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
+
+[sub_resource type="Resource" id="Resource_ol7ah"]
+metadata/__load_path__ = "res://scripts/klip_signal.gd"
 
 [sub_resource type="MultiMesh" id="MultiMesh_jlbph"]
 transform_format = 1
@@ -423,7 +432,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94658, 0, -0.954626)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102234, 1.96187, 0.00528836)
 mesh = ExtResource("24_v8tti")
 skeleton = NodePath("../../..")
-script = ExtResource("6_y02r3")
+script = SubResource("Resource_waec0")
 enable_rotation = true
 rotation_speed_deg = 45.0
 rotate_y_axis = true
@@ -441,7 +450,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4624, 1.7515, -26.7064)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102234, 1.96187, 0.00528836)
 mesh = ExtResource("25_v8tti")
 skeleton = NodePath("../../..")
-script = ExtResource("6_y02r3")
+script = SubResource("Resource_ohn4l")
 enable_rotation = true
 rotation_speed_deg = -45.0
 
@@ -458,7 +467,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.057, 3.75952, 2.82105)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102234, 1.96187, 0.00528836)
 mesh = ExtResource("26_v8tti")
 skeleton = NodePath("../../..")
-script = ExtResource("6_y02r3")
+script = SubResource("Resource_ufhvu")
 enable_rotation = true
 rotation_speed_deg = 45.0
 
@@ -475,7 +484,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.538, 3.75952, -24.2553)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102234, 1.96187, 0.00528812)
 mesh = ExtResource("27_wdwec")
 surface_material_override/0 = ExtResource("27_d3vjw")
-script = ExtResource("6_y02r3")
+script = SubResource("Resource_ol7ah")
 enable_rotation = true
 rotation_speed_deg = -45.0
 

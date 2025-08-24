@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dhlhupc517m6d"]
 
-[ext_resource type="PackedScene" uid="uid://cm3rghkvel2l2" path="res://models/architectural/structures/graveyard/graveyard.gltf" id="1_lh3oq"]
-[ext_resource type="Texture2D" uid="uid://c60572rnv3a7y" path="res://models/architectural/structures/graveyard/graveyard.webp" id="2_w80ny"]
-[ext_resource type="Texture2D" uid="uid://bdqivymooblgt" path="res://models/architectural/structures/graveyard/graveyard_gate.webp" id="3_clkrf"]
+[ext_resource type="PackedScene" uid="uid://cm3rghkvel2l2" path="res://assets/overworld/models/architectural/structures/graveyard/graveyard.gltf" id="1_lh3oq"]
+[ext_resource type="Texture2D" uid="uid://c60572rnv3a7y" path="res://assets/overworld/models/architectural/structures/graveyard/graveyard.webp" id="2_w80ny"]
+[ext_resource type="Texture2D" uid="uid://bdqivymooblgt" path="res://assets/overworld/models/architectural/structures/graveyard/graveyard_gate.webp" id="3_clkrf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8wdd"]
 albedo_texture = ExtResource("2_w80ny")

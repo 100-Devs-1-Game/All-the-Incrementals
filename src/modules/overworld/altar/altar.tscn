@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://vmdpnylykvg8" path="res://assets/ui/sfx/close_ui.ogg" id="4_n1r1q"]
 [ext_resource type="Material" uid="uid://bwmu40iba2m2h" path="res://assets/overworld/materials/simple/metallic/m_purple.tres" id="5_jod46"]
 [ext_resource type="PackedScene" uid="uid://dbuxopqnh45v1" path="res://assets/overworld/models/architectural/structures/altar/altar_01.tscn" id="5_v1teg"]
-[ext_resource type="ArrayMesh" uid="uid://bl5nddjgsdeje" path="res://assets/overworld/models/architectural/structures/altar/altar_01_diamond_01.tres" id="6_o1w8r"]
 [ext_resource type="Material" uid="uid://dm2g6v4fy7jlb" path="res://assets/overworld/materials/simple/metallic/m_green.tres" id="7_m235q"]
 [ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/altar_diamond.gd" id="8_ryqf0"]
 
@@ -19,6 +18,9 @@ radius = 2.8
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fodwy"]
 height = 1.0856
 radius = 1.14258
+
+[sub_resource type="Resource" id="Resource_m235q"]
+metadata/__load_path__ = "res://assets/overworld/models/architectural/structures/altar/altar_01_diamond_01.tres"
 
 [node name="Altar" type="Node3D"]
 script = ExtResource("1_nq507")
@@ -51,7 +53,7 @@ shape = SubResource("CylinderShape3D_fodwy")
 [node name="Diamond" type="MeshInstance3D" parent="altar_01"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0480332, 2.04938, -0.0205939)
-mesh = ExtResource("6_o1w8r")
+mesh = SubResource("Resource_m235q")
 skeleton = NodePath("../../../..")
 script = ExtResource("8_ryqf0")
 enable_rotation = true

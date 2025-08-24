@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://b8xadldfgkvdq"]
 
-[ext_resource type="PackedScene" uid="uid://db3rawqn1b18o" path="res://models/characters/clayport_leader/clayport_leader.gltf" id="1_eo1no"]
-[ext_resource type="Texture2D" uid="uid://ug8n6sfrlb3o" path="res://models/characters/clayport_leader/clayport_leader.webp" id="2_e1wxk"]
-[ext_resource type="Material" uid="uid://wwqxhtdinbim" path="res://materials/simple/simple/s_yellow.tres" id="3_e1wxk"]
+[ext_resource type="PackedScene" uid="uid://db3rawqn1b18o" path="res://assets/overworld/models/characters/clayport_leader/clayport_leader.gltf" id="1_eo1no"]
+[ext_resource type="Texture2D" uid="uid://ug8n6sfrlb3o" path="res://assets/overworld/models/characters/clayport_leader/clayport_leader.webp" id="2_e1wxk"]
+[ext_resource type="Material" uid="uid://wwqxhtdinbim" path="res://assets/overworld/materials/simple/simple/s_yellow.tres" id="3_e1wxk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5ese"]
 albedo_texture = ExtResource("2_e1wxk")
