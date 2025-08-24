@@ -1,3 +1,4 @@
 pre-commit
 pre-commit-hooks
 gdtoolkit==4.3.4
+zstandard

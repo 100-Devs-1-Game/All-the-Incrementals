@@ -15,6 +15,8 @@ import os
 import re
 import sys
 import time
+import struct
+import zstandard as zstd
 from pathlib import Path
 from typing import Dict, Set, List, Tuple, Optional
 from collections import defaultdict
@@ -89,6 +91,13 @@ class GodotValidator:
     def _collect_uid_mappings(self, files: List[Path]):
         """Collect all UID to path mappings from the project."""
         for file_path in files:
+            if file_path.suffix in ['.mesh']:
+                try:
+                    self._process_binary_file(file_path)
+                except Exception as e:
+                    print(f"Failed to read UID from {file_path}: {e}")
+                continue
+            
             if file_path.suffix not in ['.uid', '.tscn', '.tres', '.import']:
                 continue
 
@@ -96,7 +105,7 @@ class GodotValidator:
                 with open(file_path, 'r', encoding='utf-8-sig') as f:
                     content = f.read()
 
-                rel_path = str(file_path.relative_to(self.project_root))
+                rel_path = str(file_path.relative_to(self.project_root).as_posix())
 
                 if file_path.suffix == '.uid':
                     self._process_uid_file(file_path, content)
@@ -104,7 +113,7 @@ class GodotValidator:
                     self._process_resource_file(file_path, content, rel_path)
 
             except Exception as e:
-                self.errors.append(f"Error reading {file_path}: {e}")
+                self.errors.append(f"Error reading {file_path.as_posix()}: {e}")
 
     def _process_uid_file(self, file_path: Path, content: str):
         """Process a .uid file to extract UID mapping."""
@@ -114,7 +123,7 @@ class GodotValidator:
         match = self.uid_file_pattern.match(uid_line)
 
         if not match:
-            self.errors.append(f"Invalid UID file format: {file_path} (content: '{uid_line}')")
+            self.errors.append(f"Invalid UID file format: {file_path.as_posix()} (content: '{uid_line}')")
             return
 
         uid = match.group(1)
@@ -122,11 +131,11 @@ class GodotValidator:
         resource_path = file_path.with_suffix('')
 
         if not resource_path.exists():
-            self.errors.append(f"UID file {file_path} has no corresponding resource file")
+            self.errors.append(f"UID file {file_path.as_posix()} has no corresponding resource file")
             return
 
-        res_path = f"res://{resource_path.relative_to(self.project_root)}"
-        self._add_uid_mapping(uid, res_path, str(file_path))
+        res_path = f"res://{resource_path.relative_to(self.project_root).as_posix()}"
+        self._add_uid_mapping(uid, res_path, str(file_path.as_posix()))
 
     def _process_resource_file(self, file_path: Path, content: str, rel_path: str):
         """Process resource files to extract UID mappings."""
@@ -140,28 +149,37 @@ class GodotValidator:
                 # Import files define UIDs for their corresponding asset
                 asset_path = file_path.with_suffix('')  # Remove .import extension
                 if asset_path.exists():
-                    asset_res_path = f"res://{asset_path.relative_to(self.project_root)}"
-                    self._add_uid_mapping(uid, asset_res_path, str(file_path))
+                    asset_res_path = f"res://{asset_path.relative_to(self.project_root).as_posix()}"
+                    self._add_uid_mapping(uid, asset_res_path, str(file_path.as_posix()))
                 else:
-                    self.errors.append(f".import file {file_path} has no corresponding asset file")
+                    self.errors.append(f".import file {file_path.as_posix()} has no corresponding asset file")
 
         # Check for scene UID
         elif file_path.suffix == '.tscn':
             scene_match = self.scene_uid_pattern.search(content)
             if scene_match:
                 uid = scene_match.group(1)
-                self._add_uid_mapping(uid, res_path, str(file_path))
+                self._add_uid_mapping(uid, res_path, str(file_path.as_posix()))
             else:
-                self.errors.append(f".tscn file {file_path} has no UID")
+                self.errors.append(f".tscn file {file_path.as_posix()} has no UID")
 
         # Check for resource UID
         elif file_path.suffix == '.tres':
             resource_match = self.resource_uid_pattern.search(content)
             if resource_match:
                 uid = resource_match.group(1)
-                self._add_uid_mapping(uid, res_path, str(file_path))
+                self._add_uid_mapping(uid, res_path, str(file_path.as_posix()))
             else:
-                self.errors.append(f".tres file {file_path} has no UID")
+                self.errors.append(f".tres file {file_path.as_posix()} has no UID")
+
+    def _process_binary_file(self, file_path: Path):
+        rel_path = str(file_path.relative_to(self.project_root).as_posix())
+        uid = self._get_binary_uid(file_path)
+        if uid == "uid://<invalid>":
+            self.errors.append(f"Error reading UID from binary file {file_path.as_posix()}")
+        else:
+            asset_res_path = f"res://{file_path.relative_to(self.project_root).as_posix()}"
+            self._add_uid_mapping(uid, asset_res_path, str(file_path.as_posix()))
 
     def _validate_ext_resources(self, file_path: Path, content: str):
         """Validate all ext_resource blocks in a file."""
@@ -181,21 +199,21 @@ class GodotValidator:
             # TODO: should we validate the type?
             if not resource_type:
                 self.errors.append(
-                    f"{file_path.relative_to(self.project_root)}:{line_number}: "
+                    f"{file_path.relative_to(self.project_root).as_posix()}:{line_number}: "
                     f"Missing type for ext_resource '{match.group()}'"
                 )
 
             # We don't need to validate that the path is real because that is done in a later step
             if not path:
                 self.errors.append(
-                    f"{file_path.relative_to(self.project_root)}:{line_number}: "
+                    f"{file_path.relative_to(self.project_root).as_posix()}:{line_number}: "
                     f"Missing path for ext_resource '{match.group()}'"
                 )
 
             # We don't need to validate that the UID is real because that is done in a later step
             if not uid:
                 self.errors.append(
-                    f"{file_path.relative_to(self.project_root)}:{line_number}: "
+                    f"{file_path.relative_to(self.project_root).as_posix()}:{line_number}: "
                     f"Missing UID for ext_resource '{match.group()}'"
                 )
 
@@ -204,7 +222,7 @@ class GodotValidator:
                 expected_path = self.uid_to_path[uid]
                 if expected_path != path:
                     self.errors.append(
-                        f"{file_path.relative_to(self.project_root)}:{line_number}: "
+                        f"{file_path.relative_to(self.project_root).as_posix()}:{line_number}: "
                         f"UID '{uid}' represents '{expected_path}', but the ext_resource thinks it's '{path}'"
                     )
 
@@ -227,6 +245,9 @@ class GodotValidator:
             #if file_path.suffix in ['.uid', '.import']:
             #    continue
 
+            if file_path.suffix in ['.mesh']:
+                continue
+
             try:
                 with open(file_path, 'r', encoding='utf-8-sig') as f:
                     content = f.read()
@@ -237,7 +258,7 @@ class GodotValidator:
                 self._check_file_has_uid(file_path, content)
 
             except Exception as e:
-                self.errors.append(f"Error validating {file_path}: {e}")
+                self.errors.append(f"Error validating {file_path.as_posix()}: {e}")
 
     def _validate_res_paths(self, file_path: Path, content: str):
         """Validate all res:// paths in a file."""
@@ -257,7 +278,7 @@ class GodotValidator:
 
             if not actual_path.exists():
                 self.errors.append(
-                    f"{file_path.relative_to(self.project_root)}: "
+                    f"{file_path.relative_to(self.project_root).as_posix()}: "
                     f"The file '{res_path}' does not exist"
                 )
 
@@ -268,7 +289,7 @@ class GodotValidator:
 
             if uid_path not in self.uid_to_path:
                 self.errors.append(
-                    f"{file_path.relative_to(self.project_root)}: "
+                    f"{file_path.relative_to(self.project_root).as_posix()}: "
                     f"The UID '{uid_path}' does not exist"
                 )
 
@@ -277,7 +298,7 @@ class GodotValidator:
         if file_path.suffix not in ['.tscn', '.tres']:
             return
 
-        res_path = f"res://{file_path.relative_to(self.project_root)}"
+        res_path = f"res://{file_path.relative_to(self.project_root).as_posix()}"
 
         # Check if file has a UID in its content or a corresponding .uid file
         has_inline_uid = (self.scene_uid_pattern.search(content) or
@@ -286,9 +307,72 @@ class GodotValidator:
 
         if not has_inline_uid and not has_uid_file:
             self.errors.append(
-                f"{file_path.relative_to(self.project_root)}: "
+                f"{file_path.relative_to(self.project_root).as_posix()}: "
                 f"The file has no UID defined"
             )
+
+    def _get_binary_uid(self, file_path: Path) -> str:
+        with open(file_path, "rb") as f:
+            header = f.read(4)
+            if header == b"RSCC":
+                compressed = f.read()
+                dctx = zstd.ZstdDecompressor()
+                data = dctx.decompress(compressed)
+            elif header == b"RSRC":
+                data = f.read()
+            else:
+                raise ValueError("Not a binary Godot resource file.")
+
+        offset = 0
+
+        def read(fmt: str, size: int):
+            nonlocal offset
+            val = struct.unpack(fmt, data[offset:offset+size])[0]
+            offset += size
+            return val
+
+        # big_endian (u32) + use_real64 (u32)
+        big_endian = read("<I", 4)
+        use_real64 = read("<I", 4)
+        endian = ">" if big_endian else "<"
+
+        # version numbers
+        ver_major = read(endian + "I", 4)
+        ver_minor = read(endian + "I", 4)
+        ver_format = read(endian + "I", 4)
+
+        # type string (Godot's ustring)
+        strlen = read(endian + "I", 4)
+        type_str = data[offset:offset+strlen].decode("utf-8", errors="ignore")
+        offset += strlen
+
+        # metadata offset
+        metadata_offset = read(endian + "Q", 8)
+
+        # flags
+        flags = read(endian + "I", 4)
+
+        # UID
+        uid = read(endian + "Q", 8)
+
+        return self._iuid_to_string(uid)
+
+    def _iuid_to_string(uid: int) -> str:
+        """
+        Convert a Godot UID (64-bit integer) into its string form "uid://xxxx"
+        Uses base62 encoding like Godot.
+        """
+        alphabet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if uid == 0:
+            return "uid://<invalid>"
+
+        chars = []
+        while uid > 0:
+            uid, rem = divmod(uid, 62)
+            chars.append(alphabet[rem])
+
+        return "uid://" + "".join(reversed(chars))
+
 
     def _check_duplicate_uids(self):
         """Check for duplicate UIDs in the project."""
@@ -301,14 +385,17 @@ class GodotValidator:
     def _get_godot_files(self) -> List[Path]:
         """Get all relevant Godot files in the project."""
         # Include more file types that can contain UIDs and resource references
-        extensions = {'.tscn', '.tres', '.gd', '.cs', '.uid', '.json', '.cfg', '.import', '.godot'}
+        extensions = {'.tscn', '.tres', '.gd', '.cs', '.uid', '.json', '.cfg', '.import', '.godot', '.mesh'}
         files = []
 
         for ext in extensions:
             files.extend(self.project_root.rglob(f'*{ext}'))
 
-        # Filter out files in excluded directories
-        return [f for f in files if not any(part in self.excluded_dirs for part in f.parts)]
+        # Filter out excluded directories
+        files = [f for f in files if not any(part in self.excluded_dirs for part in f.parts)]
+
+        # Convert to forward slashes
+        return [Path(f.as_posix()) for f in files]
 
     def print_results(self):
         """Print validation results."""

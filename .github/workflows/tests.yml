@@ -27,6 +27,8 @@ jobs:
       - name: Checkout LFS objects
         run: git lfs pull
 
+      - uses: actions/setup-python@v3
+
       - name: Run Validation
         run: |
           set -eo pipefail
