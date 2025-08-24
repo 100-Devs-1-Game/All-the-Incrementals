@@ -37,7 +37,7 @@ slots = Array[ExtResource("2_wjeke")]([SubResource("Resource_0vc1t")])
 
 [sub_resource type="Resource" id="Resource_hhn6j"]
 script = ExtResource("5_0vc1t")
-upgrade_type = 0
+upgrade_type = 12
 metadata/_custom_type_script = "uid://cdf23gftlnxqd"
 
 [resource]

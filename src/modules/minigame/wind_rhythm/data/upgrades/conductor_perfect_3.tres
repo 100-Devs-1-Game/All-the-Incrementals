@@ -36,7 +36,7 @@ slots = Array[ExtResource("2_63vws")]([SubResource("Resource_ngepy")])
 
 [sub_resource type="Resource" id="Resource_gtk7b"]
 script = ExtResource("5_ngepy")
-upgrade_type = 0
+upgrade_type = 19
 metadata/_custom_type_script = "uid://cdf23gftlnxqd"
 
 [resource]

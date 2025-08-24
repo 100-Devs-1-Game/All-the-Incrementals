@@ -5,9 +5,18 @@ signal full_combo
 signal perfect_play
 
 const JUDGMENT = preload("res://modules/minigame/wind_rhythm/chart/judgments.gd").Judgment
+const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.gd").NoteType
 
 @export var combo_multiplier: float = 2
 @export var base_note_score: float = 1
+@export var active_lanes: Dictionary[NOTE_TYPE, bool] = {
+	NOTE_TYPE.UP: true,
+	NOTE_TYPE.LEFT: false,
+	NOTE_TYPE.RIGHT: false,
+	NOTE_TYPE.DOWN: false,
+	NOTE_TYPE.SPECIAL1: false,
+	NOTE_TYPE.SPECIAL2: false,
+}
 
 var combo: int = 0
 var longest_combo: int = 0
@@ -19,8 +28,9 @@ var combo_protection_level = 0
 @onready var conductor: Conductor = %Conductor
 
 
-func _ready():
-	max_notes = conductor.chart.length()
+func start():
+	for lane in conductor.chart.lanes.keys().filter(func(lane): return active_lanes[lane]):
+		max_notes += conductor.chart.lanes[lane].size()
 
 
 func on_rhythm_game_note_missed(_note):

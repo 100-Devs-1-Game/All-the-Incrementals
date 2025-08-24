@@ -6,6 +6,7 @@ const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.g
 @export var speed = 500
 var note_time: float = 0
 var type: int
+var active: bool = true
 
 var arrow_sprite: Dictionary[NOTE_TYPE, CompressedTexture2D] = {
 	NOTE_TYPE.UP: preload("res://assets/minigames/wind_rhythm/notes/up_arrow.png"),
@@ -40,6 +41,8 @@ func _process(delta):
 func _ready():
 	%Arrow.texture = arrow_sprite[type]
 	%ArrowFill.texture = marker_sprite.get(type)
+	if !active:
+		%Background.self_modulate = Color(1, 1, 1, 0.25)
 
 
 func on_miss(note: NoteData):

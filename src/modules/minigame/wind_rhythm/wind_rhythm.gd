@@ -7,6 +7,24 @@ const JUDGMENT_PATH = "res://modules/minigame/wind_rhythm/chart/judgments.gd"
 const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.gd").NoteType
 const JUDGMENT = preload(JUDGMENT_PATH).Judgment
 
+@export var autoplay: Dictionary[NOTE_TYPE, JUDGMENT] = {
+	NOTE_TYPE.UP: JUDGMENT.MISS,
+	NOTE_TYPE.LEFT: JUDGMENT.MISS,
+	NOTE_TYPE.RIGHT: JUDGMENT.MISS,
+	NOTE_TYPE.DOWN: JUDGMENT.MISS,
+	NOTE_TYPE.SPECIAL1: JUDGMENT.MISS,
+	NOTE_TYPE.SPECIAL2: JUDGMENT.MISS,
+}
+
+@export var active_lanes: Dictionary[NOTE_TYPE, bool] = {
+	NOTE_TYPE.UP: true,
+	NOTE_TYPE.LEFT: false,
+	NOTE_TYPE.RIGHT: false,
+	NOTE_TYPE.DOWN: false,
+	NOTE_TYPE.SPECIAL1: false,
+	NOTE_TYPE.SPECIAL2: false,
+}
+
 @export var lanes: Dictionary[NOTE_TYPE, Array] = {
 	NOTE_TYPE.UP: [],
 	NOTE_TYPE.LEFT: [],
@@ -15,9 +33,6 @@ const JUDGMENT = preload(JUDGMENT_PATH).Judgment
 	NOTE_TYPE.SPECIAL1: [],
 	NOTE_TYPE.SPECIAL2: [],
 }
-
-@export_flags("Up", "Left", "Right", "Down", "Special1", "Special2") var autoplay: int = 0
-@export var autoplay_level: JUDGMENT = JUDGMENT.MISS
 
 var conductor: Conductor
 var chart: Chart
@@ -56,6 +71,9 @@ func _start():
 	concentration_bar = $ConcentrationBar
 	lanes = chart.lanes.duplicate(true)
 	scorer = %Scorer
+	%NoteSpawner.start()
+	scorer.active_lanes = active_lanes
+	scorer.start()
 	concentration_bar.concentration_broken.connect(_on_concentration_broken)
 	note_played.connect(concentration_bar.on_note_played)
 	note_missed.connect(concentration_bar.on_note_missed)
@@ -84,7 +102,7 @@ func _process(_delta):
 
 
 func _check_for_missed_notes():
-	for lane in lanes.keys():
+	for lane in lanes.keys().filter(func(lane): return active_lanes[lane]):
 		var notes = lanes[lane]
 		if notes.is_empty():
 			continue
@@ -100,7 +118,7 @@ func _check_for_missed_notes():
 
 func _auto_play():
 	for lane in lanes.keys():
-		if lane & autoplay:
+		if lane and autoplay:
 			var notes = lanes[lane]
 			if notes.is_empty():
 				continue
@@ -109,11 +127,11 @@ func _auto_play():
 			var autoplay_threshold = judgments.miss
 			# This is offset by one level
 			# because we want to play just outside of previous threshold
-			if autoplay_level & JUDGMENT.PERFECT:
+			if autoplay[lane] & JUDGMENT.PERFECT:
 				autoplay_threshold = 0
-			if autoplay_level & JUDGMENT.GREAT:
+			if autoplay[lane] & JUDGMENT.GREAT:
 				autoplay_threshold = judgments.perfect
-			if autoplay_level & JUDGMENT.OKAY:
+			if autoplay[lane] & JUDGMENT.OKAY:
 				autoplay_threshold = judgments.great
 			if conductor.song_position - note.cached_absolute_beat > autoplay_threshold:
 				judge_input(note.type)

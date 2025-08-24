@@ -242,8 +242,6 @@ animations = [{
 
 [node name="WindRhythm" type="Node2D"]
 script = ExtResource("1_4gb8k")
-autoplay = 56
-autoplay_level = 1
 data_uid = "uid://cxrnthj4sdjv4"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
@@ -287,6 +285,7 @@ text = "!Early"
 label_settings = SubResource("LabelSettings_03wef")
 
 [node name="NoteSpawner" parent="." instance=ExtResource("6_vd8gq")]
+unique_name_in_owner = true
 conductor_path = NodePath("../Conductor")
 judgment_line = NodePath("../judgment_line")
 wind_rhythm = NodePath("..")
@@ -365,7 +364,6 @@ animation_divisor = 2.0
 position = Vector2(1062, 687)
 sprite_frames = SubResource("SpriteFrames_oo3bj")
 script = ExtResource("24_718bi")
-lane = 1
 
 [connection signal="note_missed" from="." to="PlayerSprite" method="_on_wind_rhythm_note_missed"]
 [connection signal="note_played" from="." to="PlayerSprite" method="_on_wind_rhythm_note_played"]
