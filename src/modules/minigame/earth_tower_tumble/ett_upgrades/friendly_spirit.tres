@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=17 format=3 uid="uid://2j7jbyldfln6"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_g68wh"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_0isxr"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_2s0k6"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_t7oin"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="4_11g74"]
+[ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="5_bgpaf"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="6_63efl"]
+[ext_resource type="Texture2D" uid="uid://bn3j8wl4qyxo0" path="res://assets/minigames/earth_tower_tumble/icons/conjure_friendly_spirit.png" id="7_e8qbq"]
+[ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="8_68ay0"]
+[ext_resource type="Resource" uid="uid://dmh0gpk41ddcl" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/more_friends.tres" id="10_t7oin"]
+
+[sub_resource type="Resource" id="Resource_wm3cm"]
+script = ExtResource("2_0isxr")
+essence = ExtResource("3_t7oin")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_7f2po"]
+script = ExtResource("2_0isxr")
+essence = ExtResource("4_11g74")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_6vqdw"]
+script = ExtResource("2_0isxr")
+essence = ExtResource("5_bgpaf")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_wj6qm"]
+script = ExtResource("2_0isxr")
+essence = ExtResource("6_63efl")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_ydh48"]
+script = ExtResource("1_g68wh")
+earth = 10
+fire = 10
+water = 10
+wind = 10
+slots = Array[ExtResource("2_0isxr")]([SubResource("Resource_wm3cm"), SubResource("Resource_7f2po"), SubResource("Resource_6vqdw"), SubResource("Resource_wj6qm")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_6s51p"]
+script = ExtResource("8_68ay0")
+type = 8
+metadata/_custom_type_script = "uid://c5sirmi2235ls"
+
+[resource]
+script = ExtResource("2_2s0k6")
+logic = SubResource("Resource_6s51p")
+unlocks_feature = ""
+name = "Spectral Aid"
+flavor = ""
+icon = ExtResource("7_e8qbq")
+position = Vector2(2048, 2240)
+cost_arr = Array[ExtResource("1_g68wh")]([SubResource("Resource_ydh48")])
+effect_modifier_arr = Array[float]([1.0])
+max_level = 0
+base_cost_multiplier = 0.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("10_t7oin")])
+description_prefix = "Conjure up"
+description_suffix = "friendly spirit to help you."
+description_modifier_format = 1
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2hytayuqv1sb"
+path="res://.godot/imported/circular_water.obj-853ca1cbe62cd2355cbe5dc385e65aaf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/circular_water.obj-853ca1cbe62cd2355cbe5dc385e65aaf.mesh"]
+
+source_file="res://assets/overworld/vfx/water/circular_water/circular_water.obj"
+dest_files=["res://.godot/imported/circular_water.obj-853ca1cbe62cd2355cbe5dc385e65aaf.mesh", "res://.godot/imported/circular_water.obj-853ca1cbe62cd2355cbe5dc385e65aaf.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

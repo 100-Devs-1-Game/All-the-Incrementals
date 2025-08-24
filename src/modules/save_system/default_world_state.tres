@@ -1,8 +1,61 @@
-[gd_resource type="Resource" script_class="WorldState" load_steps=2 format=3 uid="uid://dcao50tagyira"]
+[gd_resource type="Resource" script_class="WorldState" load_steps=14 format=3 uid="uid://dcao50tagyira"]
 
+[ext_resource type="Script" uid="uid://bme5dngxb1tht" path="res://modules/overworld/altar/altar_stats.gd" id="1_0m0kv"]
+[ext_resource type="Script" uid="uid://mwcjys5dkgf4" path="res://modules/minigame/common/minigame_data.gd" id="1_4m006"]
 [ext_resource type="Script" uid="uid://d23i4ukvgjxej" path="res://modules/save_system/world_state.gd" id="2_4m006"]
+[ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_s4vpv"]
+[ext_resource type="Resource" uid="uid://bqod1tv5hmpgo" path="res://modules/minigame/fire_fighters/data/fire_fighters_data.tres" id="4_8wpfh"]
+[ext_resource type="Resource" uid="uid://c8wvg65eqyoco" path="res://modules/minigame/water_rowing_rapids/data/water_rowing_rapids_data.tres" id="6_exibk"]
+[ext_resource type="Resource" uid="uid://c7vragnlq8udw" path="res://modules/minigame/water_target_fishing/data/water_fishing_data.tres" id="7_mgmky"]
+[ext_resource type="Resource" uid="uid://dh1qjmvspv4uh" path="res://modules/minigame/wind_platformer/data/wind_platformer_data.tres" id="8_xtbkc"]
+[ext_resource type="Resource" uid="uid://cxrnthj4sdjv4" path="res://modules/minigame/wind_rhythm/data/wind_rhythm_data.tres" id="9_63vrn"]
+
+[sub_resource type="Resource" id="Resource_ghqhr"]
+script = ExtResource("1_0m0kv")
+element = 0
+minigames = Array[ExtResource("1_4m006")]([ExtResource("2_s4vpv")])
+stored_essence = 0
+capacity = 100
+throughput = 1
+unlocked = false
+metadata/_custom_type_script = "uid://bme5dngxb1tht"
+
+[sub_resource type="Resource" id="Resource_4m006"]
+script = ExtResource("1_0m0kv")
+element = 1
+minigames = Array[ExtResource("1_4m006")]([ExtResource("4_8wpfh")])
+stored_essence = 0
+capacity = 100
+throughput = 1
+unlocked = false
+metadata/_custom_type_script = "uid://bme5dngxb1tht"
+
+[sub_resource type="Resource" id="Resource_qc65y"]
+script = ExtResource("1_0m0kv")
+element = 2
+minigames = Array[ExtResource("1_4m006")]([ExtResource("6_exibk"), ExtResource("7_mgmky")])
+stored_essence = 0
+capacity = 100
+throughput = 1
+unlocked = false
+metadata/_custom_type_script = "uid://bme5dngxb1tht"
+
+[sub_resource type="Resource" id="Resource_x6ljn"]
+script = ExtResource("1_0m0kv")
+element = 3
+minigames = Array[ExtResource("1_4m006")]([ExtResource("8_xtbkc"), ExtResource("9_63vrn")])
+stored_essence = 0
+capacity = 100
+throughput = 1
+unlocked = false
+metadata/_custom_type_script = "uid://bme5dngxb1tht"
 
 [resource]
 script = ExtResource("2_4m006")
+save_game_version = 0
 minigame_unlock_levels = Dictionary[StringName, int]({})
+earth_altar = SubResource("Resource_ghqhr")
+fire_altar = SubResource("Resource_4m006")
+water_altar = SubResource("Resource_qc65y")
+wind_altar = SubResource("Resource_x6ljn")
 metadata/_custom_type_script = "uid://d23i4ukvgjxej"

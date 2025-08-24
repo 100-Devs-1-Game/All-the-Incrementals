@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5xk0lb7bh8jp"]
+
+[ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="1_srty2"]
+[ext_resource type="Script" uid="uid://2tvntrm41mv0" path="res://modules/menu/minigame_help.gd" id="2_srty2"]
+
+[node name="MinigameHelp" type="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_srty2")
+script = ExtResource("2_srty2")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HelpText" type="RichTextLabel" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 82.0
+offset_top = -2.0
+offset_right = -10.0
+offset_bottom = 434.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "aasdasdaasdasdaasdasdaasdasd
+aasdasdaasdasdaasdasd
+aasdasdaasdasdaasdasd
+aasdasdaasdasdaasdasd
+asdasd
+asdasd
+asdasd
+asdas
+dasd
+asd"
+
+[node name="Exit" type="Button" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 779.0
+offset_top = 452.0
+offset_right = 953.0
+offset_bottom = 521.0
+size_flags_vertical = 10
+text = "Back"
+
+[node name="Title" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -491.0
+offset_right = 226.0
+offset_bottom = -371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 71
+text = "How to Play"
+horizontal_alignment = 1

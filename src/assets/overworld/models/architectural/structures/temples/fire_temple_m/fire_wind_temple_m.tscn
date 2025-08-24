@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8y22hwb00oya"]
+
+[ext_resource type="PackedScene" uid="uid://b5hjpp43iayht" path="res://assets/overworld/models/architectural/structures/temples/fire_temple_m/fire_wind_temple_m.gltf" id="1_67nr5"]
+[ext_resource type="Material" uid="uid://ddgdllsmmbxcm" path="res://assets/overworld/models/architectural/structures/temples/fire_temple_m/fire_wind_temple_m.tres" id="3_gr1ad"]
+
+[sub_resource type="Resource" id="Resource_vmvfo"]
+metadata/__load_path__ = "res://models/architectural/structures/temples/fire_temple_m/fire_wind_temple.mesh"
+
+[node name="fire_wind_temple_m" instance=ExtResource("1_67nr5")]
+
+[node name="FireWindTemple" parent="." index="0"]
+mesh = SubResource("Resource_vmvfo")
+surface_material_override/0 = ExtResource("3_gr1ad")

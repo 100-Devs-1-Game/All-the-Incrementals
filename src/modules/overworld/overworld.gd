@@ -1,13 +1,18 @@
 class_name OverworldScene extends Node
 
+const PLAYER_CHARACTER_SCENE = preload(
+	"res://modules/overworld_character_controller/spiritkeeper_character_controller_3d.tscn"
+)
+
 @export var starting_settlement_data: SettlementData
 
-var _current_settlement: Node
+var _current_settlement: OverworldLocation3D
 var _current_settlement_data: SettlementData
 
 @onready var overworld_map: OverworldMapMenu = %OverworldMap
 @onready var player_holder_node: Node3D = %PlayerHolder
 @onready var settlement_scene_holder_node: Node3D = %SceneHolder
+@onready var journal_page_ui: JournalPageUI = %JournalPageUI
 
 
 func _ready() -> void:
@@ -15,6 +20,7 @@ func _ready() -> void:
 	assert(is_instance_valid(starting_settlement_data), "Starting settlement data must be set.")
 
 	EventBus.wants_to_travel_to.connect(change_to_settlement)
+	EventBus.request_journal_page_display.connect(_on_display_journal_page)
 
 	# Runs when we started somewhere else
 	if SceneLoader.get_current_settlement_data():
@@ -32,7 +38,12 @@ func change_to_settlement(data: SettlementData) -> void:
 	if is_instance_valid(_current_settlement):
 		_current_settlement.queue_free()
 
+	# to appease GuT tests
+	if not SaveGameManager.world_state:
+		SaveGameManager.start_game()
+
 	var new_settlement = data.settlement_scene.instantiate()
+	assert(new_settlement is OverworldLocation3D)
 	settlement_scene_holder_node.add_child(new_settlement)
 
 	#TODO: Figure out context of where the player is coming from (other settlement/minigame),
@@ -43,9 +54,13 @@ func change_to_settlement(data: SettlementData) -> void:
 
 	print("Settlement: ", data.display_name, " loaded.")
 
-	var exits := get_tree().get_nodes_in_group(SettlementExit.SETTLEMENT_EXIT_GROUP)
-	for exit in exits:
-		exit = exit as SettlementExit
-		if not exit.exited_settlement.is_connected(open_overworld_map):
-			exit.exited_settlement.connect(open_overworld_map)
-			print("Exit (", exit, ") connected signal to overworld map menu")
+	var player: SpiritkeeperCharacterController3D = PLAYER_CHARACTER_SCENE.instantiate()
+	player.transform = _current_settlement.character_spawner.global_transform
+	player.enable_dynamic_spring_arm_length = (
+		_current_settlement.character_spawner.enable_dynamic_spring_arm
+	)
+	player_holder_node.add_child(player)
+
+
+func _on_display_journal_page(data: JournalEntryData):
+	journal_page_ui.open(data)

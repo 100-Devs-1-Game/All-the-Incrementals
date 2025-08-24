@@ -1,0 +1,160 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=30 format=3 uid="uid://c7l5hw7ue5xle"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_a88o2"]
+[ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="2_eh56c"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_phr6u"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_l5ej6"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_oohb4"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="4_ylnkk"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="5_60viu"]
+[ext_resource type="Texture2D" uid="uid://ewt73tce67gi" path="res://assets/minigames/earth_tower_tumble/icons/frozen_blocks.png" id="6_pci4j"]
+
+[sub_resource type="Resource" id="Resource_ipg3h"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("3_oohb4")
+amount = 30
+
+[sub_resource type="Resource" id="Resource_2cu7u"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("4_ylnkk")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_cxf87"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("5_60viu")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_a24ub"]
+script = ExtResource("1_a88o2")
+earth = 30
+fire = 0
+water = 10
+wind = 5
+slots = Array[ExtResource("2_phr6u")]([SubResource("Resource_ipg3h"), SubResource("Resource_2cu7u"), SubResource("Resource_cxf87")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_v5ytg"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("3_oohb4")
+amount = 50
+
+[sub_resource type="Resource" id="Resource_41sic"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("5_60viu")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_7rayq"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("4_ylnkk")
+amount = 30
+
+[sub_resource type="Resource" id="Resource_n56yu"]
+script = ExtResource("1_a88o2")
+earth = 50
+fire = 0
+water = 30
+wind = 10
+slots = Array[ExtResource("2_phr6u")]([SubResource("Resource_v5ytg"), SubResource("Resource_41sic"), SubResource("Resource_7rayq")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_lyi21"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("3_oohb4")
+amount = 120
+
+[sub_resource type="Resource" id="Resource_1xlvt"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("5_60viu")
+amount = 30
+
+[sub_resource type="Resource" id="Resource_cxoy5"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("4_ylnkk")
+amount = 80
+
+[sub_resource type="Resource" id="Resource_heik7"]
+script = ExtResource("1_a88o2")
+earth = 120
+fire = 0
+water = 80
+wind = 30
+slots = Array[ExtResource("2_phr6u")]([SubResource("Resource_lyi21"), SubResource("Resource_1xlvt"), SubResource("Resource_cxoy5")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_7fn7t"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("3_oohb4")
+amount = 250
+
+[sub_resource type="Resource" id="Resource_5ac31"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("4_ylnkk")
+amount = 120
+
+[sub_resource type="Resource" id="Resource_qcibu"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("5_60viu")
+amount = 80
+
+[sub_resource type="Resource" id="Resource_22kxr"]
+script = ExtResource("1_a88o2")
+earth = 250
+fire = 0
+water = 120
+wind = 80
+slots = Array[ExtResource("2_phr6u")]([SubResource("Resource_7fn7t"), SubResource("Resource_5ac31"), SubResource("Resource_qcibu")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_ieen0"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("3_oohb4")
+amount = 300
+
+[sub_resource type="Resource" id="Resource_5kxg7"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("4_ylnkk")
+amount = 180
+
+[sub_resource type="Resource" id="Resource_bu762"]
+script = ExtResource("2_phr6u")
+essence = ExtResource("5_60viu")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_g0ycu"]
+script = ExtResource("1_a88o2")
+earth = 300
+fire = 0
+water = 180
+wind = 100
+slots = Array[ExtResource("2_phr6u")]([SubResource("Resource_ieen0"), SubResource("Resource_5kxg7"), SubResource("Resource_bu762")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_2rne1"]
+script = ExtResource("2_eh56c")
+type = 7
+metadata/_custom_type_script = "uid://c5sirmi2235ls"
+
+[resource]
+script = ExtResource("3_l5ej6")
+logic = SubResource("Resource_2rne1")
+unlocks_feature = ""
+name = "Frosted Blocks"
+flavor = ""
+icon = ExtResource("6_pci4j")
+position = Vector2(960, 256)
+cost_arr = Array[ExtResource("1_a88o2")]([SubResource("Resource_a24ub"), SubResource("Resource_n56yu"), SubResource("Resource_heik7"), SubResource("Resource_22kxr"), SubResource("Resource_g0ycu")])
+effect_modifier_arr = Array[float]([0.085, 0.13, 0.21, 0.46, 0.57])
+max_level = 0
+base_cost_multiplier = 0.0
+exponential_cost = false
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([])
+description_prefix = "Have a"
+description_suffix = "chance to conjure frozen blocks."
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

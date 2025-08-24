@@ -1,4 +1,8 @@
 extends Node2D
+
+@export_dir var folder: String
+@export var file_type: String
+
 var base_upgrade: BaseUpgrade
 var upgrade_tree: UpgradeTree
 var level_text: String
@@ -11,17 +15,17 @@ func init(upgradetree: UpgradeTree, essence_type: String):
 	upgrade_tree = upgradetree
 	match essence_type:
 		"Wind":
-			$Background.texture = load("res://assets/ui/upgrade_tree/wind_off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/wind_on.webp")
+			$Background.texture = load(folder + "/wind_off." + file_type)
+			$BackgroundActive.texture = load(folder + "/wind_on." + file_type)
 		"Fire":
-			$Background.texture = load("res://assets/ui/upgrade_tree/fire_off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/fire_on.webp")
+			$Background.texture = load(folder + "/fire_off." + file_type)
+			$BackgroundActive.texture = load(folder + "/fire_on." + file_type)
 		"Water":
-			$Background.texture = load("res://assets/ui/upgrade_tree/water_off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/water_on.webp")
+			$Background.texture = load(folder + "/water_off." + file_type)
+			$BackgroundActive.texture = load(folder + "/water_on." + file_type)
 		"Earth":
-			$Background.texture = load("res://assets/ui/upgrade_tree/earth_off.webp")
-			$BackgroundActive.texture = load("res://assets/ui/upgrade_tree/earth_on.webp")
+			$Background.texture = load(folder + "/earth_off." + file_type)
+			$BackgroundActive.texture = load(folder + "/earth_on." + file_type)
 
 
 func reload_base_upgrade_data(_upgrade = null) -> void:
@@ -31,6 +35,7 @@ func reload_base_upgrade_data(_upgrade = null) -> void:
 	_set_name_text()
 	_set_description_text()
 	_set_background()
+	_set_foreground()
 	if _upgrade == base_upgrade:
 		_on_select()
 
@@ -51,7 +56,7 @@ func _resize_texture(target_size: Vector2):
 
 func _set_level_text() -> void:
 	var level: String = ""
-	level += str(base_upgrade.get_level() + 1)
+	level += str(base_upgrade.get_level_index() + 1)
 	level += "/"
 	level += str(base_upgrade.get_max_level() + 1)
 	level_text = level
@@ -83,8 +88,12 @@ func _set_description_text() -> void:
 
 
 func _set_background() -> void:
-	#if(base_upgrade.flavor)
-	pass  #var texture: Texture2D = load("res://assets/ui/upgrade_tree/line.png")
+	$BackgroundActive.visible = base_upgrade.is_unlocked()
+
+
+func _set_foreground() -> void:
+	if base_upgrade.is_maxed_out():
+		$Foreground.visible = true
 
 
 func _on_select() -> void:

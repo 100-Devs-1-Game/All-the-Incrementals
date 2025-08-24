@@ -4,11 +4,11 @@ extends CanvasLayer
 
 @export var full_heart: Texture2D
 @export var empty_heart: Texture2D
+@export var minigame: EarthTowerTumbleMinigame
 
 @onready var life_container = $LifeContainer
 @onready var score_label = $Score
 @onready var block_label = $Blocks
-@onready var minigame: EarthTowerTumbleMinigame = get_tree().current_scene
 
 
 func _ready() -> void:

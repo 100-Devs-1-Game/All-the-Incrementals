@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bfebdhsesmk67" path="res://modules/overworld/overworld.gd" id="1_2wcmw"]
 [ext_resource type="Resource" uid="uid://depjmek44wqwq" path="res://modules/overworld_locations/shrine/shrine.tres" id="2_2wcmw"]
-[ext_resource type="PackedScene" uid="uid://uem0xukdu645" path="res://modules/overworld_character_controller/spiritkeeper_character_controller_3d.tscn" id="3_sx55g"]
 [ext_resource type="PackedScene" uid="uid://dwk76h2iitx0h" path="res://modules/overworld_map/overworld_map.tscn" id="4_bwyud"]
+[ext_resource type="PackedScene" uid="uid://bmu7u4fo2qrmc" path="res://modules/overworld/story/journal_page_ui.tscn" id="5_sx55g"]
 
 [node name="Overworld" type="Node"]
 script = ExtResource("1_2wcmw")
@@ -12,9 +12,6 @@ starting_settlement_data = ExtResource("2_2wcmw")
 [node name="PlayerHolder" type="Node3D" parent="."]
 unique_name_in_owner = true
 
-[node name="SpiritkeeperBody3D" parent="PlayerHolder" instance=ExtResource("3_sx55g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115598, 0.5, -0.0152599)
-
 [node name="SceneHolder" type="Node3D" parent="."]
 unique_name_in_owner = true
 
@@ -22,3 +19,7 @@ unique_name_in_owner = true
 
 [node name="OverworldMap" parent="UI" instance=ExtResource("4_bwyud")]
 unique_name_in_owner = true
+
+[node name="JournalPageUI" parent="UI" instance=ExtResource("5_sx55g")]
+unique_name_in_owner = true
+visible = false

@@ -3,7 +3,7 @@ extends RigidBody2D
 const BEHAVIOURS := ["push", "damage"]
 
 @export var damage_amount := 5
-@export var float_speed := 80.5
+@export var float_speed := 110.0
 var behaviour: String
 var grabbing := false
 var target: Node2D

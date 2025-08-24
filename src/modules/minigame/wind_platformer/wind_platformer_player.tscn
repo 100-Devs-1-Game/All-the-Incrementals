@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b5gx7hrc8phfj"]
+[gd_scene load_steps=32 format=3 uid="uid://b5gx7hrc8phfj"]
 
 [ext_resource type="Script" uid="uid://d2exw2nueiy4m" path="res://modules/minigame/wind_platformer/wind_platformer_player.gd" id="1_hjopy"]
 [ext_resource type="Texture2D" uid="uid://bg1q5342vtyof" path="res://assets/minigames/wind_platformer/character/dive/000.png" id="2_7xqbe"]
@@ -23,6 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://cil6vksb3kqo0" path="res://assets/minigames/wind_platformer/character/stand/003.png" id="10_p0ww4"]
 [ext_resource type="Texture2D" uid="uid://cnk4ej8cyyk87" path="res://assets/minigames/wind_platformer/character/stand/004.png" id="11_d1vcw"]
 [ext_resource type="AudioStream" uid="uid://cmeopcfcjv6b0" path="res://assets/minigames/wind_platformer/sfx/sfx_walk_cloud_lp_01.ogg" id="13_x8qgx"]
+[ext_resource type="AudioStream" uid="uid://db2amhq563rqf" path="res://assets/minigames/wind_platformer/sfx/sfx_cloud_jump_02.ogg" id="24_hdmq6"]
+[ext_resource type="AudioStream" uid="uid://crdpuwen62s16" path="res://assets/minigames/wind_platformer/sfx/sfx_cloud_land_02.ogg" id="25_uom4x"]
+[ext_resource type="AudioStream" uid="uid://bgr4m8cg5dp5h" path="res://assets/minigames/wind_platformer/sfx/lp_wind_calm_woodz.ogg" id="26_uom4x"]
+[ext_resource type="AudioStream" uid="uid://mdane7hai5e1" path="res://assets/minigames/wind_platformer/sfx/fire_small_lp.ogg" id="27_af6i6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkh7d"]
 size = Vector2(32, 48)
@@ -123,9 +127,17 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="Curve" id="Curve_7xqbe"]
+_data = [Vector2(0, 1), 0.0, -2.67305, 0, 0, Vector2(1, 0.159533), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7xqbe"]
+offsets = PackedFloat32Array(0.00555556, 0.155556, 0.655556, 1)
+colors = PackedColorArray(0.901961, 0, 0, 0, 0.901961, 0, 0, 1, 0.737092, 0.631404, 0.225013, 1, 0, 0, 0, 0)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_hjopy")
 acceleration = 1000.0
 wind_impact = 2.0
@@ -173,10 +185,50 @@ animation = &"diving"
 [node name="AudioStreamPlayer Run" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("13_x8qgx")
 volume_db = -10.667
+bus = &"SFX"
 
 [node name="Run Audio Delay" type="Timer" parent="Audio"]
 wait_time = 0.2
 one_shot = true
 
+[node name="AudioStreamPlayer Jump" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("24_hdmq6")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer Land" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("25_uom4x")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer Wind" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("26_uom4x")
+autoplay = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer Burning Feet" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("27_af6i6")
+bus = &"SFX"
+
+[node name="CPUParticles Burning Feet" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(0, 25)
+emitting = false
+amount = 40
+lifetime = 0.5
+lifetime_randomness = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(10, 5)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 55.56
+initial_velocity_max = 55.56
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_7xqbe")
+color_ramp = SubResource("Gradient_7xqbe")
+
+[node name="Timer Burning Feet" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_animation_finished"]
+[connection signal="timeout" from="Timer Burning Feet" to="." method="_on_timer_burning_feet_timeout"]

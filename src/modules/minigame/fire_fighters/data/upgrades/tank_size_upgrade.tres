@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=33 format=3 uid="uid://wn7ulnj04odi"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=42 format=3 uid="uid://wn7ulnj04odi"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_2mr1n"]
 [ext_resource type="Texture2D" uid="uid://cr34u2i5sqg5s" path="res://assets/minigames/fire_fighters/icons/increase_water_tank_size.png" id="2_dxroa"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="3_dxroa"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_vm2re"]
 [ext_resource type="Resource" uid="uid://s83iumd1qkvj" path="res://modules/minigame/fire_fighters/data/upgrades/water_speed_upgrade.tres" id="7_vm2re"]
-[ext_resource type="Resource" uid="uid://ccp3eews6awic" path="res://modules/minigame/fire_fighters/data/upgrades/water_arc_reduction_upgrade.tres" id="8_7xdnu"]
 [ext_resource type="Resource" uid="uid://72ayfvpoxr72" path="res://modules/minigame/fire_fighters/data/upgrades/water_spread_upgrade.tres" id="9_0u0ch"]
 
 [sub_resource type="Resource" id="Resource_7xdnu"]
@@ -154,6 +153,71 @@ water = 3500
 wind = 0
 slots = Array[ExtResource("2_l8nep")]([SubResource("Resource_v3c6e")])
 
+[sub_resource type="Resource" id="Resource_5vjr5"]
+script = ExtResource("2_l8nep")
+essence = ExtResource("3_vm2re")
+amount = 9000
+
+[sub_resource type="Resource" id="Resource_ognsg"]
+script = ExtResource("1_2mr1n")
+earth = 0
+fire = 0
+water = 9000
+wind = 0
+slots = Array[ExtResource("2_l8nep")]([SubResource("Resource_5vjr5")])
+
+[sub_resource type="Resource" id="Resource_dwuf7"]
+script = ExtResource("2_l8nep")
+essence = ExtResource("3_vm2re")
+amount = 23000
+
+[sub_resource type="Resource" id="Resource_agfhc"]
+script = ExtResource("1_2mr1n")
+earth = 0
+fire = 0
+water = 23000
+wind = 0
+slots = Array[ExtResource("2_l8nep")]([SubResource("Resource_dwuf7")])
+
+[sub_resource type="Resource" id="Resource_p0a7v"]
+script = ExtResource("2_l8nep")
+essence = ExtResource("3_vm2re")
+amount = 59000
+
+[sub_resource type="Resource" id="Resource_srdbe"]
+script = ExtResource("1_2mr1n")
+earth = 0
+fire = 0
+water = 59000
+wind = 0
+slots = Array[ExtResource("2_l8nep")]([SubResource("Resource_p0a7v")])
+
+[sub_resource type="Resource" id="Resource_xt775"]
+script = ExtResource("2_l8nep")
+essence = ExtResource("3_vm2re")
+amount = 149000
+
+[sub_resource type="Resource" id="Resource_rg7is"]
+script = ExtResource("1_2mr1n")
+earth = 0
+fire = 0
+water = 149000
+wind = 0
+slots = Array[ExtResource("2_l8nep")]([SubResource("Resource_xt775")])
+
+[sub_resource type="Resource" id="Resource_ch8m7"]
+script = ExtResource("2_l8nep")
+essence = ExtResource("3_vm2re")
+amount = 372000
+
+[sub_resource type="Resource" id="Resource_qcvpm"]
+script = ExtResource("1_2mr1n")
+earth = 0
+fire = 0
+water = 372000
+wind = 0
+slots = Array[ExtResource("2_l8nep")]([SubResource("Resource_ch8m7")])
+
 [sub_resource type="Resource" id="Resource_l8nep"]
 script = ExtResource("2_fvgai")
 type = 1
@@ -166,21 +230,21 @@ unlocks_feature = ""
 name = "Water Tank Size"
 flavor = ""
 icon = ExtResource("2_dxroa")
-position = Vector2(-2752, -1152)
-cost_arr = Array[ExtResource("1_2mr1n")]([SubResource("Resource_q1pgu"), SubResource("Resource_ji8a7"), SubResource("Resource_ghx8p"), SubResource("Resource_oderr"), SubResource("Resource_0ie2m"), SubResource("Resource_8i827"), SubResource("Resource_makc6"), SubResource("Resource_nvkhq"), SubResource("Resource_d5i31"), SubResource("Resource_rscu7")])
-effect_modifier_arr = Array[float]([1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0])
-max_level = 10
+position = Vector2(-2752, -1536)
+cost_arr = Array[ExtResource("1_2mr1n")]([SubResource("Resource_q1pgu"), SubResource("Resource_ji8a7"), SubResource("Resource_ghx8p"), SubResource("Resource_oderr"), SubResource("Resource_0ie2m"), SubResource("Resource_8i827"), SubResource("Resource_makc6"), SubResource("Resource_nvkhq"), SubResource("Resource_d5i31"), SubResource("Resource_rscu7"), SubResource("Resource_ognsg"), SubResource("Resource_agfhc"), SubResource("Resource_srdbe"), SubResource("Resource_rg7is"), SubResource("Resource_qcvpm")])
+effect_modifier_arr = Array[float]([2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0, 18.0, 20.0, 22.0, 24.0, 26.0, 28.0, 30.0])
+max_level = 15
 base_cost = SubResource("Resource_0u0ch")
 base_cost_multiplier = 2.5
 exponential_cost = true
 round_smoothness = 1.0
-base_effect_modifier = 1.0
-effect_modifier_multiplier = 1.0
+base_effect_modifier = 2.0
+effect_modifier_multiplier = 2.0
 unlocked = false
-unlock_level = 0
-unlocks = Array[Resource]([ExtResource("7_vm2re"), ExtResource("8_7xdnu"), ExtResource("9_0u0ch")])
-description_prefix = ""
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("7_vm2re"), ExtResource("9_0u0ch")])
+description_prefix = "Increase water tank size by"
 description_suffix = ""
-description_modifier_format = 0
+description_modifier_format = 1
 metadata/_custom_type_script = "uid://co4s3tttdeie1"
 metadata/_tree_editor_version_saved = 1

@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=11 format=3 uid="uid://cgjms0xufwds2"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_f5n6i"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_ccnig"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_v0obd"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_5ixn2"]
+[ext_resource type="Script" uid="uid://sbcdkb7hovgy" path="res://modules/minigame/fire_fighters/upgrades/fire_fighters_upgrade_logic.gd" id="4_5ixn2"]
+
+[sub_resource type="Resource" id="Resource_dkfca"]
+script = ExtResource("2_ccnig")
+essence = ExtResource("3_5ixn2")
+amount = 1000
+
+[sub_resource type="Resource" id="Resource_vgp50"]
+script = ExtResource("1_f5n6i")
+earth = 1000
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_ccnig")]([SubResource("Resource_dkfca")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_5ixn2"]
+script = ExtResource("2_ccnig")
+essence = ExtResource("3_5ixn2")
+amount = 1000
+
+[sub_resource type="Resource" id="Resource_2ceiw"]
+script = ExtResource("1_f5n6i")
+earth = 1000
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_ccnig")]([SubResource("Resource_5ixn2")])
+
+[sub_resource type="Resource" id="Resource_layq8"]
+script = ExtResource("4_5ixn2")
+type = 10
+metadata/_custom_type_script = "uid://sbcdkb7hovgy"
+
+[resource]
+script = ExtResource("2_v0obd")
+logic = SubResource("Resource_layq8")
+unlocks_feature = ""
+name = "Stomping"
+flavor = ""
+position = Vector2(-512, 960)
+cost_arr = Array[ExtResource("1_f5n6i")]([SubResource("Resource_2ceiw")])
+effect_modifier_arr = Array[float]([0.0])
+max_level = 1
+base_cost = SubResource("Resource_vgp50")
+base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([])
+description_prefix = "Stomp out Fires by walking over them"
+description_suffix = ""
+description_modifier_format = 3
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

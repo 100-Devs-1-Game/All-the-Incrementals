@@ -1,33 +1,146 @@
-[gd_scene load_steps=26 format=3 uid="uid://bl4s8xuvuf3xb"]
+[gd_scene load_steps=64 format=3 uid="uid://bl4s8xuvuf3xb"]
 
 [ext_resource type="Script" uid="uid://ou1teugr01v8" path="res://modules/overworld_locations/breezekiln/breezekiln.gd" id="1_82p5n"]
 [ext_resource type="Resource" uid="uid://bseyt0iuwnq5m" path="res://modules/minigame/fire_cooking/data/fire_cooking_data.tres" id="2_oivh7"]
 [ext_resource type="Resource" uid="uid://bqod1tv5hmpgo" path="res://modules/minigame/fire_fighters/data/fire_fighters_data.tres" id="3_0bjiu"]
-[ext_resource type="Script" uid="uid://cqxo556jptakn" path="res://modules/overworld/settlement_exit.gd" id="4_2i5xv"]
 [ext_resource type="Resource" uid="uid://dh1qjmvspv4uh" path="res://modules/minigame/wind_platformer/data/wind_platformer_data.tres" id="4_lul7l"]
-[ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="5_4lo53"]
 [ext_resource type="Resource" uid="uid://cxrnthj4sdjv4" path="res://modules/minigame/wind_rhythm/data/wind_rhythm_data.tres" id="5_hefpd"]
-[ext_resource type="Environment" uid="uid://dl8n6ddyoo1ca" path="res://modules/overworld/overworld_environment.tres" id="6_nnd8j"]
+[ext_resource type="ArrayMesh" uid="uid://c8akkyljye4o6" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_01_m.mesh" id="6_juvlu"]
+[ext_resource type="PackedScene" uid="uid://dwf7mhn0xl3mb" path="res://modules/overworld_character_controller/character_spawner.tscn" id="6_wp355"]
+[ext_resource type="ArrayMesh" uid="uid://dyrh5wy31kesg" path="res://assets/overworld/models/architectural/structures/houses/windmill/windmill_02_m.mesh" id="7_wp355"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="8_0bjiu"]
+[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/altar_diamond.gd" id="8_amf67"]
+[ext_resource type="ArrayMesh" uid="uid://c5wqqhr4n2n1v" path="res://assets/overworld/models/nature/wood/bonfire/bonfire_01.mesh" id="9_ffxn8"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="9_hefpd"]
+[ext_resource type="Texture2D" uid="uid://dwh1tajh1hpng" path="res://assets/overworld/assets/nature/trees/tree_05_snow.webp" id="10_dyxuy"]
 [ext_resource type="Script" uid="uid://dv7wg0eoca0sr" path="res://modules/debug/debug_button_collection.gd" id="10_nnd8j"]
+[ext_resource type="ArrayMesh" uid="uid://bg8djpxioaf75" path="res://assets/overworld/models/architectural/structures/houses/fire_wind_house/fire_wind_house_01.mesh" id="11_k0ja1"]
+[ext_resource type="ArrayMesh" uid="uid://dtd0erxgxceof" path="res://assets/overworld/models/architectural/structures/houses/fire_wind_house/fire_wind_house_02.mesh" id="12_2rvnq"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="12_5ylet"]
 [ext_resource type="Resource" uid="uid://cd2bfjnf2ywiv" path="res://modules/minigame/common/debug/shrine.tres" id="13_2pg8g"]
+[ext_resource type="ArrayMesh" uid="uid://c452na5eaoqfc" path="res://assets/overworld/models/architectural/structures/houses/house_01/house_01_m.mesh" id="13_the1n"]
 [ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="14_2pg8g"]
+[ext_resource type="ArrayMesh" uid="uid://b72h3mbxju7tx" path="res://assets/overworld/models/architectural/structures/houses/house_02/house_02_snow_m.mesh" id="14_jupv8"]
+[ext_resource type="ArrayMesh" uid="uid://bkulqu0kxi7ya" path="res://assets/overworld/models/architectural/structures/temples/fire_temple_m/fire_wind_temple.mesh" id="16_b7dit"]
+[ext_resource type="PackedScene" uid="uid://dj4os1ofe42ov" path="res://modules/overworld_locations/breezekiln/bridges.tscn" id="16_ffxn8"]
+[ext_resource type="PackedScene" uid="uid://c5w1nmcxgph1k" path="res://assets/overworld/models/landscapes/paths/path_baked_01.tscn" id="17_gbdyy"]
+[ext_resource type="PackedScene" uid="uid://deym4ed8ba2aj" path="res://assets/overworld/models/landscapes/island_circle.gltf" id="18_8aa78"]
+[ext_resource type="Shader" uid="uid://rg3fl1i082l4" path="res://assets/overworld/scripts/shaders/tri_planar_texture_mapping.gdshader" id="19_pvtxs"]
+[ext_resource type="Texture2D" uid="uid://catixkt58j5cy" path="res://assets/overworld/materials/textures/ground/ground_albedo_05_snow.webp" id="20_se1cq"]
+[ext_resource type="PackedScene" uid="uid://b20hcfpyh4u8d" path="res://assets/overworld/models/landscapes/mountain_landscape/mountain_landscape_baked.tscn" id="21_2iplg"]
+[ext_resource type="SpriteFrames" uid="uid://b3itxrlohx1" path="res://assets/overworld/vfx/pyre_flame/pyre_flame.tres" id="22_4g73v"]
+[ext_resource type="PackedScene" uid="uid://ckomfk2gpxjrx" path="res://assets/overworld/assets/skybox/skybox_sphere.tscn" id="23_vwep7"]
+[ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="24_v34jr"]
+[ext_resource type="Texture2D" uid="uid://cgkd7wcycsfnf" path="res://assets/overworld/assets/skybox/sky_day_03.webp" id="25_d0jwi"]
+[ext_resource type="PackedScene" uid="uid://dbdlc760ysa1w" path="res://modules/overworld/portal/portal.tscn" id="28_ffxn8"]
+[ext_resource type="PackedScene" uid="uid://dnp8p5dwpu15q" path="res://modules/overworld/altar/altar.tscn" id="33_amf67"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_oivh7"]
-size = Vector3(100, 1, 100)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_knmtx"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0bjiu"]
-points = PackedVector3Array(-50, -0.5, -50, -50, 0.5, -50, 50, -0.5, -50, -50, -0.5, 50, -50, 0.5, 50, 50, 0.5, -50, 50, -0.5, 50, 50, 0.5, 50)
+[sub_resource type="Sky" id="Sky_s60bt"]
+sky_material = SubResource("PanoramaSkyMaterial_knmtx")
 
-[sub_resource type="BoxMesh" id="BoxMesh_lul7l"]
-size = Vector3(1.735, 1, 2.83)
+[sub_resource type="Environment" id="Environment_g75is"]
+background_mode = 2
+sky = SubResource("Sky_s60bt")
+tonemap_exposure = 1.25
+glow_enabled = true
+glow_intensity = 1.5
+glow_bloom = 0.02
+glow_hdr_threshold = 0.56
+fog_light_energy = 0.83
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_hefpd"]
-radius = 3.0
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kx2ec"]
+radius = 0.25
+height = 1.5
 
-[sub_resource type="BoxMesh" id="BoxMesh_nnd8j"]
+[sub_resource type="MultiMesh" id="MultiMesh_y0jka"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("6_juvlu")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mri2m"]
+height = 5.07648
+radius = 4.00928
+
+[sub_resource type="MultiMesh" id="MultiMesh_qy74x"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("7_wp355")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="MultiMesh" id="MultiMesh_63oqm"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("9_ffxn8")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_02swt"]
+height = 1.05103
+radius = 0.875488
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rrmrk"]
+size = Vector3(0.571167, 1.37091, 0.611664)
+
+[sub_resource type="MultiMesh" id="MultiMesh_8hm8d"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("11_k0ja1")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jupwx"]
+height = 3.56958
+radius = 3.24854
+
+[sub_resource type="MultiMesh" id="MultiMesh_waedp"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("12_2rvnq")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="MultiMesh" id="MultiMesh_ixf5h"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("13_the1n")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7cd4"]
+size = Vector3(115.827, 117.875, 64.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnic1"]
+size = Vector3(43.7994, 13.598, 16.1808)
+
+[sub_resource type="MultiMesh" id="MultiMesh_b0yoq"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("14_jupv8")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hqry2"]
+size = Vector3(116.584, 183.552, 79.038)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h6ais"]
+height = 10.3048
+radius = 16.6763
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ldas1"]
+render_priority = 0
+shader = ExtResource("19_pvtxs")
+shader_parameter/texture_albedo = ExtResource("20_se1cq")
+shader_parameter/tile_scale = 3.76
+shader_parameter/blend_sharpness = 4.0
+shader_parameter/rot_max_deg = 45.0
+shader_parameter/rot_seed = 43740.8
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ynx4g"]
+points = PackedVector3Array(-0.00346565, -0.263302, -17.7037, -1.7364, -0.263302, -17.6205, -0.00346565, 0.263302, -17.7037, 1.73294, -0.263302, -17.6205, -1.7364, 0.263302, -17.6205, -3.45548, -0.263302, -17.364, 1.73294, 0.263302, -17.6205, 3.45201, -0.263302, -17.364, -3.45548, 0.263302, -17.364, -5.13989, -0.263302, -16.9447, 3.45201, 0.263302, -17.364, 5.13643, -0.263302, -16.9447, -5.13989, 0.263302, -16.9447, -6.77579, -0.263302, -16.3589, 5.13643, 0.263302, -16.9447, 6.77232, -0.263302, -16.3589, -6.77579, 0.263302, -16.3589, -8.34583, -0.263302, -15.6138, 6.77232, 0.263302, -16.3589, 8.34237, -0.263302, -15.6138, -8.34583, 0.263302, -15.6138, -9.83616, -0.263302, -14.723, 8.34237, 0.263302, -15.6138, 9.83269, -0.263302, -14.723, -9.83616, 0.263302, -14.723, -11.2329, -0.263302, -13.6867, 9.83269, 0.263302, -14.723, 11.2294, -0.263302, -13.6867, -11.2329, 0.263302, -13.6867, -12.5187, -0.263302, -12.5187, 11.2294, 0.263302, -13.6867, 12.5153, -0.263302, -12.5187, -12.5187, 0.263302, -12.5187, -13.6867, -0.263302, -11.2329, 12.5153, 0.263302, -12.5187, 13.6833, -0.263302, -11.2329, -13.6867, 0.263302, -11.2329, -14.723, -0.263302, -9.83616, 13.6833, 0.263302, -11.2329, 14.7196, -0.263302, -9.83616, -14.723, 0.263302, -9.83616, -15.6138, -0.263302, -8.34583, 14.7196, 0.263302, -9.83616, 15.6103, -0.263302, -8.34583, -15.6138, 0.263302, -8.34583, -16.3589, -0.263302, -6.77579, 15.6103, 0.263302, -8.34583, 16.3555, -0.263302, -6.77579, -16.3589, 0.263302, -6.77579, -16.9447, -0.263302, -5.13989, 16.3555, 0.263302, -6.77579, 16.9412, -0.263302, -5.13989, -16.9447, 0.263302, -5.13989, -17.364, -0.263302, -3.45548, 16.9412, 0.263302, -5.13989, 17.3606, -0.263302, -3.45548, -17.364, 0.263302, -3.45548, -17.6205, -0.263302, -1.7364, 17.3606, 0.263302, -3.45548, 17.617, -0.263302, -1.7364, -17.6205, 0.263302, -1.7364, -17.7037, -0.263302, -0.00346565, 17.617, 0.263302, -1.7364, 17.7002, -0.263302, -0.00346565, -17.7037, 0.263302, -0.00346565, -17.6205, -0.263302, 1.73294, 17.7002, 0.263302, -0.00346565, 17.617, -0.263302, 1.73294, -17.6205, 0.263302, 1.73294, -17.364, -0.263302, 3.45201, 17.617, 0.263302, 1.73294, 17.3606, -0.263302, 3.45201, -17.364, 0.263302, 3.45201, -16.9447, -0.263302, 5.13643, 17.3606, 0.263302, 3.45201, 16.9412, -0.263302, 5.13643, -16.9447, 0.263302, 5.13643, -16.3589, -0.263302, 6.77232, 16.9412, 0.263302, 5.13643, 16.3555, -0.263302, 6.77232, -16.3589, 0.263302, 6.77232, -15.6138, -0.263302, 8.34237, 16.3555, 0.263302, 6.77232, 15.6103, -0.263302, 8.34237, -15.6138, 0.263302, 8.34237, -14.723, -0.263302, 9.83269, 15.6103, 0.263302, 8.34237, 14.7196, -0.263302, 9.83269, -14.723, 0.263302, 9.83269, -13.6867, -0.263302, 11.2294, 14.7196, 0.263302, 9.83269, 13.6833, -0.263302, 11.2294, -13.6867, 0.263302, 11.2294, -12.5187, -0.263302, 12.5153, 13.6833, 0.263302, 11.2294, 12.5153, -0.263302, 12.5153, -12.5187, 0.263302, 12.5153, -11.2329, -0.263302, 13.6833, 12.5153, 0.263302, 12.5153, 11.2294, -0.263302, 13.6833, -11.2329, 0.263302, 13.6833, -9.83616, -0.263302, 14.7196, 11.2294, 0.263302, 13.6833, 9.83269, -0.263302, 14.7196, -9.83616, 0.263302, 14.7196, -8.34583, -0.263302, 15.6103, 9.83269, 0.263302, 14.7196, 8.34237, -0.263302, 15.6103, -8.34583, 0.263302, 15.6103, -6.77579, -0.263302, 16.3555, 8.34237, 0.263302, 15.6103, 6.77232, -0.263302, 16.3555, -6.77579, 0.263302, 16.3555, -5.13989, -0.263302, 16.9412, 6.77232, 0.263302, 16.3555, 5.13643, -0.263302, 16.9412, -5.13989, 0.263302, 16.9412, -3.45548, -0.263302, 17.3606, 5.13643, 0.263302, 16.9412, 3.45201, -0.263302, 17.3606, -3.45548, 0.263302, 17.3606, -1.7364, -0.263302, 17.617, 3.45201, 0.263302, 17.3606, 1.73294, -0.263302, 17.617, -1.7364, 0.263302, 17.617, -0.00346565, -0.263302, 17.7002, 1.73294, 0.263302, 17.617, -0.00346565, 0.263302, 17.7002)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wp355"]
+points = PackedVector3Array(-0.00346565, -0.263302, -17.7037, -1.7364, -0.263302, -17.6205, -0.00346565, 0.263302, -17.7037, 1.73294, -0.263302, -17.6205, -1.7364, 0.263302, -17.6205, -3.45548, -0.263302, -17.364, 1.73294, 0.263302, -17.6205, 3.45201, -0.263302, -17.364, -3.45548, 0.263302, -17.364, -5.13989, -0.263302, -16.9447, 3.45201, 0.263302, -17.364, 5.13643, -0.263302, -16.9447, -5.13989, 0.263302, -16.9447, -6.77579, -0.263302, -16.3589, 5.13643, 0.263302, -16.9447, 6.77232, -0.263302, -16.3589, -6.77579, 0.263302, -16.3589, -8.34583, -0.263302, -15.6138, 6.77232, 0.263302, -16.3589, 8.34237, -0.263302, -15.6138, -8.34583, 0.263302, -15.6138, -9.83616, -0.263302, -14.723, 8.34237, 0.263302, -15.6138, 9.83269, -0.263302, -14.723, -9.83616, 0.263302, -14.723, -11.2329, -0.263302, -13.6867, 9.83269, 0.263302, -14.723, 11.2294, -0.263302, -13.6867, -11.2329, 0.263302, -13.6867, -12.5187, -0.263302, -12.5187, 11.2294, 0.263302, -13.6867, 12.5153, -0.263302, -12.5187, -12.5187, 0.263302, -12.5187, -13.6867, -0.263302, -11.2329, 12.5153, 0.263302, -12.5187, 13.6833, -0.263302, -11.2329, -13.6867, 0.263302, -11.2329, -14.723, -0.263302, -9.83616, 13.6833, 0.263302, -11.2329, 14.7196, -0.263302, -9.83616, -14.723, 0.263302, -9.83616, -15.6138, -0.263302, -8.34583, 14.7196, 0.263302, -9.83616, 15.6103, -0.263302, -8.34583, -15.6138, 0.263302, -8.34583, -16.3589, -0.263302, -6.77579, 15.6103, 0.263302, -8.34583, 16.3555, -0.263302, -6.77579, -16.3589, 0.263302, -6.77579, -16.9447, -0.263302, -5.13989, 16.3555, 0.263302, -6.77579, 16.9412, -0.263302, -5.13989, -16.9447, 0.263302, -5.13989, -17.364, -0.263302, -3.45548, 16.9412, 0.263302, -5.13989, 17.3606, -0.263302, -3.45548, -17.364, 0.263302, -3.45548, -17.6205, -0.263302, -1.7364, 17.3606, 0.263302, -3.45548, 17.617, -0.263302, -1.7364, -17.6205, 0.263302, -1.7364, -17.7037, -0.263302, -0.00346565, 17.617, 0.263302, -1.7364, 17.7002, -0.263302, -0.00346565, -17.7037, 0.263302, -0.00346565, -17.6205, -0.263302, 1.73294, 17.7002, 0.263302, -0.00346565, 17.617, -0.263302, 1.73294, -17.6205, 0.263302, 1.73294, -17.364, -0.263302, 3.45201, 17.617, 0.263302, 1.73294, 17.3606, -0.263302, 3.45201, -17.364, 0.263302, 3.45201, -16.9447, -0.263302, 5.13643, 17.3606, 0.263302, 3.45201, 16.9412, -0.263302, 5.13643, -16.9447, 0.263302, 5.13643, -16.3589, -0.263302, 6.77232, 16.9412, 0.263302, 5.13643, 16.3555, -0.263302, 6.77232, -16.3589, 0.263302, 6.77232, -15.6138, -0.263302, 8.34237, 16.3555, 0.263302, 6.77232, 15.6103, -0.263302, 8.34237, -15.6138, 0.263302, 8.34237, -14.723, -0.263302, 9.83269, 15.6103, 0.263302, 8.34237, 14.7196, -0.263302, 9.83269, -14.723, 0.263302, 9.83269, -13.6867, -0.263302, 11.2294, 14.7196, 0.263302, 9.83269, 13.6833, -0.263302, 11.2294, -13.6867, 0.263302, 11.2294, -12.5187, -0.263302, 12.5153, 13.6833, 0.263302, 11.2294, 12.5153, -0.263302, 12.5153, -12.5187, 0.263302, 12.5153, -11.2329, -0.263302, 13.6833, 12.5153, 0.263302, 12.5153, 11.2294, -0.263302, 13.6833, -11.2329, 0.263302, 13.6833, -9.83616, -0.263302, 14.7196, 11.2294, 0.263302, 13.6833, 9.83269, -0.263302, 14.7196, -9.83616, 0.263302, 14.7196, -8.34583, -0.263302, 15.6103, 9.83269, 0.263302, 14.7196, 8.34237, -0.263302, 15.6103, -8.34583, 0.263302, 15.6103, -6.77579, -0.263302, 16.3555, 8.34237, 0.263302, 15.6103, 6.77232, -0.263302, 16.3555, -6.77579, 0.263302, 16.3555, -5.13989, -0.263302, 16.9412, 6.77232, 0.263302, 16.3555, 5.13643, -0.263302, 16.9412, -5.13989, 0.263302, 16.9412, -3.45548, -0.263302, 17.3606, 5.13643, 0.263302, 16.9412, 3.45201, -0.263302, 17.3606, -3.45548, 0.263302, 17.3606, -1.7364, -0.263302, 17.617, 3.45201, 0.263302, 17.3606, 1.73294, -0.263302, 17.617, -1.7364, 0.263302, 17.617, -0.00346565, -0.263302, 17.7002, 1.73294, 0.263302, 17.617, -0.00346565, 0.263302, 17.7002)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272sf"]
+albedo_texture = ExtResource("25_d0jwi")
 
 [sub_resource type="Resource" id="Resource_hefpd"]
 script = ExtResource("9_hefpd")
@@ -64,64 +177,1216 @@ script = ExtResource("10_nnd8j")
 collection = Array[ExtResource("9_hefpd")]([SubResource("Resource_hefpd"), SubResource("Resource_nnd8j"), SubResource("Resource_5ylet"), SubResource("Resource_2pg8g"), SubResource("Resource_57scy")])
 metadata/_custom_type_script = "uid://dv7wg0eoca0sr"
 
-[node name="Breezekiln" type="Node"]
+[node name="Breezekiln" type="Node3D" node_paths=PackedStringArray("character_spawner")]
 script = ExtResource("1_82p5n")
 fire_cooking_data = ExtResource("2_oivh7")
 fire_fighters_data = ExtResource("3_0bjiu")
 wind_platformer_data = ExtResource("4_lul7l")
 wind_rhythm_data = ExtResource("5_hefpd")
+character_spawner = NodePath("CharacterSpawner")
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
+[node name="CharacterSpawner" parent="." instance=ExtResource("6_wp355")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.741, 6.80619, -35.0683)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("6_nnd8j")
+[node name="Cameras & Lights" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.62, 1.5, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Cameras & Lights"]
+transform = Transform3D(0.97437, 0, -0.224951, 0, 1, 0, 0.224951, 0, 0.97437, 5.07926e-07, 12.5754, -11.62)
+light_color = Color(0.965902, 0.902276, 0.82478, 1)
+light_energy = 1.45
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Cameras & Lights"]
+environment = SubResource("Environment_g75is")
 
 [node name="Content" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Content"]
-mesh = SubResource("BoxMesh_oivh7")
+[node name="player_reference" type="MeshInstance3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52754, 0.940314, 5.25048)
+visible = false
+mesh = SubResource("CapsuleMesh_kx2ec")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Content/MeshInstance3D"]
+[node name="windmill" type="Node3D" parent="Content"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -84.2778, 6.45171, -32.2574)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_0bjiu")
+[node name="windmill_01_mmi3d_01" type="MultiMeshInstance3D" parent="Content/windmill"]
+transform = Transform3D(-0.461749, 0, -0.887011, 0, 1, 0, 0.887011, 0, -0.461749, 68.4798, -5.99071, -65.704)
+multimesh = SubResource("MultiMesh_y0jka")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Content"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32481, 1, 0.542374)
-mesh = SubResource("BoxMesh_lul7l")
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/windmill/windmill_01_mmi3d_01"]
 
-[node name="SettlementExit" type="Node3D" parent="Content"]
-script = ExtResource("4_2i5xv")
-metadata/_custom_type_script = "uid://cqxo556jptakn"
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/windmill/windmill_01_mmi3d_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46985, 0)
+shape = SubResource("CylinderShape3D_mri2m")
 
-[node name="InteractionComponent3D" type="Area3D" parent="Content/SettlementExit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-collision_layer = 0
-monitorable = false
-script = ExtResource("5_4lo53")
-metadata/_custom_type_script = "uid://7n4knvm4dle5"
+[node name="Pivot_01" type="Node3D" parent="Content/windmill"]
+transform = Transform3D(0.837719, 0, 0.546102, 0, 1, 0, -0.546102, 0, 0.837719, 66.7729, 8.09529, -62.599)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/SettlementExit/InteractionComponent3D"]
-shape = SubResource("SphereShape3D_hefpd")
+[node name="windmill_02_mmi3d_01" type="MultiMeshInstance3D" parent="Content/windmill/Pivot_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.106531, 0.00389194, -0.120996)
+multimesh = SubResource("MultiMesh_qy74x")
+script = ExtResource("8_amf67")
+enable_rotation = true
+rotation_speed_deg = 6.56
+rotate_x_axis = true
+enable_bobbing = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Content/SettlementExit/InteractionComponent3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("BoxMesh_nnd8j")
+[node name="windmill_01_mmi3d_02" type="MultiMeshInstance3D" parent="Content/windmill"]
+transform = Transform3D(0.634272, 0, 0.77311, 0, 1, 0, -0.77311, 0, 0.634272, 26.4891, -0.138224, -35.2261)
+multimesh = SubResource("MultiMesh_y0jka")
 
-[node name="Label3D" type="Label3D" parent="Content"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90617, 0)
-pixel_size = 0.02
-text = "BREEZEKILN"
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/windmill/windmill_01_mmi3d_02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/windmill/windmill_01_mmi3d_02/StaticBody3D"]
+transform = Transform3D(-0.978631, 0, -0.205624, 0, 1, 0, 0.205624, 0, -0.978631, 0.161137, 2.54917, -0.00587082)
+shape = SubResource("CylinderShape3D_mri2m")
+
+[node name="Pivot_02" type="Node3D" parent="Content/windmill"]
+transform = Transform3D(0.771625, 0, 0.636078, 0, 1, 0, -0.636078, 0, 0.771625, 28.653, 13.9382, -37.9342)
+
+[node name="windmill_02_mmi3d_01" type="MultiMeshInstance3D" parent="Content/windmill/Pivot_02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0302353, 0.0134869, -0.00486755)
+multimesh = SubResource("MultiMesh_qy74x")
+script = ExtResource("8_amf67")
+enable_rotation = true
+rotation_speed_deg = -4.56
+rotate_x_axis = true
+
+[node name="windmill_01_mmi3d_03" type="MultiMeshInstance3D" parent="Content/windmill"]
+transform = Transform3D(0.983064, 0, 0.183265, 0, 1, 0, -0.183265, 0, 0.983064, -8.54398, -0.153406, -8.58231)
+multimesh = SubResource("MultiMesh_y0jka")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/windmill/windmill_01_mmi3d_03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/windmill/windmill_01_mmi3d_03/StaticBody3D"]
+transform = Transform3D(-0.616486, 0, -0.787365, 0, 1, 0, 0.787365, 0, -0.616486, -0.0946579, 2.56435, 0.076786)
+shape = SubResource("CylinderShape3D_mri2m")
+
+[node name="Pivot_03" type="Node3D" parent="Content/windmill"]
+transform = Transform3D(0.969872, 0, 0.243615, 0, 1, 0, -0.243615, 0, 0.969872, -5.2039, 13.8376, -9.22999)
+
+[node name="windmill_02_mmi3d_01" type="MultiMeshInstance3D" parent="Content/windmill/Pivot_03"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0373306, 0.0989304, 0.0019455)
+multimesh = SubResource("MultiMesh_qy74x")
+script = ExtResource("8_amf67")
+enable_rotation = true
+rotation_speed_deg = 3.56
+rotate_x_axis = true
+
+[node name="nature" type="Node3D" parent="Content"]
+
+[node name="bonfires" type="Node3D" parent="Content/nature"]
+
+[node name="bonfire_01_mmi3d_01" type="MultiMeshInstance3D" parent="Content/nature/bonfires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47, 0.389358, 5.111)
+multimesh = SubResource("MultiMesh_63oqm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.415649, 0)
+shape = SubResource("CylinderShape3D_02swt")
+
+[node name="bonfire_01_mmi3d_02" type="MultiMeshInstance3D" parent="Content/nature/bonfires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.731, 0.425703, -31.633)
+multimesh = SubResource("MultiMesh_63oqm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_02/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0417185, 0.379304, -0.0435429)
+shape = SubResource("CylinderShape3D_02swt")
+
+[node name="bonfire_01_mmi3d_03" type="MultiMeshInstance3D" parent="Content/nature/bonfires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.3205, 6.41887, -38.3463)
+multimesh = SubResource("MultiMesh_63oqm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_03/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0319862, 0.410409, 0.00330734)
+shape = SubResource("CylinderShape3D_02swt")
+
+[node name="tree_05" type="Node3D" parent="Content/nature"]
+
+[node name="tree_05_snow_01" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -6.076, 2.932, 9.717)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019104, -0.582306, 0.0196381)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_02" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -3.1315, 2.932, 11.4401)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_02/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00584805, -0.582307, -0.0586972)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_03" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 0.311563, 2.932, 11.4401)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_03/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0374763, -0.582307, -0.0586972)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_05" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 6.0356, 2.932, 10.2793)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_05"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_05/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0653079, -0.582307, -0.052505)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_06" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 7.87149, 2.932, 8.70644)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_06"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_06/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0678637, -0.582307, -0.0656166)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_07" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 13.134, 2.932, 1.09952)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_07"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_07/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0131845, -0.582307, -0.00801325)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_08" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 12.6186, 2.932, -3.70698)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_08"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_08/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.259081, -0.582307, 2.28516)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_10" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 9.03225, 2.932, -7.87271)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500216, -0.582307, 0.0307224)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_11" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 9.03225, 2.932, -5.06254)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022388, -0.582307, 0.0323899)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_12" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -10.7926, 2.932, 1.74739)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_12/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0505285, -0.582307, -0.0266757)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_13" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -12.4197, 2.932, 0.0138545)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_13/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0647035, -0.582307, -0.0127586)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_14" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -10.7589, 2.932, -2.60027)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00965357, -0.582307, 0.0271423)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_15" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -9.12493, 2.932, -5.28777)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_15/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107041, -0.582307, 0.0180795)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_16" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 9.44762, 2.932, -24.4004)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_16/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0152192, -0.582307, 0.0369148)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_17" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 6.43989, 2.932, -22.1088)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_17"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_17/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151575, -0.582307, -0.165133)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_56" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -1.42705, 2.932, -36.9104)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_56"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_56/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044131, -0.582307, -0.124769)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_18" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, 4.61217, 2.932, -38.1239)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_18/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0173101, -0.582307, -0.00338173)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_20" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -15.252, 5.757, -35.058)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_20/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0259705, -0.530287, -0.0592499)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_21" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -15.921, 5.752, -39.745)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_21/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000335217, -0.527902, 0.00313187)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_22" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -13.445, 5.777, -40.959)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_22/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0467076, -0.539829, 0.00784302)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_24" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -31.307, 8.956, -32.208)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_24/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205965, -0.561301, -0.0374537)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_25" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -39.998, 8.966, -43.472)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_25/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120728, -0.566073, -0.0268707)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_26" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -28.195, 8.951, -55.486)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_26/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0297499, -0.558916, 0.0100746)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_27" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -29.648, 8.976, -59.126)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_27/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0403614, -0.570843, -0.0413971)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_28" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -21.9431, 8.7606, -54.6448)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_28/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0540409, -0.468076, -0.0306187)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_29" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -18.6794, 8.7606, -53.8065)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_29/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025301, -0.468076, -0.116636)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_30" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -20.9765, 8.7606, -52.4274)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_30/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00846386, -0.468076, -0.107504)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_31" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -18.2073, 8.7606, -65.3904)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_31/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0202961, -0.468076, -0.0427799)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_32" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -17.5275, 8.7606, -62.5333)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_32/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.064847, -0.468076, -0.0764408)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_33" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -15.0792, 8.7606, -62.5333)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_33"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_33/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0161037, -0.468076, -0.0764408)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_34" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -40.7924, 8.7606, -61.0196)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_34"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_34/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0222588, -0.468076, -0.00895309)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_35" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -43.1588, 8.7606, -58.8893)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_35"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_35/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0505066, -0.468076, -0.0381966)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_55" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -47.0481, 8.7606, -54.7406)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_55"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_55/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00295448, -0.468076, 0.0445118)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_36" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -52.955, 8.7606, -55.3231)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_36"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_36/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0321941, -0.468076, -0.00782967)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_37" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -58.1151, 8.7606, -53.6805)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_37"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_37/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0176144, -0.468076, -0.0515118)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_38" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -65.8876, 8.7606, -55.849)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_38"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_38/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00640488, -0.468076, -0.0586929)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_39" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -73.627, 8.7606, -61.7366)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_39"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_39/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0387421, -0.468076, -0.0629787)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_40" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -76.5713, 8.7606, -66.2884)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_40"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_40/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00212097, -0.468076, 0.00718117)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_41" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -73.2705, 8.76061, -67.4703)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_41"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_41/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118813, -0.468081, 0.0892067)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_42" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -52.8174, 8.7606, -89.0947)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_42"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_42/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133659, -0.468076, -0.0187187)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_43" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -77.7095, 8.7606, -74.9472)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_43"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_43/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107422, -0.466669, -0.0747528)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_44" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -75.4463, 8.7606, -79.5077)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_44"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_44/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0196877, -0.466669, -0.0192795)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_45" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -39.7495, 8.7606, -74.7826)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_45"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_45/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0624828, -0.466669, -0.0895882)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_46" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -36.3315, 8.7606, -74.9569)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_46"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_46/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00387573, -0.466669, -0.00643539)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_47" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -38.5062, 8.7606, -79.5551)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_47"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_47/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0481529, -0.466669, -0.0668068)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_48" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -39.8189, 8.7606, -85.3181)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_48"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_48/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00202179, -0.466669, 0.0556374)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_49" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -44.4101, 8.7606, -85.097)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_49"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_49/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0251465, -0.466669, -0.0498505)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_50" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -49.4091, 8.7606, -91.4907)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_50"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_50/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0484028, -0.466669, 0.0284004)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_51" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -76.1036, 8.7606, -43.8696)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_51"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_51/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109833, -0.466669, -0.0188961)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_52" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -78.9205, 8.7606, -39.0168)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_52"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_52/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00411606, -0.466669, -0.0328846)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_53" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -86.079, 8.7606, -39.0168)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_53"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_53/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178612, -0.466669, -0.0328884)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="tree_05_snow_54" type="Sprite3D" parent="Content/nature/tree_05"]
+transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -84.6605, 8.7606, -51.315)
+billboard = 2
+texture = ExtResource("10_dyxuy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_54"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_54/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053009, -0.466669, -0.00640678)
+shape = SubResource("BoxShape3D_rrmrk")
+
+[node name="fire_wind_house" type="Node3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.889, 0.227863, -8.29576)
+
+[node name="fire_wind_house_01_mmi3d_01" type="MultiMeshInstance3D" parent="Content/fire_wind_house"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0210586, 0, 0.0102062)
+multimesh = SubResource("MultiMesh_8hm8d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/fire_wind_house/fire_wind_house_01_mmi3d_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/fire_wind_house/fire_wind_house_01_mmi3d_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183727, 1.82629, -0.2578)
+shape = SubResource("CylinderShape3D_jupwx")
+
+[node name="fire_wind_house_01_mmi3d_02" type="MultiMeshInstance3D" parent="Content/fire_wind_house"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.2343, 0, -0.106526)
+multimesh = SubResource("MultiMesh_8hm8d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/fire_wind_house/fire_wind_house_01_mmi3d_02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/fire_wind_house/fire_wind_house_01_mmi3d_02/StaticBody3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.283062, 1.82629, 0.141068)
+shape = SubResource("CylinderShape3D_jupwx")
+
+[node name="fire_wind_house_01_mmi3d_03" type="MultiMeshInstance3D" parent="Content/fire_wind_house"]
+transform = Transform3D(-0.730162, 0, 0.683274, 0, 1, 0, -0.683274, 0, -0.730162, -9.65211, 6.13079, -49.6405)
+multimesh = SubResource("MultiMesh_8hm8d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/fire_wind_house/fire_wind_house_01_mmi3d_03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/fire_wind_house/fire_wind_house_01_mmi3d_03/StaticBody3D"]
+transform = Transform3D(-0.730162, 0, -0.683274, 0, 1, 0, 0.683274, 0, -0.730162, 0.355705, 1.77885, 0.125183)
+shape = SubResource("CylinderShape3D_jupwx")
+
+[node name="fire_wind_house_01_mmi3d_04" type="MultiMeshInstance3D" parent="Content/fire_wind_house"]
+transform = Transform3D(0.67816, 0, -0.734915, 0, 1, 0, 0.734915, 0, 0.67816, -17.031, 6.13079, -56.7498)
+multimesh = SubResource("MultiMesh_8hm8d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/fire_wind_house/fire_wind_house_01_mmi3d_04"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/fire_wind_house/fire_wind_house_01_mmi3d_04/StaticBody3D"]
+transform = Transform3D(0.678159, 0, 0.734914, 0, 1, 0, -0.734914, 0, 0.678159, 0.333065, 1.77885, -0.129166)
+shape = SubResource("CylinderShape3D_jupwx")
+
+[node name="fire_wind_house_02_mmi3d_01" type="MultiMeshInstance3D" parent="Content/fire_wind_house"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.13282, 7.25999, -0.0952263)
+multimesh = SubResource("MultiMesh_waedp")
+script = ExtResource("8_amf67")
+enable_rotation = true
+rotation_speed_deg = 25.0
+rotate_x_axis = true
+
+[node name="fire_wind_house_02_mmi3d_02" type="MultiMeshInstance3D" parent="Content/fire_wind_house"]
+transform = Transform3D(0.743565, 0, -0.668664, 0, 1, 0, 0.668664, 0, 0.743565, -13.3556, 13.3826, -53.086)
+multimesh = SubResource("MultiMesh_waedp")
+script = ExtResource("8_amf67")
+enable_rotation = true
+rotation_speed_deg = -15.0
+rotate_x_axis = true
+
+[node name="houses" type="Node3D" parent="Content"]
+transform = Transform3D(-0.625556, 0, -0.780179, 0, 1, 0, 0.780179, 0, -0.625556, 7.54298, 0.26366, -36.3464)
+
+[node name="house_01_m" type="Node3D" parent="Content/houses"]
+transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 3.8147e-06, 0, 3.8147e-06)
+
+[node name="house_01_mmi3d_01" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
+transform = Transform3D(-0.0259571, -0.0203771, -8.90713e-10, 0, -1.44248e-09, 0.033, -0.0203771, 0.0259571, 1.13462e-09, 3.35096, 1.78383, 4.62104)
+multimesh = SubResource("MultiMesh_ixf5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_01_mmi3d_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_01/StaticBody3D"]
+transform = Transform3D(1, -1.04308e-07, -2.66454e-15, 1.04308e-07, 1, 2.13163e-14, 8.21565e-13, 1.42109e-14, 1, 0.602844, 2.89307, -21.6356)
+shape = SubResource("BoxShape3D_d7cd4")
+
+[node name="house_01_mmi3d_02" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
+transform = Transform3D(-0.0201804, 0.0261104, 1.14132e-09, 0, -1.44248e-09, 0.033, 0.0261104, 0.0201804, 8.82113e-10, 10.442, 1.77713, 3.48465)
+multimesh = SubResource("MultiMesh_ixf5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_01_mmi3d_02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_02/StaticBody3D"]
+transform = Transform3D(0.999955, -0.00933768, -4.0818e-10, 0.00933768, 0.999955, -2.13118e-12, 4.09194e-10, -1.99218e-12, 1, 0.200378, 13.1402, -21.4326)
+shape = SubResource("BoxShape3D_d7cd4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_02/StaticBody3D"]
+transform = Transform3D(1, -1.49012e-08, 7.10543e-15, 1.49012e-08, 1, -8.9484e-14, 6.17284e-13, -5.32907e-15, 1, -19.1169, -52.8475, -44.731)
+shape = SubResource("BoxShape3D_xnic1")
+
+[node name="house_01_mmi3d_03" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
+transform = Transform3D(-0.00850986, 0.0318839, 1.39369e-09, -2.05668e-17, -1.44248e-09, 0.033, 0.0318839, 0.00850986, 3.71978e-10, 12.4614, 1.77713, -0.889438)
+multimesh = SubResource("MultiMesh_ixf5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_01_mmi3d_03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_03/StaticBody3D"]
+transform = Transform3D(0.999881, -0.0153752, -6.7215e-10, 0.0153752, 0.999881, -5.4019e-12, 6.73108e-10, -5.15854e-12, 1, -0.997253, 15.0203, -21.4326)
+shape = SubResource("BoxShape3D_d7cd4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_03/StaticBody3D"]
+transform = Transform3D(1, -0.00132582, -5.79963e-11, 0.00132582, 1, -1.66978e-13, 5.85736e-11, 7.99361e-14, 1, -17.0758, -52.7439, -44.731)
+shape = SubResource("BoxShape3D_xnic1")
+
+[node name="house_01_mmi3d_04" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
+transform = Transform3D(-0.0219526, 0.0246391, 1.07701e-09, 4.60076e-17, -1.44248e-09, 0.033, 0.0246391, 0.0219526, 9.59579e-10, 42.6918, 1.78457, -15.5619)
+multimesh = SubResource("MultiMesh_ixf5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_01_mmi3d_04"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_04/StaticBody3D"]
+transform = Transform3D(0.99988, 0.0153768, 6.72125e-10, -0.0153768, 0.99988, -5.38136e-12, -6.71119e-10, -5.16531e-12, 1, 0.0245972, 10.7771, -21.6581)
+shape = SubResource("BoxShape3D_d7cd4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_04/StaticBody3D"]
+transform = Transform3D(0.999996, -0.00291356, -1.27339e-10, 0.00291356, 0.999996, -3.29292e-13, 1.27972e-10, -1.05249e-13, 1, -17.4785, -54.1515, -44.9565)
+shape = SubResource("BoxShape3D_xnic1")
+
+[node name="house_01_mmi3d_05" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
+transform = Transform3D(0.00962237, -0.031566, -1.37979e-09, 3.50492e-17, -1.44248e-09, 0.033, -0.031566, -0.00962237, -4.20607e-10, 27.8732, 1.78457, -21.2551)
+multimesh = SubResource("MultiMesh_ixf5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_01_mmi3d_05"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_05/StaticBody3D"]
+transform = Transform3D(-0.99983, -0.0182907, -7.99616e-10, 0.0182907, -0.99983, -8.74154e-08, 8.00547e-10, -8.74155e-08, 1, 0.570793, 12.019, -21.6581)
+shape = SubResource("BoxShape3D_d7cd4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_05/StaticBody3D"]
+transform = Transform3D(-0.999998, -0.00144938, -6.34852e-11, 0.00144938, -0.999998, -8.74229e-08, 6.39648e-11, -8.74229e-08, 1, -19.6988, -52.9689, -44.9565)
+shape = SubResource("BoxShape3D_xnic1")
+
+[node name="house_01_mmi3d_06" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
+transform = Transform3D(-0.0329467, -0.00187603, -8.20036e-11, 4.01346e-17, -1.44248e-09, 0.033, -0.00187603, 0.0329467, 1.44014e-09, 21.2163, 7.82878, 39.0805)
+multimesh = SubResource("MultiMesh_ixf5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_01_mmi3d_06"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_06/StaticBody3D"]
+transform = Transform3D(0.00675508, -0.999974, -4.37104e-08, 0.999974, 0.00675508, -4.34159e-08, 4.37114e-08, -4.34162e-08, 1, 1.66577, 12.4432, -21.5636)
+shape = SubResource("BoxShape3D_d7cd4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_06/StaticBody3D"]
+transform = Transform3D(0.999502, 0.031516, 1.37802e-09, -0.031516, 0.999502, -2.19309e-11, -1.37698e-09, -2.17266e-11, 1, -18.2557, -54.1721, -46.0759)
+shape = SubResource("BoxShape3D_xnic1")
+
+[node name="house_01_mmi3d_07" type="MultiMeshInstance3D" parent="Content/houses/house_01_m"]
+transform = Transform3D(0.0083049, -0.0319379, -1.39605e-09, 4.67996e-17, -1.44248e-09, 0.033, -0.0319379, -0.0083049, -3.63019e-10, 19.5871, 7.82878, 32.0931)
+multimesh = SubResource("MultiMesh_ixf5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_01_m/house_01_mmi3d_07"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_07/StaticBody3D"]
+transform = Transform3D(-0.00329769, -0.999993, -4.37111e-08, 0.999993, -0.00329769, -4.38557e-08, 4.37122e-08, -4.38556e-08, 1, -1.90002, 12.5367, -21.5636)
+shape = SubResource("BoxShape3D_d7cd4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Content/houses/house_01_m/house_01_mmi3d_07/StaticBody3D"]
+transform = Transform3D(0.999585, 0.0287949, 1.25766e-09, -0.0287949, 0.999585, -1.80602e-11, -1.25764e-09, -1.81508e-11, 1, -17.5293, -52.5957, -46.0623)
+shape = SubResource("BoxShape3D_xnic1")
+
+[node name="house_02_m" type="Node3D" parent="Content/houses"]
+transform = Transform3D(1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, 5.5299, 0, 3.8278)
+
+[node name="house_02_mmi3d_01" type="MultiMeshInstance3D" parent="Content/houses/house_02_m"]
+transform = Transform3D(-0.00194619, -0.0329426, -1.43997e-09, 3.35567e-17, -1.44248e-09, 0.033, -0.0329426, 0.00194619, 8.50708e-11, -5.45183, 1.72105, -4.01052)
+multimesh = SubResource("MultiMesh_b0yoq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_02_m/house_02_mmi3d_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_02_m/house_02_mmi3d_01/StaticBody3D"]
+transform = Transform3D(1, 7.15256e-07, 1.77636e-13, -7.15256e-07, 1, 1.08358e-13, -2.82441e-12, 2.84217e-14, 0.999999, -4.39655, 10.3108, -12.0692)
+shape = SubResource("BoxShape3D_hqry2")
+
+[node name="house_02_mmi3d_02" type="MultiMeshInstance3D" parent="Content/houses/house_02_m"]
+transform = Transform3D(0.00944537, -0.0316194, -1.38213e-09, 0, -1.44248e-09, 0.033, -0.0316194, -0.00944537, -4.1287e-10, 25.0932, 1.71318, -29.6155)
+multimesh = SubResource("MultiMesh_b0yoq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_02_m/house_02_mmi3d_02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_02_m/house_02_mmi3d_02/StaticBody3D"]
+transform = Transform3D(0.999676, 0.0254974, 1.11414e-09, -0.0254974, 0.999676, -1.28244e-11, -1.11734e-09, -1.41194e-11, 0.999999, -3.38223, 11.1361, -12.1159)
+shape = SubResource("BoxShape3D_hqry2")
+
+[node name="house_02_mmi3d_03" type="MultiMeshInstance3D" parent="Content/houses/house_02_m"]
+transform = Transform3D(-0.0323797, -0.00636848, -2.78375e-10, 3.35567e-17, -1.44248e-09, 0.033, -0.00636848, 0.0323797, 1.41536e-09, 31.8001, 1.71113, -15.4785)
+multimesh = SubResource("MultiMesh_b0yoq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_02_m/house_02_mmi3d_03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_02_m/house_02_mmi3d_03/StaticBody3D"]
+transform = Transform3D(0.999962, 0.00876209, 3.82364e-10, -0.00876209, 0.999962, -3.87246e-13, -3.85633e-10, -1.61471e-12, 0.999998, -3.57704, 10.3694, -12.0538)
+shape = SubResource("BoxShape3D_hqry2")
+
+[node name="house_02_mmi3d_04" type="MultiMeshInstance3D" parent="Content/houses/house_02_m"]
+transform = Transform3D(0.000221746, 0.0329993, 1.44244e-09, 1.63254e-16, -1.44248e-09, 0.033, 0.0329993, -0.000221746, -9.6933e-12, 23.2157, 7.75378, 27.7156)
+multimesh = SubResource("MultiMesh_b0yoq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/houses/house_02_m/house_02_mmi3d_04"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/houses/house_02_m/house_02_mmi3d_04/StaticBody3D"]
+transform = Transform3D(0.999511, 0.0312716, 1.36606e-09, -0.0312716, 0.999511, -2.04032e-11, -1.36947e-09, -2.13127e-11, 0.999998, -3.31421, 9.59424, -12.2599)
+shape = SubResource("BoxShape3D_hqry2")
+
+[node name="bridges" parent="Content" instance=ExtResource("16_ffxn8")]
+transform = Transform3D(0.982291, 0, -0.187364, 0, 1, 0, 0.187364, 0, 0.982291, 2.05293, -0.580825, -17.9251)
+
+[node name="fire_wind_temple" type="MeshInstance3D" parent="Content"]
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, -57.7553, 6.11607, -74.9182)
+mesh = ExtResource("16_b7dit")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/fire_wind_temple"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/fire_wind_temple/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5932, 0)
+shape = SubResource("CylinderShape3D_h6ais")
+
+[node name="path_baked_01" parent="Content" instance=ExtResource("17_gbdyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0312981, 0.0232026, -0.0105717)
+
+[node name="landscapes" type="Node3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.889, 0.227863, -8.29576)
+
+[node name="islands" type="Node3D" parent="Content/landscapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.889, -0.227863, 8.29576)
+
+[node name="island_circle_01" parent="Content/landscapes/islands" instance=ExtResource("18_8aa78")]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="Cylinder" parent="Content/landscapes/islands/island_circle_01" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_ldas1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/landscapes/islands/island_circle_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/landscapes/islands/island_circle_01/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ynx4g")
+
+[node name="island_circle_02" parent="Content/landscapes/islands" instance=ExtResource("18_8aa78")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 3.9646, 0, -30.5373)
+
+[node name="Cylinder" parent="Content/landscapes/islands/island_circle_02" index="0"]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 1.76649, 0, -1.38166)
+surface_material_override/0 = SubResource("ShaderMaterial_ldas1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/landscapes/islands/island_circle_02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/landscapes/islands/island_circle_02/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wp355")
+
+[node name="island_circle_03" parent="Content/landscapes/islands" instance=ExtResource("18_8aa78")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -35.7289, 0, -38.8709)
+
+[node name="Cylinder" parent="Content/landscapes/islands/island_circle_03" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.773071, 6.03671, 0.531929)
+surface_material_override/0 = SubResource("ShaderMaterial_ldas1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/landscapes/islands/island_circle_03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/landscapes/islands/island_circle_03/StaticBody3D"]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 6.03499, 0)
+shape = SubResource("ConvexPolygonShape3D_ynx4g")
+
+[node name="island_circle_04" parent="Content/landscapes/islands" instance=ExtResource("18_8aa78")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -21.3668, 0, -59.6775)
+
+[node name="Cylinder" parent="Content/landscapes/islands/island_circle_04" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.03671, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_ldas1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/landscapes/islands/island_circle_04"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/landscapes/islands/island_circle_04/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.02976, 0)
+shape = SubResource("ConvexPolygonShape3D_ynx4g")
+
+[node name="island_circle_05" parent="Content/landscapes/islands" instance=ExtResource("18_8aa78")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -84.1381, 6.02578, -44.4238)
+
+[node name="Cylinder" parent="Content/landscapes/islands/island_circle_05" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_ldas1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/landscapes/islands/island_circle_05"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/landscapes/islands/island_circle_05/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ynx4g")
+
+[node name="island_circle_06" parent="Content/landscapes/islands" instance=ExtResource("18_8aa78")]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1.3, -57.5324, 6.08053, -72.0636)
+
+[node name="Cylinder" parent="Content/landscapes/islands/island_circle_06" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_ldas1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/landscapes/islands/island_circle_06"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/landscapes/islands/island_circle_06/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ynx4g")
+
+[node name="island_circle_07" parent="Content/landscapes/islands" instance=ExtResource("18_8aa78")]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -14.7789, 0, -38.9668)
+
+[node name="Cylinder" parent="Content/landscapes/islands/island_circle_07" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.611073, 2.84961, 2.57512)
+surface_material_override/0 = SubResource("ShaderMaterial_ldas1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/landscapes/islands/island_circle_07"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/landscapes/islands/island_circle_07/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.97424, 2.85129)
+shape = SubResource("ConvexPolygonShape3D_ynx4g")
+
+[node name="mountain_landscape_baked2" parent="Content/landscapes" instance=ExtResource("21_2iplg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.889, -0.227863, 8.29576)
+
+[node name="VFX" type="Node3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.889, 0.227863, -8.29576)
+
+[node name="pyre_flames" type="Node3D" parent="Content/VFX"]
+transform = Transform3D(0.969607, 0, -0.121631, 0, 0.977206, 0, 0.121631, 0, 0.969607, -27.3295, 6.91356, -30.1511)
+
+[node name="pyre_flame" type="AnimatedSprite3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 0, 0)
+billboard = 1
+sprite_frames = ExtResource("22_4g73v")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+
+[node name="top_flame_light" type="OmniLight3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.992224, 0, 0.124467, 0, 1, 0, -0.124467, 0, 0.992224, -0.003685, 0.136829, 0.174553)
+light_color = Color(0.990316, 0.478857, 0.402522, 1)
+light_energy = 0.25
+light_specular = 1.308
+light_bake_mode = 1
+omni_range = 4.776
+omni_attenuation = 0.438
+script = ExtResource("8_amf67")
+enable_light_flicker = true
+base_energy = 1.0
+flicker_amplitude = 0.1
+flicker_speed = 5.56
+flicker_offset = 0.56
+
+[node name="pyre_flame2" type="AnimatedSprite3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.701381, 0, -0.195302, 0, 0.728064, 0, 0.195302, 0, 0.701381, 39.834, -6.25252, 40.016)
+billboard = 2
+sprite_frames = ExtResource("22_4g73v")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+
+[node name="pyre_flame5" type="AnimatedSprite3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.818848, 0, -0.228011, 0, 0.85, 0, 0.228011, 0, 0.818848, 34.279, -6.00569, 27.2711)
+billboard = 2
+sprite_frames = ExtResource("22_4g73v")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+
+[node name="pyre_flame6" type="AnimatedSprite3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.818848, 0, -0.228011, 0, 0.850001, 0, 0.228011, 0, 0.818848, 39.19, -6.006, 26.554)
+billboard = 2
+sprite_frames = ExtResource("22_4g73v")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+
+[node name="pyre_flame7" type="AnimatedSprite3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.496348, 0, -0.690031, 0, 0.850001, 0, 0.690031, 0, 0.496348, 8.8308, 0.279806, -26.3711)
+billboard = 2
+sprite_frames = ExtResource("22_4g73v")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+
+[node name="pyre_flame8" type="AnimatedSprite3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.496348, 0, -0.690031, 0, 0.850002, 0, 0.690031, 0, 0.496348, 13.3922, 0.221257, -23.4216)
+billboard = 2
+sprite_frames = ExtResource("22_4g73v")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+
+[node name="top_flame_light2" type="OmniLight3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.989247, 0, -0.146256, 0, 1, 0, 0.146256, 0, 0.989247, 39.8104, -6.10356, 40.0451)
+light_color = Color(0.990316, 0.478857, 0.402522, 1)
+light_energy = 0.25
+light_specular = 1.308
+light_bake_mode = 1
+omni_range = 4.776
+omni_attenuation = 0.438
+script = ExtResource("8_amf67")
+enable_light_flicker = true
+base_energy = 1.0
+flicker_amplitude = 0.1
+flicker_speed = 5.56
+flicker_offset = 0.56
+
+[node name="top_flame_light5" type="OmniLight3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.989247, 0, -0.146256, 0, 1, 0, 0.146256, 0, 0.989247, 37.0792, -4.63003, 26.8076)
+light_color = Color(0.990316, 0.478857, 0.402522, 1)
+light_energy = 0.25
+light_specular = 1.308
+light_bake_mode = 1
+omni_range = 6.057
+omni_attenuation = 0.438
+script = ExtResource("8_amf67")
+enable_light_flicker = true
+base_energy = 1.0
+flicker_amplitude = 0.1
+flicker_speed = 5.56
+flicker_offset = 0.56
+
+[node name="pyre_flame3" type="AnimatedSprite3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.720379, 0, 0.105516, 0, 0.728065, 0, -0.105516, 0, 0.720379, 38.3442, -6.31439, 2.19689)
+billboard = 2
+sprite_frames = ExtResource("22_4g73v")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+
+[node name="top_flame_light3" type="OmniLight3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.96371, 0, 0.266952, 0, 1, 0, -0.266952, 0, 0.96371, 38.4256, -6.28382, 2.23432)
+light_color = Color(0.990316, 0.478857, 0.402522, 1)
+light_energy = 0.25
+light_specular = 1.308
+light_bake_mode = 1
+omni_range = 4.776
+omni_attenuation = 0.438
+script = ExtResource("8_amf67")
+enable_light_flicker = true
+base_energy = 1.0
+flicker_amplitude = 0.1
+flicker_speed = 5.56
+flicker_offset = 0.56
+
+[node name="top_flame_light6" type="OmniLight3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(0.96371, 0, 0.266952, 0, 1, 0, -0.266952, 0, 0.96371, 11.5868, 0.664855, -25.7203)
+light_color = Color(0.990316, 0.478857, 0.402522, 1)
+light_energy = 0.25
+light_specular = 1.308
+light_bake_mode = 1
+omni_range = 4.776
+omni_attenuation = 0.438
+script = ExtResource("8_amf67")
+enable_light_flicker = true
+base_energy = 1.0
+flicker_amplitude = 0.1
+flicker_speed = 5.56
+flicker_offset = 0.56
+
+[node name="pyre_flame4" type="AnimatedSprite3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(-5.27272, 0, 4.67311, 0, 7.04554, 0, -4.67311, 0, -5.27272, -29.3346, 20.119, -32.9641)
+billboard = 2
+sprite_frames = ExtResource("22_4g73v")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+
+[node name="top_flame_light4" type="OmniLight3D" parent="Content/VFX/pyre_flames"]
+transform = Transform3D(-0.417866, 0, -0.908509, 0, 1, 0, 0.908509, 0, -0.417866, -29.1219, 21.0831, -33.9909)
+light_color = Color(0.990316, 0.478857, 0.402522, 1)
+light_energy = 1.5
+light_specular = 1.308
+light_bake_mode = 1
+omni_range = 4.776
+omni_attenuation = 0.438
+script = ExtResource("8_amf67")
+enable_light_flicker = true
+base_energy = 5.56
+flicker_amplitude = 0.1
+flicker_speed = 5.56
+flicker_offset = 0.56
+
+[node name="skybox_sphere_01" parent="Content/VFX" instance=ExtResource("23_vwep7")]
+transform = Transform3D(95.5, 0, 0, 0, 95.5, 0, 0, 0, 95.5, -21.295, 1.035, -24.59)
+visible = false
+script = ExtResource("8_amf67")
+enable_rotation = true
+rotation_speed_deg = 0.45
+rotate_y_axis = true
+
+[node name="SkyboxSphere" type="MeshInstance3D" parent="Content/VFX"]
+transform = Transform3D(95.5, 0, 0, 0, 95.5, 0, 0, 0, 95.5, -21.295, 1.035, -24.59)
+mesh = ExtResource("24_v34jr")
+surface_material_override/0 = SubResource("StandardMaterial3D_272sf")
+script = ExtResource("8_amf67")
+enable_rotation = true
+rotation_speed_deg = 0.45
+rotate_y_axis = true
+
+[node name="altars" type="Node3D" parent="Content"]
+
+[node name="Altar Fire" parent="Content/altars" instance=ExtResource("33_amf67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2903, 6.29306, -58.7977)
+element = 1
+
+[node name="Altar Wind" parent="Content/altars" instance=ExtResource("33_amf67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69241, 0.263302, -25.8863)
+element = 3
+
+[node name="portals" type="Node3D" parent="Content"]
+
+[node name="Portal" parent="Content/portals" instance=ExtResource("28_ffxn8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0155, 6.42988, -33.3069)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="DebugPopup" parent="CanvasLayer" node_paths=PackedStringArray("functions_node") instance=ExtResource("8_0bjiu")]
+[node name="DebugPopup" parent="CanvasLayer" instance=ExtResource("8_0bjiu")]
 title = "Breezekiln Debug"
-functions_node = NodePath("../..")
-visible_on_start = true
 default_debug_buttons = SubResource("Resource_6bqf2")
 custom_debug_buttons = Array[ExtResource("9_hefpd")]([ExtResource("12_5ylet"), ExtResource("13_2pg8g"), ExtResource("14_2pg8g")])
 
-[connection signal="interacted_with" from="Content/SettlementExit/InteractionComponent3D" to="Content/SettlementExit" method="exit_settlement"]
+[editable path="Content/landscapes/islands/island_circle_01"]
+[editable path="Content/landscapes/islands/island_circle_02"]
+[editable path="Content/landscapes/islands/island_circle_03"]
+[editable path="Content/landscapes/islands/island_circle_04"]
+[editable path="Content/landscapes/islands/island_circle_05"]
+[editable path="Content/landscapes/islands/island_circle_06"]
+[editable path="Content/landscapes/islands/island_circle_07"]

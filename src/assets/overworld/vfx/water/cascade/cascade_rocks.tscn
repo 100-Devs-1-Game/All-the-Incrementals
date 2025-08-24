@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://by2bo8yeg0btq"]
+
+[ext_resource type="PackedScene" uid="uid://c366oky57rr6p" path="res://assets/overworld/vfx/water/cascade/cascade_rocks.gltf" id="1_732gk"]
+[ext_resource type="Material" uid="uid://chg85pjkrx0dk" path="res://assets/overworld/materials/textures/concrete/concrete_03.tres" id="2_twtbg"]
+
+[node name="cascade_rocks" instance=ExtResource("1_732gk")]
+
+[node name="rock_01_mmi3d_001" parent="." index="0"]
+material_override = ExtResource("2_twtbg")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf58sye21le4a"]
+
+[ext_resource type="PackedScene" uid="uid://b3uofh8giudu1" path="res://assets/overworld/models/architectural/structures/platforms/platform_01.gltf" id="1_gllbo"]
+[ext_resource type="ArrayMesh" uid="uid://dgdgjjyd05j4i" path="res://assets/overworld/models/architectural/structures/platforms/platform_01.mesh" id="2_p3xms"]
+
+[node name="platform_012" instance=ExtResource("1_gllbo")]
+
+[node name="platform_01" parent="." index="0"]
+mesh = ExtResource("2_p3xms")

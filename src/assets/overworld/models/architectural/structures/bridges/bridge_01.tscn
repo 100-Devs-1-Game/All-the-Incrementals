@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd7rw754qx6jy"]
-
-[ext_resource type="PackedScene" uid="uid://qsjigak6i083" path="res://assets/overworld/models/architectural/structures/bridges/bridge_01.gltf" id="1_amaqw"]
-
-[node name="bridge_01" instance=ExtResource("1_amaqw")]

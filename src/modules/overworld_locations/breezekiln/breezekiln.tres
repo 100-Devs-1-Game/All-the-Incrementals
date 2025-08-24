@@ -7,4 +7,5 @@
 script = ExtResource("1_4kew2")
 display_name = "Breezekiln"
 settlement_scene = ExtResource("2_ekb2w")
+music_track = "fire_minigame"
 metadata/_custom_type_script = "uid://cbvt5rfiyp1m7"

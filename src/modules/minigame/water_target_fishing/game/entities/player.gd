@@ -1,6 +1,16 @@
 class_name WTFPlayer
 extends Node2D
 
+const BROKEN_OXYGEN_SOUND := preload(
+	"res://assets/minigames/fire_fighters/sfx/sfx_barrel_break_01.ogg"
+)
+
+const BREAKING_OXYGEN_SOUND := preload(
+	"res://assets/minigames/fire_fighters/sfx/sfx_metal_impact_04.ogg"
+)
+
+const PICKUP_SOUND := preload("res://assets/minigames/fire_fighters/sfx/sfx_oil_splash_05.ogg")
+
 @export var max_speed: float = 400.0
 @export var acceleration: float = 2000.0
 @export var friction: float = 600.0
@@ -10,6 +20,8 @@ var disabled_input := false
 
 @onready var area2d: Area2D = %Area2D
 @onready var sprite2d: AnimatedSprite2D = %AnimatedSprite2D
+@onready var bubble_shield: AnimatedSprite2D = %BubbleShield
+@onready var bubbles: AnimatedSprite2D = %Bubbles
 
 
 func underwater() -> bool:
@@ -29,6 +41,7 @@ func _exit_tree() -> void:
 func _ready() -> void:
 	area2d.area_entered.connect(_on_area_entered)
 	sprite2d.play("default")
+	bubble_shield.frame = 6
 
 
 func _on_area_entered(other_area: Area2D) -> void:
@@ -38,6 +51,7 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_fish := other_area.get_parent() as WTFFish
 	if is_instance_valid(maybe_fish) && WTFGlobals.minigame.stats.try_carry():
+		WTFGlobals.minigame.play_audio(PICKUP_SOUND)
 		WTFGlobals.minigame.add_score(maybe_fish.data.pickup.score)
 		var ft := TextFloatSystem.floating_text(
 			maybe_fish.global_position + Vector2(randf_range(-200, -170), randf_range(-30, 30)),
@@ -54,15 +68,52 @@ func _on_area_entered(other_area: Area2D) -> void:
 
 	var maybe_cannon := other_area.get_parent() as WTFJetCannon
 	if is_instance_valid(maybe_cannon):
+		WTFGlobals.minigame.play_audio(PICKUP_SOUND)
 		WTFGlobals.minigame.stats.scroll_faster(maybe_cannon.pickup.speedboost)
 		other_area.queue_free()
 		return
 
 	var maybe_boat := other_area.get_parent() as WTFBoat
 	if is_instance_valid(maybe_boat):
-		WTFGlobals.minigame.stats.carrying -= 1
+		WTFGlobals.minigame.play_audio(PICKUP_SOUND)
+		#todo replace with nice tween of fish leaving etc.
+		WTFGlobals.minigame.stats.scroll_faster(500)
+		WTFGlobals.minigame.stats.carrying = 0
+		WTFGlobals.minigame.stats.weight = 0
 		other_area.queue_free()
 		return
+
+
+func _process(_delta: float) -> void:
+	if WTFGlobals.minigame.stats.oxygen_percentage() > 80:
+		if bubble_shield.frame == 6:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 1
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 60:
+		if bubble_shield.frame < 2:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 2
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 40:
+		if bubble_shield.frame < 3:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 3
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 20:
+		if bubble_shield.frame < 4:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 4
+	elif WTFGlobals.minigame.stats.oxygen_percentage() > 0:
+		if bubble_shield.frame < 5:
+			WTFGlobals.minigame.play_audio(BREAKING_OXYGEN_SOUND)
+		bubble_shield.frame = 5
+	else:
+		if bubble_shield.frame != 6:
+			WTFGlobals.minigame.play_audio(BROKEN_OXYGEN_SOUND)
+		bubble_shield.frame = 6
+
+	if underwater() && WTFGlobals.minigame.stats.oxygen_percentage() > 0:
+		bubbles.play()
+	else:
+		bubbles.stop()
 
 
 func _physics_process(delta: float) -> void:
@@ -73,20 +124,15 @@ func _physics_process(delta: float) -> void:
 	if position.y < 0:
 		input_dir.y = 0
 
-	# I can't find a nice way to do the movement I want.. ugh, idk anymore
-	# how should player movement work independently of the endless scrolling?
-	# I wanted something that was more heavy on physics, less on arcade
-	# like the player should be able to adjust where their velocity is going (verticality)
-	# and use it to aim for fish they can see
-	# potentially having stuff to do in the sky as well, if they exit the ocean at velocity
-	#rotation += 10 * input_dir.y * delta
-	#rotation = rotate_toward(rotation, deg_to_rad(45) * input_dir.y, delta)
+	input_dir.y *= 3
 
-	#if !WTFGlobals.minigame.stats.scrolling():
-	#WTFGlobals.minigame.stats.consume_oxygen(WTFGlobals.minigame.stats.oxygen_remaining())
+	if !WTFGlobals.minigame.stats.scrolling():
+		WTFGlobals.minigame.stats.consume_oxygen(delta * 10)
 
-	if input_dir != Vector2.ZERO:
-		velocity = velocity.move_toward(input_dir * max_speed, acceleration * delta)
+	if input_dir != Vector2.ZERO && underwater():
+		velocity = velocity.move_toward(
+			input_dir * max(velocity.length(), max_speed), acceleration * delta
+		)
 
 	#todo I was gonna have the player slowly "snap" back to the center based on their distance
 	# so there's some freedom, but not too much
@@ -101,10 +147,6 @@ func _physics_process(delta: float) -> void:
 	if velocity.x > -WTFGlobals.minigame.stats.scrollspeed.x:
 		velocity.x = -WTFGlobals.minigame.stats.scrollspeed.x
 
-	#todo this is a bit of a mess... need to clean it up
-	# also not sure if/how the disabled input thing should work during gameplay
-	# basically trying to force the end to run because of a fail state (no oxy)
-	# but giving them time to collect some final points etc. and let their speed drop
 	if underwater():
 		WTFGlobals.minigame.stats.consume_oxygen(delta)
 		#print("underwater, oxy ", oxygen_remaining_seconds)
@@ -113,16 +155,16 @@ func _physics_process(delta: float) -> void:
 			disabled_input = true
 
 		if WTFGlobals.minigame.stats.no_oxygen() || disabled_input:
-			velocity.y += -0.4 * acceleration * delta
+			velocity.y += -1 * acceleration * delta
+
 	else:
 		if !WTFGlobals.minigame.stats.scrolling():
 			disabled_input = true
 			print("NO OXYGEN AND NO SPEED")
-		elif disabled_input == false:
+		elif WTFGlobals.minigame.stats.scrolling() && disabled_input == false:
 			WTFGlobals.minigame.stats.refill_oxygen(delta)
 
-		#todo this magic 0.4 really needs to be tweaked a lot, it feels so strange
-		velocity.y += 0.4 * acceleration * delta
+		velocity.y += 1 * acceleration * delta
 
 	position += velocity * delta
 

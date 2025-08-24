@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=13 format=3 uid="uid://c1rc5unyui6f3"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_gr3lc"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_rxpw8"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_lg7se"]
+[ext_resource type="Texture2D" uid="uid://bk1taucsseqky" path="res://assets/minigames/wind_rhythm/upgrade_icons/conductor_5.png" id="4_14re7"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_18i3a"]
+[ext_resource type="Script" uid="uid://cdf23gftlnxqd" path="res://modules/minigame/wind_rhythm/data/upgrade_logic.gd" id="5_lg7se"]
+[ext_resource type="Resource" uid="uid://bvaapc2qh0lnp" path="res://modules/minigame/wind_rhythm/data/upgrades/conductor_great_5.tres" id="6_rxpw8"]
+
+[sub_resource type="Resource" id="Resource_apb43"]
+script = ExtResource("2_rxpw8")
+essence = ExtResource("3_lg7se")
+amount = 800
+
+[sub_resource type="Resource" id="Resource_vu8cg"]
+script = ExtResource("1_gr3lc")
+earth = 0
+fire = 0
+water = 0
+wind = 800
+slots = Array[ExtResource("2_rxpw8")]([SubResource("Resource_apb43")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_lg7se"]
+script = ExtResource("2_rxpw8")
+essence = ExtResource("3_lg7se")
+amount = 800
+
+[sub_resource type="Resource" id="Resource_14re7"]
+script = ExtResource("1_gr3lc")
+earth = 0
+fire = 0
+water = 0
+wind = 800
+slots = Array[ExtResource("2_rxpw8")]([SubResource("Resource_lg7se")])
+
+[sub_resource type="Resource" id="Resource_5b2d7"]
+script = ExtResource("5_lg7se")
+upgrade_type = 0
+metadata/_custom_type_script = "uid://cdf23gftlnxqd"
+
+[resource]
+script = ExtResource("5_18i3a")
+logic = SubResource("Resource_5b2d7")
+unlocks_feature = ""
+name = "Conductor 5"
+flavor = ""
+icon = ExtResource("4_14re7")
+position = Vector2(3712, 2240)
+cost_arr = Array[ExtResource("1_gr3lc")]([SubResource("Resource_14re7")])
+effect_modifier_arr = Array[float]([1.0])
+max_level = 1
+base_cost = SubResource("Resource_vu8cg")
+base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("6_rxpw8")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

@@ -6,3 +6,5 @@ extends Resource
 
 # the game scene of this settlement
 @export var settlement_scene: PackedScene
+
+@export var music_track: String

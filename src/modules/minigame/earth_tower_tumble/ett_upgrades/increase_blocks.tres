@@ -1,0 +1,124 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=22 format=3 uid="uid://c3dmhnvjhmifn"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_e4rim"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_a0k7l"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_wn0li"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_xfj1p"]
+[ext_resource type="Texture2D" uid="uid://d0kx31rodsx1j" path="res://assets/minigames/earth_tower_tumble/icons/increase_points_per_block.png" id="4_el2kc"]
+[ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="5_jar7l"]
+[ext_resource type="Resource" uid="uid://bcw0h7tdr1ql8" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/block_health.tres" id="8_el2kc"]
+[ext_resource type="Resource" uid="uid://c7l5hw7ue5xle" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/frozen_blocks.tres" id="9_jar7l"]
+
+[sub_resource type="Resource" id="Resource_1lov4"]
+script = ExtResource("2_wn0li")
+essence = ExtResource("3_xfj1p")
+amount = 25
+
+[sub_resource type="Resource" id="Resource_aibqf"]
+script = ExtResource("1_e4rim")
+earth = 25
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_wn0li")]([SubResource("Resource_1lov4")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_lwbqx"]
+script = ExtResource("2_wn0li")
+essence = ExtResource("3_xfj1p")
+amount = 45
+
+[sub_resource type="Resource" id="Resource_ajltd"]
+script = ExtResource("1_e4rim")
+earth = 45
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_wn0li")]([SubResource("Resource_lwbqx")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_n23t4"]
+script = ExtResource("2_wn0li")
+essence = ExtResource("3_xfj1p")
+amount = 60
+
+[sub_resource type="Resource" id="Resource_ucb5m"]
+script = ExtResource("1_e4rim")
+earth = 60
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_wn0li")]([SubResource("Resource_n23t4")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_wm4o2"]
+script = ExtResource("2_wn0li")
+essence = ExtResource("3_xfj1p")
+amount = 80
+
+[sub_resource type="Resource" id="Resource_bmwvm"]
+script = ExtResource("1_e4rim")
+earth = 80
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_wn0li")]([SubResource("Resource_wm4o2")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_e8c0t"]
+script = ExtResource("2_wn0li")
+essence = ExtResource("3_xfj1p")
+amount = 100
+
+[sub_resource type="Resource" id="Resource_16800"]
+script = ExtResource("1_e4rim")
+earth = 100
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_wn0li")]([SubResource("Resource_e8c0t")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_joiv0"]
+script = ExtResource("2_wn0li")
+essence = ExtResource("3_xfj1p")
+amount = 150
+
+[sub_resource type="Resource" id="Resource_l3a6i"]
+script = ExtResource("1_e4rim")
+earth = 150
+fire = 0
+water = 0
+wind = 0
+slots = Array[ExtResource("2_wn0li")]([SubResource("Resource_joiv0")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_7p7uc"]
+script = ExtResource("5_jar7l")
+type = 1
+metadata/_custom_type_script = "uid://c5sirmi2235ls"
+
+[resource]
+script = ExtResource("2_a0k7l")
+logic = SubResource("Resource_7p7uc")
+unlocks_feature = ""
+name = "Block Bonus"
+flavor = ""
+icon = ExtResource("4_el2kc")
+position = Vector2(0, 704)
+cost_arr = Array[ExtResource("1_e4rim")]([SubResource("Resource_aibqf"), SubResource("Resource_ajltd"), SubResource("Resource_ucb5m"), SubResource("Resource_bmwvm"), SubResource("Resource_16800"), SubResource("Resource_l3a6i")])
+effect_modifier_arr = Array[float]([8.0, 16.0, 24.0, 38.0, 52.0, 84.0])
+max_level = 0
+base_cost_multiplier = 0.0
+exponential_cost = false
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("8_el2kc"), ExtResource("9_jar7l")])
+description_prefix = "Conjure"
+description_suffix = "more blocks per run."
+description_modifier_format = 1
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

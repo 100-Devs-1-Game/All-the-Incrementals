@@ -4,6 +4,8 @@
 class_name BaseMinigame
 extends Node
 
+signal playing
+
 ## If this is enabled override `_get_countdown_duration()`
 @export var has_countdown: bool = false
 
@@ -41,6 +43,7 @@ func handle_editor_direct_start() -> void:
 			data = load(data_uid)
 			SceneLoader._current_minigame = data
 			SceneLoader.enable_immediate_play()
+
 	else:
 		data = SceneLoader.get_current_minigame()
 
@@ -48,6 +51,10 @@ func handle_editor_direct_start() -> void:
 		_has_child_minigame_shared_components(),
 		"Couldn't find child class of type MinigameSharedComponents in Minigame scene"
 	)
+
+	# to appease GuT tests
+	if not SaveGameManager.world_state:
+		SaveGameManager.start_game()
 
 
 func _has_child_minigame_shared_components() -> bool:
@@ -96,6 +103,13 @@ func play():
 	_initialize()
 	data.apply_all_upgrades(self)
 	_start()
+
+	playing.emit()
+
+	if data.music_track:
+		EventBus.request_music.emit(data.music_track)
+		EventBus.request_music_volume.emit(0.5)
+
 	if has_countdown:
 		start_countdown()
 
@@ -151,6 +165,8 @@ func open_main_menu():
 
 # Call this function when the game ends to re-open the minigame menu.
 func game_over():
+	EventBus.request_music_volume.emit(1.0)
+
 	Player.add_stack_to_inventory(
 		EssenceStack.new(data.output_essence, int(_score * data.currency_conversion_factor))
 	)

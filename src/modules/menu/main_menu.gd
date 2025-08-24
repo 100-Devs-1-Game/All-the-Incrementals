@@ -1,8 +1,11 @@
 extends Control
 
+@onready var background: AnimatedSprite2D = %Background
+
 
 func _ready() -> void:
 	get_tree().paused = false
+	background.play()
 
 
 func quit_game() -> void:
@@ -18,6 +21,7 @@ func _on_settings_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
+	SaveGameManager.start_game()
 	SceneLoader.enter_shrine()
 
 

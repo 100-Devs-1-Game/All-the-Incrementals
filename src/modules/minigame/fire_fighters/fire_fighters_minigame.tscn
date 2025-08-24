@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwdhfnts10fd0"]
+[gd_scene load_steps=36 format=3 uid="uid://dwdhfnts10fd0"]
 
 [ext_resource type="Script" uid="uid://bv6xign4t1vh5" path="res://modules/minigame/fire_fighters/fire_fighters_minigame.gd" id="1_ewfdg"]
 [ext_resource type="PackedScene" uid="uid://bmbhboa0omojg" path="res://modules/minigame/fire_fighters/player/fire_fighters_player.tscn" id="2_jiygg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dgat565dvnvch" path="res://modules/minigame/fire_fighters/map/map_feature.gd" id="6_0qd66"]
 [ext_resource type="PackedScene" uid="uid://d1vt6mwpxr17" path="res://modules/minigame/fire_fighters/effects/explosion_effect.tscn" id="6_jiygg"]
 [ext_resource type="Resource" uid="uid://bsovy80upwnb4" path="res://modules/minigame/fire_fighters/data/map_features/bush.tres" id="7_67ens"]
+[ext_resource type="PackedScene" uid="uid://cd6r0rm1i2s46" path="res://modules/minigame/fire_fighters/effects/audio_effect.tscn" id="7_mtp5r"]
 [ext_resource type="Resource" uid="uid://bmjndms83efn3" path="res://modules/minigame/fire_fighters/data/map_features/tree.tres" id="8_2aotl"]
 [ext_resource type="Resource" uid="uid://cwdtlvi1abrlh" path="res://modules/minigame/fire_fighters/data/map_features/burnt_bush.tres" id="9_j5lxn"]
 [ext_resource type="Resource" uid="uid://dwfqr24woq5ie" path="res://modules/minigame/fire_fighters/data/map_features/burnt_tree.tres" id="10_8bvf2"]
@@ -61,13 +62,15 @@ sources/0 = SubResource("TileSetAtlasSource_n1sel")
 [sub_resource type="TileSet" id="TileSet_ymaye"]
 tile_size = Vector2i(32, 32)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jiygg"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mtp5r"]
 normal = Vector2(0, 1)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jxvl4"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0qd66"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_67ens"]
 normal = Vector2(1, 0)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q2uva"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2aotl"]
 normal = Vector2(-1, 0)
 
 [node name="FireFighters" type="Node2D"]
@@ -77,6 +80,7 @@ fire_scene = ExtResource("3_jxvl4")
 water_scene = ExtResource("4_q2uva")
 extinguish_effect_scene = ExtResource("5_ewfdg")
 explosion_effect_scene = ExtResource("6_jiygg")
+audio_effect_scene = ExtResource("7_mtp5r")
 map_rect = Rect2i(0, 0, 60, 33)
 map_features = Array[ExtResource("6_0qd66")]([ExtResource("7_67ens"), ExtResource("8_2aotl"), ExtResource("9_j5lxn"), ExtResource("10_8bvf2"), ExtResource("11_ftttk")])
 has_countdown = true
@@ -91,7 +95,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.356631, 0.732725, 0.357728, 1)
+color = Color(0.350446, 0.720282, 0.350404, 1)
 
 [node name="TileMapLayer Terrain" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_o8gxd")
@@ -125,7 +129,7 @@ sequence = ExtResource("22_mtp5r")
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("21_jiygg")]
 
-[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="3"]
+[node name="MinigameOverlay" parent="MinigameSharedComponents/SharedBaseComponents/CanvasLayer" index="4"]
 anchors_preset = 1
 anchor_top = 0.0
 anchor_bottom = 0.0
@@ -138,18 +142,18 @@ enable_countdown_display = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
-shape = SubResource("WorldBoundaryShape2D_jiygg")
+shape = SubResource("WorldBoundaryShape2D_mtp5r")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
 position = Vector2(0, 1080)
-shape = SubResource("WorldBoundaryShape2D_jxvl4")
+shape = SubResource("WorldBoundaryShape2D_0qd66")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Border"]
-shape = SubResource("WorldBoundaryShape2D_jxvl4")
+shape = SubResource("WorldBoundaryShape2D_67ens")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
 position = Vector2(1920, 0)
-shape = SubResource("WorldBoundaryShape2D_q2uva")
+shape = SubResource("WorldBoundaryShape2D_2aotl")
 
 [node name="Water" type="Node" parent="."]
 

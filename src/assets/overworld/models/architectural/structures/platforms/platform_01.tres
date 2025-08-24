@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b03hdpunea7jx"]
+
+[ext_resource type="Texture2D" uid="uid://d1v686iexvil5" path="res://assets/overworld/models/architectural/structures/platforms/platform_01.webp" id="1_mr1vq"]
+
+[resource]
+albedo_texture = ExtResource("1_mr1vq")

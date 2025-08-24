@@ -1,81 +1,105 @@
-[gd_scene load_steps=76 format=3 uid="uid://c5pos323ks1ro"]
+[gd_scene load_steps=82 format=3 uid="uid://c5pos323ks1ro"]
 
-[ext_resource type="PackedScene" uid="uid://cyqvtg6x4rb85" path="res://assets/overworld/models/architectural/column/pillar_01.tscn" id="1_6xidr"]
-[ext_resource type="Script" uid="uid://dhpabklvos1rb" path="res://assets/overworld/scripts/animation_scripts/light_flicker.gd" id="2_4aov3"]
 [ext_resource type="PackedScene" uid="uid://cxkc37xd0pka0" path="res://assets/overworld/models/architectural/stair_case/stair_case_01.tscn" id="2_tpa10"]
 [ext_resource type="PackedScene" uid="uid://dbl6vd6owbgae" path="res://assets/overworld/models/architectural/arch/arch_01.tscn" id="3_yaebv"]
+[ext_resource type="Material" uid="uid://hk3dsg83qw1l" path="res://assets/overworld/materials/textures/brick/brick_03.tres" id="4_e8tmd"]
 [ext_resource type="PackedScene" uid="uid://dn17r6cyuvf7u" path="res://assets/overworld/models/architectural/structures/temples/water_temple_bottom_half.tscn" id="4_e13ul"]
-[ext_resource type="Texture2D" uid="uid://brkgjjrtosyj3" path="res://assets/overworld/materials/textures/patio_tiles.webp" id="4_jooci"]
 [ext_resource type="PackedScene" uid="uid://corlpgtayffvx" path="res://assets/overworld/models/architectural/bars/bar_01.tscn" id="4_vugxr"]
+[ext_resource type="Material" uid="uid://dnhk0y3257esx" path="res://assets/overworld/materials/textures/brick/brick_01.tres" id="5_e8tmd"]
+[ext_resource type="ArrayMesh" uid="uid://cmwartfadf6yk" path="res://assets/overworld/models/architectural/pillar/pillar_01.mesh" id="5_qqenq"]
 [ext_resource type="PackedScene" uid="uid://d3s6vlq4wy6ic" path="res://assets/overworld/models/props/bell/bell_01.tscn" id="5_rlloo"]
-[ext_resource type="Texture2D" uid="uid://6cb4g04lngsc" path="res://assets/overworld/materials/textures/marble_mosaic_tile_01.webp" id="6_whpmk"]
-[ext_resource type="PackedScene" uid="uid://b7fvi1fj5tddk" path="res://assets/overworld/models/props/ornaments/ornament_05.gltf" id="8_od06l"]
-[ext_resource type="PackedScene" uid="uid://dqcw72akqxoqa" path="res://assets/overworld/models/architectural/ribbon/wrapping_01.tscn" id="11_8by50"]
+[ext_resource type="PackedScene" uid="uid://dxf7wr7fkgkx3" path="res://assets/overworld/models/props/ornaments/ornament_05.tscn" id="12_2fe8b"]
 [ext_resource type="PackedScene" uid="uid://cfr1bhdfmu6ir" path="res://assets/overworld/models/architectural/ribbon/arch_ribbon_01.tscn" id="12_rjxdq"]
 [ext_resource type="PackedScene" uid="uid://cgmrvaxocqvut" path="res://assets/overworld/models/architectural/ribbon/arch_ribbon_02.tscn" id="13_dtfrw"]
 [ext_resource type="PackedScene" uid="uid://d2exunln5ws47" path="res://assets/overworld/models/architectural/ribbon/middle_short_ribbon.tscn" id="14_mwuvr"]
 [ext_resource type="PackedScene" uid="uid://bs4dj4hx788c" path="res://assets/overworld/models/props/ornaments/ornament_02.tscn" id="15_m0502"]
 [ext_resource type="PackedScene" uid="uid://c2fqfhyrr6qwf" path="res://assets/overworld/models/props/ornaments/ornament_04.tscn" id="16_bt3vu"]
-[ext_resource type="Script" uid="uid://cam3vyxsy138q" path="res://assets/overworld/scripts/animation_scripts/sway.gd" id="17_dt1ag"]
 [ext_resource type="PackedScene" uid="uid://do8ec7rtyks35" path="res://assets/overworld/models/props/ornaments/ornament_01.tscn" id="17_sgsr3"]
 [ext_resource type="PackedScene" uid="uid://bhor2w8x1nede" path="res://assets/overworld/models/props/ornaments/ornament_03.tscn" id="18_sgsr3"]
 [ext_resource type="PackedScene" uid="uid://hf0wgh6wa7s5" path="res://assets/overworld/models/props/ornaments/ornament_06.tscn" id="19_naivd"]
 [ext_resource type="PackedScene" uid="uid://dfja1f2kdxjsq" path="res://assets/overworld/models/props/candle/candle_holder.tscn" id="21_xjdxk"]
 [ext_resource type="PackedScene" uid="uid://b66drvaba8u41" path="res://assets/overworld/models/props/candle/candle_01.tscn" id="22_54pkv"]
 [ext_resource type="Shader" uid="uid://cwj8raehobu8p" path="res://assets/overworld/scripts/shaders/flag_like.gdshader" id="23_agukd"]
-[ext_resource type="Texture2D" uid="uid://cad1jnopkegts" path="res://assets/overworld/elements/wind.webp" id="23_snqu8"]
+[ext_resource type="Texture2D" uid="uid://cad1jnopkegts" path="res://assets/overworld/assets/elements/wind.webp" id="23_snqu8"]
 [ext_resource type="SpriteFrames" uid="uid://bvxn6etk1px5h" path="res://assets/overworld/vfx/candle_flame/candle_flame.tres" id="23_tbivr"]
-[ext_resource type="Texture2D" uid="uid://bq86j6fg4r8pf" path="res://assets/overworld/elements/fire.webp" id="24_agukd"]
-[ext_resource type="Texture2D" uid="uid://cgmr2lwkxdu65" path="res://assets/overworld/elements/wind_bloom.webp" id="24_dr8tf"]
+[ext_resource type="Texture2D" uid="uid://bq86j6fg4r8pf" path="res://assets/overworld/assets/elements/fire.webp" id="24_agukd"]
+[ext_resource type="Texture2D" uid="uid://cgmr2lwkxdu65" path="res://assets/overworld/assets/elements/wind_bloom.webp" id="24_dr8tf"]
 [ext_resource type="PackedScene" uid="uid://cvp0l5bbwj43a" path="res://assets/overworld/models/architectural/ribbon/cylinder_ribbon.tscn" id="24_lh4a5"]
-[ext_resource type="Texture2D" uid="uid://c2rbbd1enbesy" path="res://assets/overworld/elements/water.webp" id="25_4aov3"]
-[ext_resource type="Texture2D" uid="uid://qb3vdu25rkjl" path="res://assets/overworld/elements/earth.webp" id="26_serno"]
-[ext_resource type="Texture2D" uid="uid://ckosq1frycwik" path="res://assets/overworld/elements/fire_bloom.webp" id="26_ul5nb"]
-[ext_resource type="Texture2D" uid="uid://cjox17oqo8kjx" path="res://assets/overworld/elements/water_bloom.webp" id="28_dt1ag"]
+[ext_resource type="Texture2D" uid="uid://c2rbbd1enbesy" path="res://assets/overworld/assets/elements/water.webp" id="25_4aov3"]
+[ext_resource type="Texture2D" uid="uid://qb3vdu25rkjl" path="res://assets/overworld/assets/elements/earth.webp" id="26_serno"]
+[ext_resource type="Texture2D" uid="uid://ckosq1frycwik" path="res://assets/overworld/assets/elements/fire_bloom.webp" id="26_ul5nb"]
+[ext_resource type="Texture2D" uid="uid://cjox17oqo8kjx" path="res://assets/overworld/assets/elements/water_bloom.webp" id="28_dt1ag"]
 [ext_resource type="PackedScene" uid="uid://dox2uuh52nw43" path="res://assets/overworld/models/kitchen_ware/bowl/bowl_05.tscn" id="28_imijt"]
 [ext_resource type="ArrayMesh" uid="uid://cxyhsx2s6ve63" path="res://assets/overworld/models/ui/pill/pill.obj" id="28_serno"]
 [ext_resource type="Shader" uid="uid://6wy8y15n7vk0" path="res://assets/overworld/scripts/shaders/amount_bar.gdshader" id="29_4aov3"]
-[ext_resource type="Texture2D" uid="uid://drgfx7qw272bv" path="res://assets/overworld/elements/earth_bloom.webp" id="30_n2scs"]
+[ext_resource type="Texture2D" uid="uid://drgfx7qw272bv" path="res://assets/overworld/assets/elements/earth_bloom.webp" id="30_n2scs"]
+[ext_resource type="Material" uid="uid://chg85pjkrx0dk" path="res://assets/overworld/materials/textures/concrete/concrete_03.tres" id="31_e8tmd"]
 [ext_resource type="SpriteFrames" uid="uid://b3itxrlohx1" path="res://assets/overworld/vfx/pyre_flame/pyre_flame.tres" id="32_8dlsp"]
+[ext_resource type="ArrayMesh" uid="uid://dg4j6mwtin3of" path="res://assets/overworld/models/architectural/ribbon/wrapping_01.mesh" id="33_2y5yr"]
 [ext_resource type="ArrayMesh" uid="uid://byqwraxgefyr3" path="res://assets/overworld/models/architectural/ribbon/long_hanging_ribbon.obj" id="36_dt1ag"]
-[ext_resource type="Shader" uid="uid://ce8k8i21t31cp" path="res://assets/overworld/scripts/shaders/cloth/ribbon_wind_anim.gdshader" id="37_n2scs"]
-[ext_resource type="SpriteFrames" uid="uid://df31qgmr5jgph" path="res://assets/overworld/vfx/pyre_flame/pyre_flame_glow_anim.tres" id="41_n2scs"]
-[ext_resource type="Texture2D" uid="uid://lehri0bj078y" path="res://assets/overworld/vfx/skybox/clouds/cloud_vdb_01.webp" id="42_serno"]
-[ext_resource type="Script" uid="uid://drg20rmnbr8bf" path="res://assets/overworld/scripts/animation_scripts/cloud_animation.gd" id="42_ul5nb"]
-[ext_resource type="Texture2D" uid="uid://ceph8r8tmdewb" path="res://assets/overworld/vfx/skybox/clouds/cloud_vdb_02.webp" id="43_raayy"]
-[ext_resource type="Texture2D" uid="uid://bwu66n7epurv6" path="res://assets/overworld/vfx/skybox/clouds/cloud_vdb_03.webp" id="44_dr8tf"]
+[ext_resource type="Shader" uid="uid://ce8k8i21t31cp" path="res://assets/overworld/scripts/shaders/cloth_sim.gdshader" id="37_n2scs"]
 [ext_resource type="SpriteFrames" uid="uid://c1pcfko77da5i" path="res://assets/overworld/vfx/elements_anim/water/elements_water_anim.tres" id="44_n6057"]
-[ext_resource type="Texture2D" uid="uid://b5h2x4gybxfuf" path="res://assets/overworld/vfx/skybox/night/sky_night_01.webp" id="44_qqenq"]
+[ext_resource type="Texture2D" uid="uid://fj5wqi66t65e" path="res://assets/overworld/assets/skybox/sky_night_01.webp" id="46_2fe8b"]
 [ext_resource type="SpriteFrames" uid="uid://cv2fqxxq0ujke" path="res://assets/overworld/vfx/elements_anim/wind/elements_wind_anim.tres" id="46_mstb5"]
-[ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://assets/overworld/vfx/water/circular_water.obj" id="46_qqenq"]
+[ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://assets/overworld/vfx/water/circular_water/circular_water.obj" id="46_qqenq"]
 [ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://assets/overworld/scripts/shaders/water_toon.gdshader" id="47_e8tmd"]
-[ext_resource type="Texture2D" uid="uid://csm3mqba65skx" path="res://assets/overworld/vfx/water/pbr_water.webp" id="48_sl2ur"]
-[ext_resource type="Texture2D" uid="uid://c4nxr2fndx82h" path="res://assets/overworld/vfx/water/pbr_water_graded_normal.webp" id="49_sl2ur"]
-[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/animation_scripts/infinite_rotation_y_axis.gd" id="50_jomy3"]
+[ext_resource type="Texture2D" uid="uid://dfvfmidfq5gmd" path="res://assets/overworld/vfx/water/circular_water/water_blue.webp" id="47_qqenq"]
+[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/altar_diamond.gd" id="50_jomy3"]
+[ext_resource type="Texture2D" uid="uid://b0giovcp3gygs" path="res://assets/overworld/assets/skybox/sky_day_01.webp" id="50_qqenq"]
 [ext_resource type="SpriteFrames" uid="uid://jt2bd2rgdu5t" path="res://assets/overworld/vfx/elements_anim/fire/elements_fire_anim.tres" id="52_0eu76"]
 [ext_resource type="SpriteFrames" uid="uid://bvva1qjrsfn36" path="res://assets/overworld/vfx/elements_anim/earth/elements_earth_anim.tres" id="52_61tad"]
+[ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="52_sl2ur"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1yun8"]
 
-[sub_resource type="Sky" id="Sky_de3hw"]
+[sub_resource type="Sky" id="Sky_xdf8c"]
 sky_material = SubResource("PanoramaSkyMaterial_1yun8")
 
 [sub_resource type="Environment" id="Environment_s7c67"]
 background_mode = 2
-sky = SubResource("Sky_de3hw")
+sky = SubResource("Sky_xdf8c")
+tonemap_exposure = 1.25
 glow_enabled = true
 glow_intensity = 1.5
 glow_bloom = 0.02
 glow_hdr_threshold = 0.56
 fog_light_energy = 0.83
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whpmk"]
-albedo_texture = ExtResource("4_jooci")
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_tpa10"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6smf1"]
-albedo_texture = ExtResource("6_whpmk")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e8tmd"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+
+[sub_resource type="MultiMesh" id="MultiMesh_2fe8b"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("5_qqenq")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qqenq"]
+height = 5.20862
+radius = 0.531738
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jomy3"]
+size = Vector3(7.35718, 3.12488, 2.44861)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mstb5"]
+size = Vector3(7.7948, 2.95496, 3.04285)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2fe8b"]
+size = Vector3(0.964417, 0.504395, 1.25586)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qqenq"]
+radius = 0.0889616
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e8tmd"]
+size = Vector3(0.18335, 0.11618, 0.189301)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sl2ur"]
+size = Vector3(0.104324, 0.226868, 0.108368)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qqenq"]
+size = Vector3(2.15973, 1.81049, 0.208282)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_agukd"]
 render_priority = 0
@@ -126,6 +150,7 @@ render_priority = 0
 shader = ExtResource("29_4aov3")
 shader_parameter/fill_level = 0.556
 shader_parameter/fill_color = Color(0.67451, 0.439216, 0.94902, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)
 shader_parameter/glow_strength = 1.86
 shader_parameter/flip_direction = true
 shader_parameter/gradient_sharpness = 0.025
@@ -137,6 +162,7 @@ render_priority = 0
 shader = ExtResource("29_4aov3")
 shader_parameter/fill_level = 0.25
 shader_parameter/fill_color = Color(0.203922, 0.760784, 0.356863, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)
 shader_parameter/glow_strength = 1.86
 shader_parameter/flip_direction = true
 shader_parameter/gradient_sharpness = 0.025
@@ -148,6 +174,7 @@ render_priority = 0
 shader = ExtResource("29_4aov3")
 shader_parameter/fill_level = 0.219
 shader_parameter/fill_color = Color(0.313726, 0.690196, 0.933333, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)
 shader_parameter/glow_strength = 1.86
 shader_parameter/flip_direction = true
 shader_parameter/gradient_sharpness = 0.025
@@ -159,43 +186,90 @@ render_priority = 0
 shader = ExtResource("29_4aov3")
 shader_parameter/fill_level = 0.9
 shader_parameter/fill_color = Color(0.858824, 0.129412, 0.2, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)
 shader_parameter/glow_strength = 1.86
 shader_parameter/flip_direction = true
 shader_parameter/gradient_sharpness = 0.025
 shader_parameter/fill_offset = 1.56
 shader_parameter/black_specular = 0.56
 
+[sub_resource type="GDScript" id="GDScript_qqenq"]
+script/source = "extends Node3D
+
+@export var sway_amount: float = 5.0
+@export var noise_speed: float = 0.5
+var t: float = 0.0
+var initial_rotation: Vector3
+var noise := FastNoiseLite.new()
+
+func _ready():
+	initial_rotation = rotation_degrees
+	noise.seed = randi()
+	noise.frequency = 0.1  # equivalent to 'period' control
+
+func _process(delta):
+	t += delta * noise_speed
+	var sway = noise.get_noise_1d(t) * sway_amount
+	rotation_degrees = initial_rotation + Vector3(sway, 0, 0)
+"
+
+[sub_resource type="MultiMesh" id="MultiMesh_qqenq"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("33_2y5yr")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n6057"]
 render_priority = 0
 shader = ExtResource("37_n2scs")
+shader_parameter/albedo_color = Color(0.615686, 0.00784314, 0.0313726, 1)
 shader_parameter/sway_strength = 0.056
 shader_parameter/sway_speed = 0.56
 shader_parameter/y_top = -2.18
 shader_parameter/y_bottom = 2.526
+shader_parameter/alpha_cutoff = 0.1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2y5yr"]
 render_priority = 0
 shader = ExtResource("37_n2scs")
+shader_parameter/albedo_color = Color(0.615686, 0.00784314, 0.0313726, 1)
 shader_parameter/sway_strength = 0.056
 shader_parameter/sway_speed = 0.45
 shader_parameter/y_top = -2.18
 shader_parameter/y_bottom = 2.526
+shader_parameter/alpha_cutoff = 0.1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qqenq"]
 render_priority = 0
 shader = ExtResource("37_n2scs")
+shader_parameter/albedo_color = Color(0.615686, 0.00784314, 0.0313726, 1)
 shader_parameter/sway_strength = 0.056
 shader_parameter/sway_speed = 0.85
 shader_parameter/y_top = 2.18
 shader_parameter/y_bottom = -2.18
+shader_parameter/alpha_cutoff = 0.1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2fe8b"]
 render_priority = 0
 shader = ExtResource("37_n2scs")
+shader_parameter/albedo_color = Color(0.615686, 0.00784314, 0.0313726, 1)
 shader_parameter/sway_strength = 0.056
 shader_parameter/sway_speed = 0.75
 shader_parameter/y_top = -2.18
 shader_parameter/y_bottom = 2.18
+shader_parameter/alpha_cutoff = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sl2ur"]
+render_priority = 0
+shader = ExtResource("47_e8tmd")
+shader_parameter/time_speed = 0.56
+shader_parameter/swirl_strength = 0.1
+shader_parameter/swirl_freq = 5.0
+shader_parameter/albedo_texture = ExtResource("47_qqenq")
+shader_parameter/normal_strength = 1.0
+shader_parameter/emission_strength = 0.3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ao4aq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e8tmd"]
 render_priority = 0
@@ -206,20 +280,12 @@ shader_parameter/swirl_freq = 1.0
 shader_parameter/emission_strength = 0.0
 shader_parameter/bottom_color = Color(1, 0.3, 0, 1)
 shader_parameter/top_color = Color(1, 1, 0.2, 1)
-shader_parameter/albedo_texture = ExtResource("44_qqenq")
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_ao4aq")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jomy3"]
-render_priority = 0
-shader = ExtResource("47_e8tmd")
-shader_parameter/time_speed = 0.1
-shader_parameter/swirl_strength = 0.1
-shader_parameter/swirl_freq = 5.0
-shader_parameter/albedo_texture = ExtResource("48_sl2ur")
-shader_parameter/normal_texture = ExtResource("49_sl2ur")
-shader_parameter/normal_strength = 0.1
-shader_parameter/emission_strength = 0.3
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mstb5"]
+albedo_texture = ExtResource("50_qqenq")
 
-[node name="TheShrine" type="Node3D"]
+[node name="The Shrine" type="Node3D"]
 
 [node name="Camera & Lights" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.62, 1.5, 0)
@@ -227,16 +293,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.62,
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Camera & Lights"]
 environment = SubResource("Environment_s7c67")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera & Lights"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.07926e-07, 12.5754, -11.62)
-light_color = Color(0.794937, 0.923491, 0.943206, 1)
-light_energy = 0.89
-directional_shadow_mode = 1
-
 [node name="Camera3D" type="Camera3D" parent="Camera & Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.14)
 keep_aspect = 0
 fov = 70.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera & Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07926e-07, 12.5754, -11.62)
+light_color = Color(0.870807, 0.901464, 0.913394, 1)
+light_energy = 1.2
+directional_shadow_mode = 1
 
 [node name="Right_Side" type="SpotLight3D" parent="Camera & Lights"]
 transform = Transform3D(0.270987, -0.167151, 0.947959, 0, 0.984808, 0.173648, -0.962583, -0.0470564, 0.26687, 8.394, 1.211, -8.922)
@@ -254,49 +320,105 @@ spot_range = 15.11
 spot_attenuation = 1.81
 spot_angle_attenuation = 0.112656
 
-[node name="Background" type="Node3D" parent="."]
+[node name="Plane_01" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.87, 0, 0, 0, 3.315, 0, 0, 0, 2.905, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_tpa10")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("4_e8tmd")
 
-[node name="columns" type="Node3D" parent="."]
+[node name="Area3D" type="Area3D" parent="Plane_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_01/Area3D"]
+shape = SubResource("ConvexPolygonShape3D_e8tmd")
+
+[node name="Plane_02" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.79473e-08, 0, 1.51, 0, 1.723, 0, -2.012, 0, -6.60042e-08, 0, 0.00226152, 0)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_tpa10")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_e8tmd")
+
+[node name="pillars" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.307, -1.227, 2.729)
 
-[node name="pillar_01" parent="columns" instance=ExtResource("1_6xidr")]
+[node name="pillar_01_mmi3d" type="MultiMeshInstance3D" parent="pillars"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+multimesh = SubResource("MultiMesh_2fe8b")
 
-[node name="pillar_02" parent="columns" instance=ExtResource("1_6xidr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.458)
+[node name="StaticBody3D" type="StaticBody3D" parent="pillars/pillar_01_mmi3d"]
 
-[node name="pillar_03" parent="columns" instance=ExtResource("1_6xidr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.363, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillars/pillar_01_mmi3d/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -2.50531)
+shape = SubResource("CylinderShape3D_qqenq")
 
-[node name="pillar_04" parent="columns" instance=ExtResource("1_6xidr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.223, 0, -5.253)
+[node name="pillar_02_mmi3d" type="MultiMeshInstance3D" parent="pillars"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -5.458)
+multimesh = SubResource("MultiMesh_2fe8b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pillars/pillar_02_mmi3d"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillars/pillar_02_mmi3d/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.00995159, -2.50531)
+shape = SubResource("CylinderShape3D_qqenq")
+
+[node name="pillar_03_mmi3d" type="MultiMeshInstance3D" parent="pillars"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.363, 0, 0)
+multimesh = SubResource("MultiMesh_2fe8b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pillars/pillar_03_mmi3d"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillars/pillar_03_mmi3d/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0274763, 0.0144825, -2.50531)
+shape = SubResource("CylinderShape3D_qqenq")
+
+[node name="pillar_04_mmi3d" type="MultiMeshInstance3D" parent="pillars"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.223, 0, -5.253)
+multimesh = SubResource("MultiMesh_2fe8b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pillars/pillar_04_mmi3d"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillars/pillar_04_mmi3d/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0122001, -0.067853, -2.50531)
+shape = SubResource("CylinderShape3D_qqenq")
 
 [node name="stair_case" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201, -2.333, 4.506)
 
 [node name="stair_case_01" parent="stair_case" instance=ExtResource("2_tpa10")]
 
+[node name="StaticBody3D" type="StaticBody3D" parent="stair_case/stair_case_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stair_case/stair_case_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0472412, 1.06244, -0.354309)
+shape = SubResource("BoxShape3D_jomy3")
+
 [node name="stair_case_02" parent="stair_case" instance=ExtResource("2_tpa10")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.0115592, -8.98173)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stair_case/stair_case_02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stair_case/stair_case_02/StaticBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0472412, 1.074, -0.364547)
+shape = SubResource("BoxShape3D_jomy3")
 
 [node name="stair_case_03" parent="stair_case" instance=ExtResource("2_tpa10")]
 transform = Transform3D(-2.65765e-08, 0, 1, 0, 1, 0, -0.608, 0, -4.37114e-08, 5.212, 0, -4.354)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="stair_case/stair_case_03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stair_case/stair_case_03/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180603, 0.977478, -0.0523071)
+shape = SubResource("BoxShape3D_mstb5")
+
 [node name="stair_case_04" parent="stair_case" instance=ExtResource("2_tpa10")]
 transform = Transform3D(-2.65765e-08, 0, -1, 0, 1, 0, 0.608, 0, -4.37114e-08, -5.614, 0, -4.354)
 
-[node name="Plane_01" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.87, 0, 0, 0, 3.315, 0, 0, 0, 2.905, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_whpmk")
-cast_shadow = 0
-mesh = SubResource("PlaneMesh_tpa10")
-skeleton = NodePath("../columns/pillar_01")
+[node name="StaticBody3D" type="StaticBody3D" parent="stair_case/stair_case_04"]
 
-[node name="Plane_02" type="MeshInstance3D" parent="."]
-transform = Transform3D(-8.79473e-08, 0, 1.51, 0, 1.723, 0, -2.012, 0, -6.60042e-08, 0, 0.00226152, 0)
-material_override = SubResource("StandardMaterial3D_6smf1")
-cast_shadow = 0
-mesh = SubResource("PlaneMesh_tpa10")
-skeleton = NodePath("../columns/pillar_01")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stair_case/stair_case_04/StaticBody3D"]
+transform = Transform3D(-1, 0, -1.43788e-07, 0, 1, 0, 5.3153e-08, 0, -1, -0.180603, 0.977478, -0.0514364)
+shape = SubResource("BoxShape3D_mstb5")
 
 [node name="arch" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0)
@@ -321,43 +443,79 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.347326, -9.88431e-05, 0.114
 [node name="candle_04" parent="arch/candles" instance=ExtResource("22_54pkv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34723, -9.88431e-05, -0.915119)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="arch/candles"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arch/candles/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296234, 0.247803, -0.397217)
+shape = SubResource("BoxShape3D_2fe8b")
+
 [node name="ornaments" type="Node3D" parent="arch"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305, -0.258, 0.93)
 
 [node name="ornament_01" parent="arch/ornaments" instance=ExtResource("15_m0502")]
 
+[node name="StaticBody3D" type="StaticBody3D" parent="arch/ornaments/ornament_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arch/ornaments/ornament_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00387433, 0.0172747, 0.00268257)
+shape = SubResource("SphereShape3D_qqenq")
+
 [node name="ornament_02" parent="arch/ornaments" instance=ExtResource("16_bt3vu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007, 0.013, -0.2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="arch/ornaments/ornament_02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arch/ornaments/ornament_02/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00536856, 0.00751786, 0.0023911)
+shape = SubResource("SphereShape3D_qqenq")
 
 [node name="ornament_03" parent="arch/ornaments" instance=ExtResource("17_sgsr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0573823, -0.002, -0.399504)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="arch/ornaments/ornament_03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arch/ornaments/ornament_03/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00207521, -0.00639344, 0.00410461)
+shape = SubResource("BoxShape3D_e8tmd")
+
 [node name="ornament_04" parent="arch/ornaments" instance=ExtResource("18_sgsr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09, 0.0562639, -1.548)
 
-[node name="ornament_05" parent="arch/ornaments" instance=ExtResource("8_od06l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107, 0.002, -1.906)
+[node name="StaticBody3D" type="StaticBody3D" parent="arch/ornaments/ornament_04"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arch/ornaments/ornament_04/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00746918, -0.0115051, 0.00239563)
+shape = SubResource("BoxShape3D_sl2ur")
+
+[node name="ornament_05" parent="arch/ornaments" instance=ExtResource("12_2fe8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0924457, 0.00439712, -1.89571)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="arch/ornaments/ornament_05"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arch/ornaments/ornament_05/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0354206, 0.0104588, 0.195088)
+shape = SubResource("SphereShape3D_qqenq")
 
 [node name="ornament_06" parent="arch/ornaments" instance=ExtResource("19_naivd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075, -0.007, -1.703)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="arch/ornaments/ornament_06"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arch/ornaments/ornament_06/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00542188, 0.0218559, -0.186432)
+shape = SubResource("SphereShape3D_qqenq")
+
 [node name="arch_01" parent="arch" instance=ExtResource("3_yaebv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.33, 0)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="arch/arch_01"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arch/arch_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0179138, 0.911224, 0.0575409)
+shape = SubResource("BoxShape3D_qqenq")
+
 [node name="bar_01" parent="arch" instance=ExtResource("4_vugxr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.044, 0.594, 0.00270069)
-
-[node name="cylinder_ribbon" parent="arch" instance=ExtResource("24_lh4a5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0496802, 0.5951, 5.96046e-08)
-script = ExtResource("17_dt1ag")
-sway_amount = 45.0
-noise_speed = 0.45
-
-[node name="middle_short_ribbon" parent="arch/cylinder_ribbon" instance=ExtResource("14_mwuvr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.39406e-29, 1, -6.25946e-10, -0.1601, 0.0143199)
-
-[node name="bell_01" parent="arch/cylinder_ribbon" instance=ExtResource("5_rlloo")]
-transform = Transform3D(-4.37114e-08, 7.7647e-22, -1, 0, 1, 0, 1, 3.38813e-21, -4.37114e-08, 5.8355e-08, -0.5951, 0.0285874)
 
 [node name="bowl" type="Node3D" parent="arch"]
 transform = Transform3D(-7.86805e-08, 0, 1.8, 0, 1.8, 0, -1.8, 0, -7.86805e-08, -7.10078, 2.79, 0)
@@ -402,56 +560,60 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.596
 [node name="pill_01" type="MeshInstance3D" parent="pill_UI"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239999, -0.045, 8.366)
 mesh = ExtResource("28_serno")
+surface_material_override/0 = ExtResource("31_e8tmd")
 surface_material_override/1 = SubResource("ShaderMaterial_dr8tf")
 
 [node name="pill_02" type="MeshInstance3D" parent="pill_UI"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.492, -0.045, 8.366)
 mesh = ExtResource("28_serno")
+surface_material_override/0 = ExtResource("31_e8tmd")
 surface_material_override/1 = SubResource("ShaderMaterial_ul5nb")
 
 [node name="pill_03" type="MeshInstance3D" parent="pill_UI"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29178, -0.045, 0.132405)
 mesh = ExtResource("28_serno")
+surface_material_override/0 = ExtResource("31_e8tmd")
 surface_material_override/1 = SubResource("ShaderMaterial_dt1ag")
 
 [node name="pill_04" type="MeshInstance3D" parent="pill_UI"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0333946, -0.045, -0.0133038)
 mesh = ExtResource("28_serno")
+surface_material_override/0 = ExtResource("31_e8tmd")
 surface_material_override/1 = SubResource("ShaderMaterial_n2scs")
 
 [node name="cloth" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.333, 2.499, 2.72509)
 
+[node name="cylinder_ribbon" parent="cloth" instance=ExtResource("24_lh4a5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.28332, -1.5739, -2.72509)
+script = SubResource("GDScript_qqenq")
+sway_amount = 45.0
+noise_speed = 0.45
+
+[node name="middle_short_ribbon" parent="cloth/cylinder_ribbon" instance=ExtResource("14_mwuvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.39406e-29, 1, -6.25946e-10, -0.1601, 0.0143199)
+
+[node name="bell_01" parent="cloth/cylinder_ribbon" instance=ExtResource("5_rlloo")]
+transform = Transform3D(-4.37114e-08, 7.7647e-22, -1, 0, 1, 0, 1, 3.38813e-21, -4.37114e-08, 5.8355e-08, -0.5951, 0.0285874)
+
 [node name="wrapping" type="Node3D" parent="cloth"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.28332, -1.5739, -2.72509)
 
-[node name="wrapping_01" parent="cloth/wrapping" instance=ExtResource("11_8by50")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.72509, 2.50985, 4.28332)
-visible = false
+[node name="wrapping_01_mmi3d_01" type="MultiMeshInstance3D" parent="cloth/wrapping"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.72509, 2.2098, -4.09228)
+multimesh = SubResource("MultiMesh_qqenq")
 
-[node name="wrapping_02" parent="cloth/wrapping/wrapping_01" instance=ExtResource("11_8by50")]
-transform = Transform3D(-0.458029, 0, -0.888937, 0, 1, 0, 0.888937, 0, -0.458029, 0, 0.220759, 0)
-visible = false
+[node name="wrapping_01_mmi3d_02" type="MultiMeshInstance3D" parent="cloth/wrapping"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.72509, 2.43056, -4.09228)
+multimesh = SubResource("MultiMesh_qqenq")
 
-[node name="wrapping_03" parent="cloth/wrapping" instance=ExtResource("11_8by50")]
-transform = Transform3D(0.604599, 0, -0.79653, 0, 1, 0, 0.79653, 0, 0.604599, 2.71703, 2.38879, 4.28332)
-visible = false
+[node name="wrapping_01_mmi3d_03" type="MultiMeshInstance3D" parent="cloth/wrapping"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.514, 2.121, -3.94)
+multimesh = SubResource("MultiMesh_qqenq")
 
-[node name="wrapping_04" parent="cloth/wrapping/wrapping_03" instance=ExtResource("11_8by50")]
-transform = Transform3D(-0.255446, 0, -0.966824, 0, 1, 0, 0.966824, 0, -0.255446, 0, 0.220759, 0)
-visible = false
-
-[node name="wrapping_05" parent="cloth/wrapping" instance=ExtResource("11_8by50")]
-transform = Transform3D(-0.21644, 0, -0.976296, 0, 1, 0, 0.976296, 0, -0.21644, -2.72509, 2.2098, -4.09228)
-
-[node name="wrapping_06" parent="cloth/wrapping/wrapping_05" instance=ExtResource("11_8by50")]
-transform = Transform3D(0.173648, 0, -0.984807, 0, 1, 0, 0.984807, 0, 0.173648, 0, 0.220759, 0)
-
-[node name="wrapping_07" parent="cloth/wrapping" instance=ExtResource("11_8by50")]
-transform = Transform3D(-0.762668, 0, -0.64679, 0, 1, 0, 0.64679, 0, -0.762668, 2.5245, 2.12136, -3.93954)
-
-[node name="wrapping_08" parent="cloth/wrapping/wrapping_07" instance=ExtResource("11_8by50")]
-transform = Transform3D(0.850812, 0, 0.525472, 0, 1, 0, -0.525472, 0, 0.850812, 0, 0.220758, 0)
+[node name="wrapping_01_mmi3d_04" type="MultiMeshInstance3D" parent="cloth/wrapping"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.514, 2.342, -3.94)
+multimesh = SubResource("MultiMesh_qqenq")
 
 [node name="arch_ribbon" type="Node3D" parent="cloth"]
 transform = Transform3D(-3.00335e-08, 3.17596e-08, 1, 0.726575, 0.687087, 0, -0.687087, 0.726575, -4.37114e-08, -4.262, -1.199, -3.31609)
@@ -503,8 +665,9 @@ light_color = Color(0.992705, 0.724734, 0.384308, 1)
 light_specular = 1.308
 light_bake_mode = 1
 omni_range = 1.522
-omni_attenuation = 0.8
-script = ExtResource("2_4aov3")
+omni_attenuation = 0.438
+script = ExtResource("50_jomy3")
+enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
 flicker_speed = 5.56
@@ -516,11 +679,39 @@ light_specular = 1.308
 light_bake_mode = 1
 omni_range = 4.776
 omni_attenuation = -0.991
-script = ExtResource("2_4aov3")
+script = ExtResource("50_jomy3")
+enable_light_flicker = true
 base_energy = 1.0
 flicker_amplitude = 0.1
 flicker_speed = 5.56
 flicker_offset = 0.56
+
+[node name="elements_anim" type="Node3D" parent="VFX"]
+transform = Transform3D(-2.22146e-09, 0, 0.11, 0, 0.0691991, 0, -0.0508211, 0, -4.80825e-09, -3.45357, 0.699802, -2.53883)
+
+[node name="elements_earth_anim" type="AnimatedSprite3D" parent="VFX/elements_anim"]
+transform = Transform3D(3.821, 0, 0, 0, 3.84, 0, 0, 0, 3.84, 3.95148, 1.34681, 74.9052)
+sprite_frames = ExtResource("52_61tad")
+animation = &"elements_earth_anim"
+autoplay = "elements_earth_anim"
+
+[node name="elements_fire_anim" type="AnimatedSprite3D" parent="VFX/elements_anim"]
+transform = Transform3D(3.99532, 0, -5.68434e-14, 0, 3.707, 0, -4.9738e-14, 0, 3.707, -103.506, 0.689378, -1.30787)
+sprite_frames = ExtResource("52_0eu76")
+animation = &"elements_fire_anim"
+autoplay = "elements_fire_anim"
+
+[node name="elements_water_anim" type="AnimatedSprite3D" parent="VFX/elements_anim"]
+transform = Transform3D(3.873, 0, -5.68434e-14, 0, 3.707, 0, -7.10543e-15, 0, 3.707, -0.0335121, 0, 0)
+sprite_frames = ExtResource("44_n6057")
+animation = &"elements_water_anim"
+autoplay = "elements_water_anim"
+
+[node name="elements_wind_anim" type="AnimatedSprite3D" parent="VFX/elements_anim"]
+transform = Transform3D(3.873, 0, 1.57072e-14, 0, 4.138, 0, -1.47013e-14, 0, 4.138, -103.713, 1.34681, 74.9052)
+sprite_frames = ExtResource("46_mstb5")
+animation = &"elements_wind_anim"
+autoplay = "elements_wind_anim"
 
 [node name="flames" type="Node3D" parent="VFX"]
 transform = Transform3D(-2.62268e-09, 0, 0.06, 0, 0.06, 0, -0.06, 0, -2.62268e-09, -0.51815, 0.243203, 0.512779)
@@ -529,56 +720,30 @@ transform = Transform3D(-2.62268e-09, 0, 0.06, 0, 0.06, 0, -0.06, 0, -2.62268e-0
 sprite_frames = ExtResource("23_tbivr")
 animation = &"candle_flame"
 autoplay = "candle_flame"
-frame = 3
-frame_progress = 0.372554
 
 [node name="candle_flame2" type="AnimatedSprite3D" parent="VFX/flames"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85837, 4.8373, -5.79467)
 sprite_frames = ExtResource("23_tbivr")
 animation = &"candle_flame"
 autoplay = "candle_flame"
-frame = 3
-frame_progress = 0.232543
 
 [node name="candle_flame3" type="AnimatedSprite3D" parent="VFX/flames"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1396, 0, 0)
 sprite_frames = ExtResource("23_tbivr")
 animation = &"candle_flame"
 autoplay = "candle_flame"
-frame = 5
-frame_progress = 0.804176
 
 [node name="candle_flame4" type="AnimatedSprite3D" parent="VFX/flames"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2214, 4.8373, -5.79467)
 sprite_frames = ExtResource("23_tbivr")
 animation = &"candle_flame"
 autoplay = "candle_flame"
-frame_progress = 0.802087
 
 [node name="pyre_flame" type="AnimatedSprite3D" parent="VFX/flames"]
 transform = Transform3D(-16.6667, 0, 2.5166e-06, 0, 16.6667, 0, -2.5166e-06, 0, -16.6667, 8.41835, 63.6466, -106.896)
 sprite_frames = ExtResource("32_8dlsp")
 animation = &"pyre_flame_default"
 autoplay = "pyre_flame_default"
-
-[node name="pyre_flame_glow_anim" type="AnimatedSprite3D" parent="VFX/flames"]
-transform = Transform3D(24.652, 0, 1.47793e-12, 0, 24.652, 0, -1.47793e-12, 0, 24.652, 8.41835, 66.0199, -113.982)
-sprite_frames = ExtResource("41_n2scs")
-autoplay = "default"
-
-[node name="pyre_flame2" type="AnimatedSprite3D" parent="VFX/flames"]
-transform = Transform3D(-14.8847, 0, -7.49826, 0, 16.6667, 0, 7.49826, 0, -14.8847, -20.854, 63.13, -98.648)
-sorting_offset = 0.25
-sprite_frames = ExtResource("32_8dlsp")
-animation = &"pyre_flame_default"
-autoplay = "pyre_flame_default"
-speed_scale = 0.89
-
-[node name="pyre_flame_glow_anim2" type="AnimatedSprite3D" parent="VFX/flames"]
-transform = Transform3D(-22.0234, 0, -11.0766, 0, 24.652, 0, 11.0766, 0, -22.0234, -22.192, 66.02, -102.908)
-sprite_frames = ExtResource("41_n2scs")
-autoplay = "default"
-frame = 3
 
 [node name="pyre_flame3" type="AnimatedSprite3D" parent="VFX/flames"]
 transform = Transform3D(14.8895, 0, -7.48865, 0, 16.6667, 0, 7.48865, 0, 14.8895, 37.7457, 63.13, -99.5656)
@@ -587,110 +752,38 @@ animation = &"pyre_flame_default"
 autoplay = "pyre_flame_default"
 speed_scale = 0.85
 
-[node name="pyre_flame_glow_anim3" type="AnimatedSprite3D" parent="VFX/flames"]
-transform = Transform3D(-22.0234, 0, 11.0766, 0, 24.652, 0, -11.0766, 0, -22.0234, 40.323, 66.0199, -102.908)
-sprite_frames = ExtResource("41_n2scs")
-autoplay = "default"
-
-[node name="pyre_flame_new_blend" type="AnimatedSprite3D" parent="VFX/flames"]
-transform = Transform3D(8.432, 0, 2.27374e-13, 0, 8.432, 0, -2.27374e-13, 0, 8.432, 8.10153, 66.2324, -111.478)
+[node name="pyre_flame4" type="AnimatedSprite3D" parent="VFX/flames"]
+transform = Transform3D(14.8895, 0, 7.48864, 0, 16.6667, 0, -7.48864, 0, 14.8895, -20.4735, 63.13, -99.5656)
 sprite_frames = ExtResource("32_8dlsp")
-animation = &"pyre_flame_blend"
-autoplay = "pyre_flame_blend"
-frame = 3
-
-[node name="pyre_flame_new_blend2" type="AnimatedSprite3D" parent="VFX/flames"]
-transform = Transform3D(-7.53291, 0, -3.78866, 0, 8.432, 0, 3.78866, 0, -7.53291, -22.1738, 66.232, -99.7031)
-sprite_frames = ExtResource("32_8dlsp")
-animation = &"pyre_flame_blend"
-autoplay = "pyre_flame_blend"
-frame = 5
-
-[node name="pyre_flame_new_blend3" type="AnimatedSprite3D" parent="VFX/flames"]
-transform = Transform3D(-7.53291, 0, 3.78866, 0, 8.432, 0, -3.78866, 0, -7.53291, 39.0047, 66.2321, -101.845)
-sprite_frames = ExtResource("32_8dlsp")
-animation = &"pyre_flame_blend"
-autoplay = "pyre_flame_blend"
-frame = 5
-
-[node name="skybox_static" type="Sprite3D" parent="VFX"]
-transform = Transform3D(-1.55613e-07, 0, 3.56, 0, 3.56, 0, -3.56, 0, -1.55613e-07, -34.205, 0.795, 0)
-material_override = SubResource("ShaderMaterial_e8tmd")
-cast_shadow = 0
-texture = ExtResource("44_qqenq")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+speed_scale = 0.85
 
 [node name="circular_water" type="MeshInstance3D" parent="VFX"]
 transform = Transform3D(4.87, 0, 0, 0, 4.87, 0, 0, 0, 4.87, 0, -1.545, 0)
 mesh = ExtResource("46_qqenq")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("ShaderMaterial_jomy3")
+surface_material_override/0 = SubResource("ShaderMaterial_sl2ur")
 script = ExtResource("50_jomy3")
-rotation_speed_deg = 2
-
-[node name="elements_anim" type="Node3D" parent="VFX"]
-transform = Transform3D(-2.22146e-09, 0, 0.11, 0, 0.0691991, 0, -0.0508211, 0, -4.80825e-09, -3.45357, 0.699802, -2.53883)
-
-[node name="elements_wind_anim" type="AnimatedSprite3D" parent="VFX/elements_anim"]
-transform = Transform3D(0.935947, 0, -1.42109e-14, 0, 1, 0, -1.77636e-15, 0, 1, -103.713, 1.34681, 74.9052)
-sprite_frames = ExtResource("46_mstb5")
-animation = &"colored"
-autoplay = "colored"
-
-[node name="elements_earth_anim" type="AnimatedSprite3D" parent="VFX/elements_anim"]
-transform = Transform3D(0.9948, 0, -2.13163e-14, 0, 1, 0, 0, 0, 1, 3.95148, 1.34681, 74.9052)
-sprite_frames = ExtResource("52_61tad")
-animation = &"colored"
-autoplay = "colored"
-
-[node name="elements_fire_anim" type="AnimatedSprite3D" parent="VFX/elements_anim"]
-transform = Transform3D(1.03554, 0, -2.13163e-14, 0, 1, 0, -1.06581e-14, 0, 1, -103.178, 1.34681, -1.30787)
-sprite_frames = ExtResource("52_0eu76")
-animation = &"black"
-autoplay = "black"
-
-[node name="elements_water_anim" type="AnimatedSprite3D" parent="VFX/elements_anim"]
-transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-sprite_frames = ExtResource("44_n6057")
-animation = &"water_colored"
-autoplay = "water_colored"
+enable_rotation = true
+rotation_speed_deg = 0.56
+rotate_y_axis = true
 
 [node name="animals" type="Node3D" parent="VFX"]
 transform = Transform3D(-10.695, 0, -9.34987e-07, 0, 10.695, 0, 9.34987e-07, 0, -10.695, 3.50191, 0.0196565, 1.62078)
 
-[node name="clouds" type="Node3D" parent="."]
-transform = Transform3D(-3.89031e-08, 0, 0.89, 0, 0.89, 0, -0.89, 0, -3.89031e-08, -27.124, 11.727, 0)
+[node name="skybox_static" type="Sprite3D" parent="VFX"]
+transform = Transform3D(-1.62606e-07, 0, 3.72, 0, 3.72, 0, -3.72, 0, -1.62606e-07, -34.205, 0.795, 0)
 visible = false
-script = ExtResource("42_ul5nb")
-move_speed = 0.15
-float_amplitude = 0.15
-float_speed = 0.56
+material_override = SubResource("ShaderMaterial_e8tmd")
+cast_shadow = 0
+texture = ExtResource("46_2fe8b")
 
-[node name="cloud_01" type="Sprite3D" parent="clouds"]
-texture = ExtResource("42_serno")
-
-[node name="cloud_02" type="Sprite3D" parent="clouds"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.28, 0, 0)
-texture = ExtResource("43_raayy")
-
-[node name="cloud_03" type="Sprite3D" parent="clouds"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.985, 0, 0)
-texture = ExtResource("44_dr8tf")
-
-[node name="clouds2" type="Node3D" parent="."]
-transform = Transform3D(-3.89031e-08, 0, 0.89, 0, 0.89, 0, -0.89, 0, -3.89031e-08, -29.7401, 9.00445, -7.94216)
-visible = false
-script = ExtResource("42_ul5nb")
-move_speed = 0.15
-float_amplitude = 0.15
-float_speed = 0.56
-
-[node name="cloud_01" type="Sprite3D" parent="clouds2"]
-texture = ExtResource("42_serno")
-
-[node name="cloud_02" type="Sprite3D" parent="clouds2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.28, 0, 0)
-texture = ExtResource("43_raayy")
-
-[node name="cloud_03" type="Sprite3D" parent="clouds2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.985, 0, 0)
-texture = ExtResource("44_dr8tf")
+[node name="SkyboxSphere" type="MeshInstance3D" parent="VFX"]
+transform = Transform3D(11.585, 0, 0, 0, 11.585, 0, 0, 0, 11.585, -1.64992, 1.035, 0)
+mesh = ExtResource("52_sl2ur")
+surface_material_override/0 = SubResource("StandardMaterial3D_mstb5")
+script = ExtResource("50_jomy3")
+enable_rotation = true
+rotation_speed_deg = 0.45
+rotate_y_axis = true

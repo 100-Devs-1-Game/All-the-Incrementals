@@ -8,11 +8,13 @@ const RAY_COVERAGE: float = 100
 
 @export var starting_speed: float = 400.0
 @export var acceleration: float = 30.0
+@export var acceleration_acceleration: float = 7.5
 
 var player: Node2D
 ## used for upgrades to reduce overall speed
 var speed_mod: float = 1.0
 var current_speed: float = starting_speed
+var repel_strength: float = 0.0
 var drag_strength: float = 400
 
 @onready var whispers: AudioStreamPlayer = $Whispers
@@ -38,9 +40,15 @@ func _physics_process(delta: float) -> void:
 	var rubberbanded_speed = rubberband.sample_baked(get_distance()) * current_speed * speed_mod
 	position.x += rubberbanded_speed * delta
 	current_speed += acceleration * delta
+	acceleration += acceleration_acceleration * delta
 	for body in get_overlapping_bodies():
 		body.take_damage(delta * 20.0)
 		_do_grab(body)
+
+
+func repel() -> void:
+	current_speed -= repel_strength
+	print("REPELLED\nREPELLED\nREPELLED\n", current_speed)
 
 
 func get_distance() -> float:
@@ -76,3 +84,8 @@ func _do_grab(body: RigidBody2D) -> void:
 
 	average_position /= hits
 	body.apply_force(Vector2(-drag_strength, 0.0), average_position - body.global_position)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	# assume this is a spirit
+	area.queue_free()

@@ -2,8 +2,10 @@ class_name SpiritkeeperCharacterController3D extends CharacterBody3D
 
 const TERMINAL_VELOCITY := 16.0
 
-const IDLE_ANIMATION_NAME := &"imported/idle"
-const WALK_ANIMATION_NAME := &"imported/walk"
+const IDLE_ANIMATION_NAME := &"01_idle"
+const WALK_ANIMATION_NAME := &"02_walk"
+const PLAY_SHAKUHACHI_ANIMATION_NAME := &"03_play_shakuhachi"
+const MAP_ANIMATION_NAME := &"04_open_map"
 
 @export_category("Setup")
 @export var animation_player: AnimationPlayer
@@ -19,6 +21,9 @@ const WALK_ANIMATION_NAME := &"imported/walk"
 @export var is_immobile: bool = false
 
 @export_category("Animation")
+@export var staff: Node3D
+@export var map: Node3D
+@export var shakuhachi: Node3D
 @export var spring_bone_simulators: Array[SpringBoneSimulator3D]
 
 @export_group("Model Lean")
@@ -31,8 +36,22 @@ const WALK_ANIMATION_NAME := &"imported/walk"
 @export var model_rotation_speed: float = 10.0
 
 var state_machine: NoxCallableStateMachine
+var enable_dynamic_spring_arm_length: bool = true
 
 var _last_strong_direction: Vector3
+var _possible_interaction: InteractionComponent3D
+var _interaction_finished_sound: AudioStream
+var _current_dialog: NPCDialog
+var _dialog_selection_index: int = -1
+
+@onready var label_interaction_hint: Label = %"Label Interaction Hint"
+@onready var shapecast_floor_check: ShapeCast3D = %"ShapeCast3D Floor Check"
+@onready var raycast_ground_contact: RayCast3D = $"RayCast3D Ground Contact"
+@onready var audio_player_interaction: AudioStreamPlayer = $"AudioStreamPlayer Interaction"
+@onready var camera_spring_arm: SpringArm3D = $CameraController/CameraPivot/SpringArm3D
+@onready var orig_spring_arm_length: float = camera_spring_arm.spring_length
+@onready var dialog_parent: MarginContainer = %"MarginContainer Dialog"
+@onready var dialog_vbox: VBoxContainer = %"VBoxContainer Dialog"
 
 
 #region states
@@ -48,7 +67,7 @@ func idle_state() -> void:
 	if not desired_movement.is_equal_approx(Vector3.ZERO):
 		state_machine.change_state(move_state)
 
-	move_and_slide()
+	move()
 
 
 func move_state_enter() -> void:
@@ -69,7 +88,34 @@ func move_state() -> void:
 		velocity = Vector3.ZERO
 		state_machine.change_state(idle_state)
 
-	move_and_slide()
+	move()
+
+
+func interact_state_enter():
+	animation_player.play(IDLE_ANIMATION_NAME)
+
+
+func interact_state():
+	if _current_dialog:
+		if Input.is_action_just_pressed("primary_action"):
+			display_dialog()
+
+		if Input.is_action_just_pressed("exit_menu"):
+			end_dialog()
+
+		var choose: int = 0
+		if Input.is_action_just_pressed("up"):
+			choose = -1
+		if Input.is_action_just_pressed("down"):
+			choose = 1
+
+		if choose != 0:
+			var choices := dialog_vbox.get_child_count()
+			if _dialog_selection_index == -1:
+				_dialog_selection_index = 0
+
+			_dialog_selection_index = wrapi(_dialog_selection_index + choose, 0, choices)
+			display_dialog(false)
 
 
 #endregion
@@ -112,18 +158,51 @@ func _handle_model_orientation(desired_direction: Vector3, delta: float) -> void
 	)
 
 
+func move():
+	if enable_dynamic_spring_arm_length:
+		adjust_spring_arm()
+
+	if shapecast_floor_check.is_colliding():
+		move_and_slide()
+
+	if not raycast_ground_contact.is_colliding():
+		apply_floor_snap()
+
+
+func adjust_spring_arm():
+	var dot: float = velocity.normalized().dot(global_position.direction_to(camera.global_position))
+	var target_length: float = lerp(
+		orig_spring_arm_length, orig_spring_arm_length * 2, clampf(dot, 0.0, 1.0)
+	)
+	camera_spring_arm.spring_length = lerp(
+		camera_spring_arm.spring_length, target_length, get_physics_process_delta_time()
+	)
+
+
 #endregion
 
 
 #region built-ins
 func _ready() -> void:
+	EventBus.stop_player_interaction.connect(stop_interaction)
+	EventBus.notify_player_possible_interaction.connect(_on_possible_interaction)
+	EventBus.notify_player_interaction_lost.connect(_on_interaction_lost)
+
 	# states
 	state_machine = NoxCallableStateMachine.new()
 
 	state_machine.add_state(idle_state, idle_state_enter)
 	state_machine.add_state(move_state, move_state_enter)
+	state_machine.add_state(interact_state, interact_state_enter)
 
 	state_machine.set_initial_state(idle_state)
+
+	# animation
+	map.hide()
+	shakuhachi.hide()
+
+	# misc
+	shapecast_floor_check.add_exception_rid(get_rid())
 
 
 func _physics_process(delta: float) -> void:
@@ -137,5 +216,104 @@ func _physics_process(delta: float) -> void:
 	if not velocity_xz.is_equal_approx(Vector3.ZERO):
 		_handle_model_orientation(velocity_xz, delta)
 	_handle_model_lean(delta)
+
+
+#endregion
+
+#region interactions
+
+
+func interact_with(_obj: Node3D) -> bool:
+	label_interaction_hint.hide()
+	if state_machine.current_state_equals(interact_state):
+		return false
+	state_machine.change_state(interact_state)
+	return true
+
+
+func stop_interaction():
+	if _interaction_finished_sound:
+		audio_player_interaction.stream = _interaction_finished_sound
+		audio_player_interaction.play()
+	state_machine.change_state(idle_state)
+
+
+func set_interaction_sounds(initial_sound: AudioStream, finishing_sound: AudioStream):
+	if initial_sound:
+		audio_player_interaction.stream = initial_sound
+		audio_player_interaction.play()
+	_interaction_finished_sound = finishing_sound
+
+
+func _on_possible_interaction(component: InteractionComponent3D):
+	_possible_interaction = component
+	if component.action_ui_suffix:
+		label_interaction_hint.text = "Press SPACE to " + component.action_ui_suffix
+		label_interaction_hint.show()
+
+
+func _on_interaction_lost(component: InteractionComponent3D):
+	if component == _possible_interaction:
+		label_interaction_hint.hide()
+
+
+func is_interacting() -> bool:
+	return state_machine.current_state_equals(interact_state)
+
+
+#endregion
+
+#region dialog
+
+
+func start_dialog(dialog: NPCDialog):
+	assert(not _current_dialog)
+	_current_dialog = dialog
+	if not _current_dialog.state:
+		_current_dialog.state = NPCDialogState.new()
+
+	_current_dialog.state.current_index = 0
+	_dialog_selection_index = -1
+
+	display_dialog()
+
+
+func display_dialog(advance: bool = true):
+	clear_dialog()
+	var lines := _current_dialog.get_next_lines()
+	if lines.is_empty():
+		end_dialog()
+		return
+
+	add_dialog_labels(lines)
+	if advance:
+		_current_dialog.advance(_dialog_selection_index)
+		if _dialog_selection_index > -1:
+			_dialog_selection_index = -1
+
+	dialog_parent.show()
+
+
+func add_dialog_labels(arr: Array[String]):
+	for i in arr.size():
+		var text := arr[i]
+		var label := Label.new()
+		label.text = text
+		if arr.size() > 1 and i != _dialog_selection_index:
+			label.modulate = Color.DIM_GRAY
+		dialog_vbox.add_child(label)
+
+
+func end_dialog():
+	clear_dialog()
+	dialog_parent.hide()
+	_current_dialog = null
+	state_machine.change_state(idle_state)
+
+
+func clear_dialog():
+	for child in dialog_vbox.get_children():
+		dialog_vbox.remove_child(child)
+		child.queue_free()
 
 #endregion

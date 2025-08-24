@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=14 format=3 uid="uid://c42c02aco4j28"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_kwfrx"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_vgyrm"]
+[ext_resource type="Resource" uid="uid://df7knsfckprdd" path="res://modules/essence/resources/wind.tres" id="3_ouu5b"]
+[ext_resource type="Texture2D" uid="uid://0hrsbku0to2f" path="res://assets/minigames/wind_rhythm/upgrade_icons/lane_add_1.png" id="4_qcvaj"]
+[ext_resource type="Script" uid="uid://cdf23gftlnxqd" path="res://modules/minigame/wind_rhythm/data/upgrade_logic.gd" id="5_vgyrm"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="5_vhaiu"]
+[ext_resource type="Resource" uid="uid://b7u6kg7p1x6pk" path="res://modules/minigame/wind_rhythm/data/upgrades/add_lane_2.tres" id="6_gcd7h"]
+[ext_resource type="Resource" uid="uid://cfmijawg1vajt" path="res://modules/minigame/wind_rhythm/data/upgrades/conductor_2.tres" id="7_si18c"]
+
+[sub_resource type="Resource" id="Resource_ptcis"]
+script = ExtResource("2_vgyrm")
+essence = ExtResource("3_ouu5b")
+amount = 25
+
+[sub_resource type="Resource" id="Resource_a1ih2"]
+script = ExtResource("1_kwfrx")
+earth = 0
+fire = 0
+water = 0
+wind = 25
+slots = Array[ExtResource("2_vgyrm")]([SubResource("Resource_ptcis")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_vgyrm"]
+script = ExtResource("2_vgyrm")
+essence = ExtResource("3_ouu5b")
+amount = 25
+
+[sub_resource type="Resource" id="Resource_ouu5b"]
+script = ExtResource("1_kwfrx")
+earth = 0
+fire = 0
+water = 0
+wind = 25
+slots = Array[ExtResource("2_vgyrm")]([SubResource("Resource_vgyrm")])
+
+[sub_resource type="Resource" id="Resource_vhaiu"]
+script = ExtResource("5_vgyrm")
+upgrade_type = 0
+metadata/_custom_type_script = "uid://cdf23gftlnxqd"
+
+[resource]
+script = ExtResource("5_vhaiu")
+logic = SubResource("Resource_vhaiu")
+unlocks_feature = ""
+name = "Add lane 1"
+flavor = ""
+icon = ExtResource("4_qcvaj")
+position = Vector2(-384, 1408)
+cost_arr = Array[ExtResource("1_kwfrx")]([SubResource("Resource_ouu5b")])
+effect_modifier_arr = Array[float]([1.0])
+max_level = 1
+base_cost = SubResource("Resource_a1ih2")
+base_cost_multiplier = 1.0
+exponential_cost = true
+round_smoothness = 1.0
+base_effect_modifier = 1.0
+effect_modifier_multiplier = 1.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("6_gcd7h"), ExtResource("7_si18c")])
+description_prefix = ""
+description_suffix = ""
+description_modifier_format = 0
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

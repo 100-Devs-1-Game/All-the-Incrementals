@@ -17,6 +17,21 @@ jobs:
     - uses: Scony/godot-gdscript-toolkit@master
     - uses: pre-commit/action@v3.0.1
 
+  # This could be a pre-commit hook but it's quite expensive, so we only run it on CI
+  godot-validator:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout LFS objects
+        run: git lfs pull
+
+      - name: Run Validation
+        run: |
+          set -eo pipefail
+          ./.hooks/validate_godot_project.py --project-root src/
+
   tests:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -26,12 +41,23 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
         uses: actions/checkout@v4
+
       - name: Checkout LFS objects
         run: git lfs pull
 
+      - name: Git Diff Pre-Test
+        run: |
+          git status
+          git diff
+
       - name: unit tests with godot gut
-        uses: 100-Devs-1-Game/godot-gut-ci@fix/import-gut
+        uses: 100-Devs-1-Game/godot-gut-ci@feature/better-ci-errors
         with:
           godot_version: ${{ env.GODOT_VERSION }}
           gut_params: -gdir=res://tests/unit
           project_path: src
+
+      - name: Git Diff Post-Test
+        run: |
+          git status
+          git diff

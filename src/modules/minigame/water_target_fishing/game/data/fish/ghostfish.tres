@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="WTFFishData" load_steps=8 format=3 uid="uid://d1aw44kh2gdyy"]
+
+[ext_resource type="Script" uid="uid://dl0x10lns1e17" path="res://modules/minigame/water_target_fishing/game/fish_data.gd" id="1_4a63f"]
+[ext_resource type="Script" uid="uid://hrgdcmm0gruk" path="res://modules/minigame/water_target_fishing/game/pickup_data.gd" id="1_jh7ck"]
+[ext_resource type="Script" uid="uid://meklva8v881i" path="res://modules/minigame/water_target_fishing/game/spawn_data.gd" id="3_2n6eg"]
+[ext_resource type="Texture2D" uid="uid://b04dnrxca5xmg" path="res://assets/minigames/water_target_fishing/fish/ghost_fish.png" id="4_8n80m"]
+
+[sub_resource type="Resource" id="Resource_6g1fw"]
+script = ExtResource("1_jh7ck")
+speedboost = 2100.0
+weight = 210.0
+score = 70
+metadata/_custom_type_script = "uid://hrgdcmm0gruk"
+
+[sub_resource type="Resource" id="Resource_mxo0x"]
+script = ExtResource("3_2n6eg")
+spawn_type = 2
+min_spawn_distance = 10000.0
+_min_spawn_depth = 1000.0
+_max_spawn_depth = 2000.0
+metadata/_custom_type_script = "uid://meklva8v881i"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhoy5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8n80m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_4a63f")
+player_movement_multiplier = 0.3
+base_speed = 15000.0
+texture = SubResource("SpriteFrames_bhoy5")
+pickup = SubResource("Resource_6g1fw")
+spawn = SubResource("Resource_mxo0x")
+metadata/_custom_type_script = "uid://dl0x10lns1e17"

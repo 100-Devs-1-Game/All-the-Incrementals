@@ -8,7 +8,9 @@
 
 [resource]
 script = ExtResource("1_p0xj7")
-display_name = "fire_cooking"
+display_name = "Soul Food"
+how_to_play = ""
+music_track = ""
 minigame_scene = ExtResource("1_etk26")
 upgrade_tree_root_nodes = Array[ExtResource("2_etk26")]([ExtResource("5_l0r53")])
 output_essence = ExtResource("2_kse2p")

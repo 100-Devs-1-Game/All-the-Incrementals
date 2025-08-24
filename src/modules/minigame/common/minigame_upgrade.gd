@@ -11,7 +11,7 @@ extends BaseUpgrade
 
 func get_description(level: int = -1) -> String:
 	var result: String
-	if unlocks_feature:
+	if unlocks_feature and level == 0:
 		result = "[Unlocks %s] " % unlocks_feature
 
 	if description_modifier_format == ModifierFormat.UNLOCK:

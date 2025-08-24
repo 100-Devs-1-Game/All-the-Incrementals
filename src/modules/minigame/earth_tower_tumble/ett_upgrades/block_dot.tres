@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=19 format=3 uid="uid://cbwb6gfp3b5w0"]
+
+[ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_u4pqv"]
+[ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_i6h1v"]
+[ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_y3k7o"]
+[ext_resource type="Resource" uid="uid://j13h5v6bwmxe" path="res://modules/essence/resources/earth.tres" id="3_lvhlo"]
+[ext_resource type="Resource" uid="uid://kwd3sg27pka7" path="res://modules/essence/resources/fire.tres" id="4_b3dhg"]
+[ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="5_vnrj7"]
+[ext_resource type="Texture2D" uid="uid://dtqdxe8thg7rn" path="res://assets/minigames/earth_tower_tumble/icons/blocks_deal_spirit_dot.png" id="6_hu5my"]
+[ext_resource type="Script" uid="uid://c5sirmi2235ls" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/ett_upgrade_logic.gd" id="7_w641x"]
+[ext_resource type="Resource" uid="uid://dkhtkb0uv2uew" path="res://modules/minigame/earth_tower_tumble/ett_upgrades/max_height.tres" id="9_lvhlo"]
+
+[sub_resource type="Resource" id="Resource_llwva"]
+script = ExtResource("2_i6h1v")
+essence = ExtResource("3_lvhlo")
+amount = 50
+
+[sub_resource type="Resource" id="Resource_bq1hh"]
+script = ExtResource("2_i6h1v")
+essence = ExtResource("4_b3dhg")
+amount = 20
+
+[sub_resource type="Resource" id="Resource_m16cc"]
+script = ExtResource("2_i6h1v")
+essence = ExtResource("5_vnrj7")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_0rbbv"]
+script = ExtResource("1_u4pqv")
+earth = 50
+fire = 20
+water = 5
+wind = 0
+slots = Array[ExtResource("2_i6h1v")]([SubResource("Resource_llwva"), SubResource("Resource_bq1hh"), SubResource("Resource_m16cc")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_kxx4y"]
+script = ExtResource("2_i6h1v")
+essence = ExtResource("3_lvhlo")
+amount = 150
+
+[sub_resource type="Resource" id="Resource_4kw53"]
+script = ExtResource("2_i6h1v")
+essence = ExtResource("4_b3dhg")
+amount = 60
+
+[sub_resource type="Resource" id="Resource_leo5s"]
+script = ExtResource("2_i6h1v")
+essence = ExtResource("5_vnrj7")
+amount = 10
+
+[sub_resource type="Resource" id="Resource_beitn"]
+script = ExtResource("1_u4pqv")
+earth = 150
+fire = 60
+water = 10
+wind = 0
+slots = Array[ExtResource("2_i6h1v")]([SubResource("Resource_kxx4y"), SubResource("Resource_4kw53"), SubResource("Resource_leo5s")])
+metadata/_custom_type_script = "uid://cjjat8tguw7wt"
+
+[sub_resource type="Resource" id="Resource_mwn0h"]
+script = ExtResource("7_w641x")
+type = 0
+metadata/_custom_type_script = "uid://c5sirmi2235ls"
+
+[resource]
+script = ExtResource("2_y3k7o")
+logic = SubResource("Resource_mwn0h")
+unlocks_feature = ""
+name = "Harmful Blocks"
+flavor = ""
+icon = ExtResource("6_hu5my")
+position = Vector2(960, 1536)
+cost_arr = Array[ExtResource("1_u4pqv")]([SubResource("Resource_0rbbv"), SubResource("Resource_beitn")])
+effect_modifier_arr = Array[float]([3.0, 8.0])
+max_level = 0
+base_cost_multiplier = 0.0
+exponential_cost = false
+round_smoothness = 1.0
+base_effect_modifier = 0.0
+effect_modifier_multiplier = 0.0
+unlocked = false
+unlock_level_index = 0
+unlocks = Array[Resource]([ExtResource("9_lvhlo")])
+description_prefix = "Deals"
+description_suffix = "points of damage to evil spirits touching it over time."
+description_modifier_format = 1
+metadata/_tree_editor_version_added = 1
+metadata/_tree_editor_version_saved = 1

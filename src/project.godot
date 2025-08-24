@@ -33,6 +33,7 @@ GameSettings="*res://modules/settings/game_settings.gd"
 SceneLoader="*res://global/scene_loader.gd"
 Player="*res://global/player.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+PassiveEssenceGeneration="*res://modules/overworld/global/passive_essence_generation.tscn"
 
 [debug]
 
@@ -114,6 +115,7 @@ exit_menu={
 
 [physics]
 
+3d/physics_engine="Jolt Physics"
 common/physics_interpolation=true
 
 [rendering]

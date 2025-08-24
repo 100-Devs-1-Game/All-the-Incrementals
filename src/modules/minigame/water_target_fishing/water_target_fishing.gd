@@ -24,6 +24,20 @@ var _first_spawn: bool = true
 @onready var ui_distance_value: RichTextLabel = %UIDistanceValue
 @onready var ui_carry_value: RichTextLabel = %UICarryValue
 
+# 100char line limit that gdlint hates and gdformat causes
+@onready
+var mm: MinigameMenu = $MinigameSharedComponents/SharedBaseComponents/CanvasLayer/MinigameMenu
+
+
+func play_audio(p_stream: AudioStream):
+	var effect := AudioStreamPlayer.new()
+	effect.autoplay = true
+	effect.bus = "SFX"
+	effect.stream = p_stream
+	effect.pitch_scale = randf_range(0.9, 1.1)
+
+	add_child(effect)
+
 
 func get_pixels_per_second() -> int:
 	return floori(-stats.scrollspeed.x)
@@ -70,16 +84,47 @@ func _start() -> void:
 	print("oxygen mult %s" % stats.oxygen_capacity_multiplier)
 	print("oxygen total %s/%s" % [stats.oxygen_remaining(), stats.oxygen_capacity()])
 
+	# setup UI etc before we get paused
+	_process(1.0 / 60.0)
+	try_spawn_fish()
+
+	# wait a bit before the game starts
+	if !SceneLoader.is_immediate_play():
+		await mm.play_pressed  # wait until the player presses play tho
+	get_tree().paused = true
+	await get_tree().create_timer(0.5).timeout
+	get_tree().paused = false
 	_started = true
 
 
 func _process(_delta: float) -> void:
 	ui_speed_value.text = str(get_pixels_per_second())
 	ui_score_value.text = str(get_score())
-	ui_oxygen_value.text = str(WTFGlobals.minigame.stats.oxygen_percentage()) + "%"
+
+	ui_oxygen_value.text = ""
+	var oxygen_str := str(stats.oxygen_percentage()) + "%"
+	if stats.oxygen_percentage() > 80:
+		ui_oxygen_value.append_text("[color=white]%s[/color]" % oxygen_str)
+	elif stats.oxygen_percentage() > 60:
+		ui_oxygen_value.append_text("[color=#FFFF99]%s[/color]" % oxygen_str)
+	elif stats.oxygen_percentage() > 40:
+		ui_oxygen_value.append_text("[color=orange]%s[/color]" % oxygen_str)
+	elif stats.oxygen_percentage() > 20:
+		ui_oxygen_value.append_text("[color=orangered]%s[/color]" % oxygen_str)
+	elif stats.oxygen_percentage() > 0:
+		ui_oxygen_value.append_text("[color=red]%s[/color]" % oxygen_str)
+	else:
+		ui_oxygen_value.append_text("[color=black]%s[/color]" % oxygen_str)
+
 	ui_weight_value.text = str(floori(stats.total_added_weight()))
 	ui_distance_value.text = str(floori(_distance_travelled))
-	ui_carry_value.text = "%s/%s" % [floori(stats.carrying), floori(stats.carry_capacity())]
+	if stats.carry_remaining() <= 0:
+		ui_carry_value.text = ""
+		ui_carry_value.append_text(
+			"[color=red]%s/%s[/color]" % [floori(stats.carrying), floori(stats.carry_capacity())]
+		)
+	else:
+		ui_carry_value.text = "%s/%s" % [floori(stats.carrying), floori(stats.carry_capacity())]
 
 
 func random_spawnable_fish(
@@ -150,10 +195,9 @@ func _spawn_fish() -> void:
 	if WTFGlobals.camera.get_bottom() <= WTFConstants.SEALEVEL:
 		return
 
-	if $%Entities.get_child_count() > 200:
+	if $%Entities.get_child_count() > 100:
 		return
 
-	var rand_offset_x := randf_range(1, 4) * -stats.scrollspeed.x
 	var min_spawn_y := WTFGlobals.camera.get_top() - 320
 	var max_spawn_y := WTFGlobals.camera.get_bottom() - 320
 
@@ -171,7 +215,7 @@ func _spawn_fish() -> void:
 	if _first_spawn:
 		f.position.x = -stats.scrollspeed.x + randf_range(0, WTFGlobals.camera.get_right() * 2)
 	else:
-		f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + rand_offset_x)
+		f.position.x = (_distance_travelled + WTFGlobals.camera.get_right() + 512)
 
 	# somewhere within the valid range and also close to the camera
 	var height_range := f.data.spawn.get_spawn_height_range()
@@ -181,6 +225,15 @@ func _spawn_fish() -> void:
 	# we may eventually deal with floating point imprecision
 	# should instead move all entity children and let them auto-delete, keeping positions sane
 	%Entities.add_child(f)
+	f.reset_physics_interpolation()
+
+
+func try_spawn_fish() -> void:
+	#todo replace with good spawning
+	while _distance_since_spawned > stats.spawn_fish_every_x_pixels:
+		_spawn_fish()
+		_distance_since_spawned -= stats.spawn_fish_every_x_pixels
+	_first_spawn = false
 
 
 func _physics_process(delta: float) -> void:
@@ -207,9 +260,4 @@ func _physics_process(delta: float) -> void:
 
 	_distance_travelled += -1 * stats.scrollspeed.x * delta
 	_distance_since_spawned += -1 * stats.scrollspeed.x * delta
-
-	#todo replace with good spawning
-	while _distance_since_spawned > stats.spawn_fish_every_x_pixels:
-		_spawn_fish()
-		_distance_since_spawned -= stats.spawn_fish_every_x_pixels
-	_first_spawn = false
+	try_spawn_fish()

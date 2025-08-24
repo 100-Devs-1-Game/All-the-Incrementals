@@ -4,6 +4,12 @@ extends Resource
 # Minigame name in-game
 @export var display_name: String
 
+# Short description how to play this game
+@export_multiline var how_to_play: String
+
+# Identifier of the song for this Minigame
+@export var music_track: String
+
 # the game scene of this Minigame
 @export var minigame_scene: PackedScene
 
@@ -33,7 +39,7 @@ func get_all_upgrades(
 		root_nodes.assign(upgrade_tree_root_nodes)
 
 	for upgrade in root_nodes:
-		if unlocked_only and upgrade.get_level() <= -1:
+		if unlocked_only and upgrade.get_level_index() <= -1:
 			continue
 		result.append(upgrade)
 		result.append_array(get_all_upgrades(upgrade, unlocked_only))
