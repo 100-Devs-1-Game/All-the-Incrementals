@@ -310,11 +310,6 @@ transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Camera & Lights"]
 environment = SubResource("Environment_s7c67")
 
-[node name="Camera3D" type="Camera3D" parent="Camera & Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.07926e-07, 1.5, 11.48)
-keep_aspect = 0
-fov = 70.0
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera & Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54747e-13, 14.0754, -1.98776e-20)
 light_color = Color(0.794937, 0.923491, 0.943206, 1)
