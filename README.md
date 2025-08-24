@@ -125,11 +125,15 @@ To gain access (LFS credentials), check the `#links` channel on discord. *This i
 
 Thanks goes to all these wonderful people :heart:
 
+### Lead Project Owner
+
+* Codimon
+
 ### Lead Game Designer
 
 * Noxalas
 
-### Art (in alphabetical order)
+### Art
 
 * Axureé
 * Hannah Sekerka
@@ -138,7 +142,7 @@ Thanks goes to all these wonderful people :heart:
 * Skin
 * Turtle
 
-### Code (in alphabetical order)
+### Code
 
 * AssortedFrogs
 * Cdw849
@@ -155,13 +159,12 @@ Thanks goes to all these wonderful people :heart:
 * UwUMacaroniTime
 * [Zephilinox](https://zephilinox.com/)
 
-### Narrative (in alphabetical order)
+### Narrative
 
 * [Chris Smith](https://www.christopherrexsmith.com)
 * Nixulus (Lead)
 
-### Operations (in alphabetical order)
-
+### Operations
 * alienteavend
 * Codimon
 * krova
@@ -169,11 +172,11 @@ Thanks goes to all these wonderful people :heart:
 * niconorsk
 * [Zephilinox](https://zephilinox.com/)
 
-### QA (in alphabetical order)
+### QA
 
 * Duncan
 
-### Sound (in alphabetical order)
+### Sound
 
 * 4tenmu
 * Ben Thomson
