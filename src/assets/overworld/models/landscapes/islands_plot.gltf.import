@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c6isib3ylef32"
-valid=false
+path="res://.godot/imported/islands_plot.gltf-6b02e2edc909a00ea7488b403cfb0327.scn"
 
 [deps]
 
 source_file="res://assets/overworld/models/landscapes/islands_plot.gltf"
+dest_files=["res://.godot/imported/islands_plot.gltf-6b02e2edc909a00ea7488b403cfb0327.scn"]
 
 [params]
 

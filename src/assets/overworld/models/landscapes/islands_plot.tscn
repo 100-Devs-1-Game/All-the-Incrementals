@@ -1,11 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://deqn20hbm638v"]
 
-[ext_resource type="Material" uid="uid://6o7sv4gqtbqa" path="res://assets/overworld/materials/textures/ground/ground_04.tres" id="2_2g1rq"]
+[ext_resource type="PackedScene" uid="uid://c6isib3ylef32" path="res://models/landscapes/islands_plot.gltf" id="1_0u01t"]
+[ext_resource type="Material" uid="uid://6o7sv4gqtbqa" path="res://materials/textures/ground/ground_04.tres" id="2_2g1rq"]
 
-[sub_resource type="Resource" id="Resource_t0x7y"]
-metadata/__load_path__ = "res://assets/overworld/models/landscapes/islands_plot.gltf"
-
-[node name="islands_plot"]
+[node name="islands_plot" instance=ExtResource("1_0u01t")]
 
 [node name="landscape_plot" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_2g1rq")
