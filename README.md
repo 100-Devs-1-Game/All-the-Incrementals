@@ -181,6 +181,7 @@ Thanks goes to all these wonderful people :heart:
 * Dan Lopes
 * Fae (Lead composer)
 * Frog
+* [the0show](https://the0show.com/)
 * Wo.oDZ
 
 
