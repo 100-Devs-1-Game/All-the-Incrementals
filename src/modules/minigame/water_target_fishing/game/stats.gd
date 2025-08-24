@@ -9,14 +9,14 @@ var carrying: int
 var oxygen_remaining_seconds: float
 
 # data that changes due to upgrades/rebalancing
-var scrollspeed_initial: Vector2 = Vector2(-1000, 0)
+var scrollspeed_initial: Vector2 = Vector2(-2000, 0)
 var speedboost_multiplier: float = 1
 var speedboost_flat: float = 0
 
 var score_multiplier: float = 1
 var score_flat: float = 0
 var weight_multiplier_diff: float = 0
-var weight_initial: float = 100
+var weight_initial: float = 400
 var carry_initial: int = 5
 var carry_flat: int = 0
 
