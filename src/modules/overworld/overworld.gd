@@ -9,14 +9,12 @@ const PLAYER_CHARACTER_SCENE = preload(
 var _current_settlement: OverworldLocation3D
 var _current_settlement_data: SettlementData
 
-@onready var overworld_map: OverworldMapMenu = %OverworldMap
 @onready var player_holder_node: Node3D = %PlayerHolder
 @onready var settlement_scene_holder_node: Node3D = %SceneHolder
 @onready var journal_page_ui: JournalPageUI = %JournalPageUI
 
 
 func _ready() -> void:
-	assert(is_instance_valid(overworld_map), "OverworldMap node must be set.")
 	assert(is_instance_valid(starting_settlement_data), "Starting settlement data must be set.")
 
 	EventBus.wants_to_travel_to.connect(change_to_settlement)
@@ -30,7 +28,7 @@ func _ready() -> void:
 
 
 func open_overworld_map() -> void:
-	overworld_map.show()
+	assert(false, "Removed")
 
 
 func change_to_settlement(data: SettlementData) -> void:
