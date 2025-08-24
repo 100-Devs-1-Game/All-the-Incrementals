@@ -28,6 +28,14 @@ repos:
         language: python
         language_version: python3
         exclude: '^\.github/|src/external/|src/addons/|README\.md$|LICENSE$|^.pre-commit-config.yaml$'
+      #- id: validate-godot-project
+      #  name: Validate godot project
+      #  entry: ./.hooks/validate_godot_project.py --project-root src/
+      #  language: python
+      #  language_version: python3
+      #  exclude: '^\.github/|src/external/|src/addons/|README\.md$|LICENSE$|^.pre-commit-config.yaml$'
+      #  pass_filenames: false
+      #  always_run: true
       - id: helpful-hints
         name: Display helpful hints
         entry: ./.hooks/helpful_hints.py
