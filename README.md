@@ -177,9 +177,11 @@ Thanks goes to all these wonderful people :heart:
 
 * 4tenmu
 * Ben Thomson
+* [Chrishie](https://www.youtube.com/@chrishiest)
 * Dan Lopes
 * Fae (Lead composer)
 * Frog
+* Wo.oDZ
 
 
 If anyone is missing from the list, let us know in [Discord](https://discord.com/channels/1393033395298373643/1398176092082278464) right away!
