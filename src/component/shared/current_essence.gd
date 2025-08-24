@@ -4,6 +4,7 @@ extends Control
 
 func _ready() -> void:
 	EventBus.ui_upgrade_bought.connect(refresh_labels)
+	EventBus.passive_essence_generation_tick.connect(refresh_labels)
 	refresh_labels()
 
 

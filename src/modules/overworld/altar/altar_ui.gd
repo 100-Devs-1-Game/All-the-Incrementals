@@ -83,7 +83,6 @@ func _on_leave_pressed() -> void:
 func _on_generation_tick():
 	if visible:
 		assert(_altar_stats != null)
-		current_essence_display.refresh_labels()
 		update()
 
 
