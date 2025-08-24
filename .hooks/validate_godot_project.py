@@ -16,7 +16,6 @@ import re
 import sys
 import time
 import struct
-import zstandard as zstd
 from pathlib import Path
 from typing import Dict, Set, List, Tuple, Optional
 from collections import defaultdict
@@ -95,9 +94,10 @@ class GodotValidator:
                 try:
                     self._process_binary_file(file_path)
                 except Exception as e:
-                    print(f"Failed to read UID from {file_path}: {e}")
+                    pass
+                    #print(f"Failed to read UID from {file_path}: {e}")
                 continue
-            
+
             if file_path.suffix not in ['.uid', '.tscn', '.tres', '.import']:
                 continue
 
