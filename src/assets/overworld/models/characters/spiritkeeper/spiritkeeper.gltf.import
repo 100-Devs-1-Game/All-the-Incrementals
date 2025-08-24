@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dcsyjfr3p0qen"
-path="res://.godot/imported/spiritkeeper.gltf-0e2e5c970a4bdb912ddc78100d2f3f5e.scn"
+path="res://.godot/imported/spiritkeeper.gltf-7dc26513e7261a6a0728353e3845e76c.scn"
 
 [deps]
 
-source_file="res://models/characters/spiritkeeper/spiritkeeper.gltf"
-dest_files=["res://.godot/imported/spiritkeeper.gltf-0e2e5c970a4bdb912ddc78100d2f3f5e.scn"]
+source_file="res://assets/overworld/models/characters/spiritkeeper/spiritkeeper.gltf"
+dest_files=["res://.godot/imported/spiritkeeper.gltf-7dc26513e7261a6a0728353e3845e76c.scn"]
 
 [params]
 

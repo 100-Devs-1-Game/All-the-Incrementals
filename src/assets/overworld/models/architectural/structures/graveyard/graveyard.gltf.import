@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cm3rghkvel2l2"
-path="res://.godot/imported/graveyard.gltf-e5b52bdeb9766f04f020b8e4f6732ae6.scn"
+path="res://.godot/imported/graveyard.gltf-c41e8582296b28733a1a86f18dff004e.scn"
 
 [deps]
 
-source_file="res://models/architectural/structures/graveyard/graveyard.gltf"
-dest_files=["res://.godot/imported/graveyard.gltf-e5b52bdeb9766f04f020b8e4f6732ae6.scn"]
+source_file="res://assets/overworld/models/architectural/structures/graveyard/graveyard.gltf"
+dest_files=["res://.godot/imported/graveyard.gltf-c41e8582296b28733a1a86f18dff004e.scn"]
 
 [params]
 

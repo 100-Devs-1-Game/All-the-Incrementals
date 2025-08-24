@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cn1limo8v0o3i"
-path="res://.godot/imported/islands_surface.gltf-f67c4867427007531c6ccaf20418eccc.scn"
+path="res://.godot/imported/islands_surface.gltf-76bbb1d1ddc6147e1194c701137b9753.scn"
 
 [deps]
 
-source_file="res://models/landscapes/islands_surface.gltf"
-dest_files=["res://.godot/imported/islands_surface.gltf-f67c4867427007531c6ccaf20418eccc.scn"]
+source_file="res://assets/overworld/models/landscapes/islands_surface.gltf"
+dest_files=["res://.godot/imported/islands_surface.gltf-76bbb1d1ddc6147e1194c701137b9753.scn"]
 
 [params]
 

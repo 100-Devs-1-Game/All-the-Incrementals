@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdqivymooblgt"
-path.s3tc="res://.godot/imported/graveyard_gate.webp-1d75e1f5e88eb98c6bfdf86954757ce0.s3tc.ctex"
+path.s3tc="res://.godot/imported/graveyard_gate.webp-dd544034aef625babd7cbb688bef2462.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/architectural/structures/graveyard/graveyard_gate.webp"
-dest_files=["res://.godot/imported/graveyard_gate.webp-1d75e1f5e88eb98c6bfdf86954757ce0.s3tc.ctex"]
+source_file="res://assets/overworld/models/architectural/structures/graveyard/graveyard_gate.webp"
+dest_files=["res://.godot/imported/graveyard_gate.webp-dd544034aef625babd7cbb688bef2462.s3tc.ctex"]
 
 [params]
 

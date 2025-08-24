@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bgpfkah3np8y2"
-path="res://.godot/imported/breezekiln_leader.gltf-c85f8fe741ab9498d5505ada12455bb3.scn"
+path="res://.godot/imported/breezekiln_leader.gltf-7c6869c48b0b1fc3bf554ce83052b816.scn"
 
 [deps]
 
-source_file="res://models/characters/breezekiln_leader/breezekiln_leader.gltf"
-dest_files=["res://.godot/imported/breezekiln_leader.gltf-c85f8fe741ab9498d5505ada12455bb3.scn"]
+source_file="res://assets/overworld/models/characters/breezekiln_leader/breezekiln_leader.gltf"
+dest_files=["res://.godot/imported/breezekiln_leader.gltf-7c6869c48b0b1fc3bf554ce83052b816.scn"]
 
 [params]
 

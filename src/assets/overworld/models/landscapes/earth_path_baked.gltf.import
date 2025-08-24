@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cq4r3olkshrxm"
-path="res://.godot/imported/earth_path_baked.gltf-3e7aecf91f1a9fc26d3aa111a59e3e22.scn"
+path="res://.godot/imported/earth_path_baked.gltf-8133fb5db7415a62e8a3ada902419279.scn"
 
 [deps]
 
-source_file="res://models/landscapes/earth_path_baked.gltf"
-dest_files=["res://.godot/imported/earth_path_baked.gltf-3e7aecf91f1a9fc26d3aa111a59e3e22.scn"]
+source_file="res://assets/overworld/models/landscapes/earth_path_baked.gltf"
+dest_files=["res://.godot/imported/earth_path_baked.gltf-8133fb5db7415a62e8a3ada902419279.scn"]
 
 [params]
 

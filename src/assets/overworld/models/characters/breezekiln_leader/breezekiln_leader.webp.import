@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbx434phsq5fy"
-path.s3tc="res://.godot/imported/breezekiln_leader.webp-04546d86c46b75acf44013c1a3a58471.s3tc.ctex"
+path.s3tc="res://.godot/imported/breezekiln_leader.webp-5bb28b8ef7dca023434aefd70d4da41d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/characters/breezekiln_leader/breezekiln_leader.webp"
-dest_files=["res://.godot/imported/breezekiln_leader.webp-04546d86c46b75acf44013c1a3a58471.s3tc.ctex"]
+source_file="res://assets/overworld/models/characters/breezekiln_leader/breezekiln_leader.webp"
+dest_files=["res://.godot/imported/breezekiln_leader.webp-5bb28b8ef7dca023434aefd70d4da41d.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ug8n6sfrlb3o"
-path.s3tc="res://.godot/imported/clayport_leader.webp-4a2e5d8f8ac08d86b29e16a4fd2f845d.s3tc.ctex"
+path.s3tc="res://.godot/imported/clayport_leader.webp-0dbcc07146b1c912a28d94152d4eb9ea.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/characters/clayport_leader/clayport_leader.webp"
-dest_files=["res://.godot/imported/clayport_leader.webp-4a2e5d8f8ac08d86b29e16a4fd2f845d.s3tc.ctex"]
+source_file="res://assets/overworld/models/characters/clayport_leader/clayport_leader.webp"
+dest_files=["res://.godot/imported/clayport_leader.webp-0dbcc07146b1c912a28d94152d4eb9ea.s3tc.ctex"]
 
 [params]
 

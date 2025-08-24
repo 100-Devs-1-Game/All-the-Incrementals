@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c60572rnv3a7y"
-path.s3tc="res://.godot/imported/graveyard.webp-b36848f29fb6121799c320b723ced9ec.s3tc.ctex"
+path.s3tc="res://.godot/imported/graveyard.webp-821ffb3a02e823586b6d721ee8fb1444.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/architectural/structures/graveyard/graveyard.webp"
-dest_files=["res://.godot/imported/graveyard.webp-b36848f29fb6121799c320b723ced9ec.s3tc.ctex"]
+source_file="res://assets/overworld/models/architectural/structures/graveyard/graveyard.webp"
+dest_files=["res://.godot/imported/graveyard.webp-821ffb3a02e823586b6d721ee8fb1444.s3tc.ctex"]
 
 [params]
 

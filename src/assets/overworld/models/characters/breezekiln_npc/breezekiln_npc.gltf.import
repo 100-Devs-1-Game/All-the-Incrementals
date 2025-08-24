@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://db7tdkdv1bau6"
-path="res://.godot/imported/breezekiln_NPC.gltf-03705192c4df45b4d1f0e8a6c2c3c591.scn"
+path="res://.godot/imported/breezekiln_npc.gltf-9041041ab2d099d9355adb34419358d8.scn"
 
 [deps]
 
-source_file="res://models/characters/breezekiln_NPC/breezekiln_NPC.gltf"
-dest_files=["res://.godot/imported/breezekiln_NPC.gltf-03705192c4df45b4d1f0e8a6c2c3c591.scn"]
+source_file="res://assets/overworld/models/characters/breezekiln_npc/breezekiln_npc.gltf"
+dest_files=["res://.godot/imported/breezekiln_npc.gltf-9041041ab2d099d9355adb34419358d8.scn"]
 
 [params]
 
