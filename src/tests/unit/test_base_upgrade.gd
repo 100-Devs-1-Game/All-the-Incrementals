@@ -4,8 +4,6 @@ extends "res://addons/gut/test.gd"
 func test_variable_unlock_level_index() -> void:
 	var data_list: Array = get_all_minigame_upgrades("res://modules/minigame/")
 	for data: BaseUpgrade in data_list:
-		print("Check %s" % [data.resource_path])
-		push_warning(data.resource_path)
 		assert_between(
 			data.unlock_level_index,
 			-1,
