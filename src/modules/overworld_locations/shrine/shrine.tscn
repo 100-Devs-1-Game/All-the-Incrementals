@@ -701,3 +701,5 @@ shape = SubResource("BoxShape3D_0n3fe")
 [node name="DebugPopup" parent="." instance=ExtResource("55_6ws2q")]
 title = "Shrine"
 custom_debug_buttons = Array[ExtResource("56_mx4oj")]([ExtResource("57_k3vra"), ExtResource("58_g4s1e"), ExtResource("59_up51v"), ExtResource("60_w7w3e")])
+
+[connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]
