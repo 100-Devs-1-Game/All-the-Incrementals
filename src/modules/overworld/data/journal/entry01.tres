@@ -6,12 +6,12 @@
 [resource]
 script = ExtResource("1_fndpp")
 text = "Where did the gods go?
-I can no longer hear the gods songs. Maybe they are resting or went into hiding? The temples they have built still stand, but they do so in silence now. 
+I can no longer hear the gods songs. Maybe they are resting or went into hiding? The temples they have built still stand, but they do so in silence now.
 
-Without their guidance, the spirits has begun to act differently. As if they no longer knows their way. The people here seem to notice too, they have begun to whisper among themselves. 
+Without their guidance, the spirits have begun to act differently. As if they no longer know their way. The people here seem to notice too, they have begun to whisper among themselves.
 
-I hope the gods wake up soon. 
+I hope the gods wake up soon.
 
-— Keeper Tellen, Second in the Line "
+- Spiritkeeper Tellen, Second in the Line "
 page = ExtResource("1_k084g")
 metadata/_custom_type_script = "uid://b8mevt83bhkiu"

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_b75q1")
-text = "The Gods’ Departure
+text = "The Gods' Departure
 Solvar and Vandr are gone. No farewell. No sign. Only silence where their presence once sang through the skies.
 
 There was a time when the gods walked beside us. They shaped the land, stirred the winds, and breathed balance into every corner of this world. I used to hear their song in the breeze… but now, the wind carries nothing.
@@ -13,6 +13,6 @@ Their shrine still stands, but they grow weaker with each passing day.
 
 So I write this for the next of kin. I will watch over their land, as will you. In case they ever return.
 
- — Spiritkeeper Tellen, Second in the Line"
+ - Spiritkeeper Tellen, Second in the Line"
 page = ExtResource("1_ktwme")
 metadata/_custom_type_script = "uid://b8mevt83bhkiu"
