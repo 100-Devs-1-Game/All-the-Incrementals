@@ -303,6 +303,7 @@ shape = SubResource("SphereShape3D_6ws2q")
 
 [node name="CharacterSpawner" parent="." instance=ExtResource("6_wlsm5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.566238, 5.83685)
+enable_dynamic_spring_arm = false
 
 [node name="Camera & Lights" type="Node3D" parent="."]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
