@@ -26,14 +26,14 @@ buses/default_bus_layout="uid://cdssaq4iic0q6"
 [autoload]
 
 EventBus="*res://global/event_bus.gd"
-Logger="*res://addons/godot-logger/logger.gd"
 Music="*res://modules/music/music.tscn"
 SaveGameManager="*res://modules/save_system/save_game_manager.gd"
 GameSettings="*res://modules/settings/game_settings.gd"
 SceneLoader="*res://global/scene_loader.gd"
 Player="*res://global/player.gd"
-PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 PassiveEssenceGeneration="*res://modules/overworld/global/passive_essence_generation.tscn"
+Logger="*res://addons/godot-logger/logger.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [debug]
 
