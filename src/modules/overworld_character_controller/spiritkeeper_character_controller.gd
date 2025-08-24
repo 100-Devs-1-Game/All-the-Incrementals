@@ -42,6 +42,7 @@ var _last_strong_direction: Vector3
 var _possible_interaction: InteractionComponent3D
 var _interaction_finished_sound: AudioStream
 var _current_dialog: NPCDialog
+var _dialog_selection_index: int = -1
 
 @onready var label_interaction_hint: Label = %"Label Interaction Hint"
 @onready var shapecast_floor_check: ShapeCast3D = %"ShapeCast3D Floor Check"
@@ -95,20 +96,26 @@ func interact_state_enter():
 
 
 func interact_state():
-	pass
+	if _current_dialog:
+		if Input.is_action_just_pressed("primary_action"):
+			display_dialog()
 
+		if Input.is_action_just_pressed("exit_menu"):
+			end_dialog()
 
-func dialog_state_enter():
-	_current_dialog.state.current_index = 0
-	display_dialog()
+		var choose: int = 0
+		if Input.is_action_just_pressed("up"):
+			choose = -1
+		if Input.is_action_just_pressed("down"):
+			choose = 1
 
+		if choose != 0:
+			var choices := dialog_vbox.get_child_count()
+			if _dialog_selection_index == -1:
+				_dialog_selection_index = 0
 
-func dialog_state():
-	if Input.is_action_just_pressed("primary_action"):
-		display_dialog()
-
-	if Input.is_action_just_pressed("exit_menu"):
-		end_dialog()
+			_dialog_selection_index = wrapi(_dialog_selection_index + choose, 0, choices)
+			display_dialog(false)
 
 
 #endregion
@@ -187,7 +194,6 @@ func _ready() -> void:
 	state_machine.add_state(idle_state, idle_state_enter)
 	state_machine.add_state(move_state, move_state_enter)
 	state_machine.add_state(interact_state, interact_state_enter)
-	state_machine.add_state(dialog_state, dialog_state_enter)
 
 	state_machine.set_initial_state(idle_state)
 
@@ -251,6 +257,10 @@ func _on_interaction_lost(component: InteractionComponent3D):
 		label_interaction_hint.hide()
 
 
+func is_interacting() -> bool:
+	return state_machine.current_state_equals(interact_state)
+
+
 #endregion
 
 #region dialog
@@ -261,19 +271,36 @@ func start_dialog(dialog: NPCDialog):
 	_current_dialog = dialog
 	if not _current_dialog.state:
 		_current_dialog.state = NPCDialogState.new()
-	state_machine.change_state(dialog_state)
+
+	_current_dialog.state.current_index = 0
+	_dialog_selection_index = -1
+
+	display_dialog()
 
 
-func display_dialog():
+func display_dialog(advance: bool = true):
 	clear_dialog()
-	add_dialog_labels(_current_dialog.get_next_lines())
+	var lines := _current_dialog.get_next_lines()
+	if lines.is_empty():
+		end_dialog()
+		return
+
+	add_dialog_labels(lines)
+	if advance:
+		_current_dialog.advance(_dialog_selection_index)
+		if _dialog_selection_index > -1:
+			_dialog_selection_index = -1
+
 	dialog_parent.show()
 
 
 func add_dialog_labels(arr: Array[String]):
-	for text in arr:
+	for i in arr.size():
+		var text := arr[i]
 		var label := Label.new()
 		label.text = text
+		if arr.size() > 1 and i != _dialog_selection_index:
+			label.modulate = Color.DIM_GRAY
 		dialog_vbox.add_child(label)
 
 
@@ -287,6 +314,6 @@ func end_dialog():
 func clear_dialog():
 	for child in dialog_vbox.get_children():
 		dialog_vbox.remove_child(child)
-		dialog_vbox.queue_free()
+		child.queue_free()
 
 #endregion

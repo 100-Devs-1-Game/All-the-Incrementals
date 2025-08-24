@@ -19,14 +19,23 @@ func get_next_lines() -> Array[String]:
 		if state.current_index >= lines.size():
 			state.show_initial = false
 			state.current_index = 0
+			if alternative_dialog and alternative_dialog is NPCDialogRandom:
+				return []
 		else:
 			var prefix: String
 			if state.current_index % 2 == 0:
 				prefix = npc_name + ": "
 			return [prefix + lines[state.current_index]]
 
-	return alternative_dialog.get_lines(self)
+	if alternative_dialog:
+		return alternative_dialog.get_lines(self)
+
+	return []
 
 
-func advance():
-	state.current_index += 1
+func advance(index: int = -1):
+	if state.show_initial:
+		state.current_index += 1
+	else:
+		assert(alternative_dialog)
+		alternative_dialog.advance(self, index)
