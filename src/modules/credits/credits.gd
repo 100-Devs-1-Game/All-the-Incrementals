@@ -57,8 +57,12 @@ Duncan
 [font_size=70][outline_size=25][b]Sound[/b][/outline_size][/font_size]
 4tenmu
 Ben Thomson
+Chrishie
+Dan Lopes
 Fae (Lead composer)
 Frog
+the0show
+Wo.oDZ
 """
 
 
