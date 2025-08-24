@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="NPCDialog" load_steps=4 format=3 uid="uid://8mysyejm64j5"]
+
+[ext_resource type="Script" uid="uid://57lilt2ifgcy" path="res://modules/overworld/dialog/npc_dialog_questions.gd" id="1_unitu"]
+[ext_resource type="Script" uid="uid://o5qj3tmy4ife" path="res://modules/overworld/dialog/npc_dialog.gd" id="2_tics7"]
+
+[sub_resource type="Resource" id="Resource_4boei"]
+script = ExtResource("1_unitu")
+questions = Array[String](["Tell me?", "Shut up?"])
+answers = Array[String](["Tell you what?", "You shut up!"])
+metadata/_custom_type_script = "uid://57lilt2ifgcy"
+
+[resource]
+script = ExtResource("2_tics7")
+npc_name = "Otto"
+initial_dialog = "Hi
+What's up
+Nothing"
+alternative_dialog = SubResource("Resource_4boei")
+metadata/_custom_type_script = "uid://o5qj3tmy4ife"

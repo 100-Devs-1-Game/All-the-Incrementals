@@ -57,6 +57,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not is_instance_valid(player):
 		return
 
+	if player.is_interacting():
+		return
+
 	if event.is_action_pressed(action_name):
 		do_interact()
 

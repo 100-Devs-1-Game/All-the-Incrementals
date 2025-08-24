@@ -230,6 +230,30 @@ text = "Press SPACE to open THING"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MarginContainer Dialog" type="MarginContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -125.0
+offset_right = 255.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer Dialog"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_scodq")
+
+[node name="VBoxContainer Dialog" type="VBoxContainer" parent="CanvasLayer/MarginContainer Dialog/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="AudioStreamPlayer Interaction" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 
