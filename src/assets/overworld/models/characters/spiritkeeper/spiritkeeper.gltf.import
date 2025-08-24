@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cm3rghkvel2l2"
-path="res://.godot/imported/graveyard.gltf-c41e8582296b28733a1a86f18dff004e.scn"
+uid="uid://dcsyjfr3p0qen"
+path="res://.godot/imported/spiritkeeper.gltf-7dc26513e7261a6a0728353e3845e76c.scn"
 
 [deps]
 
-source_file="res://assets/overworld/models/architectural/structures/graveyard/graveyard.gltf"
-dest_files=["res://.godot/imported/graveyard.gltf-c41e8582296b28733a1a86f18dff004e.scn"]
+source_file="res://assets/overworld/models/characters/spiritkeeper/spiritkeeper.gltf"
+dest_files=["res://.godot/imported/spiritkeeper.gltf-7dc26513e7261a6a0728353e3845e76c.scn"]
 
 [params]
 

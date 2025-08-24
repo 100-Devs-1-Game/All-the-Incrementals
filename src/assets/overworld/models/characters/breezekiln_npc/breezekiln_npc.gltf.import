@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cm3rghkvel2l2"
-path="res://.godot/imported/graveyard.gltf-c41e8582296b28733a1a86f18dff004e.scn"
+uid="uid://db7tdkdv1bau6"
+path="res://.godot/imported/breezekiln_npc.gltf-9041041ab2d099d9355adb34419358d8.scn"
 
 [deps]
 
-source_file="res://assets/overworld/models/architectural/structures/graveyard/graveyard.gltf"
-dest_files=["res://.godot/imported/graveyard.gltf-c41e8582296b28733a1a86f18dff004e.scn"]
+source_file="res://assets/overworld/models/characters/breezekiln_npc/breezekiln_npc.gltf"
+dest_files=["res://.godot/imported/breezekiln_npc.gltf-9041041ab2d099d9355adb34419358d8.scn"]
 
 [params]
 

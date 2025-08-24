@@ -4,7 +4,9 @@ repos:
     rev: v5.0.0
     hooks:
     - id: trailing-whitespace
+      exclude: '\.(mesh|bin)$'
     - id: end-of-file-fixer
+      exclude: '\.(mesh|bin)$'
     - id: check-merge-conflict
       args: [--assume-in-merge]
     - id: check-added-large-files

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cm3rghkvel2l2"
-path="res://.godot/imported/graveyard.gltf-c41e8582296b28733a1a86f18dff004e.scn"
+uid="uid://f2v663d1w2sl"
+path="res://.godot/imported/straw_house_baked.gltf-57d9cc84e63325cfd4a92602f17757de.scn"
 
 [deps]
 
-source_file="res://assets/overworld/models/architectural/structures/graveyard/graveyard.gltf"
-dest_files=["res://.godot/imported/graveyard.gltf-c41e8582296b28733a1a86f18dff004e.scn"]
+source_file="res://assets/overworld/models/architectural/structures/houses/straw_house/straw_house_baked.gltf"
+dest_files=["res://.godot/imported/straw_house_baked.gltf-57d9cc84e63325cfd4a92602f17757de.scn"]
 
 [params]
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfvl4gl6ndsrq"]
+
+[ext_resource type="PackedScene" uid="uid://cq4r3olkshrxm" path="res://assets/overworld/models/landscapes/earth_path_baked.gltf" id="1_vdlb0"]
+[ext_resource type="Material" uid="uid://da248thgeu1o6" path="res://assets/overworld/materials/textures/ground/ground_03.tres" id="2_px58x"]
+
+[node name="earth_path_baked" instance=ExtResource("1_vdlb0")]
+
+[node name="path_002" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_px58x")

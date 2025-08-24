@@ -1,0 +1,784 @@
+[gd_scene load_steps=94 format=3 uid="uid://bcjwk5lq3xa2k"]
+
+[ext_resource type="Script" uid="uid://bsimtuhg2ndb3" path="res://modules/overworld_locations/shrine/shrine.gd" id="1_x2q8n"]
+[ext_resource type="PackedScene" uid="uid://dntdim0jjlhy1" path="res://modules/upgrade/ui/upgrade_tree.tscn" id="2_v7eqr"]
+[ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="3_jasbj"]
+[ext_resource type="AudioStream" uid="uid://cxe6igo3p11ru" path="res://assets/ui/sfx/open_ui.ogg" id="4_uog80"]
+[ext_resource type="AudioStream" uid="uid://vmdpnylykvg8" path="res://assets/ui/sfx/close_ui.ogg" id="5_l6ubw"]
+[ext_resource type="PackedScene" uid="uid://dwf7mhn0xl3mb" path="res://modules/overworld_character_controller/character_spawner.tscn" id="6_m8333"]
+[ext_resource type="Material" uid="uid://hk3dsg83qw1l" path="res://assets/overworld/materials/textures/brick/brick_03.tres" id="7_cnv8d"]
+[ext_resource type="Material" uid="uid://dnhk0y3257esx" path="res://assets/overworld/materials/textures/brick/brick_01.tres" id="8_11re0"]
+[ext_resource type="ArrayMesh" uid="uid://cmwartfadf6yk" path="res://assets/overworld/models/architectural/pillar/pillar_01.mesh" id="9_a062v"]
+[ext_resource type="PackedScene" uid="uid://cxkc37xd0pka0" path="res://assets/overworld/models/architectural/stair_case/stair_case_01.tscn" id="10_y8kna"]
+[ext_resource type="PackedScene" uid="uid://dfja1f2kdxjsq" path="res://assets/overworld/models/props/candle/candle_holder.tscn" id="11_iq36g"]
+[ext_resource type="PackedScene" uid="uid://b66drvaba8u41" path="res://assets/overworld/models/props/candle/candle_01.tscn" id="12_wqx3j"]
+[ext_resource type="PackedScene" uid="uid://bs4dj4hx788c" path="res://assets/overworld/models/props/ornaments/ornament_02.tscn" id="13_0s2dw"]
+[ext_resource type="PackedScene" uid="uid://c2fqfhyrr6qwf" path="res://assets/overworld/models/props/ornaments/ornament_04.tscn" id="14_dk36i"]
+[ext_resource type="PackedScene" uid="uid://do8ec7rtyks35" path="res://assets/overworld/models/props/ornaments/ornament_01.tscn" id="15_2jorc"]
+[ext_resource type="PackedScene" uid="uid://bhor2w8x1nede" path="res://assets/overworld/models/props/ornaments/ornament_03.tscn" id="16_ip8jn"]
+[ext_resource type="PackedScene" uid="uid://dxf7wr7fkgkx3" path="res://assets/overworld/models/props/ornaments/ornament_05.tscn" id="17_5urhp"]
+[ext_resource type="PackedScene" uid="uid://hf0wgh6wa7s5" path="res://assets/overworld/models/props/ornaments/ornament_06.tscn" id="18_q6vuq"]
+[ext_resource type="PackedScene" uid="uid://dbl6vd6owbgae" path="res://assets/overworld/models/architectural/arch/arch_01.tscn" id="19_wu480"]
+[ext_resource type="PackedScene" uid="uid://corlpgtayffvx" path="res://assets/overworld/models/architectural/bars/bar_01.tscn" id="20_vjt6k"]
+[ext_resource type="PackedScene" uid="uid://dox2uuh52nw43" path="res://assets/overworld/models/kitchen_ware/bowl/bowl_05.tscn" id="21_rdlnt"]
+[ext_resource type="PackedScene" uid="uid://dn17r6cyuvf7u" path="res://assets/overworld/models/architectural/structures/temples/water_temple_bottom_half.tscn" id="22_lauvp"]
+[ext_resource type="Shader" uid="uid://cwj8raehobu8p" path="res://assets/overworld/scripts/shaders/flag_like.gdshader" id="23_gcmnq"]
+[ext_resource type="Texture2D" uid="uid://cgmr2lwkxdu65" path="res://assets/overworld/assets/elements/wind_bloom.webp" id="24_3aj1b"]
+[ext_resource type="Texture2D" uid="uid://cad1jnopkegts" path="res://assets/overworld/assets/elements/wind.webp" id="25_rl7e2"]
+[ext_resource type="Texture2D" uid="uid://ckosq1frycwik" path="res://assets/overworld/assets/elements/fire_bloom.webp" id="26_los2k"]
+[ext_resource type="Texture2D" uid="uid://bq86j6fg4r8pf" path="res://assets/overworld/assets/elements/fire.webp" id="27_wra6n"]
+[ext_resource type="Texture2D" uid="uid://cjox17oqo8kjx" path="res://assets/overworld/assets/elements/water_bloom.webp" id="28_mk8co"]
+[ext_resource type="Texture2D" uid="uid://c2rbbd1enbesy" path="res://assets/overworld/assets/elements/water.webp" id="29_sbffq"]
+[ext_resource type="Texture2D" uid="uid://drgfx7qw272bv" path="res://assets/overworld/assets/elements/earth_bloom.webp" id="30_ihqvo"]
+[ext_resource type="Texture2D" uid="uid://qb3vdu25rkjl" path="res://assets/overworld/assets/elements/earth.webp" id="31_migjt"]
+[ext_resource type="ArrayMesh" uid="uid://cxyhsx2s6ve63" path="res://assets/overworld/models/ui/pill/pill.obj" id="32_o8sh5"]
+[ext_resource type="Material" uid="uid://chg85pjkrx0dk" path="res://assets/overworld/materials/textures/concrete/concrete_03.tres" id="33_rylyp"]
+[ext_resource type="Shader" uid="uid://6wy8y15n7vk0" path="res://assets/overworld/scripts/shaders/amount_bar.gdshader" id="34_nmmft"]
+[ext_resource type="PackedScene" uid="uid://cvp0l5bbwj43a" path="res://assets/overworld/models/architectural/ribbon/cylinder_ribbon.tscn" id="35_luvhh"]
+[ext_resource type="PackedScene" uid="uid://d2exunln5ws47" path="res://assets/overworld/models/architectural/ribbon/middle_short_ribbon.tscn" id="36_cc4mt"]
+[ext_resource type="PackedScene" uid="uid://d3s6vlq4wy6ic" path="res://assets/overworld/models/props/bell/bell_01.tscn" id="37_dyawi"]
+[ext_resource type="ArrayMesh" uid="uid://dg4j6mwtin3of" path="res://assets/overworld/models/architectural/ribbon/wrapping_01.mesh" id="38_dn3um"]
+[ext_resource type="PackedScene" uid="uid://cfr1bhdfmu6ir" path="res://assets/overworld/models/architectural/ribbon/arch_ribbon_01.tscn" id="39_3p6ls"]
+[ext_resource type="PackedScene" uid="uid://cgmrvaxocqvut" path="res://assets/overworld/models/architectural/ribbon/arch_ribbon_02.tscn" id="40_v64f3"]
+[ext_resource type="ArrayMesh" uid="uid://byqwraxgefyr3" path="res://assets/overworld/models/architectural/ribbon/long_hanging_ribbon.obj" id="41_1nr1p"]
+[ext_resource type="Shader" uid="uid://ce8k8i21t31cp" path="res://assets/overworld/scripts/shaders/cloth_sim.gdshader" id="42_4f2xq"]
+[ext_resource type="Script" uid="uid://cyybkua2ay1d" path="res://assets/overworld/scripts/altar_diamond.gd" id="43_6p1ap"]
+[ext_resource type="SpriteFrames" uid="uid://bvva1qjrsfn36" path="res://assets/overworld/vfx/elements_anim/earth/elements_earth_anim.tres" id="44_i360t"]
+[ext_resource type="SpriteFrames" uid="uid://jt2bd2rgdu5t" path="res://assets/overworld/vfx/elements_anim/fire/elements_fire_anim.tres" id="45_asdki"]
+[ext_resource type="SpriteFrames" uid="uid://c1pcfko77da5i" path="res://assets/overworld/vfx/elements_anim/water/elements_water_anim.tres" id="46_mqtfl"]
+[ext_resource type="SpriteFrames" uid="uid://cv2fqxxq0ujke" path="res://assets/overworld/vfx/elements_anim/wind/elements_wind_anim.tres" id="47_1mho2"]
+[ext_resource type="SpriteFrames" uid="uid://bvxn6etk1px5h" path="res://assets/overworld/vfx/candle_flame/candle_flame.tres" id="48_a4e3l"]
+[ext_resource type="SpriteFrames" uid="uid://b3itxrlohx1" path="res://assets/overworld/vfx/pyre_flame/pyre_flame.tres" id="49_6pvnq"]
+[ext_resource type="ArrayMesh" uid="uid://d2hytayuqv1sb" path="res://assets/overworld/vfx/water/circular_water/circular_water.obj" id="50_w2hcf"]
+[ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://assets/overworld/scripts/shaders/water_toon.gdshader" id="51_q7lrv"]
+[ext_resource type="Texture2D" uid="uid://dfvfmidfq5gmd" path="res://assets/overworld/vfx/water/circular_water/water_blue.webp" id="52_ts2k4"]
+[ext_resource type="Texture2D" uid="uid://fj5wqi66t65e" path="res://assets/overworld/assets/skybox/sky_night_01.webp" id="53_t7rea"]
+[ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="54_qri0e"]
+[ext_resource type="Texture2D" uid="uid://b0giovcp3gygs" path="res://assets/overworld/assets/skybox/sky_day_01.webp" id="55_l738y"]
+[ext_resource type="PackedScene" uid="uid://dbdlc760ysa1w" path="res://modules/overworld/portal/portal.tscn" id="56_gx74l"]
+[ext_resource type="Resource" uid="uid://dm8p7uex0orka" path="res://modules/overworld_locations/clayport/clayport.tres" id="57_og27s"]
+[ext_resource type="Resource" uid="uid://cdoij41kganvn" path="res://modules/overworld_locations/breezekiln/breezekiln.tres" id="58_wfk4a"]
+[ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="59_bifrh"]
+[ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="60_npdik"]
+[ext_resource type="Resource" uid="uid://bn3py5bvf5ry5" path="res://modules/minigame/common/debug/breezekiln.tres" id="61_8pf4m"]
+[ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="62_cmhpy"]
+[ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="63_p3xih"]
+[ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="64_qetoh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mggan"]
+radius = 4.0
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8iftn"]
+
+[sub_resource type="Sky" id="Sky_de3hw"]
+sky_material = SubResource("PanoramaSkyMaterial_8iftn")
+
+[sub_resource type="Environment" id="Environment_e5xey"]
+background_mode = 2
+sky = SubResource("Sky_de3hw")
+tonemap_exposure = 1.25
+glow_enabled = true
+glow_intensity = 1.5
+glow_bloom = 0.02
+glow_hdr_threshold = 0.56
+fog_light_energy = 0.83
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u4qcm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0n3fe"]
+size = Vector3(2, 0.1, 2)
+
+[sub_resource type="MultiMesh" id="MultiMesh_le2g8"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("9_a062v")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mxx43"]
+height = 5.20862
+radius = 0.531738
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x21fp"]
+size = Vector3(6.587, 3.125, 2.449)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g7v8n"]
+size = Vector3(7.7948, 2.95496, 3.04285)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_amava"]
+size = Vector3(2.15973, 1.81049, 0.208282)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_38ir7"]
+render_priority = 0
+shader = ExtResource("23_gcmnq")
+shader_parameter/time_speed = 1.0
+shader_parameter/swirl_strength = 0.1
+shader_parameter/swirl_freq = 5.0
+shader_parameter/emission_strength = 100.0
+shader_parameter/bottom_color = Color(1, 0.3, 0, 1)
+shader_parameter/top_color = Color(1, 1, 0.2, 1)
+shader_parameter/albedo_texture = ExtResource("24_3aj1b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d21uu"]
+render_priority = 0
+shader = ExtResource("23_gcmnq")
+shader_parameter/time_speed = 1.0
+shader_parameter/swirl_strength = 0.1
+shader_parameter/swirl_freq = 5.0
+shader_parameter/emission_strength = 0.0
+shader_parameter/bottom_color = Color(1, 0.3, 0, 1)
+shader_parameter/top_color = Color(1, 1, 0.2, 1)
+shader_parameter/albedo_texture = ExtResource("26_los2k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3re10"]
+render_priority = 0
+shader = ExtResource("23_gcmnq")
+shader_parameter/time_speed = 1.0
+shader_parameter/swirl_strength = 0.1
+shader_parameter/swirl_freq = 5.0
+shader_parameter/emission_strength = 0.0
+shader_parameter/bottom_color = Color(1, 0.3, 0, 1)
+shader_parameter/top_color = Color(1, 1, 0.2, 1)
+shader_parameter/albedo_texture = ExtResource("28_mk8co")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wex2"]
+render_priority = 0
+shader = ExtResource("23_gcmnq")
+shader_parameter/time_speed = 1.0
+shader_parameter/swirl_strength = 0.1
+shader_parameter/swirl_freq = 5.0
+shader_parameter/emission_strength = 0.0
+shader_parameter/bottom_color = Color(1, 0.3, 0, 1)
+shader_parameter/top_color = Color(1, 1, 0.2, 1)
+shader_parameter/albedo_texture = ExtResource("30_ihqvo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e63xr"]
+render_priority = 0
+shader = ExtResource("34_nmmft")
+shader_parameter/fill_level = 0.556
+shader_parameter/fill_color = Color(0.67451, 0.439216, 0.94902, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)
+shader_parameter/glow_strength = 1.86
+shader_parameter/flip_direction = true
+shader_parameter/gradient_sharpness = 0.025
+shader_parameter/fill_offset = 0.56
+shader_parameter/black_specular = 0.56
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7myp"]
+render_priority = 0
+shader = ExtResource("34_nmmft")
+shader_parameter/fill_level = 0.25
+shader_parameter/fill_color = Color(0.203922, 0.760784, 0.356863, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)
+shader_parameter/glow_strength = 1.86
+shader_parameter/flip_direction = true
+shader_parameter/gradient_sharpness = 0.025
+shader_parameter/fill_offset = 0.56
+shader_parameter/black_specular = 0.56
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jsaa1"]
+render_priority = 0
+shader = ExtResource("34_nmmft")
+shader_parameter/fill_level = 0.219
+shader_parameter/fill_color = Color(0.313726, 0.690196, 0.933333, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)
+shader_parameter/glow_strength = 1.86
+shader_parameter/flip_direction = true
+shader_parameter/gradient_sharpness = 0.025
+shader_parameter/fill_offset = 1.0
+shader_parameter/black_specular = 0.56
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6n4v"]
+render_priority = 0
+shader = ExtResource("34_nmmft")
+shader_parameter/fill_level = 0.9
+shader_parameter/fill_color = Color(0.858824, 0.129412, 0.2, 1)
+shader_parameter/background_color = Color(0, 0, 0, 1)
+shader_parameter/glow_strength = 1.86
+shader_parameter/flip_direction = true
+shader_parameter/gradient_sharpness = 0.025
+shader_parameter/fill_offset = 1.56
+shader_parameter/black_specular = 0.56
+
+[sub_resource type="GDScript" id="GDScript_s8552"]
+script/source = "extends Node3D
+
+@export var sway_amount: float = 5.0
+@export var noise_speed: float = 0.5
+var t: float = 0.0
+var initial_rotation: Vector3
+var noise := FastNoiseLite.new()
+
+func _ready():
+	initial_rotation = rotation_degrees
+	noise.seed = randi()
+	noise.frequency = 0.1  # equivalent to 'period' control
+
+func _process(delta):
+	t += delta * noise_speed
+	var sway = noise.get_noise_1d(t) * sway_amount
+	rotation_degrees = initial_rotation + Vector3(sway, 0, 0)
+"
+
+[sub_resource type="MultiMesh" id="MultiMesh_l2qms"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("38_dn3um")
+buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fbeu7"]
+render_priority = 0
+shader = ExtResource("42_4f2xq")
+shader_parameter/albedo_color = Color(0.615686, 0.00784314, 0.0313726, 1)
+shader_parameter/sway_strength = 0.056
+shader_parameter/sway_speed = 0.56
+shader_parameter/y_top = -2.18
+shader_parameter/y_bottom = 2.526
+shader_parameter/alpha_cutoff = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibu1c"]
+render_priority = 0
+shader = ExtResource("42_4f2xq")
+shader_parameter/albedo_color = Color(0.615686, 0.00784314, 0.0313726, 1)
+shader_parameter/sway_strength = 0.056
+shader_parameter/sway_speed = 0.45
+shader_parameter/y_top = -2.18
+shader_parameter/y_bottom = 2.526
+shader_parameter/alpha_cutoff = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_srmru"]
+render_priority = 0
+shader = ExtResource("42_4f2xq")
+shader_parameter/albedo_color = Color(0.615686, 0.00784314, 0.0313726, 1)
+shader_parameter/sway_strength = 0.056
+shader_parameter/sway_speed = 0.85
+shader_parameter/y_top = 2.18
+shader_parameter/y_bottom = -2.18
+shader_parameter/alpha_cutoff = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wd3m"]
+render_priority = 0
+shader = ExtResource("42_4f2xq")
+shader_parameter/albedo_color = Color(0.615686, 0.00784314, 0.0313726, 1)
+shader_parameter/sway_strength = 0.056
+shader_parameter/sway_speed = 0.75
+shader_parameter/y_top = -2.18
+shader_parameter/y_bottom = 2.18
+shader_parameter/alpha_cutoff = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8yrbh"]
+render_priority = 0
+shader = ExtResource("51_q7lrv")
+shader_parameter/time_speed = 0.56
+shader_parameter/swirl_strength = 0.1
+shader_parameter/swirl_freq = 5.0
+shader_parameter/albedo_texture = ExtResource("52_ts2k4")
+shader_parameter/normal_strength = 1.0
+shader_parameter/emission_strength = 0.3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2y5yr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eb68j"]
+render_priority = 0
+shader = ExtResource("23_gcmnq")
+shader_parameter/time_speed = 0.015
+shader_parameter/swirl_strength = 0.1
+shader_parameter/swirl_freq = 1.0
+shader_parameter/emission_strength = 0.0
+shader_parameter/bottom_color = Color(1, 0.3, 0, 1)
+shader_parameter/top_color = Color(1, 1, 0.2, 1)
+shader_parameter/albedo_texture = SubResource("CompressedTexture2D_2y5yr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4i40"]
+albedo_texture = ExtResource("55_l738y")
+
+[node name="Shrine" type="Node3D" node_paths=PackedStringArray("character_spawner")]
+script = ExtResource("1_x2q8n")
+upgrade_tree_scene = ExtResource("2_v7eqr")
+character_spawner = NodePath("CharacterSpawner")
+
+[node name="InteractionComponent3D" type="Area3D" parent="." node_paths=PackedStringArray("object")]
+collision_layer = 0
+monitorable = false
+script = ExtResource("3_jasbj")
+object = NodePath("..")
+action_ui_suffix = "open Shrine"
+initial_sound = ExtResource("4_uog80")
+finishing_sound = ExtResource("5_l6ubw")
+metadata/_custom_type_script = "uid://7n4knvm4dle5"
+
+[node name="CollisionShape3D Interact" type="CollisionShape3D" parent="InteractionComponent3D"]
+shape = SubResource("SphereShape3D_mggan")
+
+[node name="CharacterSpawner" parent="." instance=ExtResource("6_m8333")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Camera & Lights" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera & Lights"]
+environment = SubResource("Environment_e5xey")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera & Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07926e-07, 12.5754, -11.62)
+light_color = Color(0.870807, 0.901464, 0.913394, 1)
+light_energy = 1.2
+directional_shadow_mode = 1
+
+[node name="Right_Side" type="SpotLight3D" parent="Camera & Lights"]
+transform = Transform3D(0.270987, -0.167151, 0.947959, 0, 0.984808, 0.173648, -0.962583, -0.0470564, 0.26687, 8.394, 2.69204, 2.698)
+light_color = Color(0.341176, 0.666667, 1, 1)
+light_energy = 3.56
+spot_range = 25.687
+spot_attenuation = 1.81
+spot_angle_attenuation = 0.112656
+
+[node name="Left_Side" type="SpotLight3D" parent="Camera & Lights"]
+transform = Transform3D(0.2706, 0.16717, -0.948066, 0, 0.984808, 0.173648, 0.962692, -0.0469893, 0.266489, -8.394, 2.69204, 2.698)
+light_color = Color(0.921569, 0.498039, 0.294118, 1)
+light_energy = 3.56
+spot_range = 25.687
+spot_attenuation = 1.81
+spot_angle_attenuation = 0.112656
+
+[node name="Content" type="Node3D" parent="."]
+transform = Transform3D(-7.80685e-08, 0, -1.786, 0, 1.786, 0, 1.786, 0, -7.80685e-08, 0, 0, 0)
+
+[node name="Plane_01" type="MeshInstance3D" parent="Content"]
+transform = Transform3D(3.87, 0, 0, 0, 3.315, 0, 0, 0, 2.905, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_u4qcm")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("7_cnv8d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/Plane_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0355067, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/Plane_01/StaticBody3D"]
+shape = SubResource("BoxShape3D_0n3fe")
+
+[node name="Plane_02" type="MeshInstance3D" parent="Content"]
+transform = Transform3D(-8.79473e-08, 0, 1.51, 0, 1.723, 0, -2.012, 0, -6.60042e-08, 0, 0.00226152, 0)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_u4qcm")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("8_11re0")
+
+[node name="pillars" type="Node3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.307, -1.227, 2.729)
+
+[node name="pillar_01_mmi3d" type="MultiMeshInstance3D" parent="Content/pillars"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+multimesh = SubResource("MultiMesh_le2g8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/pillars/pillar_01_mmi3d"]
+
+[node name="CollisionShape3D Pillar" type="CollisionShape3D" parent="Content/pillars/pillar_01_mmi3d/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -2.50531)
+shape = SubResource("CylinderShape3D_mxx43")
+
+[node name="pillar_02_mmi3d" type="MultiMeshInstance3D" parent="Content/pillars"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -5.458)
+multimesh = SubResource("MultiMesh_le2g8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/pillars/pillar_02_mmi3d"]
+
+[node name="CollisionShape3D Pillar" type="CollisionShape3D" parent="Content/pillars/pillar_02_mmi3d/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.00995159, -2.50531)
+shape = SubResource("CylinderShape3D_mxx43")
+
+[node name="pillar_03_mmi3d" type="MultiMeshInstance3D" parent="Content/pillars"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.363, 0, 0)
+multimesh = SubResource("MultiMesh_le2g8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/pillars/pillar_03_mmi3d"]
+
+[node name="CollisionShape3D Pillar" type="CollisionShape3D" parent="Content/pillars/pillar_03_mmi3d/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0274763, 0.0144825, -2.50531)
+shape = SubResource("CylinderShape3D_mxx43")
+
+[node name="pillar_04_mmi3d" type="MultiMeshInstance3D" parent="Content/pillars"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.223, 0, -5.253)
+multimesh = SubResource("MultiMesh_le2g8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/pillars/pillar_04_mmi3d"]
+
+[node name="CollisionShape3D Pillar" type="CollisionShape3D" parent="Content/pillars/pillar_04_mmi3d/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0122001, -0.067853, -2.50531)
+shape = SubResource("CylinderShape3D_mxx43")
+
+[node name="stair_case" type="Node3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201, -2.333, 4.506)
+
+[node name="stair_case_01" parent="Content/stair_case" instance=ExtResource("10_y8kna")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/stair_case/stair_case_01"]
+
+[node name="CollisionShape3D Stairs" type="CollisionShape3D" parent="Content/stair_case/stair_case_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0.677771, 0.4057, -1.15796)
+shape = SubResource("BoxShape3D_x21fp")
+
+[node name="stair_case_02" parent="Content/stair_case" instance=ExtResource("10_y8kna")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.0115592, -8.98173)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/stair_case/stair_case_02"]
+
+[node name="CollisionShape3D Stairs" type="CollisionShape3D" parent="Content/stair_case/stair_case_02/StaticBody3D"]
+transform = Transform3D(-1, 3.7979e-08, -7.87422e-08, 0, 0.900706, 0.43443, 8.74228e-08, 0.43443, -0.900706, 0.0472411, 0.411934, -1.1975)
+shape = SubResource("BoxShape3D_x21fp")
+
+[node name="stair_case_03" parent="Content/stair_case" instance=ExtResource("10_y8kna")]
+transform = Transform3D(-2.65765e-08, 0, 1, 0, 1, 0, -0.608, 0, -4.37114e-08, 5.212, 0, -4.354)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/stair_case/stair_case_03"]
+
+[node name="CollisionShape3D Stairs" type="CollisionShape3D" parent="Content/stair_case/stair_case_03/StaticBody3D"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0.180603, 0.383727, -0.763879)
+shape = SubResource("BoxShape3D_g7v8n")
+
+[node name="stair_case_04" parent="Content/stair_case" instance=ExtResource("10_y8kna")]
+transform = Transform3D(-2.65765e-08, 0, -1, 0, 1, 0, 0.608, 0, -4.37114e-08, -5.614, 0, -4.354)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/stair_case/stair_case_04"]
+
+[node name="CollisionShape3D Stairs" type="CollisionShape3D" parent="Content/stair_case/stair_case_04/StaticBody3D"]
+transform = Transform3D(-1, -3.69465e-08, 7.92319e-08, 0, 0.906308, 0.422618, -8.74228e-08, 0.422618, -0.906308, -0.180603, 0.412055, -0.779488)
+shape = SubResource("BoxShape3D_g7v8n")
+
+[node name="arch" type="Node3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0)
+
+[node name="candles" type="Node3D" parent="Content/arch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.864153, -0.320901, 0.400119)
+
+[node name="candle_holder_01" parent="Content/arch/candles" instance=ExtResource("11_iq36g")]
+
+[node name="candle_holder_02" parent="Content/arch/candles" instance=ExtResource("11_iq36g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000153363, -9.88431e-05, -0.800119)
+
+[node name="candle_01" parent="Content/arch/candles" instance=ExtResource("12_wqx3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00184661, 0.291901, 0.00188088)
+
+[node name="candle_03" parent="Content/arch/candles" instance=ExtResource("12_wqx3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00184661, 0.291901, -0.802119)
+
+[node name="candle_02" parent="Content/arch/candles" instance=ExtResource("12_wqx3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.347326, -9.88431e-05, 0.114808)
+
+[node name="candle_04" parent="Content/arch/candles" instance=ExtResource("12_wqx3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34723, -9.88431e-05, -0.915119)
+
+[node name="ornaments" type="Node3D" parent="Content/arch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305, -0.258, 0.93)
+
+[node name="ornament_01" parent="Content/arch/ornaments" instance=ExtResource("13_0s2dw")]
+
+[node name="ornament_02" parent="Content/arch/ornaments" instance=ExtResource("14_dk36i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007, 0.013, -0.2)
+
+[node name="ornament_03" parent="Content/arch/ornaments" instance=ExtResource("15_2jorc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0573823, -0.002, -0.399504)
+
+[node name="ornament_04" parent="Content/arch/ornaments" instance=ExtResource("16_ip8jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09, 0.0562639, -1.548)
+
+[node name="ornament_05" parent="Content/arch/ornaments" instance=ExtResource("17_5urhp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0924457, 0.00439712, -1.89571)
+
+[node name="ornament_06" parent="Content/arch/ornaments" instance=ExtResource("18_q6vuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075, -0.007, -1.703)
+
+[node name="arch_01" parent="Content/arch" instance=ExtResource("19_wu480")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.33, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content/arch/arch_01"]
+
+[node name="CollisionShape3D Arc" type="CollisionShape3D" parent="Content/arch/arch_01/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0179138, 0.911224, 0.0575409)
+shape = SubResource("BoxShape3D_amava")
+
+[node name="bar_01" parent="Content/arch" instance=ExtResource("20_vjt6k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.044, 0.594, 0.00270069)
+
+[node name="bowl" type="Node3D" parent="Content/arch"]
+transform = Transform3D(-7.86805e-08, 0, 1.8, 0, 1.8, 0, -1.8, 0, -7.86805e-08, -7.10078, 2.79, 0)
+
+[node name="bowl_06" parent="Content/arch/bowl" instance=ExtResource("21_rdlnt")]
+
+[node name="bowl_07" parent="Content/arch/bowl" instance=ExtResource("21_rdlnt")]
+transform = Transform3D(0.872189, 0, 0.489169, 0, 1, 0, -0.489169, 0, 0.872189, -1.00039, 0, 0.227647)
+
+[node name="bowl_08" parent="Content/arch/bowl" instance=ExtResource("21_rdlnt")]
+transform = Transform3D(-0.872069, 0, 0.489383, 0, 1, 0, -0.489383, 0, -0.872069, 1.00056, 0, 0.227654)
+
+[node name="water_temple_bottom_half" parent="Content/arch" instance=ExtResource("22_lauvp")]
+transform = Transform3D(-1.5299e-08, 0, 0.35, 0, 0.35, 0, -0.35, 0, -1.5299e-08, -1.885, -1.55, 0)
+
+[node name="logos" type="Node3D" parent="Content"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.721, 1.542, 2.729)
+
+[node name="wind_logo" type="Sprite3D" parent="Content/logos"]
+transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, 4.36306e-05, 0.0200975, 0.0109248)
+material_override = SubResource("ShaderMaterial_38ir7")
+texture = ExtResource("25_rl7e2")
+
+[node name="fire_logo" type="Sprite3D" parent="Content/logos"]
+transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, 4.76837e-07, 0.0184669, -8.35011)
+material_override = SubResource("ShaderMaterial_d21uu")
+texture = ExtResource("27_wra6n")
+
+[node name="water_logo" type="Sprite3D" parent="Content/logos"]
+transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, 5.27602, 0.0184669, -8.20521)
+material_override = SubResource("ShaderMaterial_3re10")
+texture = ExtResource("29_sbffq")
+
+[node name="earth_logo" type="Sprite3D" parent="Content/logos"]
+transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, 5.46725, 0.0184669, 0.0111461)
+material_override = SubResource("ShaderMaterial_7wex2")
+texture = ExtResource("31_migjt")
+
+[node name="pill_UI" type="Node3D" parent="Content"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.59631, 0.774485, 2.75107)
+
+[node name="pill_01" type="MeshInstance3D" parent="Content/pill_UI"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239999, -0.045, 8.366)
+mesh = ExtResource("32_o8sh5")
+surface_material_override/0 = ExtResource("33_rylyp")
+surface_material_override/1 = SubResource("ShaderMaterial_e63xr")
+
+[node name="pill_02" type="MeshInstance3D" parent="Content/pill_UI"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.492, -0.045, 8.366)
+mesh = ExtResource("32_o8sh5")
+surface_material_override/0 = ExtResource("33_rylyp")
+surface_material_override/1 = SubResource("ShaderMaterial_m7myp")
+
+[node name="pill_03" type="MeshInstance3D" parent="Content/pill_UI"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29178, -0.045, 0.132405)
+mesh = ExtResource("32_o8sh5")
+surface_material_override/0 = ExtResource("33_rylyp")
+surface_material_override/1 = SubResource("ShaderMaterial_jsaa1")
+
+[node name="pill_04" type="MeshInstance3D" parent="Content/pill_UI"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0333946, -0.045, -0.0133038)
+mesh = ExtResource("32_o8sh5")
+surface_material_override/0 = ExtResource("33_rylyp")
+surface_material_override/1 = SubResource("ShaderMaterial_s6n4v")
+
+[node name="cloth" type="Node3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.333, 2.499, 2.72509)
+
+[node name="cylinder_ribbon" parent="Content/cloth" instance=ExtResource("35_luvhh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.28332, -1.5739, -2.72509)
+script = SubResource("GDScript_s8552")
+
+[node name="middle_short_ribbon" parent="Content/cloth/cylinder_ribbon" instance=ExtResource("36_cc4mt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.39406e-29, 1, -6.25946e-10, -0.1601, 0.0143199)
+
+[node name="bell_01" parent="Content/cloth/cylinder_ribbon" instance=ExtResource("37_dyawi")]
+transform = Transform3D(-4.37114e-08, 7.7647e-22, -1, 0, 1, 0, 1, 3.38813e-21, -4.37114e-08, 5.8355e-08, -0.5951, 0.0285874)
+
+[node name="wrapping" type="Node3D" parent="Content/cloth"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.28332, -1.5739, -2.72509)
+
+[node name="wrapping_01_mmi3d_01" type="MultiMeshInstance3D" parent="Content/cloth/wrapping"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.72509, 2.2098, -4.09228)
+multimesh = SubResource("MultiMesh_l2qms")
+
+[node name="wrapping_01_mmi3d_02" type="MultiMeshInstance3D" parent="Content/cloth/wrapping"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.72509, 2.43056, -4.09228)
+multimesh = SubResource("MultiMesh_l2qms")
+
+[node name="wrapping_01_mmi3d_03" type="MultiMeshInstance3D" parent="Content/cloth/wrapping"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.514, 2.121, -3.94)
+multimesh = SubResource("MultiMesh_l2qms")
+
+[node name="wrapping_01_mmi3d_04" type="MultiMeshInstance3D" parent="Content/cloth/wrapping"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.514, 2.342, -3.94)
+multimesh = SubResource("MultiMesh_l2qms")
+
+[node name="arch_ribbon" type="Node3D" parent="Content/cloth"]
+transform = Transform3D(-3.00335e-08, 3.17596e-08, 1, 0.726575, 0.687087, 0, -0.687087, 0.726575, -4.37114e-08, -4.262, -1.199, -3.31609)
+
+[node name="arch_ribbon_01" parent="Content/cloth/arch_ribbon" instance=ExtResource("39_3p6ls")]
+transform = Transform3D(0.687087, 0.726575, 0, -0.726575, 0.687087, 0, -2.84217e-14, -1.77636e-14, 1, -1.44107, 0.577864, -0.0549999)
+visible = false
+
+[node name="arch_ribbon_02" parent="Content/cloth/arch_ribbon" instance=ExtResource("39_3p6ls")]
+transform = Transform3D(-0.687087, -0.726575, 0, 0.726575, -0.687087, 0, 2.84217e-14, 1.77636e-14, 1, -0.31568, -0.6122, -0.0549998)
+visible = false
+
+[node name="arch_ribbon_03" parent="Content/cloth/arch_ribbon" instance=ExtResource("40_v64f3")]
+transform = Transform3D(-0.0558227, 0.998441, 0, -0.998441, -0.0558227, 0, 2.84217e-14, -2.13163e-14, 1, -0.812137, 0.858812, -4.47035e-08)
+
+[node name="arch_ribbon_04" parent="Content/cloth/arch_ribbon" instance=ExtResource("40_v64f3")]
+
+[node name="long_hanging_ribbon" type="Node3D" parent="Content/cloth"]
+
+[node name="LongHangingRibbon" type="MeshInstance3D" parent="Content/cloth/long_hanging_ribbon"]
+transform = Transform3D(0.481754, -0.152169, 0.862994, 0, 0.984808, 0.173648, -0.876307, -0.0836557, 0.474435, -1.611, 0.0369999, -0.817)
+mesh = ExtResource("41_1nr1p")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_fbeu7")
+
+[node name="LongHangingRibbon2" type="MeshInstance3D" parent="Content/cloth/long_hanging_ribbon"]
+transform = Transform3D(-0.422618, -0.157379, 0.892539, 0, 0.984808, 0.173648, -0.906308, 0.0733869, -0.416197, -1.621, 0.0369999, -4.673)
+mesh = ExtResource("41_1nr1p")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_ibu1c")
+
+[node name="LongHangingRibbon3" type="MeshInstance3D" parent="Content/cloth/long_hanging_ribbon"]
+transform = Transform3D(0.461749, 0, -0.887011, 0, 1, 0, 0.887011, 0, 0.461749, -7.008, -0.546, -0.777)
+mesh = ExtResource("41_1nr1p")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_srmru")
+
+[node name="LongHangingRibbon4" type="MeshInstance3D" parent="Content/cloth/long_hanging_ribbon"]
+transform = Transform3D(0.461749, 0.854751, 0.237043, 0, 0.267238, -0.96363, -0.887011, 0.444955, 0.123397, -7.208, -0.336, -4.673)
+mesh = ExtResource("41_1nr1p")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8wd3m")
+
+[node name="VFX" type="Node3D" parent="Content"]
+
+[node name="candle_flame_light" type="OmniLight3D" parent="Content/VFX"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, -0.66139, 0.291815, -0.014916)
+light_color = Color(0.992705, 0.724734, 0.384308, 1)
+light_specular = 1.308
+light_bake_mode = 1
+omni_range = 1.522
+omni_attenuation = 0.438
+script = ExtResource("43_6p1ap")
+enable_light_flicker = true
+base_energy = 1.0
+flicker_amplitude = 0.1
+flicker_speed = 5.56
+
+[node name="top_flame_light" type="OmniLight3D" parent="Content/VFX"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, -5.74385, 5.01721, 0)
+light_color = Color(0.990316, 0.478857, 0.402522, 1)
+light_specular = 1.308
+light_bake_mode = 1
+omni_range = 4.776
+omni_attenuation = -0.991
+script = ExtResource("43_6p1ap")
+enable_light_flicker = true
+base_energy = 1.0
+flicker_amplitude = 0.1
+flicker_speed = 5.56
+flicker_offset = 0.56
+
+[node name="elements_anim" type="Node3D" parent="Content/VFX"]
+transform = Transform3D(-2.22146e-09, 0, 0.11, 0, 0.0691991, 0, -0.0508211, 0, -4.80825e-09, -3.45357, 0.699802, -2.53883)
+
+[node name="elements_earth_anim" type="AnimatedSprite3D" parent="Content/VFX/elements_anim"]
+transform = Transform3D(3.821, 0, 0, 0, 3.84, 0, 0, 0, 3.84, 3.95148, 1.34681, 74.9052)
+sprite_frames = ExtResource("44_i360t")
+animation = &"elements_earth_anim"
+autoplay = "elements_earth_anim"
+
+[node name="elements_fire_anim" type="AnimatedSprite3D" parent="Content/VFX/elements_anim"]
+transform = Transform3D(3.99532, 0, -5.68434e-14, 0, 3.707, 0, -4.9738e-14, 0, 3.707, -103.506, 0.689378, -1.30787)
+sprite_frames = ExtResource("45_asdki")
+animation = &"elements_fire_anim"
+autoplay = "elements_fire_anim"
+
+[node name="elements_water_anim" type="AnimatedSprite3D" parent="Content/VFX/elements_anim"]
+transform = Transform3D(3.873, 0, -5.68434e-14, 0, 3.707, 0, -7.10543e-15, 0, 3.707, -0.0335121, 0, 0)
+sprite_frames = ExtResource("46_mqtfl")
+animation = &"elements_water_anim"
+autoplay = "elements_water_anim"
+
+[node name="elements_wind_anim" type="AnimatedSprite3D" parent="Content/VFX/elements_anim"]
+transform = Transform3D(3.873, 0, 1.57072e-14, 0, 4.138, 0, -1.47013e-14, 0, 4.138, -103.713, 1.34681, 74.9052)
+sprite_frames = ExtResource("47_1mho2")
+animation = &"elements_wind_anim"
+autoplay = "elements_wind_anim"
+
+[node name="flames" type="Node3D" parent="Content/VFX"]
+transform = Transform3D(-2.62268e-09, 0, 0.06, 0, 0.06, 0, -0.06, 0, -2.62268e-09, -0.51815, 0.243203, 0.512779)
+
+[node name="candle_flame" type="AnimatedSprite3D" parent="Content/VFX/flames"]
+sprite_frames = ExtResource("48_a4e3l")
+animation = &"candle_flame"
+autoplay = "candle_flame"
+
+[node name="candle_flame2" type="AnimatedSprite3D" parent="Content/VFX/flames"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85837, 4.8373, -5.79467)
+sprite_frames = ExtResource("48_a4e3l")
+animation = &"candle_flame"
+autoplay = "candle_flame"
+
+[node name="candle_flame3" type="AnimatedSprite3D" parent="Content/VFX/flames"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1396, 0, 0)
+sprite_frames = ExtResource("48_a4e3l")
+animation = &"candle_flame"
+autoplay = "candle_flame"
+
+[node name="candle_flame4" type="AnimatedSprite3D" parent="Content/VFX/flames"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2214, 4.8373, -5.79467)
+sprite_frames = ExtResource("48_a4e3l")
+animation = &"candle_flame"
+autoplay = "candle_flame"
+
+[node name="pyre_flame" type="AnimatedSprite3D" parent="Content/VFX/flames"]
+transform = Transform3D(-16.6667, 0, 2.5166e-06, 0, 16.6667, 0, -2.5166e-06, 0, -16.6667, 8.41835, 63.6466, -106.896)
+sprite_frames = ExtResource("49_6pvnq")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+
+[node name="pyre_flame3" type="AnimatedSprite3D" parent="Content/VFX/flames"]
+transform = Transform3D(14.8895, 0, -7.48865, 0, 16.6667, 0, 7.48865, 0, 14.8895, 37.7457, 63.13, -99.5656)
+sprite_frames = ExtResource("49_6pvnq")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+speed_scale = 0.85
+
+[node name="pyre_flame4" type="AnimatedSprite3D" parent="Content/VFX/flames"]
+transform = Transform3D(14.8895, 0, 7.48864, 0, 16.6667, 0, -7.48864, 0, 14.8895, -20.4735, 63.13, -99.5656)
+sprite_frames = ExtResource("49_6pvnq")
+animation = &"pyre_flame_default"
+autoplay = "pyre_flame_default"
+speed_scale = 0.85
+
+[node name="circular_water" type="MeshInstance3D" parent="Content/VFX"]
+transform = Transform3D(4.87, 0, 0, 0, 4.87, 0, 0, 0, 4.87, 0, -1.545, 0)
+mesh = ExtResource("50_w2hcf")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8yrbh")
+script = ExtResource("43_6p1ap")
+enable_rotation = true
+rotation_speed_deg = 0.56
+rotate_y_axis = true
+
+[node name="animals" type="Node3D" parent="Content/VFX"]
+transform = Transform3D(-10.695, 0, -9.34987e-07, 0, 10.695, 0, 9.34987e-07, 0, -10.695, 3.50191, 0.0196565, 1.62078)
+
+[node name="skybox_static" type="Sprite3D" parent="Content/VFX"]
+transform = Transform3D(-1.62606e-07, 0, 3.72, 0, 3.72, 0, -3.72, 0, -1.62606e-07, -34.205, 0.795, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_eb68j")
+cast_shadow = 0
+texture = ExtResource("53_t7rea")
+
+[node name="SkyboxSphere" type="MeshInstance3D" parent="Content/VFX"]
+transform = Transform3D(11.585, 0, 0, 0, 11.585, 0, 0, 0, 11.585, -1.64992, 1.035, 0)
+mesh = ExtResource("54_qri0e")
+surface_material_override/0 = SubResource("StandardMaterial3D_d4i40")
+script = ExtResource("43_6p1ap")
+enable_rotation = true
+rotation_speed_deg = 0.45
+rotate_y_axis = true
+
+[node name="portals" type="Node3D" parent="Content"]
+
+[node name="Portal Clayport" parent="Content/portals" instance=ExtResource("56_gx74l")]
+transform = Transform3D(-2.44744e-08, 0, 0.55991, 0, 0.55991, 0, -0.55991, 0, -2.44744e-08, 3.35946, 0, 1.8477)
+target_settlement = ExtResource("57_og27s")
+
+[node name="Portal Breezekiln" parent="Content/portals" instance=ExtResource("56_gx74l")]
+transform = Transform3D(-2.44744e-08, 0, 0.55991, 0, 0.55991, 0, -0.55991, 0, -2.44744e-08, 3.35946, 0, -1.8477)
+target_settlement = ExtResource("58_wfk4a")
+
+[node name="DebugPopup" parent="." instance=ExtResource("59_bifrh")]
+title = "Shrine"
+custom_debug_buttons = Array[ExtResource("60_npdik")]([ExtResource("61_8pf4m"), ExtResource("62_cmhpy"), ExtResource("63_p3xih"), ExtResource("64_qetoh")])
+
+[connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_interacted_with"]

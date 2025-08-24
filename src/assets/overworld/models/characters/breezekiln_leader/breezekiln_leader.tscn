@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://utprbtjecrlu"]
+
+[ext_resource type="PackedScene" uid="uid://bgpfkah3np8y2" path="res://assets/overworld/models/characters/breezekiln_leader/breezekiln_leader.gltf" id="1_q77hu"]
+[ext_resource type="Texture2D" uid="uid://bbx434phsq5fy" path="res://assets/overworld/models/characters/breezekiln_leader/breezekiln_leader.webp" id="2_b65cp"]
+[ext_resource type="Material" uid="uid://ba8jgglbbfg5v" path="res://assets/overworld/materials/simple/metallic/m_gray.tres" id="3_toeda"]
+[ext_resource type="Material" uid="uid://cjphlci2apl5t" path="res://assets/overworld/materials/emissive/e_brown.tres" id="4_toeda"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucm35"]
+albedo_texture = ExtResource("2_b65cp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31v2v"]
+albedo_texture = ExtResource("2_b65cp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smvm5"]
+albedo_texture = ExtResource("2_b65cp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c27w"]
+albedo_texture = ExtResource("2_b65cp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toeda"]
+albedo_texture = ExtResource("2_b65cp")
+
+[node name="breezekiln_leader" instance=ExtResource("1_q77hu")]
+
+[node name="body_pants" parent="spiritkeeper_armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ucm35")
+
+[node name="body_pants_001" parent="spiritkeeper_armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_31v2v")
+
+[node name="hat_miner" parent="spiritkeeper_armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_smvm5")
+
+[node name="hat_miner_001" parent="spiritkeeper_armature/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("3_toeda")
+
+[node name="hat_miner_002" parent="spiritkeeper_armature/Skeleton3D" index="4"]
+surface_material_override/0 = ExtResource("4_toeda")
+
+[node name="head" parent="spiritkeeper_armature/Skeleton3D" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2c27w")
+
+[node name="tail" parent="spiritkeeper_armature/Skeleton3D" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_toeda")
