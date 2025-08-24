@@ -1,11 +1,11 @@
-[gd_scene load_steps=54 format=3 uid="uid://s0oqlo6ix0fj"]
+[gd_scene load_steps=62 format=3 uid="uid://s0oqlo6ix0fj"]
 
 [ext_resource type="Script" uid="uid://cr1h1t1row22a" path="res://modules/minigame/wind_rhythm/wind_rhythm.gd" id="1_4gb8k"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0ggpn"]
 [ext_resource type="Texture2D" uid="uid://drxt3drk65g2x" path="res://assets/minigames/wind_rhythm/placeholder_assets/rhythm_bg.png" id="3_thg2w"]
 [ext_resource type="PackedScene" uid="uid://ev2tmev7hfu1" path="res://modules/minigame/wind_rhythm/board/rhythm_board.tscn" id="4_uq30r"]
 [ext_resource type="PackedScene" uid="uid://c8l4byfcrycg8" path="res://modules/minigame/wind_rhythm/conductor.tscn" id="5_r3uod"]
-[ext_resource type="Resource" uid="uid://d4c2bl4wx51nd" path="res://modules/minigame/wind_rhythm/chart/endless/endless_f.tres" id="6_8ecnv"]
+[ext_resource type="Resource" uid="uid://dserelpxqqt5c" path="res://modules/minigame/wind_rhythm/chart/endless/endless_e.tres" id="6_718bi"]
 [ext_resource type="PackedScene" uid="uid://byhlr4ndp885i" path="res://modules/minigame/wind_rhythm/note/note_spawner.tscn" id="6_vd8gq"]
 [ext_resource type="PackedScene" uid="uid://bnfjvghewkmc2" path="res://modules/minigame/wind_rhythm/rhythm_scorer.tscn" id="7_4qd8c"]
 [ext_resource type="Theme" uid="uid://sbbn1spr2jvx" path="res://global/theme.tres" id="7_8ecnv"]
@@ -13,11 +13,18 @@
 [ext_resource type="Texture2D" uid="uid://byxstb6oi5ri5" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/000.png" id="9_4qd8c"]
 [ext_resource type="Texture2D" uid="uid://bl8ofr3pfyd82" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/001.png" id="10_hb4ap"]
 [ext_resource type="Texture2D" uid="uid://c5lsbl77showg" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/002.png" id="11_0xbkn"]
+[ext_resource type="Texture2D" uid="uid://b5tmxivmoyrnl" path="res://assets/minigames/wind_rhythm/player/regular/000.png" id="11_718bi"]
 [ext_resource type="Texture2D" uid="uid://chgf3ro1rpr5b" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/003.png" id="12_eqhjo"]
+[ext_resource type="Texture2D" uid="uid://dp8d74iwi34dt" path="res://assets/minigames/wind_rhythm/player/regular/001.png" id="12_i3b0u"]
+[ext_resource type="Texture2D" uid="uid://x8o2yu07i1wo" path="res://assets/minigames/wind_rhythm/player/regular/002.png" id="13_5w6v0"]
 [ext_resource type="Texture2D" uid="uid://n1j26mrcpr0r" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/004.png" id="13_8er8t"]
 [ext_resource type="Texture2D" uid="uid://d3etsd88ooi2v" path="res://assets/minigames/wind_rhythm/spirit_icons/bassoon/bassoon/005.png" id="14_judit"]
+[ext_resource type="Texture2D" uid="uid://qr4e3q5pcvsv" path="res://assets/minigames/wind_rhythm/player/regular/003.png" id="14_pv5lw"]
+[ext_resource type="Texture2D" uid="uid://dbqoq8tw6dbp1" path="res://assets/minigames/wind_rhythm/player/sour_note/000.png" id="15_22vyf"]
 [ext_resource type="Texture2D" uid="uid://cvmsr7qybbhfs" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/000.png" id="15_rckav"]
+[ext_resource type="Texture2D" uid="uid://8842vkcwn08g" path="res://assets/minigames/wind_rhythm/player/sour_note/001.png" id="16_2xwna"]
 [ext_resource type="Texture2D" uid="uid://dib8sfi1enens" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/001.png" id="16_h4iij"]
+[ext_resource type="Script" uid="uid://b2fxhvekh205w" path="res://modules/minigame/wind_rhythm/wind_player.gd" id="17_5n0hf"]
 [ext_resource type="Texture2D" uid="uid://bqevfpdbpv65i" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/002.png" id="17_dpj6s"]
 [ext_resource type="Texture2D" uid="uid://r2b3idsbny0o" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/003.png" id="18_ninfx"]
 [ext_resource type="Texture2D" uid="uid://d2cbg4fvv8kef" path="res://assets/minigames/wind_rhythm/spirit_icons/brass/brass/004.png" id="19_fa3dc"]
@@ -25,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bcbrll5nks6xq" path="res://assets/minigames/wind_rhythm/spirit_icons/bass/000.png" id="21_nnsn1"]
 [ext_resource type="Texture2D" uid="uid://bu10d5mocqh66" path="res://assets/minigames/wind_rhythm/spirit_icons/bass/001.png" id="22_wxldb"]
 [ext_resource type="Texture2D" uid="uid://ci5g834atj2xq" path="res://assets/minigames/wind_rhythm/spirit_icons/bass/002.png" id="23_vyy5q"]
+[ext_resource type="Script" uid="uid://bf8o4vg7vsuy3" path="res://modules/minigame/wind_rhythm/rhythm_spirit.gd" id="24_718bi"]
 [ext_resource type="Texture2D" uid="uid://c3nhmb8tci53r" path="res://assets/minigames/wind_rhythm/spirit_icons/bass/003.png" id="24_qtiil"]
 [ext_resource type="Texture2D" uid="uid://ckko7sefvci1a" path="res://assets/minigames/wind_rhythm/spirit_icons/bass/004.png" id="25_vol4y"]
 [ext_resource type="Texture2D" uid="uid://b1773aq3e6uqm" path="res://assets/minigames/wind_rhythm/spirit_icons/bass/005.png" id="26_sdeo6"]
@@ -38,7 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://brhnuewwteko7" path="res://assets/minigames/wind_rhythm/spirit_icons/drums/003.png" id="30_id1fo"]
 [ext_resource type="Texture2D" uid="uid://b5lydo1qcx8iv" path="res://assets/minigames/wind_rhythm/spirit_icons/drums/004.png" id="31_jmm1e"]
 [ext_resource type="Texture2D" uid="uid://71up7ooptv2j" path="res://assets/minigames/wind_rhythm/spirit_icons/shakuhachi/004.png" id="31_rs21v"]
-[ext_resource type="Texture2D" uid="uid://ddqompsbce721" path="res://assets/minigames/wind_rhythm/spirit_icons/drums/005.png" id="32_6n1qc"]
 [ext_resource type="Texture2D" uid="uid://cpo75e1pg8fvp" path="res://assets/minigames/wind_rhythm/spirit_icons/shakuhachi/005.png" id="32_ha1oc"]
 [ext_resource type="Texture2D" uid="uid://sh3r481d35ta" path="res://assets/minigames/wind_rhythm/spirit_icons/guitar/000.png" id="33_onktu"]
 [ext_resource type="Texture2D" uid="uid://dyefein3136bh" path="res://assets/minigames/wind_rhythm/spirit_icons/guitar/001.png" id="34_bey78"]
@@ -48,6 +55,37 @@
 [ext_resource type="Texture2D" uid="uid://b0t0nphb0mvtu" path="res://assets/minigames/wind_rhythm/spirit_icons/guitar/005.png" id="38_5w6v0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_03wef"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mibjd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_718bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_i3b0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5w6v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pv5lw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.56
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_22vyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2xwna")
+}],
+"loop": false,
+"name": &"miss",
+"speed": 9.56
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nnsn1"]
 animations = [{
@@ -144,13 +182,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("31_jmm1e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_6n1qc")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.75
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_22vyf"]
@@ -207,7 +242,7 @@ animations = [{
 
 [node name="WindRhythm" type="Node2D"]
 script = ExtResource("1_4gb8k")
-autoplay = 24
+autoplay = 56
 autoplay_level = 1
 data_uid = "uid://cxrnthj4sdjv4"
 
@@ -226,7 +261,7 @@ size_flags_vertical = 0
 
 [node name="Conductor" parent="." instance=ExtResource("5_r3uod")]
 unique_name_in_owner = true
-chart = ExtResource("6_8ecnv")
+chart = ExtResource("6_718bi")
 
 [node name="judgment_line" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -280,32 +315,60 @@ offset_bottom = 324.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(1727, 659)
+scale = Vector2(1.86, 1.86)
+sprite_frames = SubResource("SpriteFrames_mibjd")
+script = ExtResource("17_5n0hf")
+
 [node name="BandSpiritGroup" type="Node2D" parent="."]
 
-[node name="BassoonSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
+[node name="BassoonSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup" groups=["spirits"]]
 position = Vector2(678, 636)
 sprite_frames = SubResource("SpriteFrames_nnsn1")
+script = ExtResource("24_718bi")
+lane = 2
 
-[node name="BrassSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
+[node name="BrassSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup" groups=["spirits"]]
 position = Vector2(1290, 790)
 sprite_frames = SubResource("SpriteFrames_wxldb")
 frame_progress = 0.548502
+script = ExtResource("24_718bi")
+lane = 4
 
-[node name="BassSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
+[node name="BassSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup" groups=["spirits"]]
 position = Vector2(1488, 661)
 sprite_frames = SubResource("SpriteFrames_thg2w")
+script = ExtResource("24_718bi")
+lane = 8
+animation_divisor = 2.0
 
-[node name="DrumsSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
+[node name="DrumsSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup" groups=["spirits"]]
 position = Vector2(814, 809)
 sprite_frames = SubResource("SpriteFrames_pv5lw")
+frame = 3
+frame_progress = 0.259657
+script = ExtResource("24_718bi")
+lane = 16
+restart_on_hit = true
 
-[node name="GuitarSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
+[node name="GuitarSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup" groups=["spirits"]]
 position = Vector2(1069, 940)
 sprite_frames = SubResource("SpriteFrames_22vyf")
+frame = 2
+frame_progress = 0.171547
+script = ExtResource("24_718bi")
+lane = 32
+animation_divisor = 2.0
 
-[node name="ShakuhachiSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup"]
+[node name="ShakuhachiSpirit" type="AnimatedSprite2D" parent="BandSpiritGroup" groups=["spirits"]]
 position = Vector2(1062, 687)
 sprite_frames = SubResource("SpriteFrames_oo3bj")
+script = ExtResource("24_718bi")
+lane = 1
+
+[connection signal="note_missed" from="." to="PlayerSprite" method="_on_wind_rhythm_note_missed"]
+[connection signal="note_played" from="." to="PlayerSprite" method="_on_wind_rhythm_note_played"]
 
 [editable path="MinigameSharedComponents"]
 [editable path="MinigameSharedComponents/SharedBaseComponents"]

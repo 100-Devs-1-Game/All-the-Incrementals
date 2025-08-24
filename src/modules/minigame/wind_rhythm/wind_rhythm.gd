@@ -75,6 +75,7 @@ func _start():
 
 	scorer.combo_multiplier += combo_add
 	scorer.combo_protection_level = combo_protection_level
+	_init_spirits()
 
 
 func _process(_delta):
@@ -150,3 +151,9 @@ func _on_concentration_broken():
 	conductor.stop()
 	scorer.count_final_score()
 	game_over()
+
+
+func _init_spirits():
+	for spirit in get_tree().get_nodes_in_group("spirits"):
+		if spirit.has_method("on_note_played"):
+			note_played.connect(spirit.on_note_played)
