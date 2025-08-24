@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://c5pos323ks1ro"]
+[gd_scene load_steps=91 format=3 uid="uid://c5pos323ks1ro"]
 
 [ext_resource type="Script" uid="uid://bsimtuhg2ndb3" path="res://modules/overworld_locations/shrine/shrine.gd" id="1_ipgen"]
 [ext_resource type="PackedScene" uid="uid://dntdim0jjlhy1" path="res://modules/upgrade/ui/upgrade_tree.tscn" id="2_a3nc3"]
@@ -55,9 +55,12 @@
 [ext_resource type="SpriteFrames" uid="uid://bvva1qjrsfn36" path="res://assets/overworld/vfx/elements_anim/earth/elements_earth_anim.tres" id="52_61tad"]
 [ext_resource type="ArrayMesh" uid="uid://bxn7yk3xjkcha" path="res://assets/overworld/assets/skybox/skybox_sphere.obj" id="52_sl2ur"]
 [ext_resource type="PackedScene" uid="uid://oatd3ruxn0qu" path="res://modules/debug/debug_popup.tscn" id="55_6ws2q"]
+[ext_resource type="PackedScene" uid="uid://dbdlc760ysa1w" path="res://modules/overworld/portal/portal.tscn" id="56_cl6tx"]
 [ext_resource type="Script" uid="uid://bniv0kd24eb7w" path="res://modules/debug/debug_button.gd" id="56_mx4oj"]
 [ext_resource type="Resource" uid="uid://bn3py5bvf5ry5" path="res://modules/minigame/common/debug/breezekiln.tres" id="57_k3vra"]
+[ext_resource type="Resource" uid="uid://dm8p7uex0orka" path="res://modules/overworld_locations/clayport/clayport.tres" id="57_lsmsp"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="58_g4s1e"]
+[ext_resource type="Resource" uid="uid://cdoij41kganvn" path="res://modules/overworld_locations/breezekiln/breezekiln.tres" id="58_lsmsp"]
 [ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="59_up51v"]
 [ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="60_w7w3e"]
 
@@ -319,7 +322,7 @@ light_energy = 1.2
 directional_shadow_mode = 1
 
 [node name="Right_Side" type="SpotLight3D" parent="Camera & Lights"]
-transform = Transform3D(0.270987, -0.167151, 0.947959, 0, 0.984808, 0.173648, -0.962583, -0.0470564, 0.26687, 8.394, 2.711, 2.698)
+transform = Transform3D(0.270987, -0.167151, 0.947959, 0, 0.984808, 0.173648, -0.962583, -0.0470564, 0.26687, 5, 2.711, 2.698)
 light_color = Color(0.341176, 0.666667, 1, 1)
 light_energy = 3.56
 spot_range = 15.11
@@ -327,7 +330,7 @@ spot_attenuation = 1.81
 spot_angle_attenuation = 0.112656
 
 [node name="Left_Side" type="SpotLight3D" parent="Camera & Lights"]
-transform = Transform3D(0.2706, 0.16717, -0.948066, 0, 0.984808, 0.173648, 0.962692, -0.0469893, 0.266489, -8.394, 2.711, 2.698)
+transform = Transform3D(0.2706, 0.16717, -0.948066, 0, 0.984808, 0.173648, 0.962692, -0.0469893, 0.266489, -5, 2.711, 2.698)
 light_color = Color(0.921569, 0.498039, 0.294118, 1)
 light_energy = 3.56
 spot_range = 15.11
@@ -688,6 +691,16 @@ texture = ExtResource("46_2fe8b")
 transform = Transform3D(11.585, 0, 0, 0, 11.585, 0, 0, 0, 11.585, -1.64992, 1.035, 0)
 mesh = ExtResource("52_sl2ur")
 surface_material_override/0 = SubResource("StandardMaterial3D_mstb5")
+
+[node name="portals" type="Node3D" parent="Content"]
+
+[node name="Portal Clayport" parent="Content/portals" instance=ExtResource("56_cl6tx")]
+transform = Transform3D(-2.44744e-08, 0, 0.55991, 0, 0.55991, 0, -0.55991, 0, -2.44744e-08, 3.35946, 0, 1.8477)
+target_settlement = ExtResource("57_lsmsp")
+
+[node name="Portal Breezekiln" parent="Content/portals" instance=ExtResource("56_cl6tx")]
+transform = Transform3D(-2.44744e-08, 0, 0.55991, 0, 0.55991, 0, -0.55991, 0, -2.44744e-08, 3.35946, 0, -1.8477)
+target_settlement = ExtResource("58_lsmsp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
