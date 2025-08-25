@@ -191,7 +191,7 @@ wind_rhythm_data = ExtResource("5_hefpd")
 character_spawner = NodePath("CharacterSpawner")
 
 [node name="CharacterSpawner" parent="." instance=ExtResource("6_wp355")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.741, 6.80619, -35.0683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7162, 3.10896, -39.2332)
 
 [node name="Cameras & Lights" type="Node3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 11.62, 1.5, 0)
