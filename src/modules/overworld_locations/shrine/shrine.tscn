@@ -320,7 +320,7 @@ environment = SubResource("Environment_s7c67")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera & Lights"]
 transform = Transform3D(0.555556, 0, 0, 0, 0.54538, 0.105843, 0, -0.105843, 0.54538, -4.54747e-13, 14.0754, -1.98776e-20)
 light_color = Color(0.794937, 0.923491, 0.943206, 1)
-light_energy = 1.049
+light_energy = 0.564
 light_bake_mode = 1
 shadow_enabled = true
 shadow_opacity = 0.72
@@ -329,9 +329,10 @@ directional_shadow_mode = 1
 [node name="Right_Side" type="SpotLight3D" parent="Camera & Lights"]
 transform = Transform3D(0.270987, -0.167151, 0.947959, 0, 0.984808, 0.173648, -0.962583, -0.0470564, 0.26687, 5, 2.711, 2.698)
 light_color = Color(0.341176, 0.666667, 1, 1)
-light_energy = 0.089
+light_energy = 5.664
 light_specular = 2.16
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 15.11
 spot_attenuation = 1.81
 spot_angle_attenuation = 0.112656
@@ -339,9 +340,10 @@ spot_angle_attenuation = 0.112656
 [node name="Left_Side" type="SpotLight3D" parent="Camera & Lights"]
 transform = Transform3D(0.2706, 0.16717, -0.948066, 0, 0.984808, 0.173648, 0.962692, -0.0469893, 0.266489, -5, 2.711, 2.698)
 light_color = Color(0.921569, 0.498039, 0.294118, 1)
-light_energy = 0.089
+light_energy = 5.664
 light_specular = 2.16
 light_bake_mode = 1
+shadow_enabled = true
 spot_range = 15.11
 spot_attenuation = 1.81
 spot_angle_attenuation = 0.112656
