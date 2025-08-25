@@ -42,7 +42,7 @@ var _last_strong_direction: Vector3
 var _possible_interaction: InteractionComponent3D
 var _interaction_finished_sound: AudioStream
 var _current_dialog: NPCDialog
-var _dialog_selection_index: int = -1
+var _dialog_selection_index: int = 0
 
 @onready var label_interaction_hint: Label = %"Label Interaction Hint"
 @onready var shapecast_floor_check: ShapeCast3D = %"ShapeCast3D Floor Check"
@@ -98,10 +98,14 @@ func interact_state_enter():
 func interact_state():
 	if _current_dialog:
 		if Input.is_action_just_pressed("primary_action"):
+			print("Dialog action")
+			_current_dialog.advance(_dialog_selection_index)
 			display_dialog()
+			return
 
 		if Input.is_action_just_pressed("exit_menu"):
 			end_dialog()
+			return
 
 		var choose: int = 0
 		if Input.is_action_just_pressed("up"):
@@ -111,11 +115,10 @@ func interact_state():
 
 		if choose != 0:
 			var choices := dialog_vbox.get_child_count()
-			if _dialog_selection_index == -1:
-				_dialog_selection_index = 0
 
 			_dialog_selection_index = wrapi(_dialog_selection_index + choose, 0, choices)
-			display_dialog(false)
+			prints("Dialog selection index", _dialog_selection_index)
+			display_dialog()
 
 
 #endregion
@@ -273,12 +276,12 @@ func start_dialog(dialog: NPCDialog):
 		_current_dialog.state = NPCDialogState.new()
 
 	_current_dialog.state.current_index = 0
-	_dialog_selection_index = -1
+	_dialog_selection_index = 0
 
 	display_dialog()
 
 
-func display_dialog(advance: bool = true):
+func display_dialog():
 	clear_dialog()
 	var lines := _current_dialog.get_next_lines()
 	if lines.is_empty():
@@ -286,10 +289,6 @@ func display_dialog(advance: bool = true):
 		return
 
 	add_dialog_labels(lines)
-	if advance:
-		_current_dialog.advance(_dialog_selection_index)
-		if _dialog_selection_index > -1:
-			_dialog_selection_index = -1
 
 	dialog_parent.show()
 
