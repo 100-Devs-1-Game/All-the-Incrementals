@@ -114,6 +114,6 @@ unlock_level_index = 0
 unlocks = Array[Resource]([ExtResource("7_eifjw")])
 description_prefix = ""
 description_suffix = ""
-description_modifier_format = 0
+description_modifier_format = 3
 metadata/_tree_editor_version_added = 1
 metadata/_tree_editor_version_saved = 1
