@@ -305,7 +305,7 @@ func add_dialog_labels(arr: Array[String]):
 		label.add_theme_constant_override("line_spacing", -30)
 		label.text = text
 
-		if arr.size() > 1 and i != _dialog_selection_index:
+		if arr.size() > 1 and i != max(0, _dialog_selection_index):
 			label.modulate = Color.DIM_GRAY
 
 		dialog_vbox.add_child(label)
