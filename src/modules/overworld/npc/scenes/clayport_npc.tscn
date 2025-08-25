@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqave06nlqugb"]
+
+[ext_resource type="PackedScene" uid="uid://c5auhmpl105s8" path="res://modules/overworld/npc/scenes/template_npc.tscn" id="1_hde1e"]
+[ext_resource type="PackedScene" uid="uid://b8xadldfgkvdq" path="res://assets/overworld/models/characters/clayport_leader/clayport_leader.tscn" id="2_hde1e"]
+
+[node name="Clayport Npc" instance=ExtResource("1_hde1e")]
+
+[node name="clayport_leader" parent="." index="1" instance=ExtResource("2_hde1e")]
