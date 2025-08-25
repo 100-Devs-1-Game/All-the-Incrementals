@@ -53,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_bottom = 20
 
 [node name="Caption" type="Label" parent="CanvasLayer/MarginContainer/Panel/MarginContainer"]
 layout_mode = 2
@@ -62,8 +63,16 @@ text = "How To Play"
 
 [node name="Content" type="Label" parent="CanvasLayer/MarginContainer/Panel/MarginContainer"]
 layout_mode = 2
-theme_override_constants/line_spacing = -30
-text = "asjdfakjdflöasjdfjkasdöjfaskdfjasjkdfjasdjföasjdlfkaskdfjsaödfaskdfljöaskdlfasöjdfjköaskdfjöasldjföjaldjfkölaskdöjföasjdföaskjdfjöaksldfjasölkdfjasödlfkjdsölkfljadkföjasdlfjklsaökjdfölaskdfjöalsdfaljösdlfjkjaödfjkösaljkdfö"
+size_flags_vertical = 8
+theme_override_constants/line_spacing = -20
+theme_override_font_sizes/font_size = 46
+text = "Spiritkeeper! You must head through the portals towards the elemental altars and help your people
+
+These altars will allow you to lend to the townsfolk through different activities. Your performance will determine how much essence you collect
+
+The friendly spririts are watching. After you've finished, they will help continue your efforts and will store any essences within the altar
+
+You can upgrade the altars here but be sure to visit them periodically to collect the gathered essences, or you can improve their throughput and have it delivered to you directly!"
 autowrap_mode = 3
 
 [node name="Quit" type="Button" parent="CanvasLayer/MarginContainer/Panel/MarginContainer"]
