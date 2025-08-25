@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=79 format=4 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="Script" uid="uid://eiutp4wmfx4t" path="res://modules/overworld_locations/clayport/clayport.gd" id="1_q21dp"]
 [ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_piane"]
@@ -193,6 +193,9 @@ shader_parameter/emission_strength = 0.3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xwrgo"]
 size = Vector3(15.5322, 3.96497, 18.5085)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sckh8"]
+size = Vector3(1, 0.2, 5)
 
 [sub_resource type="Resource" id="Resource_i6g11"]
 script = ExtResource("10_0icjx")
@@ -675,7 +678,7 @@ shape = SubResource("CylinderShape3D_xvfut")
 transform = Transform3D(-0.0718108, 0, 0.997418, 0, 1, 0, -0.997418, 0, -0.0718108, 2.79463, -1.17857, 0)
 
 [node name="staircase_mmi3d_01" type="MultiMeshInstance3D" parent="Content/staircase"]
-transform = Transform3D(0.999758, -0.0217536, 0.00315347, 0.0217536, 0.958601, -0.283919, 0.00315341, 0.283919, 0.958843, 0.0494034, -0.300287, -0.64868)
+transform = Transform3D(0.999812, -0.0192198, 0.0024531, 0.0192259, 0.968383, -0.248725, 0.00240499, 0.248726, 0.968571, 0.0494034, -0.300287, -0.64868)
 multimesh = SubResource("MultiMesh_t3xto")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/staircase/staircase_mmi3d_01"]
@@ -686,7 +689,7 @@ transform = Transform3D(1, 0.000121867, -0.000283811, -0.000121772, 1, 0.0003349
 shape = SubResource("ConcavePolygonShape3D_ny77r")
 
 [node name="staircase_mmi3d_02" type="MultiMeshInstance3D" parent="Content/staircase"]
-transform = Transform3D(0.932953, 0, 0.359996, 0, 1, 0, -0.359997, 0, 0.932953, 34.9949, 1.37191, -27.7279)
+transform = Transform3D(0.927673, 0, 0.373392, 0, 1, 0, -0.373393, 0, 0.927673, 35.1284, 1.37191, -29.5818)
 multimesh = SubResource("MultiMesh_t3xto")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/staircase/staircase_mmi3d_02"]
@@ -696,7 +699,7 @@ transform = Transform3D(1, 0, -2.98013e-08, 0, 1, 0, 2.98013e-08, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ny77r")
 
 [node name="staircase_mmi3d_03" type="MultiMeshInstance3D" parent="Content/staircase"]
-transform = Transform3D(0.765581, -0.0495925, -0.292476, 0.00965509, 0.990674, -0.143604, 0.223799, 0.126909, 1.00671, 8.38682, 2.77722, -37.7478)
+transform = Transform3D(0.763804, -0.0505855, -0.300356, 0.00965509, 0.990674, -0.143604, 0.229792, 0.126517, 1.00439, 8.55687, 2.78884, -40.1098)
 multimesh = SubResource("MultiMesh_t3xto")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/staircase/staircase_mmi3d_03"]
@@ -778,6 +781,17 @@ transform = Transform3D(0.482658, 0, 0.315638, 0, 1.7301, 0, -0.110568, 0, 0.169
 
 [node name="Clayport Npc" parent="Content/npcs" instance=ExtResource("32_sckh8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.03237, 1.1388, 0.421418)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Content"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.8028, 4.57546, -2.4548)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/StaticBody3D"]
+transform = Transform3D(0.872984, 0.48468, 0.0546191, -0.485405, 0.87429, 2.12177e-08, -0.0477529, -0.0265124, 0.998507, -1.02517, -0.340218, 0.95638)
+shape = SubResource("BoxShape3D_sckh8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Content/StaticBody3D"]
+transform = Transform3D(0.858031, 0.476378, 0.191957, -0.485405, 0.87429, 2.38061e-08, -0.167826, -0.0931768, 0.981403, -1.66799, -0.340218, -4.03366)
+shape = SubResource("BoxShape3D_sckh8")
 
 [node name="DebugPopup" parent="." instance=ExtResource("9_4eabd")]
 title = "Clayport"
