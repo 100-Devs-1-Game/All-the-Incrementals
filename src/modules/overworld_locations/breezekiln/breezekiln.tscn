@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bl4s8xuvuf3xb"]
+[gd_scene load_steps=69 format=3 uid="uid://bl4s8xuvuf3xb"]
 
 [ext_resource type="Script" uid="uid://ou1teugr01v8" path="res://modules/overworld_locations/breezekiln/breezekiln.gd" id="1_82p5n"]
 [ext_resource type="Resource" uid="uid://bseyt0iuwnq5m" path="res://modules/minigame/fire_cooking/data/fire_cooking_data.tres" id="2_oivh7"]
@@ -38,6 +38,7 @@
 [ext_resource type="Resource" uid="uid://c58e75hj3hag2" path="res://modules/overworld/data/journal/entry04.tres" id="31_jupv8"]
 [ext_resource type="Resource" uid="uid://dip6l5lcwe45n" path="res://modules/overworld/data/journal/entry05.tres" id="32_by4k6"]
 [ext_resource type="PackedScene" uid="uid://dnp8p5dwpu15q" path="res://modules/overworld/altar/altar.tscn" id="33_amf67"]
+[ext_resource type="Resource" uid="uid://bjcq0qrbwhpxy" path="res://modules/overworld/data/journal/entry06.tres" id="33_jupv8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_knmtx"]
 
@@ -145,6 +146,7 @@ points = PackedVector3Array(-0.00346565, -0.263302, -17.7037, -1.7364, -0.263302
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272sf"]
 albedo_texture = ExtResource("25_d0jwi")
+disable_receive_shadows = true
 
 [sub_resource type="Resource" id="Resource_hefpd"]
 script = ExtResource("9_hefpd")
@@ -190,15 +192,18 @@ wind_rhythm_data = ExtResource("5_hefpd")
 character_spawner = NodePath("CharacterSpawner")
 
 [node name="CharacterSpawner" parent="." instance=ExtResource("6_wp355")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.741, 6.80619, -35.0683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7162, 3.10896, -39.2332)
 
 [node name="Cameras & Lights" type="Node3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 11.62, 1.5, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Cameras & Lights"]
-transform = Transform3D(0.97437, 0, -0.224951, 0, 1, 0, 0.224951, 0, 0.97437, 5.07926e-07, 12.5754, -11.62)
+transform = Transform3D(0.918237, 0.372268, -0.13512, -0.278984, 0.850196, 0.446469, 0.281084, -0.372268, 0.884538, 0.0898676, 12.6443, -11.5301)
 light_color = Color(0.965902, 0.902276, 0.82478, 1)
 light_energy = 1.45
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.63
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Cameras & Lights"]
 environment = SubResource("Environment_g75is")
@@ -1361,7 +1366,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2903, 6.29306, -58.7977)
 element = 1
 
 [node name="Altar Wind" parent="Content/altars" instance=ExtResource("33_amf67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69241, 0.263302, -25.8863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67333, 0.263302, -29.5547)
 element = 3
 
 [node name="portals" type="Node3D" parent="Content"]
@@ -1386,7 +1391,7 @@ data = ExtResource("32_by4k6")
 
 [node name="JournalEntryPickup3" parent="Content/journal" instance=ExtResource("30_the1n")]
 transform = Transform3D(0.816188, 0, 0.577786, 0, 1, 0, -0.577786, 0, 0.816188, -83.0463, 7.1085, -37.5131)
-data = ExtResource("32_by4k6")
+data = ExtResource("33_jupv8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

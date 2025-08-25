@@ -37,14 +37,17 @@ func update():
 		grid_container.add_child(button)
 
 		var label := Label.new()
-		label.text = minigame.display_name
+		label.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
+		label.text = minigame.display_name + " : "
 		grid_container.add_child(label)
 
 		label = Label.new()
+		label.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
 		label.text = "Avg. Score: %.1f" % player_state.get_average_minigame_highscore(minigame)
 		grid_container.add_child(label)
 
 		label = Label.new()
+		label.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
 		label.text = "* %.2f" % minigame.currency_conversion_factor
 		grid_container.add_child(label)
 

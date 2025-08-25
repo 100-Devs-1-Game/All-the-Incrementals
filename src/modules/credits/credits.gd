@@ -71,7 +71,7 @@ func _ready() -> void:
 	$CreditsText.text = CREDITS_TEXT
 	var tween = get_tree().create_tween()
 	tween.tween_property(
-		$CreditsText, "position", Vector2($CreditsText.position.x, -$CreditsText.size.y), 100
+		$CreditsText, "position", Vector2($CreditsText.position.x, -$CreditsText.size.y), 25
 	)
 	tween.tween_property($DarkGradient, "modulate", Color(1, 1, 1, 0), 5)
 	tween.tween_interval(0.05)
