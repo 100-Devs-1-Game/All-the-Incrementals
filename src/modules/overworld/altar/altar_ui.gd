@@ -9,6 +9,7 @@ var _progess_bars: Array[ProgressBar]
 
 
 func _ready() -> void:
+	EventBus.apply_shrine_upgrades.emit()
 	EventBus.passive_essence_generation_tick.connect(_on_generation_tick)
 
 
