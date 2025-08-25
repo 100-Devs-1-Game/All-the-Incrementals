@@ -241,20 +241,9 @@ animations = [{
 
 [node name="WindRhythm" type="Node2D"]
 script = ExtResource("1_4gb8k")
-autoplay = Dictionary[int, int]({
-1: 1,
-2: 1,
-4: 1,
-8: 8,
-16: 8,
-32: 8
-})
 data_uid = "uid://cxrnthj4sdjv4"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
-
-[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
-visible = false
 
 [node name="RhythmBackground" type="Sprite2D" parent="."]
 self_modulate = Color(0.597176, 0.597176, 0.597176, 1)
