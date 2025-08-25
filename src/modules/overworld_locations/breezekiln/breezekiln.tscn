@@ -511,17 +511,6 @@ texture = ExtResource("10_dyxuy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0259705, -0.530287, -0.0592499)
 shape = SubResource("BoxShape3D_rrmrk")
 
-[node name="tree_05_snow_21" type="Sprite3D" parent="Content/nature/tree_05"]
-transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -15.921, 5.752, -39.745)
-billboard = 2
-texture = ExtResource("10_dyxuy")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_21"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_21/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000335217, -0.527902, 0.00313187)
-shape = SubResource("BoxShape3D_rrmrk")
-
 [node name="tree_05_snow_22" type="Sprite3D" parent="Content/nature/tree_05"]
 transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -13.445, 5.777, -40.959)
 billboard = 2
@@ -1378,7 +1367,7 @@ element = 3
 [node name="portals" type="Node3D" parent="Content"]
 
 [node name="Portal" parent="Content/portals" instance=ExtResource("28_ffxn8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0155, 6.42988, -33.3069)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6329, 3.37786, -40.8379)
 
 [node name="npcs" type="Node3D" parent="Content"]
 
