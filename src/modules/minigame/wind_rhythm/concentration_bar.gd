@@ -32,6 +32,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if _is_draining:
 		progress_bar.value -= drain_speed_base * drain_speed_mult * delta
+		#progress_bar.value += 0
 		#print(drain_speed_base * drain_speed_mult * delta)
 	if progress_bar.value <= 0:
 		concentration_broken.emit()

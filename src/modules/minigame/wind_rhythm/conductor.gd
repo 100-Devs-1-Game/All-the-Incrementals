@@ -2,10 +2,11 @@ class_name Conductor extends AudioStreamPlayer
 
 signal beat(position)
 signal bar(position)
-signal song_finished
+signal track_queued(Chart)
 
-@export var chart: Chart
+@export var charts: Array[Chart]
 
+var chart: Chart
 var song_position: float = 0
 var beat_number: int = 0
 var song_position_in_beats: int = 0
@@ -14,12 +15,32 @@ var start_offset_in_beats: int = 0
 var notes_in_bar: int = 4
 var last_beat: int = 0
 var current_bar: int = 0
-
-var playback: AudioStreamPlayback
+var current_position: float = 0
+var chosen_on: int = -1
+var playback: AudioStreamPlaybackInteractive
 
 
 func _ready():
-	stream = chart.audio
+	#chart = charts.pick_random()
+	#stream = chart.audio
+
+	stream = AudioStreamInteractive.new()
+	stream.clip_count = charts.size()
+
+	for n in charts.size():
+		stream.set_clip_name(n, charts[n].name)
+		stream.set_clip_stream(n, charts[n].audio)
+		print(charts[n].name)
+	stream.initial_clip = range(stream.clip_count).pick_random()
+	chart = charts[stream.initial_clip]
+	stream.add_transition(
+		AudioStreamInteractive.CLIP_ANY,
+		AudioStreamInteractive.CLIP_ANY,
+		AudioStreamInteractive.TRANSITION_FROM_TIME_END,
+		AudioStreamInteractive.TRANSITION_TO_TIME_START,
+		AudioStreamInteractive.FADE_AUTOMATIC,
+		2
+	)
 	play()
 	playback = get_stream_playback()
 	seconds_per_beat = 60.0 / chart.audio.bpm
@@ -27,13 +48,32 @@ func _ready():
 
 
 func _process(_delta):
-	song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
+	_handle_clip_swap()
+	current_position += _delta
+	song_position = current_position + AudioServer.get_time_since_last_mix()
 	# Compensate for output latency.
 	song_position -= AudioServer.get_output_latency()
 	song_position_in_beats = int(floor(song_position / seconds_per_beat)) + start_offset_in_beats
-	_report_beat()
-	if !playback.is_playing():
-		song_finished.emit()
+
+
+func _handle_clip_swap():
+	if chosen_on != playback.get_current_clip_index():
+		chosen_on = playback.get_current_clip_index()
+		current_position = 0
+		print(current_position)
+		var manager: RhythmGame = get_parent()
+		manager.lanes = charts[playback.get_current_clip_index()].lanes.duplicate(true)
+		%NoteSpawner.chart = charts[playback.get_current_clip_index()]
+		%NoteSpawner.spawn_markers()
+		%NoteSpawner.spawn_notes()
+
+		var new_clip = range(stream.clip_count).pick_random()
+		while new_clip == playback.get_current_clip_index():
+			new_clip = range(stream.clip_count).pick_random()
+		print("switching from ", playback.get_current_clip_index(), " to ", new_clip)
+		track_queued.emit(charts[new_clip])
+
+		get_stream_playback().switch_to_clip(new_clip)
 
 
 func _report_beat():

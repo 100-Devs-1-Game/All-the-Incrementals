@@ -81,7 +81,7 @@ func _start():
 	note_played.connect(scorer.on_rhythm_game_note_played)
 	note_missed.connect(scorer.on_rhythm_game_note_missed)
 
-	conductor.song_finished.connect(_on_concentration_broken)
+	#conductor.song_finished.connect(_on_concentration_broken)
 
 	for sprite in $BandSpiritGroup.get_children():
 		sprite.play("default")
