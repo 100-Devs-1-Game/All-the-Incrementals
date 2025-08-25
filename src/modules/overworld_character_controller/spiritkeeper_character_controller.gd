@@ -297,10 +297,16 @@ func display_dialog(advance: bool = true):
 func add_dialog_labels(arr: Array[String]):
 	for i in arr.size():
 		var text := arr[i]
+
 		var label := Label.new()
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		label.custom_minimum_size.x = 1700
 		label.text = text
+
 		if arr.size() > 1 and i != _dialog_selection_index:
 			label.modulate = Color.DIM_GRAY
+
 		dialog_vbox.add_child(label)
 
 
