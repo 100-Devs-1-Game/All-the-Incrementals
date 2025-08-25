@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="NPCDialog" load_steps=4 format=3 uid="uid://d0v3u5qy0rv1j"]
+
+[ext_resource type="Script" uid="uid://o5qj3tmy4ife" path="res://modules/overworld/dialog/npc_dialog.gd" id="1_6w2tb"]
+[ext_resource type="Script" uid="uid://57lilt2ifgcy" path="res://modules/overworld/dialog/npc_dialog_questions.gd" id="1_pfurf"]
+
+[sub_resource type="Resource" id="Resource_3dl0e"]
+script = ExtResource("1_pfurf")
+questions = Array[String](["How have you kept at being a leader for so long?", "What do you know about the other settlements?", "What’s with all the windmills?", "What’s Breezekiln like?"])
+answers = Array[String](["Because no one else wanted the job. And I didn’t trust anyone else to do it right. Simple as that.", "I know enough. They’ve got their own ways, we’ve got ours. Some more organized than us,some less so. A few of ‘em keep to themselves, and I get why. There’s no perfect place left,so everyone makes do. We work. They work. That’s all the similarity that matters.", "They’re what keep us breathin’. Rebuilt 'em myself after the duct system burned out twocycles back. No help. Just metal, sweat, and time. It’s my paradise. They may be loud, but they work. That’s what matters.", "Hot. Loud. Always on the edge of failing. But folks here don’t quit. It’s not for everyone. But if you’ve got a good pair of boots and a head that stays down, you’ll get by."])
+metadata/_custom_type_script = "uid://57lilt2ifgcy"
+
+[resource]
+script = ExtResource("1_6w2tb")
+npc_name = "Garrick"
+initial_dialog = "You’re the Spiritkeeper, right? I’ve heard about you. Garrick Ironwhistle. I keep Breezekiln	in one piece. Most days.
+Nice to meet you. What’s happening here?
+Repairs. Maintenance. Same thing every day. Something breaks, I fix it. Lately, it’s been more breakin’ than fixin’.
+Do you need my help?
+Yeah. Don’t expect me to roll out a welcome mat, but I can’t do it all myself no more. If you’re stickin’ around, make yourself useful. You’ll figure where you fit. If you pull your weight, I’ll make it worth your while.
+"
+alternative_dialog = SubResource("Resource_3dl0e")
+metadata/_custom_type_script = "uid://o5qj3tmy4ife"

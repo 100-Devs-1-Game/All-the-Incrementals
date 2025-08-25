@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="NPCDialog" load_steps=4 format=3 uid="uid://calmt2cio2iyq"]
+
+[ext_resource type="Script" uid="uid://o5qj3tmy4ife" path="res://modules/overworld/dialog/npc_dialog.gd" id="1_scvnk"]
+[ext_resource type="Script" uid="uid://57lilt2ifgcy" path="res://modules/overworld/dialog/npc_dialog_questions.gd" id="1_smdvy"]
+
+[sub_resource type="Resource" id="Resource_nsg2c"]
+script = ExtResource("1_smdvy")
+questions = Array[String](["How do you keep the town running down here?", "What’s it like being leader?", "Do you know much about the Pillars?", "Do you get many visitors in Clayport?"])
+answers = Array[String](["Truth is, it runs because everyone wants it to. And if I can make that happen withoutspending all day behind a desk, then I’d call it a good week.", "It’s work. You spend less time doing the things you enjoy and more time making sureeveryone else can do theirs. Some days are easier than others. Some days I’d trade it for a quiet bench by the lake. Butit’s worth it, most of the time.", "Enough. They built the temples and left before my grandparents were born. Most of what Iknow comes from old records and stories. Useful in places, but half of it contradicts theother half. If you want to know what they were really like, I hope you’ve got better sources than me.", "A fair amount. Traders from Breezekiln and a few of the smaller hamlets. We keep agood inn and a better market, so most stay at least a night. Not many stay longer. I think we’re a bit too calm for some tastes."])
+metadata/_custom_type_script = "uid://57lilt2ifgcy"
+
+[resource]
+script = ExtResource("1_scvnk")
+npc_name = "Reed"
+initial_dialog = "Spiritkeeper. Welcome to Clayport. I am Elder Reedwhisper, though most just call me Reed. I’ve heard a little about you, but I prefer to form my own impressions. You’ve come at a busy time, but then… it’s always a busy time somewhere.
+Hello! What’s happening here?
+Oh, the usual. Things always need doing. We go at our own pace though. If you’re inclined		to help, you’ll find your place soon enough. And if you’re not inclined… well, the market has fine food, at least.
+Do you think I can help, then?
+I think anyone can be of help, if they choose to be. The question is whether they’re willing to put in the effort when no one’s looking. Of course, you’re the Spiritkeeper, so I imagine you’re here to do more than sit by the water
+all day. Tempting as that is."
+alternative_dialog = SubResource("Resource_nsg2c")
+metadata/_custom_type_script = "uid://o5qj3tmy4ife"

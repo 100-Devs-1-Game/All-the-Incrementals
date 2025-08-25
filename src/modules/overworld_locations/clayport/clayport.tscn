@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=78 format=4 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="Script" uid="uid://eiutp4wmfx4t" path="res://modules/overworld_locations/clayport/clayport.gd" id="1_q21dp"]
 [ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_piane"]
@@ -36,6 +36,7 @@
 [ext_resource type="Shader" uid="uid://bxb36mmd2saig" path="res://assets/overworld/scripts/shaders/water_toon.gdshader" id="29_2nf4n"]
 [ext_resource type="Texture2D" uid="uid://dfvfmidfq5gmd" path="res://assets/overworld/vfx/water/circular_water/water_blue.webp" id="30_10ulk"]
 [ext_resource type="PackedScene" uid="uid://by2bo8yeg0btq" path="res://assets/overworld/vfx/water/cascade/cascade_rocks.tscn" id="31_ltokd"]
+[ext_resource type="PackedScene" uid="uid://cqave06nlqugb" path="res://modules/overworld/npc/scenes/clayport_npc.tscn" id="32_sckh8"]
 [ext_resource type="PackedScene" uid="uid://coxmlipoas6nc" path="res://assets/overworld/vfx/water/cascade/cascade_waterfall.tscn" id="32_xvfut"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5wtc"]
@@ -772,6 +773,11 @@ shape = SubResource("BoxShape3D_xwrgo")
 
 [node name="cascade_waterfall" parent="Content/VFX/cascade" instance=ExtResource("32_xvfut")]
 transform = Transform3D(0.482658, 0, 0.315638, 0, 1.7301, 0, -0.110568, 0, 0.169076, -0.756199, -0.478611, 0.0516527)
+
+[node name="npcs" type="Node3D" parent="Content"]
+
+[node name="Clayport Npc" parent="Content/npcs" instance=ExtResource("32_sckh8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.03237, 1.1388, 0.421418)
 
 [node name="DebugPopup" parent="." instance=ExtResource("9_4eabd")]
 title = "Clayport"
