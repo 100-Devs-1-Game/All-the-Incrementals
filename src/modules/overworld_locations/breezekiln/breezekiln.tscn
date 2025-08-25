@@ -1361,7 +1361,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2903, 6.29306, -58.7977)
 element = 1
 
 [node name="Altar Wind" parent="Content/altars" instance=ExtResource("33_amf67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69241, 0.263302, -25.8863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67333, 0.263302, -29.5547)
 element = 3
 
 [node name="portals" type="Node3D" parent="Content"]
