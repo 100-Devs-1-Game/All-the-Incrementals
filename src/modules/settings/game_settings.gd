@@ -44,6 +44,10 @@ var save_path = "user://settings.cfg"
 var audio_players: Array = []
 var active_audio: bool = false
 
+# Setings for Rhythm Game
+var scroll_speed: float = 2.0
+var offset: float = 0.0
+
 var _bus_idx := {
 	BUS_MASTER: 0,
 	BUS_MUSIC: -1,
@@ -128,6 +132,8 @@ func save_settings() -> void:
 	config.set_value("audio", "master_volume", master_volume)
 	config.set_value("audio", "music_volume", music_volume)
 	config.set_value("audio", "sfx_volume", sfx_volume)
+	config.set_value("audio", "scroll_speed", scroll_speed)
+	config.set_value("audio", "offset", offset)
 
 	var str_keybinds := {}
 	for key in keybinds:
@@ -156,6 +162,8 @@ func load_settings() -> void:
 	master_volume = config.get_value("audio", "master_volume", master_volume)
 	music_volume = config.get_value("audio", "music_volume", music_volume)
 	sfx_volume = config.get_value("audio", "sfx_volume", sfx_volume)
+	scroll_speed = config.get_value("audio", "scroll_speed", scroll_speed)
+	offset = config.get_value("audio", "offset", offset)
 
 	var saved_binds = config.get_value("controls", "keybinds", keybinds)
 	keybinds.clear()
@@ -171,6 +179,8 @@ func restore_defaults() -> void:
 	master_volume = 30.0
 	music_volume = 30.0
 	sfx_volume = 30.0
+	scroll_speed = 2.0
+	offset = 0.0
 	keybinds = {
 		"primary_action": [KEY_SPACE, KEY_Z],
 		"secondary_action": [KEY_E, KEY_X],

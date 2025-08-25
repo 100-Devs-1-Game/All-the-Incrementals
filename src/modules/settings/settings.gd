@@ -16,6 +16,8 @@ const REBINDER = preload("res://modules/settings/rebinding/rebinder.tscn")
 @export var master_slider: Slider
 @export var music_slider: Slider
 @export var sfx_slider: Slider
+@export var scroll_speed_slider: Slider
+@export var offset_slider: Slider
 
 var status_rebinding := false
 var action_menu := false  #Changes menu for ingame
@@ -40,6 +42,7 @@ var ordered_actions := [
 
 var setting_buttons := {}
 var audio_sliders := {}
+var gameplay_sliders := []
 
 @onready var quality_label = $Panel/SettingsContainer/MultiContainer/QualityLabel
 
@@ -55,7 +58,16 @@ func _ready() -> void:
 		restore_button: "Restore"
 	}
 
-	audio_sliders = {master_slider: "Master", music_slider: "Music", sfx_slider: "Sfx"}
+	audio_sliders = {
+		master_slider: "Master",
+		music_slider: "Music",
+		sfx_slider: "Sfx",
+	}
+
+	gameplay_sliders = [
+		scroll_speed_slider,
+		offset_slider,
+	]
 	setup()
 
 
@@ -77,6 +89,9 @@ func connect_signals() -> void:
 	for slider in audio_sliders.keys():
 		if not slider.is_connected("value_changed", _on_volume_changed):
 			slider.value_changed.connect(_on_volume_changed.bind(audio_sliders[slider]))
+
+	for slider: Slider in gameplay_sliders:
+		slider.value_changed.connect(_on_gameplay_slider_changed)
 
 	for key in keybinders:
 		bind_id += 1
@@ -117,6 +132,13 @@ func _on_volume_changed(value: float, bus_name: String) -> void:
 	GameSettings.save_settings()
 
 
+func _on_gameplay_slider_changed(value: float) -> void:
+	GameSettings.offset = offset_slider.value
+	GameSettings.scroll_speed = scroll_speed_slider.value
+	update_ui()
+	GameSettings.save_settings()
+
+
 func call_rebinder(key_id: int, button):
 	status_rebinding = true
 	print("Calling rebinder.")
@@ -137,7 +159,11 @@ func update_ui() -> void:
 	master_slider.value = GameSettings.master_volume
 	music_slider.value = GameSettings.music_volume
 	sfx_slider.value = GameSettings.sfx_volume
+	scroll_speed_slider.value = GameSettings.scroll_speed
+	offset_slider.value = GameSettings.offset
 
 	master_slider.get_child(0).text = str(roundi(GameSettings.master_volume), "%")
 	music_slider.get_child(0).text = str(roundi(GameSettings.music_volume), "%")
 	sfx_slider.get_child(0).text = str(roundi(GameSettings.sfx_volume), "%")
+	scroll_speed_slider.get_child(0).text = str(GameSettings.scroll_speed, "")
+	offset_slider.get_child(0).text = str(GameSettings.offset, "")
