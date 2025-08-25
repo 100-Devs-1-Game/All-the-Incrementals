@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/wind_rhythm_153bpm_d_master.ogg-f934c3ea7e1c1
 [params]
 
 loop=false
-loop_offset=0
+loop_offset=0.0
 bpm=153.0
-beat_count=0
+beat_count=64
 bar_beats=4

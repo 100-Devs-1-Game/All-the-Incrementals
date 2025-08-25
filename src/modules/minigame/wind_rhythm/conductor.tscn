@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8l4byfcrycg8"]
+[gd_scene load_steps=9 format=3 uid="uid://c8l4byfcrycg8"]
 
 [ext_resource type="Script" uid="uid://bi2msqduevumu" path="res://modules/minigame/wind_rhythm/conductor.gd" id="1_h5sur"]
-[ext_resource type="Resource" uid="uid://ducasuhwp6m6q" path="res://modules/minigame/wind_rhythm/chart/exotic_house.tres" id="2_0lpnu"]
+[ext_resource type="Script" uid="uid://ddqeb6u7cudik" path="res://modules/minigame/wind_rhythm/chart/chart.gd" id="2_jpphk"]
+[ext_resource type="Resource" uid="uid://csfvju4h4sdsa" path="res://modules/minigame/wind_rhythm/chart/endless/endless_a.tres" id="3_k8q8l"]
+[ext_resource type="Resource" uid="uid://dx3kpjbtnggd2" path="res://modules/minigame/wind_rhythm/chart/endless/endless_b.tres" id="4_acpda"]
+[ext_resource type="Resource" uid="uid://crc3mm8boxfkp" path="res://modules/minigame/wind_rhythm/chart/endless/endless_c.tres" id="5_d4n04"]
+[ext_resource type="Resource" uid="uid://b47cmew7lt8m2" path="res://modules/minigame/wind_rhythm/chart/endless/endless_d.tres" id="6_num3q"]
+[ext_resource type="Resource" uid="uid://dserelpxqqt5c" path="res://modules/minigame/wind_rhythm/chart/endless/endless_e.tres" id="7_5o5u0"]
+[ext_resource type="Resource" uid="uid://d4c2bl4wx51nd" path="res://modules/minigame/wind_rhythm/chart/endless/endless_f.tres" id="8_lxrbj"]
 
 [node name="Conductor" type="AudioStreamPlayer"]
 script = ExtResource("1_h5sur")
-chart = ExtResource("2_0lpnu")
+charts = Array[ExtResource("2_jpphk")]([ExtResource("3_k8q8l"), ExtResource("4_acpda"), ExtResource("5_d4n04"), ExtResource("6_num3q"), ExtResource("7_5o5u0"), ExtResource("8_lxrbj")])

@@ -43,8 +43,8 @@ func start():
 	manager = get_node(wind_rhythm)
 	active_lanes = manager.active_lanes
 	print(active_lanes)
-	spawn_markers()
-	spawn_notes()
+	#spawn_markers()
+	#spawn_notes()
 
 
 func spawn_notes():

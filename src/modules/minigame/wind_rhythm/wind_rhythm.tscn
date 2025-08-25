@@ -1,11 +1,10 @@
-[gd_scene load_steps=62 format=3 uid="uid://s0oqlo6ix0fj"]
+[gd_scene load_steps=61 format=3 uid="uid://s0oqlo6ix0fj"]
 
 [ext_resource type="Script" uid="uid://cr1h1t1row22a" path="res://modules/minigame/wind_rhythm/wind_rhythm.gd" id="1_4gb8k"]
 [ext_resource type="PackedScene" uid="uid://4sywdwm7ofk2" path="res://modules/minigame/common/shared/minigame_shared_components.tscn" id="2_0ggpn"]
 [ext_resource type="Texture2D" uid="uid://drxt3drk65g2x" path="res://assets/minigames/wind_rhythm/placeholder_assets/rhythm_bg.png" id="3_thg2w"]
 [ext_resource type="PackedScene" uid="uid://ev2tmev7hfu1" path="res://modules/minigame/wind_rhythm/board/rhythm_board.tscn" id="4_uq30r"]
 [ext_resource type="PackedScene" uid="uid://c8l4byfcrycg8" path="res://modules/minigame/wind_rhythm/conductor.tscn" id="5_r3uod"]
-[ext_resource type="Resource" uid="uid://dserelpxqqt5c" path="res://modules/minigame/wind_rhythm/chart/endless/endless_e.tres" id="6_718bi"]
 [ext_resource type="PackedScene" uid="uid://byhlr4ndp885i" path="res://modules/minigame/wind_rhythm/note/note_spawner.tscn" id="6_vd8gq"]
 [ext_resource type="PackedScene" uid="uid://bnfjvghewkmc2" path="res://modules/minigame/wind_rhythm/rhythm_scorer.tscn" id="7_4qd8c"]
 [ext_resource type="Theme" uid="uid://sbbn1spr2jvx" path="res://global/theme.tres" id="7_8ecnv"]
@@ -242,9 +241,20 @@ animations = [{
 
 [node name="WindRhythm" type="Node2D"]
 script = ExtResource("1_4gb8k")
+autoplay = Dictionary[int, int]({
+1: 1,
+2: 1,
+4: 1,
+8: 8,
+16: 8,
+32: 8
+})
 data_uid = "uid://cxrnthj4sdjv4"
 
 [node name="MinigameSharedComponents" parent="." instance=ExtResource("2_0ggpn")]
+
+[node name="CanvasLayer" parent="MinigameSharedComponents/SharedBaseComponents" index="0"]
+visible = false
 
 [node name="RhythmBackground" type="Sprite2D" parent="."]
 self_modulate = Color(0.597176, 0.597176, 0.597176, 1)
@@ -259,7 +269,6 @@ size_flags_vertical = 0
 
 [node name="Conductor" parent="." instance=ExtResource("5_r3uod")]
 unique_name_in_owner = true
-chart = ExtResource("6_718bi")
 
 [node name="judgment_line" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -289,7 +298,6 @@ unique_name_in_owner = true
 conductor_path = NodePath("../Conductor")
 judgment_line = NodePath("../judgment_line")
 wind_rhythm = NodePath("..")
-offset = 0.25
 
 [node name="Scorer" parent="." instance=ExtResource("7_4qd8c")]
 unique_name_in_owner = true

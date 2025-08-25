@@ -29,9 +29,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if _is_draining:
-		progress_bar.value -= drain_speed_base * drain_speed_mult * delta
+		#progress_bar.value -= drain_speed_base * drain_speed_mult * delta
+		progress_bar.value += 0
 		#print(drain_speed_base * drain_speed_mult * delta)
 	if progress_bar.value <= 0:
 		concentration_broken.emit()
