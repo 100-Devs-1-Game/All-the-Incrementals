@@ -78,7 +78,7 @@ mesh = ExtResource("9_ffxn8")
 buffer = PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_02swt"]
-height = 1.05103
+height = 0.4
 radius = 0.875488
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rrmrk"]
@@ -285,7 +285,7 @@ multimesh = SubResource("MultiMesh_63oqm")
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_01"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_01/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.415649, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0880399, 0)
 shape = SubResource("CylinderShape3D_02swt")
 
 [node name="bonfire_01_mmi3d_02" type="MultiMeshInstance3D" parent="Content/nature/bonfires"]
@@ -295,7 +295,7 @@ multimesh = SubResource("MultiMesh_63oqm")
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_02"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_02/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0417185, 0.379304, -0.0435429)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0417185, 0.0516949, -0.0435429)
 shape = SubResource("CylinderShape3D_02swt")
 
 [node name="bonfire_01_mmi3d_03" type="MultiMeshInstance3D" parent="Content/nature/bonfires"]
@@ -305,7 +305,7 @@ multimesh = SubResource("MultiMesh_63oqm")
 [node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_03"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/bonfires/bonfire_01_mmi3d_03/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0319862, 0.410409, 0.00330734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0319862, 0.0827999, 0.00330734)
 shape = SubResource("CylinderShape3D_02swt")
 
 [node name="tree_05" type="Node3D" parent="Content/nature"]
