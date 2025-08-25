@@ -34,6 +34,9 @@ func get_next_lines() -> Array[String]:
 
 
 func advance(index: int = -1):
+	if index == -1:
+		return
+
 	if state.show_initial:
 		state.current_index += 1
 	else:

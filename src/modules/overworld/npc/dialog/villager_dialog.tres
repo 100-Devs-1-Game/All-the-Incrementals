@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="NPCDialog" load_steps=4 format=3 uid="uid://ilshpfi3l72y"]
+
+[ext_resource type="Script" uid="uid://o5qj3tmy4ife" path="res://modules/overworld/dialog/npc_dialog.gd" id="1_h5syp"]
+[ext_resource type="Script" uid="uid://bff3u6d03ui62" path="res://modules/overworld/dialog/npc_dialog_random.gd" id="1_x48sx"]
+
+[sub_resource type="Resource" id="Resource_8q0us"]
+script = ExtResource("1_x48sx")
+lines = Array[String](["I tried climbing a windmill once and got stuck. Don’t tell my mom… Please.", "Do Spiritkeepers eat different food? Like, glowing mushrooms or something?", "If I had your job, I’d be done already. Twice.", "Can I help you do spirit stuff? I’m fast. I can run real fast. Like zoom-zoom!", "I’ve been practicing my serious face in case of emergencies. Look. Serious. See?"])
+metadata/_custom_type_script = "uid://bff3u6d03ui62"
+
+[resource]
+script = ExtResource("1_h5syp")
+npc_name = "Villager"
+initial_dialog = "Whoa, you’re the Spiritkeeper? You look normal."
+alternative_dialog = SubResource("Resource_8q0us")
+metadata/_custom_type_script = "uid://o5qj3tmy4ife"

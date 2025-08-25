@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci2ywxbobpvbg"]
+
+[ext_resource type="PackedScene" uid="uid://c5auhmpl105s8" path="res://modules/overworld/npc/scenes/template_npc.tscn" id="1_2psdi"]
+[ext_resource type="PackedScene" uid="uid://cya0g2mjgrubk" path="res://assets/overworld/models/characters/breezekiln_npc/breezekiln_npc.tscn" id="2_7o34l"]
+[ext_resource type="Resource" uid="uid://ilshpfi3l72y" path="res://modules/overworld/npc/dialog/villager_dialog.tres" id="2_kf3rt"]
+
+[node name="Villager Npc" instance=ExtResource("1_2psdi")]
+dialog = ExtResource("2_kf3rt")
+
+[node name="breezekiln_NPC" parent="." index="1" instance=ExtResource("2_7o34l")]
