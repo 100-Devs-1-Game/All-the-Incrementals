@@ -47,26 +47,18 @@ func _apply_effect(_game: BaseMinigame, _upgrade: MinigameUpgrade):
 			stats.spawn_fish_every_x_pixels -= _upgrade.get_current_effect_modifier() * 20
 			print(stats.spawn_fish_every_x_pixels)
 		UpgradeType.INCREASE_OXYGEN_MULT:
-			print(
-				(
-					"WTF - increasing oxygen mult by %s"
-					% (_upgrade.get_current_effect_modifier() * 0.50)
-				)
-			)
-			stats.oxygen_capacity_multiplier += _upgrade.get_current_effect_modifier() * 0.50
+			print("WTF - increasing oxygen mult by %s" % (_upgrade.get_current_effect_modifier()))
+			stats.oxygen_capacity_multiplier += _upgrade.get_current_effect_modifier()
 			print(stats.oxygen_capacity_multiplier)
 		UpgradeType.INCREASE_STARTING_SPEED:
 			print(
-				(
-					"WTF - increasing starting speed by %s"
-					% (_upgrade.get_current_effect_modifier() * 25)
-				)
+				"WTF - increasing starting speed by %s" % (_upgrade.get_current_effect_modifier())
 			)
-			stats.scrollspeed_initial.x -= _upgrade.get_current_effect_modifier() * 25
+			stats.scrollspeed_initial.x -= _upgrade.get_current_effect_modifier()
 			print(stats.scrollspeed_initial)
 		UpgradeType.INCREASE_SPEEDBOOST_MULT:
 			print("WTF - increasing speedboost by %s%%" % _upgrade.get_current_effect_modifier())
-			stats.speedboost_multiplier += _upgrade.get_current_effect_modifier() / 100.0
+			stats.speedboost_multiplier += _upgrade.get_current_effect_modifier()
 			print(stats.speedboost_multiplier)
 		UpgradeType.INCREASE_SPEEDBOOST_FLAT:
 			print("WTF - increasing speedboost by +%s" % _upgrade.get_current_effect_modifier())

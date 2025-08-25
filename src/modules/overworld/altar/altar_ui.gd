@@ -9,6 +9,7 @@ var _progess_bars: Array[ProgressBar]
 
 
 func _ready() -> void:
+	EventBus.apply_shrine_upgrades.emit()
 	EventBus.passive_essence_generation_tick.connect(_on_generation_tick)
 
 
@@ -37,14 +38,17 @@ func update():
 		grid_container.add_child(button)
 
 		var label := Label.new()
-		label.text = minigame.display_name
+		label.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
+		label.text = minigame.display_name + " : "
 		grid_container.add_child(label)
 
 		label = Label.new()
+		label.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
 		label.text = "Avg. Score: %.1f" % player_state.get_average_minigame_highscore(minigame)
 		grid_container.add_child(label)
 
 		label = Label.new()
+		label.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
 		label.text = "* %.2f" % minigame.currency_conversion_factor
 		grid_container.add_child(label)
 
@@ -83,7 +87,6 @@ func _on_leave_pressed() -> void:
 func _on_generation_tick():
 	if visible:
 		assert(_altar_stats != null)
-		current_essence_display.refresh_labels()
 		update()
 
 

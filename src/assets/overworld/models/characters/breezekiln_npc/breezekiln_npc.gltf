@@ -57279,7 +57279,7 @@
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"breezekiln_NPC.001",
+			"name":"breezekiln_npc.001",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
@@ -57484,8 +57484,8 @@
 	"images":[
 		{
 			"mimeType":"image/webp",
-			"name":"breezekiln_NPC",
-			"uri":"breezekiln_NPC.webp"
+			"name":"breezekiln_npc",
+			"uri":"breezekiln_npc.webp"
 		}
 	],
 	"skins":[
@@ -65240,7 +65240,7 @@
 	"buffers":[
 		{
 			"byteLength":2289748,
-			"uri":"breezekiln_NPC.bin"
+			"uri":"breezekiln_npc.bin"
 		}
 	]
 }

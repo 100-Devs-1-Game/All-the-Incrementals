@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbx7eci17ciiy"]
+
+[ext_resource type="PackedScene" uid="uid://c5auhmpl105s8" path="res://modules/overworld/npc/scenes/template_npc.tscn" id="1_gxrd1"]
+[ext_resource type="PackedScene" uid="uid://utprbtjecrlu" path="res://assets/overworld/models/characters/breezekiln_leader/breezekiln_leader.tscn" id="2_8v747"]
+[ext_resource type="Resource" uid="uid://d0v3u5qy0rv1j" path="res://modules/overworld/npc/dialog/breezekiln_dialog.tres" id="2_mvqn1"]
+
+[node name="Breezekiln Npc" instance=ExtResource("1_gxrd1")]
+dialog = ExtResource("2_mvqn1")
+
+[node name="breezekiln_leader" parent="." index="1" instance=ExtResource("2_8v747")]

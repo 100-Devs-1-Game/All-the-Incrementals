@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://c5pos323ks1ro"]
+[gd_scene load_steps=94 format=3 uid="uid://c5pos323ks1ro"]
 
 [ext_resource type="Script" uid="uid://bsimtuhg2ndb3" path="res://modules/overworld_locations/shrine/shrine.gd" id="1_ipgen"]
 [ext_resource type="PackedScene" uid="uid://dntdim0jjlhy1" path="res://modules/upgrade/ui/upgrade_tree.tscn" id="2_a3nc3"]
@@ -61,6 +61,8 @@
 [ext_resource type="Resource" uid="uid://dm8p7uex0orka" path="res://modules/overworld_locations/clayport/clayport.tres" id="57_lsmsp"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="58_g4s1e"]
 [ext_resource type="Resource" uid="uid://cdoij41kganvn" path="res://modules/overworld_locations/breezekiln/breezekiln.tres" id="58_lsmsp"]
+[ext_resource type="PackedScene" uid="uid://ci2ywxbobpvbg" path="res://modules/overworld/npc/scenes/villager_npc.tscn" id="58_ttoo2"]
+[ext_resource type="PackedScene" uid="uid://ia4vxkrh8l8s" path="res://modules/overworld_locations/shrine/how_to_play.tscn" id="59_ttoo2"]
 [ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="59_up51v"]
 [ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="60_w7w3e"]
 
@@ -258,8 +260,8 @@ shader_parameter/time_speed = 0.56
 shader_parameter/swirl_strength = 0.1
 shader_parameter/swirl_freq = 5.0
 shader_parameter/albedo_texture = ExtResource("47_qqenq")
-shader_parameter/normal_strength = 1.0
-shader_parameter/emission_strength = 0.3
+shader_parameter/normal_strength = 0.233
+shader_parameter/emission_strength = 0.04
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2y5yr"]
 
@@ -276,12 +278,16 @@ shader_parameter/albedo_texture = SubResource("CompressedTexture2D_2y5yr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mstb5"]
 albedo_texture = ExtResource("50_qqenq")
+disable_receive_shadows = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xwgsm"]
 size = Vector3(11, 0.1, 14)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0n3fe"]
 size = Vector3(4, 6.335, 2.34)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lsmsp"]
+size = Vector3(5, 0.1, 11)
 
 [node name="Shrine" type="Node3D" node_paths=PackedStringArray("character_spawner")]
 script = ExtResource("1_ipgen")
@@ -312,15 +318,21 @@ transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 environment = SubResource("Environment_s7c67")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera & Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54747e-13, 14.0754, -1.98776e-20)
+transform = Transform3D(0.555556, 0, 0, 0, 0.54538, 0.105843, 0, -0.105843, 0.54538, -4.54747e-13, 14.0754, -1.98776e-20)
 light_color = Color(0.794937, 0.923491, 0.943206, 1)
-light_energy = 1.2
+light_energy = 0.564
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.72
 directional_shadow_mode = 1
 
 [node name="Right_Side" type="SpotLight3D" parent="Camera & Lights"]
 transform = Transform3D(0.270987, -0.167151, 0.947959, 0, 0.984808, 0.173648, -0.962583, -0.0470564, 0.26687, 5, 2.711, 2.698)
 light_color = Color(0.341176, 0.666667, 1, 1)
-light_energy = 3.56
+light_energy = 5.664
+light_specular = 2.16
+light_bake_mode = 1
+shadow_enabled = true
 spot_range = 15.11
 spot_attenuation = 1.81
 spot_angle_attenuation = 0.112656
@@ -328,7 +340,10 @@ spot_angle_attenuation = 0.112656
 [node name="Left_Side" type="SpotLight3D" parent="Camera & Lights"]
 transform = Transform3D(0.2706, 0.16717, -0.948066, 0, 0.984808, 0.173648, 0.962692, -0.0469893, 0.266489, -5, 2.711, 2.698)
 light_color = Color(0.921569, 0.498039, 0.294118, 1)
-light_energy = 3.56
+light_energy = 5.664
+light_specular = 2.16
+light_bake_mode = 1
+shadow_enabled = true
 spot_range = 15.11
 spot_attenuation = 1.81
 spot_angle_attenuation = 0.112656
@@ -698,6 +713,11 @@ target_settlement = ExtResource("57_lsmsp")
 transform = Transform3D(-2.44744e-08, 0, 0.55991, 0, 0.55991, 0, -0.55991, 0, -2.44744e-08, 3.35946, 0, -1.8477)
 target_settlement = ExtResource("58_lsmsp")
 
+[node name="npcs" type="Node3D" parent="Content"]
+
+[node name="Villager Npc" parent="Content/npcs" instance=ExtResource("58_ttoo2")]
+transform = Transform3D(0.420198, 0, 0.363422, 0, 0.555556, 0, -0.363422, 0, 0.420198, 0.626938, -0.618114, -4.44443)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -706,6 +726,17 @@ shape = SubResource("BoxShape3D_xwgsm")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.35085)
 shape = SubResource("BoxShape3D_0n3fe")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.833394, 0.552679, 0, -0.552679, 0.833394, 0, 0, 0, 1, 7.49828, -1.41005, 1.48461)
+shape = SubResource("BoxShape3D_lsmsp")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.832921, -0.553391, 0, 0.553391, 0.832921, 0, 0, 0, 1, -7.498, -1.41, 1.485)
+shape = SubResource("BoxShape3D_lsmsp")
+
+[node name="How To Play" parent="." instance=ExtResource("59_ttoo2")]
+transform = Transform3D(-0.999952, 0, -0.00975632, 0, 1, 0, 0.00975632, 0, -0.999952, -7.76701, 0.83423, 0)
 
 [node name="DebugPopup" parent="." instance=ExtResource("55_6ws2q")]
 title = "Shrine"

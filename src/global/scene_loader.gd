@@ -113,4 +113,5 @@ func _exit_minigame() -> void:
 	if _current_settlement == null:
 		print("No settlement context to exit to. Directly running scene?")
 		return
+	_current_minigame = null
 	enter_settlement(_current_settlement)

@@ -1,8 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd2idytqw7eqi"]
+[gd_scene load_steps=11 format=3 uid="uid://dd2idytqw7eqi"]
 
 [ext_resource type="Script" uid="uid://d0o68s5jiye1s" path="res://modules/overworld/altar/altar_ui.gd" id="1_hif4d"]
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="2_18ekh"]
 [ext_resource type="PackedScene" uid="uid://yehkf7i1dt50" path="res://component/shared/current_essence.tscn" id="3_ybokf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgiiw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwf7n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cmi3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybokf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0klg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlwr4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18ekh"]
 
@@ -28,6 +40,11 @@ grow_vertical = 1
 [node name="Label Altar" type="Label" parent="Panel"]
 unique_name_in_owner = true
 layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.01
+anchor_bottom = 0.01
 offset_right = 325.0
 offset_bottom = 125.0
 text = "Fire Altar"
@@ -55,16 +72,19 @@ theme_override_constants/separation = 50
 [node name="Label Stored" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jgiiw")
 text = "Stored: 100"
 
 [node name="Label Capacity" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mwf7n")
 text = "Capacity: 100"
 
 [node name="Label Throughput" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3cmi3")
 text = "Throughput: 10"
 
 [node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer"]
@@ -80,14 +100,17 @@ text = "Play >"
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ybokf")
 text = "Fire Fighters"
 
 [node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v0klg")
 text = "Avg Score: 8.4"
 
 [node name="Label3" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tlwr4")
 text = "* 0.2"
 
 [node name="Label4" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]

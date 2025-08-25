@@ -12,11 +12,11 @@
 [sub_resource type="Resource" id="Resource_l6v5y"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 5
+amount = 2
 
 [sub_resource type="Resource" id="Resource_ydyeb"]
 script = ExtResource("1_xifid")
-earth = 5
+earth = 2
 fire = 0
 water = 0
 wind = 0
@@ -26,11 +26,11 @@ metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 [sub_resource type="Resource" id="Resource_7mlmy"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 5
+amount = 2
 
 [sub_resource type="Resource" id="Resource_wnvnx"]
 script = ExtResource("1_xifid")
-earth = 5
+earth = 2
 fire = 0
 water = 0
 wind = 0
@@ -39,11 +39,11 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_7mlmy")])
 [sub_resource type="Resource" id="Resource_tr78e"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 10
+amount = 4
 
 [sub_resource type="Resource" id="Resource_acjq0"]
 script = ExtResource("1_xifid")
-earth = 10
+earth = 4
 fire = 0
 water = 0
 wind = 0
@@ -52,11 +52,11 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_tr78e")])
 [sub_resource type="Resource" id="Resource_oqr42"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 20
+amount = 8
 
 [sub_resource type="Resource" id="Resource_b4b16"]
 script = ExtResource("1_xifid")
-earth = 20
+earth = 8
 fire = 0
 water = 0
 wind = 0
@@ -65,11 +65,11 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_oqr42")])
 [sub_resource type="Resource" id="Resource_q3agd"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 40
+amount = 15
 
 [sub_resource type="Resource" id="Resource_r2jfd"]
 script = ExtResource("1_xifid")
-earth = 40
+earth = 15
 fire = 0
 water = 0
 wind = 0
@@ -78,11 +78,11 @@ slots = Array[ExtResource("2_fecey")]([SubResource("Resource_q3agd")])
 [sub_resource type="Resource" id="Resource_6nvfp"]
 script = ExtResource("2_fecey")
 essence = ExtResource("3_7lkrm")
-amount = 80
+amount = 30
 
 [sub_resource type="Resource" id="Resource_1pkgn"]
 script = ExtResource("1_xifid")
-earth = 80
+earth = 30
 fire = 0
 water = 0
 wind = 0
