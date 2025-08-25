@@ -197,9 +197,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.741, 6.80619, -35.0683)
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 11.62, 1.5, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Cameras & Lights"]
-transform = Transform3D(0.97437, 0, -0.224951, 0, 1, 0, 0.224951, 0, 0.97437, 5.07926e-07, 12.5754, -11.62)
+transform = Transform3D(0.918237, 0.372268, -0.13512, -0.278984, 0.850196, 0.446469, 0.281084, -0.372268, 0.884538, 0.0898676, 12.6443, -11.5301)
 light_color = Color(0.965902, 0.902276, 0.82478, 1)
 light_energy = 1.45
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.63
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Cameras & Lights"]
 environment = SubResource("Environment_g75is")
