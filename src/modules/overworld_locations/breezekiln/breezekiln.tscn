@@ -146,6 +146,7 @@ points = PackedVector3Array(-0.00346565, -0.263302, -17.7037, -1.7364, -0.263302
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272sf"]
 albedo_texture = ExtResource("25_d0jwi")
+disable_receive_shadows = true
 
 [sub_resource type="Resource" id="Resource_hefpd"]
 script = ExtResource("9_hefpd")

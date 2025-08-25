@@ -184,6 +184,7 @@ size = Vector3(9.44695, 2.54108, 4.04944)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emvpi"]
 albedo_texture = ExtResource("27_hi7m4")
+disable_receive_shadows = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3agqm"]
 render_priority = 0
