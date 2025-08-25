@@ -21,135 +21,135 @@ wind = 0
 slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_4fp3o")])
 metadata/_custom_type_script = "uid://cjjat8tguw7wt"
 
-[sub_resource type="Resource" id="Resource_asvjd"]
+[sub_resource type="Resource" id="Resource_mta1q"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 1
 
-[sub_resource type="Resource" id="Resource_rm2kx"]
+[sub_resource type="Resource" id="Resource_asvjd"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 1
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_asvjd")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_mta1q")])
 
-[sub_resource type="Resource" id="Resource_0ylk6"]
+[sub_resource type="Resource" id="Resource_rm2kx"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 2
 
-[sub_resource type="Resource" id="Resource_4mgxp"]
+[sub_resource type="Resource" id="Resource_0ylk6"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 2
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_0ylk6")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_rm2kx")])
 
-[sub_resource type="Resource" id="Resource_rjrs7"]
+[sub_resource type="Resource" id="Resource_4mgxp"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 4
 
-[sub_resource type="Resource" id="Resource_cuml7"]
+[sub_resource type="Resource" id="Resource_rjrs7"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 4
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_rjrs7")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_4mgxp")])
 
-[sub_resource type="Resource" id="Resource_ybdad"]
+[sub_resource type="Resource" id="Resource_cuml7"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 8
 
-[sub_resource type="Resource" id="Resource_2r424"]
+[sub_resource type="Resource" id="Resource_ybdad"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 8
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_ybdad")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_cuml7")])
 
-[sub_resource type="Resource" id="Resource_025y8"]
+[sub_resource type="Resource" id="Resource_2r424"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 15
 
-[sub_resource type="Resource" id="Resource_3b217"]
+[sub_resource type="Resource" id="Resource_025y8"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 15
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_025y8")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_2r424")])
 
-[sub_resource type="Resource" id="Resource_ndtql"]
+[sub_resource type="Resource" id="Resource_3b217"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 30
 
-[sub_resource type="Resource" id="Resource_td0s5"]
+[sub_resource type="Resource" id="Resource_ndtql"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 30
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_ndtql")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_3b217")])
 
-[sub_resource type="Resource" id="Resource_hj8r8"]
+[sub_resource type="Resource" id="Resource_td0s5"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 60
 
-[sub_resource type="Resource" id="Resource_40n7y"]
+[sub_resource type="Resource" id="Resource_hj8r8"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 60
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_hj8r8")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_td0s5")])
 
-[sub_resource type="Resource" id="Resource_x65s3"]
+[sub_resource type="Resource" id="Resource_40n7y"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 100
 
-[sub_resource type="Resource" id="Resource_yqoub"]
+[sub_resource type="Resource" id="Resource_x65s3"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 100
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_x65s3")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_40n7y")])
 
-[sub_resource type="Resource" id="Resource_u0s52"]
+[sub_resource type="Resource" id="Resource_yqoub"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 250
 
-[sub_resource type="Resource" id="Resource_2n8wv"]
+[sub_resource type="Resource" id="Resource_u0s52"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 250
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_u0s52")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_yqoub")])
 
-[sub_resource type="Resource" id="Resource_1frkx"]
+[sub_resource type="Resource" id="Resource_2n8wv"]
 script = ExtResource("2_mta1q")
 essence = ExtResource("3_mta1q")
 amount = 500
 
-[sub_resource type="Resource" id="Resource_1u27o"]
+[sub_resource type="Resource" id="Resource_1frkx"]
 script = ExtResource("1_6tmbm")
 earth = 0
 fire = 500
 water = 0
 wind = 0
-slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_1frkx")])
+slots = Array[ExtResource("2_mta1q")]([SubResource("Resource_2n8wv")])
 
 [sub_resource type="Resource" id="Resource_53pdn"]
 script = ExtResource("2_qahtt")
@@ -164,7 +164,7 @@ name = "Water Range"
 flavor = ""
 icon = ExtResource("2_53pdn")
 position = Vector2(-1472, -1536)
-cost_arr = Array[ExtResource("1_6tmbm")]([SubResource("Resource_rm2kx"), SubResource("Resource_4mgxp"), SubResource("Resource_cuml7"), SubResource("Resource_2r424"), SubResource("Resource_3b217"), SubResource("Resource_td0s5"), SubResource("Resource_40n7y"), SubResource("Resource_yqoub"), SubResource("Resource_2n8wv"), SubResource("Resource_1u27o")])
+cost_arr = Array[ExtResource("1_6tmbm")]([SubResource("Resource_asvjd"), SubResource("Resource_0ylk6"), SubResource("Resource_rjrs7"), SubResource("Resource_ybdad"), SubResource("Resource_025y8"), SubResource("Resource_ndtql"), SubResource("Resource_hj8r8"), SubResource("Resource_x65s3"), SubResource("Resource_u0s52"), SubResource("Resource_1frkx")])
 effect_modifier_arr = Array[float]([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 max_level = 10
 base_cost = SubResource("Resource_e2k36")
