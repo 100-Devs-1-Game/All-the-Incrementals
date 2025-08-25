@@ -47,8 +47,11 @@ func set_fields_from_upgrade() -> void:
 	if upgrade.effect_modifier_arr.size() != upgrade.cost_arr.size():
 		add_info_error("MISMATCHED ARRAYS")
 
-	if upgrade.flavor == "":
-		add_info_warning("MISSING FLAVOR")
+	if !upgrade.icon:
+		add_info_error("MISSING ICON")
+
+	if upgrade.flavor != "":
+		add_info_warning("FLAVOR NOT IMPLEMENTED")
 
 	if upgrade.description_prefix == "" && upgrade.description_suffix == "":
 		add_info_warning("MISSING DESCRIPTION")

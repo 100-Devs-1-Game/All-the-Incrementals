@@ -1,15 +1,18 @@
-[gd_resource type="Resource" script_class="ShrineData" load_steps=4 format=3 uid="uid://cpy26wff0l5q5"]
+[gd_resource type="Resource" script_class="ShrineData" load_steps=7 format=3 uid="uid://cpy26wff0l5q5"]
 
 [ext_resource type="Script" uid="uid://d1e4sovxxijwa" path="res://modules/overworld/shrine/shrine_data.gd" id="1_3b01r"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_uhrud"]
-[ext_resource type="Resource" uid="uid://b6sq6i7krb11r" path="res://modules/overworld/data/upgrades/fire_altar_capacity.tres" id="3_uhrud"]
+[ext_resource type="Resource" uid="uid://dkcu1upghvy65" path="res://modules/overworld/data/upgrades/fire_cap_flat_t1.tres" id="3_uhrud"]
+[ext_resource type="Resource" uid="uid://d2rta7yhll6qf" path="res://modules/overworld/data/upgrades/water_cap_flat_t1.tres" id="4_vybht"]
+[ext_resource type="Resource" uid="uid://jtnuhb7yvi52" path="res://modules/overworld/data/upgrades/earth_cap_flat_t1.tres" id="5_4g6hr"]
+[ext_resource type="Resource" uid="uid://k7u4x858q23h" path="res://modules/overworld/data/upgrades/wind_cap_flat_t1.tres" id="6_mqyg2"]
 
 [resource]
 script = ExtResource("1_3b01r")
 display_name = ""
 how_to_play = ""
 music_track = ""
-upgrade_tree_root_nodes = Array[ExtResource("2_uhrud")]([ExtResource("3_uhrud")])
+upgrade_tree_root_nodes = Array[ExtResource("2_uhrud")]([ExtResource("3_uhrud"), ExtResource("4_vybht"), ExtResource("5_4g6hr"), ExtResource("6_mqyg2")])
 currency_conversion_factor = 0.0
 high_scores = Array[int]([])
 metadata/_custom_type_script = "uid://d1e4sovxxijwa"
