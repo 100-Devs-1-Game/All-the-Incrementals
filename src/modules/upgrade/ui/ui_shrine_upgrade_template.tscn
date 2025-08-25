@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://csyr1rm02plcd" path="res://assets/ui/upgrade_tree/shrine/earth_on.png" id="4_43cc7"]
 [ext_resource type="Texture2D" uid="uid://bk2dkao5rcxkf" path="res://assets/ui/upgrade_tree/gold_seal.webp" id="5_cde02"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsxbv"]
-radius = 114.967
-height = 229.934
+[sub_resource type="CircleShape2D" id="CircleShape2D_43cc7"]
+radius = 128.0
 
 [node name="UiShrineUpgradeTemplate" type="Node2D"]
 script = ExtResource("1_43cc7")
@@ -41,6 +40,6 @@ z_index = 50
 z_index = 55
 position = Vector2(-2.16574, 1.20769)
 rotation = 0.815069
-shape = SubResource("CapsuleShape2D_tsxbv")
+shape = SubResource("CircleShape2D_43cc7")
 
 [connection signal="input_event" from="ClickArea2D" to="." method="_on_click_area_2d_input_event"]
