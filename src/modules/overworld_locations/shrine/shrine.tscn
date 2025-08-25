@@ -705,7 +705,7 @@ target_settlement = ExtResource("58_lsmsp")
 [node name="npcs" type="Node3D" parent="Content"]
 
 [node name="Villager Npc" parent="Content/npcs" instance=ExtResource("58_ttoo2")]
-transform = Transform3D(0.420198, 0, 0.363422, 0, 0.555556, 0, -0.363422, 0, 0.420198, 0.626938, -0.463702, -4.44443)
+transform = Transform3D(0.420198, 0, 0.363422, 0, 0.555556, 0, -0.363422, 0, 0.420198, 0.626938, -0.618114, -4.44443)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
