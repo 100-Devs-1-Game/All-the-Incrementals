@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://c5pos323ks1ro"]
+[gd_scene load_steps=93 format=3 uid="uid://c5pos323ks1ro"]
 
 [ext_resource type="Script" uid="uid://bsimtuhg2ndb3" path="res://modules/overworld_locations/shrine/shrine.gd" id="1_ipgen"]
 [ext_resource type="PackedScene" uid="uid://dntdim0jjlhy1" path="res://modules/upgrade/ui/upgrade_tree.tscn" id="2_a3nc3"]
@@ -61,6 +61,7 @@
 [ext_resource type="Resource" uid="uid://dm8p7uex0orka" path="res://modules/overworld_locations/clayport/clayport.tres" id="57_lsmsp"]
 [ext_resource type="Resource" uid="uid://bq0mne05etr7e" path="res://modules/minigame/common/debug/clayport.tres" id="58_g4s1e"]
 [ext_resource type="Resource" uid="uid://cdoij41kganvn" path="res://modules/overworld_locations/breezekiln/breezekiln.tres" id="58_lsmsp"]
+[ext_resource type="PackedScene" uid="uid://ci2ywxbobpvbg" path="res://modules/overworld/npc/scenes/villager_npc.tscn" id="58_ttoo2"]
 [ext_resource type="Resource" uid="uid://cdgcjfedb4xf5" path="res://modules/minigame/common/debug/main_menu.tres" id="59_up51v"]
 [ext_resource type="Resource" uid="uid://cevq22684qul8" path="res://modules/minigame/common/debug/quit_game.tres" id="60_w7w3e"]
 
@@ -282,6 +283,9 @@ size = Vector3(11, 0.1, 14)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0n3fe"]
 size = Vector3(4, 6.335, 2.34)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lsmsp"]
+size = Vector3(5, 0.1, 11)
 
 [node name="Shrine" type="Node3D" node_paths=PackedStringArray("character_spawner")]
 script = ExtResource("1_ipgen")
@@ -698,6 +702,11 @@ target_settlement = ExtResource("57_lsmsp")
 transform = Transform3D(-2.44744e-08, 0, 0.55991, 0, 0.55991, 0, -0.55991, 0, -2.44744e-08, 3.35946, 0, -1.8477)
 target_settlement = ExtResource("58_lsmsp")
 
+[node name="npcs" type="Node3D" parent="Content"]
+
+[node name="Villager Npc" parent="Content/npcs" instance=ExtResource("58_ttoo2")]
+transform = Transform3D(0.420198, 0, 0.363422, 0, 0.555556, 0, -0.363422, 0, 0.420198, 0.626938, -0.463702, -4.44443)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -706,6 +715,10 @@ shape = SubResource("BoxShape3D_xwgsm")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.35085)
 shape = SubResource("BoxShape3D_0n3fe")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.833394, 0.552679, 0, -0.552679, 0.833394, 0, 0, 0, 1, 7.49828, -1.41005, 1.48461)
+shape = SubResource("BoxShape3D_lsmsp")
 
 [node name="DebugPopup" parent="." instance=ExtResource("55_6ws2q")]
 title = "Shrine"
