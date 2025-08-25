@@ -260,8 +260,8 @@ shader_parameter/time_speed = 0.56
 shader_parameter/swirl_strength = 0.1
 shader_parameter/swirl_freq = 5.0
 shader_parameter/albedo_texture = ExtResource("47_qqenq")
-shader_parameter/normal_strength = 1.0
-shader_parameter/emission_strength = 0.3
+shader_parameter/normal_strength = 0.233
+shader_parameter/emission_strength = 0.04
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2y5yr"]
 
