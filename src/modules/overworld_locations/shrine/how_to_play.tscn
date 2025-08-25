@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ia4vxkrh8l8s"]
+
+[ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="1_ctpm7"]
+[ext_resource type="Script" uid="uid://bro8al4bgocyd" path="res://modules/overworld_locations/shrine/how_to_play.gd" id="1_x45fd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ih10j"]
+
+[node name="How To Play" type="Node3D"]
+transform = Transform3D(-0.999952, 0, -0.00975632, 0, 1, 0, 0.00975632, 0, -0.999952, 0, 0, 0)
+script = ExtResource("1_x45fd")
+
+[node name="Label3D" type="Label3D" parent="."]
+pixel_size = 0.013
+billboard = 2
+outline_modulate = Color(0.0283282, 0.173472, 0.419395, 1)
+text = "?"
+font_size = 256
+
+[node name="InteractionComponent3D" type="Area3D" parent="." node_paths=PackedStringArray("object")]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_ctpm7")
+object = NodePath("..")
+auto_interact = true
+metadata/_custom_type_script = "uid://7n4knvm4dle5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionComponent3D"]
+shape = SubResource("SphereShape3D_ih10j")
+
+[connection signal="interacted_with" from="InteractionComponent3D" to="." method="_on_interaction_component_3d_interacted_with"]
