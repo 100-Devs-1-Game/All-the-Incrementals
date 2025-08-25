@@ -192,7 +192,7 @@ wind_rhythm_data = ExtResource("5_hefpd")
 character_spawner = NodePath("CharacterSpawner")
 
 [node name="CharacterSpawner" parent="." instance=ExtResource("6_wp355")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7162, 3.10896, -39.2332)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1589, 3.10896, -37.8501)
 
 [node name="Cameras & Lights" type="Node3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 11.62, 1.5, 0)
@@ -503,17 +503,6 @@ texture = ExtResource("10_dyxuy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_18/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0173101, -0.582307, -0.00338173)
-shape = SubResource("BoxShape3D_rrmrk")
-
-[node name="tree_05_snow_20" type="Sprite3D" parent="Content/nature/tree_05"]
-transform = Transform3D(2.096, 0, 0, 0, 2.096, 0, 0, 0, 2.096, -15.252, 5.757, -35.058)
-billboard = 2
-texture = ExtResource("10_dyxuy")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Content/nature/tree_05/tree_05_snow_20"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Content/nature/tree_05/tree_05_snow_20/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0259705, -0.530287, -0.0592499)
 shape = SubResource("BoxShape3D_rrmrk")
 
 [node name="tree_05_snow_22" type="Sprite3D" parent="Content/nature/tree_05"]
