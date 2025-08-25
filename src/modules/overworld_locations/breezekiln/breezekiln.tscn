@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bl4s8xuvuf3xb"]
+[gd_scene load_steps=68 format=3 uid="uid://bl4s8xuvuf3xb"]
 
 [ext_resource type="Script" uid="uid://ou1teugr01v8" path="res://modules/overworld_locations/breezekiln/breezekiln.gd" id="1_82p5n"]
 [ext_resource type="Resource" uid="uid://bseyt0iuwnq5m" path="res://modules/minigame/fire_cooking/data/fire_cooking_data.tres" id="2_oivh7"]
@@ -34,6 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://cgkd7wcycsfnf" path="res://assets/overworld/assets/skybox/sky_day_03.webp" id="25_d0jwi"]
 [ext_resource type="PackedScene" uid="uid://dbdlc760ysa1w" path="res://modules/overworld/portal/portal.tscn" id="28_ffxn8"]
 [ext_resource type="PackedScene" uid="uid://bbx7eci17ciiy" path="res://modules/overworld/npc/scenes/breezekiln_npc.tscn" id="29_dyxuy"]
+[ext_resource type="PackedScene" uid="uid://sd2uku7ud0tb" path="res://modules/overworld/story/journal_entry_pickup.tscn" id="30_the1n"]
+[ext_resource type="Resource" uid="uid://c58e75hj3hag2" path="res://modules/overworld/data/journal/entry04.tres" id="31_jupv8"]
+[ext_resource type="Resource" uid="uid://dip6l5lcwe45n" path="res://modules/overworld/data/journal/entry05.tres" id="32_by4k6"]
 [ext_resource type="PackedScene" uid="uid://dnp8p5dwpu15q" path="res://modules/overworld/altar/altar.tscn" id="33_amf67"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_knmtx"]
@@ -1381,6 +1384,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0155, 6.42988, -33.3069)
 
 [node name="Breezekiln Npc" parent="Content/npcs" instance=ExtResource("29_dyxuy")]
 transform = Transform3D(0.183334, 0, 0.983051, 0, 1, 0, -0.983051, 0, 0.183334, -35.6176, 6.31146, -39.5877)
+
+[node name="journal" type="Node3D" parent="Content"]
+
+[node name="JournalEntryPickup" parent="Content/journal" instance=ExtResource("30_the1n")]
+transform = Transform3D(0.999926, 0, 0.0121471, 0, 1, 0, -0.0121471, 0, 0.999926, 3.46187, 1.07706, 8.63119)
+data = ExtResource("31_jupv8")
+
+[node name="JournalEntryPickup2" parent="Content/journal" instance=ExtResource("30_the1n")]
+transform = Transform3D(0.883324, 0, 0.468762, 0, 1, 0, -0.468762, 0, 0.883324, -47.3258, 7.1085, -83.2285)
+data = ExtResource("32_by4k6")
+
+[node name="JournalEntryPickup3" parent="Content/journal" instance=ExtResource("30_the1n")]
+transform = Transform3D(0.816188, 0, 0.577786, 0, 1, 0, -0.577786, 0, 0.816188, -83.0463, 7.1085, -37.5131)
+data = ExtResource("32_by4k6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

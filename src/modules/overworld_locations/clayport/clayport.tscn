@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://b1ucpnb2u1isc"]
+[gd_scene load_steps=83 format=4 uid="uid://b1ucpnb2u1isc"]
 
 [ext_resource type="Script" uid="uid://eiutp4wmfx4t" path="res://modules/overworld_locations/clayport/clayport.gd" id="1_q21dp"]
 [ext_resource type="Resource" uid="uid://cbu6b1qnaw05f" path="res://modules/minigame/earth_potato_herding/data/earth_potato_herding_data.tres" id="2_piane"]
@@ -38,6 +38,10 @@
 [ext_resource type="PackedScene" uid="uid://by2bo8yeg0btq" path="res://assets/overworld/vfx/water/cascade/cascade_rocks.tscn" id="31_ltokd"]
 [ext_resource type="PackedScene" uid="uid://cqave06nlqugb" path="res://modules/overworld/npc/scenes/clayport_npc.tscn" id="32_sckh8"]
 [ext_resource type="PackedScene" uid="uid://coxmlipoas6nc" path="res://assets/overworld/vfx/water/cascade/cascade_waterfall.tscn" id="32_xvfut"]
+[ext_resource type="PackedScene" uid="uid://sd2uku7ud0tb" path="res://modules/overworld/story/journal_entry_pickup.tscn" id="33_we0hr"]
+[ext_resource type="Resource" uid="uid://3kf162bakb4e" path="res://modules/overworld/data/journal/entry01.tres" id="34_gxyks"]
+[ext_resource type="Resource" uid="uid://dfrr2fuk3k1jv" path="res://modules/overworld/data/journal/entry02.tres" id="35_t5wtc"]
+[ext_resource type="Resource" uid="uid://cjpd1q17uxtjn" path="res://modules/overworld/data/journal/entry03.tres" id="36_dopgo"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5wtc"]
 
@@ -781,6 +785,20 @@ transform = Transform3D(0.482658, 0, 0.315638, 0, 1.7301, 0, -0.110568, 0, 0.169
 
 [node name="Clayport Npc" parent="Content/npcs" instance=ExtResource("32_sckh8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.03237, 1.1388, 0.421418)
+
+[node name="journal" type="Node3D" parent="Content"]
+
+[node name="JournalEntryPickup" parent="Content/journal" instance=ExtResource("33_we0hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1208, 0.281137, -57.3494)
+data = ExtResource("34_gxyks")
+
+[node name="JournalEntryPickup2" parent="Content/journal" instance=ExtResource("33_we0hr")]
+transform = Transform3D(0.352413, 0, 0.935844, 0, 1, 0, -0.935844, 0, 0.352413, -66.4827, 5.08148, -49.856)
+data = ExtResource("35_t5wtc")
+
+[node name="JournalEntryPickup3" parent="Content/journal" instance=ExtResource("33_we0hr")]
+transform = Transform3D(-0.529475, 0, 0.848325, 0, 1, 0, -0.848325, 0, -0.529475, -88.4045, 5.17651, -6.24288)
+data = ExtResource("36_dopgo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Content"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.8028, 4.57546, -2.4548)
