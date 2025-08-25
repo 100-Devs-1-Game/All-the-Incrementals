@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=50 format=3 uid="uid://c1jqf252oopky"]
+[gd_resource type="Resource" script_class="MinigameUpgrade" load_steps=51 format=3 uid="uid://c1jqf252oopky"]
 
 [ext_resource type="Script" uid="uid://cjjat8tguw7wt" path="res://modules/essence/essence_inventory.gd" id="1_mt65u"]
 [ext_resource type="Script" uid="uid://82mjh0pcfce8" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_logic.gd" id="2_7m732"]
 [ext_resource type="Script" uid="uid://b0xhkjselbga" path="res://modules/essence/essence_stack.gd" id="2_dm1ih"]
 [ext_resource type="Script" uid="uid://co4s3tttdeie1" path="res://modules/minigame/common/minigame_upgrade.gd" id="2_k40gj"]
 [ext_resource type="Resource" uid="uid://td664oe8wk42" path="res://modules/essence/resources/water.tres" id="3_ng12e"]
+[ext_resource type="Texture2D" uid="uid://blbxoojtux6i8" path="res://assets/minigames/water_target_fishing/upgrades/increase_carry_capacity.png" id="4_q5ul2"]
 [ext_resource type="Resource" uid="uid://dosjetcb4ojte" path="res://modules/minigame/water_target_fishing/upgrades/upgrade_weight_multiplier_a.tres" id="6_ng12e"]
 
 [sub_resource type="Resource" id="Resource_ng12e"]
@@ -292,6 +293,7 @@ logic = SubResource("Resource_dm1ih")
 unlocks_feature = ""
 name = "+++ Carry Capacity"
 flavor = ""
+icon = ExtResource("4_q5ul2")
 position = Vector2(3072, -2048)
 cost_arr = Array[ExtResource("1_mt65u")]([SubResource("Resource_og8ia"), SubResource("Resource_m07vm"), SubResource("Resource_6dfhw"), SubResource("Resource_bii2x"), SubResource("Resource_buyip"), SubResource("Resource_hkq37"), SubResource("Resource_kr5mq"), SubResource("Resource_snqoa"), SubResource("Resource_80bwc"), SubResource("Resource_ci8y6"), SubResource("Resource_ythwl"), SubResource("Resource_gxgl7"), SubResource("Resource_inoy7"), SubResource("Resource_4xdxm"), SubResource("Resource_vjgw1"), SubResource("Resource_x0bnw"), SubResource("Resource_rfocg"), SubResource("Resource_gxmi3"), SubResource("Resource_38abr"), SubResource("Resource_jplxn")])
 effect_modifier_arr = Array[float]([3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0])
