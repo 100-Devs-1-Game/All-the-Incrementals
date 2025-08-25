@@ -8,7 +8,7 @@ enum Type { CAPACITY, THROUGHPUT }
 
 
 func _apply_effect(_game: BaseMinigame, upgrade: MinigameUpgrade):
-	var altar: AltarStats = SaveGameManager.world_state.get_altar(essence)
+	var altar: AltarStats = SaveGameManager.world_state.get_altar_stats(essence)
 
 	match type:
 		Type.CAPACITY:
