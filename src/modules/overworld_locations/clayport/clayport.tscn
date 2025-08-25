@@ -254,10 +254,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.62, 1.5, 0)
 environment = SubResource("Environment_dopgo")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Cameras & Lights"]
-transform = Transform3D(0.887011, -0.311953, 0.340437, 0, 0.737277, 0.67559, -0.461749, -0.599256, 0.653973, 5.07926e-07, 12.5754, -11.62)
+transform = Transform3D(0.950356, 0.138443, -0.27867, 0.0249579, 0.858771, 0.511752, 0.310162, -0.493302, 0.812683, 9.53674e-07, 12.9898, -5.04736)
 light_color = Color(0.965902, 0.902276, 0.82478, 1)
 light_energy = 0.89
 light_angular_distance = 45.15
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.29
 
 [node name="Content" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
