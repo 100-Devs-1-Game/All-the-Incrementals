@@ -4,11 +4,11 @@ const NOTE = preload("res://modules/minigame/wind_rhythm/note/note.tscn")
 const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.gd").NoteType
 const JUDGMENT = preload("res://modules/minigame/wind_rhythm/chart/judgments.gd").Judgment
 
-@export var scroll_speed: float = 2
+@export var scroll_speed: float = GameSettings.scroll_speed
 @export var conductor_path: NodePath
 @export var judgment_line: NodePath
 @export var wind_rhythm: NodePath
-@export var offset: float = 0
+@export var offset: float = GameSettings.offset
 @export var active_lanes: Dictionary[NOTE_TYPE, bool] = {
 	NOTE_TYPE.UP: true,
 	NOTE_TYPE.LEFT: false,

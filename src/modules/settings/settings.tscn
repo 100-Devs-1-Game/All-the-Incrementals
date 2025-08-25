@@ -205,7 +205,7 @@ border_color = Color(0.313726, 0.176471, 0.133333, 1)
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 
-[node name="Settings" type="Control" node_paths=PackedStringArray("low_button", "medium_button", "high_button", "best_button", "screen_button", "exit_button", "restore_button", "master_slider", "music_slider", "sfx_slider")]
+[node name="Settings" type="Control" node_paths=PackedStringArray("low_button", "medium_button", "high_button", "best_button", "screen_button", "exit_button", "restore_button", "master_slider", "music_slider", "sfx_slider", "scroll_speed_slider", "offset_slider")]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
@@ -221,6 +221,8 @@ restore_button = NodePath("RestoreButton")
 master_slider = NodePath("Panel/SettingsContainer/MultiContainer/Masterlbl/MasterSlider")
 music_slider = NodePath("Panel/SettingsContainer/MultiContainer/Musiclbl/MusicSlider")
 sfx_slider = NodePath("Panel/SettingsContainer/MultiContainer/SFXlbl/SFXSlider")
+scroll_speed_slider = NodePath("Panel/SettingsContainer/MultiContainer/RhythmSettings/ScrollSpeedLbl/ScrollSpeedSlider")
+offset_slider = NodePath("Panel/SettingsContainer/MultiContainer/RhythmSettings/OffsetLbl/OffsetSlider")
 
 [node name="Background" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -235,7 +237,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -692.0
-offset_top = -214.0
+offset_top = -277.0
 offset_right = 692.0
 offset_bottom = 452.0
 grow_horizontal = 2
@@ -959,10 +961,117 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 17
 text = "100%"
 
-[node name="space3" type="Control" parent="Panel/SettingsContainer/MultiContainer"]
+[node name="RhythmSettings" type="HBoxContainer" parent="Panel/SettingsContainer/MultiContainer"]
 custom_minimum_size = Vector2(0, 38.42)
 layout_mode = 2
+size_flags_vertical = 3
 mouse_filter = 2
+alignment = 1
+
+[node name="ScrollSpeedLbl" type="Label" parent="Panel/SettingsContainer/MultiContainer/RhythmSettings"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.203922)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 18
+theme_override_fonts/font = ExtResource("5_nyrux")
+text = "Note Scoll Speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollSpeedSlider" type="HSlider" parent="Panel/SettingsContainer/MultiContainer/RhythmSettings/ScrollSpeedLbl"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -190.5
+offset_top = 5.0
+offset_right = 9.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_icons/grabber = SubResource("ImageTexture_yv8js")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_yv8js")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_yv8js")
+theme_override_styles/slider = SubResource("StyleBoxLine_k2ij0")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_8f0vb")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_8f0vb")
+min_value = 0.1
+max_value = 10.0
+step = 0.1
+value = 2.0
+
+[node name="ValueLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer/RhythmSettings/ScrollSpeedLbl/ScrollSpeedSlider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 209.0
+offset_top = -25.0
+offset_right = 302.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.247059)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 17
+text = "100%"
+
+[node name="OffsetLbl" type="Label" parent="Panel/SettingsContainer/MultiContainer/RhythmSettings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.46
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.203922)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 18
+theme_override_fonts/font = ExtResource("5_nyrux")
+text = "Note Offset"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OffsetSlider" type="HSlider" parent="Panel/SettingsContainer/MultiContainer/RhythmSettings/OffsetLbl"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -190.5
+offset_top = 5.0
+offset_right = 9.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_icons/grabber = SubResource("ImageTexture_yv8js")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_yv8js")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_yv8js")
+theme_override_styles/slider = SubResource("StyleBoxLine_k2ij0")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_8f0vb")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_8f0vb")
+min_value = -2.0
+max_value = 2.0
+step = 0.01
+value = 0.5
+
+[node name="ValueLabel" type="Label" parent="Panel/SettingsContainer/MultiContainer/RhythmSettings/OffsetLbl/OffsetSlider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 209.0
+offset_top = -25.0
+offset_right = 302.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.247059)
+theme_override_colors/font_outline_color = Color(0.32549, 0.188235, 0.129412, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 17
+text = "100%"
 
 [node name="SettingsLabel" type="Label" parent="."]
 z_index = 2
