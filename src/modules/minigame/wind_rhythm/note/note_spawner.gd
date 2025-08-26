@@ -51,7 +51,12 @@ func spawn_notes():
 	print("offset: %s" % offset)
 	for lane in chart.lanes.keys():
 		for note in chart.lanes[lane]:
-			var absolute_beat = note.bar * conductor.notes_in_bar + note.beat + offset
+			var absolute_beat = (
+				note.bar * conductor.notes_in_bar
+				+ note.beat
+				+ offset
+				+ conductor.start_offset_in_beats * conductor.notes_in_bar
+			)
 			var judgment_x = get_node(judgment_line).global_position.x
 
 			var spawn_x = absolute_beat * scroll_speed * judgment_x / conductor.notes_in_bar

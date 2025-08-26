@@ -4,6 +4,8 @@ signal beat(position)
 signal bar(position)
 signal track_queued(Chart)
 
+const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.gd").NoteType
+
 @export var charts: Array[Chart]
 
 var chart: Chart
@@ -11,7 +13,7 @@ var song_position: float = 0
 var beat_number: int = 0
 var song_position_in_beats: int = 0
 var seconds_per_beat
-var start_offset_in_beats: int = 0
+var start_offset_in_beats: int = 4
 var notes_in_bar: int = 4
 var last_beat: int = 0
 var current_bar: int = 0
@@ -53,7 +55,7 @@ func _process(_delta):
 	song_position = current_position + AudioServer.get_time_since_last_mix()
 	# Compensate for output latency.
 	song_position -= AudioServer.get_output_latency()
-	song_position_in_beats = int(floor(song_position / seconds_per_beat)) + start_offset_in_beats
+	song_position_in_beats = int(floor(song_position / seconds_per_beat))
 
 
 func _handle_clip_swap():
@@ -62,8 +64,31 @@ func _handle_clip_swap():
 		current_position = 0
 		print(current_position)
 		var manager: RhythmGame = get_parent()
-		manager.lanes = charts[playback.get_current_clip_index()].lanes.duplicate(true)
+		#manager.lanes = charts[playback.get_current_clip_index()].lanes.duplicate(true)
+		var temp := charts[playback.get_current_clip_index()].lanes.duplicate(true)
+		for lane in temp.keys():
+			temp[lane] = temp[lane].map(
+				func(note: NoteData):
+					return note.copy(
+						{
+							"cached_absolute_beat":
+							note.cached_absolute_beat + start_offset_in_beats * seconds_per_beat
+						}
+					)
+			)
+		manager.lanes = temp
+		manager.update_spirits()
 		%NoteSpawner.chart = charts[playback.get_current_clip_index()]
+		for lane in %NoteSpawner.chart.lanes.keys():
+			%NoteSpawner.chart.lanes[lane] = %NoteSpawner.chart.lanes[lane].map(
+				func(note: NoteData):
+					return note.copy(
+						{
+							"cached_absolute_beat":
+							note.cached_absolute_beat + start_offset_in_beats * seconds_per_beat
+						}
+					)
+			)
 		%NoteSpawner.spawn_markers()
 		%NoteSpawner.spawn_notes()
 

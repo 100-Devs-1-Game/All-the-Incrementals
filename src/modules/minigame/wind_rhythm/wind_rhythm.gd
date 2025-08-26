@@ -6,6 +6,7 @@ signal note_missed(note: NoteData)
 const JUDGMENT_PATH = "res://modules/minigame/wind_rhythm/chart/judgments.gd"
 const NOTE_TYPE = preload("res://modules/minigame/wind_rhythm/chart/note_types.gd").NoteType
 const JUDGMENT = preload(JUDGMENT_PATH).Judgment
+const SPIRIT = preload("res://modules/minigame/wind_rhythm/rhythm_spirit.gd")
 
 @export var autoplay: Dictionary[NOTE_TYPE, JUDGMENT] = {
 	NOTE_TYPE.UP: JUDGMENT.MISS,
@@ -175,3 +176,8 @@ func _init_spirits():
 	for spirit in get_tree().get_nodes_in_group("spirits"):
 		if spirit.has_method("on_note_played"):
 			note_played.connect(spirit.on_note_played)
+
+
+func update_spirits():
+	for spirit: SPIRIT in get_tree().get_nodes_in_group("spirits"):
+		spirit.notes = lanes[spirit.lane].duplicate(true)
