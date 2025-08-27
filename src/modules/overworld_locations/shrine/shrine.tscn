@@ -736,7 +736,7 @@ transform = Transform3D(0.832921, -0.553391, 0, 0.553391, 0.832921, 0, 0, 0, 1, 
 shape = SubResource("BoxShape3D_lsmsp")
 
 [node name="How To Play" parent="." instance=ExtResource("59_ttoo2")]
-transform = Transform3D(-0.999952, 0, -0.00975632, 0, 1, 0, 0.00975632, 0, -0.999952, -7.76701, 0.83423, 0)
+transform = Transform3D(-0.723063, 0, -0.690781, 0, 1, 0, 0.690781, 0, -0.723063, -5.08628, -0.127184, 0)
 
 [node name="DebugPopup" parent="." instance=ExtResource("55_6ws2q")]
 title = "Shrine"
