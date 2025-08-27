@@ -2,7 +2,7 @@ extends Node3D
 
 var tween: Tween
 
-@onready var label_3d: Label3D = $Label3D
+@onready var label_3d: Label3D = $Node3D/Label3D
 @onready var ui: CanvasLayer = $CanvasLayer
 
 
