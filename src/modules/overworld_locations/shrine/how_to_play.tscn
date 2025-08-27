@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7n4knvm4dle5" path="res://component/interaction_component_3d/interaction_component_3d.gd" id="1_ctpm7"]
 [ext_resource type="Script" uid="uid://bro8al4bgocyd" path="res://modules/overworld_locations/shrine/how_to_play.gd" id="1_x45fd"]
-[ext_resource type="PackedScene" uid="uid://ohgoyvauhtd2" path="res://assets/overworld/models/characters/clayport_npc/clayport_npc.tscn" id="2_qexfq"]
+[ext_resource type="PackedScene" uid="uid://cnykar6d2e7ju" path="res://assets/overworld/models/characters/clayport_npc2/clayport_npc2.tscn" id="2_qexfq"]
 [ext_resource type="Theme" uid="uid://5wgly2wlncpm" path="res://modules/menu/common/menu_theme.tres" id="3_ih10j"]
 [ext_resource type="AudioStream" uid="uid://bpsf3w0cys8e6" path="res://assets/overworld/story/journal/page_collect_reverb.ogg" id="3_kg6aw"]
 
@@ -14,7 +14,7 @@ transform = Transform3D(-0.999952, 0, -0.00975632, 0, 1, 0, 0.00975632, 0, -0.99
 script = ExtResource("1_x45fd")
 
 [node name="clayport_leader" parent="." instance=ExtResource("2_qexfq")]
-transform = Transform3D(-0.999994, 0, -0.00368252, 0, 1, 0, 0.00368252, 0, -0.999994, 0.0427528, -0.00857139, 0.00041713)
+transform = Transform3D(-0.996405, 0, -0.0847214, 0, 1, 0, 0.0847214, 0, -0.996405, 0, 0, 0)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0718497, 3.30448, -0.000701022)

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cb8iy7wbanv0t" path="res://assets/overworld/models/characters/clayport_npc/clayport_npc.gltf" id="1_sxec7"]
 [ext_resource type="Texture2D" uid="uid://c2ontosb1qd0n" path="res://assets/overworld/models/characters/clayport_npc/clayport_npc.png" id="2_8o4bu"]
-[ext_resource type="Material" uid="uid://wwqxhtdinbim" path="res://assets/overworld/materials/simple/simple/s_yellow.tres" id="3_4ua23"]
+[ext_resource type="Material" uid="uid://fwu02g34qyi0" path="res://assets/overworld/materials/simple/simple/s_grey.tres" id="3_62l5y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5ese"]
 albedo_texture = ExtResource("2_8o4bu")
@@ -49,7 +49,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6ercu")
 surface_material_override/0 = SubResource("StandardMaterial3D_lgdia")
 
 [node name="ears" parent="spiritkeeper_armature_002/Skeleton3D" index="3"]
-surface_material_override/0 = ExtResource("3_4ua23")
+surface_material_override/0 = ExtResource("3_62l5y")
 
 [node name="feet" parent="spiritkeeper_armature_002/Skeleton3D" index="4"]
 surface_material_override/0 = SubResource("StandardMaterial3D_rbv6c")
