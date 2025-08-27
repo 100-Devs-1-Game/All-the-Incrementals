@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=3 uid="uid://ohgoyvauhtd2"]
+
+[ext_resource type="PackedScene" uid="uid://cb8iy7wbanv0t" path="res://assets/overworld/models/characters/clayport_npc/clayport_npc.gltf" id="1_sxec7"]
+[ext_resource type="Texture2D" uid="uid://c2ontosb1qd0n" path="res://assets/overworld/models/characters/clayport_npc/clayport_npc.png" id="2_8o4bu"]
+[ext_resource type="Material" uid="uid://wwqxhtdinbim" path="res://assets/overworld/materials/simple/simple/s_yellow.tres" id="3_4ua23"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5ese"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ercu"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgdia"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbv6c"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvcgm"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7d5ve"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cf1b"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62ww0"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osyqi"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pj10x"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro7kl"]
+albedo_texture = ExtResource("2_8o4bu")
+
+[node name="clayport_leader" instance=ExtResource("1_sxec7")]
+
+[node name="backpack_fish" parent="spiritkeeper_armature_002/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i5ese")
+
+[node name="belt" parent="spiritkeeper_armature_002/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6ercu")
+
+[node name="body_001" parent="spiritkeeper_armature_002/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lgdia")
+
+[node name="ears" parent="spiritkeeper_armature_002/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("3_4ua23")
+
+[node name="feet" parent="spiritkeeper_armature_002/Skeleton3D" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rbv6c")
+
+[node name="fishing_hook" parent="spiritkeeper_armature_002/Skeleton3D" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uvcgm")
+
+[node name="gourd" parent="spiritkeeper_armature_002/Skeleton3D" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7d5ve")
+
+[node name="hat_base_001" parent="spiritkeeper_armature_002/Skeleton3D" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2cf1b")
+
+[node name="head_headscarf" parent="spiritkeeper_armature_002/Skeleton3D" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_62ww0")
+
+[node name="scarf" parent="spiritkeeper_armature_002/Skeleton3D" index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_osyqi")
+
+[node name="sprout" parent="spiritkeeper_armature_002/Skeleton3D" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pj10x")
+
+[node name="tail_002" parent="spiritkeeper_armature_002/Skeleton3D" index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ro7kl")
