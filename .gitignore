@@ -3,6 +3,7 @@ builds/
 
 # Temp files
 ~*
+*.tmp
 
 # Godot 4+ specific ignores
 .godot/
@@ -12,7 +13,6 @@ builds/
 .import/
 export.cfg
 export_credentials.cfg
-*.tscn*tmp
 src/addons/godot-git-plugin
 src/override.cfg
 
